@@ -1,0 +1,10 @@
+{
+  "unifiedIdentity": true,
+  "domains": [
+    "web",
+    "apps",
+    "stores",
+    "regions"
+  ],
+  "oneCustomer": true
+}

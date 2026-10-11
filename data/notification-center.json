@@ -1,0 +1,11 @@
+{
+  "push": true,
+  "inApp": true,
+  "channnels": [
+    "membership",
+    "vip",
+    "collection",
+    "order",
+    "concierge"
+  ]
+}

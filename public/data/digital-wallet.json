@@ -1,0 +1,12 @@
+{
+  "items": [],
+  "supports": [
+    "membership",
+    "vip",
+    "access-pass",
+    "certificate",
+    "rewards",
+    "tickets",
+    "invitations"
+  ]
+}

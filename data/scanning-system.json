@@ -1,0 +1,9 @@
+{
+  "modes": [
+    "qr",
+    "barcode",
+    "package",
+    "product",
+    "shipment"
+  ]
+}

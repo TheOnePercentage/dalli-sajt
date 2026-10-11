@@ -1,0 +1,15 @@
+[build]
+  command = "npm run build:prod"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[functions]
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin-login.html"
+  status = 302

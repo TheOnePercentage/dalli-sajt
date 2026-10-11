@@ -1,0 +1,10 @@
+{
+  "enabled": true,
+  "ownerControls": {
+    "customerApp": true,
+    "vipApp": true,
+    "push": true,
+    "digitalWallet": true,
+    "appEcosystem": true
+  }
+}

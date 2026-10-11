@@ -1,0 +1,8 @@
+{
+  "qrRotationIntervalMinutes": 5,
+  "qrValid": false,
+  "preventScreenshotReuse": true,
+  "gpsValidation": false,
+  "deviceValidation": false,
+  "faceVerification": false
+}

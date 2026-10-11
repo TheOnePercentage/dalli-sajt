@@ -1,0 +1,8 @@
+{
+  "payrolls": [],
+  "restricted": true,
+  "allowedRoles": [
+    "owner",
+    "hr-manager"
+  ]
+}
