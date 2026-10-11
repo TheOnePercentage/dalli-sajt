@@ -10,8 +10,8 @@
   NODE_VERSION = "20"
   NODE_OPTIONS = "--max-old-space-size=4096"
   NPM_FLAGS = "--legacy-peer-deps"
-  VITE_APP_VERSION = "${GITHUB_SHA::7}"
-  VITE_APP_BUILD_DATE = "${DEPLOY_DATE}"
+  VITE_APP_VERSION = "dev"
+  VITE_APP_BUILD_DATE = "2026-01-01"
   VITE_APP_ENV = "production"
 
 [functions]
