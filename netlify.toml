@@ -13,3 +13,14 @@
   from = "/admin/*"
   to = "/admin-login.html"
   status = 302
+
+# --- API: security (CSP reports, CSRF, rate limiting) ---
+[[redirects]]
+  from = "/api/security/*"
+  to = "/.netlify/functions/security"
+  status = 200
+
+[[redirects]]
+  from = "/api/security"
+  to = "/.netlify/functions/security"
+  status = 200

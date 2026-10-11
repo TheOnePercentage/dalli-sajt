@@ -24,7 +24,7 @@ const SKIP_EXTENSIONS =
 const BYPASS_COOKIE = 'dalli_exp_bypass';
 
 const DEFAULT_CSP =
-  "default-src 'self'; script-src 'self' 'nonce-{NONCE}' https://cdn.dalli.rs https://fonts.googleapis.com https://connect.facebook.net https://connect.instagram.com https://connect.tiktok.com https://tag.twitter.com https://www.google-analytics.com https://www.googletagmanager.com; style-src 'self' 'nonce-{NONCE}' https://fonts.googleapis.com https://cdn.dalli.rs; font-src 'self' data: https://fonts.gstatic.com https://cdn.dalli.rs; img-src 'self' data: https://cdn.dalli.rs https://www.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://api.dalli.rs https://api.stripe.com https://www.google-analytics.com https://www.googletagmanager.com wss://api.dalli.rs; frame-src 'self' https://www.facebook.com https://www.instagram.com https://www.youtube.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self' https://dalli.rs; manifest-src 'self'; worker-src 'self' blob:; report-uri /api/security/csp-report;";
+  "default-src 'self'; script-src 'self' 'nonce-{NONCE}' https://cdn.dalli.rs https://fonts.googleapis.com https://connect.facebook.net https://connect.instagram.com https://connect.tiktok.com https://tag.twitter.com https://www.google-analytics.com https://www.googletagmanager.com; style-src 'self' 'nonce-{NONCE}' 'unsafe-hashes' https://fonts.googleapis.com https://cdn.dalli.rs; font-src 'self' data: https://fonts.gstatic.com https://cdn.dalli.rs; img-src 'self' data: https://cdn.dalli.rs https://www.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://api.dalli.rs https://api.stripe.com https://www.google-analytics.com https://www.googletagmanager.com wss://api.dalli.rs; frame-src 'self' https://www.facebook.com https://www.instagram.com https://www.youtube.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self' https://dalli.rs; manifest-src 'self'; worker-src 'self' blob:; report-uri /api/security/csp-report;";
 
 function shouldProcess(url, request, response) {
   if (request.method !== 'GET') return false;
@@ -64,12 +64,14 @@ function applyNonceToHtml(html, nonce) {
     .replace(/nonce="(?:NONCE|GENERATED_AT_RUNTIME)"/g, `nonce="${nonce}"`)
     .replace(/data-csp-nonce="GENERATED_AT_RUNTIME"/g, `data-csp-nonce="${nonce}"`);
 
-  out = out.replace(/<script(?![^>]*\bsrc=)(?![^>]*\bnonce=)([^>]*)>/gi, m => {
-    return m.slice(0, -1) + ` nonce="${nonce}">`;
+  // Add nonce to inline scripts (without src and without nonce)
+  out = out.replace(/<script(?![^>]*\bsrc=)(?![^>]*\bnonce=)([^>]*)>/gi, (match) => {
+    return match.replace(/>$/, ` nonce="${nonce}">`);
   });
 
-  out = out.replace(/<style(?![^>]*\bnonce=)([^>]*)>/gi, m => {
-    return m.slice(0, -1) + ` nonce="${nonce}">`;
+  // Add nonce to inline styles (without nonce)
+  out = out.replace(/<style(?![^>]*\bnonce=)([^>]*)>/gi, (match) => {
+    return match.replace(/>$/, ` nonce="${nonce}">`);
   });
 
   return out;
