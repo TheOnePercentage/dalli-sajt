@@ -284,18 +284,18 @@ export default defineConfig({
     },
 rollupOptions: {
         input: {
-          main: '/home/alpatron/Documents/Default Project/moonlight-sajt/index.html',
-          cart: '/home/alpatron/Documents/Default Project/moonlight-sajt/cart.html',
-          checkout: '/home/alpatron/Documents/Default Project/moonlight-sajt/checkout.html',
-          profile: '/home/alpatron/Documents/Default Project/moonlight-sajt/profile.html',
-          orders: '/home/alpatron/Documents/Default Project/moonlight-sajt/orders.html',
-          wishlist: '/home/alpatron/Documents/Default Project/moonlight-sajt/wishlist.html',
-          settings: '/home/alpatron/Documents/Default Project/moonlight-sajt/settings.html',
-          'size-guide': '/home/alpatron/Documents/Default Project/moonlight-sajt/size-guide/index.html',
-          blog: '/home/alpatron/Documents/Default Project/moonlight-sajt/blog-index.html',
-          'blog-entry': '/home/alpatron/Documents/Default Project/moonlight-sajt/js/blog/blog-index-entry.js',
+          main: './index.html',
+          cart: './cart.html',
+          checkout: './checkout.html',
+          profile: './profile.html',
+          orders: './orders.html',
+          wishlist: './wishlist.html',
+          settings: './settings.html',
+          'size-guide': './size-guide/index.html',
+          blog: './blog-index.html',
+          'blog-entry': './js/blog/blog-index-entry.js',
           // Virtual Try-On - lazy loaded module (dynamic import)
-          'virtual-tryon': '/home/alpatron/Documents/Default Project/moonlight-sajt/js/modules/VirtualTryOnLoader.js'
+          'virtual-tryon': './js/modules/VirtualTryOnLoader.js'
         },
         output: {
           manualChunks: (id) => {
