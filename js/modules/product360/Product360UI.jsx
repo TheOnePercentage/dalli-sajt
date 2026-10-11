@@ -333,15 +333,6 @@ export class Product360UI {
     this.modal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
     requestAnimationFrame(() => this.modal.classList.add('open'));
-  }
-
-  close() {
-    this.modal.classList.remove('open');
-    document.body.style.overflow = '';
-    setTimeout(() => this.modal.classList.add('hidden'), 300);
-  }
-
-  destroy() {
     this.modal?.remove();
     this.modal = null;
   }
