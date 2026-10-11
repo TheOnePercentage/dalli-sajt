@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Detalj šivenja — dvostruko prešiven šev, kvalitet tkanine">
+  <defs>
+    <linearGradient id="storyStitch" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0ede8"/>
+      <stop offset="50%" stop-color="#e4e0d8"/>
+      <stop offset="100%" stop-color="#d8d2c9"/>
+    </linearGradient>
+    <pattern id="fabricWeave" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+      <path d="M0,4 L8,4 M4,0 L4,8" stroke="#c4bfb6" stroke-width="0.3" opacity="0.15"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#storyStitch)"/>
+  <rect width="800" height="600" fill="url(#fabricWeave)"/>
+  <g opacity="0.1" transform="translate(400, 300)">
+    <line x1="-150" y1="0" x2="150" y2="0" stroke="#8b857d" stroke-width="1.2" stroke-linecap="round"/>
+    <g stroke="#8b857d" stroke-width="0.8" stroke-linecap="round">
+      <line x1="-140" y1="-8" x2="-140" y2="8"/>
+      <line x1="-100" y1="-6" x2="-100" y2="6"/>
+      <line x1="-60" y1="-10" x2="-60" y2="10"/>
+      <line x1="-20" y1="-8" x2="-20" y2="8"/>
+      <line x1="20" y1="-6" x2="20" y2="6"/>
+      <line x1="60" y1="-10" x2="60" y2="10"/>
+      <line x1="100" y1="-8" x2="100" y2="8"/>
+      <line x1="140" y1="-6" x2="140" y2="6"/>
+    </g>
+    <ellipse cx="0" cy="0" rx="180" ry="80" fill="none" stroke="#8b857d" stroke-width="0.4"/>
+  </g>
+</svg>

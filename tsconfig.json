@@ -1,0 +1,38 @@
+{
+  "extends": "./admin-new/tsconfig.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "./dist/types",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["admin-new/js/*"],
+      "@core/*": ["admin-new/js/core/*"],
+      "@utils/*": ["admin-new/js/utils/*"],
+      "@services/*": ["admin-new/js/services/*"],
+      "@components/*": ["admin-new/js/components/*"],
+      "@sections/*": ["admin-new/js/sections/*"],
+      "@connectors/*": ["admin-new/js/connectors/*"],
+      "@styles/*": ["admin-new/css/*"],
+      "@assets/*": ["admin-new/assets/*"]
+    }
+  },
+  "include": [
+    "admin-new/js/**/*",
+    "admin-new/vite.config.ts",
+    "admin-new/vitest.config.ts",
+    "admin-new/scripts/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "coverage",
+    ".turbo",
+    "admin-new/node_modules",
+    "admin-new/dist",
+    "admin-new/coverage",
+    "admin-new/.turbo",
+    "**/*.test.ts",
+    "**/*.spec.ts",
+    "**/*.stories.ts"
+  ]
+}

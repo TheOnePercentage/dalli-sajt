@@ -1,0 +1,212 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-10-08",
+  "locations": [
+    {
+      "id": "dalli-belgrade-center",
+      "name": "DALLI Beograd Centar",
+      "slug": "beograd-centar",
+      "type": "flagship",
+      "address": {
+        "streetAddress": "Knez Mihailova 15",
+        "addressLocality": "Beograd",
+        "addressRegion": "Stari Grad",
+        "postalCode": "11000",
+        "addressCountry": "RS"
+      },
+      "geo": {
+        "latitude": 44.8150,
+        "longitude": 20.4600
+      },
+      "phone": "+381 11 2630 123",
+      "email": "beograd-centar@dalli.rs",
+      "openingHours": [
+        {"dayOfWeek": "Monday", "opens": "10:00", "closes": "21:00"},
+        {"dayOfWeek": "Tuesday", "opens": "10:00", "closes": "21:00"},
+        {"dayOfWeek": "Wednesday", "opens": "10:00", "closes": "21:00"},
+        {"dayOfWeek": "Thursday", "opens": "10:00", "closes": "21:00"},
+        {"dayOfWeek": "Friday", "opens": "10:00", "closes": "21:00"},
+        {"dayOfWeek": "Saturday", "opens": "10:00", "closes": "20:00"},
+        {"dayOfWeek": "Sunday", "opens": "11:00", "closes": "19:00"}
+      ],
+      "specialHours": [
+        {"date": "2025-01-01", "opens": "12:00", "closes": "18:00", "note": "Nova Godina"},
+        {"date": "2025-01-07", "opens": "12:00", "closes": "18:00", "note": "Božić"},
+        {"date": "2025-02-15", "opens": "10:00", "closes": "18:00", "note": "Sretenje"}
+      ],
+      "features": ["wheelchair_accessible", "wifi", "fitting_rooms", "personal_shopper", "gift_wrapping", "click_collect", "in_store_returns"],
+      "services": ["personal_styling", "alterations", "gift_cards", "loyalty_program"],
+      "images": {
+        "exterior": "/images/locations/beograd-centar-exterior.jpg",
+        "interior": "/images/locations/beograd-centar-interior.jpg"
+      },
+      "description": "Naš flagman store u srcu Beograda na Knez Mihailovoj. Najveći izbor kolekcija, lično stilovanje i premium doživljaj kupovine.",
+      "googlePlaceId": "ChIJX8Y9Z1234567890",
+      "googleMapsUrl": "https://maps.google.com/?cid=12345678901234567890"
+    },
+    {
+      "id": "dalli-belgrade-usce",
+      "name": "DALLI Ušće Shopping Center",
+      "slug": "usce-shopping-center",
+      "type": "mall",
+      "address": {
+        "streetAddress": "Bulevar Mihajla Pupina 5, Ušće Shopping Center, 1. sprat",
+        "addressLocality": "Beograd",
+        "addressRegion": "Novi Beograd",
+        "postalCode": "11070",
+        "addressCountry": "RS"
+      },
+      "geo": {
+        "latitude": 44.8190,
+        "longitude": 20.4220
+      },
+      "phone": "+381 11 3110 456",
+      "email": "usce@dalli.rs",
+      "openingHours": [
+        {"dayOfWeek": "Monday", "opens": "10:00", "closes": "22:00"},
+        {"dayOfWeek": "Tuesday", "opens": "10:00", "closes": "22:00"},
+        {"dayOfWeek": "Wednesday", "opens": "10:00", "closes": "22:00"},
+        {"dayOfWeek": "Thursday", "opens": "10:00", "closes": "22:00"},
+        {"dayOfWeek": "Friday", "opens": "10:00", "closes": "22:00"},
+        {"dayOfWeek": "Saturday", "opens": "10:00", "closes": "22:00"},
+        {"dayOfWeek": "Sunday", "opens": "10:00", "closes": "21:00"}
+      ],
+      "features": ["wheelchair_accessible", "fitting_rooms", "gift_wrapping", "click_collect", "in_store_returns"],
+      "services": ["gift_cards", "loyalty_program"],
+      "images": {
+        "exterior": "/images/locations/usce-exterior.jpg",
+        "interior": "/images/locations/usce-interior.jpg"
+      },
+      "description": "DALLI u najposjećenijem trgovačkom centru u Beogradu. Savršen za brzu kupovinu posle posla ili vikend šoping.",
+      "googlePlaceId": "ChIJX8Y9Z1234567891",
+      "googleMapsUrl": "https://maps.google.com/?cid=12345678901234567891"
+    },
+    {
+      "id": "dalli-novi-sad",
+      "name": "DALLI Novi Sad - Promenada Mall",
+      "slug": "novi-sad-promenada",
+      "type": "mall",
+      "address": {
+        "streetAddress": "Bulevar Oslobođenja 30, Promenada Mall, 2. sprat",
+        "addressLocality": "Novi Sad",
+        "addressRegion": "Južna Bačka",
+        "postalCode": "21000",
+        "addressCountry": "RS"
+      },
+      "geo": {
+        "latitude": 45.2517,
+        "longitude": 19.8369
+      },
+      "phone": "+381 21 425 789",
+      "email": "novi-sad@dalli.rs",
+      "openingHours": [
+        {"dayOfWeek": "Monday", "opens": "10:00", "closes": "21:00"},
+        {"dayOfWeek": "Tuesday", "opens": "10:00", "closes": "21:00"},
+        {"dayOfWeek": "Wednesday", "opens": "10:00", "closes": "21:00"},
+        {"dayOfWeek": "Thursday", "opens": "10:00", "closes": "21:00"},
+        {"dayOfWeek": "Friday", "opens": "10:00", "closes": "21:00"},
+        {"dayOfWeek": "Saturday", "opens": "10:00", "closes": "21:00"},
+        {"dayOfWeek": "Sunday", "opens": "10:00", "closes": "20:00"}
+      ],
+      "features": ["wheelchair_accessible", "fitting_rooms", "gift_wrapping", "click_collect", "in_store_returns"],
+      "services": ["gift_cards", "loyalty_program"],
+      "images": {
+        "exterior": "/images/locations/novi-sad-exterior.jpg",
+        "interior": "/images/locations/novi-sad-interior.jpg"
+      },
+      "description": "Prvi DALLI store u Novom Sadu, u modernom Promenada Mall-u. Puna ponuda muške i ženske garderobe.",
+      "googlePlaceId": "ChIJX8Y9Z1234567892",
+      "googleMapsUrl": "https://maps.google.com/?cid=12345678901234567892"
+    },
+    {
+      "id": "dalli-nis",
+      "name": "DALLI Niš - Forum Mall",
+      "slug": "nis-forum-mall",
+      "type": "mall",
+      "address": {
+        "streetAddress": "Bulevar Nemanjića 45, Forum Mall, 1. sprat",
+        "addressLocality": "Niš",
+        "addressRegion": "Nišava",
+        "postalCode": "18000",
+        "addressCountry": "RS"
+      },
+      "geo": {
+        "latitude": 43.3210,
+        "longitude": 21.8950
+      },
+      "phone": "+381 18 555 123",
+      "email": "nis@dalli.rs",
+      "openingHours": [
+        {"dayOfWeek": "Monday", "opens": "10:00", "closes": "21:00"},
+        {"dayOfWeek": "Tuesday", "opens": "10:00", "closes": "21:00"},
+        {"dayOfWeek": "Wednesday", "opens": "10:00", "closes": "21:00"},
+        {"dayOfWeek": "Thursday", "opens": "10:00", "closes": "21:00"},
+        {"dayOfWeek": "Friday", "opens": "10:00", "closes": "21:00"},
+        {"dayOfWeek": "Saturday", "opens": "10:00", "closes": "21:00"},
+        {"dayOfWeek": "Sunday", "opens": "10:00", "closes": "20:00"}
+      ],
+      "features": ["wheelchair_accessible", "fitting_rooms", "gift_wrapping", "click_collect", "in_store_returns"],
+      "services": ["gift_cards", "loyalty_program"],
+      "images": {
+        "exterior": "/images/locations/nis-exterior.jpg",
+        "interior": "/images/locations/nis-interior.jpg"
+      },
+      "description": "DALLI ugrößem mallu na jugu Srbije. Široki izbor za celu porodicu.",
+      "googlePlaceId": "ChIJX8Y9Z1234567893",
+      "googleMapsUrl": "https://maps.google.com/?cid=12345678901234567893"
+    },
+    {
+      "id": "dalli-kragujevac",
+      "name": "DALLI Kragujevac - Delta City",
+      "slug": "kragujevac-delta-city",
+      "type": "mall",
+      "address": {
+        "streetAddress": "Kralja Aleksandra Karađorđevića 78, Delta City",
+        "addressLocality": "Kragujevac",
+        "addressRegion": "Šumadija",
+        "postalCode": "34000",
+        "addressCountry": "RS"
+      },
+      "geo": {
+        "latitude": 44.0167,
+        "longitude": 20.9167
+      },
+      "phone": "+381 34 333 456",
+      "email": "kragujevac@dalli.rs",
+      "openingHours": [
+        {"dayOfWeek": "Monday", "opens": "10:00", "closes": "21:00"},
+        {"dayOfWeek": "Tuesday", "opens": "10:00", "closes": "21:00"},
+        {"dayOfWeek": "Wednesday", "opens": "10:00", "closes": "21:00"},
+        {"dayOfWeek": "Thursday", "opens": "10:00", "closes": "21:00"},
+        {"dayOfWeek": "Friday", "opens": "10:00", "closes": "21:00"},
+        {"dayOfWeek": "Saturday", "opens": "10:00", "closes": "21:00"},
+        {"dayOfWeek": "Sunday", "opens": "10:00", "closes": "20:00"}
+      ],
+      "features": ["wheelchair_accessible", "fitting_rooms", "gift_wrapping", "click_collect", "in_store_returns"],
+      "services": ["gift_cards", "loyalty_program"],
+      "images": {
+        "exterior": "/images/locations/kragujevac-exterior.jpg",
+        "interior": "/images/locations/kragujevac-interior.jpg"
+      },
+      "description": "DALLI u Kragujevcu, u popularnom Delta City mallu. Moda za celu porodicu na jednom mestu.",
+      "googlePlaceId": "ChIJX8Y9Z1234567894",
+      "googleMapsUrl": "https://maps.google.com/?cid=12345678901234567894"
+    }
+  ],
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "latitude": 44.5,
+      "longitude": 20.5
+    },
+    "geoRadius": "350000"
+  },
+  "deliveryArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "latitude": 44.8150,
+      "longitude": 20.4600
+    },
+    "geoRadius": "50000"
+  }
+}

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000" role="img" aria-label="Muška Prelazna Jakna — Try-On">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#EEF2F5"/>
+      <stop offset="100%" stop-color="#D6DEE6"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#g)"/>
+  <circle cx="624" cy="280" r="272" fill="#35526B" opacity="0.10"/>
+  <circle cx="128" cy="820" r="176" fill="#35526B" opacity="0.08"/>
+  <line x1="64" y1="140" x2="160" y2="140" stroke="#35526B" stroke-width="6"/>
+  <text x="64" y="500" font-family="Georgia, 'Times New Roman', serif" font-size="88" font-weight="700" fill="#1B2A3A" letter-spacing="1">Muška Prelazna Jakna - Try-On</text>
+  <text x="64" y="600" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#35526B" letter-spacing="3">VIRTUAL TRY-ON</text>
+  <text x="64" y="900" font-family="Helvetica, Arial, sans-serif" font-size="40" font-weight="800" fill="#1B2A3A" letter-spacing="6">DALLI</text>
+</svg>

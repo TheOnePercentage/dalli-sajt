@@ -1,0 +1,8 @@
+Contact: security@dalli.rs
+Contact: https://dalli.rs/contact-security
+Encryption: https://dalli.rs/.well-known/pgp-key.asc
+Acknowledgments: https://dalli.rs/security-hall-of-fame
+Policy: https://dalli.rs/security-policy
+Preferred-Languages: en, sr
+Canonical: https://dalli.rs/.well-known/security.txt
+Expires: 2026-12-31T23:59:59.000Z

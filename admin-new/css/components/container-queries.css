@@ -1,0 +1,733 @@
+/* ==========================================================================
+   CONTAINER QUERIES — Component-Level Responsive Design
+   ========================================================================== */
+
+/* ==========================================================================
+   Container Definitions
+   ========================================================================== */
+
+.cq-container {
+  container-type: inline-size;
+  container-name: cq-main;
+}
+
+.cq-card {
+  container-type: inline-size;
+  container-name: cq-card;
+}
+
+.cq-sidebar {
+  container-type: inline-size;
+  container-name: cq-sidebar;
+}
+
+.cq-table {
+  container-type: inline-size;
+  container-name: cq-table;
+}
+
+.cq-form {
+  container-type: inline-size;
+  container-name: cq-form;
+}
+
+.cq-chart {
+  container-type: inline-size;
+  container-name: cq-chart;
+}
+
+.cq-widget {
+  container-type: inline-size;
+  container-name: cq-widget;
+}
+
+.cq-modal {
+  container-type: inline-size;
+  container-name: cq-modal;
+}
+
+.cq-drawer {
+  container-type: inline-size;
+  container-name: cq-drawer;
+}
+
+.cq-header {
+  container-type: inline-size;
+  container-name: cq-header;
+}
+
+.cq-toolbar {
+  container-type: inline-size;
+  container-name: cq-toolbar;
+}
+
+/* ==========================================================================
+   Card Component - Container Queries
+   ========================================================================== */
+
+@container cq-card (max-width: 320px) {
+  .card {
+    padding: var(--space-3);
+  }
+  
+  .card__title {
+    font-size: var(--text-base);
+  }
+  
+  .card__actions {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  
+  .card__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@container cq-card (min-width: 321px) and (max-width: 480px) {
+  .card {
+    padding: var(--space-4);
+  }
+  
+  .card__actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@container cq-card (min-width: 481px) {
+  .card {
+    padding: var(--space-5);
+  }
+}
+
+/* Card Media */
+@container cq-card (max-width: 360px) {
+  .card__media {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* Card Grid */
+@container cq-card (max-width: 400px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@container cq-card (min-width: 401px) and (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@container cq-card (min-width: 769px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ==========================================================================
+   Form Components - Container Queries
+   ========================================================================== */
+
+@container cq-form (max-width: 400px) {
+  .form-field {
+    margin-bottom: var(--space-4);
+  }
+  
+  .form-field__input-wrapper {
+    flex-direction: column;
+  }
+  
+  .form-field__label {
+    margin-bottom: var(--space-1);
+  }
+  
+  .form-row {
+    flex-direction: column;
+  }
+  
+  .input-group {
+    flex-direction: column;
+  }
+  
+  .input-group__addon {
+    border-radius: var(--radius-btn) var(--radius-btn) 0 0;
+    border-bottom: none;
+  }
+  
+  .input-group__input {
+    border-radius: 0 0 var(--radius-btn) var(--radius-btn);
+  }
+}
+
+@container cq-form (min-width: 401px) and (max-width: 640px) {
+  .form-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .form-row > .form-field {
+    flex: 1;
+    min-width: 200px;
+  }
+}
+
+@container cq-form (min-width: 641px) {
+  .form-row {
+    flex-direction: row;
+  }
+  
+  .form-field {
+    flex: 1;
+  }
+}
+
+/* ==========================================================================
+   Table - Container Queries
+   ========================================================================== */
+
+@container cq-table (max-width: 600px) {
+  .table-wrapper {
+    font-size: var(--text-xs);
+  }
+  
+  .table th,
+  .table td {
+    padding: var(--space-2) var(--space-2);
+  }
+  
+  .table .cell-action {
+    width: auto;
+  }
+  
+  .table .cell-checkbox {
+    width: 36px;
+  }
+}
+
+@container cq-table (min-width: 601px) and (max-width: 900px) {
+  .table .cell-tertiary {
+    display: none;
+  }
+}
+
+@container cq-table (min-width: 901px) {
+  .table .cell-tertiary {
+    display: table-cell;
+  }
+}
+
+/* Table Card View Fallback */
+@container cq-table (max-width: 768px) {
+  .table-responsive-table {
+    display: none;
+  }
+  
+  .table-responsive-card {
+    display: block;
+  }
+}
+
+@container cq-table (min-width: 769px) {
+  .table-responsive-table {
+    display: table;
+  }
+  
+  .table-responsive-card {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   Sidebar - Container Queries
+   ========================================================================== */
+
+@container cq-sidebar (max-width: 200px) {
+  .sidebar {
+    width: 64px;
+  }
+  
+  .sidebar .brand-text,
+  .sidebar .nav-section-title,
+  .sidebar .nav-item > span:not(.nav-badge):not(.nav-icon),
+  .sidebar .sidebar-footer {
+    display: none;
+  }
+  
+  .sidebar .nav-item {
+    justify-content: center;
+    padding: var(--space-2);
+  }
+  
+  .sidebar .nav-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+  }
+}
+
+@container cq-sidebar (min-width: 201px) and (max-width: 280px) {
+  .sidebar {
+    width: 200px;
+  }
+}
+
+/* ==========================================================================
+   Chart/Widget - Container Queries
+   ========================================================================== */
+
+@container cq-chart (max-width: 400px) {
+  .chart-card {
+    min-height: 250px;
+  }
+  
+  .chart-legend {
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  
+  .chart-legend__item {
+    font-size: var(--text-xs);
+  }
+}
+
+@container cq-chart (min-width: 401px) and (max-width: 600px) {
+  .chart-legend {
+    flex-wrap: nowrap;
+  }
+}
+
+@container cq-chart (min-width: 601px) {
+  .chart-card {
+    min-height: 350px;
+  }
+}
+
+/* ==========================================================================
+   Dashboard Grid - Container Queries
+   ========================================================================== */
+
+@container cq-main (max-width: 480px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@container cq-main (min-width: 481px) and (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@container cq-main (min-width: 769px) and (max-width: 1200px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .stat-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@container cq-main (min-width: 1201px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .stat-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@container cq-main (min-width: 1600px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ==========================================================================
+   Toolbar - Container Queries
+   ========================================================================== */
+
+@container cq-toolbar (max-width: 400px) {
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-3);
+  }
+  
+  .toolbar__group {
+    width: 100%;
+    justify-content: stretch;
+  }
+  
+  .toolbar__search {
+    order: -1;
+  }
+  
+  .toolbar__actions {
+    width: 100%;
+    justify-content: stretch;
+  }
+  
+  .toolbar__actions .btn {
+    flex: 1;
+  }
+}
+
+@container cq-toolbar (min-width: 401px) and (max-width: 640px) {
+  .toolbar {
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+  
+  .toolbar__search {
+    flex: 1;
+    min-width: 200px;
+  }
+}
+
+@container cq-toolbar (min-width: 641px) {
+  .toolbar {
+    flex-wrap: nowrap;
+  }
+}
+
+/* ==========================================================================
+   Modal/Drawer - Container Queries
+   ========================================================================== */
+
+@container cq-modal (max-width: 480px) {
+  .modal {
+    width: 100%;
+    max-width: calc(100vw - 32px);
+    margin: var(--space-4);
+    border-radius: var(--radius-xl);
+  }
+  
+  .modal__header {
+    padding: var(--space-4);
+  }
+  
+  .modal__body {
+    padding: var(--space-4);
+    max-height: 60vh;
+  }
+  
+  .modal__footer {
+    flex-direction: column-reverse;
+    gap: var(--space-3);
+  }
+  
+  .modal__footer .btn {
+    width: 100%;
+  }
+}
+
+@container cq-modal (min-width: 481px) and (max-width: 768px) {
+  .modal {
+    max-width: 560px;
+  }
+}
+
+@container cq-modal (min-width: 769px) {
+  .modal {
+    max-width: 720px;
+  }
+}
+
+/* ==========================================================================
+   Navigation Tabs
+   ========================================================================== */
+
+@container cq-header (max-width: 600px) {
+  .nav-tabs {
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: var(--space-2);
+    margin-bottom: calc(var(--space-4) * -1);
+    padding-bottom: var(--space-4);
+  }
+  
+  .nav-tabs::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .nav-tab {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+}
+
+@container cq-header (min-width: 601px) {
+  .nav-tabs {
+    overflow: visible;
+    padding-bottom: 0;
+  }
+}
+
+/* ==========================================================================
+   Chart Legends
+   ========================================================================== */
+
+@container cq-chart (max-width: 400px) {
+  .chart-legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-2) var(--space-3);
+    margin-top: var(--space-4);
+  }
+  
+  .chart-legend__item {
+    font-size: var(--text-xs);
+    padding: var(--space-1) var(--space-2);
+  }
+  
+  .chart-legend__color {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@container cq-chart (min-width: 401px) {
+  .chart-legend {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+}
+
+/* ==========================================================================
+   Widget Grid
+   ========================================================================== */
+
+@container cq-widget (max-width: 320px) {
+  .widget-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@container cq-widget (min-width: 321px) and (max-width: 560px) {
+  .widget-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@container cq-widget (min-width: 561px) and (max-width: 840px) {
+  .widget-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@container cq-widget (min-width: 841px) {
+  .widget-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ==========================================================================
+   Typography Scale
+   ========================================================================== */
+
+@container (max-width: 480px) {
+  :root {
+    --text-display: clamp(2rem, 8vw, 3rem);
+    --text-h1: clamp(1.75rem, 6vw, 2.5rem);
+    --text-h2: clamp(1.5rem, 5vw, 2rem);
+    --text-h3: clamp(1.25rem, 4vw, 1.5rem);
+  }
+}
+
+@container (min-width: 481px) and (max-width: 768px) {
+  :root {
+    --text-display: clamp(2.5rem, 5vw, 3.5rem);
+    --text-h1: clamp(2rem, 4vw, 2.75rem);
+    --text-h2: clamp(1.75rem, 3.5vw, 2.25rem);
+    --text-h3: clamp(1.375rem, 3vw, 1.75rem);
+  }
+}
+
+/* ==========================================================================
+   Spacing Scale
+   ========================================================================== */
+
+@container (max-width: 480px) {
+  :root {
+    --container-padding: var(--space-4);
+    --section-gap: var(--space-6);
+  }
+}
+
+@container (min-width: 481px) and (max-width: 768px) {
+  :root {
+    --container-padding: var(--space-5);
+    --section-gap: var(--space-8);
+  }
+}
+
+@container (min-width: 769px) and (max-width: 1200px) {
+  :root {
+    --container-padding: var(--space-6);
+    --section-gap: var(--space-10);
+  }
+}
+
+@container (min-width: 1201px) {
+  :root {
+    --container-padding: var(--space-8);
+    --section-gap: var(--space-12);
+  }
+}
+
+/* ==========================================================================
+   Animation Timing
+   ========================================================================== */
+
+@container (max-width: 480px) {
+  :root {
+    --duration-fast: 150ms;
+    --duration-normal: 200ms;
+    --duration-smooth: 250ms;
+    --duration-slow: 350ms;
+  }
+}
+
+@container (min-width: 769px) {
+  :root {
+    --duration-fast: 100ms;
+    --duration-normal: 200ms;
+    --duration-smooth: 300ms;
+    --duration-slow: 400ms;
+  }
+}
+
+/* ==========================================================================
+   Touch Targets
+   ========================================================================== */
+
+@media (hover: none) and (pointer: coarse) {
+  @container (max-width: 768px) {
+    .btn,
+    .btn--sm,
+    .nav-item,
+    .dropdown-item,
+    .tab-btn,
+    .table-pagination-btn,
+    .pagination-btn,
+    .dropdown-item,
+    .swipe-action {
+      min-height: var(--touch-comfortable, 48px);
+      min-width: var(--touch-comfortable, 48px);
+    }
+    
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      min-height: 52px;
+      font-size: 16px; /* Prevent zoom on iOS */
+    }
+    
+    .select-field {
+      min-height: 52px;
+    }
+  }
+}
+
+/* ==========================================================================
+   Scrollbar - Container Queries
+   ========================================================================== */
+
+@container (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    min-height: 40px;
+  }
+}
+
+/* ==========================================================================
+   Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  @container {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* ==========================================================================
+   High Contrast
+   ========================================================================== */
+
+@media (prefers-contrast: high) {
+  @container {
+    .card {
+      border-width: 2px;
+    }
+    
+    .btn {
+      border-width: 2px;
+    }
+    
+    .table th,
+    .table td {
+      border-color: currentColor;
+    }
+  }
+}
+
+/* ==========================================================================
+   Focus Visible
+   ========================================================================== */
+
+@container {
+  *:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+  }
+}
+
+/* ==========================================================================
+   Print
+   ========================================================================== */
+
+@media print {
+  @container {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+    
+    .sidebar,
+    .topbar,
+    .fab,
+    .fab-speed-dial,
+    .bottom-sheet-overlay,
+    .pull-to-refresh__trigger {
+      display: none !important;
+    }
+  }
+}

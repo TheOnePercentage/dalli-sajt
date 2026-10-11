@@ -1,0 +1,51 @@
+{
+  "budgets": [
+    {
+      "name": "Total Page Weight",
+      "resourceType": "total",
+      "budget": 500,
+      "unit": "kB"
+    },
+    {
+      "name": "JavaScript",
+      "resourceType": "script",
+      "budget": 150,
+      "unit": "kB"
+    },
+    {
+      "name": "CSS",
+      "resourceType": "stylesheet",
+      "budget": 50,
+      "unit": "kB"
+    },
+    {
+      "name": "Images",
+      "resourceType": "image",
+      "budget": 200,
+      "unit": "kB"
+    },
+    {
+      "name": "Fonts",
+      "resourceType": "font",
+      "budget": 50,
+      "unit": "kB"
+    },
+    {
+      "name": "Third Party",
+      "resourceType": "third-party",
+      "budget": 100,
+      "unit": "kB"
+    }
+  ],
+  "resourceCounts": [
+    {
+      "name": "Third Party Requests",
+      "resourceType": "third-party",
+      "budget": 10
+    }
+  ],
+  "thresholds": {
+    "warning": 0.8,
+    "error": 1.0
+  }
+}

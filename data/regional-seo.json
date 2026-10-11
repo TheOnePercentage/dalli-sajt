@@ -1,0 +1,125 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-10-09T00:00:00Z",
+  "regionalSEO": {
+    "enabled": true,
+    "globalDefaults": {
+      "siteName": "DALLI",
+      "twitterSite": "@dalli_rs",
+      "twitterCreator": "@dalli_rs",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "googlebot": "index, follow",
+      "bingbot": "index, follow"
+    },
+    "markets": {
+      "balkans": {
+        "countries": ["RS", "BA", "ME", "HR", "MK", "SI"],
+        "strategy": "ccTLD-subdomain",
+        "baseDomain": "dalli.rs",
+        "subdomainPattern": "{countryCode}.dalli.rs",
+        "hreflangImplementation": "xml-sitemap + page-headers",
+        "canonicalStrategy": "self-referencing",
+        "ogLocaleStrategy": "per-country",
+        "sitemapPerCountry": true,
+        "robotsPerCountry": true
+      },
+      "dach": {
+        "countries": ["DE", "AT", "CH"],
+        "strategy": "ccTLD-subdomain",
+        "baseDomain": "dalli.rs",
+        "subdomainPattern": "{countryCode}.dalli.rs",
+        "hreflangImplementation": "xml-sitemap + page-headers",
+        "canonicalStrategy": "self-referencing",
+        "ogLocaleStrategy": "per-country",
+        "sitemapPerCountry": true,
+        "robotsPerCountry": true
+      },
+      "eu_west": {
+        "countries": ["FR", "IT"],
+        "strategy": "ccTLD-subdomain",
+        "baseDomain": "dalli.rs",
+        "subdomainPattern": "{countryCode}.dalli.rs",
+        "hreflangImplementation": "xml-sitemap + page-headers",
+        "canonicalStrategy": "self-referencing",
+        "ogLocaleStrategy": "per-country",
+        "sitemapPerCountry": true,
+        "robotsPerCountry": true
+      },
+      "uk": {
+        "countries": ["GB"],
+        "strategy": "ccTLD-subdomain",
+        "baseDomain": "dalli.rs",
+        "subdomainPattern": "{countryCode}.dalli.rs",
+        "hreflangImplementation": "xml-sitemap + page-headers",
+        "canonicalStrategy": "self-referencing",
+        "ogLocaleStrategy": "per-country",
+        "sitemapPerCountry": true,
+        "robotsPerCountry": true
+      },
+      "north_america": {
+        "countries": ["US"],
+        "strategy": "ccTLD-subdomain",
+        "baseDomain": "dalli.rs",
+        "subdomainPattern": "{countryCode}.dalli.rs",
+        "hreflangImplementation": "xml-sitemap + page-headers",
+        "canonicalStrategy": "self-referencing",
+        "ogLocaleStrategy": "per-country",
+        "sitemapPerCountry": true,
+        "robotsPerCountry": true
+      },
+      "middle_east": {
+        "countries": ["AE"],
+        "strategy": "ccTLD-subdomain",
+        "baseDomain": "dalli.rs",
+        "subdomainPattern": "{countryCode}.dalli.rs",
+        "hreflangImplementation": "xml-sitemap + page-headers",
+        "canonicalStrategy": "self-referencing",
+        "ogLocaleStrategy": "per-country",
+        "sitemapPerCountry": true,
+        "robotsPerCountry": true
+      }
+    },
+    "countryOverrides": {},
+    "productOverrides": {},
+    "collectionOverrides": {},
+    "technicalSEO": {
+      "structuredData": {
+        "organization": true,
+        "website": true,
+        "product": true,
+        "collection": true,
+        "breadcrumb": true,
+        "faq": true,
+        "review": true,
+        "localBusiness": true
+      },
+      "coreWebVitals": {
+        "monitorPerCountry": true,
+        "alertThresholds": {
+          "LCP": 2500,
+          "INP": 200,
+          "CLS": 0.1
+        }
+      },
+      "crawling": {
+        "robotsTxtPerCountry": true,
+        "sitemapIndex": true,
+        "lastmodEnabled": true,
+        "changefreqEnabled": true,
+        "priorityEnabled": true
+      },
+      "internationalization": {
+        "hreflangXDefault": true,
+        "hreflangSelfReference": true,
+        "hreflangBidirectional": true,
+        "xDefaultTarget": "https://dalli.rs"
+      }
+    },
+    "contentSEO": {
+      "autoTranslateMeta": false,
+      "keywordLocalization": true,
+      "marketSpecificKeywords": true,
+      "competitorTracking": false
+    }
+  }
+}

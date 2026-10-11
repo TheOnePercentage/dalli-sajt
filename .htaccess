@@ -1,0 +1,441 @@
+# DALLI E-Commerce - Apache Configuration
+# Performance, Security, SEO, PWA
+
+# ============================================================
+# SECURITY HEADERS
+# ============================================================
+<IfModule mod_headers.c>
+  # Security headers
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-XSS-Protection "1; mode=block"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), accelerometer=(), gyroscope=(), magnetometer=(), usb=(), bluetooth=()"
+  
+  # CSP with nonce and Trusted Types
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'nonce-{NONCE}' https://cdn.dalli.rs https://fonts.googleapis.com https://connect.facebook.net https://connect.instagram.com https://connect.tiktok.com https://tag.twitter.com https://www.google-analytics.com https://www.googletagmanager.com; style-src 'self' 'nonce-{NONCE}' https://fonts.googleapis.com https://cdn.dalli.rs; font-src 'self' data: https://fonts.gstatic.com https://cdn.dalli.rs; img-src 'self' data: https://cdn.dalli.rs https://www.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://api.dalli.rs https://api.stripe.com https://www.google-analytics.com https://www.googletagmanager.com wss://api.dalli.rs; frame-src 'self' https://www.facebook.com https://www.instagram.com https://www.youtube.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self' https://dalli.rs; manifest-src 'self'; worker-src 'self' blob:; report-uri /api/security/csp-report; trusted-types dalla-trusted-types; require-trusted-types-for 'script';"
+
+  # HSTS
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
+
+  # Cross-Origin Policies
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+  Header always set Cross-Origin-Embedder-Policy "require-corp"
+  Header always set Cross-Origin-Resource-Policy "same-origin"
+
+  # Permissions Policy
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), accelerometer=(), gyroscope=(), magnetometer=(), usb=(), bluetooth=()"
+
+  # Remove server signature
+  Header unset Server
+  Header unset X-Powered-By
+</IfModule>
+
+# ============================================================
+# HTTPS ENFORCEMENT
+# ============================================================
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  
+  # Force HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  
+  # Remove www
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^(.*)$ https://%1/$1 [L,R=301]
+
+  # ============================================================
+  # LUXURY COLLECTION MIGRATION - 301 REDIRECTS
+  # ============================================================
+  # Old product pages -> New collection URLs
+  RewriteRule ^proizvod-osnovna-majica\.html$ /casual/unisex/t-shirts/osnovna-majica.html [R=301,L]
+  RewriteRule ^proizvod-dugorukava-majica\.html$ /casual/unisex/t-shirts/dugorukava-majica.html [R=301,L]
+  RewriteRule ^proizvod-muska-sportska-trenerka\.html$ /casual/men/tracksuits/muska-sportska-trenerka.html [R=301,L]
+  RewriteRule ^proizvod-zenska-kapuljaca-trenerka\.html$ /casual/women/tracksuits/zenska-kapuljaca-trenerka.html [R=301,L]
+  RewriteRule ^proizvod-muska-duks-hoodie\.html$ /casual/men/hoodies/muska-duks-hoodie.html [R=301,L]
+  RewriteRule ^proizvod-zenska-duks-hoodie\.html$ /casual/women/hoodies/zenska-duks-hoodie.html [R=301,L]
+  RewriteRule ^proizvod-carape\.html$ /casual/unisex/accessories/carape.html [R=301,L]
+  RewriteRule ^proizvod-salica-za-kafU\.html$ /casual/unisex/accessories/salica-za-kafU.html [R=301,L]
+
+  # Old category pages -> New collection URLs
+  RewriteRule ^muska-garderoba\.html$ /casual/men/ [R=301,L]
+  RewriteRule ^zenska-garderoba\.html$ /casual/women/ [R=301,L]
+  RewriteRule ^dukseri\.html$ /casual/unisex/hoodies/ [R=301,L]
+  RewriteRule ^trenerke\.html$ /casual/unisex/tracksuits/ [R=301,L]
+  RewriteRule ^majice\.html$ /casual/unisex/t-shirts/ [R=301,L]
+
+  # Legacy category anchor redirects (will be handled by JS on client)
+  # /muska-garderoba.html#majice -> /casual/men/t-shirts/
+  # /muska-garderoba.html#trenerke -> /casual/men/tracksuits/
+  # /muska-garderoba.html#dukseri -> /casual/men/hoodies/
+  # /zenska-garderoba.html#majice -> /casual/women/t-shirts/
+  # /zenska-garderoba.html#trenerke -> /casual/women/tracksuits/
+  # /zenska-garderoba.html#dukseri -> /casual/women/hoodies/
+
+  # Admin redirects
+  RewriteRule ^admin/ /admin-login.html [R=302,L]
+
+  # Search redirects
+  RewriteRule ^proizvodi$ /casual/unisex/ [R=301,L]
+  RewriteRule ^products\.html$ /casual/unisex/ [R=301,L]
+
+  # Collection index pages (trailing slash enforcement)
+  RewriteRule ^casual$ /casual/ [R=301,L]
+  RewriteRule ^elegance$ /elegance/ [R=301,L]
+  RewriteRule ^casual/men$ /casual/men/ [R=301,L]
+  RewriteRule ^casual/women$ /casual/women/ [R=301,L]
+  RewriteRule ^elegance/men$ /elegance/men/ [R=301,L]
+  RewriteRule ^elegance/women$ /elegance/women/ [R=301,L]
+</IfModule>
+
+# ============================================================
+# COMPRESSION
+# ============================================================
+<IfModule mod_deflate.c>
+  # Enable compression
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json application/xml application/xhtml+xml application/rss+xml application/atom+xml application/vnd.ms-fontobject application/x-font-ttf application/x-font-opentype application/x-font-truetype application/x-font-woff application/x-font-woff2 application/font-woff2 image/svg+xml image/x-icon
+  
+  # Compression level
+  DeflateCompressionLevel 6
+  
+  # Don't compress images
+  SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png|webp|avif|ico|svg|woff2?)$ no-gzip dont-vary
+</IfModule>
+
+# ============================================================
+# CACHING
+# ============================================================
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+  
+  # Static assets - 1 year
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/avif "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresByType image/vnd.microsoft.icon "access plus 1 year"
+  
+  # Fonts
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType font/ttf "access plus 1 year"
+  ExpiresByType font/otf "access plus 1 year"
+  ExpiresByType application/font-woff "access plus 1 year"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+  ExpiresByType application/x-font-woff "access plus 1 year"
+  ExpiresByType application/x-font-woff2 "access plus 1 year"
+  ExpiresByType application/font-woff "access plus 1 year"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+  ExpiresByType application/x-font-ttf "access plus 1 year"
+  ExpiresByType application/x-font-otf "access plus 1 year"
+  
+  # CSS/JS
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType application/x-javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+  
+  # Fonts
+  ExpiresByType application/font-woff "access plus 1 year"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+  ExpiresByType application/x-font-woff "access plus 1 year"
+  ExpiresByType application/x-font-woff2 "access plus 1 year"
+  
+  # HTML
+  ExpiresByType text/html "access plus 0 seconds"
+  
+  # JSON/XML
+  ExpiresByType application/json "access plus 0 seconds"
+  ExpiresByType application/xml "access plus 0 seconds"
+  ExpiresByType text/xml "access plus 0 seconds"
+  
+  # Fonts (additional)
+  ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+  ExpiresByType application/x-font-ttf "access plus 1 year"
+  ExpiresByType application/x-font-opentype "access plus 1 year"
+  ExpiresByType application/x-font-truetype "access plus 1 year"
+  
+  # Media
+  ExpiresByType audio/mpeg "access plus 1 year"
+  ExpiresByType audio/ogg "access plus 1 year"
+  ExpiresByType video/mp4 "access plus 1 year"
+  ExpiresByType video/webm "access plus 1 year"
+  ExpiresByType video/ogg "access plus 1 year"
+  
+  # Web App Manifest
+  ExpiresByType application/manifest+json "access plus 1 year"
+  ExpiresByType application/x-web-app-manifest+json "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Cache-Control headers
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|avif|svg|ico|webp)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  
+  <FilesMatch "\.(woff|woff2|ttf|otf|eot)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+    Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
+  
+  <FilesMatch "\.(css|js|mjs)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+  </FilesMatch>
+  
+  <FilesMatch "\.(json|xml|txt)$">
+    Header set Cache-Control "public, max-age=86400, must-revalidate"
+  </FilesMatch>
+  
+  <FilesMatch "\.(ico|png|jpg|jpeg|gif|webp|avif|svg|woff|woff2|ttf|otf)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  
+  # Service Worker - no cache
+  <FilesMatch "sw\.js$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Service-Worker-Allowed "/"
+  </FilesMatch>
+  
+  <FilesMatch "manifest\.json$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  
+  # Font preload
+  <FilesMatch "\.(woff2|woff)$">
+    Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
+</IfModule>
+
+# ============================================================
+# MIME TYPES
+# ============================================================
+<IfModule mod_mime.c>
+  # Fonts
+  AddType application/font-woff .woff
+  AddType application/font-woff2 .woff2
+  AddType application/font-ttf .ttf
+  AddType application/font-otf .otf
+  AddType application/x-font-woff .woff
+  AddType application/font-woff2 .woff2
+  AddType application/x-font-ttf .ttf
+  AddType application/x-font-otf .otf
+  AddType application/vnd.ms-fontobject .eot
+  
+  # Web App Manifest
+  AddType application/manifest+json .webmanifest
+  AddType application/x-web-app-manifest+json .webmanifest
+  
+  # Video
+  AddType video/mp4 .mp4
+  AddType video/webm .webm
+  AddType video/ogg .ogv
+  
+  # Audio
+  AddType audio/mpeg .mp3
+  AddType audio/ogg .ogg
+  AddType audio/wav .wav
+  
+  # Images
+  AddType image/webp .webp
+  AddType image/avif .avif
+  AddType image/svg+xml .svg
+  
+  # Fonts (additional)
+  AddType font/woff .woff
+  AddType font/woff2 .woff2
+  AddType application/font-woff .woff
+  AddType application/font-woff2 .woff2
+  AddType application/font-ttf .ttf
+  AddType application/font-otf .otf
+</IfModule>
+
+# ============================================================
+# GZIP COMPRESSION
+# ============================================================
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json application/xml application/xhtml+xml application/rss+xml application/atom+xml application/vnd.ms-fontobject application/x-font-ttf application/x-font-opentype application/x-font-truetype application/x-font-woff application/x-font-woff2 application/font-woff2 image/svg+xml image/x-icon
+</IfModule>
+
+# ============================================================
+# REWRITES FOR SPA & SEO
+# ============================================================
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  
+  # Force HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  
+  # Remove www
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^(.*)$ https://%1/$1 [L,R=301]
+  
+  # Remove trailing slash (except for root)
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} ^(.+)/$
+  RewriteRule ^(.+)/$ /$1 [L,R=301]
+  
+  # Remove .html extension
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}\.html -f
+  RewriteRule ^(.*)$ $1.html [L]
+  
+  # API routes
+  RewriteRule ^api/(.*)$ /api/$1 [L]
+  
+  # Admin routes
+  RewriteRule ^admin/(.*)$ /admin/$1 [L]
+  
+  # Product URLs
+  RewriteRule ^product/([^/]+)/?$ /proizvod-$1.html [L,R=301]
+  RewriteRule ^product/([^/]+)/(.+)$ /proizvod-$1-$2.html [L,R=301]
+  
+  # Category URLs
+  RewriteRule ^category/([^/]+)/?$ /kategorija-$1.html [L,R=301]
+  RewriteRule ^category/([^/]+)/([^/]+)/?$ /kategorija-$1-$2.html [L,R=301]
+  
+  # Search
+  RewriteRule ^search/(.*)$ /proizvodi.html?q=$1 [L,QSA]
+  
+  # Cart/Checkout
+  RewriteRule ^cart$ /cart.html [L,R=301]
+  RewriteRule ^checkout$ /checkout.html [L,R=301]
+  
+  # Admin
+  RewriteRule ^admin/?$ /admin-login.html [L,R=302]
+  RewriteRule ^admin/(.*)$ /admin/$1 [L]
+  
+  # Search
+  RewriteRule ^search$ /proizvodi.html [L,R=301]
+  RewriteRule ^search/(.*)$ /proizvodi.html?q=$1 [L,QSA]
+  
+  # Blog
+  RewriteRule ^blog/([^/]+)/?$ /blog-$1.html [L,R=301]
+  RewriteRule ^blog/?$ /blog-index.html [L,R=301]
+  
+  # Sitemap & Robots
+  RewriteRule ^sitemap\.xml$ /sitemap.xml [L]
+  RewriteRule ^robots\.txt$ /robots.txt [L]
+  
+  # Service Worker
+  RewriteRule ^sw\.js$ /sw.js [L]
+  
+  # Manifest
+  RewriteRule ^manifest\.json$ /manifest.json [L]
+  
+  # Service Worker - no cache
+  RewriteRule ^sw\.js$ /sw.js [L]
+  
+  # Prevent directory listing
+  Options -Indexes
+  
+  # Prevent access to hidden files
+  RewriteRule ^\. - [F]
+  
+  # Prevent access to backup files
+  RewriteRule \.(bak|backup|old|orig|save|tmp|temp|~)$ - [F]
+  
+  # Prevent access to config files
+  RewriteRule \.(env|config|conf|ini|log|sql|bak|backup)$ - [F]
+</IfModule>
+
+# ============================================================
+# ERROR DOCUMENTS
+# ============================================================
+ErrorDocument 400 /400.html
+ErrorDocument 401 /401.html
+ErrorDocument 403 /403.html
+ErrorDocument 404 /404.html
+ErrorDocument 500 /500.html
+ErrorDocument 502 /502.html
+ErrorDocument 503 /503.html
+
+# ============================================================
+# PHP SETTINGS (if using PHP)
+# ============================================================
+<IfModule mod_php.c>
+  php_value upload_max_filesize 10M
+  php_value post_max_size 10M
+  php_value max_execution_time 60
+  php_value max_input_time 60
+  php_value memory_limit 256M
+  php_value default_charset UTF-8
+  php_flag display_errors Off
+  php_flag log_errors On
+  php_flag expose_php Off
+</IfModule>
+
+# ============================================================
+# BLOCK BAD BOTS
+# ============================================================
+<IfModule mod_rewrite.c>
+  RewriteCond %{HTTP_USER_AGENT} (AhrefsBot|SemrushBot|MJ12bot|DotBot|Baiduspider|YandexBot|Sogou|Exabot|AhrefsBot|MJ12bot|DotBot|Baiduspider|YandexBot|Sogou|Exabot) [NC]
+  RewriteRule .* - [F,L]
+</IfModule>
+
+# ============================================================
+# BLOCK SENSITIVE FILES
+# ============================================================
+<FilesMatch "^\.">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+<FilesMatch "\.(env|config|conf|ini|log|sql|bak|backup|old|orig|save|tmp|temp|~)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+<FilesMatch "\.(env|config|conf|ini|log|sql|bak|backup|old|orig|save|tmp|temp|~)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# ============================================================
+# PERFORMANCE OPTIMIZATIONS
+# ============================================================
+<IfModule mod_pagespeed.c>
+  ModPagespeed on
+  ModPagespeedEnableFilters rewrite_css,combine_css,move_css_to_head
+  ModPagespeedEnableFilters rewrite_javascript,combine_javascript
+  ModPagespeedEnableFilters collapse_whitespace,remove_comments
+  ModPagespeedEnableFilters insert_dns_prefetch,insert_ga
+  ModPagespeedEnableFilters prioritize_critical_css,defer_javascript
+  ModPagespeedEnableFilters inline_css,inline_import_to_link
+  ModPagespeedEnableFilters inline_javascript,inline_css
+  ModPagespeedEnableFilters rewrite_images,convert_png_to_jpeg,convert_jpeg_to_webp
+  ModPagespeedEnableFilters resize_images,resize_mobile_images
+  ModPagespeedEnableFilters convert_to_webp_lossless,convert_to_webp_animated
+</IfModule>
+
+# ============================================================
+# HSTS PRELOAD
+# ============================================================
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
+</IfModule>
+
+# ============================================================
+# CORS FOR FONTS
+# ============================================================
+<IfModule mod_headers.c>
+  <FilesMatch "\.(ttf|ttc|otf|eot|woff|woff2)$">
+    Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
+</IfModule>
+
+# ============================================================
+# REMOVE SERVER SIGNATURE
+# ============================================================
+ServerSignature Off
+ServerTokens Prod

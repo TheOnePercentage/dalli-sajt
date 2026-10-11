@@ -1,0 +1,249 @@
+/* ==========================================================================
+   LUXURY TABS — Shared Component
+   Enhanced tabs with gold indicator, smooth animations, variants
+   ========================================================================== */
+
+.tabs {
+  border-bottom: 1px solid var(--color-border-primary);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tabs-list {
+  display: flex;
+  gap: var(--tab-gap);
+  min-width: max-content;
+}
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--tab-padding-x);
+  font-size: var(--tab-font-size);
+  font-weight: var(--tab-font-weight);
+  color: var(--color-text-tertiary);
+  background: none;
+  border: none;
+  border-bottom: var(--tab-indicator-height) solid transparent;
+  border-radius: var(--tab-radius) var(--tab-radius) 0 0;
+  cursor: pointer;
+  transition: var(--transition-micro);
+  white-space: nowrap;
+  position: relative;
+  margin-bottom: calc(var(--tab-indicator-height) * -1);
+}
+
+.tab:hover {
+  color: var(--color-text-primary);
+  background: var(--tab-hover-bg);
+}
+
+.tab.active {
+  color: var(--tab-active-color);
+  border-bottom-color: var(--tab-indicator-color);
+  border-bottom-width: var(--tab-indicator-height);
+}
+
+.tab:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  z-index: 1;
+}
+
+.tab-icon {
+  width: var(--tab-icon-size);
+  height: var(--tab-icon-size);
+  stroke: currentColor;
+  flex-shrink: 0;
+}
+
+.tab-badge {
+  margin-left: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--tab-badge-font-size);
+  font-weight: var(--font-bold);
+  border-radius: var(--radius-full);
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-tertiary);
+  min-width: var(--tab-badge-size);
+  text-align: center;
+}
+
+.tab.active .tab-badge {
+  background: var(--color-accent);
+  color: var(--color-text-inverse);
+}
+
+/* Gold Indicator Variant */
+.tabs.gold .tab.active {
+  color: var(--gold-primary);
+  border-bottom-color: var(--gold-primary);
+}
+
+.tabs.gold .tab.active .tab-badge {
+  background: var(--gold-subtle);
+  color: var(--gold-primary);
+  border: 1px solid var(--gold-subtle-hover);
+}
+
+/* Pills Variant */
+.tabs-pills {
+  border-bottom: none;
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-full);
+  padding: var(--space-1);
+  display: inline-flex;
+  gap: var(--space-1);
+}
+
+.tabs-pills .tab {
+  border-radius: var(--radius-full);
+  border-bottom: none;
+  padding: var(--space-2) var(--space-4);
+  margin-bottom: 0;
+}
+
+.tabs-pills .tab.active {
+  background: var(--gold-subtle);
+  color: var(--gold-primary);
+  border-bottom-color: transparent;
+  box-shadow: var(--shadow-sm);
+}
+
+.tabs-pills .tab:hover:not(.active) {
+  background: var(--color-bg-hover);
+}
+
+/* Underline Variant (Minimal) */
+.tabs-underline {
+  border-bottom: 2px solid var(--color-border-primary);
+}
+
+.tabs-underline .tab {
+  padding: var(--space-3) var(--space-4);
+  border-radius: 0;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+}
+
+.tabs-underline .tab.active {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+}
+
+.tabs-underline .tab:hover:not(.active) {
+  background: transparent;
+  color: var(--color-text-primary);
+}
+
+/* Segmented Control Variant */
+.tabs-segmented {
+  display: inline-flex;
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-full);
+  padding: var(--space-1);
+  gap: var(--space-1);
+}
+
+.tabs-segmented .tab {
+  border: none;
+  border-radius: var(--radius-full);
+  padding: var(--space-2) var(--space-5);
+  margin: 0;
+}
+
+.tabs-segmented .tab.active {
+  background: var(--gold-subtle);
+  color: var(--gold-primary);
+  border-bottom: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.tabs-segmented .tab:hover:not(.active) {
+  background: var(--color-bg-hover);
+}
+
+/* Vertical Variant */
+.tabs-vertical {
+  border-bottom: none;
+  border-right: 1px solid var(--color-border-primary);
+  flex-direction: column;
+  width: max-content;
+}
+
+.tabs-vertical .tabs-list {
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.tabs-vertical .tab {
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+  border-bottom: none;
+  border-right: var(--tab-indicator-height) solid transparent;
+  margin-bottom: 0;
+  margin-right: calc(var(--tab-indicator-height) * -1);
+  justify-content: flex-start;
+}
+
+.tabs-vertical .tab.active {
+  border-right-color: var(--tab-indicator-color);
+  border-right-width: var(--tab-indicator-height);
+}
+
+.tabs-vertical .tab:hover:not(.active) {
+  background: var(--tab-hover-bg);
+}
+
+/* Tab Panels */
+.tab-panel {
+  display: none;
+  animation: fadeIn var(--duration-base) var(--ease-out-expo);
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Stagger Animation for Tab Content */
+.tab-panel.stagger {
+  animation: fadeInUp var(--duration-smooth) var(--ease-out-expo) both;
+}
+
+.tab-panel.stagger-1 { animation-delay: calc(var(--stagger-tight) * 1); }
+.tab-panel.stagger-2 { animation-delay: calc(var(--stagger-tight) * 2); }
+.tab-panel.stagger-3 { animation-delay: calc(var(--stagger-tight) * 3); }
+.tab-panel.stagger-4 { animation-delay: calc(var(--stagger-tight) * 4); }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Keyboard Navigation */
+.tab:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  z-index: 1;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .tab,
+  .tab-panel {
+    transition: none;
+    animation: none;
+  }
+}

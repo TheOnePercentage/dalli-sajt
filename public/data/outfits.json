@@ -1,0 +1,114 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-10-09T00:00:00Z",
+  "styleDefinitions": {
+    "business": {
+      "name": "Business",
+      "description": "Formal, polished, professional",
+      "collectionAffinity": ["elegance"],
+      "compatible": ["formal", "evening", "smart-casual"]
+    },
+    "formal": {
+      "name": "Formal",
+      "description": "Black-tie, ceremonial, sophisticated",
+      "collectionAffinity": ["elegance"],
+      "compatible": ["business", "evening"]
+    },
+    "evening": {
+      "name": "Evening",
+      "description": "Cocktail, gala, refined",
+      "collectionAffinity": ["elegance"],
+      "compatible": ["business", "formal"]
+    },
+    "smart-casual": {
+      "name": "Smart Casual",
+      "description": "Polished everyday, work-friendly",
+      "collectionAffinity": ["casual", "elegance"],
+      "compatible": ["business", "everyday", "luxury-essentials"]
+    },
+    "everyday": {
+      "name": "Everyday",
+      "description": "Relaxed, versatile, functional",
+      "collectionAffinity": ["casual"],
+      "compatible": ["smart-casual", "travel", "sport"]
+    },
+    "travel": {
+      "name": "Travel",
+      "description": "Comfortable, packable, versatile",
+      "collectionAffinity": ["casual"],
+      "compatible": ["everyday", "sport", "luxury-essentials"]
+    },
+    "sport": {
+      "name": "Sport",
+      "description": "Active, technical, performance",
+      "collectionAffinity": ["casual"],
+      "compatible": ["everyday", "travel"]
+    },
+    "special-occasion": {
+      "name": "Special Occasion",
+      "description": "Celebratory, refined, intentional",
+      "collectionAffinity": ["elegance"],
+      "compatible": ["formal", "evening"]
+    },
+    "luxury-essentials": {
+      "name": "Luxury Essentials",
+      "description": "Timeless, premium, foundational",
+      "collectionAffinity": ["casual", "elegance"],
+      "compatible": ["smart-casual", "business", "everyday", "travel"]
+    }
+  },
+  "compatibilityRules": {
+    "baseWeights": {
+      "sameStyle": 1.0,
+      "sameCollection": 0.5,
+      "compatibleStyle": 0.8,
+      "genderMatch": 0.2,
+      "categoryComplement": 0.3
+    }
+  },
+  "categoryPairs": {
+    "t-shirts": ["trousers", "tracksuits", "hoodies", "sweatshirts"],
+    "shirts": ["trousers", "blazers"],
+    "hoodies": ["trousers", "tracksuits"],
+    "blazers": ["shirts", "trousers", "coats"]
+  },
+  "outfitTemplates": [
+    {
+      "id": "business-complete-look",
+      "name": "Business Complete Look",
+      "style": "business",
+      "collection": "elegance",
+      "priority": 100,
+      "heroPattern": {
+        "primary": "shirts",
+        "secondary": ["blazers", "trousers"],
+        "accent": ["coats"]
+      },
+      "description": "Polished professional ensemble"
+    },
+    {
+      "id": "formal-complete-look",
+      "name": "Formal Complete Look",
+      "style": "formal",
+      "collection": "elegance",
+      "priority": 95,
+      "description": "Ceremonial elegance"
+    },
+    {
+      "id": "smart-casual-look",
+      "name": "Smart Casual Complete Look",
+      "style": "smart-casual",
+      "collection": "casual",
+      "priority": 90,
+      "description": "Refined everyday style"
+    },
+    {
+      "id": "weekend-look",
+      "name": "Weekend Casual Look",
+      "style": "everyday",
+      "collection": "casual",
+      "priority": 85,
+      "description": "Comfortable relaxation"
+    }
+  ]
+}

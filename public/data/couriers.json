@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "couriers": [
+    {"id": "posta_sr", "name": "Pošta Srbije", "enabled": true, "apiConnected": false, "labelPrinting": true, "trackingSync": true},
+    {"id": "bex", "name": "BEX", "enabled": true, "apiConnected": false, "labelPrinting": true, "trackingSync": true},
+    {"id": "aks", "name": "AKS", "enabled": true, "apiConnected": false, "labelPrinting": true, "trackingSync": true},
+    {"id": "cityexpress", "name": "City Express", "enabled": true, "apiConnected": false, "labelPrinting": true, "trackingSync": true},
+    {"id": "dexpress", "name": "D Express", "enabled": true, "apiConnected": false, "labelPrinting": true, "trackingSync": true},
+    {"id": "dailyexpress", "name": "Daily Express", "enabled": true, "apiConnected": false, "labelPrinting": true, "trackingSync": true},
+    {"id": "xexpress", "name": "X Express", "enabled": true, "apiConnected": false, "labelPrinting": true, "trackingSync": true},
+    {"id": "dhl", "name": "DHL", "enabled": true, "apiConnected": false, "labelPrinting": true, "trackingSync": true},
+    {"id": "ups", "name": "UPS", "enabled": true, "apiConnected": false, "labelPrinting": true, "trackingSync": true},
+    {"id": "fedex", "name": "FedEx", "enabled": true, "apiConnected": false, "labelPrinting": true, "trackingSync": true}
+  ]
+}

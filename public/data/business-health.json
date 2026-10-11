@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "weights": {
+    "revenue": 0.25,
+    "inventory": 0.2,
+    "membership": 0.15,
+    "growth": 0.2,
+    "operational": 0.2
+  },
+  "thresholds": {
+    "excellent": 85,
+    "good": 70,
+    "fair": 50,
+    "poor": 0
+  }
+}

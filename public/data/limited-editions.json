@@ -1,0 +1,139 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-10-09T00:00:00Z",
+  "limitedEditions": {
+    "enabled": true,
+    "types": {
+      "numbered": {
+        "id": "numbered",
+        "label": "Numbered Edition",
+        "labelSr": "Nummerizovano Izdanje",
+        "description": "Individually numbered pieces with certificate of authenticity",
+        "descriptionSr": "Individualno brojani komadi sa sertifikatom autentičnosti",
+        "numberingFormat": "{tier}-{year}-{sequence:04d}",
+        "certificate": true,
+        "certificateTemplate": "certificate-numbered.html",
+        "packaging": "premium-box",
+        "allocation": "tier-based",
+        "maxPerCustomer": {
+          "member": 1,
+          "silver": 2,
+          "gold": 3,
+          "black": 5,
+          "private-client": 10,
+          "elite-client": 999
+        },
+        "priorityTiers": ["elite-client", "private-client", "black", "gold", "silver", "member"],
+        "waitlist": true
+      },
+      "seasonal": {
+        "id": "seasonal",
+        "label": "Seasonal Release",
+        "labelSr": "Sezonsko Izdanje",
+        "description": "Limited production for specific season",
+        "descriptionSr": "Limitirana proizvodnja za određenu sezonu",
+        "numberingFormat": "SEAS-{year}-{season}-{sequence:04d}",
+        "certificate": false,
+        "packaging": "seasonal-box",
+        "allocation": "tier-based",
+        "maxPerCustomer": {
+          "member": 2,
+          "silver": 3,
+          "gold": 5,
+          "black": 10,
+          "private-client": 20,
+          "elite-client": 999
+        },
+        "priorityTiers": ["elite-client", "private-client", "black", "gold", "silver", "member"],
+        "seasons": ["spring-summer", "autumn-winter", "resort", "pre-fall"]
+      },
+      "collector": {
+        "id": "collector",
+        "label": "Collector Edition",
+        "labelSr": "Kolekcionarsko Izdanje",
+        "description": "Special packaging, certificates, exclusive extras",
+        "descriptionSr": "Specijalno pakovanje, sertifikati, ekskluzivni dodaci",
+        "numberingFormat": "COLL-{year}-{sequence:04d}",
+        "certificate": true,
+        "certificateTemplate": "certificate-collector.html",
+        "packaging": "collector-case",
+        "extras": ["art-print", "fabric-swatch", "designer-note", "archive-booklet"],
+        "allocation": "invite-only",
+        "maxPerCustomer": {
+          "member": 0,
+          "silver": 0,
+          "gold": 1,
+          "black": 2,
+          "private-client": 5,
+          "elite-client": 999
+        },
+        "priorityTiers": ["elite-client", "private-client", "black", "gold"],
+        "waitlist": true
+      },
+      "exclusive-drop": {
+        "id": "exclusive-drop",
+        "label": "Exclusive Drop",
+        "labelSr": "Ekskluzivni Drop",
+        "description": "Surprise release for specific tiers",
+        "descriptionSr": "Iznenadna objava za određene tier-eve",
+        "numberingFormat": "DROP-{year}-{month}-{sequence:04d}",
+        "certificate": false,
+        "packaging": "drop-box",
+        "allocation": "tier-based",
+        "maxPerCustomer": {
+          "member": 1,
+          "silver": 2,
+          "gold": 3,
+          "black": 5,
+          "private-client": 10,
+          "elite-client": 999
+        },
+        "priorityTiers": ["elite-client", "private-client", "black", "gold", "silver"],
+        "surprise": true,
+        "announcementHoursBefore": 2
+      },
+      "archive": {
+        "id": "archive",
+        "label": "Archive Re-release",
+        "labelSr": "Arhivsko Ponovo Izdanje",
+        "description": "Historical pieces reissued with modern touches",
+        "descriptionSr": "Istorijski komadi ponovo izdati sa modernim dodacima",
+        "numberingFormat": "ARCH-{originalYear}-{year}-{sequence:04d}",
+        "certificate": true,
+        "certificateTemplate": "certificate-archive.html",
+        "packaging": "archive-box",
+        "allocation": "tier-based",
+        "maxPerCustomer": {
+          "member": 1,
+          "silver": 2,
+          "gold": 3,
+          "black": 5,
+          "private-client": 10,
+          "elite-client": 999
+        },
+        "priorityTiers": ["elite-client", "private-client", "black", "gold", "silver", "member"],
+        "heritageStory": true
+      }
+    },
+    "certificateOfAuthenticity": {
+      "enabled": true,
+      "digital": true,
+      "physical": true,
+      "blockchainReady": true,
+      "qrCode": true,
+      "nfcTag": false,
+      "verificationUrl": "https://dalli.rs/verify/"
+    },
+    "inventory": {
+      "reservedForTiers": true,
+      "reservationWindowHours": 48,
+      "autoReleaseToNextTier": true,
+      "minimumStockAlert": 5
+    },
+    "pricing": {
+      "tierPricing": false,
+      "earlyAccessPriceLock": true,
+      "memberDiscount": false
+    }
+  }
+}

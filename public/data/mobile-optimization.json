@@ -1,0 +1,12 @@
+{
+  "version": "1.0",
+  "updatedAt": "2026-10-10T00:00:00Z",
+  "mobileFirst": true,
+  "pwaEnabled": true,
+  "biometricAuthEnabled": true,
+  "adminWorkspaceEnabled": true,
+  "offlineReadinessEnabled": true,
+  "touchTargets": 44,
+  "safeAreaSupport": true,
+  "foldableSupport": true
+}

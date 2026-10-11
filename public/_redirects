@@ -1,0 +1,81 @@
+# 301 Redirects for Luxury Collection Migration
+# Generated from old product URLs to new collection-based URLs
+# Place in .htaccess or Netlify _redirects
+
+# --- API: orders (real, Blobs-backed) - storefront + admin ---
+/api/orders/*                 /.netlify/functions/orders  200
+/api/orders                   /.netlify/functions/orders  200
+/api/v1/admin/orders/*        /.netlify/functions/orders  200
+/api/v1/admin/orders          /.netlify/functions/orders  200
+# --- API: product visibility (storefront overlay + admin) ---
+/api/products-visibility                /.netlify/functions/products-visibility  200
+/api/v1/admin/products-visibility/*     /.netlify/functions/products-visibility  200
+/api/v1/admin/products-visibility       /.netlify/functions/products-visibility  200
+# --- API: analytics (storefront tracking + admin reporting) ---
+/api/analytics/*                        /.netlify/functions/analytics  200
+/api/analytics                          /.netlify/functions/analytics  200
+/api/v1/admin/analytics/*               /.netlify/functions/analytics  200
+/api/v1/admin/analytics                 /.netlify/functions/analytics  200
+# --- API: social metrics (admin) ---
+/api/v1/admin/social-metrics/*          /.netlify/functions/social-metrics  200
+/api/v1/admin/social-metrics            /.netlify/functions/social-metrics  200
+
+# Old product pages -> New collection URLs
+/proizvod-osnovna-majica.html                    /casual/men/t-shirts/osnovna-majica.html  301
+/proizvod-dugorukava-majica.html                 /casual/men/t-shirts/dugorukava-majica.html  301
+/proizvod-muska-sportska-trenerka.html           /casual/men/tracksuits/muska-sportska-trenerka.html  301
+/proizvod-zenska-kapuljaca-trenerka.html         /casual/women/tracksuits/zenska-kapuljaca-trenerka.html  301
+/proizvod-muska-duks-hoodie.html                 /casual/men/hoodies/muska-duks-hoodie.html  301
+/proizvod-zenska-duks-hoodie.html                /casual/women/hoodies/zenska-duks-hoodie.html  301
+/proizvod-carape.html                            /casual/men/essentials/carape.html  301
+/proizvod-salica-za-kafU.html                    /casual/unisex/accessories/salica-za-kafU.html  301
+
+# Old category pages -> New collection URLs
+/muska-garderoba.html                            /casual/men/  301
+/zenska-garderoba.html                           /casual/women/  301
+/dukseri.html                                    /casual/unisex/hoodies/  301
+/trenerke.html                                   /casual/unisex/tracksuits/  301
+/majice.html                                     /casual/unisex/t-shirts/  301
+
+# Legacy category anchor redirects
+/muska-garderoba.html#majice                     /casual/men/t-shirts/  301
+/muska-garderoba.html#trenerke                   /casual/men/tracksuits/  301
+/muska-garderoba.html#dukseri                    /casual/men/hoodies/  301
+/zenska-garderoba.html#majice                    /casual/women/t-shirts/  301
+/zenska-garderoba.html#trenerke                  /casual/women/tracksuits/  301
+/zenska-garderoba.html#dukseri                   /casual/women/hoodies/  301
+
+# Admin redirects (keep existing)
+/admin/*                                         /admin-login.html  302
+
+# Search redirects
+/proizvodi?sort=bestselling                      /proizvodi?sort=bestselling  200
+/proizvodi                                       /casual/unisex/  301
+
+# Collection index pages
+/casual                                          /casual/  301
+/elegance                                        /elegance/  301
+
+# Future elegance collection redirects (placeholder)
+/elegance/men/suits                              /elegance/men/suits/  301
+/elegance/women/dresses                          /elegance/women/dresses/  301
+/elegance/men/blazers                            /elegance/men/blazers/  301
+/elegance/women/blazers                          /elegance/women/blazers/  301
+/elegance/men/shirts                             /elegance/men/shirts/  301
+/elegance/women/shirts                           /elegance/women/shirts/  301
+/elegance/men/coats                              /elegance/men/coats/  301
+/elegance/women/coats                            /elegance/women/coats/  301
+/elegance/men/trousers                           /elegance/men/trousers/  301
+/elegance/women/trousers                         /elegance/women/trousers/  301
+
+# Style/occasion pages (future)
+/business-style                                  /style/business/  301
+/formal-style                                    /style/formal/  301
+/smart-casual-style                              /style/smart-casual/  301
+/luxury-essentials-style                         /style/luxury-essentials/  301
+/special-occasion-style                          /style/special-occasion/  301
+
+# Collection pages
+/collections/                                    /collections/index.html  200
+/collections/:slug                               /collections/:slug.html  200
+/collections/:slug/                              /collections/:slug.html  200

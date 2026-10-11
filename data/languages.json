@@ -1,0 +1,333 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-10-09T00:00:00Z",
+  "languages": {
+    "enabled": true,
+    "defaultLanguage": "sr",
+    "fallbackLanguage": "en",
+    "autoDetect": true,
+    "urlStructure": "path-prefix",
+    "supportedLanguages": {
+      "sr": {
+        "code": "sr",
+        "name": "Serbian (Cyrillic)",
+        "nameLocal": "Српски (ћирилица)",
+        "enabled": true,
+        "primaryFor": ["RS"],
+        "secondaryFor": ["BA", "ME", "MK"],
+        "direction": "ltr",
+        "script": "Cyrl",
+        "locale": "sr-RS",
+        "dateFormat": "DD.MM.YYYY",
+        "timeFormat": "HH:mm",
+        "numberFormat": {
+          "decimal": ",",
+          "thousands": ".",
+          "currency": "RSD"
+        },
+        "pluralRules": "slavic",
+        "rtl": false,
+        "fontSupport": ["Inter", "Cormorant Garamond", "Playfair Display"],
+        "translationStatus": {
+          "core": 100,
+          "products": 95,
+          "editorial": 80,
+          "legal": 100
+        }
+      },
+      "sr-Latn": {
+        "code": "sr-Latn",
+        "name": "Serbian (Latin)",
+        "nameLocal": "Srpski (latinica)",
+        "enabled": true,
+        "primaryFor": [],
+        "secondaryFor": ["RS", "BA", "ME", "MK"],
+        "direction": "ltr",
+        "script": "Latn",
+        "locale": "sr-Latn-RS",
+        "dateFormat": "DD.MM.YYYY",
+        "timeFormat": "HH:mm",
+        "numberFormat": {
+          "decimal": ",",
+          "thousands": ".",
+          "currency": "RSD"
+        },
+        "pluralRules": "slavic",
+        "rtl": false,
+        "fontSupport": ["Inter", "Cormorant Garamond", "Playfair Display"],
+        "translationStatus": {
+          "core": 100,
+          "products": 90,
+          "editorial": 75,
+          "legal": 100
+        }
+      },
+      "bs": {
+        "code": "bs",
+        "name": "Bosnian",
+        "nameLocal": "Bosanski",
+        "enabled": true,
+        "primaryFor": ["BA"],
+        "secondaryFor": [],
+        "direction": "ltr",
+        "script": "Latn",
+        "locale": "bs-BA",
+        "dateFormat": "DD.MM.YYYY",
+        "timeFormat": "HH:mm",
+        "numberFormat": {
+          "decimal": ",",
+          "thousands": ".",
+          "currency": "BAM"
+        },
+        "pluralRules": "slavic",
+        "rtl": false,
+        "fontSupport": ["Inter", "Cormorant Garamond", "Playfair Display"],
+        "translationStatus": {
+          "core": 85,
+          "products": 70,
+          "editorial": 50,
+          "legal": 80
+        }
+      },
+      "hr": {
+        "code": "hr",
+        "name": "Croatian",
+        "nameLocal": "Hrvatski",
+        "enabled": true,
+        "primaryFor": ["HR"],
+        "secondaryFor": ["BA"],
+        "direction": "ltr",
+        "script": "Latn",
+        "locale": "hr-HR",
+        "dateFormat": "DD.MM.YYYY",
+        "timeFormat": "HH:mm",
+        "numberFormat": {
+          "decimal": ",",
+          "thousands": ".",
+          "currency": "EUR"
+        },
+        "pluralRules": "slavic",
+        "rtl": false,
+        "fontSupport": ["Inter", "Cormorant Garamond", "Playfair Display"],
+        "translationStatus": {
+          "core": 80,
+          "products": 65,
+          "editorial": 45,
+          "legal": 75
+        }
+      },
+      "mk": {
+        "code": "mk",
+        "name": "Macedonian",
+        "nameLocal": "Македонски",
+        "enabled": true,
+        "primaryFor": ["MK"],
+        "secondaryFor": [],
+        "direction": "ltr",
+        "script": "Cyrl",
+        "locale": "mk-MK",
+        "dateFormat": "DD.MM.YYYY",
+        "timeFormat": "HH:mm",
+        "numberFormat": {
+          "decimal": ",",
+          "thousands": ".",
+          "currency": "MKD"
+        },
+        "pluralRules": "slavic",
+        "rtl": false,
+        "fontSupport": ["Inter", "Cormorant Garamond", "Playfair Display"],
+        "translationStatus": {
+          "core": 75,
+          "products": 60,
+          "editorial": 40,
+          "legal": 70
+        }
+      },
+      "sl": {
+        "code": "sl",
+        "name": "Slovenian",
+        "nameLocal": "Slovenščina",
+        "enabled": true,
+        "primaryFor": ["SI"],
+        "secondaryFor": [],
+        "direction": "ltr",
+        "script": "Latn",
+        "locale": "sl-SI",
+        "dateFormat": "DD.MM.YYYY",
+        "timeFormat": "HH:mm",
+        "numberFormat": {
+          "decimal": ",",
+          "thousands": ".",
+          "currency": "EUR"
+        },
+        "pluralRules": "slavic",
+        "rtl": false,
+        "fontSupport": ["Inter", "Cormorant Garamond", "Playfair Display"],
+        "translationStatus": {
+          "core": 70,
+          "products": 55,
+          "editorial": 35,
+          "legal": 65
+        }
+      },
+      "de": {
+        "code": "de",
+        "name": "German",
+        "nameLocal": "Deutsch",
+        "enabled": true,
+        "primaryFor": ["DE", "AT"],
+        "secondaryFor": ["CH"],
+        "direction": "ltr",
+        "script": "Latn",
+        "locale": "de-DE",
+        "dateFormat": "DD.MM.YYYY",
+        "timeFormat": "HH:mm",
+        "numberFormat": {
+          "decimal": ",",
+          "thousands": ".",
+          "currency": "EUR"
+        },
+        "pluralRules": "germanic",
+        "rtl": false,
+        "fontSupport": ["Inter", "Cormorant Garamond", "Playfair Display"],
+        "translationStatus": {
+          "core": 60,
+          "products": 40,
+          "editorial": 25,
+          "legal": 50
+        }
+      },
+      "fr": {
+        "code": "fr",
+        "name": "French",
+        "nameLocal": "Français",
+        "enabled": true,
+        "primaryFor": ["FR"],
+        "secondaryFor": ["CH", "AE"],
+        "direction": "ltr",
+        "script": "Latn",
+        "locale": "fr-FR",
+        "dateFormat": "DD/MM/YYYY",
+        "timeFormat": "HH:mm",
+        "numberFormat": {
+          "decimal": ",",
+          "thousands": " ",
+          "currency": "EUR"
+        },
+        "pluralRules": "romance",
+        "rtl": false,
+        "fontSupport": ["Inter", "Cormorant Garamond", "Playfair Display"],
+        "translationStatus": {
+          "core": 55,
+          "products": 35,
+          "editorial": 20,
+          "legal": 45
+        }
+      },
+      "it": {
+        "code": "it",
+        "name": "Italian",
+        "nameLocal": "Italiano",
+        "enabled": true,
+        "primaryFor": ["IT"],
+        "secondaryFor": ["CH"],
+        "direction": "ltr",
+        "script": "Latn",
+        "locale": "it-IT",
+        "dateFormat": "DD/MM/YYYY",
+        "timeFormat": "HH:mm",
+        "numberFormat": {
+          "decimal": ",",
+          "thousands": ".",
+          "currency": "EUR"
+        },
+        "pluralRules": "romance",
+        "rtl": false,
+        "fontSupport": ["Inter", "Cormorant Garamond", "Playfair Display"],
+        "translationStatus": {
+          "core": 50,
+          "products": 30,
+          "editorial": 15,
+          "legal": 40
+        }
+      },
+      "en": {
+        "code": "en",
+        "name": "English",
+        "nameLocal": "English",
+        "enabled": true,
+        "primaryFor": ["US", "GB"],
+        "secondaryFor": ["RS", "BA", "ME", "HR", "MK", "SI", "DE", "AT", "CH", "FR", "IT", "AE"],
+        "direction": "ltr",
+        "script": "Latn",
+        "locale": "en-US",
+        "dateFormat": "MM/DD/YYYY",
+        "timeFormat": "hh:mm A",
+        "numberFormat": {
+          "decimal": ".",
+          "thousands": ",",
+          "currency": "USD"
+        },
+        "pluralRules": "english",
+        "rtl": false,
+        "fontSupport": ["Inter", "Cormorant Garamond", "Playfair Display"],
+        "translationStatus": {
+          "core": 100,
+          "products": 100,
+          "editorial": 100,
+          "legal": 100
+        }
+      },
+      "ar": {
+        "code": "ar",
+        "name": "Arabic",
+        "nameLocal": "العربية",
+        "enabled": true,
+        "primaryFor": ["AE"],
+        "secondaryFor": [],
+        "direction": "rtl",
+        "script": "Arab",
+        "locale": "ar-AE",
+        "dateFormat": "DD/MM/YYYY",
+        "timeFormat": "HH:mm",
+        "numberFormat": {
+          "decimal": ".",
+          "thousands": ",",
+          "currency": "AED"
+        },
+        "pluralRules": "arabic",
+        "rtl": true,
+        "fontSupport": ["Inter", "Noto Sans Arabic", "Amiri"],
+        "translationStatus": {
+          "core": 30,
+          "products": 20,
+          "editorial": 10,
+          "legal": 25
+        }
+      }
+    },
+    "countryLanguageMatrix": {
+      "RS": ["sr", "sr-Latn", "en"],
+      "BA": ["bs", "sr", "sr-Latn", "hr", "en"],
+      "ME": ["sr", "sr-Latn", "en"],
+      "HR": ["hr", "en"],
+      "MK": ["mk", "sr", "sr-Latn", "en"],
+      "SI": ["sl", "en"],
+      "DE": ["de", "en"],
+      "AT": ["de", "en"],
+      "CH": ["de", "fr", "it", "en"],
+      "FR": ["fr", "en"],
+      "IT": ["it", "en"],
+      "GB": ["en"],
+      "US": ["en", "es"],
+      "AE": ["ar", "en"]
+    },
+    "translation": {
+      "provider": "manual",
+      "reviewWorkflow": true,
+      "autoFallback": true,
+      "fallbackChain": ["sr", "en"],
+      "missingTranslationHandling": "show-fallback-with-indicator"
+    }
+  }
+}

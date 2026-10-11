@@ -1,0 +1,147 @@
+import { DOM_EVENTS, emit } from '../core/events.js';
+import { createSignal } from '../core/signals.js';
+import { getCryptoDiscountRateSync } from '../services/payment-incentives.js';
+
+export const CART_STORAGE_KEY = 'dalli_cart';
+export const FREE_SHIPPING_THRESHOLD = 5000;
+// Default/fallback rate. The live rate is owner-configurable and resolved
+// dynamically via getCryptoDiscountRateSync() (Experience Center -> Payment Incentives).
+export const CRYPTO_DISCOUNT_RATE = 0.15;
+
+export const cartSignal = createSignal(JSON.parse(localStorage.getItem(CART_STORAGE_KEY) || '[]'));
+
+cartSignal.subscribe(cart => {
+  localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
+  emit(DOM_EVENTS.CART_CHANGED, { cart, itemCount: cart.reduce((sum, item) => sum + item.qty, 0) });
+});
+
+const generateVariantId = (productId, color, size) => `${productId}-${color}-${size}`;
+
+export const getCart = () => cartSignal.get();
+
+/**
+ * True when the owner disabled shipping payment for crypto in the Experience Center.
+ */
+export const isCryptoShippingFree = () => {
+  const p = getPublicPayments();
+  return !!(p && p.cryptoShippingPaid === false);
+};
+
+/**
+ * Reads the public payment settings injected by the Netlify edge function
+ * (`#dalli-experience-data` data island), falling back to the local-first
+ * Experience Center config so owner changes apply immediately in the browser.
+ */
+function getPublicPayments() {
+  try {
+    const island = document.getElementById('dalli-experience-data');
+    if (island && island.textContent) {
+      const data = JSON.parse(island.textContent);
+      if (data && data.payments) return data.payments;
+    }
+  } catch (err) {
+    // ignore malformed island
+  }
+  try {
+    const raw =
+      typeof localStorage !== 'undefined' ? localStorage.getItem('dalli_experience_config') : null;
+    if (raw) {
+      const cfg = JSON.parse(raw);
+      if (cfg && cfg.payments) {
+        return {
+          store: cfg.payments.store || null,
+          cryptoShippingPaid: cfg.payments.cryptoShippingPaid !== false,
+        };
+      }
+    }
+  } catch (err) {
+    // ignore
+  }
+  return null;
+}
+
+export const getCartTotals = (userCryptoWallet = false) => {
+  const cart = cartSignal.get();
+  const subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+  let shipping = subtotal >= FREE_SHIPPING_THRESHOLD ? 0 : 290;
+  const payments = getPublicPayments();
+  if (userCryptoWallet && payments && payments.cryptoShippingPaid === false) {
+    shipping = 0;
+  }
+  const cryptoDiscount = userCryptoWallet ? subtotal * getCryptoDiscountRateSync() : 0;
+  const total = subtotal + shipping - cryptoDiscount;
+  const itemCount = cart.reduce((sum, item) => sum + item.qty, 0);
+  const freeShippingRemaining = Math.max(0, FREE_SHIPPING_THRESHOLD - subtotal);
+  return { subtotal, shipping, cryptoDiscount, total, itemCount, freeShippingRemaining };
+};
+
+export const addToCart = (product, variant, qty = 1) => {
+  const cart = [...cartSignal.get()];
+  const variantId = generateVariantId(product.id, variant.color, variant.size);
+  const existingIndex = cart.findIndex(item => item.variantId === variantId);
+
+  if (existingIndex >= 0) {
+    cart[existingIndex].qty += qty;
+    emit(DOM_EVENTS.CART_ITEM_UPDATED, { item: cart[existingIndex], cart });
+  } else {
+    const newItem = {
+      id: product.id,
+      variantId,
+      name: product.name,
+      image: variant.image || product.images?.main || '/images/placeholder.jpg',
+      price: variant.price || product.price,
+      color: variant.color,
+      size: variant.size,
+      qty,
+      cryptoEligible: true,
+    };
+    cart.push(newItem);
+    emit(DOM_EVENTS.CART_ITEM_ADDED, { item: newItem, cart });
+  }
+
+  cartSignal.set(cart);
+  return cart;
+};
+
+export const updateCartQty = (variantId, delta) => {
+  const cart = [...cartSignal.get()];
+  const index = cart.findIndex(item => item.variantId === variantId);
+  if (index === -1) return cart;
+
+  const newQty = Math.max(1, cart[index].qty + delta);
+  if (newQty <= 1 && delta < 0) {
+    const removed = cart.splice(index, 1)[0];
+    emit(DOM_EVENTS.CART_ITEM_REMOVED, { item: removed, cart });
+  } else {
+    cart[index].qty = newQty;
+    emit(DOM_EVENTS.CART_ITEM_UPDATED, { item: cart[index], cart });
+  }
+
+  cartSignal.set(cart);
+  return cart;
+};
+
+export const removeFromCart = variantId => {
+  const cart = [...cartSignal.get()];
+  const index = cart.findIndex(item => item.variantId === variantId);
+  if (index === -1) return cart;
+
+  const removed = cart.splice(index, 1)[0];
+  cartSignal.set(cart);
+  emit(DOM_EVENTS.CART_ITEM_REMOVED, { item: removed, cart });
+  return cart;
+};
+
+export const clearCart = () => {
+  cartSignal.set([]);
+  emit(DOM_EVENTS.CART_CLEARED, { cart: [] });
+};
+
+export const findCartItem = variantId =>
+  cartSignal.get().find(item => item.variantId === variantId);
+
+export const hasItems = () => cartSignal.get().length > 0;
+
+export const getItemCount = () => cartSignal.get().reduce((sum, item) => sum + item.qty, 0);
+
+export const subscribeToCart = fn => cartSignal.subscribe(fn);

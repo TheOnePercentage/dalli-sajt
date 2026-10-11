@@ -1,0 +1,237 @@
+/* ============================================================
+   DALLI LOGO SYSTEM — CSS Custom Properties & Utilities
+   Refined for Luxury Perception
+   ============================================================ */
+
+:root {
+  /* Logo Heights - Refined for Luxury (smaller, more elegant) */
+  --logo-header-height: 32px;           /* Was 56px - now Hermès/Loro Piana scale */
+  --logo-header-height-mobile: 24px;    /* Was 44px */
+  --logo-footer-height: 28px;           /* Was 32px */
+  --logo-large-height: 64px;            /* Was 80px */
+  
+  /* Hero Wordmark Constraints - logo3 */
+  --logo-wordmark-min-width: 280px;
+  --logo-wordmark-max-width: 800px;
+  --logo-wordmark-tablet-width: 560px;
+  
+  /* Logo Aspect Ratios */
+  --logo-master-ratio: 1.215;   /* 763/628 - logo1 */
+  --logo-dark-ratio: 0.797;     /* 1020/1280 - logo2 */
+  --logo-wordmark-ratio: 3.891; /* 1280/329 - logo3 */
+  
+  /* Header Heights - Reduced for elegance */
+  --nav-height: 60px;             /* Was 72px */
+  --nav-height-mobile: 56px;      /* Was 64px */
+  
+  /* Logo Container Spacing - More breathing room */
+  --logo-hero-padding-y: 5rem;    /* Was 4rem */
+  --logo-hero-padding-x: 3rem;    /* Was 2rem */
+  --logo-section-gap: 4rem;       /* Was 3rem */
+  --logo-header-gap: 1.5rem;      /* Gap around header logo */
+}
+
+/* ============================================================
+   Logo Base Styles
+   ============================================================ */
+
+.logo {
+  display: inline-block;
+  line-height: 0;
+}
+
+.logo__img {
+  display: block;
+  height: auto;
+  width: auto;
+  max-width: 100%;
+}
+
+/* ============================================================
+   Header Logo (logo1 - master)
+   Desktop: 32px, Mobile: 24px
+   Prioritize elegance over size
+   ============================================================ */
+
+.header__logo {
+  padding: 0 var(--logo-header-gap);
+}
+
+.header__logo .logo__img {
+  height: var(--logo-header-height);
+  width: auto;
+}
+
+@media (max-width: 640px) {
+  .header__logo .logo__img {
+    height: var(--logo-header-height-mobile);
+  }
+}
+
+/* ============================================================
+   Header - Reduced Height
+   ============================================================ */
+
+.header {
+  height: var(--nav-height);
+}
+
+@media (max-width: 767px) {
+  .header {
+    height: var(--nav-height-mobile);
+  }
+}
+
+/* ============================================================
+   Footer Logo (logo1 - master) - Refined
+   ============================================================ */
+
+.footer__logo .logo__img {
+  height: var(--logo-footer-height);
+}
+
+/* Footer brand column - minimal, logo-forward */
+.footer-col.footer-brand {
+  padding-top: var(--space-4);
+}
+
+.footer-col.footer-brand .footer__logo-link {
+  display: block;
+  margin-bottom: var(--space-6);
+}
+
+.footer-tagline {
+  display: none; /* Remove commercial tagline */
+}
+
+/* Social icons smaller than logo */
+.footer-social-link {
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.footer-social-link svg {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+/* ============================================================
+   Hero Wordmark (logo3 - horizontal wordmark)
+   Large luxury brand statement
+   ============================================================ */
+
+.hero__wordmark .logo__img {
+  height: auto;
+  max-width: var(--logo-wordmark-max-width);
+  min-width: var(--logo-wordmark-min-width);
+  width: 80%;
+}
+
+@media (max-width: 768px) {
+  .hero__wordmark .logo__img {
+    width: 90%;
+    min-width: var(--logo-wordmark-min-width);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__wordmark .logo__img {
+    width: 95%;
+  }
+}
+
+/* ============================================================
+   Dark Variant (logo2 - elegance sections)
+   Used on dark backgrounds, Elegance collection
+   ============================================================ */
+
+.logo--dark .logo__img {
+  /* Dark variant handles its own contrast via image */
+}
+
+/* Elegance collection pages - use dark variant in header */
+.elegance .header__logo .logo__img,
+.header--elegance .header__logo .logo__img {
+  content: url('/images/logos/logo2-dark@1x.webp');
+}
+
+@media (min-resolution: 2dppx) {
+  .elegance .header__logo .logo__img,
+  .header--elegance .header__logo .logo__img {
+    content: url('/images/logos/logo2-dark@2x.webp');
+  }
+}
+
+/* ============================================================
+   Large Logo
+   ============================================================ */
+
+.logo--lg .logo__img {
+  height: var(--logo-large-height);
+}
+
+/* ============================================================
+   Logo Container Helpers
+   ============================================================ */
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-container--hero {
+  padding: var(--logo-hero-padding-y) var(--logo-hero-padding-x);
+  isolation: isolate;
+}
+
+.logo-container--centered {
+  text-align: center;
+}
+
+/* ============================================================
+   Responsive Image Fallbacks
+   ============================================================ */
+
+.logo-master-responsive {
+  --height: var(--logo-header-height);
+  height: var(--height);
+  width: auto;
+  aspect-ratio: var(--logo-master-ratio);
+}
+
+@media (max-width: 640px) {
+  .logo-master-responsive {
+    --height: var(--logo-header-height-mobile);
+  }
+}
+
+.logo-wordmark-responsive {
+  height: auto;
+  max-width: var(--logo-wordmark-max-width);
+  min-width: var(--logo-wordmark-min-width);
+  width: 80%;
+  aspect-ratio: var(--logo-wordmark-ratio);
+}
+
+/* ============================================================
+   Print Styles
+   ============================================================ */
+
+@media print {
+  .logo__img {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+/* ============================================================
+   Reduced Motion
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .logo__img {
+    transition: none !important;
+    animation: none !important;
+  }
+}

@@ -1,0 +1,45 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DALLI - Premium Online Garderoba">
+  <defs>
+    <linearGradient id="ogBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0f"/>
+      <stop offset="50%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#0f0f1a"/>
+    </linearGradient>
+    <linearGradient id="ogAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e74c3c"/>
+      <stop offset="50%" style="stop-color:#f7931a"/>
+      <stop offset="100%" style="stop-color:#e74c3c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#ogBg)"/>
+  <!-- Subtle pattern -->
+  <g opacity="0.03">
+    <pattern id="ogGrid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="white" stroke-width="0.5"/>
+    </pattern>
+    <rect width="1200" height="630" fill="url(#ogGrid)"/>
+  </g>
+  <!-- Content -->
+  <g transform="translate(600, 280)" text-anchor="middle">
+    <!-- Logo -->
+    <circle cx="0" cy="-60" r="50" fill="url(#ogAccent)"/>
+    <text x="0" y="-40" font-family="system-ui, sans-serif" font-size="40" font-weight="bold" fill="white" text-anchor="middle">📦</text>
+    <!-- Title -->
+    <text x="0" y="30" font-family="system-ui, sans-serif" font-size="48" font-weight="700" fill="white">DALLI</text>
+    <text x="0" y="90" font-family="system-ui, sans-serif" font-size="28" fill="rgba(255,255,255,0.8)">Premium Online Garderoba</text>
+    <!-- Features -->
+    <g font-family="system-ui, sans-serif" font-size="18" fill="rgba(255,255,255,0.7)">
+      <text x="-300" y="150" text-anchor="end">✓ 100% Organski Pamuk</text>
+      <text x="300" y="150" text-anchor="start">✓ Besplatna Dostava >5.000 RSD</text>
+      <text x="-300" y="190" text-anchor="end">✓ Plaćanje Pri Preuzimanju</text>
+      <text x="300" y="190" text-anchor="start">✓ 30 Dana Za Vraćanje</text>
+      <text x="-300" y="230" text-anchor="end">✓ 15% Popust Sa Kripto</text>
+      <text x="300" y="230" text-anchor="start">✓ 10.000+ Isporučenih Paketa</text>
+    </g>
+    <!-- CTA -->
+    <rect x="-180" y="280" width="360" height="60" rx="30" fill="url(#ogAccent)"/>
+    <text x="0" y="318" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="white" text-anchor="middle">Kupi Sada — Uštedite 15% Sa Kripto</text>
+    <!-- Domain -->
+    <text x="0" y="380" font-family="system-ui, sans-serif" font-size="20" fill="rgba(255,255,255,0.5)">dalli.rs</text>
+  </g>
+</svg>

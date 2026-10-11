@@ -1,0 +1,168 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-10-09T00:00:00Z",
+  "looks": [
+    {
+      "id": "business-pro",
+      "name": "Business Pro",
+      "description": "Timeless elegance for the modern executive",
+      "style": "business",
+      "collection": "elegance",
+      "gender": ["men"],
+      "season": "year-round",
+      "priority": 100,
+      "heroImage": "/images/looks/business-pro-hero.jpg",
+      "seo": {
+        "metaTitle": "Business Pro - Elegance Look | DALLI",
+        "metaDescription": "Curated business ensemble from DALLI Elegance collection",
+        "keywords": ["business look", "elegance", "workwear", "formal"]
+      },
+      "products": [],
+      "components": {
+        "top": { "required": true, "categories": ["shirts"] },
+        "jacket": { "required": true, "categories": ["blazers"] },
+        "bottom": { "required": true, "categories": ["trousers"] },
+        "outerwear": { "required": false, "categories": ["coats"] }
+      }
+    },
+    {
+      "id": "formal-evening",
+      "name": "Formal Evening",
+      "description": "Refined sophistication for special occasions",
+      "style": "formal",
+      "collection": "elegance",
+      "gender": ["men"],
+      "season": "year-round",
+      "priority": 95,
+      "seo": {
+        "metaTitle": "Formal Evening - Elegance Look | DALLI",
+        "metaDescription": "Curated formal ensemble for special occasions",
+        "keywords": ["formal look", "evening", "elegance"]
+      },
+      "products": [],
+      "components": {
+        "top": { "required": true, "categories": ["shirts"] },
+        "jacket": { "required": true, "categories": ["blazers"] },
+        "bottom": { "required": true, "categories": ["trousers"] }
+      }
+    },
+    {
+      "id": "smart-casual-refined",
+      "name": "Smart Casual Refined",
+      "description": "Polished comfort for versatile wear",
+      "style": "smart-casual",
+      "collection": "casual",
+      "gender": ["men", "women"],
+      "season": "spring-summer",
+      "priority": 90,
+      "seo": {
+        "metaTitle": "Smart Casual Refined - Look | DALLI",
+        "metaDescription": "Curated smart casual look balancing comfort and style"
+      },
+      "products": [],
+      "components": {
+        "top": { "required": true, "categories": ["shirts", "t-shirts"] },
+        "bottom": { "required": true, "categories": ["trousers"] }
+      }
+    },
+    {
+      "id": "weekend-casual",
+      "name": "Weekend Casual",
+      "description": "Effortless style for weekend adventures",
+      "style": "everyday",
+      "collection": "casual",
+      "gender": ["men", "women"],
+      "season": "year-round",
+      "priority": 85,
+      "seo": {
+        "metaTitle": "Weekend Casual - Look | DALLI",
+        "metaDescription": "Relaxed everyday ensemble for weekends"
+      },
+      "products": [],
+      "components": {
+        "top": { "required": true, "categories": ["t-shirts", "hoodies"] },
+        "bottom": { "required": true, "categories": ["trousers", "tracksuits"] }
+      }
+    },
+    {
+      "id": "travel-essentials",
+      "name": "Travel Essentials",
+      "description": "Comfortable versatility for journeys",
+      "style": "travel",
+      "collection": "casual",
+      "gender": ["men", "women"],
+      "season": "year-round",
+      "priority": 80,
+      "seo": {
+        "metaTitle": "Travel Essentials - Look | DALLI",
+        "metaDescription": "Curated travel looks for comfort and elegance"
+      },
+      "products": [],
+      "components": {
+        "top": { "required": true, "categories": ["t-shirts", "hoodies"] },
+        "bottom": { "required": true, "categories": ["trousers"] },
+        "outerwear": { "required": true, "categories": ["hoodies"] }
+      }
+    },
+    {
+      "id": "evening-glam",
+      "name": "Evening Glam",
+      "description": "Sophisticated elegance for evening events",
+      "style": "evening",
+      "collection": "elegance",
+      "gender": ["men"],
+      "season": "year-round",
+      "priority": 90,
+      "seo": {
+        "metaTitle": "Evening Glam - Elegance Look | DALLI",
+        "metaDescription": "Curated evening ensemble for special occasions"
+      },
+      "products": [],
+      "components": {
+        "top": { "required": true, "categories": ["shirts"] },
+        "jacket": { "required": true, "categories": ["blazers"] },
+        "bottom": { "required": true, "categories": ["trousers"] }
+      }
+    },
+    {
+      "id": "luxury-essentials-look",
+      "name": "Luxury Essentials",
+      "description": "Timeless foundation for luxury lifestyle",
+      "style": "luxury-essentials",
+      "collection": "casual",
+      "gender": ["men", "women"],
+      "season": "year-round",
+      "priority": 95,
+      "seo": {
+        "metaTitle": "Luxury Essentials - Look | DALLI",
+        "metaDescription": "Curated timeless essentials from DALLI"
+      },
+      "products": [],
+      "components": {
+        "top": { "required": true, "categories": ["t-shirts", "shirts"] },
+        "bottom": { "required": true, "categories": ["trousers"] }
+      }
+    },
+    {
+      "id": "special-occasion-look",
+      "name": "Special Occasion",
+      "description": "Refined style for life's milestones",
+      "style": "special-occasion",
+      "collection": "elegance",
+      "gender": ["men"],
+      "season": "year-round",
+      "priority": 95,
+      "seo": {
+        "metaTitle": "Special Occasion - Elegance Look | DALLI",
+        "metaDescription": "Curated ensemble for special celebrations"
+      },
+      "products": [],
+      "components": {
+        "top": { "required": true, "categories": ["shirts"] },
+        "jacket": { "required": true, "categories": ["blazers"] },
+        "bottom": { "required": true, "categories": ["trousers"] },
+        "outerwear": { "required": true, "categories": ["coats"] }
+      }
+    }
+  ]
+}

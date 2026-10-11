@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Hreflang Markets -->
+    <link rel="alternate" href="https://dalli.rs/" hreflang="sr-RS" title="Srbija">
+    <link rel="alternate" href="https://dalli.rs/" hreflang="de-DE" title="Nemacka">
+    <link rel="alternate" href="https://dalli.rs/" hreflang="fr-FR" title="Francuska">
+    <link rel="alternate" href="https://dalli.rs/" hreflang="it-IT" title="Italija">
+    <link rel="alternate" href="https://dalli.rs/" hreflang="es-ES" title="Spanija">
+    <link rel="alternate" href="https://dalli.rs/" hreflang="en" title="English">
+    <link rel="alternate" href="https://dalli.rs/" hreflang="x-default" title="DALLI">
+
+    <meta name="theme-color" content="#2c3e50">
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>DALLI - {{title}}</title>
+    <meta name="description" content="{{excerpt}} - DALLI Blog">
+    <meta name="keywords" content="blog, fashion, lifestyle, business, technology, articles">
+    <meta name="author" content="DALLI">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://dalli.rs/blog/{{slug}}">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://dalli.rs/blog/{{slug}}">
+    <meta property="og:title" content="{{title}} | DALLI Blog">
+    <meta property="og:description" content="{{excerpt}}">
+    <meta property="og:image" content="https://dalli.rs{{featuredImage}}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/svg+xml">
+    <meta property="og:site_name" content="DALLI">
+    <meta property="og:locale" content="sr_RS">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://dalli.rs/blog/{{slug}}">
+    <meta name="twitter:title" content="{{title}} | DALLI Blog">
+    <meta name="twitter:description" content="{{excerpt}}">
+    <meta name="twitter:image" content="https://dalli.rs{{featuredImage}}">
+    
+    <!-- Schema.org Article JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "{{title}}",
+        "image": "https://dalli.rs{{featuredImage}}",
+        "author": {
+            "@type": "Person",
+            "name": "{{authorName}}",
+            "image": "{{authorAvatar}}"
+        },
+        "datePublished": "{{dateISO}}",
+        "dateModified": "{{dateISO}}",
+        "description": "{{excerpt}}",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://dalli.rs/blog/{{slug}}"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "DALLI",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://dalli.rs/images/logos/logo1-master@2x.webp",
+                "width": 224,
+                "height": 224
+            }
+        }
+    }
+    </script>
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/manifest.json?v=20241215">
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg?v=20241215">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/logos/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/logos/favicon-16.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/images/logos/favicon-48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/logos/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/images/logos/favicon-512.png">
+    <link rel="apple-touch-icon" href="/images/logos/apple-touch-icon.png">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="{{featuredImage}}" as="image">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header" style="background: var(--gradient-primary); padding: var(--space-8) 0; margin: -1rem -1rem var(--space-8); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--border);">
+        <div class="container">
+            <nav class="main-nav" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-4);">
+                <a href="/" style="display: flex; align-items: center; gap: var(--space-2); color: white; text-decoration: none; font-size: var(--text-2xl); font-weight: var(--font-bold);">
+                    <logo-component variant="master" size="md" aria-label="DALLI Home" class="logo"></logo-component>
+                    <span>DALLI</span>
+                </a>
+                <div style="display: flex; gap: var(--space-3); align-items: center; flex-wrap: wrap;">
+                    <a href="blog-index.html" style="color: rgba(255,255,255,0.9); text-decoration: none; padding: var(--space-2) var(--space-4); background: rgba(255,255,255,0.1); border-radius: var(--radius); font-size: var(--text-sm); transition: all var(--transition-fast);:hover { background: rgba(255,255,255,0.2); }" data-i18n="common.blog">Blog</a>
+                    <a href="/blog-index.html" style="color: rgba(255,255,255,0.9); text-decoration: none; padding: var(--space-2) var(--space-4); background: rgba(255,255,255,0.1); border-radius: var(--radius); font-size: var(--text-sm); transition: all var(--transition-fast);:hover { background: rgba(255,255,255,0.2); }" data-i18n="common.archive">Archive</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main" style="margin-top: calc(var(--header-height, 80px) + var(--space-4)); min-height: calc(100vh - 80px);">
+        <div class="container">
+            <!-- Featured Image -->
+            <section class="post-hero" style="margin-bottom: var(--space-6); border-radius: var(--radius) 0 0 var(--radius); overflow: hidden;">
+                <img src="{{featuredImage}}" 
+                     alt="{{title}} - DALLI blog article"
+                     style="width: 100%; height: 400px; object-fit: cover; transition: transform 0.3s ease;"
+                     loading="lazy">
+                <!-- Reading Time Badge -->
+                <div style="position: absolute; top: var(--space-3); left: var(--space-3); background: var(--color-primary); color: white; padding: var(--space-2) var(--space-3); border-radius: var(--radius-sm); font-size: var(--text-xs); font-weight: 600;">
+                    {{readingTime}}
+                </div>
+            </section>
+            
+            <!-- Post Content -->
+            <article class="single-post" style="background: var(--color-bg-primary); border-radius: 0 var(--radius) var(--radius) 0; padding: var(--space-6) var(--space-4);">
+                <!-- Post Meta -->
+                <div class="post-meta" style="display: flex; align-items: center; gap: var(--space-4); margin-bottom: var(--space-4); flex-wrap: wrap; font-size: var(--text-sm); color: var(--color-text-tertiary);">
+                    <div style="display: flex; align-items: center; gap: var(--space-2);">
+                        <i class="fa-solid fa-calendar-days" style="color: var(--color-primary);"></i>
+                        <span>{{date}}</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: var(--space-2);">
+                        <i class="fa-solid fa-user" style="color: var(--color-primary);"></i>
+                        <span data-i18n="blog.post.authorLabel">Author:</span> {{authorName}}
+                    </div>
+                    <div style="display: flex; align-items: center; gap: var(--space-2);">
+                        <i class="fa-solid fa-tag" style="color: var(--color-primary);"></i>
+                        <span data-i18n="blog.post.categoryLabel">Category:</span> {{categoryName}}
+                    </div>
+                </div>
+                
+                <!-- Post Title -->
+                <h1 class="post-title" style="font-size: var(--text-3xl); font-weight: var(--font-bold); color: var(--color-text-primary); margin: var(--space-4) 0; line-height: 1.3;">
+                    {{title}}
+                </h1>
+                
+                <!-- Post Body -->
+                <div class="post-body" style="font-size: var(--text-base); line-height: 1.8; color: var(--color-text-primary);">
+                    {{content}}
+                </div>
+                
+                <!-- Tags -->
+                <div class="post-tags" style="margin: var(--space-6) 0; padding: var(--space-4); background: var(--color-bg-tertiary); border-radius: var(--radius);">
+                    <p style="font-size: var(--text-sm); color: var(--color-text-tertiary); font-weight: 600; margin: 0 0 var(--space-3);" data-i18n="blog.post.tagsLabel">Tags:</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: var(--space-2);">
+                        {{tags}}
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Related Posts and Navigation -->
+    <section class="post-navigation" style="background: var(--color-bg-secondary); padding: var(--space-6) 0; margin-top: var(--space-8);">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <!-- Previous/Next Posts -->
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-4); flex-wrap: wrap; gap: var(--space-2);">
+                    <a href="blog-index.html" style="color: var(--color-text-primary); text-decoration: none; font-size: var(--text-sm); display: flex; align-items: center; gap: var(--space-2);" data-i18n="blog.post.backToBlog">
+                        <i class="fa-solid fa-arrow-left fa-sm"></i>
+                        Vrati na blog
+                    </a>
+                </div>
+                
+                <!-- Tags -->
+                <div style="margin-bottom: var(--space-4);">
+                    <h3 style="font-size: var(--text-lg); font-weight: var(--font-bold); color: var(--color-text-primary); margin-bottom: var(--space-3);" data-i18n="blog.post.tagsLabel">Tags:</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: var(--space-2);">
+                        {{tags}}
+                    </div>
+                </div>
+                
+                <!-- Related Posts -->
+                <h3 style="font-size: var(--text-lg); font-weight: var(--font-bold); color: var(--color-text-primary); margin-bottom: var(--space-4);" data-i18n="blog.post.readAlso">Čitajte i ovo:</h3>
+                <div class="related-posts-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4);">
+                    {{relatedPosts}}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Opt-in -->
+    
+    <section class="newsletter-optin" style="background: var(--gradient-primary); padding: var(--space-6) 0; margin-top: var(--space-8);">
+        <div class="container" style="max-width: 600px; margin: 0 auto; text-align: center;">
+            <h3 style="color: white; margin-bottom: var(--space-3);" data-i18n="blog.post.similarArticles">Slična articles</h3>
+            <p style="color: rgba(255,255,255,0.8); font-size: var(--text-sm); margin-bottom: var(--space-4);" data-i18n="blog.post.subscribeDesc">Subscribe for more insights</p>
+            <form style="max-width: 400px; margin: 0 auto; display: flex; gap: var(--space-3);">
+                <input type="email" placeholder="Enter email" data-i18n="blog.post.emailPlaceholder" style="flex: 1; padding: var(--space-3); border: none; border-radius: var(--radius); background: rgba(255,255,255,0.2); color: white;" required>
+                <button type="submit" style="background: white; color: var(--color-primary); padding: var(--space-3) var(--space-6); border: none; border-radius: var(--radius); font-weight: 600; cursor: pointer;">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer" style="background: var(--color-bg-secondary); padding: var(--space-8) 0; margin-top: var(--space-8);">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-4);">
+                <div style="text-align: left;">
+                    <p style="margin: 0 0 var(--space-2); color: var(--color-text-tertiary); font-size: var(--text-sm);" data-i18n="footer.description">DALLI - Online Prodaja Garderobe</p>
+                    <p style="margin: 0; color: var(--color-text-tertiary); font-size: var(--text-sm);" data-i18n="footer.copyright">© 2024 DALLI. Sva prava zadržana.</p>
+                </div>
+                <div style="display: flex; gap: var(--space-4);">
+                    <a href="#" style="color: var(--color-text-primary); text-decoration: none; font-size: var(--text-sm);" title="RSS Feed">
+                        <i class="fa-solid fa-rss fa-sm"></i>
+                    </a>
+                    <a href="blog-index.html" style="color: var(--color-text-primary); text-decoration: none; font-size: var(--text-sm);" data-i18n="common.blog">Blog</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

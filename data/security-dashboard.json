@@ -1,0 +1,9 @@
+{
+  "threatStatus": "ok",
+  "systemHealth": "ok",
+  "apiHealth": "ok",
+  "permissionRisks": 0,
+  "fraudRisks": 0,
+  "backupStatus": "ok",
+  "dataIntegrity": "ok"
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>OAuth Callback - DALLI Social Media</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8f9fa; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+    .container { background: white; border-radius: 12px; padding: 2.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); text-align: center; max-width: 400px; width: 90%; }
+    .icon { width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 1.5rem; }
+    .icon.success { background: #d4edda; color: #155724; }
+    .icon.error { background: #f8d7da; color: #721c24; }
+    .icon.loading { background: #e8f4fd; color: #0c5460; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(12, 84, 96, 0.4); } 50% { box-shadow: 0 0 0 10px rgba(12, 84, 96, 0); } }
+    h1 { font-size: 1.25rem; color: #2c3e50; margin-bottom: 0.75rem; }
+    p { color: #5d6d7e; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem; }
+    .spinner { width: 24px; height: 24px; border: 3px solid #e0e0e0; border-top-color: #2c3e50; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 1rem; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .details { background: #f8f9fa; border-radius: 8px; padding: 1rem; margin-top: 1rem; text-align: left; font-size: 0.8rem; color: #5d6d7e; }
+    .details code { background: #e9ecef; padding: 0.1rem 0.4rem; border-radius: 4px; font-family: monospace; }
+    .btn { display: inline-block; padding: 0.75rem 1.5rem; background: #2c3e50; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; text-decoration: none; margin-top: 1rem; }
+    .btn:hover { background: #1a252f; }
+    .btn-secondary { background: #6c757d; }
+    .btn-secondary:hover { background: #5a6268; }
+    .error-info { color: #721c24; background: #f8d7da; border: 1px solid #f5c6cb; border-radius: 6px; padding: 1rem; margin-top: 1rem; text-align: left; }
+  </style>
+</head>
+<body>
+  <div class="container" id="container">
+    <div class="icon loading" id="icon">
+      <div class="spinner" id="spinner"></div>
+    </div>
+    <h1 id="title">Obrada autorizacije...</h1>
+    <p id="message">Molimo sačekajte dok završavamo povezivanje sa platformom.</p>
+    
+    <div class="details" id="details" style="display: none;">
+      <strong>Platforma:</strong> <span id="platformName">—</span><br>
+      <strong>Status:</strong> <span id="statusText">Obrada...</span>
+    </div>
+    
+    <div class="error-info" id="errorInfo" style="display: none;"></div>
+    
+    <a href="/admin-new/admin.html" class="btn" id="closeBtn" style="display: none;">Zatvori i idi na admin</a>
+    <button class="btn btn-secondary" id="retryBtn" style="display: none;" onclick="location.reload()">Pokušaj ponovo</button>
+  </div>
+
+  <script>
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      const code = params.get('code');
+      const state = params.get('state');
+      const error = params.get('error');
+      const errorDescription = params.get('error_description');
+      const platform = params.get('platform') || sessionStorage.getItem('dalli_oauth_platform');
+      
+      const container = document.getElementById('container');
+      const icon = document.getElementById('icon');
+      const spinner = document.getElementById('spinner');
+      const title = document.getElementById('title');
+      const message = document.getElementById('message');
+      const details = document.getElementById('details');
+      const platformName = document.getElementById('platformName');
+      const statusText = document.getElementById('statusText');
+      const errorInfo = document.getElementById('errorInfo');
+      const closeBtn = document.getElementById('closeBtn');
+      const retryBtn = document.getElementById('retryBtn');
+      
+      const platformLabels = {
+        instagram: 'Instagram Business',
+        facebook: 'Facebook Page',
+        meta_bm: 'Meta Business Manager',
+        meta_ads: 'Meta Ads',
+        tiktok: 'TikTok Business',
+        tiktok_ads: 'TikTok Ads',
+        google_analytics: 'Google Analytics (GA4)',
+        google_search_console: 'Google Search Console'
+      };
+      
+      if (platform) {
+        platformName.textContent = platformLabels[platform] || platform;
+      }
+      
+      async function handleCallback() {
+        if (error) {
+          showError(error, errorDescription);
+          return;
+        }
+        
+        if (!code) {
+          showError('missing_code', 'Authorization code not found in URL');
+          return;
+        }
+        
+        try {
+          statusText.textContent = 'Slanje koda na server...';
+          
+          const response = await fetch('/admin-new/api/oauth/callback', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ code, state, platform })
+          });
+          
+          const result = await response.json();
+          
+          if (result.success) {
+            showSuccess(result);
+          } else {
+            showError('api_error', result.error || 'Unknown error from server');
+          }
+        } catch (err) {
+          showError('network_error', err.message);
+        }
+      }
+      
+      function showSuccess(result) {
+        icon.className = 'icon success';
+        icon.innerHTML = '✓';
+        spinner.remove();
+        title.textContent = 'Uspešno povezano!';
+        message.textContent = `${platformLabels[platform] || platform} je uspešno povezan sa DALLI Social Media Centarom.`;
+        statusText.textContent = 'Završeno';
+        details.style.display = 'block';
+        closeBtn.style.display = 'inline-block';
+        
+        if (window.opener) {
+          window.opener.postMessage({ 
+            type: 'dalli-oauth-callback', 
+            code, 
+            state,
+            platform,
+            success: true 
+          }, window.location.origin);
+          
+          setTimeout(() => window.close(), 1500);
+        }
+      }
+      
+      function showError(errCode, errDesc) {
+        icon.className = 'icon error';
+        icon.innerHTML = '✕';
+        spinner.remove();
+        title.textContent = 'Greška pri autorizaciji';
+        
+        const messages = {
+          'missing_code': 'Nedostaje autorizacioni kod. Pokušajte ponovo.',
+          'api_error': errDesc || 'Greška na serveru prilikom razmene tokena.',
+          'network_error': 'Mrežna greška. Proverite konekciju i pokušajte ponovo.',
+          'access_denied': 'Odbijen je pristup. Morate dozvoliti pristup aplikaciji.',
+          'invalid_grant': 'Nevažeći autorizacioni kod. Pokušajte ponovo.',
+          'server_error': 'Greška na serveru platforme. Pokušajte kasnije.'
+        };
+        
+        message.textContent = messages[errCode] || errDesc || 'Nepoznata greška.';
+        statusText.textContent = 'Greška: ' + errCode;
+        details.style.display = 'block';
+        errorInfo.style.display = 'block';
+        errorInfo.innerHTML = `<strong>Kod greške:</strong> ${errCode}<br><strong>Opis:</strong> ${errDesc || 'Nema opis'}`;
+        closeBtn.style.display = 'inline-block';
+        retryBtn.style.display = 'inline-block';
+        
+        if (window.opener) {
+          window.opener.postMessage({ 
+            type: 'dalli-oauth-callback', 
+            code, 
+            state,
+            platform,
+            success: false,
+            error: errCode,
+            errorDescription: errDesc
+          }, window.location.origin);
+        }
+      }
+      
+      if (platform) {
+        sessionStorage.setItem('dalli_oauth_platform', platform);
+      }
+      
+      handleCallback();
+    })();
+  </script>
+</body>
+</html>

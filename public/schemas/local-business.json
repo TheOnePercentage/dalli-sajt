@@ -1,0 +1,909 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@context": "https://schema.org",
+      "@type": "ClothingStore",
+      "@id": "https://dalli.rs/locations/beograd-centar#store",
+      "name": "DALLI Beograd Centar",
+      "description": "Naš flagman store u srcu Beograda na Knez Mihailovoj. Najveći izbor kolekcija, lično stilovanje i premium doživljaj kupovine.",
+      "url": "https://dalli.rs/locations/beograd-centar.html",
+      "telephone": "+381 11 2630 123",
+      "email": "beograd-centar@dalli.rs",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Knez Mihailova 15",
+        "addressLocality": "Beograd",
+        "addressRegion": "Stari Grad",
+        "postalCode": "11000",
+        "addressCountry": "RS"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 44.815,
+        "longitude": 20.46
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Monday",
+          "opens": "10:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Tuesday",
+          "opens": "10:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Wednesday",
+          "opens": "10:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Thursday",
+          "opens": "10:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Friday",
+          "opens": "10:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "10:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "11:00",
+          "closes": "19:00"
+        }
+      ],
+      "specialOpeningHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "http://schema.org/Schedule",
+          "opens": "12:00",
+          "closes": "18:00",
+          "validFrom": "2025-01-01",
+          "validThrough": "2025-01-01",
+          "description": "Nova Godina"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "http://schema.org/Schedule",
+          "opens": "12:00",
+          "closes": "18:00",
+          "validFrom": "2025-01-07",
+          "validThrough": "2025-01-07",
+          "description": "Božić"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "http://schema.org/Schedule",
+          "opens": "10:00",
+          "closes": "18:00",
+          "validFrom": "2025-02-15",
+          "validThrough": "2025-02-15",
+          "description": "Sretenje"
+        }
+      ],
+      "priceRange": "$$",
+      "currenciesAccepted": "RSD, EUR",
+      "paymentAccepted": "Cash, Credit Card, Debit Card, Mobile Payment, Crypto",
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "wheelchair_accessible",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "wifi",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "fitting_rooms",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "personal_shopper",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "gift_wrapping",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "click_collect",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "in_store_returns",
+          "value": true
+        }
+      ],
+      "serviceType": [
+        "personal_styling",
+        "alterations",
+        "gift_cards",
+        "loyalty_program"
+      ],
+      "brand": {
+        "@type": "Brand",
+        "name": "DALLI",
+        "logo": "https://dalli.rs/images/logo1.jpg"
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "DALLI d.o.o.",
+        "url": "https://dalli.rs",
+        "logo": "https://dalli.rs/images/logo1.jpg",
+        "sameAs": [
+          "https://www.facebook.com/dalli.rs",
+          "https://www.instagram.com/dalli.rs",
+          "https://twitter.com/dalli_rs",
+          "https://www.tiktok.com/@dalli.rs",
+          "https://www.linkedin.com/company/dalli-rs"
+        ]
+      },
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 44.5,
+          "longitude": 20.5
+        },
+        "geoRadius": "350000"
+      },
+      "hasMap": "https://maps.google.com/?cid=12345678901234567890",
+      "hasDriveThroughService": false,
+      "delivery": {
+        "@type": "DeliveryMethod",
+        "name": "Standard Delivery",
+        "areaServed": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": 44.815,
+            "longitude": 20.46
+          },
+          "geoRadius": "50000"
+        }
+      },
+      "inStorePickup": true,
+      "returnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "returnPolicyDays": 30,
+        "returnMethod": "https://schema.org/ReturnInStore",
+        "returnFees": "https://schema.org/FreeReturn",
+        "refundType": "https://schema.org/FullRefund"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": 1,
+        "bestRating": 5,
+        "worstRating": 1
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Marko P."
+          },
+          "datePublished": "2025-01-15T10:30:00Z",
+          "reviewBody": "Najbolji store u Beogradu. Ljubazan personal, veliki izbor, uređeno i čisto. Vraćam se redovno.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5,
+            "bestRating": 5,
+            "worstRating": 1
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "DALLI"
+          },
+          "reviewAspect": "verifiedPurchase",
+          "description": "Verified Purchase"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ClothingStore",
+      "@id": "https://dalli.rs/locations/usce-shopping-center#store",
+      "name": "DALLI Ušće Shopping Center",
+      "description": "DALLI u najposjećenijem trgovačkom centru u Beogradu. Savršen za brzu kupovinu posle posla ili vikend šoping.",
+      "url": "https://dalli.rs/locations/usce-shopping-center.html",
+      "telephone": "+381 11 3110 456",
+      "email": "usce@dalli.rs",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Bulevar Mihajla Pupina 5, Ušće Shopping Center, 1. sprat",
+        "addressLocality": "Beograd",
+        "addressRegion": "Novi Beograd",
+        "postalCode": "11070",
+        "addressCountry": "RS"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 44.819,
+        "longitude": 20.422
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Monday",
+          "opens": "10:00",
+          "closes": "22:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Tuesday",
+          "opens": "10:00",
+          "closes": "22:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Wednesday",
+          "opens": "10:00",
+          "closes": "22:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Thursday",
+          "opens": "10:00",
+          "closes": "22:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Friday",
+          "opens": "10:00",
+          "closes": "22:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "10:00",
+          "closes": "22:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "10:00",
+          "closes": "21:00"
+        }
+      ],
+      "specialOpeningHoursSpecification": [],
+      "priceRange": "$$",
+      "currenciesAccepted": "RSD, EUR",
+      "paymentAccepted": "Cash, Credit Card, Debit Card, Mobile Payment, Crypto",
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "wheelchair_accessible",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "fitting_rooms",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "gift_wrapping",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "click_collect",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "in_store_returns",
+          "value": true
+        }
+      ],
+      "serviceType": [
+        "gift_cards",
+        "loyalty_program"
+      ],
+      "brand": {
+        "@type": "Brand",
+        "name": "DALLI",
+        "logo": "https://dalli.rs/images/logo1.jpg"
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "DALLI d.o.o.",
+        "url": "https://dalli.rs",
+        "logo": "https://dalli.rs/images/logo1.jpg",
+        "sameAs": [
+          "https://www.facebook.com/dalli.rs",
+          "https://www.instagram.com/dalli.rs",
+          "https://twitter.com/dalli_rs",
+          "https://www.tiktok.com/@dalli.rs",
+          "https://www.linkedin.com/company/dalli-rs"
+        ]
+      },
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 44.5,
+          "longitude": 20.5
+        },
+        "geoRadius": "350000"
+      },
+      "hasMap": "https://maps.google.com/?cid=12345678901234567891",
+      "hasDriveThroughService": false,
+      "delivery": {
+        "@type": "DeliveryMethod",
+        "name": "Standard Delivery",
+        "areaServed": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": 44.815,
+            "longitude": 20.46
+          },
+          "geoRadius": "50000"
+        }
+      },
+      "inStorePickup": true,
+      "returnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "returnPolicyDays": 30,
+        "returnMethod": "https://schema.org/ReturnInStore",
+        "returnFees": "https://schema.org/FreeReturn",
+        "refundType": "https://schema.org/FullRefund"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.0",
+        "reviewCount": 1,
+        "bestRating": 5,
+        "worstRating": 1
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Ana S."
+          },
+          "datePublished": "2025-01-18T14:22:00Z",
+          "reviewBody": "Store je lepo uređen, personal je ljubazan. Jedina mana je da je ponekad gušno vikendom.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 4,
+            "bestRating": 5,
+            "worstRating": 1
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "DALLI"
+          },
+          "reviewAspect": "verifiedPurchase",
+          "description": "Verified Purchase"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ClothingStore",
+      "@id": "https://dalli.rs/locations/novi-sad-promenada#store",
+      "name": "DALLI Novi Sad - Promenada Mall",
+      "description": "Prvi DALLI store u Novom Sadu, u modernom Promenada Mall-u. Puna ponuda muške i ženske garderobe.",
+      "url": "https://dalli.rs/locations/novi-sad-promenada.html",
+      "telephone": "+381 21 425 789",
+      "email": "novi-sad@dalli.rs",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Bulevar Oslobođenja 30, Promenada Mall, 2. sprat",
+        "addressLocality": "Novi Sad",
+        "addressRegion": "Južna Bačka",
+        "postalCode": "21000",
+        "addressCountry": "RS"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 45.2517,
+        "longitude": 19.8369
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Monday",
+          "opens": "10:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Tuesday",
+          "opens": "10:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Wednesday",
+          "opens": "10:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Thursday",
+          "opens": "10:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Friday",
+          "opens": "10:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "10:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "10:00",
+          "closes": "20:00"
+        }
+      ],
+      "specialOpeningHoursSpecification": [],
+      "priceRange": "$$",
+      "currenciesAccepted": "RSD, EUR",
+      "paymentAccepted": "Cash, Credit Card, Debit Card, Mobile Payment, Crypto",
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "wheelchair_accessible",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "fitting_rooms",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "gift_wrapping",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "click_collect",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "in_store_returns",
+          "value": true
+        }
+      ],
+      "serviceType": [
+        "gift_cards",
+        "loyalty_program"
+      ],
+      "brand": {
+        "@type": "Brand",
+        "name": "DALLI",
+        "logo": "https://dalli.rs/images/logo1.jpg"
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "DALLI d.o.o.",
+        "url": "https://dalli.rs",
+        "logo": "https://dalli.rs/images/logo1.jpg",
+        "sameAs": [
+          "https://www.facebook.com/dalli.rs",
+          "https://www.instagram.com/dalli.rs",
+          "https://twitter.com/dalli_rs",
+          "https://www.tiktok.com/@dalli.rs",
+          "https://www.linkedin.com/company/dalli-rs"
+        ]
+      },
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 44.5,
+          "longitude": 20.5
+        },
+        "geoRadius": "350000"
+      },
+      "hasMap": "https://maps.google.com/?cid=12345678901234567892",
+      "hasDriveThroughService": false,
+      "delivery": {
+        "@type": "DeliveryMethod",
+        "name": "Standard Delivery",
+        "areaServed": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": 44.815,
+            "longitude": 20.46
+          },
+          "geoRadius": "50000"
+        }
+      },
+      "inStorePickup": true,
+      "returnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "returnPolicyDays": 30,
+        "returnMethod": "https://schema.org/ReturnInStore",
+        "returnFees": "https://schema.org/FreeReturn",
+        "refundType": "https://schema.org/FullRefund"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": 1,
+        "bestRating": 5,
+        "worstRating": 1
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "DJ"
+          },
+          "datePublished": "2025-01-20T09:15:00Z",
+          "reviewBody": "Kvalitetan personal, brz servis, lepi proizvodi. Preporučujem svima u Novom Sadu.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 5,
+            "bestRating": 5,
+            "worstRating": 1
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "DALLI"
+          },
+          "reviewAspect": "verifiedPurchase",
+          "description": "Verified Purchase"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ClothingStore",
+      "@id": "https://dalli.rs/locations/nis-forum-mall#store",
+      "name": "DALLI Niš - Forum Mall",
+      "description": "DALLI ugrößem mallu na jugu Srbije. Široki izbor za celu porodicu.",
+      "url": "https://dalli.rs/locations/nis-forum-mall.html",
+      "telephone": "+381 18 555 123",
+      "email": "nis@dalli.rs",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Bulevar Nemanjića 45, Forum Mall, 1. sprat",
+        "addressLocality": "Niš",
+        "addressRegion": "Nišava",
+        "postalCode": "18000",
+        "addressCountry": "RS"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.321,
+        "longitude": 21.895
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Monday",
+          "opens": "10:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Tuesday",
+          "opens": "10:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Wednesday",
+          "opens": "10:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Thursday",
+          "opens": "10:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Friday",
+          "opens": "10:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "10:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "10:00",
+          "closes": "20:00"
+        }
+      ],
+      "specialOpeningHoursSpecification": [],
+      "priceRange": "$$",
+      "currenciesAccepted": "RSD, EUR",
+      "paymentAccepted": "Cash, Credit Card, Debit Card, Mobile Payment, Crypto",
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "wheelchair_accessible",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "fitting_rooms",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "gift_wrapping",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "click_collect",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "in_store_returns",
+          "value": true
+        }
+      ],
+      "serviceType": [
+        "gift_cards",
+        "loyalty_program"
+      ],
+      "brand": {
+        "@type": "Brand",
+        "name": "DALLI",
+        "logo": "https://dalli.rs/images/logo1.jpg"
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "DALLI d.o.o.",
+        "url": "https://dalli.rs",
+        "logo": "https://dalli.rs/images/logo1.jpg",
+        "sameAs": [
+          "https://www.facebook.com/dalli.rs",
+          "https://www.instagram.com/dalli.rs",
+          "https://twitter.com/dalli_rs",
+          "https://www.tiktok.com/@dalli.rs",
+          "https://www.linkedin.com/company/dalli-rs"
+        ]
+      },
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 44.5,
+          "longitude": 20.5
+        },
+        "geoRadius": "350000"
+      },
+      "hasMap": "https://maps.google.com/?cid=12345678901234567893",
+      "hasDriveThroughService": false,
+      "delivery": {
+        "@type": "DeliveryMethod",
+        "name": "Standard Delivery",
+        "areaServed": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": 44.815,
+            "longitude": 20.46
+          },
+          "geoRadius": "50000"
+        }
+      },
+      "inStorePickup": true,
+      "returnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "returnPolicyDays": 30,
+        "returnMethod": "https://schema.org/ReturnInStore",
+        "returnFees": "https://schema.org/FreeReturn",
+        "refundType": "https://schema.org/FullRefund"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.6",
+        "reviewCount": 14,
+        "bestRating": 5,
+        "worstRating": 1
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ClothingStore",
+      "@id": "https://dalli.rs/locations/kragujevac-delta-city#store",
+      "name": "DALLI Kragujevac - Delta City",
+      "description": "DALLI u Kragujevcu, u popularnom Delta City mallu. Moda za celu porodicu na jednom mestu.",
+      "url": "https://dalli.rs/locations/kragujevac-delta-city.html",
+      "telephone": "+381 34 333 456",
+      "email": "kragujevac@dalli.rs",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kralja Aleksandra Karađorđevića 78, Delta City",
+        "addressLocality": "Kragujevac",
+        "addressRegion": "Šumadija",
+        "postalCode": "34000",
+        "addressCountry": "RS"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 44.0167,
+        "longitude": 20.9167
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Monday",
+          "opens": "10:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Tuesday",
+          "opens": "10:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Wednesday",
+          "opens": "10:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Thursday",
+          "opens": "10:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Friday",
+          "opens": "10:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "10:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "10:00",
+          "closes": "20:00"
+        }
+      ],
+      "specialOpeningHoursSpecification": [],
+      "priceRange": "$$",
+      "currenciesAccepted": "RSD, EUR",
+      "paymentAccepted": "Cash, Credit Card, Debit Card, Mobile Payment, Crypto",
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "wheelchair_accessible",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "fitting_rooms",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "gift_wrapping",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "click_collect",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "in_store_returns",
+          "value": true
+        }
+      ],
+      "serviceType": [
+        "gift_cards",
+        "loyalty_program"
+      ],
+      "brand": {
+        "@type": "Brand",
+        "name": "DALLI",
+        "logo": "https://dalli.rs/images/logo1.jpg"
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "DALLI d.o.o.",
+        "url": "https://dalli.rs",
+        "logo": "https://dalli.rs/images/logo1.jpg",
+        "sameAs": [
+          "https://www.facebook.com/dalli.rs",
+          "https://www.instagram.com/dalli.rs",
+          "https://twitter.com/dalli_rs",
+          "https://www.tiktok.com/@dalli.rs",
+          "https://www.linkedin.com/company/dalli-rs"
+        ]
+      },
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 44.5,
+          "longitude": 20.5
+        },
+        "geoRadius": "350000"
+      },
+      "hasMap": "https://maps.google.com/?cid=12345678901234567894",
+      "hasDriveThroughService": false,
+      "delivery": {
+        "@type": "DeliveryMethod",
+        "name": "Standard Delivery",
+        "areaServed": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": 44.815,
+            "longitude": 20.46
+          },
+          "geoRadius": "50000"
+        }
+      },
+      "inStorePickup": true,
+      "returnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "returnPolicyDays": 30,
+        "returnMethod": "https://schema.org/ReturnInStore",
+        "returnFees": "https://schema.org/FreeReturn",
+        "refundType": "https://schema.org/FullRefund"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.6",
+        "reviewCount": 55,
+        "bestRating": 5,
+        "worstRating": 1
+      }
+    }
+  ]
+}

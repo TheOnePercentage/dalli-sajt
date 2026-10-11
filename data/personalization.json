@@ -1,0 +1,193 @@
+{
+  "version": "1.0",
+  "enabled": true,
+  "algorithms": {
+    "collaborative": {
+      "enabled": true,
+      "weight": 0.35,
+      "description": "Users who bought X also bought Y",
+      "minUserInteractions": 3,
+      "minProductInteractions": 5,
+      "similarityThreshold": 0.3,
+      "maxRecommendations": 10
+    },
+    "contentBased": {
+      "enabled": true,
+      "weight": 0.30,
+      "description": "Similar products by tags, category, style",
+      "tagWeight": 0.4,
+      "categoryWeight": 0.3,
+      "styleWeight": 0.2,
+      "priceWeight": 0.1,
+      "maxRecommendations": 10
+    },
+    "frequentlyBoughtTogether": {
+      "enabled": true,
+      "weight": 0.20,
+      "description": "Products frequently in same cart",
+      "minCooccurrence": 3,
+      "maxRecommendations": 4
+    },
+    "completeTheLook": {
+      "enabled": true,
+      "weight": 0.15,
+      "description": "Outfit/collection recommendations",
+      "maxOutfits": 3,
+      "requireMultipleCategories": true
+    }
+  },
+  "recommendationTypes": {
+    "forYou": {
+      "enabled": true,
+      "label": "Preporučeno za vas",
+      "maxProducts": 8,
+      "algorithms": ["collaborative", "contentBased"],
+      "refreshIntervalHours": 6,
+      "minScore": 0.15
+    },
+    "recentlyViewed": {
+      "enabled": true,
+      "label": "Nedavno pregledano",
+      "maxProducts": 10,
+      "retentionDays": 30,
+      "deduplicate": true
+    },
+    "frequentlyBoughtTogether": {
+      "enabled": true,
+      "label": "Često se kupuju zajedno",
+      "maxProducts": 4,
+      "placement": "product_page"
+    },
+    "similarProducts": {
+      "enabled": true,
+      "label": "Slični proizvodi",
+      "maxProducts": 4,
+      "placement": "product_page",
+      "excludeSameCategory": false
+    },
+    "completeTheLook": {
+      "enabled": true,
+      "label": "Dopuni izgled",
+      "maxOutfits": 3,
+      "placement": "product_page"
+    },
+    "wishlistBased": {
+      "enabled": true,
+      "label": "Na osnovu liste želja",
+      "maxProducts": 6,
+      "algorithms": ["contentBased"]
+    },
+    "categoryInterest": {
+      "enabled": true,
+      "label": "Iz vaših omiljenih kategorija",
+      "maxProducts": 6,
+      "algorithms": ["contentBased"]
+    },
+    "memberExclusive": {
+      "enabled": true,
+      "label": "Ekskluzivno za članove",
+      "maxProducts": 4,
+      "tiers": ["silver", "gold", "black"],
+      "algorithms": ["contentBased"]
+    }
+  },
+  "scoring": {
+    "viewWeight": 1.0,
+    "wishlistWeight": 2.5,
+    "cartWeight": 3.0,
+    "purchaseWeight": 5.0,
+    "categoryAffinityWeight": 1.5,
+    "recencyDecayDays": 30,
+    "recencyHalfLifeDays": 14,
+    "popularityBoost": 0.1,
+    "memberTierBoost": {
+      "silver": 0.1,
+      "gold": 0.2,
+      "black": 0.3
+    },
+    "priceRangeTolerance": 0.3
+  },
+  "filters": {
+    "excludePurchased": true,
+    "excludeInCart": true,
+    "excludeOutOfStock": true,
+    "excludeWishlisted": false,
+    "minStockThreshold": 1,
+    "maxPriceRatio": 2.0,
+    "categoryDiversity": true,
+    "maxPerCategory": 2
+  },
+  "homepage": {
+    "forYouSection": {
+      "enabled": true,
+      "position": "after_hero",
+      "maxProducts": 8,
+      "showReason": true
+    },
+    "categoryRows": {
+      "enabled": true,
+      "reorderByInterest": true,
+      "maxCategories": 4,
+      "minInterestScore": 0.2
+    },
+    "recentlyViewed": {
+      "enabled": true,
+      "position": "bottom",
+      "maxProducts": 10
+    }
+  },
+  "productPage": {
+    "frequentlyBoughtTogether": { "enabled": true, "position": "after_price" },
+    "similarProducts": { "enabled": true, "position": "after_details" },
+    "completeTheLook": { "enabled": true, "position": "after_similar" }
+  },
+  "tracking": {
+    "viewDebounceMs": 1000,
+    "minViewDurationMs": 500,
+    "batchSize": 20,
+    "flushIntervalMs": 5000,
+    "maxStoredViews": 200,
+    "maxStoredWishlist": 100,
+    "maxStoredCategories": 50
+  },
+  "privacy": {
+    "requireConsent": true,
+    "anonymizeAfterDays": 365,
+    "allowOptOut": true,
+    "deleteOnAccountDeletion": true
+  },
+  "abTesting": {
+    "enabled": false,
+    "variants": {
+      "control": { "weight": 0.5, "algorithms": ["contentBased"] },
+      "personalized": { "weight": 0.5, "algorithms": ["collaborative", "contentBased"] }
+    },
+    "metrics": ["ctr", "conversion", "revenue_per_user"]
+  },
+  "email": {
+    "enabled": false,
+    "templates": {
+      "backInStock": { "trigger": "product_restock", "delayHours": 1 },
+      "priceDrop": { "trigger": "price_drop", "minDropPercent": 10, "delayHours": 2 },
+      "newInCategory": { "trigger": "new_product_in_interested_category", "delayHours": 24 },
+      "personalizedDigest": { "trigger": "weekly", "maxProducts": 6, "dayOfWeek": 1, "hour": 10 }
+    }
+  },
+  "future": {
+    "aiStylist": {
+      "enabled": false,
+      "sessionTimeoutMinutes": 15,
+      "maxOutfitsPerSession": 5
+    },
+    "seasonalRecommendations": {
+      "enabled": false,
+      "seasons": ["spring", "summer", "autumn", "winter"],
+      "transitionWeeks": 2
+    },
+    "predictiveShopping": {
+      "enabled": false,
+      "predictReorder": false,
+      "predictSizeNeed": false
+    }
+  }
+}

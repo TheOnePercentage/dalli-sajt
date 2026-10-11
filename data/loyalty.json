@@ -1,0 +1,402 @@
+{
+  "tiers": [
+    {
+      "id": "member",
+      "label": "Član",
+      "labelEn": "Member",
+      "minSpent": 0,
+      "minOrders": 0,
+      "color": "#6B7280",
+      "gradient": "from-gray-500 to-gray-600",
+      "icon": "user",
+      "benefits": [
+        "standard_support",
+        "order_tracking",
+        "wishlist_sync"
+      ],
+      "description": "Početni nivo za sve kupce"
+    },
+    {
+      "id": "silver",
+      "label": "Srebro",
+      "labelEn": "Silver",
+      "minSpent": 100000,
+      "minOrders": 3,
+      "color": "#9CA3AF",
+      "gradient": "from-gray-400 to-gray-500",
+      "icon": "award",
+      "benefits": [
+        "standard_support",
+        "order_tracking",
+        "wishlist_sync",
+        "early_access_24h",
+        "free_shipping",
+        "birthday_gift",
+        "silver_only_discounts"
+      ],
+      "description": "Razmena poena za popuste, raniji pristup lancima"
+    },
+    {
+      "id": "gold",
+      "label": "Zlato",
+      "labelEn": "Gold",
+      "minSpent": 500000,
+      "minOrders": 8,
+      "color": "#F59E0B",
+      "gradient": "from-amber-400 to-amber-600",
+      "icon": "crown",
+      "benefits": [
+        "standard_support",
+        "order_tracking",
+        "wishlist_sync",
+        "early_access_48h",
+        "free_shipping",
+        "birthday_gift",
+        "silver_only_discounts",
+        "priority_support",
+        "exclusive_collections",
+        "gold_only_discounts",
+        "personal_shopper_access",
+        "free_returns",
+        "invite_only_events"
+      ],
+      "description": "Prioritetna podrška, ekskluzivne kolekcije, lični shopper"
+    },
+    {
+      "id": "black",
+      "label": "Crno",
+      "labelEn": "Black",
+      "minSpent": 1000000,
+      "minOrders": 15,
+      "color": "#111827",
+      "gradient": "from-black to-gray-900",
+      "icon": "gem",
+      "benefits": [
+        "standard_support",
+        "order_tracking",
+        "wishlist_sync",
+        "early_access_72h",
+        "free_shipping",
+        "birthday_gift",
+        "silver_only_discounts",
+        "priority_support",
+        "exclusive_collections",
+        "gold_only_discounts",
+        "personal_shopper_access",
+        "free_returns",
+        "invite_only_events",
+        "black_only_products",
+        "concierge_service",
+        "vip_experiences",
+        "custom_fitting",
+        "annual_gift"
+      ],
+      "description": "Konzijerž servis, VIP iskustva, custom fitting, godišnji darovi"
+    }
+  ],
+  "points": {
+    "earnRate": 1,
+    "earnPerCurrency": 100,
+    "redeemRate": 100,
+    "redeemValue": 1,
+    "minRedeem": 500,
+    "maxRedeemPercent": 30,
+    "expiryMonths": 24
+  },
+  "benefits": {
+    "standard_support": {
+      "id": "standard_support",
+      "label": "Standardna podrška",
+      "description": "Podrška u radno vreme (09-17h)",
+      "tierRequired": "member"
+    },
+    "order_tracking": {
+      "id": "order_tracking",
+      "label": "Praćenje porudžbina",
+      "description": "Pregled istorije i statusa porudžbina",
+      "tierRequired": "member"
+    },
+    "wishlist_sync": {
+      "id": "wishlist_sync",
+      "label": "Sinhronizacija liste želja",
+      "description": "Lista želja dostupna na svim uređajima",
+      "tierRequired": "member"
+    },
+    "early_access_24h": {
+      "id": "early_access_24h",
+      "label": "Rani pristup (24h)",
+      "description": "Prvi pristup novim lancima 24h ranije",
+      "tierRequired": "silver"
+    },
+    "early_access_48h": {
+      "id": "early_access_48h",
+      "label": "Rani pristup (48h)",
+      "description": "Prvi pristup novim lancima 48h ranije",
+      "tierRequired": "gold"
+    },
+    "early_access_72h": {
+      "id": "early_access_72h",
+      "label": "Rani pristup (72h)",
+      "description": "Prvi pristup novim lancima 72h ranije",
+      "tierRequired": "black"
+    },
+    "free_shipping": {
+      "id": "free_shipping",
+      "label": "Besplatna dostava",
+      "description": "Besplatna dostava bez minimalnog iznosa",
+      "tierRequired": "silver"
+    },
+    "birthday_gift": {
+      "id": "birthday_gift",
+      "label": "Rođendanski dar",
+      "description": "Specijalni poklon za rođendan",
+      "tierRequired": "silver"
+    },
+    "silver_only_discounts": {
+      "id": "silver_only_discounts",
+      "label": "Samo za Srebro - popusti",
+      "description": "Ekskluzivni popusti za Srebro članove",
+      "tierRequired": "silver"
+    },
+    "priority_support": {
+      "id": "priority_support",
+      "label": "Prioritetna podrška",
+      "description": "24/7 prioritetna podrška sa dedicated agentom",
+      "tierRequired": "gold"
+    },
+    "exclusive_collections": {
+      "id": "exclusive_collections",
+      "label": "Ekskluzivne kolekcije",
+      "description": "Pristup kolekcijama samo za članove",
+      "tierRequired": "gold"
+    },
+    "gold_only_discounts": {
+      "id": "gold_only_discounts",
+      "label": "Samo za Zlato - popusti",
+      "description": "Veći popusti rezervisani za Zlato članove",
+      "tierRequired": "gold"
+    },
+    "personal_shopper_access": {
+      "id": "personal_shopper_access",
+      "label": "Lični shopper",
+      "description": "Privremeni pristup ličnom stilistu",
+      "tierRequired": "gold"
+    },
+    "free_returns": {
+      "id": "free_returns",
+      "label": "Besplatni vraćanja",
+      "description": "Nema troškova za vraćanje robe",
+      "tierRequired": "gold"
+    },
+    "invite_only_events": {
+      "id": "invite_only_events",
+      "label": "Događaji samo na pozivnicu",
+      "description": "Privatni eventi, predpremijere, uzorkovanja",
+      "tierRequired": "gold"
+    },
+    "black_only_products": {
+      "id": "black_only_products",
+      "label": "Produkti samo za Crno",
+      "description": "Limited edition proizvodi samo za Crno članove",
+      "tierRequired": "black"
+    },
+    "concierge_service": {
+      "id": "concierge_service",
+      "label": "Konzijerž servis",
+      "description": "Dedicated konzijerž za sve vaše potrebe",
+      "tierRequired": "black"
+    },
+    "vip_experiences": {
+      "id": "vip_experiences",
+      "label": "VIP iskustva",
+      "description": "Ekskluzivna putovanja, večere, sastanci sa dizajnerima",
+      "tierRequired": "black"
+    },
+    "custom_fitting": {
+      "id": "custom_fitting",
+      "label": "Custom fitting",
+      "description": "Prilagođene mere i personalizovani proizvodi",
+      "tierRequired": "black"
+    },
+    "annual_gift": {
+      "id": "annual_gift",
+      "label": "Godišnji premium dar",
+      "description": "Luksuzni darovni set godišnje",
+      "tierRequired": "black"
+    }
+  },
+  "progress": {
+    "showNextTier": true,
+    "showSpendRemaining": true,
+    "showOrdersRemaining": true,
+    "animationDuration": 600,
+    "milestones": [
+      { "spent": 25000, "label": "Prva milja", "reward": "welcome_gift" },
+      { "spent": 50000, "label": "Lojalan kupac", "reward": "loyalty_badge" },
+      { "spent": 100000, "label": "Srebro status", "reward": "tier_upgrade" },
+      { "spent": 250000, "label": "Polovina puta do Zlata", "reward": "milestone_gift" },
+      { "spent": 500000, "label": "Zlato status", "reward": "tier_upgrade" },
+      { "spent": 750000, "label": "Polovina puta do Crnog", "reward": "milestone_gift" },
+      { "spent": 1000000, "label": "Crno status", "reward": "tier_upgrade" }
+    ]
+  },
+  "productFlags": {
+    "memberOnly": {
+      "id": "memberOnly",
+      "label": "Samo za članove",
+      "description": "Vidljiv samo ulogovanim članovima",
+      "tiers": ["member", "silver", "gold", "black"]
+    },
+    "earlyAccess": {
+      "id": "earlyAccess",
+      "label": "Rani pristup",
+      "description": "Dostupan članovima ranije nego javnosti",
+      "tiers": ["silver", "gold", "black"],
+      "accessHours": {
+        "silver": 24,
+        "gold": 48,
+        "black": 72
+      }
+    },
+    "limitedRelease": {
+      "id": "limitedRelease",
+      "label": "Limited Release",
+      "description": "Ograničeno izdanje - jedan po kupcu",
+      "tiers": ["gold", "black"],
+      "maxPerCustomer": 1
+    }
+  },
+  "notifications": {
+    "backInStock": {
+      "enabled": true,
+      "label": "Povratak na stanje",
+      "description": "Obaveštenje kada proizvod vrati na stanje"
+    },
+    "priceDrop": {
+      "enabled": true,
+      "label": "Pad cene",
+      "description": "Obaveštenje kada cena padne"
+    },
+    "newCollection": {
+      "enabled": true,
+      "label": "Nova kolekcija",
+      "description": "Obaveštenje o novoj kolekciji"
+    },
+    "memberAnnouncement": {
+      "enabled": true,
+      "label": "Članarske najave",
+      "description": "Ekskluzivne najave samo za članove"
+    },
+    "tierUpgrade": {
+      "enabled": true,
+      "label": "Penjanje nivoa",
+      "description": "Čestitka pri penjanju nivoa"
+    },
+    "pointsExpiring": {
+      "enabled": true,
+      "label": "Poeni ističu",
+      "description": "Podsetnik 30 dana pre isteka poena"
+    },
+    "birthday": {
+      "enabled": true,
+      "label": "Rođendan",
+      "description": "Specijalna ponuda za rođendan"
+    }
+  },
+  "analytics": {
+    "events": [
+      "loyalty_tier_view",
+      "loyalty_progress_view",
+      "loyalty_benefits_view",
+      "points_earned",
+      "points_redeemed",
+      "tier_upgraded",
+      "wishlist_add",
+      "wishlist_remove",
+      "wishlist_view",
+      "member_only_product_view",
+      "early_access_product_view",
+      "limited_release_product_view",
+      "member_purchase",
+      "repeat_purchase",
+      "notification_subscribe",
+      "notification_open",
+      "profile_saved_sizes",
+      "profile_saved_addresses",
+      "profile_preferences_updated",
+      "crypto_reward_claimed",
+      "vip_experience_booked",
+      "ai_stylist_session",
+      "exclusive_drop_access"
+    ]
+  },
+  "futureHooks": {
+    "cryptoRewards": {
+      "enabled": false,
+      "description": "Token-based loyalty rewards on blockchain",
+      "hooks": {
+        "onPointsEarned": "mintLoyaltyTokens",
+        "onTierUpgrade": "airdropTierBadgeNFT",
+        "onReferral": "rewardReferralTokens",
+        "redeemTokensFor": ["discounts", "exclusive_products", "vip_access", "governance_votes"]
+      },
+      "chains": ["ethereum", "polygon", "arbitrum"],
+      "tokenStandard": "ERC-1155"
+    },
+    "vipExperiences": {
+      "enabled": false,
+      "description": "Exclusive real-world experiences for top tiers",
+      "tiers": ["gold", "black"],
+      "types": [
+        { "id": "private_shopping", "label": "Private Shopping Event", "frequency": "quarterly" },
+        { "id": "designer_meetup", "label": "Meet the Designer", "frequency": "bi-annual" },
+        { "id": "fashion_show", "label": "Fashion Show Access", "frequency": "annual" },
+        { "id": "factory_tour", "label": "Sustainable Factory Tour", "frequency": "annual" },
+        { "id": "styling_session", "label": "Personal Styling Session", "frequency": "monthly" }
+      ],
+      "hooks": {
+        "onTierUpgrade": "unlockVipExperiences",
+        "onAnniversary": "sendVipInvitation",
+        "blackExclusive": ["metaverse_fashion_week", "design_co_creation"]
+      }
+    },
+    "aiPersonalStylist": {
+      "enabled": false,
+      "description": "AI-powered personal styling recommendations",
+      "tiers": ["silver", "gold", "black"],
+      "features": {
+        "silver": ["outfit_suggestions", "size_recommendations"],
+        "gold": ["outfit_suggestions", "size_recommendations", "wardrobe_analysis", "seasonal_planning"],
+        "black": ["outfit_suggestions", "size_recommendations", "wardrobe_analysis", "seasonal_planning", "custom_design_input", "trend_forecasting", "dedicated_ai_concierge"]
+      },
+      "dataSources": ["purchase_history", "wishlist", "saved_sizes", "style_preferences", "browsing_behavior", "returns_data"],
+      "hooks": {
+        "onProfileUpdate": "refreshStyleProfile",
+        "onPurchase": "updateWardrobeGraph",
+        "onWishlistAdd": "signalInterest",
+        "recommendationEngine": "collaborative_filtering + content_based + llm_styling"
+      }
+    },
+    "exclusiveDrops": {
+      "enabled": false,
+      "description": "Limited edition drops with tier-based access",
+      "mechanics": {
+        "allowlist": { "tiers": ["gold", "black"], "windowHours": 48 },
+        "raffle": { "tiers": ["silver", "gold", "black"], "entriesPerTier": { "silver": 1, "gold": 3, "black": 10 } },
+        "fcfs": { "tiers": ["member", "silver", "gold", "black"], "windowHours": 24 },
+        "blindBox": { "tiers": ["gold", "black"], "guaranteedTier": "black" }
+      },
+      "hooks": {
+        "onDropAnnounced": "notifyEligibleMembers",
+        "onAllowlistOpen": "registerInterest",
+        "onRaffleDraw": "notifyWinners",
+        "postDrop": "revealRarityStats"
+      },
+      "scheduling": {
+        "frequency": "monthly",
+        "announcementLeadDays": 14,
+        "reminderCadence": ["7d", "1d", "1h"]
+      }
+    }
+  }
+}

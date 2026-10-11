@@ -1,0 +1,606 @@
+/**
+ * Crypto Payment Data Model
+ * 
+ * Defines the data structures for crypto payments.
+ * This is the single source of truth for all crypto payment related data.
+ */
+
+// ============================================================
+// SUPPORTED CRYPTOCURRENCIES
+// ============================================================
+
+export const SUPPORTED_CRYPTO_CURRENCIES = [
+  {
+    id: 'BTC',
+    name: 'Bitcoin',
+    symbol: '₿',
+    decimals: 8,
+    network: 'bitcoin',
+    icon: '/images/crypto/btc.svg',
+    enabled: true,
+    minConfirmations: 1,
+    estimatedTimeMinutes: 10
+  },
+  {
+    id: 'ETH',
+    name: 'Ethereum',
+    symbol: 'Ξ',
+    decimals: 18,
+    network: 'ethereum',
+    icon: '/images/crypto/eth.svg',
+    enabled: true,
+    minConfirmations: 12,
+    estimatedTimeMinutes: 5
+  },
+  {
+    id: 'USDT',
+    name: 'Tether (USDT)',
+    symbol: '$',
+    decimals: 6,
+    network: 'ethereum', // ERC-20
+    icon: '/images/crypto/usdt.svg',
+    enabled: true,
+    minConfirmations: 12,
+    estimatedTimeMinutes: 5
+  },
+  {
+    id: 'USDC',
+    name: 'USD Coin (USDC)',
+    symbol: '$',
+    decimals: 6,
+    network: 'ethereum', // ERC-20
+    icon: '/images/crypto/usdc.svg',
+    enabled: true,
+    minConfirmations: 12,
+    estimatedTimeMinutes: 5
+  }
+];
+
+/**
+ * Get enabled currencies only
+ */
+export function getEnabledCryptoCurrencies() {
+  return SUPPORTED_CRYPTO_CURRENCIES.filter(c => c.enabled);
+}
+
+/**
+ * Get currency by ID
+ */
+export function getCryptoCurrencyById(id) {
+  return SUPPORTED_CRYPTO_CURRENCIES.find(c => c.id === id);
+}
+
+// ============================================================
+// PAYMENT METHODS
+// ============================================================
+
+export const PAYMENT_METHODS = [
+  {
+    id: 'cod',
+    name: 'Plaćanje pri preuzimanju',
+    type: 'traditional',
+    enabled: true,
+    description: 'Platite gotovinom ili karticom kuriru prilikom dostave. Bez dodatnih naknada.',
+    icon: 'cod',
+    sortOrder: 1,
+    discount: 0
+  },
+  {
+    id: 'bank-transfer',
+    name: 'Bankovni prenos',
+    type: 'traditional',
+    enabled: true,
+    description: 'Plaćanje putem vaše banke. Porudžbina se obrađuje nakon potvrde uplate (1-2 radna dana).',
+    icon: 'bank-transfer',
+    sortOrder: 2,
+    discount: 0
+  },
+  {
+    id: 'card',
+    name: 'Kreditna / Debitna kartica',
+    type: 'traditional',
+    enabled: true,
+    description: 'Visa, Mastercard, Maestro, Dina. Sigurna 3D Secure transakcija.',
+    icon: 'card',
+    sortOrder: 3,
+    discount: 0
+  },
+  {
+    id: 'crypto',
+    name: 'Kripto plaćanje',
+    type: 'crypto',
+    enabled: true,
+    description: 'Bitcoin, Ethereum, USDT, USDC — 15% popust.',
+    icon: 'crypto',
+    sortOrder: 4,
+    discount: 0.15, // configurable via Payment Incentives
+    currencies: ['BTC', 'ETH', 'USDT', 'USDC'],
+    badge: 'Uskoro',
+    comingSoon: true
+  }
+];
+
+/**
+ * Get enabled payment methods
+ */
+export function getEnabledPaymentMethods() {
+  return PAYMENT_METHODS.filter(m => m.enabled).sort((a, b) => a.sortOrder - b.sortOrder);
+}
+
+/**
+ * Get payment method by ID
+ */
+export function getPaymentMethodById(id) {
+  return PAYMENT_METHODS.find(m => m.id === id);
+}
+
+/**
+ * Get crypto payment method
+ */
+export function getCryptoPaymentMethod() {
+  return PAYMENT_METHODS.find(m => m.id === 'crypto');
+}
+
+// ============================================================
+// CRYPTO PAYMENT CONFIGURATION
+// ============================================================
+
+export const CRYPTO_PAYMENT_CONFIG = {
+  enabled: true,
+  discountRate: 0.15, // configurable via Payment Incentives for crypto payments
+  discountLabel: '15% popust',
+  
+  // Supported currencies (subset of SUPPORTED_CRYPTO_CURRENCIES)
+  supportedCurrencies: ['BTC', 'ETH', 'USDT', 'USDC'],
+  
+  // Payment provider configuration
+  provider: 'internal', // 'internal' | 'coinbase' | 'bitpay' | 'coinpayments' | 'custom'
+  apiEndpoint: '/api/crypto/payment',
+  
+  // Payment flow configuration
+  confirmationTimeoutMinutes: 30, // Time to complete payment
+  confirmationTimeoutBufferMinutes: 5, // Buffer for network delays
+  minConfirmations: {
+    BTC: 1,
+    ETH: 12,
+    USDT: 12,
+    USDC: 12
+  },
+  
+  // Amount limits (in RSD)
+  minAmountRSD: 1000,
+  maxAmountRSD: 5000000,
+  
+  // Exchange rate configuration
+  exchangeRate: {
+    provider: 'coingecko', // 'coingecko' | 'binance' | 'custom'
+    updateIntervalMinutes: 5,
+    fallbackRate: null // Will use cached rate if API fails
+  },
+  
+  // Payment addresses (per currency) - will be loaded from secure config
+  walletAddresses: {
+    BTC: null, // Set in production
+    ETH: null,
+    USDT: null,
+    USDC: null
+  },
+  
+  // Payment expiration
+  paymentExpirationMinutes: 30,
+  
+  // Retry configuration
+  maxRetries: 3,
+  retryDelaySeconds: 10,
+  
+  // Webhook configuration
+  webhook: {
+    enabled: true,
+    secret: null, // Set in production
+    events: ['payment_received', 'payment_confirmed', 'payment_failed', 'payment_expired']
+  },
+  
+  // Discount configuration
+  discount: {
+    enabled: true,
+    rate: 0.15,
+    label: '15% popust za kripto plaćanje',
+    appliesTo: ['subtotal'] // 'subtotal' | 'total' | 'shipping'
+  }
+};
+
+/**
+ * Get active crypto config (merge with CMS config)
+ */
+export function getActiveCryptoConfig(cmsConfig = {}) {
+  return Promise.resolve({
+    ...CRYPTO_PAYMENT_CONFIG,
+    ...cmsConfig.cryptoPayment
+  };
+}
+
+// ============================================================
+// ORDER SCHEMA - CRYPTO FIELDS
+// ============================================================
+
+/**
+ * Crypto payment details stored with order
+ */
+export const CRYPTO_ORDER_SCHEMA = {
+  // Payment method identifier
+  paymentMethod: 'crypto',
+  
+  // Crypto-specific details
+  cryptoDetails: {
+    currency: null, // 'BTC' | 'ETH' | 'USDT' | 'USDC'
+    amountCrypto: null, // Amount in crypto (e.g., 0.005 BTC)
+    amountRSD: null, // Amount in RSD at time of payment
+    exchangeRate: null, // RSD per crypto unit at time of payment
+    
+    // Payment addresses
+    walletAddress: null, // Destination address for payment
+    qrCodeData: null, // QR code data URI for payment
+    qrCodeImage: null, // QR code image URL/data URI
+    
+    // Payment verification
+    transactionId: null, // Blockchain transaction hash
+    confirmations: 0, // Current confirmations
+    requiredConfirmations: null, // Based on currency
+    
+    // Status tracking
+    status: 'pending_payment', // 'pending_payment' | 'confirming' | 'confirmed' | 'failed' | 'expired' | 'refunded'
+    paidAt: null, // ISO timestamp when payment was detected
+    confirmedAt: null, // ISO timestamp when confirmed
+    expiredAt: null, // ISO timestamp when expired
+    
+    // Discount applied
+    discountApplied: false,
+    discountRate: 0.15,
+    discountAmountRSD: 0,
+    
+    // Metadata
+    exchangeRateRSD: null, // RSD per crypto unit at time of order
+    exchangeRateProvider: 'coingecko',
+    exchangeRateTimestamp: null,
+    
+    // Retry tracking
+    retryCount: 0,
+    lastRetryAt: null,
+    
+    // Webhook tracking
+    webhookEvents: [] // Array of received webhook events
+  },
+  
+  // Standard order fields (for reference)
+  orderFields: {
+    orderNumber: null,
+    paymentMethod: null, // 'cod' | 'bank-transfer' | 'card' | 'crypto'
+    status: 'pending', // 'pending' | 'confirmed' | 'processing' | 'shipped' | 'delivered' | 'cancelled' | 'refunded'
+    paymentStatus: 'pending', // 'pending' | 'paid' | 'failed' | 'refunded' | 'partial'
+    cryptoDetails: null, // Populated when paymentMethod === 'crypto'
+    totals: {
+      subtotal: 0,
+      shipping: 0,
+      discount: 0,
+      total: 0
+    },
+    items: [],
+    customer: {},
+    shipping: {},
+    createdAt: null,
+    updatedAt: null
+  }
+};
+
+/**
+ * Crypto order statuses
+ */
+export const CRYPTO_ORDER_STATUS = {
+  PENDING_PAYMENT: 'pending_payment',
+  CONFIRMING: 'confirming',
+  CONFIRMED: 'confirmed',
+  FAILED: 'failed',
+  EXPIRED: 'expired',
+  REFUNDED: 'refunded',
+  PARTIAL: 'partial'
+};
+
+/**
+ * Check if crypto order status is final
+ */
+export function isCryptoOrderFinal(status) {
+  return [CRYPTO_ORDER_STATUS.CONFIRMED, CRYPTO_ORDER_STATUS.FAILED, CRYPTO_ORDER_STATUS.EXPIRED, CRYPTO_ORDER_STATUS.REFUNDED].includes(status);
+}
+
+/**
+ * Check if crypto order can be retried
+ */
+export function canRetryCryptoOrder(status, retryCount, maxRetries = 3) {
+  return [CRYPTO_ORDER_STATUS.FAILED, CRYPTO_ORDER_STATUS.EXPIRED].includes(status) && retryCount < maxRetries;
+}
+
+// ============================================================
+// ADMIN PANEL DISPLAY FIELDS
+// ============================================================
+
+export const ADMIN_CRYPTO_ORDER_FIELDS = [
+  { key: 'orderNumber', label: 'Broj porudžbine', type: 'text' },
+  { key: 'paymentMethod', label: 'Način plaćanja', type: 'badge', badgeClass: 'crypto' },
+  { key: 'cryptoDetails.currency', label: 'Valuta', type: 'text' },
+  { key: 'cryptoDetails.amountCrypto', label: 'Iznos (kripto)', type: 'text' },
+  { key: 'cryptoDetails.amountRSD', label: 'Iznos (RSD)', type: 'currency' },
+  { key: 'cryptoDetails.exchangeRate', label: 'Kurs', type: 'text' },
+  { key: 'cryptoDetails.walletAddress', label: 'Adresa', type: 'address' },
+  { key: 'cryptoDetails.transactionId', label: 'TX Hash', type: 'txhash' },
+  { key: 'cryptoDetails.confirmations', label: 'Potvrde', type: 'confirmations' },
+  { key: 'cryptoDetails.status', label: 'Status', type: 'status' },
+  { key: 'cryptoDetails.paidAt', label: 'Placeno', type: 'datetime' },
+  { key: 'cryptoDetails.confirmedAt', label: 'Potvrđeno', type: 'datetime' },
+  { key: 'cryptoDetails.discountAmountRSD', label: 'Popust (RSD)', type: 'currency' },
+  { key: 'status', label: 'Status porudžbine', type: 'status' },
+  { key: 'totals.total', label: 'Ukupno', type: 'currency' },
+  { key: 'createdAt', label: 'Kreirano', type: 'datetime' }
+];
+
+// ============================================================
+// CRYPTO PAYMENT ERROR CODES
+// ============================================================
+
+export const CRYPTO_PAYMENT_ERRORS = {
+  INVALID_CURRENCY: { code: 'INVALID_CURRENCY', message: 'Nepodržana valuta' },
+  INVALID_AMOUNT: { code: 'INVALID_AMOUNT', message: 'Neispravan iznos' },
+  EXCHANGE_RATE_UNAVAILABLE: { code: 'EXCHANGE_RATE_UNAVAILABLE', message: 'Kurs nije dostupan, pokušajte ponovo' },
+  PAYMENT_EXPIRED: { code: 'PAYMENT_EXPIRED', message: 'Vreme za plaćanje je isteklo' },
+  PAYMENT_FAILED: { code: 'PAYMENT_FAILED', message: 'Plaćanje nije uspelo, pokušajte ponovo' },
+  INSUFFICIENT_CONFIRMATIONS: { code: 'INSUFFICIENT_CONFIRMATIONS', message: 'Nedovoljan broj potvrda' },
+  DUPLICATE_PAYMENT: { code: 'DUPLICATE_PAYMENT', message: 'Ovo plaćanje je već obrađeno' },
+  INSUFFICIENT_AMOUNT: { code: 'INSUFFICIENT_AMOUNT', message: 'Uplaćeni iznos je manji od ocekivanog' },
+  OVERPAYMENT: { code: 'OVERPAYMENT', message: 'Previše je uplaceno, kontaktirajte podršku' },
+  ADDRESS_INVALID: { code: 'ADDRESS_INVALID', message: 'Neispravna adresa za plaćanje' },
+  NETWORK_ERROR: { code: 'NETWORK_ERROR', message: 'Mrežna greška, pokušajte ponovo' },
+  PROVIDER_UNAVAILABLE: { code: 'PROVIDER_UNAVAILABLE', message: 'Usluga trenutno nije dostupna' },
+  AMOUNT_TOO_SMALL: { code: 'AMOUNT_TOO_SMALL', message: 'Iznos je premali za plaćanje' },
+  AMOUNT_TOO_LARGE: { code: 'AMOUNT_TOO_LARGE', message: 'Iznos premasuje dozvoljeni limit' }
+};
+
+/**
+ * Get user-friendly error message
+ */
+export function getCryptoPaymentErrorMessage(errorCode) {
+  const error = CRYPTO_PAYMENT_ERRORS[errorCode];
+  return error ? error.message : 'Došlo je do greške. Pokušajte ponovo.';
+}
+
+// ============================================================
+// DISCOUNT CALCULATION
+// ============================================================
+
+/**
+ * Calculate crypto discount
+ * @param {number} subtotal - Subtotal in RSD
+ * @param {number} discountRate - Discount rate (0.15 for 15%)
+ * @returns {number} Discount amount in RSD
+ */
+export function calculateCryptoDiscount(subtotal, discountRate = 0.15) {
+  return Math.round(subtotal * discountRate);
+}
+
+/**
+ * Calculate crypto amount from RSD
+ * @param {number} amountRSD - Amount in RSD
+ * @param {number} exchangeRate - Exchange rate (RSD per crypto unit)
+ * @returns {number} Amount in crypto
+ */
+export function calculateCryptoAmount(amountRSD, exchangeRate) {
+  return amountRSD / exchangeRate;
+}
+
+/**
+ * Calculate RSD amount from crypto
+ * @param {number} amountCrypto - Amount in crypto
+ * @param {number} exchangeRate - Exchange rate (RSD per crypto unit)
+ * @returns {number} Amount in RSD
+ */
+export function calculateRSDAmount(amountCrypto, exchangeRate) {
+  return Math.round(amountCrypto * exchangeRate);
+}
+
+export default {
+  SUPPORTED_CRYPTO_CURRENCIES,
+  getEnabledCryptoCurrencies,
+  getCryptoCurrencyById,
+  PAYMENT_METHODS,
+  getEnabledPaymentMethods,
+  getPaymentMethodById,
+  getCryptoPaymentMethod,
+  CRYPTO_PAYMENT_CONFIG,
+  getActiveCryptoConfig,
+  CRYPTO_ORDER_SCHEMA,
+  CRYPTO_ORDER_STATUS,
+  isCryptoOrderFinal,
+  canRetryCryptoOrder,
+  ADMIN_CRYPTO_ORDER_FIELDS,
+  CRYPTO_PAYMENT_ERRORS,
+  getCryptoPaymentErrorMessage,
+  calculateCryptoDiscount,
+  calculateCryptoAmount,
+  calculateRSDAmount,
+  
+  // ==================== FUTURE-READY FEATURES ====================
+  
+  /**
+   * Loyalty program integration points
+   * These are hooks for future loyalty program integration
+   */
+  LOYALTY_INTEGRATION: {
+    /**
+     * Calculate loyalty points earned from crypto payment
+     * @param {number} amountRSD - Amount in RSD
+     * @param {string} currency - Crypto currency
+     * @returns {number} Points earned
+     */
+    calculatePoints: (amountRSD, currency) => {
+      // Base rate: 1 point per 100 RSD spent
+      // Bonus multiplier for crypto payments
+      const baseRate = 1; // 1 point per 100 RSD
+      const cryptoBonus = 1.5; // 50% bonus for crypto
+      return Math.floor((amountRSD / 100) * baseRate * cryptoBonus);
+    },
+    
+    /**
+     * Get loyalty tier based on crypto spending
+     * @param {number} totalCryptoSpentRSD - Total RSD spent via crypto
+     * @returns {Object} Tier info { name, benefits }
+     */
+    getTier: (totalCryptoSpentRSD) => {
+      if (totalCryptoSpentRSD >= 500000) {
+        return Promise.resolve({ name: 'Platinum', benefits: ['Free shipping', 'Priority support', 'Exclusive drops', '10% extra discount'] };
+      } else if (totalCryptoSpentRSD >= 200000) {
+        return Promise.resolve({ name: 'Gold', benefits: ['Free shipping', 'Priority support', 'Early access'] };
+      } else if (totalCryptoSpentRSD >= 50000) {
+        return Promise.resolve({ name: 'Silver', benefits: ['Free shipping', 'Early access'] };
+      } else {
+        return Promise.resolve({ name: 'Bronze', benefits: ['Welcome bonus'] };
+      }
+    }
+  },
+  
+  /**
+   * VIP program integration points
+   */
+  VIP_PROGRAM: {
+    /**
+     * Check if user qualifies for VIP crypto benefits
+     * @param {Object} user - User object
+     * @returns {Object} VIP status { isVIP, tier, benefits }
+     */
+    checkVIPStatus: (user) => {
+      const cryptoSpent = user.cryptoSpentRSD || 0;
+      const orderCount = user.cryptoOrderCount || 0;
+      
+      if (cryptoSpent >= 1000000 || orderCount >= 50) {
+        return Promise.resolve({ isVIP: true, tier: 'Diamond', benefits: ['Concierge support', 'Custom discounts', 'Early access'] };
+      } else if (cryptoSpent >= 500000 || orderCount >= 20) {
+        return Promise.resolve({ isVIP: true, tier: 'Platinum', benefits: ['Priority support', 'Exclusive products'] };
+      } else if (cryptoSpent >= 100000 || orderCount >= 10) {
+        return Promise.resolve({ isVIP: true, tier: 'Gold', benefits: ['Free express shipping'] };
+      }
+      return Promise.resolve({ isVIP: false, tier: 'Standard', benefits: [] };
+    },
+    
+    /**
+     * Get VIP exclusive crypto products
+     * @param {string} tier - VIP tier
+     * @returns {Array} List of exclusive product IDs
+     */
+    getExclusiveProducts: (tier) => {
+      const exclusives = {
+        Diamond: ['crypto-diamond-1', 'crypto-diamond-2', 'nft-diamond-pass'],
+        Platinum: ['crypto-platinum-1', 'nft-platinum-pass'],
+        Gold: ['crypto-gold-1']
+      };
+      return exclusives[tier] || [];
+    }
+  },
+  
+  /**
+   * Crypto drops / limited edition releases
+   */
+  CRYPTO_DROPS: {
+    /**
+     * Register user for a crypto drop
+     * @param {string} dropId - Drop identifier
+     * @param {Object} user - User object
+     * @returns {Promise<Object>} Registration result
+     */
+    async registerForDrop(dropId, user) {
+      // In production, this would call an API
+      return Promise.resolve({
+        success: true,
+        registrationId: `drop_reg_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`,
+        message: 'Successfully registered for drop!'
+      };
+    },
+    
+    /**
+     * Get upcoming crypto drops
+     * @returns {Promise<Array>} List of upcoming drops
+     */
+    async getUpcomingDrops() {
+      // Mock data - in production fetch from API
+      return [
+        {
+          id: 'drop-001',
+          name: 'Limited Edition BTC Hoodie',
+          currency: 'BTC',
+          price: 0.0015,
+          maxSupply: 50,
+          currentRegistrations: 23,
+          startDate: '2025-02-01T10:00:00Z',
+          endDate: '2025-02-01T22:00:00Z',
+          image: '/images/drops/btc-hoodie.jpg'
+        },
+        {
+          id: 'drop-002',
+          name: 'Weekend Comfort Look',
+          currency: 'ETH',
+          price: 0.025,
+          maxSupply: 100,
+          currentRegistrations: 67,
+          startDate: '2025-02-15T10:00:00Z',
+          endDate: '2025-02-15T22:00:00Z',
+          image: '/images/drops/eth-tee.jpg'
+        }
+      ];
+    }
+  },
+  
+  /**
+   * NFT Certificate integration points
+   * For future implementation of blockchain-verified authenticity certificates
+   */
+  NFT_CERTIFICATES: {
+    /**
+     * Generate NFT certificate for product authenticity
+     * @param {Object} product - Product object
+     * @param {Object} buyer - Buyer information
+     * @returns {Promise<Object>} NFT certificate details
+     */
+    generateCertificate: function(product, buyer) {
+      // In production, this would mint an NFT on a blockchain
+      return Promise.resolve({
+        tokenId: `cert_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`,
+        contractAddress: '0x...', // Smart contract address
+        metadata: {
+          name: `Authenticity Certificate - ${product.name}`,
+          description: `Blockchain-verified authenticity certificate for ${product.name}`,
+          image: product.images?.main,
+          attributes: [
+            { trait_type: 'Product', value: product.name },
+            { trait_type: 'SKU', value: product.sku },
+            { trait_type: 'Buyer', value: buyer.email },
+            { trait_type: 'Purchase Date', value: new Date().toISOString() },
+            { trait_type: 'Verified', value: 'true' }
+          ],
+          blockchain: 'Ethereum / Polygon',
+          standard: 'ERC-721'
+        };
+      },
+      
+      /**
+       * Verify NFT certificate authenticity
+       * @param {string} tokenId - NFT token ID
+       * @returns {Promise<Object>} Verification result
+       */
+      verifyCertificate: function(tokenId) {
+        // In production, query blockchain
+        return Promise.resolve({
+          valid: true,
+          tokenId,
+          owner: '0x...',
+          mintedAt: '2025-01-15T10:30:00Z',
+          metadata: { /* metadata */ }
+        };
+      }
+  }
+};

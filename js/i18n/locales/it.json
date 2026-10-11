@@ -1,0 +1,349 @@
+{
+  "common": {
+    "home": "Home",
+    "shop": "Negozio",
+    "products": "Prodotti",
+    "categories": "Categorie",
+    "men": "Uomo",
+    "women": "Donna",
+    "hoodies": "Felpe",
+    "about": "Chi siamo",
+    "contact": "Contatti",
+    "cart": "Carrello",
+    "checkout": "Cassa",
+    "account": "Account",
+    "login": "Accedi",
+    "register": "Registrati",
+    "logout": "Esci",
+    "search": "Cerca",
+    "searchPlaceholder": "Cerca prodotti...",
+    "filter": "Filtra",
+    "sort": "Ordina",
+    "price": "Prezzo",
+    "sale": "Saldi",
+    "new": "Nuovo",
+    "bestseller": "Più venduto",
+    "size": "Taglia",
+    "color": "Colore",
+    "quantity": "Quantità",
+    "addToCart": "Aggiungi al carrello",
+    "buyNow": "Compra ora",
+    "outOfStock": "Non disponibile",
+    "inStock": "Disponibile",
+    "freeShipping": "Spedizione gratuita",
+    "cryptoDiscount": "Sconto crypto",
+    "returnPolicy": "Politica resi",
+    "warranty": "Garanzia",
+    "newsletter": "Newsletter",
+    "subscribe": "Iscriviti",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Conferma password",
+    "firstName": "Nome",
+    "lastName": "Cognome",
+    "phone": "Telefono",
+    "address": "Indirizzo",
+    "city": "Città",
+    "postalCode": "CAP",
+    "country": "Paese",
+    "save": "Salva",
+    "cancel": "Annulla",
+    "delete": "Elimina",
+    "edit": "Modifica",
+    "confirm": "Conferma",
+    "yes": "Sì",
+    "no": "No",
+    "loading": "Caricamento...",
+    "error": "Errore",
+    "success": "Successo",
+    "warning": "Attenzione",
+    "info": "Info",
+    "close": "Chiudi",
+    "back": "Indietro",
+    "next": "Avanti",
+    "previous": "Precedente",
+    "page": "Pagina",
+    "of": "di",
+    "results": "risultati",
+    "noResults": "Nessun risultato",
+    "viewAll": "Vedi tutto",
+    "viewDetails": "Dettagli",
+    "quickView": "Vista rapida",
+    "compare": "Confronta",
+    "wishlist": "Lista desideri",
+    "share": "Condividi",
+    "reviews": "Recensioni",
+    "writeReview": "Scrivi recensione",
+    "rating": "Valutazione",
+    "name": "Nome",
+    "message": "Messaggio",
+    "send": "Invia",
+    "submit": "Invia",
+    "reset": "Ripristina",
+    "apply": "Applica",
+    "clear": "Pulisci",
+    "all": "Tutti",
+    "none": "Nessuno",
+    "select": "Seleziona",
+    "choose": "Scegli",
+    "options": "Opzioni",
+    "settings": "Impostazioni",
+    "privacy": "Privacy",
+    "terms": "Termini di utilizzo",
+    "cookies": "Cookie",
+    "accept": "Accetta",
+    "reject": "Rifiuta",
+    "preferences": "Preferenze",
+    "language": "Lingua",
+    "currency": "Valuta",
+    "orders": "Ordini",
+    "theme": "Tema",
+    "notifications": "Notifiche",
+    "menu": "Menu",
+    "admin": "Admin",
+    "profile": "Profilo",
+    "cryptoWallet": "Crypto Wallet"
+  },
+  "header": {
+    "logo": "DALLI",
+    "tagline": "Guardaroba Online Premium",
+    "searchPlaceholder": "Cerca prodotti...",
+    "menu": "Menu",
+    "account": "Il mio account",
+    "orders": "I miei ordini",
+    "wishlist": "Lista desideri",
+    "settings": "Impostazioni",
+    "logout": "Esci",
+    "search": "Cerca",
+    "filter": "Filtra",
+    "theme": "Tema",
+    "cart": "Carrello",
+    "notifications": "Notifiche",
+    "profile": "Profilo",
+    "admin": "Pannello admin",
+    "login": "Accedi",
+    "cryptoWallet": "Crypto Wallet"
+  },
+  "hero": {
+    "title": "Qualità che Senti. Per Anni.",
+    "subtitle": "Ogni pezzo. Ogni cucitura. Ogni giorno.",
+    "supporting": "100% Cotone Organico. Made in Serbia. Dura Anni.",
+    "badge": "Nuova Collezione 2025",
+    "cta": "Scopri la Qualità",
+    "scrollDown": "Scorri in Basso",
+    "trust": {
+      "delivery": "Consegna Rapida 1–3 Giorni",
+      "cod": "Pagamento alla Consegna",
+      "returns": "30 Giorni per Reso"
+    },
+    "features": {
+      "organic": "100% Cotone Organico",
+      "delivery": "Spedizione Gratis >50€",
+      "crypto": "15% Sconto Crypto",
+      "returns": "30 Giorni Reso"
+    }
+  },
+  "features": {
+    "organic": {
+      "title": "100% Cotone Organico",
+      "desc": "Agricoltura biologica certificata, senza chimici"
+    },
+    "quality": {
+      "title": "Qualità Premium",
+      "desc": "Peso 180–320 g/m² per durata"
+    },
+    "delivery": {
+      "title": "Spedizione veloce",
+      "desc": "Gratuita per ordini sopra 50€"
+    },
+    "returns": {
+      "title": "Reso facile",
+      "desc": "30 giorni per cambio o rimborso"
+    },
+    "cod": {
+      "title": "Contrassegno",
+      "desc": "Acquista senza rischi - paghi quando il pacco arriva. Contanti o carta al corriere."
+    }
+  },
+  "categories": {
+    "men": {
+      "title": "Guardaroba Uomo",
+      "subtitle": "T-shirt, felpe, hoodie e altro",
+      "cta": "Vedi collezione"
+    },
+    "women": {
+      "title": "Guardaroba Donna",
+      "subtitle": "T-shirt, felpe, hoodie e altro",
+      "cta": "Vedi collezione"
+    },
+    "hoodies": {
+      "title": "Felpe & Hoodie",
+      "subtitle": "Calde e comode per ogni giorno",
+      "cta": "Vedi felpe",
+      "men": "Felpe Uomo",
+      "women": "Felpe Donna"
+    }
+  },
+  "product": {
+    "selectSize": "Seleziona taglia",
+    "selectColor": "Seleziona colore",
+    "available": "Disponibile",
+    "lowStock": "Pochi pezzi",
+    "description": "Descrizione",
+    "details": "Dettagli",
+    "material": "Materiale",
+    "care": "Cura",
+    "shipping": "Spedizione",
+    "returns": "Resi",
+    "reviews": "Recensioni",
+    "related": "Prodotti simili",
+    "addToCart": "Aggiungi al carrello",
+    "buyNow": "Compra ora",
+    "addedToCart": "Aggiunto al carrello",
+    "addedToWishlist": "Aggiunto ai desideri"
+  },
+  "cart": {
+    "title": "Carrello",
+    "empty": "Il tuo carrello è vuoto",
+    "continueShopping": "Continua gli acquisti",
+    "summary": "Riepilogo ordine",
+    "promoCode": "Codice promo",
+    "promoPlaceholder": "Codice promo",
+    "applyPromo": "Applica",
+    "checkoutBtn": "Vai alla cassa",
+    "promoApplied": "Codice promo applicato",
+    "promoInvalid": "Codice promo non valido"
+  },
+  "checkout": {
+    "title": "Cassa",
+    "steps": {
+      "data": "Dati",
+      "shipping": "Spedizione",
+      "payment": "Pagamento",
+      "review": "Rivedi"
+    },
+    "form": {
+      "firstName": "Nome *",
+      "lastName": "Cognome *",
+      "email": "Email *",
+      "phone": "Telefono *",
+      "address": "Indirizzo *",
+      "city": "Città *",
+      "postalCode": "CAP *",
+      "paymentMethod": "Metodo di Pagamento *",
+      "cod": "Contrassegno",
+      "card": "Carta",
+      "bankTransfer": "Bonifico Bancario",
+      "notes": "Note (Opzionale)",
+      "placeOrder": "Effettua Ordine"
+    },
+    "summary": {
+      "title": "Riepilogo Ordine",
+      "subtotal": "Articoli",
+      "shipping": "Spedizione",
+      "total": "Totale",
+      "freeShipping": "Spedizione Gratuita",
+      "placeOrder": "Effettua Ordine"
+    }
+  },
+  "account": {
+    "title": "Il mio account",
+    "profile": "Profilo",
+    "orders": "Ordini",
+    "addresses": "Indirizzi",
+    "wishlist": "Lista desideri",
+    "settings": "Impostazioni",
+    "security": "Sicurezza",
+    "notifications": "Notifiche",
+    "darkMode": "Modalità scura",
+    "language": "Lingua",
+    "currency": "Valuta"
+  },
+  "footer": {
+    "company": "DALLI",
+    "description": "Guardaroba online premium in 100% cotone organico.",
+    "navigation": "Navigazione",
+    "shop": "Negozio",
+    "about": "Chi siamo",
+    "contact": "Contatti",
+    "careers": "Lavora con noi",
+    "press": "Stampa",
+    "help": "Aiuto",
+    "faq": "FAQ",
+    "shipping": "Spedizione",
+    "returns": "Resi",
+    "warranty": "Garanzia",
+    "sizeGuide": "Guida taglie",
+    "legal": "Legale",
+    "privacy": "Privacy",
+    "terms": "Termini d'uso",
+    "cookies": "Cookie",
+    "gdpr": "GDPR",
+    "newsletter": "Iscriviti alla newsletter",
+    "emailPlaceholder": "La tua email",
+    "subscribe": "Iscriviti",
+    "followUs": "Seguici",
+    "copyright": "© 2024 DALLI. Tutti i diritti riservati.",
+    "madeInSerbia": "Prodotto in Serbia ❤️"
+  },
+  "cookieConsent": {
+    "title": "La tua privacy è importante",
+    "description": "Utilizziamo cookie per migliorare la tua esperienza, analisi e annunci personalizzati. Accettando, accetti la nostra Informativa sulla privacy e Politica sui cookie.",
+    "acceptAll": "Accetta tutto",
+    "rejectAll": "Rifiuta tutto",
+    "settings": "Impostazioni"
+  },
+  "meta": {
+    "homeTitle": "DALLI — Guardaroba Online | Abbigliamento Uomo e Donna, T-Shirt, Felpe, Hoodie",
+    "homeDescription": "DALLI: Guardaroba online premium. 100% cotone organico, peso 180–320 g/m². Spedizione gratis >50€. Pagamento alla consegna. 15% sconto crypto. 30 giorni reso.",
+    "categoryTitle": "{name} | DALLI",
+    "categoryDescription": "Acquista {name} al miglior prezzo. Consegna rapida e qualità. 100% cotone organico.",
+    "productTitle": "{name} | DALLI",
+    "productDescription": "Acquista {name} al miglior prezzo. Consegna rapida e qualità. 100% cotone organico.",
+    "cartTitle": "Carrello | DALLI",
+    "checkoutTitle": "Cassa | DALLI",
+    "accountTitle": "Il mio account | DALLI",
+    "loginTitle": "Accedi | DALLI",
+    "registerTitle": "Registrati | DALLI"
+  },
+  "seo": {
+    "title": "Perché DALLI per Felpe"
+  },
+  "faq": {
+    "title": "Domande Frequenti sulle Felpe"
+  },
+  "about": {
+    "title": "Chi Siamo",
+    "subtitle": "Il Tuo Alleato Digitale nella Moda",
+    "mission": {
+      "title": "La Nostra Missione",
+      "text": "DALLI esiste per rendere facile e piacevole trovare i capi perfetti per il tuo guardaroba. Uniamo tessuti di qualità, prezzi accessibili e acquisti sicuri da casa."
+    },
+    "values": {
+      "title": "I Nostri Valori",
+      "quality": {
+        "title": "Qualità",
+        "desc": "Cotone biologico, 180g/m², attenzione ai dettagli"
+      },
+      "comfort": {
+        "title": "Comfort",
+        "desc": "Per l'uso quotidiano, tutti i tipi di corporatura"
+      },
+      "accessibility": {
+        "title": "Accessibilità",
+        "desc": "Prezzi da 11€, spedizione gratuita"
+      }
+    },
+    "team": {
+      "title": "Team",
+      "admin": "Admin Team",
+      "contributors": "Collaboratori"
+    },
+    "contact": {
+      "title": "Contatti",
+      "phone": "+381 11 123 4567",
+      "email": "info@dalli.rs",
+      "address": "Belgrado, Serbia"
+    }
+  }
+}

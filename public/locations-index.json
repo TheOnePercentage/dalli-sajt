@@ -1,0 +1,138 @@
+{
+  "locations": [
+    {
+      "id": "dalli-belgrade-center",
+      "name": "DALLI Beograd Centar",
+      "slug": "beograd-centar",
+      "type": "flagship",
+      "address": "Knez Mihailova 15, 11000 Beograd",
+      "phone": "+381 11 2630 123",
+      "email": "beograd-centar@dalli.rs",
+      "geo": {
+        "latitude": 44.815,
+        "longitude": 20.46
+      },
+      "features": [
+        "wheelchair_accessible",
+        "wifi",
+        "fitting_rooms",
+        "personal_shopper",
+        "gift_wrapping",
+        "click_collect",
+        "in_store_returns"
+      ],
+      "services": [
+        "personal_styling",
+        "alterations",
+        "gift_cards",
+        "loyalty_program"
+      ],
+      "url": "/locations/beograd-centar.html",
+      "description": "Naš flagman store u srcu Beograda na Knez Mihailovoj. Najveći izbor kolekcija, lično stilovanje i premium doživljaj kupovine."
+    },
+    {
+      "id": "dalli-belgrade-usce",
+      "name": "DALLI Ušće Shopping Center",
+      "slug": "usce-shopping-center",
+      "type": "mall",
+      "address": "Bulevar Mihajla Pupina 5, Ušće Shopping Center, 1. sprat, 11070 Beograd",
+      "phone": "+381 11 3110 456",
+      "email": "usce@dalli.rs",
+      "geo": {
+        "latitude": 44.819,
+        "longitude": 20.422
+      },
+      "features": [
+        "wheelchair_accessible",
+        "fitting_rooms",
+        "gift_wrapping",
+        "click_collect",
+        "in_store_returns"
+      ],
+      "services": [
+        "gift_cards",
+        "loyalty_program"
+      ],
+      "url": "/locations/usce-shopping-center.html",
+      "description": "DALLI u najposjećenijem trgovačkom centru u Beogradu. Savršen za brzu kupovinu posle posla ili vikend šoping."
+    },
+    {
+      "id": "dalli-novi-sad",
+      "name": "DALLI Novi Sad - Promenada Mall",
+      "slug": "novi-sad-promenada",
+      "type": "mall",
+      "address": "Bulevar Oslobođenja 30, Promenada Mall, 2. sprat, 21000 Novi Sad",
+      "phone": "+381 21 425 789",
+      "email": "novi-sad@dalli.rs",
+      "geo": {
+        "latitude": 45.2517,
+        "longitude": 19.8369
+      },
+      "features": [
+        "wheelchair_accessible",
+        "fitting_rooms",
+        "gift_wrapping",
+        "click_collect",
+        "in_store_returns"
+      ],
+      "services": [
+        "gift_cards",
+        "loyalty_program"
+      ],
+      "url": "/locations/novi-sad-promenada.html",
+      "description": "Prvi DALLI store u Novom Sadu, u modernom Promenada Mall-u. Puna ponuda muške i ženske garderobe."
+    },
+    {
+      "id": "dalli-nis",
+      "name": "DALLI Niš - Forum Mall",
+      "slug": "nis-forum-mall",
+      "type": "mall",
+      "address": "Bulevar Nemanjića 45, Forum Mall, 1. sprat, 18000 Niš",
+      "phone": "+381 18 555 123",
+      "email": "nis@dalli.rs",
+      "geo": {
+        "latitude": 43.321,
+        "longitude": 21.895
+      },
+      "features": [
+        "wheelchair_accessible",
+        "fitting_rooms",
+        "gift_wrapping",
+        "click_collect",
+        "in_store_returns"
+      ],
+      "services": [
+        "gift_cards",
+        "loyalty_program"
+      ],
+      "url": "/locations/nis-forum-mall.html",
+      "description": "DALLI ugrößem mallu na jugu Srbije. Široki izbor za celu porodicu."
+    },
+    {
+      "id": "dalli-kragujevac",
+      "name": "DALLI Kragujevac - Delta City",
+      "slug": "kragujevac-delta-city",
+      "type": "mall",
+      "address": "Kralja Aleksandra Karađorđevića 78, Delta City, 34000 Kragujevac",
+      "phone": "+381 34 333 456",
+      "email": "kragujevac@dalli.rs",
+      "geo": {
+        "latitude": 44.0167,
+        "longitude": 20.9167
+      },
+      "features": [
+        "wheelchair_accessible",
+        "fitting_rooms",
+        "gift_wrapping",
+        "click_collect",
+        "in_store_returns"
+      ],
+      "services": [
+        "gift_cards",
+        "loyalty_program"
+      ],
+      "url": "/locations/kragujevac-delta-city.html",
+      "description": "DALLI u Kragujevcu, u popularnom Delta City mallu. Moda za celu porodicu na jednom mestu."
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "records": [],
+  "retentionDays": 90,
+  "allowedPurposes": [
+    "fraud_detection",
+    "abuse_prevention",
+    "security_analysis",
+    "risk_detection"
+  ]
+}

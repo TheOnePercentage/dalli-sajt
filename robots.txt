@@ -1,0 +1,185 @@
+# DALLI - Robots.txt
+# Optimized for SEO indexing control
+# Generated: 2026-10-08
+
+# ==========================================
+# GLOBAL RULES (All user agents)
+# ==========================================
+User-agent: *
+
+# ==========================================
+# ALLOW RULES (Public content)
+# ==========================================
+Allow: /
+
+# ==========================================
+# DISALLOW RULES (Non-SEO / Private / Duplicate)
+# ==========================================
+
+# Admin & Authentication
+Disallow: /admin/
+Disallow: /admin/prijava/
+Disallow: /admin/prijava.html
+Disallow: /admin.html
+Disallow: /api/
+Disallow: /api/
+Disallow: /graphql/
+
+# User-specific pages (no SEO value)
+Disallow: /korpa/
+Disallow: /placanje/
+Disallow: /cart.html
+Disallow: /checkout.html
+Disallow: /profil/
+Disallow: /profile/
+Disallow: /account/
+Disallow: /wishlist/
+Disallow: /compare/
+
+# Auth & Session
+Disallow: /login/
+Disallow: /register/
+Disallow: /logout/
+Disallow: /password-reset/
+Disallow: /email-verification/
+
+# Search & Filter URLs (use canonical instead)
+Disallow: /search?q=*
+Disallow: /proizvodi?*sort=*
+Disallow: /proizvodi?*page=*
+Disallow: /proizvodi?*filter=*
+Disallow: /proizvodi?*search=*
+Disallow: *?sort=*
+Disallow: *?page=*
+Disallow: *?filter=*
+
+# Utility & Technical
+Disallow: /*.json$
+Disallow: /*.xml$  # except sitemap
+Disallow: /*.pdf$
+Disallow: /*.txt$
+Disallow: /*.css$
+Disallow: /*.js$
+Disallow: /*.map$
+Disallow: /js/*.html
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /images/*.svg$
+Disallow: /images/*.ico$
+Disallow: /images/*.webmanifest$
+Disallow: /images/*.json$
+Disallow: /images/*-*.jpg  # responsive variants
+Disallow: /images/*-*.png
+Disallow: /images/*-*.webp
+Disallow: /images/*-*.avif
+
+# Tracking & Marketing (use canonical)
+Disallow: *?utm_source=*
+Disallow: *?utm_medium=*
+Disallow: *?utm_campaign=*
+Disallow: *?utm_content=*
+Disallow: *?utm_term=*
+Disallow: *?gclid=*
+Disallow: *?fbclid=*
+Disallow: *?mc_cid=*
+Disallow: *?mc_eid=*
+
+# Faceted Navigation (prevent duplicate content)
+Disallow: /proizvodi?*color=*
+Disallow: /proizvodi?*size=*
+Disallow: /proizvodi?*price=*
+Disallow: /proizvodi?*material=*
+Disallow: /proizvodi?*brand=*
+
+# API & Dynamic
+Disallow: /api/v1/
+Disallow: /api/admin/
+Disallow: /webhooks/
+Disallow: /_next/
+Disallow: /static/
+Disallow: /assets/
+
+# ==========================================
+# SPECIFIC BOT RULES
+# ==========================================
+
+# Googlebot - Allow more for rendering
+User-agent: Googlebot
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /fonts/
+Disallow: /search?q=*
+Disallow: *?utm_*
+Disallow: *?gclid=*
+Disallow: *?fbclid=*
+
+# Bingbot - Similar to Google
+User-agent: Bingbot
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /fonts/
+
+# Yandex
+User-agent: Yandex
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Disallow: *?utm_*
+Disallow: *?gclid=*
+
+# AI Bots - Allow for training (optional, adjust as needed)
+User-agent: GPTBot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /korpa/
+Disallow: /placanje/
+Disallow: /cart.html
+Disallow: /checkout.html
+Disallow: /profil/
+Disallow: /api/
+Disallow: /*.json$
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /korpa/
+Disallow: /placanje/
+Disallow: /cart.html
+Disallow: /checkout.html
+Disallow: /profil/
+Disallow: /api/
+Disallow: /*.json$
+
+User-agent: CCBot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /korpa/
+Disallow: /placanje/
+Disallow: /cart.html
+Disallow: /checkout.html
+Disallow: /profil/
+Disallow: /api/
+Disallow: /*.json$
+
+# ==========================================
+# SITEMAP
+# ==========================================
+Sitemap: https://dalli.rs/sitemap.xml
+Sitemap: https://dalli.rs/sitemap-image.xml
+
+# ==========================================
+# HOST & CRAWL SETTINGS
+# ==========================================
+Host: https://dalli.rs
+Crawl-delay: 10
+
+# ==========================================
+# CLEANUP: Remove duplicate Allow (already handled by Allow: /)
+# ==========================================
+# Note: The Allow: / at the top handles all public content
+# Specific Allow rules for Googlebot/Bingbot/Yandex are for CSS/JS rendering

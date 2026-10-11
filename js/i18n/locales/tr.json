@@ -1,0 +1,349 @@
+{
+  "common": {
+    "home": "Ana Sayfa",
+    "shop": "Mağaza",
+    "products": "Ürünler",
+    "categories": "Kategoriler",
+    "men": "Erkek",
+    "women": "Kadın",
+    "hoodies": "Hoodie",
+    "about": "Hakkımızda",
+    "contact": "İletişim",
+    "cart": "Sepet",
+    "checkout": "Ödeme",
+    "account": "Hesabım",
+    "login": "Giriş",
+    "register": "Kayıt Ol",
+    "logout": "Çıkış",
+    "search": "Arama",
+    "searchPlaceholder": "Ürün ara...",
+    "filter": "Filtre",
+    "sort": "Sırala",
+    "price": "Fiyat",
+    "sale": "İndirim",
+    "new": "Yeni",
+    "bestseller": "En Çok Satan",
+    "size": "Beden",
+    "color": "Renk",
+    "quantity": "Adet",
+    "addToCart": "Sepete Ekle",
+    "buyNow": "Hemen Al",
+    "outOfStock": "Stokta Yok",
+    "inStock": "Stokta Var",
+    "freeShipping": "Ücretsiz Kargo",
+    "cryptoDiscount": "Kripto İndirimi",
+    "returnPolicy": "İade Politikası",
+    "warranty": "Garanti",
+    "newsletter": "Bülten",
+    "subscribe": "Abone Ol",
+    "email": "E-posta",
+    "password": "Şifre",
+    "confirmPassword": "Şifre Tekrar",
+    "firstName": "Ad",
+    "lastName": "Soyad",
+    "phone": "Telefon",
+    "address": "Adres",
+    "city": "Şehir",
+    "postalCode": "Posta Kodu",
+    "country": "Ülke",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "delete": "Sil",
+    "edit": "Düzenle",
+    "confirm": "Onayla",
+    "yes": "Evet",
+    "no": "Hayır",
+    "loading": "Yükleniyor...",
+    "error": "Hata",
+    "success": "Başarılı",
+    "warning": "Uyarı",
+    "info": "Bilgi",
+    "close": "Kapat",
+    "back": "Geri",
+    "next": "İleri",
+    "previous": "Önceki",
+    "page": "Sayfa",
+    "of": "/",
+    "results": "sonuç",
+    "noResults": "Sonuç bulunamadı",
+    "viewAll": "Tümünü Göster",
+    "viewDetails": "Detaylar",
+    "quickView": "Hızlı Görünüm",
+    "compare": "Karşılaştır",
+    "wishlist": "İstek Listesi",
+    "share": "Paylaş",
+    "reviews": "Değerlendirmeler",
+    "writeReview": "Değerlendirme Yaz",
+    "rating": "Değerlendirme",
+    "name": "İsim",
+    "message": "Mesaj",
+    "send": "Gönder",
+    "submit": "Gönder",
+    "reset": "Sıfırla",
+    "apply": "Uygula",
+    "clear": "Temizle",
+    "all": "Tümü",
+    "none": "Hiçbiri",
+    "select": "Seç",
+    "choose": "Seç",
+    "options": "Seçenekler",
+    "settings": "Ayarlar",
+    "privacy": "Gizlilik",
+    "terms": "Kullanım Koşulları",
+    "cookies": "Çerezler",
+    "accept": "Kabul Et",
+    "reject": "Reddet",
+    "preferences": "Tercihler",
+    "language": "Dil",
+    "currency": "Para Birimi",
+    "orders": "Siparişler",
+    "theme": "Tema",
+    "notifications": "Bildirimler",
+    "menu": "Menü",
+    "admin": "Admin",
+    "profile": "Profil",
+    "cryptoWallet": "Kripto Cüzdan"
+  },
+  "header": {
+    "logo": "DALLI",
+    "tagline": "Premium Online Gardırop",
+    "searchPlaceholder": "Ürün ara...",
+    "menu": "Menü",
+    "account": "Hesabım",
+    "orders": "Siparişlerim",
+    "wishlist": "İstek Listesi",
+    "settings": "Ayarlar",
+    "logout": "Çıkış",
+    "search": "Arama",
+    "filter": "Filtre",
+    "theme": "Tema",
+    "cart": "Sepet",
+    "notifications": "Bildirimler",
+    "profile": "Profil",
+    "admin": "Admin Paneli",
+    "login": "Giriş",
+    "cryptoWallet": "Kripto Cüzdan"
+  },
+  "hero": {
+    "title": "Yıllarca Hissedeceğiniz Kalite.",
+    "subtitle": "Her parça. Her dikiş. Her gün.",
+    "supporting": "%100 Organik Pamuk. Sırbistan'da Üretilmiştir. Yıllarca Dayanır.",
+    "badge": "Yeni Koleksiyon 2025",
+    "cta": "Kaliteyi Keşfedin",
+    "scrollDown": "Aşağı Kaydır",
+    "trust": {
+      "delivery": "Hızlı Kargo 1–3 Gün",
+      "cod": "Kapıda Ödeme",
+      "returns": "30 Gün İade"
+    },
+    "features": {
+      "organic": "%100 Organik Pamuk",
+      "delivery": "Ücretsiz Kargo >5000 RSD",
+      "crypto": "%15 Kripto İndirimi",
+      "returns": "30 Gün İade"
+    }
+  },
+  "features": {
+    "organic": {
+      "title": "%100 Organik Pamuk",
+      "desc": "Sertifikalı organik tarım, kimyasal yok"
+    },
+    "quality": {
+      "title": "Premium Kalite",
+      "desc": "Dayanıklılık için 180–320 g/m² gramaj"
+    },
+    "delivery": {
+      "title": "Hızlı Kargo",
+      "desc": "5000 RSD üzeri siparişlerde ücretsiz"
+    },
+    "returns": {
+      "title": "Kolay İade",
+      "desc": "Değişim veya iade için 30 gün"
+    },
+    "cod": {
+      "title": "Kapıda Ödeme",
+      "desc": "Risk almayın - paket elinize ulaştığında ödeyin. Nakit veya kart kuriyere."
+    }
+  },
+  "categories": {
+    "men": {
+      "title": "Erkek Gardırobu",
+      "subtitle": "Tişört, hoodie, sweatshirt ve daha fazlası",
+      "cta": "Koleksiyonu Gör"
+    },
+    "women": {
+      "title": "Kadın Gardırobu",
+      "subtitle": "Tişört, hoodie, sweatshirt ve daha fazlası",
+      "cta": "Koleksiyonu Gör"
+    },
+    "hoodies": {
+      "title": "Hoodie ve Sweatshirt",
+      "subtitle": "Her gün için sıcak ve rahat",
+      "cta": "Hoodie'leri Gör",
+      "men": "Erkek Hoodie",
+      "women": "Kadın Hoodie"
+    }
+  },
+  "product": {
+    "selectSize": "Beden Seç",
+    "selectColor": "Renk Seç",
+    "available": "Stokta Var",
+    "lowStock": "Az Kaldı",
+    "description": "Açıklama",
+    "details": "Detaylar",
+    "material": "Malzeme",
+    "care": "Bakım",
+    "shipping": "Kargo",
+    "returns": "İade",
+    "reviews": "Değerlendirmeler",
+    "related": "Benzer Ürünler",
+    "addToCart": "Sepete Ekle",
+    "buyNow": "Hemen Al",
+    "addedToCart": "Sepete Eklendi",
+    "addedToWishlist": "İstek Listesine Eklendi"
+  },
+  "cart": {
+    "title": "Sepet",
+    "empty": "Sepetiniz boş",
+    "continueShopping": "Alışverişe Devam Et",
+    "summary": "Sipariş Özeti",
+    "promoCode": "Promosyon Kodu",
+    "promoPlaceholder": "Promosyon kodu",
+    "applyPromo": "Uygula",
+    "checkoutBtn": "Ödemeye Geç",
+    "promoApplied": "Promosyon kodu uygulandı",
+    "promoInvalid": "Geçersiz promosyon kodu"
+  },
+  "checkout": {
+    "title": "Ödeme",
+    "steps": {
+      "data": "Bilgiler",
+      "shipping": "Kargo",
+      "payment": "Ödeme",
+      "review": "Gözden Geçir"
+    },
+    "form": {
+      "firstName": "Ad *",
+      "lastName": "Soyad *",
+      "email": "E-posta *",
+      "phone": "Telefon *",
+      "address": "Adres *",
+      "city": "Şehir *",
+      "postalCode": "Posta Kodu *",
+      "paymentMethod": "Ödeme Yöntemi *",
+      "cod": "Kapıda Ödeme",
+      "card": "Kart",
+      "bankTransfer": "Banka Havalesi",
+      "notes": "Not (Opsiyonel)",
+      "placeOrder": "Siparişi Ver"
+    },
+    "summary": {
+      "title": "Sipariş Özeti",
+      "subtotal": "Ürünler",
+      "shipping": "Kargo",
+      "total": "Toplam",
+      "freeShipping": "Ücretsiz Kargo",
+      "placeOrder": "Siparişi Ver"
+    }
+  },
+  "account": {
+    "title": "Hesabım",
+    "profile": "Profil",
+    "orders": "Siparişler",
+    "addresses": "Adresler",
+    "wishlist": "İstek Listesi",
+    "settings": "Ayarlar",
+    "security": "Güvenlik",
+    "notifications": "Bildirimler",
+    "darkMode": "Karanlık Mod",
+    "language": "Dil",
+    "currency": "Para Birimi"
+  },
+  "footer": {
+    "company": "DALLI",
+    "description": "%100 organik pamuktan premium online gardırop.",
+    "navigation": "Navigasyon",
+    "shop": "Mağaza",
+    "about": "Hakkımızda",
+    "contact": "İletişim",
+    "careers": "Kariyer",
+    "press": "Basın",
+    "help": "Yardım",
+    "faq": "SSS",
+    "shipping": "Kargo",
+    "returns": "İade",
+    "warranty": "Garanti",
+    "sizeGuide": "Beden Rehberi",
+    "legal": "Yasal",
+    "privacy": "Gizlilik",
+    "terms": "Kullanım Koşulları",
+    "cookies": "Çerezler",
+    "gdpr": "KVKK",
+    "newsletter": "Bültene Abone Ol",
+    "emailPlaceholder": "E-posta adresiniz",
+    "subscribe": "Abone Ol",
+    "followUs": "Bizi Takip Edin",
+    "copyright": "© 2024 DALLI. Tüm hakları saklıdır.",
+    "madeInSerbia": "Sırbistan'da Üretilmiştir ❤️"
+  },
+  "cookieConsent": {
+    "title": "Gizliliğiniz Önemli",
+    "description": "Deneyimi iyileştirmek, analitik ve kişiselleştirilmiş reklamlar için çerezler kullanıyoruz. Kabul ederek Gizlilik Politikamızı ve Çerez Politikamızı kabul etmiş olursunuz.",
+    "acceptAll": "Tümünü Kabul Et",
+    "rejectAll": "Tümünü Reddet",
+    "settings": "Ayarlar"
+  },
+  "meta": {
+    "homeTitle": "DALLI — Online Gardırop | Erkek ve Kadın Giyim, Tişört, Hoodie, Sweatshirt",
+    "homeDescription": "DALLI: Premium online gardırop. %100 organik pamuk, gramaj 180–320 g/m². 5000 RSD üzeri ücretsiz kargo. Kapıda ödeme. %15 kripto indirimi. 30 gün iade.",
+    "categoryTitle": "{name} | DALLI",
+    "categoryDescription": "{name} en iyi fiyatlarla. Hızlı kargo ve kalite.",
+    "productTitle": "{name} | DALLI",
+    "productDescription": "{name} en iyi fiyatlarla. Hızlı kargo ve kalite. %100 organik pamuk.",
+    "cartTitle": "Sepet | DALLI",
+    "checkoutTitle": "Ödeme | DALLI",
+    "accountTitle": "Hesabım | DALLI",
+    "loginTitle": "Giriş | DALLI",
+    "registerTitle": "Kayıt Ol | DALLI"
+  },
+  "seo": {
+    "title": "Neden DALLI Hoodie İçin"
+  },
+  "faq": {
+    "title": "Hoodie Hakkında Sık Sorulan Sorular"
+  },
+  "about": {
+    "title": "DALLI Hakkında",
+    "subtitle": "Dijital Moda Müttefikiniz",
+    "mission": {
+      "title": "Misyonumuz",
+      "text": "DALLI, gardırobunuz için mükemmel parçaları bulmayı kolay ve keyifli hale getirmek için var. Kaliteli kumaşlar, uygun fiyatlar ve evden güvenli alışverişi bir araya getiriyoruz."
+    },
+    "values": {
+      "title": "Değerlerimiz",
+      "quality": {
+        "title": "Kalite",
+        "desc": "%100 Organik Pamuk, 180g/m², Detaylara Dikkat"
+      },
+      "comfort": {
+        "title": "Rahatlık",
+        "desc": "Günlük Kullanım İçin, Tüm Vücut Tipleri"
+      },
+      "accessibility": {
+        "title": "Erişilebilirlik",
+        "desc": "11€'dan Başlayan Fiyatlar, Ücretsiz Kargo"
+      }
+    },
+    "team": {
+      "title": "Ekip",
+      "admin": "Admin Ekibi",
+      "contributors": "Katkıda Bulunanlar"
+    },
+    "contact": {
+      "title": "İletişim",
+      "phone": "+381 11 123 4567",
+      "email": "info@dalli.rs",
+      "address": "Belgrad, Sırbistan"
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-10-09T00:00:00Z",
+  "exclusiveAccess": {
+    "enabled": true,
+    "collections": {
+      "casual": {
+        "public": { "accessLevel": "public", "visibleTo": ["member", "silver", "gold", "black", "private-client", "elite-client"] },
+        "member": { "accessLevel": "member", "visibleTo": ["member", "silver", "gold", "black", "private-client", "elite-client"] },
+        "silver": { "accessLevel": "silver", "visibleTo": ["silver", "gold", "black", "private-client", "elite-client"] },
+        "gold": { "accessLevel": "gold", "visibleTo": ["gold", "black", "private-client", "elite-client"] },
+        "black": { "accessLevel": "black", "visibleTo": ["black", "private-client", "elite-client"] },
+        "private-client": { "accessLevel": "private-client", "visibleTo": ["private-client", "elite-client"] },
+        "elite-client": { "accessLevel": "elite-client", "visibleTo": ["elite-client"] }
+      },
+      "elegance": {
+        "public": { "accessLevel": "public", "visibleTo": ["member", "silver", "gold", "black", "private-client", "elite-client"] },
+        "member": { "accessLevel": "member", "visibleTo": ["member", "silver", "gold", "black", "private-client", "elite-client"] },
+        "silver": { "accessLevel": "silver", "visibleTo": ["silver", "gold", "black", "private-client", "elite-client"] },
+        "gold": { "accessLevel": "gold", "visibleTo": ["gold", "black", "private-client", "elite-client"] },
+        "black": { "accessLevel": "black", "visibleTo": ["black", "private-client", "elite-client"] },
+        "private-client": { "accessLevel": "private-client", "visibleTo": ["private-client", "elite-client"] },
+        "elite-client": { "accessLevel": "elite-client", "visibleTo": ["elite-client"] }
+      }
+    },
+    "products": {
+      "accessControl": "tier-based",
+      "defaultAccessLevel": "public",
+      "overrideField": "accessLevel",
+      "tierField": "memberTier",
+      "earlyAccessField": "earlyAccessTier",
+      "releaseDateField": "releaseDate",
+      "tierReleaseDates": {
+        "elite-client": -720,
+        "private-client": -336,
+        "black": -168,
+        "gold": -72,
+        "silver": -48,
+        "member": -24,
+        "public": 0
+      }
+    },
+    "releaseRules": {
+      "staggeredRelease": true,
+      "tierPrecedence": ["elite-client", "private-client", "black", "gold", "silver", "member", "public"],
+      "gracePeriodHours": 24,
+      "autoTransition": true
+    },
+    "visibility": {
+      "hideFromLowerTiers": true,
+      "showComingSoon": true,
+      "showCountdown": true,
+      "countdownFormat": "hours",
+      "teaserMode": true
+    }
+  },
+  "collectionAccessControl": {
+    "casual": {
+      "supportsExclusiveReleases": true,
+      "defaultAccessLevel": "public",
+      "ownerControlled": true,
+      "subCollections": {
+        "t-shirts": { "accessLevels": ["public", "member", "silver", "gold", "black", "private-client", "elite-client"] },
+        "hoodies": { "accessLevels": ["public", "member", "silver", "gold", "black", "private-client", "elite-client"] },
+        "tracksuits": { "accessLevels": ["public", "member", "silver", "gold", "black", "private-client", "elite-client"] },
+        "shirts": { "accessLevels": ["public", "member", "silver", "gold", "black", "private-client", "elite-client"] },
+        "trousers": { "accessLevels": ["public", "member", "silver", "gold", "black", "private-client", "elite-client"] },
+        "jackets": { "accessLevels": ["public", "member", "silver", "gold", "black", "private-client", "elite-client"] },
+        "accessories": { "accessLevels": ["public", "member", "silver", "gold", "black", "private-client", "elite-client"] }
+      }
+    },
+    "elegance": {
+      "supportsExclusiveReleases": true,
+      "defaultAccessLevel": "member",
+      "ownerControlled": true,
+      "subCollections": {
+        "shirts": { "accessLevels": ["member", "silver", "gold", "black", "private-client", "elite-client"] },
+        "blazers": { "accessLevels": ["member", "silver", "gold", "black", "private-client", "elite-client"] },
+        "suits": { "accessLevels": ["gold", "black", "private-client", "elite-client"] },
+        "trousers": { "accessLevels": ["member", "silver", "gold", "black", "private-client", "elite-client"] },
+        "coats": { "accessLevels": ["gold", "black", "private-client", "elite-client"] },
+        "dresses": { "accessLevels": ["member", "silver", "gold", "black", "private-client", "elite-client"] }
+      }
+    }
+  },
+  "navigationVisibility": {
+    "showLockedCollections": false,
+    "showComingSoonBadge": true,
+    "lockedCollectionMessage": "This collection is exclusive to {tier} members and above",
+    "upgradeCTA": "Upgrade to unlock"
+  }
+}

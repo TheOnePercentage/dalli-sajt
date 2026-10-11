@@ -1,0 +1,151 @@
+{
+  "version": "1.0",
+  "enabled": false,
+  "provider": "sendgrid",
+  "templates": {
+    "back_in_stock": {
+      "id": "back_in_stock",
+      "name": "Povratak na stanje",
+      "subject": "{{productName}} je ponovo na stanju! 📦",
+      "preheader": "Brzo naručite pre nego što ispadne.",
+      "trigger": "product_restock",
+      "delayHours": 1,
+      "variables": ["productName", "productUrl", "price", "size", "color", "imageUrl", "discountPercent"],
+      "html": "<!-- Back in stock email template -->",
+      "text": "{{productName}} je ponovo na stanju! Posetite {{productUrl}} da naručite."
+    },
+    "price_drop": {
+      "id": "price_drop",
+      "name": "Pad cene",
+      "subject": "Cena pala za {{dropPercent}}% na {{productName}}! 💰",
+      "preheader": "Vaš omiljeni proizvod je sada jeftiniji.",
+      "trigger": "price_drop",
+      "minDropPercent": 10,
+      "delayHours": 2,
+      "variables": ["productName", "productUrl", "oldPrice", "newPrice", "dropPercent", "imageUrl"],
+      "html": "<!-- Price drop email template -->",
+      "text": "{{productName}} je sada {{dropPercent}}% jeftinije ({{newPrice}} RSD). Pogledajte: {{productUrl}}"
+    },
+    "new_collection": {
+      "id": "new_collection",
+      "name": "Nova kolekcija",
+      "subject": "Nova kolekcija stigla! ✨ {{count}} novih proizvoda",
+      "preheader": "Pogledajte najnovije stile u vašim omiljenim kategorijama.",
+      "trigger": "new_product_in_interested_category",
+      "delayHours": 24,
+      "variables": ["count", "categories", "productUrls", "images"],
+      "html": "<!-- New collection email template -->",
+      "text": "Stigla je nova kolekcija sa {{count}} novih proizvoda u kategorijama: {{categories}}. Pogledajte: {{productUrls}}"
+    },
+    "personalized_digest": {
+      "id": "personalized_digest",
+      "name": "Nedeljni digest preporuka",
+      "subject": "Vaši nedeljni preporuke: {{count}} novih proizvoda za vas",
+      "preheader": "Izabrali smo proizvode na osnovu vašeg stila.",
+      "trigger": "weekly",
+      "dayOfWeek": 1,
+      "hour": 10,
+      "maxProducts": 6,
+      "variables": ["products", "reasons"],
+      "html": "<!-- Personalized digest email template -->",
+      "text": "Vaši nedeljni preporuke: {{products}}. Pogledajte na sajtu."
+    },
+    "welcome": {
+      "id": "welcome",
+      "name": "Dobrodošlica",
+      "subject": "Dobrodošli u DALLI! 🎉 Vaš kod za 10% popust: WELCOME10",
+      "preheader": "Hvala vam na registraciji.",
+      "trigger": "user_registered",
+      "delayHours": 0,
+      "variables": ["firstName", "discountCode", "discountPercent"],
+      "html": "<!-- Welcome email template -->",
+      "text": "Dobrodošli, {{firstName}}! Vaš kod za {{discountPercent}}% popust: {{discountCode}}"
+    },
+    "abandoned_cart": {
+      "id": "abandoned_cart",
+      "name": "Ostavljena korpa",
+      "subject": "Zaboravili ste nešto u korpi? 🛒",
+      "preheader": "Vaša čeka na vas. Dovršite narudžbinu.",
+      "trigger": "cart_abandoned",
+      "delayHours": 2,
+      "variables": ["cartItems", "cartUrl", "subtotal", "discountCode"],
+      "html": "<!-- Abandoned cart email template -->",
+      "text": "Imate {{itemCount}} proizvoda u korpi. Dovršite narudžbinu: {{cartUrl}}"
+    },
+    "order_confirmed": {
+      "id": "order_confirmed",
+      "name": "Potvrda porudžbine",
+      "subject": "Porudžbina #{{orderNumber}} potvrđena ✅",
+      "preheader": "Hvala vam na kupovini.",
+      "trigger": "order_placed",
+      "delayHours": 0,
+      "variables": ["orderNumber", "items", "total", "shippingAddress", "estimatedDelivery"],
+      "html": "<!-- Order confirmation email template -->",
+      "text": "Porudžbina #{{orderNumber}} potvrđena. Ukupno: {{total}} RSD."
+    },
+    "shipping_update": {
+      "id": "shipping_update",
+      "name": "Status isporuke",
+      "subject": "Vaša porudžbina #{{orderNumber}} je {{status}} 🚚",
+      "preheader": "Pratite svoju pošiljku.",
+      "trigger": "shipping_update",
+      "delayHours": 0,
+      "variables": ["orderNumber", "status", "trackingNumber", "trackingUrl", "estimatedDelivery"],
+      "html": "<!-- Shipping update email template -->",
+      "text": "Porudžbina #{{orderNumber}} je {{status}}. Pratite: {{trackingUrl}}"
+    },
+    "review_request": {
+      "id": "review_request",
+      "name": "Zahtev za recenziju",
+      "subject": "Kako vam se sviđa {{productName}}? ⭐",
+      "preheader": "Vaše mišljenje znači mnogo.",
+      "trigger": "order_delivered",
+      "delayHours": 168,
+      "variables": ["productName", "productUrl", "reviewUrl"],
+      "html": "<!-- Review request email template -->",
+      "text": "Kako vam se sviđa {{productName}}? Ostavite recenziju: {{reviewUrl}}"
+    },
+    "birthday": {
+      "id": "birthday",
+      "name": "Rođendanska poruka",
+      "subject": "Srećan rođendan, {{firstName}}! 🎂 Vaš poklon unutra",
+      "preheader": "Specijalni poklon za vaš rođendan.",
+      "trigger": "birthday",
+      "delayHours": 0,
+      "variables": ["firstName", "discountCode", "discountPercent", "expiryDate"],
+      "html": "<!-- Birthday email template -->",
+      "text": "Srećan rođendan, {{firstName}}! Vaš kod za {{discountPercent}}%: {{discountCode}}"
+    },
+    "points_expiring": {
+      "id": "points_expiring",
+      "name": "Poeni ističu",
+      "subject": "Vaši poeni ističu uskoro ⏳",
+      "preheader": "Iskoristite ih pre nego što ističu.",
+      "trigger": "points_expiring",
+      "delayHours": 0,
+      "variables": ["points", "expiryDate", "discountUrl"],
+      "html": "<!-- Points expiring email template -->",
+      "text": "Imate {{points}} poena koji ističu {{expiryDate}}. Iskoristite ih: {{discountUrl}}"
+    },
+    "vip_experience_invite": {
+      "id": "vip_experience_invite",
+      "name": "Pozivnica za VIP iskustvo",
+      "subject": "Ekskluzivna pozivnica za VIP iskustvo 👑",
+      "preheader": "Vi ste pozvani na ekskluzivno događaje.",
+      "trigger": "vip_experience_available",
+      "delayHours": 0,
+      "variables": ["eventName", "eventDate", "eventUrl", "rsvpUrl"],
+      "html": "<!-- VIP experience invite email template -->",
+      "text": "Pozivamo vas na {{eventName}} ({{eventDate}}). Prijavite se: {{rsvpUrl}}"
+    }
+  },
+  "settings": {
+    "fromEmail": "hello@dalli.rs",
+    "fromName": "DALLI",
+    "replyTo": "support@dalli.rs",
+    "unsubscribeLink": "https://dalli.rs/odjava-emaila",
+    "trackingEnabled": true,
+    "openTracking": true,
+    "clickTracking": true
+  }
+}

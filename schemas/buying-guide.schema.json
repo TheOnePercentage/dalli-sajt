@@ -1,0 +1,155 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://dalli.rs/schemas/buying-guide.json",
+  "title": "Buying Guide Schema",
+  "description": "JSON schema for buying guide entries in buying-guides.json",
+  "type": "object",
+  "required": ["version", "guides"],
+  "properties": {
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+$"
+    },
+    "guides": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "slug",
+          "title",
+          "category",
+          "excerpt",
+          "content",
+          "seo",
+          "faq",
+          "publishedAt",
+          "updatedAt",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "slug": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 120
+          },
+          "category": {
+            "type": "string",
+            "enum": ["hoodie", "tracksuit", "cotton", "size", "fabric"]
+          },
+          "excerpt": {
+            "type": "string",
+            "minLength": 50,
+            "maxLength": 300
+          },
+          "content": {
+            "type": "string",
+            "minLength": 1000
+          },
+          "seo": {
+            "type": "object",
+            "required": ["metaTitle", "metaDescription", "keywords", "canonicalUrl", "ogImage"],
+            "properties": {
+              "metaTitle": {
+                "type": "string",
+                "minLength": 30,
+                "maxLength": 60
+              },
+              "metaDescription": {
+                "type": "string",
+                "minLength": 70,
+                "maxLength": 160
+              },
+              "keywords": {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 15,
+                "items": { "type": "string", "minLength": 2 },
+                "uniqueItems": true
+              },
+              "canonicalUrl": {
+                "type": "string",
+                "format": "uri",
+                "pattern": "^https://dalli\\.rs/vodic-[a-z0-9-]+\\.html$"
+              },
+              "ogImage": {
+                "type": "string",
+                "pattern": "^/images/og/og-vodic-"
+              }
+            }
+          },
+          "faq": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 10,
+            "items": {
+              "type": "object",
+              "required": ["question", "answer"],
+              "properties": {
+                "question": {
+                  "type": "string",
+                  "minLength": 10,
+                  "maxLength": 200
+                },
+                "answer": {
+                  "type": "string",
+                  "minLength": 30,
+                  "maxLength": 800
+                }
+              }
+            }
+          },
+          "relatedProducts": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "relatedCategories": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "relatedGuides": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "author": {
+            "type": "string"
+          },
+          "publishedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["published", "draft", "archived"]
+          },
+          "readingTime": {
+            "type": "string",
+            "pattern": "^\\d+\\s+min\\s+read$"
+          },
+          "featuredImage": {
+            "type": "string",
+            "pattern": "^/images/blog/"
+          },
+          "tableOfContents": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}

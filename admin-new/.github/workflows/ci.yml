@@ -1,0 +1,365 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [main, develop, 'release/**']
+  pull_request:
+    branches: [main, develop]
+  workflow_dispatch:
+    inputs:
+      skip_tests:
+        description: 'Skip test execution'
+        type: boolean
+        default: false
+      skip_build:
+        description: 'Skip build step'
+        type: boolean
+        default: false
+
+env:
+  NODE_VERSION: '20.x'
+  NPM_VERSION: '10.x'
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  lint-and-typecheck:
+    name: Lint & TypeCheck
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          registry-url: https://registry.npmjs.org
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --no-fund
+        env:
+          NODE_OPTIONS: '--max-old-space-size=4096'
+
+      - name: Run ESLint
+        run: npm run lint:check
+        continue-on-error: false
+
+      - name: Run Prettier check
+        run: npm run format:check
+        continue-on-error: false
+
+      - name: Run TypeScript type check
+        run: npm run typecheck
+        continue-on-error: false
+        env:
+          NODE_OPTIONS: '--max-old-space-size=4096'
+
+  unit-tests:
+    name: Unit Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    if: github.event.inputs.skip_tests != 'true'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --no-fund
+
+      - name: Run unit tests
+        run: npm run test:coverage
+        env:
+          NODE_OPTIONS: '--max-old-space-size=4096'
+          VITE_API_URL: 'http://localhost:8000/api'
+          VITE_WS_URL: 'ws://localhost:8001'
+
+      - name: Upload coverage reports
+        uses: codecov/codecov-action@v4
+        with:
+          files: ./coverage/lcov.info
+          flags: unittests
+          fail_ci_if_error: true
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+  build:
+    name: Build Application
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    if: github.event.inputs.skip_build != 'true'
+    needs: [lint-and-typecheck, unit-tests]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --no-fund
+
+      - name: Build application
+        run: npm run build
+        env:
+          NODE_OPTIONS: '--max-old-space-size=4096'
+          VITE_API_URL: ${{ secrets.VITE_API_URL }}
+          VITE_WS_URL: ${{ secrets.VITE_WS_URL }}
+          VITE_SENTRY_DSN: ${{ secrets.VITE_SENTRY_DSN }}
+          VITE_GA_MEASUREMENT_ID: ${{ secrets.VITE_GA_MEASUREMENT_ID }}
+
+      - name: Verify build output
+        run: |
+          if [ ! -d "dist" ]; then
+            echo "Build output directory not found"
+            exit 1
+          fi
+          echo "Build size:"
+          du -sh dist
+          echo "Assets:"
+          find dist -type f -name "*.js" -o -name "*.css" | head -20
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-${{ github.sha }}
+          path: dist/
+          retention-days: 7
+          compression-level: 6
+
+      - name: Upload source maps
+        uses: actions/upload-artifact@v4
+        with:
+          name: sourcemaps-${{ github.sha }}
+          path: dist/**/*.map
+          retention-days: 30
+          compression-level: 9
+
+  e2e-tests:
+    name: E2E Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    if: github.event.inputs.skip_tests != 'true'
+    needs: build
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --no-fund
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: dist-${{ github.sha }}
+          path: dist/
+
+      - name: Start preview server
+        run: |
+          npx serve -s dist -l 4173 &
+          sleep 5
+          curl -f http://localhost:4173 || exit 1
+
+      - name: Run E2E tests
+        run: npm run test:e2e
+        env:
+          BASE_URL: http://localhost:4173
+          VITE_API_URL: ${{ secrets.VITE_API_URL }}
+          VITE_WS_URL: ${{ secrets.VITE_WS_URL }}
+
+      - name: Upload E2E artifacts
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: e2e-results-${{ github.sha }}
+          path: test-results/
+          retention-days: 7
+
+      - name: Upload E2E screenshots
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: e2e-screenshots-${{ github.sha }}
+          path: test-results/**/*.png
+          retention-days: 7
+
+  security-scan:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --no-fund
+
+      - name: Run npm audit
+        run: npm audit --audit-level=high --json > npm-audit.json || true
+
+      - name: Upload npm audit results
+        uses: actions/upload-artifact@v4
+        with:
+          name: npm-audit-${{ github.sha }}
+          path: npm-audit.json
+          retention-days: 30
+
+      - name: Run Snyk security scan
+        uses: snyk/actions/node@master
+        if: secrets.SNYK_TOKEN != ''
+        with:
+          command: test
+          args: --severity-threshold=high
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
+      - name: Run Trivy filesystem scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          scan-ref: '.'
+          format: 'sarif'
+          output: 'trivy-results.sarif'
+          severity: 'HIGH,CRITICAL'
+
+      - name: Upload Trivy results
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: trivy-results.sarif
+
+  dependency-review:
+    name: Dependency Review
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Review dependencies
+        uses: actions/dependency-review-action@v4
+        with:
+          config-file: '.github/dependency-review-config.yml'
+          fail-on-severity: high
+
+  size-check:
+    name: Bundle Size Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: build
+    steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: dist-${{ github.sha }}
+          path: dist/
+
+      - name: Check bundle sizes
+        run: |
+          echo "Checking bundle sizes..."
+          TOTAL_JS=$(find dist -name "*.js" -not -name "*.map" -exec wc -c {} + | tail -1 | awk '{print $1}')
+          TOTAL_CSS=$(find dist -name "*.css" -not -name "*.map" -exec wc -c {} + | tail -1 | awk '{print $1}')
+          TOTAL_BYTES=$((TOTAL_JS + TOTAL_CSS))
+          TOTAL_KB=$((TOTAL_BYTES / 1024))
+          echo "Total JS: $((TOTAL_JS / 1024)) KB"
+          echo "Total CSS: $((TOTAL_CSS / 1024)) KB"
+          echo "Total: ${TOTAL_KB} KB"
+
+          # Fail if total > 500KB (adjust as needed)
+          if [ $TOTAL_KB -gt 500 ]; then
+            echo "Bundle size exceeds 500KB limit"
+            exit 1
+          fi
+
+      - name: Comment PR with size info
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const { TOTAL_JS, TOTAL_CSS } = JSON.parse(fs.readFileSync('dist/size-report.json', 'utf8'));
+            const body = `## Bundle Size Report
+            | Metric | Size |
+            |--------|------|
+            | JavaScript | ${Math.round(TOTAL_JS / 1024)} KB |
+            | CSS | ${Math.round(TOTAL_CSS / 1024)} KB |
+            | **Total** | **${Math.round((TOTAL_JS + TOTAL_CSS) / 1024)} KB** |`;
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body
+            });
+
+  notify:
+    name: Notify
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: [lint-and-typecheck, unit-tests, build, e2e-tests, security-scan]
+    if: always()
+    steps:
+      - name: Determine status
+        run: |
+          if [ "${{ needs.lint-and-typecheck.result }}" = "success" ] && \
+             [ "${{ needs.unit-tests.result }}" = "success" ] && \
+             [ "${{ needs.build.result }}" = "success" ] && \
+             [ "${{ needs.e2e-tests.result }}" = "success" ] && \
+             [ "${{ needs.security-scan.result }}" = "success" ]; then
+            echo "STATUS=success" >> $GITHUB_ENV
+          else
+            echo "STATUS=failure" >> $GITHUB_ENV
+          fi
+
+      - name: Send Slack notification
+        if: env.STATUS == 'failure' && secrets.SLACK_WEBHOOK_URL != ''
+        uses: slackapi/slack-github-action@v1.25.0
+        with:
+          payload: |
+            {
+              "text": "CI Pipeline ${{ env.STATUS }} for ${{ github.repository }}",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "*CI Pipeline ${{ env.STATUS }}* for `${{ github.repository }}`\nBranch: `${{ github.ref_name }}`\nCommit: `${{ github.sha }}`\nAuthor: `${{ github.actor }}`"
+                  }
+                }
+              ]
+            }
+          webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
+          webhook-type: incoming-webhook
+
+      - name: Send Discord notification
+        if: env.STATUS == 'failure' && secrets.DISCORD_WEBHOOK_URL != ''
+        run: |
+          curl -X POST "${{ secrets.DISCORD_WEBHOOK_URL }}" \
+            -H "Content-Type: application/json" \
+            -d '{"content": "CI Pipeline **${{ env.STATUS }}** for **${{ github.repository }}**\nBranch: `${{ github.ref_name }}`\nCommit: `${{ github.sha }}`"}'

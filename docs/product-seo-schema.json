@@ -1,0 +1,121 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://dalli.rs/schemas/product-seo.json",
+  "title": "Product SEO Schema",
+  "description": "JSON schema for product SEO fields in products.json",
+  "type": "object",
+  "required": ["id", "slug", "name", "seo", "structuredData", "faq", "cms"],
+  "properties": {
+    "id": { "type": "integer", "minimum": 1 },
+    "slug": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "name": { "type": "string", "minLength": 2, "maxLength": 120 },
+    "category": { "type": "string", "enum": ["majice", "trenerke", "dukseri", "ostalo"] },
+    "gender": { "type": "string", "enum": ["unisex", "muski", "zenski"] },
+    "price": { "type": "integer", "minimum": 1 },
+    "sku": { "type": "string", "pattern": "^[A-Z]{2}-[0-9]{3}$" },
+    
+    "seo": {
+      "type": "object",
+      "required": ["metaTitle", "metaDescription", "keywords", "canonicalUrl"],
+      "properties": {
+        "metaTitle": {
+          "type": "string",
+          "minLength": 30,
+          "maxLength": 60,
+          "description": "SEO title for SERP, 30-60 chars"
+        },
+        "metaDescription": {
+          "type": "string",
+          "minLength": 70,
+          "maxLength": 160,
+          "description": "SEO description for SERP, 70-160 chars"
+        },
+        "keywords": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 15,
+          "items": { "type": "string", "minLength": 2 },
+          "uniqueItems": true
+        },
+        "canonicalUrl": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://dalli\\.rs/proizvod-[a-z0-9-]+\\.html$"
+        }
+      }
+    },
+    
+    "structuredData": {
+      "type": "object",
+      "required": ["brand", "category", "gtin", "mpn"],
+      "properties": {
+        "brand": { "const": "DALLI" },
+        "category": { "type": "string", "minLength": 2 },
+        "gtin": {
+          "type": "string",
+          "pattern": "^[0-9]{13}$",
+          "description": "GTIN-13 (EAN-13) with valid check digit"
+        },
+        "mpn": { "type": "string", "pattern": "^[A-Z]{2}-[0-9]{3}$" }
+      }
+    },
+    
+    "faq": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "required": ["question", "answer"],
+        "properties": {
+          "question": { "type": "string", "minLength": 10, "maxLength": 200 },
+          "answer": { "type": "string", "minLength": 20, "maxLength": 500 }
+        }
+      }
+    },
+    
+    "cms": {
+      "type": "object",
+      "required": ["featured", "bestseller", "newArrival", "status", "publishedAt", "searchKeywords", "virtualTryOn", "product360"],
+      "properties": {
+        "featured": { "type": "boolean" },
+        "bestseller": { "type": "boolean" },
+        "newArrival": { "type": "boolean" },
+        "status": { "type": "string", "enum": ["published", "draft", "archived"] },
+        "publishedAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" },
+        "salesCount": { "type": "integer", "minimum": 0 },
+        "viewCount": { "type": "integer", "minimum": 0 },
+        "cartAddCount": { "type": "integer", "minimum": 0 },
+        "searchKeywords": {
+          "type": "array",
+          "minItems": 3,
+          "items": { "type": "string" }
+        },
+        "virtualTryOn": {
+          "type": "object",
+          "required": ["eligible", "modelType", "primaryImage", "secondaryImages", "fitGuide"],
+          "properties": {
+            "eligible": { "type": "boolean" },
+            "modelType": { "type": "string", "enum": ["upper-body", "full-body"] },
+            "primaryImage": { "type": "string", "pattern": "^/images/virtual-tryon/" },
+            "secondaryImages": {
+              "type": "array",
+              "items": { "type": "string", "pattern": "^/images/virtual-tryon/" }
+            },
+            "fitGuide": { "const": "standard" }
+          }
+        },
+        "product360": {
+          "type": "object",
+          "required": ["enabled", "frameCount", "placeholder"],
+          "properties": {
+            "enabled": { "type": "boolean" },
+            "frameCount": { "const": 36 },
+            "placeholder": { "type": "string", "pattern": "^/images/360/placeholder-" }
+          }
+        }
+      }
+    }
+  }
+}

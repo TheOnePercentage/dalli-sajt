@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>DALLI CMS - Upravljanje Sadržajem</title>
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+    <link rel="stylesheet" href="/admin/widgets/cms-custom.css?v=20241217">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+    <script src="/config/countries.js?v=20241217"></script>
+    <script src="/js/i18n.js?v=20241217"></script>
+    <script src="/admin/widgets/image-upload.js?v=20241217"></script>
+    <script src="/admin/widgets/seo-generator.js?v=20241217"></script>
+    <script src="/admin/widgets/alt-generator.js?v=20241217"></script>
+    <script src="/admin/widgets/bulk-seo-actions.js?v=20241217"></script>
+    <script src="/admin/widgets/link-auditor-core.js?v=20241217"></script>
+    <script src="/admin/widgets/link-auditor-orphans.js?v=20241217"></script>
+    <script src="/admin/widgets/link-auditor-broken.js?v=20241217"></script>
+    <script src="/admin/widgets/link-auditor-excessive.js?v=20241217"></script>
+    <script src="/admin/widgets/link-auditor-opportunities.js?v=20241217"></script>
+    <script src="/admin/widgets/anchor-analyzer.js?v=20241217"></script>
+    <script src="/admin/widgets/competitor-gap.js?v=20241217"></script>
+    <script src="/admin/widgets/link-juice.js?v=20241217"></script>
+    <script src="/admin/widgets/link-auditor-ui.js?v=20241217"></script>
+    <script src="/admin/widgets/redirect-manager.js?v=20241217"></script>
+    <script src="/admin/widgets/currency-manager.js?v=20241217"></script>
+    <script src="/admin/widgets/language-manager.js?v=20241217"></script>
+    <script src="/admin/widgets/promotions-manager.js?v=20241217"></script>
+    <script src="/admin/widgets/markets-regions.js?v=20241217"></script>
+    <script src="/admin/widgets/system-test.js?v=20241217"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8f9fa; min-height: 100vh; }
+        .cms-loader { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; gap: 16px; }
+        .cms-loader .spinner { width: 48px; height: 48px; border: 4px solid #e0e0e0; border-top-color: #2c3e50; border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .cms-loader p { color: #5d6d7e; font-size: 1.125rem; }
+        .cms-brand { position: fixed; top: 16px; left: 16px; display: flex; align-items: center; gap: 8px; color: #2c3e50; font-weight: 600; z-index: 100; }
+        .cms-brand svg { width: 32px; height: 32px; }
+    </style>
+</head>
+<body>
+    <div class="cms-brand" aria-label="DALLI CMS">
+        <svg viewBox="0 0 100 100" width="32" height="32" aria-hidden="true">
+            <defs>
+                <linearGradient id="cmsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#2c3e50;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#1a252f;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            <circle cx="50" cy="50" r="50" fill="url(#cmsGrad)"/>
+            <text x="50" y="65" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#e74c3c" text-anchor="middle">📦</text>
+        </svg>
+        <span>DALLI CMS</span>
+    </div>
+    <div id="nc-link-auditor-trigger" style="position: fixed; top: 16px; right: 16px; z-index: 100;"></div>
+    <div class="cms-loader" id="cms-loader" role="status" aria-label="Učitavanje CMS-a">
+        <div class="spinner" aria-hidden="true"></div>
+        <p>Učitavanje DALLI CMS-a...</p>
+    </div>
+
+    <script>
+        // Initialize Netlify CMS
+        const CMS = window.CMS;
+        
+        // Register custom widgets if needed
+        if (CMS) {
+            // Register custom preview templates
+            CMS.registerPreviewTemplate('products', (props) => {
+                const entry = props.entry;
+                const data = entry.get('data');
+                if (!data) return null;
+                
+                return (
+                    <div style="padding: 20px; max-width: 800px; margin: 0 auto;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+                            <div>
+                                {data.get('glavna_slika') && (
+                                    <img src={data.getIn(['glavna_slika', 'src'])} 
+                                          alt={data.get('naziv')} 
+                                          style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 8px;" />
+                                )}
+                            </div>
+                            <div>
+                                <h1 style="font-size: 2rem; color: #2c3e50; margin-bottom: 8px;">{data.get('naziv')}</h1>
+                                <p style="font-size: 1.5rem; color: #e74c3c; font-weight: 700; margin-bottom: 16px;">
+                                    {data.get('cena')?.toLocaleString('sr-RS')} RSD
+                                </p>
+                                <div style="margin-bottom: 16px;">
+                                    {data.get('boje')?.map((boja, i) => (
+                                        <span key={i} style="display: inline-block; width: 24px; height: 24px; border-radius: 50%; background: {boja.get('hex')}; margin-right: 8px; border: 2px solid #eee;" 
+                                             title={boja.get('naziv')} />
+                                    ))}
+                                </div>
+                                <div style="margin-bottom: 16px; color: #5d6d7e;">
+                                    Veličine: {data.get('velicine')?.filter(v => v.get('dostupna')).map(v => v.get('velicina')).join(', ')}
+                                </div>
+                                <div style="margin-bottom: 16px;" dangerouslySetInnerHTML={{__html: data.get('kratak_opis') || ''}} />
+                            </div>
+                        </div>
+                        <hr style="margin: 24px 0; border-color: #eee;" />
+                        <div dangerouslySetInnerHTML={{__html: window.marked?.(data.get('opis') || '') || ''}} />
+                    </div>
+                );
+            });
+        }
+
+        // Initialize when DOM ready
+        document.addEventListener('DOMContentLoaded', () => {
+            const loader = document.getElementById('cms-loader');
+            if (loader) {
+                loader.style.display = 'none';
+            }
+            
+            // Initialize Netlify Identity
+            if (window.netlifyIdentity) {
+                window.netlifyIdentity.on('init', user => {
+                    console.log('Netlify Identity initialized', user);
+                });
+                
+                window.netlifyIdentity.on('login', () => {
+                    document.location.href = '/admin/cms/';
+                });
+            }
+        });
+
+        // Handle login redirect
+        if (window.location.hash === '#logged-in') {
+            window.location.hash = '';
+        }
+    </script>
+</body>
+</html>

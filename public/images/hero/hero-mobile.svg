@@ -1,0 +1,29 @@
+<svg width="390" height="600" viewBox="0 0 390 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DALLI Hero - Premium Garderoba">
+  <defs>
+    <linearGradient id="heroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0f"/>
+      <stop offset="50%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#0f0f1a"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e74c3c"/>
+      <stop offset="100%" style="stop-color:#f7931a"/>
+    </linearGradient>
+  </defs>
+  <rect width="390" height="600" fill="url(#heroBg)"/>
+  <!-- Subtle pattern -->
+  <g opacity="0.03">
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="0.5"/>
+    </pattern>
+    <rect width="390" height="600" fill="url(#grid)"/>
+  </g>
+  <!-- Hero content representation -->
+  <g transform="translate(195, 280)" text-anchor="middle">
+    <text font-family="system-ui, sans-serif" font-size="28" font-weight="700" fill="white" letter-spacing="-0.02em">Garderoba koja <tspan fill="url(#accentGrad)">traje</tspan></text>
+    <text x="0" y="48" font-family="system-ui, sans-serif" font-size="16" fill="rgba(255,255,255,0.7)" font-weight="400">100% organski pamuk • 15% popust kripto</text>
+  </g>
+  <!-- Decorative element -->
+  <circle cx="195" cy="480" r="60" fill="none" stroke="url(#accentGrad)" stroke-width="2" opacity="0.3"/>
+  <text x="195" y="486" font-family="system-ui, sans-serif" font-size="24" fill="url(#accentGrad)" text-anchor="middle" opacity="0.5">📦</text>
+</svg>

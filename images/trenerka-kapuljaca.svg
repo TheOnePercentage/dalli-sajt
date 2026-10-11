@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <rect width="100%" height="100%" fill="#f5f0f0"/>
+  <path d="M100,80 Q100,50 150,50 L250,50 Q300,50 300,100 L300,320 Q300,360 250,360 L150,360 Q100,360 100,320 Z" fill="#f8e8e8" stroke="#bbb" stroke-width="2"/>
+  <path d="M130,80 Q130,40 180,40 Q230,40 230,80" fill="none" stroke="#aaa" stroke-width="2"/>
+  <path d="M270,100 Q290,80 310,100" fill="none" stroke="#aaa" stroke-width="2" stroke-dasharray="3,3"/>
+  <ellipse cx="200" cy="120" rx="60" ry="30" fill="none" stroke="#aaa" stroke-width="1"/>
+  <text x="50%" y="360" font-family="system-ui, sans-serif" font-size="14" fill="#887" text-anchor="middle">Trenerka sa Kapuljačom</text>
+</svg>

@@ -1,0 +1,352 @@
+# API Documentation
+
+## Overview
+REST API for DALLI E-commerce Platform v1.0
+
+## Base URL
+- Production: `https://api.dalli.rs/v1`
+- Staging: `https://api-staging.dalli.rs/v1`
+- Development: `http://localhost:3000/api/v1`
+
+## Authentication
+All endpoints require authentication via JWT Bearer token or API Key.
+
+### Bearer Token
+```
+Authorization: Bearer <access_token>
+```
+
+### API Key
+```
+X-API-Key: your-api-key
+```
+
+## Rate Limiting
+- Authenticated requests: 1000 requests/minute
+- Anonymous requests: 100 requests/minute
+- Burst allowance: 2x base limit for 10 seconds
+
+Rate limit headers:
+- `X-RateLimit-Limit`
+- `X-RateLimit-Remaining`
+- `X-RateLimit-Reset`
+
+## Error Handling
+All errors follow a consistent format:
+
+```json
+{
+  "success": false,
+  "error": {
+    "code": "ERROR_CODE",
+    "message": "Human readable message",
+    "details": {}
+  }
+}
+```
+
+Common error codes:
+- `VALIDATION_ERROR`: Request validation failed
+- `UNAUTHORIZED`: Invalid or missing authentication
+- `FORBIDDEN`: Insufficient permissions
+- `NOT_FOUND`: Resource not found
+- `CONFLICT`: Resource conflict
+- `RATE_LIMITED`: Rate limit exceeded
+- `INTERNAL_ERROR`: Server error
+
+## Pagination
+All list endpoints support pagination:
+```
+?page=1&limit=20
+```
+Response includes:
+```json
+{
+  "data": [...],
+  "meta": {
+    "page": 1,
+    "limit": 20,
+    "total": 150,
+    "totalPages": 8
+  }
+}
+```
+
+## Endpoints
+
+### Authentication
+#### POST /auth/login
+Login with email and password.
+
+**Request:**
+```json
+{
+  "email": "user@example.com",
+  "password": "password123",
+  "rememberMe": true
+}
+```
+
+**Response (200):**
+```json
+{
+  "success": true,
+  "data": {
+    "user": { "id": "1", "email": "user@example.com", "name": "John", "role": "customer" },
+    "token": "eyJhbGciOiJIUzI1NiIs...",
+    "refreshToken": "eyJhbGciOiJIUzI1NiIs...",
+    "expiresIn": 3600
+  }
+}
+```
+
+#### POST /auth/register
+Register new user.
+
+#### POST /auth/refresh
+Refresh access token using refresh token.
+
+#### POST /auth/logout
+Logout and invalidate tokens.
+
+#### POST /auth/forgot-password
+Request password reset.
+
+#### POST /auth/reset-password
+Reset password with token.
+
+### Products
+
+#### GET /products
+List products with filtering and pagination.
+
+**Query Parameters:**
+- `page` (integer, default: 1)
+- `limit` (integer, default: 20, max: 100)
+- `category` (string): Filter by category slug
+- `gender` (string): `muski`, `zenski`, `unisex`
+- `minPrice` (number): Minimum price
+- `maxPrice` (number): Maximum price
+- `sort` (enum): `price_asc`, `price_desc`, `newest`, `bestselling`, `rating`
+- `search` (string): Search query
+- `inStock` (boolean): Filter in-stock only
+
+**Response:**
+```json
+{
+  "success": true,
+  "data": [
+    {
+      "id": 1,
+      "slug": "osnovna-majica",
+      "name": "Osnovna Majica",
+      "price": 1290,
+      "salePrice": 1090,
+      "currency": "RSD",
+      "category": "majice",
+      "images": { "main": "/images/majica.svg" }
+    }
+  ],
+  "meta": {
+    "page": 1,
+    "limit": 20,
+    "total": 150,
+    "totalPages": 8
+  }
+}
+```
+
+#### GET /products/{slug}
+Get product by slug.
+
+#### GET /products/{id}/reviews
+Get product reviews.
+
+#### POST /products/{id}/reviews
+Create review (authenticated).
+
+### Categories
+
+#### GET /categories
+List categories.
+
+#### GET /categories/{slug}
+Get category with products.
+
+### Cart
+
+#### GET /cart
+Get current user's cart.
+
+#### POST /cart
+Add item to cart.
+```json
+{
+  "productId": 1,
+  "quantity": 1,
+  "variantId": "variant-id"
+}
+```
+
+#### PATCH /cart/{itemId}
+Update quantity.
+```json
+{ "quantity": 2 }
+```
+
+#### DELETE /cart/{itemId}
+Remove item.
+
+#### DELETE /cart
+Clear cart.
+
+#### POST /cart/promo
+Apply promo code.
+```json
+{ "code": "WELCOME10" }
+```
+
+### Orders
+
+#### GET /orders
+List orders with pagination and filters.
+
+#### GET /orders/{id}
+Get order details.
+
+#### POST /orders
+Create order from cart.
+```json
+{
+  "shippingAddress": { ... },
+  "billingAddress": { ... },
+  "paymentMethod": "card",
+  "paymentDetails": { ... },
+  "promoCode": "WELCOME10"
+}
+```
+
+#### GET /orders/{id}/track
+Get tracking information.
+
+### Payments
+
+#### POST /payments/intent
+Create payment intent.
+
+#### POST /payments/confirm
+Confirm payment.
+
+#### POST /payments/webhook
+Stripe/webhook endpoint.
+
+### Customers
+
+#### GET /customers/me
+Get current user profile.
+
+#### PATCH /customers/me
+Update profile.
+
+#### GET /customers/me/addresses
+List addresses.
+
+#### POST /customers/me/addresses
+Add address.
+
+#### PATCH /addresses/{id}
+Update address.
+
+#### DELETE /addresses/{id}
+Delete address.
+
+### Promotions
+
+#### GET /promotions
+List active promotions.
+
+#### POST /promotions/validate
+Validate promo code.
+```json
+{
+  "code": "WELCOME15",
+  "cartTotal": 10000
+}
+```
+
+Response:
+```json
+{
+  "success": true,
+  "data": {
+    "valid": true,
+    "discount": 15,
+    "message": "15% discount applied"
+  }
+}
+```
+
+### Analytics
+
+#### POST /analytics/events
+Track custom event.
+```json
+{
+  "event": "view_item",
+  "properties": {
+    "item_id": "123",
+    "price": 1290
+  }
+}
+```
+
+#### GET /analytics/metrics
+Get metrics (admin only).
+
+### Webhooks
+
+#### POST /webhooks/stripe
+Stripe webhook endpoint.
+
+#### POST /webhooks/crypto
+Crypto payment webhook.
+
+### Error Responses
+```json
+{
+  "success": false,
+  "error": {
+    "code": "VALIDATION_ERROR",
+    "message": "Validation failed",
+    "details": [
+      { "field": "email", "message": "Invalid email format" }
+    ]
+  }
+}
+```
+
+### Rate Limit Headers
+```
+X-RateLimit-Limit: 1000
+X-RateLimit-Remaining: 999
+X-RateLimit-Reset: 1705312800
+```
+
+### Webhooks
+Configure webhook endpoints in dashboard.
+Events:
+- `order.created`
+- `order.confirmed`
+- `order.shipped`
+- `order.delivered`
+- `order.cancelled`
+- `payment.completed`
+- `payment.failed`
+- `customer.created`
+- `review.created`
+
+Signature verification:
+```
+X-Webhook-Signature: sha256=...
+```
+Verify with HMAC-SHA256 using webhook secret.

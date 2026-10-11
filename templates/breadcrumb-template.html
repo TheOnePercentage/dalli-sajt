@@ -1,0 +1,42 @@
+<!-- breadcrumb-template.html -->
+<!-- Reusable breadcrumb component for product and category pages -->
+<!-- Usage: include via generator script or SSI -->
+
+<!-- Visual Breadcrumbs (HTML) -->
+<nav class="breadcrumb" aria-label="Breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <div class="container">
+        <ol class="breadcrumb-list">
+            {{#each breadcrumbs}}
+            <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                {{#if url}}
+                <a href="{{url}}" itemprop="item" class="breadcrumb-link">
+                    <span itemprop="name">{{name}}</span>
+                </a>
+                <meta itemprop="position" content="{{@indexPlusOne}}">
+                {{else}}
+                <span class="breadcrumb-current" itemprop="name">{{name}}</span>
+                <meta itemprop="position" content="{{@indexPlusOne}}">
+                {{/if}}
+            </li>
+            {{/each}}
+        </ol>
+    </div>
+</nav>
+
+<!-- Schema.org BreadcrumbList (JSON-LD) - embed in page <head> -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {{#each breadcrumbs}}
+        {
+            "@type": "ListItem",
+            "position": {{@indexPlusOne}},
+            "name": "{{name}}",
+            "item": "https://dalli.rs{{url}}"
+        }{{#unless @last}},{{/unless}}
+        {{/each}}
+    ]
+}
+</script>

@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "updatedAt": "2026-10-10T00:00:00Z",
+  "enabled": true,
+  "conciergeCenterEnabled": true,
+  "personalShopperEnabled": true,
+  "styleIntelligenceEnabled": true,
+  "vipExperiencesEnabled": true,
+  "clientelingEngineEnabled": true,
+  "advisors": {
+    "types": [
+      "personal_shopper",
+      "vip_shopper",
+      "collection_advisor",
+      "style_advisor",
+      "regional_advisor"
+    ]
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "name": "DALLI - Premium Online Garderoba",
+  "short_name": "DALLI",
+  "description": "Muška i ženska odela od 100% organskog pamuka. Besplatna dostava nad 5.000 RSD. 15% popust sa kripto plaćanjem.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#1a1a2e",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "sr",
+  "icons": [
+    {
+      "src": "/images/icons/favicon-16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icons/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icons/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icons/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["shopping", "lifestyle"],
+  "screenshots": [
+    {
+      "src": "/images/og/og-home-mobile.jpg",
+      "sizes": "1200x630",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "DALLI Homepage"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Muška Garderoba",
+      "short_name": "Muška",
+      "description": "Pregledaj mušku garderobu",
+      "url": "/muska-garderoba.html",
+      "icons": [{ "src": "/images/icons/muska-shortcut.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Ženska Garderoba",
+      "short_name": "Ženska",
+      "description": "Pregledaj žensku garderobu",
+      "url": "/zenska-garderoba.html",
+      "icons": [{ "src": "/images/icons/zenska-shortcut.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Korpa",
+      "short_name": "Korpa",
+      "description": "Otvorite svoju korpu",
+      "url": "/cart.html",
+      "icons": [{ "src": "/images/icons/cart-shortcut.png", "sizes": "192x192" }]
+    }
+  ],
+  "prefer_related_applications": false,
+  "related_applications": []
+}

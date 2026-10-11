@@ -1,0 +1,543 @@
+/* ==========================================================================
+   FLOATING ACTION BUTTON (FAB) — Primary Mobile Actions
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   FAB Base
+   -------------------------------------------------------------------------- */
+
+.fab {
+  position: fixed;
+  bottom: var(--space-6);
+  right: var(--space-6);
+  z-index: var(--z-fab);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  background: var(--color-accent-500);
+  color: var(--color-text-on-accent);
+  box-shadow: var(--shadow-xl);
+  border: none;
+  cursor: pointer;
+  transition:
+    transform var(--duration-smooth) var(--ease-spring),
+    background var(--duration-fast),
+    box-shadow var(--duration-fast),
+    opacity var(--duration-fast),
+    visibility var(--duration-fast);
+  opacity: 1;
+  visibility: visible;
+  flex-shrink: 0;
+}
+
+.fab svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  stroke-width: 2.5;
+}
+
+.fab:hover {
+  background: var(--color-accent-600);
+  box-shadow: var(--shadow-2xl);
+  transform: scale(1.05);
+}
+
+.fab:active {
+  transform: scale(0.95);
+}
+
+.fab:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 4px;
+}
+
+.fab.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0);
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   FAB Variants
+   -------------------------------------------------------------------------- */
+
+/* Extended FAB with label */
+.fab--extended {
+  width: auto;
+  min-width: 56px;
+  padding: 0 var(--space-4) 0 var(--space-3);
+  gap: var(--space-2);
+  border-radius: var(--radius-full);
+  justify-content: center;
+}
+
+.fab--extended svg {
+  flex-shrink: 0;
+}
+
+.fab--extended .fab__label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  white-space: nowrap;
+  color: currentColor;
+}
+
+/* Small FAB */
+.fab--sm {
+  width: 40px;
+  height: 40px;
+}
+
+.fab--sm svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Large FAB */
+.fab--lg {
+  width: 64px;
+  height: 64px;
+}
+
+.fab--lg svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* FAB Primary */
+.fab--primary {
+  background: var(--color-accent-500);
+  color: var(--color-text-on-accent);
+}
+
+.fab--primary:hover {
+  background: var(--color-accent-600);
+}
+
+/* FAB Secondary */
+.fab--secondary {
+  background: var(--color-primary-500);
+  color: var(--color-text-inverse);
+}
+
+.fab--secondary:hover {
+  background: var(--color-primary-600);
+}
+
+/* FAB Tertiary / Surface */
+.fab--tertiary {
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-primary);
+  box-shadow: var(--shadow-lg);
+}
+
+.fab--tertiary:hover {
+  background: var(--color-bg-hover);
+  border-color: var(--color-border-secondary);
+}
+
+/* FAB Danger */
+.fab--danger {
+  background: var(--color-error-500);
+  color: var(--color-text-inverse);
+}
+
+.fab--danger:hover {
+  background: var(--color-error-600);
+}
+
+/* --------------------------------------------------------------------------
+   FAB Speed Dial (Multiple Actions)
+   -------------------------------------------------------------------------- */
+
+.fab-speed-dial {
+  position: fixed;
+  bottom: var(--space-6);
+  right: var(--space-6);
+  z-index: var(--z-fab);
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  gap: var(--space-3);
+}
+
+.fab-speed-dial__main {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  background: var(--color-accent-500);
+  color: var(--color-text-on-accent);
+  box-shadow: var(--shadow-xl);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform var(--duration-smooth) var(--ease-spring),
+    background var(--duration-fast);
+  flex-shrink: 0;
+}
+
+.fab-speed-dial__main svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  transition: transform var(--duration-smooth) var(--ease-spring);
+}
+
+.fab-speed-dial.open .fab-speed-dial__main svg {
+  transform: rotate(45deg);
+}
+
+.fab-speed-dial__main:hover {
+  background: var(--color-accent-600);
+  box-shadow: var(--shadow-2xl);
+}
+
+.fab-speed-dial__main:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   Speed Dial Actions
+   -------------------------------------------------------------------------- */
+
+.fab-speed-dial__actions {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--space-2);
+  width: 100%;
+  align-items: flex-end;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition:
+    opacity var(--duration-smooth) var(--ease-out),
+    visibility var(--duration-smooth) var(--ease-out),
+    transform var(--duration-smooth) var(--ease-out);
+}
+
+.fab-speed-dial.open .fab-speed-dial__actions {
+  pointer-events: auto;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.fab-speed-dial__action {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: auto;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(20px) scale(0.8);
+  transition:
+    opacity var(--duration-smooth) var(--ease-out),
+    transform var(--duration-smooth) var(--ease-spring);
+}
+
+.fab-speed-dial.open .fab-speed-dial__action {
+  pointer-events: auto;
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+/* Stagger animation */
+.fab-speed-dial.open .fab-speed-dial__action:nth-child(1) { transition-delay: 0ms; }
+.fab-speed-dial.open .fab-speed-dial__action:nth-child(2) { transition-delay: 40ms; }
+.fab-speed-dial.open .fab-speed-dial__action:nth-child(3) { transition-delay: 80ms; }
+.fab-speed-dial.open .fab-speed-dial__action:nth-child(4) { transition-delay: 120ms; }
+.fab-speed-dial.open .fab-speed-dial__action:nth-child(5) { transition-delay: 160ms; }
+.fab-speed-dial.open .fab-speed-dial__action:nth-child(6) { transition-delay: 200ms; }
+
+.fab-speed-dial__action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background var(--duration-fast),
+    box-shadow var(--duration-fast),
+    transform var(--duration-fast);
+  flex-shrink: 0;
+}
+
+.fab-speed-dial__action-btn svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  stroke-width: 2.5;
+}
+
+.fab-speed-dial__action-btn:hover {
+  background: var(--color-bg-hover);
+  box-shadow: var(--shadow-xl);
+  transform: scale(1.05);
+}
+
+.fab-speed-dial__action-btn:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 4px;
+}
+
+/* Action Label */
+.fab-speed-dial__label {
+  position: absolute;
+  right: calc(100% + var(--space-3));
+  top: 50%;
+  transform: translateY(-50%);
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  border-radius: var(--radius-btn);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border-primary);
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(10px);
+  pointer-events: none;
+  transition:
+    opacity var(--duration-fast),
+    transform var(--duration-fast);
+  z-index: -1;
+}
+
+.fab-speed-dial__action:hover .fab-speed-dial__label,
+.fab-speed-dial__action:focus-within .fab-speed-dial__label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fab-speed-dial__action:focus-within .fab-speed-dial__label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* --------------------------------------------------------------------------
+   FAB with Tooltip
+   -------------------------------------------------------------------------- */
+
+.fab-with-tooltip {
+  position: relative;
+}
+
+.fab-with-tooltip::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + var(--space-2));
+  right: 0;
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  border-radius: var(--radius-btn);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border-primary);
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(8px);
+  transition:
+    opacity var(--duration-fast),
+    transform var(--duration-fast),
+    visibility var(--duration-fast);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.fab-with-tooltip:hover::before,
+.fab-with-tooltip:focus-visible::before {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+/* --------------------------------------------------------------------------
+   FAB Position Variants
+   -------------------------------------------------------------------------- */
+
+.fab--bottom-left {
+  bottom: var(--space-6);
+  left: var(--space-6);
+  right: auto;
+}
+
+.fab--top-right {
+  top: var(--space-6);
+  right: var(--space-6);
+  bottom: auto;
+}
+
+.fab--top-left {
+  top: var(--space-6);
+  left: var(--space-6);
+  bottom: auto;
+  right: auto;
+}
+
+/* --------------------------------------------------------------------------
+   Scroll Awareness
+   -------------------------------------------------------------------------- */
+
+.fab--scroll-hide {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  transition:
+    opacity var(--duration-smooth),
+    visibility var(--duration-smooth),
+    transform var(--duration-smooth) var(--ease-spring);
+}
+
+.fab--scroll-hide.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(100px) scale(0.5);
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Safe Area Insets
+   -------------------------------------------------------------------------- */
+
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .fab {
+    bottom: max(var(--space-6), env(safe-area-inset-bottom) + var(--space-3));
+  }
+  
+  .fab-speed-dial {
+    bottom: max(var(--space-6), env(safe-area-inset-bottom) + var(--space-3));
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Reduced Motion
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .fab,
+  .fab-speed-dial__main,
+  .fab-speed-dial__action,
+  .fab-speed-dial__label {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Print
+   -------------------------------------------------------------------------- */
+
+@media print {
+  .fab,
+  .fab-speed-dial {
+    display: none !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Animations
+   -------------------------------------------------------------------------- */
+
+@keyframes fabPulse {
+  0%, 100% { box-shadow: 0 0 0 0 var(--color-accent-500); }
+  50% { box-shadow: 0 0 0 12px transparent; }
+}
+
+.fab--pulse {
+  animation: fabPulse 2s ease-in-out infinite;
+}
+
+/* --------------------------------------------------------------------------
+   FAB with Badge
+   -------------------------------------------------------------------------- */
+
+.fab-with-badge {
+  position: relative;
+}
+
+.fab-with-badge::after {
+  content: attr(data-badge);
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  background: var(--color-error-500);
+  color: var(--color-text-inverse);
+  font-size: 10px;
+  font-weight: var(--font-bold);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  animation: fabBadgePulse 2s ease-in-out infinite;
+}
+
+@keyframes fabBadgePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* --------------------------------------------------------------------------
+   Focus Visible Polyfill
+   -------------------------------------------------------------------------- */
+
+.fab:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.fab:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   Disabled State
+   -------------------------------------------------------------------------- */
+
+.fab:disabled,
+.fab[aria-disabled="true"] {
+  opacity: 0.5;
+  pointer-events: none;
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-tertiary);
+}
+
+/* --------------------------------------------------------------------------
+   Print
+   -------------------------------------------------------------------------- */
+
+@media print {
+  .fab,
+  .fab-speed-dial {
+    display: none !important;
+  }
+}

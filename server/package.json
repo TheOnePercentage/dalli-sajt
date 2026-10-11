@@ -1,0 +1,24 @@
+{
+  "name": "dalli-api",
+  "version": "1.0.0",
+  "description": "DALLI REST API - Prisma v2 / PostgreSQL",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file-if-exists=../.env index.js",
+    "dev": "node --watch --env-file-if-exists=../.env index.js",
+    "test:api": "node ../scripts/run-api-tests.mjs"
+  },
+  "dependencies": {
+    "@socket.io/admin-ui": "^0.5.1",
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.3",
+    "lowdb": "^7.0.1",
+    "meilisearch": "^0.62.0",
+    "socket.io": "^4.8.4",
+    "sql.js": "^1.14.2"
+  }
+}

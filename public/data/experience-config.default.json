@@ -1,0 +1,1514 @@
+{
+  "version": 1,
+  "createdAt": "2026-10-10T12:10:27.430Z",
+  "updatedAt": "2026-10-10T12:10:27.431Z",
+  "updatedBy": "system",
+  "activeThemeId": "default",
+  "previousThemeId": null,
+  "scheduledTheme": null,
+  "previewThemeId": null,
+  "comparisonThemes": [],
+  "themes": {
+    "default": {
+      "id": "default",
+      "label": "Podrazumevana",
+      "emoji": "🏢",
+      "accent": {
+        "primary": "#2c3e50",
+        "secondary": "#34495e",
+        "highlight": "#e74c3c",
+        "background": "#ffffff",
+        "surface": "#f8f9fa",
+        "textOnPrimary": "#ffffff"
+      },
+      "hero": {
+        "image": "",
+        "title": "DALLI — Kolekcija koja priča vašu priču",
+        "subtitle": "Casual i Elegance linije, pažljivo dizajnirane za svaki dan.",
+        "ctas": [
+          {
+            "id": "cta-primary",
+            "label": "Istraži kolekcije",
+            "href": "/casual/",
+            "variant": "primary"
+          },
+          {
+            "id": "cta-secondary",
+            "label": "Elegance kolekcija",
+            "href": "/elegance/",
+            "variant": "outline"
+          }
+        ],
+        "collectionFocus": "all"
+      },
+      "banners": [
+        {
+          "id": "announcement",
+          "location": "announcement",
+          "text": "",
+          "link": "",
+          "active": true
+        }
+      ],
+      "promotionalText": {
+        "announcement": "",
+        "homepage": "",
+        "collection": ""
+      },
+      "collectionSpotlight": "both",
+      "featuredProducts": [],
+      "featuredCategories": [],
+      "homepageCampaign": {
+        "enabled": false,
+        "title": "",
+        "body": "",
+        "image": "",
+        "ctaLabel": "",
+        "ctaHref": ""
+      },
+      "editorial": false
+    },
+    "black-friday": {
+      "id": "black-friday",
+      "label": "Black Friday",
+      "emoji": "🖤",
+      "accent": {
+        "primary": "#0d0d0d",
+        "secondary": "#1a1a1a",
+        "highlight": "#ffd700",
+        "background": "#0a0a0a",
+        "surface": "#141414",
+        "textOnPrimary": "#ffd700"
+      },
+      "hero": {
+        "image": "",
+        "title": "Black Friday — Do -70% na ceo asortiman",
+        "subtitle": "Najveća rasprodaja godine. Ograničene količine, nenadmašne cene.",
+        "ctas": [
+          {
+            "id": "cta-primary",
+            "label": "Uhviti popust",
+            "href": "/casual/",
+            "variant": "primary"
+          },
+          {
+            "id": "cta-secondary",
+            "label": "Elegance kolekcija",
+            "href": "/elegance/",
+            "variant": "outline"
+          }
+        ],
+        "collectionFocus": "all"
+      },
+      "banners": [
+        {
+          "id": "announcement",
+          "location": "announcement",
+          "text": "🖤 Black Friday traje! Besplatna dostava za porudžbine preko 5.000 RSD",
+          "link": "",
+          "active": true
+        }
+      ],
+      "promotionalText": {
+        "announcement": "🖤 Black Friday traje! Besplatna dostava za porudžbine preko 5.000 RSD",
+        "homepage": "",
+        "collection": ""
+      },
+      "collectionSpotlight": "elegance",
+      "featuredProducts": [],
+      "featuredCategories": [],
+      "homepageCampaign": {
+        "enabled": false,
+        "title": "",
+        "body": "",
+        "image": "",
+        "ctaLabel": "",
+        "ctaHref": ""
+      },
+      "editorial": false
+    },
+    "christmas": {
+      "id": "christmas",
+      "label": "Božić",
+      "emoji": "🎄",
+      "accent": {
+        "primary": "#0b6623",
+        "secondary": "#8b1a1a",
+        "highlight": "#c41e3a",
+        "background": "#fdf6f0",
+        "surface": "#ffffff",
+        "textOnPrimary": "#ffffff"
+      },
+      "hero": {
+        "image": "",
+        "title": "Božićna čarolija u DALLI-ju",
+        "subtitle": "Pokloni sa stilom — odabrane kreacije za najlepše trenutke.",
+        "ctas": [
+          {
+            "id": "cta-primary",
+            "label": "Odaberi poklon",
+            "href": "/casual/",
+            "variant": "primary"
+          },
+          {
+            "id": "cta-secondary",
+            "label": "Elegance kolekcija",
+            "href": "/elegance/",
+            "variant": "outline"
+          }
+        ],
+        "collectionFocus": "all"
+      },
+      "banners": [
+        {
+          "id": "announcement",
+          "location": "announcement",
+          "text": "🎄 Božićna akcija — poklon paketi i besplatno pakovanje",
+          "link": "",
+          "active": true
+        }
+      ],
+      "promotionalText": {
+        "announcement": "🎄 Božićna akcija — poklon paketi i besplatno pakovanje",
+        "homepage": "",
+        "collection": ""
+      },
+      "collectionSpotlight": "elegance",
+      "featuredProducts": [],
+      "featuredCategories": [],
+      "homepageCampaign": {
+        "enabled": false,
+        "title": "",
+        "body": "",
+        "image": "",
+        "ctaLabel": "",
+        "ctaHref": ""
+      },
+      "editorial": false
+    },
+    "new-year": {
+      "id": "new-year",
+      "label": "Nova Godina",
+      "emoji": "🎆",
+      "accent": {
+        "primary": "#0f1b3d",
+        "secondary": "#1a2a5e",
+        "highlight": "#d4af37",
+        "background": "#0a1030",
+        "surface": "#141c40",
+        "textOnPrimary": "#d4af37"
+      },
+      "hero": {
+        "image": "",
+        "title": "Nova Godina, novi stil",
+        "subtitle": "Započnite godinu sa kolekcijom koja osvaja.",
+        "ctas": [
+          {
+            "id": "cta-primary",
+            "label": "Otkrij novitete",
+            "href": "/casual/",
+            "variant": "primary"
+          },
+          {
+            "id": "cta-secondary",
+            "label": "Elegance kolekcija",
+            "href": "/elegance/",
+            "variant": "outline"
+          }
+        ],
+        "collectionFocus": "all"
+      },
+      "banners": [
+        {
+          "id": "announcement",
+          "location": "announcement",
+          "text": "🎆 Novogodišnja ponuda — do -50% na selekciju",
+          "link": "",
+          "active": true
+        }
+      ],
+      "promotionalText": {
+        "announcement": "🎆 Novogodišnja ponuda — do -50% na selekciju",
+        "homepage": "",
+        "collection": ""
+      },
+      "collectionSpotlight": "elegance",
+      "featuredProducts": [],
+      "featuredCategories": [],
+      "homepageCampaign": {
+        "enabled": false,
+        "title": "",
+        "body": "",
+        "image": "",
+        "ctaLabel": "",
+        "ctaHref": ""
+      },
+      "editorial": false
+    },
+    "valentines": {
+      "id": "valentines",
+      "label": "Valentinovo",
+      "emoji": "💝",
+      "accent": {
+        "primary": "#d6336c",
+        "secondary": "#c2255c",
+        "highlight": "#ff6b9d",
+        "background": "#fff0f5",
+        "surface": "#ffffff",
+        "textOnPrimary": "#ffffff"
+      },
+      "hero": {
+        "image": "",
+        "title": "Valentinovo — stil koji govori srcom",
+        "subtitle": "Pažljivo odabrani komadi za posebne trenutke.",
+        "ctas": [
+          {
+            "id": "cta-primary",
+            "label": "Pronađi inspiraciju",
+            "href": "/casual/",
+            "variant": "primary"
+          },
+          {
+            "id": "cta-secondary",
+            "label": "Elegance kolekcija",
+            "href": "/elegance/",
+            "variant": "outline"
+          }
+        ],
+        "collectionFocus": "all"
+      },
+      "banners": [
+        {
+          "id": "announcement",
+          "location": "announcement",
+          "text": "💝 Valentine’s kolekcija — pokloni koji oduševljavaju",
+          "link": "",
+          "active": true
+        }
+      ],
+      "promotionalText": {
+        "announcement": "💝 Valentine’s kolekcija — pokloni koji oduševljavaju",
+        "homepage": "",
+        "collection": ""
+      },
+      "collectionSpotlight": "elegance",
+      "featuredProducts": [],
+      "featuredCategories": [],
+      "homepageCampaign": {
+        "enabled": false,
+        "title": "",
+        "body": "",
+        "image": "",
+        "ctaLabel": "",
+        "ctaHref": ""
+      },
+      "editorial": false
+    },
+    "summer": {
+      "id": "summer",
+      "label": "Leto",
+      "emoji": "☀️",
+      "accent": {
+        "primary": "#0e7490",
+        "secondary": "#0891b2",
+        "highlight": "#f59e0b",
+        "background": "#fffbeb",
+        "surface": "#ffffff",
+        "textOnPrimary": "#ffffff"
+      },
+      "hero": {
+        "image": "",
+        "title": "Leto počinje ovde",
+        "subtitle": "Lagani materijali, vibrantne boje, savršen osećaj.",
+        "ctas": [
+          {
+            "id": "cta-primary",
+            "label": "Uđi u leto",
+            "href": "/casual/",
+            "variant": "primary"
+          },
+          {
+            "id": "cta-secondary",
+            "label": "Elegance kolekcija",
+            "href": "/elegance/",
+            "variant": "outline"
+          }
+        ],
+        "collectionFocus": "all"
+      },
+      "banners": [
+        {
+          "id": "announcement",
+          "location": "announcement",
+          "text": "☀️ Letnja kolekcija — slobodan povraćaj 30 dana",
+          "link": "",
+          "active": true
+        }
+      ],
+      "promotionalText": {
+        "announcement": "☀️ Letnja kolekcija — slobodan povraćaj 30 dana",
+        "homepage": "",
+        "collection": ""
+      },
+      "collectionSpotlight": "elegance",
+      "featuredProducts": [],
+      "featuredCategories": [],
+      "homepageCampaign": {
+        "enabled": false,
+        "title": "",
+        "body": "",
+        "image": "",
+        "ctaLabel": "",
+        "ctaHref": ""
+      },
+      "editorial": false
+    },
+    "winter": {
+      "id": "winter",
+      "label": "Zima",
+      "emoji": "❄️",
+      "accent": {
+        "primary": "#1e3a5f",
+        "secondary": "#2d5a87",
+        "highlight": "#7dd3fc",
+        "background": "#f0f9ff",
+        "surface": "#ffffff",
+        "textOnPrimary": "#ffffff"
+      },
+      "hero": {
+        "image": "",
+        "title": "Zimska elegancija",
+        "subtitle": "Topli slojevi, profinjeni detalji, neprikosnoven stil.",
+        "ctas": [
+          {
+            "id": "cta-primary",
+            "label": "Osvajaj zimu",
+            "href": "/casual/",
+            "variant": "primary"
+          },
+          {
+            "id": "cta-secondary",
+            "label": "Elegance kolekcija",
+            "href": "/elegance/",
+            "variant": "outline"
+          }
+        ],
+        "collectionFocus": "all"
+      },
+      "banners": [
+        {
+          "id": "announcement",
+          "location": "announcement",
+          "text": "❄️ Zimska kolekcija — besplatna dostava",
+          "link": "",
+          "active": true
+        }
+      ],
+      "promotionalText": {
+        "announcement": "❄️ Zimska kolekcija — besplatna dostava",
+        "homepage": "",
+        "collection": ""
+      },
+      "collectionSpotlight": "elegance",
+      "featuredProducts": [],
+      "featuredCategories": [],
+      "homepageCampaign": {
+        "enabled": false,
+        "title": "",
+        "body": "",
+        "image": "",
+        "ctaLabel": "",
+        "ctaHref": ""
+      },
+      "editorial": false
+    },
+    "spring": {
+      "id": "spring",
+      "label": "Proleće",
+      "emoji": "🌸",
+      "accent": {
+        "primary": "#15803d",
+        "secondary": "#16a34a",
+        "highlight": "#ec4899",
+        "background": "#f0fdf4",
+        "surface": "#ffffff",
+        "textOnPrimary": "#ffffff"
+      },
+      "hero": {
+        "image": "",
+        "title": "Proleće u svakom koraku",
+        "subtitle": "Sveže boje i novi krojevi za novu sezonu.",
+        "ctas": [
+          {
+            "id": "cta-primary",
+            "label": "Vidi novitete",
+            "href": "/casual/",
+            "variant": "primary"
+          },
+          {
+            "id": "cta-secondary",
+            "label": "Elegance kolekcija",
+            "href": "/elegance/",
+            "variant": "outline"
+          }
+        ],
+        "collectionFocus": "all"
+      },
+      "banners": [
+        {
+          "id": "announcement",
+          "location": "announcement",
+          "text": "🌸 Prolećni noviteti su stigli",
+          "link": "",
+          "active": true
+        }
+      ],
+      "promotionalText": {
+        "announcement": "🌸 Prolećni noviteti su stigli",
+        "homepage": "",
+        "collection": ""
+      },
+      "collectionSpotlight": "elegance",
+      "featuredProducts": [],
+      "featuredCategories": [],
+      "homepageCampaign": {
+        "enabled": false,
+        "title": "",
+        "body": "",
+        "image": "",
+        "ctaLabel": "",
+        "ctaHref": ""
+      },
+      "editorial": false
+    },
+    "autumn": {
+      "id": "autumn",
+      "label": "Jesen",
+      "emoji": "🍂",
+      "accent": {
+        "primary": "#9a3412",
+        "secondary": "#c2410c",
+        "highlight": "#f59e0b",
+        "background": "#fff7ed",
+        "surface": "#ffffff",
+        "textOnPrimary": "#ffffff"
+      },
+      "hero": {
+        "image": "",
+        "title": "Jesenji tonovi, savršen stil",
+        "subtitle": "Bogate teksture i tople nijanse za hladnije dane.",
+        "ctas": [
+          {
+            "id": "cta-primary",
+            "label": "Istraži jesen",
+            "href": "/casual/",
+            "variant": "primary"
+          },
+          {
+            "id": "cta-secondary",
+            "label": "Elegance kolekcija",
+            "href": "/elegance/",
+            "variant": "outline"
+          }
+        ],
+        "collectionFocus": "all"
+      },
+      "banners": [
+        {
+          "id": "announcement",
+          "location": "announcement",
+          "text": "🍂 Jesenja selekcija — novi komadi svake nedelje",
+          "link": "",
+          "active": true
+        }
+      ],
+      "promotionalText": {
+        "announcement": "🍂 Jesenja selekcija — novi komadi svake nedelje",
+        "homepage": "",
+        "collection": ""
+      },
+      "collectionSpotlight": "elegance",
+      "featuredProducts": [],
+      "featuredCategories": [],
+      "homepageCampaign": {
+        "enabled": false,
+        "title": "",
+        "body": "",
+        "image": "",
+        "ctaLabel": "",
+        "ctaHref": ""
+      },
+      "editorial": false
+    },
+    "ramadan": {
+      "id": "ramadan",
+      "label": "Ramazan",
+      "emoji": "🌙",
+      "accent": {
+        "primary": "#1e3a8a",
+        "secondary": "#1e40af",
+        "highlight": "#d4af37",
+        "background": "#0c1445",
+        "surface": "#16205c",
+        "textOnPrimary": "#d4af37"
+      },
+      "hero": {
+        "image": "",
+        "title": "Ramazan Mubarak",
+        "subtitle": "Elegantna kolekcija za vreme mira i spajanja.",
+        "ctas": [
+          {
+            "id": "cta-primary",
+            "label": "Pogledaj kolekciju",
+            "href": "/casual/",
+            "variant": "primary"
+          },
+          {
+            "id": "cta-secondary",
+            "label": "Elegance kolekcija",
+            "href": "/elegance/",
+            "variant": "outline"
+          }
+        ],
+        "collectionFocus": "all"
+      },
+      "banners": [
+        {
+          "id": "announcement",
+          "location": "announcement",
+          "text": "🌙 Posebna ponuda za Ramazan",
+          "link": "",
+          "active": true
+        }
+      ],
+      "promotionalText": {
+        "announcement": "🌙 Posebna ponuda za Ramazan",
+        "homepage": "",
+        "collection": ""
+      },
+      "collectionSpotlight": "elegance",
+      "featuredProducts": [],
+      "featuredCategories": [],
+      "homepageCampaign": {
+        "enabled": false,
+        "title": "",
+        "body": "",
+        "image": "",
+        "ctaLabel": "",
+        "ctaHref": ""
+      },
+      "editorial": false
+    },
+    "eid": {
+      "id": "eid",
+      "label": "Bajram",
+      "emoji": "🎉",
+      "accent": {
+        "primary": "#065f46",
+        "secondary": "#047857",
+        "highlight": "#d4af37",
+        "background": "#ecfdf5",
+        "surface": "#ffffff",
+        "textOnPrimary": "#ffffff"
+      },
+      "hero": {
+        "image": "",
+        "title": "Bajram Šerif Mubarek",
+        "subtitle": "Svečani stil za najradosnije dane.",
+        "ctas": [
+          {
+            "id": "cta-primary",
+            "label": "Odaberi svečani stajling",
+            "href": "/casual/",
+            "variant": "primary"
+          },
+          {
+            "id": "cta-secondary",
+            "label": "Elegance kolekcija",
+            "href": "/elegance/",
+            "variant": "outline"
+          }
+        ],
+        "collectionFocus": "all"
+      },
+      "banners": [
+        {
+          "id": "announcement",
+          "location": "announcement",
+          "text": "🎉 Bajramska kolekcija — pokloni sa stilom",
+          "link": "",
+          "active": true
+        }
+      ],
+      "promotionalText": {
+        "announcement": "🎉 Bajramska kolekcija — pokloni sa stilom",
+        "homepage": "",
+        "collection": ""
+      },
+      "collectionSpotlight": "elegance",
+      "featuredProducts": [],
+      "featuredCategories": [],
+      "homepageCampaign": {
+        "enabled": false,
+        "title": "",
+        "body": "",
+        "image": "",
+        "ctaLabel": "",
+        "ctaHref": ""
+      },
+      "editorial": false
+    },
+    "halloween": {
+      "id": "halloween",
+      "label": "Noć veštica",
+      "emoji": "🎃",
+      "accent": {
+        "primary": "#7c2d12",
+        "secondary": "#9a3412",
+        "highlight": "#f97316",
+        "background": "#1a0a02",
+        "surface": "#241005",
+        "textOnPrimary": "#f97316"
+      },
+      "hero": {
+        "image": "",
+        "title": "Noć veštica — tamna strana stila",
+        "subtitle": "Dramatični komadi za najhrabrije.",
+        "ctas": [
+          {
+            "id": "cta-primary",
+            "label": "Uroni u mrak",
+            "href": "/casual/",
+            "variant": "primary"
+          },
+          {
+            "id": "cta-secondary",
+            "label": "Elegance kolekcija",
+            "href": "/elegance/",
+            "variant": "outline"
+          }
+        ],
+        "collectionFocus": "all"
+      },
+      "banners": [
+        {
+          "id": "announcement",
+          "location": "announcement",
+          "text": "🎃 Halloween akcija — misteriozni popusti",
+          "link": "",
+          "active": true
+        }
+      ],
+      "promotionalText": {
+        "announcement": "🎃 Halloween akcija — misteriozni popusti",
+        "homepage": "",
+        "collection": ""
+      },
+      "collectionSpotlight": "elegance",
+      "featuredProducts": [],
+      "featuredCategories": [],
+      "homepageCampaign": {
+        "enabled": false,
+        "title": "",
+        "body": "",
+        "image": "",
+        "ctaLabel": "",
+        "ctaHref": ""
+      },
+      "editorial": false
+    }
+  },
+  "history": [],
+  "audit": [],
+  "hero": {
+    "image": "",
+    "title": "DALLI — Kolekcija koja priča vašu priču",
+    "subtitle": "Casual i Elegance linije, pažljivo dizajnirane za svaki dan.",
+    "ctas": [
+      {
+        "id": "cta-primary",
+        "label": "Istraži kolekcije",
+        "href": "/casual/",
+        "variant": "primary"
+      },
+      {
+        "id": "cta-secondary",
+        "label": "Elegance kolekcija",
+        "href": "/elegance/",
+        "variant": "outline"
+      }
+    ],
+    "collectionFocus": "all",
+    "overrideTheme": false
+  },
+  "collections": {
+    "casual": {
+      "label": "CASUAL",
+      "logo": "",
+      "hero": {
+        "image": "",
+        "title": "Casual kolekcija",
+        "subtitle": "Svakodnevni komodi sa karakterom."
+      },
+      "featuredProducts": [],
+      "featuredCategories": [],
+      "seasonalOverrides": {}
+    },
+    "elegance": {
+      "label": "ELEGANCE",
+      "logo": "",
+      "hero": {
+        "image": "",
+        "title": "Elegance kolekcija",
+        "subtitle": "Prolinjenost za posebne trenutke."
+      },
+      "featuredProducts": [],
+      "featuredCategories": [],
+      "seasonalOverrides": {}
+    }
+  },
+  "payments": {
+    "store": {
+      "cod": true,
+      "card": true,
+      "bankTransfer": true,
+      "crypto": false
+    },
+    "productOverrides": {}
+  },
+  "ai": {
+    "global": {
+      "tryOn": false,
+      "viewer360": false,
+      "personalization": false,
+      "recommendations": false
+    },
+    "collections": {
+      "casual": {
+        "tryOn": false,
+        "viewer360": false,
+        "personalization": false,
+        "recommendations": false
+      },
+      "elegance": {
+        "tryOn": false,
+        "viewer360": false,
+        "personalization": false,
+        "recommendations": false
+      }
+    },
+    "products": {}
+  },
+  "community": {
+    "reviews": {
+      "enabled": true,
+      "anonymous": false,
+      "minOrder": true
+    },
+    "photoReviews": {
+      "enabled": true,
+      "maxPhotos": 5
+    },
+    "videoReviews": {
+      "enabled": false,
+      "maxDurationSeconds": 60
+    },
+    "gallery": {
+      "enabled": true,
+      "autoApprove": false
+    },
+    "qna": {
+      "enabled": true,
+      "autoApprove": false
+    },
+    "moderation": {
+      "queue": [],
+      "requireApproval": true,
+      "autoRejectSpam": true
+    }
+  },
+  "maintenance": {
+    "enabled": false,
+    "message": "Radimo na unapređenju sajta. Vraćamo se vrlo brzo.",
+    "countdownEnabled": false,
+    "targetAt": null,
+    "allowAdminBypass": true
+  },
+  "luxury": {
+    "enabled": false,
+    "emphasis": "elegance",
+    "reducePromotions": true,
+    "editorialLayout": true
+  },
+  "brand": {
+    "story": {
+      "enabled": true
+    },
+    "philosophy": {
+      "enabled": true
+    },
+    "mission": {
+      "enabled": true
+    },
+    "values": {
+      "enabled": true
+    },
+    "sustainability": {
+      "enabled": true
+    },
+    "heritage": {
+      "enabled": true
+    },
+    "futureVision": {
+      "enabled": true
+    },
+    "founderMessage": {
+      "enabled": true
+    },
+    "brandManifesto": {
+      "enabled": true
+    },
+    "sustainabilityMessage": {
+      "enabled": true
+    },
+    "luxuryValues": {
+      "enabled": true
+    },
+    "seasonalStory": {
+      "enabled": false
+    },
+    "collectionStory": {
+      "enabled": false
+    }
+  },
+  "editorial": {
+    "enabled": false,
+    "reducePromotions": true,
+    "largerStorySections": true,
+    "moreBrandContent": true,
+    "moreCollectionPresentation": true,
+    "hideSaleBadges": true,
+    "showEditorialNote": true
+  },
+  "trust": {
+    "enabled": true,
+    "blocks": {
+      "premium-materials": true,
+      "hand-finished": true,
+      "limited-production": true,
+      "sustainability": true,
+      "ethical-manufacturing": true,
+      "lifetime-quality": true
+    }
+  },
+  "journal": {
+    "enabled": true,
+    "categories": {
+      "style-guides": true,
+      "fashion-intelligence": true,
+      "collections": true,
+      "lifestyle": true,
+      "product-care": true,
+      "materials": true,
+      "editorial": true
+    },
+    "showEditorialNote": true
+  },
+  "craftsmanship": {
+    "enabled": true,
+    "sections": {
+      "manufacturing": true,
+      "designProcess": true,
+      "qualityStandards": true,
+      "garmentConstruction": true,
+      "materialSelection": true
+    }
+  },
+  "materials": {
+    "enabled": true,
+    "visible": [
+      "organic-cotton",
+      "premium-cotton",
+      "french-terry",
+      "brushed-fleece",
+      "linen-blend",
+      "merino-wool",
+      "future-materials"
+    ]
+  },
+  "video": {
+    "enabled": false,
+    "lazyLoad": true,
+    "preload": "none",
+    "maxConcurrent": 1,
+    "videos": {}
+  },
+  "outfits": {
+    "enabled": true,
+    "lookRecommendations": true,
+    "styleRecommendations": true,
+    "luxuryStylingMode": false,
+    "completeTheLook": true,
+    "lookOfTheWeek": true
+  },
+  "membership": {
+    "enabled": true,
+    "earlyAccessEngine": true,
+    "exclusiveCollections": true,
+    "vipDashboard": true,
+    "privateClientProgram": true,
+    "invitationSystem": false,
+    "limitedEditionEngine": true,
+    "tierRules": {},
+    "releaseRules": {},
+    "visibility": {
+      "showLockedCollections": false,
+      "showComingSoonBadge": true
+    }
+  },
+  "immersive": {
+    "enabled": true,
+    "worlds": {
+      "casual": {
+        "enabled": true,
+        "journeySteps": [
+          "discover",
+          "story",
+          "materials",
+          "looks",
+          "products",
+          "membership"
+        ]
+      },
+      "elegance": {
+        "enabled": true,
+        "journeySteps": [
+          "discover",
+          "story",
+          "materials",
+          "looks",
+          "products",
+          "membership"
+        ]
+      }
+    },
+    "collectionWorlds": true,
+    "signatureMoments": true,
+    "editorialExperience": true,
+    "luxuryJourneySystem": true,
+    "cinematicCollections": true,
+    "microInteractions": true,
+    "presentationRules": {
+      "respectReducedMotion": true,
+      "defaultDuration": 600,
+      "defaultEasing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "maxConcurrentAnimations": 3
+    },
+    "soundArchitecture": {
+      "enabled": false,
+      "architectureReady": true
+    }
+  },
+  "global": {
+    "enabled": true,
+    "countryActivation": true,
+    "regionalPricing": true,
+    "regionalSEO": true,
+    "regionalCollections": true,
+    "multiCurrency": true,
+    "regionalPersonalization": true,
+    "countries": {
+      "balkanPriority": [
+        "RS",
+        "BA",
+        "ME",
+        "HR",
+        "MK",
+        "SI"
+      ],
+      "dachExpansion": [
+        "DE",
+        "AT",
+        "CH"
+      ],
+      "euWestExpansion": [
+        "FR",
+        "IT"
+      ],
+      "ukExpansion": [
+        "GB"
+      ],
+      "northAmericaExpansion": [
+        "US"
+      ],
+      "middleEastExpansion": [
+        "AE"
+      ]
+    },
+    "currencies": {
+      "enabled": [
+        "RSD",
+        "BAM",
+        "EUR",
+        "MKD",
+        "CHF",
+        "GBP",
+        "USD",
+        "AED"
+      ],
+      "autoConvert": true,
+      "baseCurrency": "EUR"
+    },
+    "languages": {
+      "enabled": [
+        "sr",
+        "sr-Latn",
+        "bs",
+        "hr",
+        "mk",
+        "sl",
+        "de",
+        "fr",
+        "it",
+        "en",
+        "ar"
+      ],
+      "autoDetect": true,
+      "fallback": "en"
+    },
+    "shipping": {
+      "controlCenter": true,
+      "luxuryDelivery": true,
+      "zonesEnabled": true
+    },
+    "payments": {
+      "controlCenter": true,
+      "perCountryOverrides": true,
+      "cryptoGlobal": true
+    },
+    "seo": {
+      "regionalEngine": true,
+      "hreflangManagement": true,
+      "canonicalManagement": true,
+      "structuredDataPerCountry": true
+    },
+    "availability": {
+      "productLevel": true,
+      "collectionLevel": true,
+      "elegantMessaging": true,
+      "alternativesEngine": true
+    },
+    "analytics": {
+      "countryRevenue": true,
+      "countryConversion": true,
+      "countryAOV": true,
+      "countryShipping": true,
+      "countryMembership": true
+    },
+    "futureReady": {
+      "europeanExpansion": {
+        "architectureReady": true
+      },
+      "middleEastExpansion": {
+        "architectureReady": true
+      },
+      "northAmericaExpansion": {
+        "architectureReady": true
+      },
+      "globalWarehouses": {
+        "architectureReady": true
+      },
+      "regionalFulfillment": {
+        "architectureReady": true
+      }
+    }
+  },
+  "brandIdentity": {
+    "brandName": "DALLI",
+    "companyName": "DALLI d.o.o.",
+    "businessInfo": "",
+    "primaryDomain": "dalli.rs",
+    "secondaryDomains": [],
+    "phones": [
+      {
+        "label": "Glavni telefon",
+        "number": "+381 11 2630 123",
+        "primary": true
+      }
+    ],
+    "emails": [
+      {
+        "label": "Opšti kontakt",
+        "address": "hello@dalli.rs",
+        "primary": true
+      }
+    ],
+    "address": {
+      "streetAddress": "",
+      "addressLocality": "",
+      "postalCode": "",
+      "addressCountry": "RS"
+    },
+    "contactInfo": ""
+  },
+  "assets": {
+    "library": [],
+    "positions": {
+      "headerLogo": {
+        "assetId": "",
+        "alt": "DALLI"
+      },
+      "footerLogo": {
+        "assetId": "",
+        "alt": "DALLI"
+      },
+      "mobileLogo": {
+        "assetId": "",
+        "alt": "DALLI"
+      },
+      "darkLogo": {
+        "assetId": "",
+        "alt": "DALLI"
+      },
+      "lightLogo": {
+        "assetId": "",
+        "alt": "DALLI"
+      },
+      "wordmarkLogo": {
+        "assetId": "",
+        "alt": "DALLI"
+      },
+      "iconLogo": {
+        "assetId": "",
+        "alt": "DALLI"
+      },
+      "favicon": {
+        "assetId": "",
+        "alt": ""
+      },
+      "appIcon": {
+        "assetId": "",
+        "alt": ""
+      },
+      "ogLogo": {
+        "assetId": "",
+        "alt": ""
+      },
+      "socialLogo": {
+        "assetId": "",
+        "alt": ""
+      }
+    }
+  },
+  "domains": {
+    "primary": {
+      "domain": "dalli.rs",
+      "language": "sr",
+      "currency": "RSD"
+    },
+    "list": [
+      {
+        "domain": "dalli.rs",
+        "enabled": true,
+        "primary": true,
+        "language": "sr",
+        "currency": "RSD",
+        "seoOverride": "",
+        "regionalRules": ""
+      },
+      {
+        "domain": "dalli.rs-lat",
+        "enabled": true,
+        "primary": false,
+        "language": "sr-Latn",
+        "currency": "RSD",
+        "seoOverride": "",
+        "regionalRules": ""
+      },
+      {
+        "domain": "dalli.ba",
+        "enabled": false,
+        "primary": false,
+        "language": "bs",
+        "currency": "BAM",
+        "seoOverride": "",
+        "regionalRules": ""
+      },
+      {
+        "domain": "dalli.me",
+        "enabled": false,
+        "primary": false,
+        "language": "sr-Latn",
+        "currency": "EUR",
+        "seoOverride": "",
+        "regionalRules": ""
+      },
+      {
+        "domain": "dalli.hr",
+        "enabled": false,
+        "primary": false,
+        "language": "hr",
+        "currency": "EUR",
+        "seoOverride": "",
+        "regionalRules": ""
+      },
+      {
+        "domain": "dalli.de",
+        "enabled": false,
+        "primary": false,
+        "language": "de",
+        "currency": "EUR",
+        "seoOverride": "",
+        "regionalRules": ""
+      },
+      {
+        "domain": "dalli.at",
+        "enabled": false,
+        "primary": false,
+        "language": "de",
+        "currency": "EUR",
+        "seoOverride": "",
+        "regionalRules": ""
+      },
+      {
+        "domain": "dalli.ch",
+        "enabled": false,
+        "primary": false,
+        "language": "de",
+        "currency": "CHF",
+        "seoOverride": "",
+        "regionalRules": ""
+      }
+    ]
+  },
+  "finance": {
+    "bankAccounts": [],
+    "cryptoWallets": [],
+    "cardDepositAccounts": [],
+    "taxProfiles": {
+      "vatRules": "",
+      "countryVat": {}
+    },
+    "regionalRules": {
+      "vat": {},
+      "customs": {}
+    },
+    "invoices": {
+      "template": "default",
+      "numberingPrefix": "INV",
+      "showVat": true,
+      "footerNote": "",
+      "regions": {}
+    },
+    "paymentInstructions": "",
+    "refundRules": ""
+  },
+  "treasury": {
+    "ledger": [],
+    "reconciliation": {
+      "lastRunAt": null,
+      "matched": 0,
+      "unmatched": 0,
+      "autoMatch": true
+    },
+    "reports": {
+      "dailyScale": 0,
+      "weeklyScale": 0,
+      "monthlyScale": 0,
+      "quarterlyScale": 0,
+      "yearlyScale": 0
+    }
+  },
+  "communication": {
+    "emails": [
+      {
+        "address": "support@dalli.rs",
+        "roles": [
+          "support",
+          "returns"
+        ],
+        "primary": true
+      },
+      {
+        "address": "orders@dalli.rs",
+        "roles": [
+          "orders"
+        ],
+        "primary": false
+      },
+      {
+        "address": "marketing@dalli.rs",
+        "roles": [
+          "marketing"
+        ],
+        "primary": false
+      },
+      {
+        "address": "vip@dalli.rs",
+        "roles": [
+          "vip",
+          "membership"
+        ],
+        "primary": false
+      },
+      {
+        "address": "returns@dalli.rs",
+        "roles": [
+          "returns"
+        ],
+        "primary": false
+      },
+      {
+        "address": "finance@dalli.rs",
+        "roles": [
+          "finance",
+          "operations"
+        ],
+        "primary": false
+      }
+    ],
+    "phones": [
+      {
+        "label": "Glavni telefon",
+        "number": "+381 11 2630 123",
+        "kind": "primary",
+        "primary": true
+      },
+      {
+        "label": "VIP linija",
+        "number": "+381 60 000 0000",
+        "kind": "vip",
+        "primary": false
+      }
+    ]
+  },
+  "stores": [],
+  "warehouses": [],
+  "shipping": {
+    "couriers": {},
+    "zonesEnabled": true,
+    "tracking": {
+      "customerNotifications": true,
+      "ownerControlled": true
+    }
+  },
+  "social": {
+    "accounts": [
+      {
+        "platform": "instagram",
+        "handle": "dalli.rs",
+        "url": "https://instagram.com/dalli.rs",
+        "scope": "casual",
+        "primary": true
+      },
+      {
+        "platform": "instagram",
+        "handle": "dalli.elegance",
+        "url": "https://instagram.com/dalli.elegance",
+        "scope": "elegance",
+        "primary": false
+      },
+      {
+        "platform": "facebook",
+        "handle": "dalli.rs",
+        "url": "https://facebook.com/dalli.rs",
+        "scope": "global",
+        "primary": true
+      },
+      {
+        "platform": "tiktok",
+        "handle": "dalli.rs",
+        "url": "https://tiktok.com/@dalli.rs",
+        "scope": "global",
+        "primary": false
+      },
+      {
+        "platform": "pinterest",
+        "handle": "dalli.rs",
+        "url": "https://pinterest.com/dalli.rs",
+        "scope": "elegance",
+        "primary": false
+      },
+      {
+        "platform": "youtube",
+        "handle": "DALLI",
+        "url": "https://youtube.com/@DALLI",
+        "scope": "global",
+        "primary": false
+      },
+      {
+        "platform": "linkedin",
+        "handle": "dalli",
+        "url": "https://linkedin.com/company/dalli",
+        "scope": "global",
+        "primary": false
+      },
+      {
+        "platform": "x",
+        "handle": "dalli.rs",
+        "url": "https://x.com/dalli.rs",
+        "scope": "global",
+        "primary": false
+      },
+      {
+        "platform": "threads",
+        "handle": "dalli.rs",
+        "url": "https://threads.net/@dalli.rs",
+        "scope": "global",
+        "primary": false
+      }
+    ],
+    "platforms": [
+      "instagram",
+      "facebook",
+      "tiktok",
+      "pinterest",
+      "youtube",
+      "linkedin",
+      "x",
+      "threads"
+    ],
+    "scopes": [
+      "global",
+      "casual",
+      "elegance",
+      "country",
+      "collection"
+    ]
+  },
+  "operations": {
+    "holiday": {
+      "enabled": false,
+      "startAt": "",
+      "endAt": "",
+      "message": "",
+      "suspendShipping": false,
+      "suspendOrders": false,
+      "customerNotice": "",
+      "countdown": false
+    },
+    "notices": [],
+    "orderPause": {
+      "enabled": false,
+      "message": ""
+    },
+    "shippingPause": {
+      "enabled": false,
+      "message": ""
+    }
+  },
+  "permissions": {
+    "policy": {
+      "manageBrand": false,
+      "manageFinance": false,
+      "manageDomains": false,
+      "manageThemes": false,
+      "managePayments": false,
+      "manageStores": false,
+      "manageExpansion": false,
+      "manageMembership": false,
+      "manageExperience": false
+    },
+    "audit": []
+  }
+}

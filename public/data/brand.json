@@ -1,0 +1,791 @@
+{
+  "version": "1.0",
+  "updatedAt": "2026-10-09T00:00:00Z",
+  "brand": {
+    "story": {
+      "enabled": true,
+      "title": "Priča o DALLI-ju",
+      "subtitle": "Rođen iz uverenja da moda treba da traje",
+      "content": "DALLI nije nastao iz želje da budemo još jedan brend. Nastao je iz uverenja da garderoba može imati dušu — da svaki kroj, svaki šav i svaki materijal mogu ispričati priču o tome ko ste i u šta verujete.\n\nOd prvog dana, odbacili smo brzu modu. Umesto toga, biramo materijale koji traju, krojeve koji pristaju stvarnim ljudima i proizvodnju koja poštuje one koji je stvaraju.\n\nDALLI je za one koji ne kupuju garderobu — oni biraju nasleđe.",
+      "image": "/images/brand/brand-story.jpg",
+      "imageAlt": "DALLI radionica - izrada garderobe"
+    },
+    "philosophy": {
+      "enabled": true,
+      "title": "Naša Filozofija",
+      "content": "Verujemo da prava elegancija nije u logotipu — u osećaju. Da kvalitet nije luksuz koji se kupuje, već standard koji se ne pregovara.\n\nSvaki komad koji stvaramo prolazi kroz filozofiju manje, ali bolje. Manje kolekcija. Više pažnje. Manje trendova. Više trajnosti.",
+      "quote": "Moda prolazi. Stil ostaje. Kvalitet traje zauvek."
+    },
+    "mission": {
+      "enabled": true,
+      "title": "Naša Misija",
+      "content": "Da stvorimo garderobu koja se ne bira za sezonu, već za život. Da dokazmo da se može biti i moderan i odgovoran, i pristupačan i izuzetan.",
+      "points": [
+        "Materijali koji traju godinama, ne nedeljama",
+        "Krojevi koji poštuju svako telo",
+        "Proizvodnja koja poštuje ljude i planetu",
+        "Cene koje ne kažnjavaju kvalitet"
+      ]
+    },
+    "values": {
+      "enabled": true,
+      "title": "Naše Vrednosti",
+      "items": [
+        {
+          "id": "quality",
+          "icon": "👑",
+          "title": "Kvalitet bez kompromisa",
+          "description": "Svaki materijal prolazi kroz strogu selekciju. Organski pamuk, 180-240g/m², provera svakog šava."
+        },
+        {
+          "id": "craft",
+          "icon": "✂️",
+          "title": "Zanatska izrada",
+          "description": "Ručno dovršeni detalji, precizno krojenje, kontrola kvaliteta na svakom koraku proizvodnje."
+        },
+        {
+          "id": "sustainability",
+          "icon": "🌱",
+          "title": "Održivost",
+          "description": "Organski materijali, minimalan otpad, etička proizvodnja. Moda koja ne košta planetu."
+        },
+        {
+          "id": "timelessness",
+          "icon": "⏳",
+          "title": "Bezvremenski dizajn",
+          "description": "Krojevi koji ne izlaze iz mode. Komadi koji se nose godinama i samo postaju bolji."
+        },
+        {
+          "id": "integrity",
+          "icon": "🤝",
+          "title": "Integritet",
+          "description": "Transparentna proizvodnja, poštene cene, iskrena komunikacija. Bez skrivenih uslova."
+        },
+        {
+          "id": "innovation",
+          "icon": "💡",
+          "title": "Inovacija sa svrhom",
+          "description": "Nova tehnologija samo ako poboljšava iskustvo. Nikada radi tehnologije same."
+        }
+      ]
+    },
+    "sustainability": {
+      "enabled": true,
+      "title": "Održivost",
+      "content": "Moda je jedna od najvećih zagađivača na svetu. Mi biramo drugačiji put.\n\nNaša odeća pravi se od organskog pamuka i pažljivo odabranih materijala. Smanjujemo otpad u proizvodnji, biramo lokalne dobavljače gde god je moguće i projektujemo komade koji traju — jer najodrživija odeća je ona koja se ne baci.",
+      "highlights": [
+        "100% organski pamuk u osnovnim linijama",
+        "Smanjen otpad u proizvodnji za 40%",
+        "Etička proizvodnja - fer radni uslovi",
+        "Ambalaža od recikliranih materijala"
+      ],
+      "image": "/images/brand/sustainability.jpg"
+    },
+    "heritage": {
+      "enabled": true,
+      "title": "Naša Istorija",
+      "timeline": [
+        {
+          "year": "2020",
+          "title": "Prva nit",
+          "description": "DALLI je rođen iz ideje da moda može biti i pristupačna i kvalitetna — bez kompromisa."
+        },
+        {
+          "year": "2021",
+          "title": "Prva kolekcija",
+          "description": "Lansirana CASUAL linija. Osnovni komadi od organskog pamuka koji su postali temelj brenda."
+        },
+        {
+          "year": "2022",
+          "title": "ELEGANCE rođen",
+          "description": "Proširenje na elegantnu liniju. DALLI postaje kompletna garderoba — od svakodnevnog do svečanog."
+        },
+        {
+          "year": "2023",
+          "title": "Održivi preokret",
+          "description": "100% organski pamuk u osnovnim linijama. Lokalna proizvodnja, smanjen karbonski otisak."
+        },
+        {
+          "year": "2024",
+          "title": "Digitalna revolucija",
+          "description": "Lansiranje kompletnog digitalnog iskustva. Virtualno isprobavanje, 360° pregled proizvoda."
+        },
+        {
+          "year": "2025",
+          "title": "Luxury House",
+          "description": "DALLI se transformiše iz e-commerce platforme u pravi luksuzni modni brend sa sopstvenim identitetom."
+        },
+        {
+          "year": "2026",
+          "title": "Budućnost",
+          "description": "Širenje na evropsko tržište. Nova lica materijala. Moda koja menja industriju."
+        }
+      ]
+    },
+    "futureVision": {
+      "enabled": true,
+      "title": "Naša Budućnost",
+      "content": "Ne gradimo samo brend. Gradimo nasleđe.\n\nNaša vizija je svet u kojem je kvalitetna garderoba dostupna svima — gde se ne bira između stila i održivosti, između pristupačnosti i izuzetnosti.\n\nDALLI 2030: Evropski brend sa globalnim uticajem, vođen istim vrednostima kojima je počeo.",
+      "image": "/images/brand/future-vision.jpg"
+    }
+  },
+  "craftsmanship": {
+    "enabled": true,
+    "hero": {
+      "title": "Zanatstvo",
+      "subtitle": "Svaki šav ima razlog. Svaki detalj ima priču.",
+      "image": "/images/craftsmanship/hero.jpg"
+    },
+    "manufacturing": {
+      "enabled": true,
+      "title": "Priča o Proizvodnji",
+      "content": "Od sirovog materijala do gotovog proizvoda, svaki DALLI komad prolazi kroz pažljivo osmišljen proces.\n\nNaša proizvodnja spaja tradicionalno zanatstvo sa modernom tehnologijom. Mašine daju preciznost, ljudska ruka daje dušu.",
+      "image": "/images/craftsmanship/manufacturing.jpg",
+      "steps": [
+        {
+          "step": "01",
+          "title": "Odabir materijala",
+          "description": "Svaki materijal se testira na kvalitet, mekoću i izdržljivost pre nego što uđe u proizvodnju."
+        },
+        {
+          "step": "02",
+          "title": "Precizno krojenje",
+          "description": "Digitalno krojenje minimizuje otpad, dok stručnjaci osiguravaju savršeno pristajanje."
+        },
+        {
+          "step": "03",
+          "title": "Pažljivo šivenje",
+          "description": "Svaki šav se postavlja sa namerom. Jačina, gustina i putanja su unapred definisani za svaki model."
+        },
+        {
+          "step": "04",
+          "title": "Kontrola kvaliteta",
+          "description": "Svaki komad prolazi kroz trostruku kontrolu pre nego što dobije DALLI pečat."
+        },
+        {
+          "step": "05",
+          "title": "Finiš i pakovanje",
+          "description": "Ručno peglanje, pažljivo pakovanje, spremini za put do vašeg ormana."
+        }
+      ]
+    },
+    "designProcess": {
+      "enabled": true,
+      "title": "Proces Dizajna",
+      "content": "Dizajn počinje slušanjem. Slušamo telo, slušamo svakodnevicu, slušamo ono što ljudima nedostaje u njihovoj garderobi.",
+      "phases": [
+        {
+          "phase": "Istraživanje",
+          "description": "Analiza potreba, studija pokreta, istraživanje materijala"
+        },
+        {
+          "phase": "Koncept",
+          "description": "Skice, prototipi, prvi kroj na papiru"
+        },
+        {
+          "phase": "Razvoj",
+          "description": "3D modeliranje, testiranje pristajanja, iteracije"
+        },
+        {
+          "phase": "Proizvodnja",
+          "description": "Finalna optimizacija, kontrola, lansiranje"
+        }
+      ]
+    },
+    "qualityStandards": {
+      "enabled": true,
+      "title": "Standardi Kvaliteta",
+      "content": "Kvalitet nije cilj — to je polazna tačka.",
+      "standards": [
+        {
+          "icon": "🔬",
+          "title": "Testiranje materijala",
+          "description": "Otpornost na habanje, bojenje, istezanje i skupljanje"
+        },
+        {
+          "icon": "📏",
+          "title": "Preciznost kroja",
+          "description": "Tolerancija od ±2mm na svim kritičnim šavovima"
+        },
+        {
+          "icon": "🧵",
+          "title": "Jačina šavova",
+          "description": "Test opterećenja na svakom spoju pre isporuke"
+        },
+        {
+          "icon": "🎨",
+          "title": "Stabilnost boje",
+          "description": "Test boje posle 20 pranja prema ISO standardu"
+        },
+        {
+          "icon": "✋",
+          "title": "Ručna kontrola",
+          "description": "Svaki komad prolazi kroz vizuelnu i taktilnu inspekciju"
+        }
+      ]
+    },
+    "garmentConstruction": {
+      "enabled": true,
+      "title": "Izrada Odeće",
+      "content": "Dobra odeća se ne vidi samo — oseća se. U težini tkanine, u glatkoći šava, u načinu na koji pada.",
+      "details": [
+        {
+          "title": "Dvostruki šav",
+          "description": "Jačina i čistota na svakom glavnom šavu"
+        },
+        {
+          "title": "Rebrasti krajevi",
+          "description": "Elastičnost koja se ne gubi nakon pranja"
+        },
+        {
+          "title": "Ojačanja na tačkama stresa",
+          "description": "Pazuha, džepovi i krajevi rukava dodatno ojačani"
+        },
+        {
+          "title": "Skriveni šavovi",
+          "description": "Čista unutrašnjost, bez vidljivih spojeva"
+        }
+      ],
+      "image": "/images/craftsmanship/construction.jpg"
+    },
+    "materialSelection": {
+      "enabled": true,
+      "title": "Odabir Materijala",
+      "content": "Materijal je temelj svega. Pogrešan materijal može upropastiti savršen kroj. Ispravan materijal može oživeti i najjednostavniji dizajn.",
+      "image": "/images/craftsmanship/materials-selection.jpg",
+      "linkTo": "/materials.html"
+    }
+  },
+  "materials": {
+    "enabled": true,
+    "hero": {
+      "title": "Materijali",
+      "subtitle": "Dodir koji govori pre nego što progovorite.",
+      "image": "/images/materials/hero.jpg"
+    },
+    "items": [
+      {
+        "id": "organic-cotton",
+        "slug": "organic-cotton",
+        "name": "Organski Pamuk",
+        "shortDescription": "Mekoća koja ne poznaje granice",
+        "category": "Pamuk",
+        "icon": "🌿",
+        "image": "/images/materials/organic-cotton.jpg",
+        "videoUrl": "",
+        "description": "Naš organski pamuk uzgaja se bez pesticida i veštačkih đubriva. Rezultat je tkanina koja je mekša, izdržljivija i prijateljska prema koži — i planeti.\n\nSvaki gram našeg organskog pamuka sertifikovan je prema GOTS standardu. Znači da od semena do gotovog proizvoda, svaki korak poštuje najviše ekološke i socijalne standarde.",
+        "properties": [
+          "100% organski, GOTS sertifikovan",
+          "180-240 g/m² težina tkanine",
+          "Prirodno hypoalergena",
+          "Otporan na skupljanje",
+          "Boje na bazi vode"
+        ],
+        "care": "Prati na 30°C, sušiti na vazduhu, peglati na srednjoj temperaturi.",
+        "usedIn": ["t-shirts", "hoodies", "essentials"],
+        "seo": {
+          "metaTitle": "Organski Pamuk | DALLI Materijali",
+          "metaDescription": "Saznajte više o organskom pamuku koji koristimo u DALLI garderobi. GOTS sertifikovan, 180-240 g/m², prirodno mekan."
+        }
+      },
+      {
+        "id": "premium-cotton",
+        "slug": "premium-cotton",
+        "name": "Premium Pamuk",
+        "shortDescription": "Glatkoća i snaga u savršenom balansu",
+        "category": "Pamuk",
+        "icon": "✨",
+        "image": "/images/materials/premium-cotton.jpg",
+        "videoUrl": "",
+        "description": "Premium pamuk je izbor za komade koji moraju izdržati svakodnevno nošenje a izgledati besprekorno.\n\nDuže vlakno znači manje pillinga, više sjaja i izdržljivost koja traje godinama. To je pamuk koji se ne troši — on sazreva.",
+        "properties": [
+          "Long-staple vlakna",
+          "Otporan na pilling",
+          "Prirodni sjaj",
+          "200-280 g/m²",
+          "Dubinsko bojenje"
+        ],
+        "care": "Prati na 40°C, peglati na srednjoj temperaturi.",
+        "usedIn": ["t-shirts", "polos", "shirts"],
+        "seo": {
+          "metaTitle": "Premium Pamuk | DALLI Materijali",
+          "metaDescription": "Premium pamuk u DALLI kolekciji. Long-staple vlakna, otpornost na pilling, prirodni sjaj."
+        }
+      },
+      {
+        "id": "french-terry",
+        "slug": "french-terry",
+        "name": "Francuski Teri",
+        "shortDescription": "Mekoća sa strukturom",
+        "category": "Fleece",
+        "icon": "🧶",
+        "image": "/images/materials/french-terry.jpg",
+        "videoUrl": "",
+        "description": "Francuski teri je tkanina koja kombinuje udobnost fleece-a sa čistoćom pamuka. Sa glatkom površinom spolja i mekanom teksturom unutra, idealan je za komade koji se nose od jutra do večeri.\n\nKoristimo ga u našim najprodavanijim hoodies i trenerkama — tkanina koja diše, greje i izgleda sjajno.",
+        "properties": [
+          "Dvostrana tekstura",
+          "Prozračan ali topao",
+          "Održava oblik",
+          "300-350 g/m²",
+          "Meki unutrašnji sloj"
+        ],
+        "care": "Prati na 30°C, ne sušiti u mašini.",
+        "usedIn": ["hoodies", "tracksuits", "sweatshirts"],
+        "seo": {
+          "metaTitle": "Francuski Teri | DALLI Materijali",
+          "metaDescription": "Francuski teri tkanina u DALLI kolekciji. Mekoća sa strukturom, prozračna, održava oblik."
+        }
+      },
+      {
+        "id": "brushed-fleece",
+        "slug": "brushed-fleece",
+        "name": "Četkani Fleece",
+        "shortDescription": "Zimska toplina, letnja lakoća",
+        "category": "Fleece",
+        "icon": "❄️",
+        "image": "/images/materials/brushed-fleece.jpg",
+        "videoUrl": "",
+        "description": "Četkani fleece prolazi kroz proces brušenja koji stvara meki, paperjasti sloj unutar tkanine. Taj sloj zarobljava vazduh i pruža izuzetnu toplotu bez težine.\n\nKoristimo ga u zimskoj kolekciji — za komade koji vas greju kada je napolju najhladnije.",
+        "properties": [
+          "Brušena unutrašnja strana",
+          "Izuzetna toplota",
+          "Lagan osećaj",
+          "320-400 g/m²",
+          "Otporan na pilanje"
+        ],
+        "care": "Prati na 30°C, sušiti na niskoj temperaturi.",
+        "usedIn": ["hoodies", "winter", "tracksuits"],
+        "seo": {
+          "metaTitle": "Četkani Fleece | DALLI Materijali",
+          "metaDescription": "Četkani fleece u DALLI zimskoj kolekciji. Izuzetna toplota bez težine, mek paperjasti sloj."
+        }
+      },
+      {
+        "id": "linen-blend",
+        "slug": "linen-blend",
+        "name": "Lanena Mešavina",
+        "shortDescription": "Prozračnost leta",
+        "category": "Luksuzni Materijali",
+        "icon": "🌾",
+        "image": "/images/materials/linen-blend.jpg",
+        "videoUrl": "",
+        "description": "Lan je materijal koji diše — bukvalno. Naša lanena mešavina kombinuje prirodnu prozračnost lana sa mekoćom pamuka, stvarajući tkaninu savršenu za tople dane.\n\nSvaki komad od lana dobija svoj jedinstveni character kroz vreme — mekši, prirodniji, samo vaš.",
+        "properties": [
+          "55% lan, 45% pamuk",
+          "Prirodna prozračnost",
+          "Termoregulacija",
+          "Antibakterijska svojstva",
+          "Prirodna tekstura"
+        ],
+        "care": "Prati na 30°C, peglati dok je vlažan.",
+        "usedIn": ["shirts", "summer", "elegance"],
+        "seo": {
+          "metaTitle": "Lanena Mešavina | DALLI Materijali",
+          "metaDescription": "Lanena mešavina u DALLI letnjoj kolekciji. Prirodna prozračnost, termoregulacija, antibakterijska svojstva."
+        }
+      },
+      {
+        "id": "merino-wool",
+        "slug": "merino-wool",
+        "name": "Merino Vuna",
+        "shortDescription": "Luksuz u svakom vlaknu",
+        "category": "Luksuzni Materijali",
+        "icon": "🐑",
+        "image": "/images/materials/merino-wool.jpg",
+        "videoUrl": "",
+        "description": "Merino vuna je jedan od najcenjenijih prirodnih materijala na svetu. Fina, meka i neverovatno funkcionalna — reguliše temperaturu, odbija vlagu i mirise.\n\nNaš merino dolazi iz etičkih farmina, sa vlaknima finim kao svila. To je materijal koji se oseća kao luksuz — a ponaša se kao tehnologija.",
+        "properties": [
+          "17.5 mikrona finine",
+          "Termoregulacija",
+          "Odbijanje vlage i mirisa",
+          "Prirodna elastičnost",
+          "Etički poreklo"
+        ],
+        "care": "Prati ručno u hladnoj vodi, sušiti na vazduhu.",
+        "usedIn": ["elegance", "winter", "premium"],
+        "seo": {
+          "metaTitle": "Merino Vuna | DALLI Materijali",
+          "metaDescription": "Merino vuna u DALLI luksuznoj kolekciji. 17.5 mikrona, termoregulacija, etički poreklo."
+        }
+      },
+      {
+        "id": "future-materials",
+        "slug": "future-materials",
+        "name": "Materijali Budućnosti",
+        "shortDescription": "Inovacija koja poštuje planetu",
+        "category": "Budući Materijali",
+        "icon": "🔬",
+        "image": "/images/materials/future.jpg",
+        "videoUrl": "",
+        "description": "Tržište ne staje. Istražujemo materijale koji će definisati sutra — od recikliranog poliestera visokih performansi do inovativnih bio-materijala.\n\nNaš R&D tim testira nove materijale svake sezone. Samo oni koji prođu naše stroge standarde kvaliteta i održivosti dobijaju mesto u DALLI kolekciji.",
+        "properties": [
+          "Reciklirani poliester (rPET)",
+          "Bio-osnovani materijali",
+          "Tencel™ Lyocell",
+          "Hemp mešavine",
+          "U razvoju: algi vlakna"
+        ],
+        "care": "Zavisi od materijala - uputstvo na etiketi.",
+        "usedIn": ["future", "sustainable"],
+        "seo": {
+          "metaTitle": "Materijali Budućnosti | DALLI",
+          "metaDescription": "Istražujemo materijale budućnosti u DALLI-ju. Reciklirani poliester, bio-materijali, Tencel, Hemp."
+        }
+      }
+    ]
+  },
+  "journal": {
+    "enabled": true,
+    "hero": {
+      "title": "DALLI Journal",
+      "subtitle": "Moda, stil i priče koje traju",
+      "description": "Više od bloga. Manje od magazina. Naš journal je prostor gde delimo znanje, inspiraciju i priče iza svakog komada."
+    },
+    "categories": [
+      { "id": "style-guides", "name": "Vodiči Stila", "icon": "👔", "description": "Kako nositi, kombinovati i stilizovati", "count": 0 },
+      { "id": "fashion-intelligence", "name": "Modna Inteligencija", "icon": "🧠", "description": "Trendovi, analize, industrija", "count": 0 },
+      { "id": "collections", "name": "Kolekcije", "icon": "🗂️", "description": "Priče iza naših kolekcija", "count": 0 },
+      { "id": "lifestyle", "name": "Lifestyle", "icon": "🌍", "description": "Način života, putovanja, kultura", "count": 0 },
+      { "id": "product-care", "name": "Nega Proizvoda", "icon": "🧺", "description": "Kako da vaša odeća traje duže", "count": 0 },
+      { "id": "materials", "name": "Materijali", "icon": "🧵", "description": "Sve o tkaninama i materijalima", "count": 0 },
+      { "id": "editorial", "name": "Editorial", "icon": "✍️", "description": "Naše mišljenje, manifesto, vizija", "count": 0 }
+    ],
+    "featuredStory": {
+      "enabled": true,
+      "title": "Zašto biramo manje",
+      "excerpt": "U industriji koja proizvodi više nego ikada, mi biramo manje. Evo zašto.",
+      "image": "/images/journal/featured-story.jpg",
+      "link": "/blog-index.html"
+    },
+    "editorialNote": {
+      "enabled": true,
+      "author": "DALLI Editorial Team",
+      "quote": "Pišemo jer verujemo da moda nije samo ono što nosite — to je način na koji razmišljate o svetu."
+    }
+  },
+  "trustBlocks": {
+    "enabled": true,
+    "title": "Zašto DALLI",
+    "blocks": [
+      {
+        "id": "premium-materials",
+        "icon": "🧵",
+        "title": "Premium Materijali",
+        "description": "Organski pamuk, merino vuna, lan — svaki materijal sertifikovan i testiran.",
+        "enabled": true
+      },
+      {
+        "id": "hand-finished",
+        "icon": "✋",
+        "title": "Ručno Dovršeni Detalji",
+        "description": "Svaki komad prolazi kroz ruke majstora pre nego što stigne do vas.",
+        "enabled": true
+      },
+      {
+        "id": "limited-production",
+        "icon": "🔢",
+        "title": "Ograničena Proizvodnja",
+        "description": "Ne pravimo hiljade. Pravimo dovoljno — za one koji cene kvalitet.",
+        "enabled": true
+      },
+      {
+        "id": "sustainability",
+        "icon": "🌱",
+        "title": "Održivost",
+        "description": "Organski materijali, smanjen otpad, etička proizvodnja.",
+        "enabled": true
+      },
+      {
+        "id": "ethical-manufacturing",
+        "icon": "🤝",
+        "title": "Etička Proizvodnja",
+        "description": "Fer radni uslovi, poštene plate, transparentan lanac snabdevanja.",
+        "enabled": true
+      },
+      {
+        "id": "lifetime-quality",
+        "icon": "♾️",
+        "title": "Doživotna Filozofija Kvaliteta",
+        "description": "Ne pravimo za sezonu. Pravimo za život. Ako nešto pođe po zlu, mi stojimo iza toga.",
+        "enabled": true
+      }
+    ]
+  },
+  "storyModules": {
+    "founderMessage": {
+      "enabled": true,
+      "author": "Osnivač DALLI-ja",
+      "title": "Poruka Osnivača",
+      "content": "Kada sam počinjao DALLI, nisam želeo da pravim još jednu modnu marku. Želeo sam da pravim stvari koje ću sam želeti da nosim — i koje ću moći da predam deci.\n\nSvaki put kada neko obuče naš komad, to je poverenje. Ne uzimamo ga zdravo za gotovo.",
+      "signature": "— Osnivač"
+    },
+    "brandManifesto": {
+      "enabled": true,
+      "title": "Manifest",
+      "content": "NE verujemo u brzu modu.\n\nNE verujemo u logotip kao status.\n\nNE verujemo u trendove koji prolaze.\n\nVERUJEMO u kvalitet koji traje.\nVERUJEMO u dizajn koji služi.\nVERUJEMO u proizvodnju koja poštuje.\nVERUJEMO u garderobu koja postaje deo vas."
+    },
+    "sustainabilityMessage": {
+      "enabled": true,
+      "title": "Naša Obaveza",
+      "content": "Moda ne sme koštati planetu. Naša obaveza je da svakim komadom, svakom odlukom i svakim procesom doprinesemo boljem svetu — počevši od onoga što nosite na koži."
+    },
+    "luxuryValues": {
+      "enabled": true,
+      "title": "Šta Znači Luksuz za Nas",
+      "items": [
+        "Luksuz nije cena — to je pažnja prema detalju",
+        "Luksuz nije logotip — to je osećaj materijala",
+        "Luksuz nije ekskluzivnost — to je kvalitet dostupan svima",
+        "Luksuz nije trend — to je bezvremenski dizajn"
+      ]
+    },
+    "seasonalStory": {
+      "enabled": false,
+      "title": "",
+      "content": "",
+      "image": ""
+    },
+    "collectionStory": {
+      "enabled": false,
+      "title": "",
+      "content": "",
+      "image": ""
+    }
+  },
+  "collectionStories": {
+    "casual": {
+      "enabled": true,
+      "story": "CASUAL je početak. Temelj. Onda se sve ostalo gradi.\n\nNaša casual linija nije samo garderoba za kod kuće — to je garderoba za život. Komadi koji se nose bez razmišljanja, a izgledaju kao da ste razmišljali.",
+      "philosophy": "Verujemo da opušteno ne znači nemarno. Da možete biti u trenerci a ipak izgledati kao čovek koji ima svoj stil. CASUAL je za one koji znaju da je pravi luksuz osećati se prirođeno u onome što nosite.",
+      "lifestyle": "CASUAL je jutarnja kafa bez žurbe. Šetnja gradom. Rad od kuće koji ne izgleda kao rad od kuće. Vikend koji počinje u petak u podne.",
+      "editorial": "U svetu koji sve brže juri, CASUAL je stao. Nudi tiho utočište od brzine — komade koji ne traže pažnju, već je zaslužuju.",
+      "image": "/images/collections/casual-story.jpg"
+    },
+    "elegance": {
+      "enabled": true,
+      "story": "ELEGANCE je dokaz da manje može značiti više.\n\nKada uklonite sve suvišno, ostaje ono što je važno — kroj, materijal, način na koji komad stoji na telu. ELEGANCE je esencija.",
+      "philosophy": "Prava elegancija ne viče. Ona šapuće. Ne traži pogled — ga dobija. ELEGANCE je za one koji razumeju da je najjača izjava ona koja se ne izgovori.",
+      "lifestyle": "ELEGANCE je večera pri svetlosti sveća. Sastanak koji počinje tačno na vreme. Trenutak kada znate da izgledate najbolje što možete — i da vam to ne treba.",
+      "editorial": "Elegancija nije ono što obučete. To je način na koji stojite u onome što obučete. Naša ELEGANCE linija postoji da vas podseti na to.",
+      "image": "/images/collections/elegance-story.jpg"
+    }
+  },
+  "editorialMode": {
+    "enabled": false,
+    "settings": {
+      "reducePromotions": true,
+      "largerStorySections": true,
+      "moreBrandContent": true,
+      "moreCollectionPresentation": true,
+      "hideSaleBadges": true,
+      "showEditorialNote": true
+    }
+  },
+  "videoStories": {
+    "enabled": true,
+    "videos": [
+      {
+        "id": "brand-film",
+        "title": "DALLI - Brand Film",
+        "type": "brand",
+        "thumbnail": "/images/video/brand-film-thumb.jpg",
+        "url": "",
+        "duration": "",
+        "description": "Priča o brendu u 90 sekundi",
+        "enabled": false
+      },
+      {
+        "id": "craftsmanship-doc",
+        "title": "Iz naše radionice",
+        "type": "craftsmanship",
+        "thumbnail": "/images/video/craftsmanship-thumb.jpg",
+        "url": "",
+        "duration": "",
+        "description": "Kako nastaje DALLI komad",
+        "enabled": false
+      },
+      {
+        "id": "casual-collection-film",
+        "title": "CASUAL - Kolekcijski Film",
+        "type": "collection",
+        "thumbnail": "/images/video/casual-film-thumb.jpg",
+        "url": "",
+        "duration": "",
+        "description": "CASUAL kolekcija u pokretu",
+        "enabled": false
+      },
+      {
+        "id": "elegance-collection-film",
+        "title": "ELEGANCE - Kolekcijski Film",
+        "type": "collection",
+        "thumbnail": "/images/video/elegance-film-thumb.jpg",
+        "url": "",
+        "duration": "",
+        "description": "ELEGANCE kolekcija u pokretu",
+        "enabled": false
+      }
+    ],
+    "settings": {
+      "lazyLoad": true,
+      "preload": "none",
+      "maxConcurrent": 1
+    }
+  },
+  "seoTopics": {
+    "enabled": true,
+    "authority": [
+      {
+        "id": "fashion",
+        "name": "Moda",
+        "slug": "moda",
+        "description": "Modni trendovi, industrija, kultura odevanja",
+        "hubUrl": "/journal/moda/",
+        "status": "planned",
+        "children": ["trendovi", "modna-industrija", "modna-istorija"]
+      },
+      {
+        "id": "luxury",
+        "name": "Luksuz",
+        "slug": "luksuz",
+        "description": "Definicija luksuza, luksuzni brendovi, luksuzni način života",
+        "hubUrl": "/journal/luksuz/",
+        "status": "planned",
+        "children": ["luksuzni-brendovi", "luksuzni-stil", "luksuzni-zivot"]
+      },
+      {
+        "id": "menswear",
+        "name": "Muška Moda",
+        "slug": "muska-moda",
+        "description": "Muški stil, krojevi, garderoba",
+        "hubUrl": "/journal/muska-moda/",
+        "status": "planned",
+        "children": ["muski-stil", "muski-krojevi", "muska-garderoba"]
+      },
+      {
+        "id": "womenswear",
+        "name": "Ženska Moda",
+        "slug": "zenska-moda",
+        "description": "Ženski stil, krojevi, garderoba",
+        "hubUrl": "/journal/zenska-moda/",
+        "status": "planned",
+        "children": ["zenski-stil", "zenski-krojevi", "zenska-garderoba"]
+      },
+      {
+        "id": "materials",
+        "name": "Materijali",
+        "slug": "materijali",
+        "description": "Tkanine, pamuk, lan, vuna, inovacije",
+        "hubUrl": "/journal/materijali/",
+        "status": "active",
+        "children": ["pamuk", "lan", "vuna", "fleece", "materijali-buducnosti"]
+      },
+      {
+        "id": "garment-care",
+        "name": "Nega Odeće",
+        "slug": "nega-odece",
+        "description": "Pranje, održavanje, čuvanje garderobe",
+        "hubUrl": "/journal/nega-odece/",
+        "status": "planned",
+        "children": ["pranje", "odrzavanje", "skladistenje"]
+      },
+      {
+        "id": "lifestyle",
+        "name": "Lifestyle",
+        "slug": "lifestyle",
+        "description": "Način života, putovanja, kultura, wellness",
+        "hubUrl": "/journal/lifestyle/",
+        "status": "planned",
+        "children": ["putovanja", "kultura", "wellness", "dom"]
+      },
+      {
+        "id": "collections",
+        "name": "Kolekcije",
+        "slug": "kolekcije",
+        "description": "Priče iza kolekcija, sezonski pregledi",
+        "hubUrl": "/journal/kolekcije/",
+        "status": "active",
+        "children": ["casual", "elegance", "sezonske-kolekcije"]
+      },
+      {
+        "id": "style",
+        "name": "Stil",
+        "slug": "stil",
+        "description": "Lični stil, kombinacije, garderoba",
+        "hubUrl": "/journal/stil/",
+        "status": "planned",
+        "children": ["licni-stil", "kombinacije", "capsule-garderoba"]
+      }
+    ],
+    "rules": {
+      "noDuplicateContent": true,
+      "minWordsPerArticle": 400,
+      "requireInternalLinks": true,
+      "requireSchemaMarkup": true,
+      "topicClusterDepth": 2
+    }
+  },
+  "globalArchitecture": {
+    "enabled": true,
+    "note": "Arhitektura samo. Ne aktivirati. Ne implementirati prevode.",
+    "markets": [
+      {
+        "id": "serbia",
+        "name": "DALLI Serbia",
+        "locale": "sr-RS",
+        "domain": "dalli.rs",
+        "currency": "RSD",
+        "status": "active"
+      },
+      {
+        "id": "germany",
+        "name": "DALLI Germany",
+        "locale": "de-DE",
+        "domain": "dalli.de",
+        "currency": "EUR",
+        "status": "planned"
+      },
+      {
+        "id": "austria",
+        "name": "DALLI Austria",
+        "locale": "de-AT",
+        "domain": "dalli.at",
+        "currency": "EUR",
+        "status": "planned"
+      },
+      {
+        "id": "switzerland",
+        "name": "DALLI Switzerland",
+        "locale": "de-CH",
+        "domain": "dalli.ch",
+        "currency": "CHF",
+        "status": "planned"
+      },
+      {
+        "id": "global",
+        "name": "DALLI Global",
+        "locale": "en",
+        "domain": "dalli.com",
+        "currency": "USD",
+        "status": "planned"
+      }
+    ],
+    "hreflangStrategy": {
+      "sr-RS": "https://dalli.rs",
+      "de-DE": "https://dalli.de",
+      "de-AT": "https://dalli.at",
+      "de-CH": "https://dalli.ch",
+      "en": "https://dalli.com"
+    }
+  },
+  "nav": {
+    "brandLinks": [
+      { "id": "about", "label": "O DALLI-ju", "href": "/about.html", "enabled": true },
+      { "id": "journal", "label": "Journal", "href": "/blog-index.html", "enabled": true },
+      { "id": "craftsmanship", "label": "Zanatstvo", "href": "/craftsmanship.html", "enabled": true },
+      { "id": "materials", "label": "Materijali", "href": "/materials.html", "enabled": true },
+      { "id": "collections", "label": "Kolekcije", "href": "/collections/", "enabled": true }
+    ],
+    "showInMainNav": true,
+    "showInMobileNav": true
+  }
+}

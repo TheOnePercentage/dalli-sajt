@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DALLI - Netlify CMS</title>
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, sans-serif; background: #f8f9fa; }
+    .cms-loading { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #f8f9fa; }
+    .cms-loading .spinner { width: 40px; height: 40px; border: 3px solid #e0e0e0; border-top-color: #0064FF; border-radius: 50%; animation: spin 1s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .cms-loading p { margin-top: 16px; color: #666; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="cms-loading" id="loading">
+    <div class="spinner"></div>
+    <p>Učitavanje CMS-a...</p>
+  </div>
+
+  <!-- Load React first (required by widgets) -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+  <!-- Load custom widgets FIRST (they register with CMS) -->
+  <script type="module">
+    // Import custom widgets - they register themselves with CMS
+    import '/admin/widgets/image-upload.js';
+    import '/admin/widgets/alt-generator.js';
+    import '/admin/widgets/seo-generator.js';
+    import '/admin/widgets/bulk-seo-actions.js';
+    console.log('[Netlify CMS] Custom widgets loaded');
+  </script>
+
+  <!-- Load Netlify CMS -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script src="https://unpkg.com/netlify-cms@^2.10.79/dist/netlify-cms.js"></script>
+
+  <script>
+    // Initialize Netlify CMS after widgets are registered
+    if (window.netlifyCms) {
+      window.netlifyCms.init({ config: '/admin/config.yml' });
+      document.getElementById('loading').style.display = 'none';
+    } else {
+      // Fallback: wait for CMS to load
+      const checkCMS = setInterval(() => {
+        if (window.CMS || window.netlifyCms) {
+          clearInterval(checkCMS);
+          if (window.netlifyCms) {
+            window.netlifyCms.init({ config: '/admin/config.yml' });
+          } else if (window.CMS) {
+            window.CMS.init({ config: '/admin/config.yml' });
+          }
+          document.getElementById('loading').style.display = 'none';
+        }
+      }, 100);
+    }
+
+    // Netlify Identity
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on('init', user => {
+        if (!user) {
+          window.netlifyIdentity.on('login', () => {
+            document.location.href = '/admin/';
+          });
+        }
+      });
+    }
+  </script>
+</body>
+</html>

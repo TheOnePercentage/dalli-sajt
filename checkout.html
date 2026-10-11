@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#1a1a2e" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://dalli.rs/checkout.html">
+  
+  <title>DALLI — Čekaut</title>
+  <meta name="description" content="Finalizujte porudžbinu — sigurna kupovina, plaćanje pri preuzimanju, 30 dana za vraćanje">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dalli.rs/checkout.html">
+  <meta property="og:title" content="Čekaut — DALLI">
+  <meta property="og:description" content="Sigurna kupovina, plaćanje pri preuzimanju, 30 dana za vraćanje">
+  <meta property="og:image" content="/images/og/og-checkout.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/svg+xml">
+  <meta property="og:site_name" content="DALLI">
+  <meta property="og:locale" content="sr_RS">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://dalli.rs/checkout.html">
+  <meta name="twitter:title" content="Čekaut — DALLI">
+  <meta name="twitter:description" content="Sigurna kupovina, plaćanje pri preuzimanju, 30 dana za vraćanje">
+  <meta name="twitter:image" content="/images/og/og-checkout.svg">
+  
+  <link rel="preload" as="style" href="/css/critical.css" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="/css/critical.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/css/styles.css" media="print" onload="this.media='all'">
+  
+  <script>
+    (function() {
+      var nonce = btoa(Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15));
+      document.documentElement.setAttribute('data-csp-nonce', nonce);
+    })();
+  </script>
+  <script src="/js/i18n/i18n.js"></script>
+</head>
+<body>
+  <header class="header" role="banner">
+    <div class="container header__inner">
+      <!-- Logo -->
+      <div class="header__logo">
+        <a href="/" class="header__logo-link" aria-label="DALLI - Početna">
+          <logo-component variant="master" size="md" aria-label="DALLI Home" class="logo"></logo-component>
+        </a>
+      </div>
+
+      <nav class="header__nav" role="navigation" aria-label="Glavna navigacija">
+        <a href="/proizvodi.html" class="header__nav-link">Svi Proizvodi</a>
+        <a href="/muska-garderoba.html" class="header__nav-link">Muška Garderoba</a>
+        <a href="/zenska-garderoba.html" class="header__nav-link">Ženska Garderoba</a>
+        <a href="/dukseri.html" class="header__nav-link">Duksevi</a>
+      </nav>
+      
+      <div class="header__actions">
+        <button class="header__btn header__btn--cart" aria-label="Korpa za kupovinu" aria-expanded="false" aria-controls="cartDrawer" data-action="cart" id="cartBtn">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="header__cart-count" id="cartCount" aria-live="polite">0</span>
+        </button>
+        <button class="header__btn header__btn--user" aria-label="Korisnički nalog" data-action="user-menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main" role="main">
+    <section class="checkout" aria-labelledby="checkout-title">
+      <div class="container">
+        <!-- Progress Indicator -->
+        <div class="checkout-progress" role="navigation" aria-label="Koraci čekauta">
+          <ol class="checkout-progress__steps">
+            <li class="checkout-progress__step active" data-step="1">
+              <span class="checkout-progress__number" aria-hidden="true">1</span>
+              <span class="checkout-progress__label" data-i18n="checkout.steps.data">Podaci</span>
+            </li>
+            <li class="checkout-progress__step" data-step="2">
+              <span class="checkout-progress__number" aria-hidden="true">2</span>
+              <span class="checkout-progress__label" data-i18n="checkout.steps.shipping">Dostava</span>
+            </li>
+            <li class="checkout-progress__step" data-step="3">
+              <span class="checkout-progress__number" aria-hidden="true">3</span>
+              <span class="checkout-progress__label" data-i18n="checkout.steps.payment">Plaćanje</span>
+            </li>
+            <li class="checkout-progress__step" data-step="4">
+              <span class="checkout-progress__number" aria-hidden="true">4</span>
+              <span class="checkout-progress__label" data-i18n="checkout.steps.review">Pregled</span>
+            </li>
+          </ol>
+        </div>
+
+        <!-- React Island: live kart status (aditivno, bez primarnih CTA) -->
+        <div data-island="cart" data-props="{&quot;actions&quot;: false}"></div>
+
+        <!-- React Island: checkout widgeti (kripto popust + trust strip) -->
+        <div data-island="checkout" data-props="{}"></div>
+
+        <div class="checkout-grid">
+          <!-- Form Section -->
+          <div class="checkout-form-wrapper">
+            <form id="checkoutForm" novalidate>
+              <!-- Step 1: Customer Information -->
+              <fieldset class="checkout-step active" data-step="1" aria-labelledby="step1-title">
+                <legend id="step1-title" class="checkout-step__title" data-i18n="checkout.form.title">Podaci kupca</legend>
+                <p class="checkout-step__desc" data-i18n="checkout.form.desc">Unesite podatke za isporuku i kontakt.</p>
+
+                <!-- Checkout Mode: Guest vs Account -->
+                <div class="checkout-mode" style="margin-bottom: var(--space-6); padding: var(--space-4); background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-card);">
+                  <h4 class="checkout-mode__title" style="font-size: var(--text-base); font-weight: var(--fw-semibold); margin-bottom: var(--space-3);" data-i18n="checkout.mode.title">Način kupovine</div>
+                  <div class="checkout-mode__options" style="display: flex; gap: var(--space-4); flex-wrap: wrap;">
+                    <label class="checkout-mode__option" style="flex: 1; min-width: 200px; display: flex; align-items: center; gap: var(--space-3); padding: var(--space-4); border: 2px solid var(--color-border); border-radius: var(--radius-card); cursor: pointer; transition: border-color var(--duration-fast), box-shadow var(--duration-fast);">
+                      <input type="radio" name="checkoutMode" value="guest" checked style="width: 20px; height: 20px; accent-color: var(--color-primary);">
+                      <div>
+                        <strong style="display: block; font-weight: var(--fw-semibold); color: var(--color-text);" data-i18n="checkout.mode.guest">Kupovina kao gost</strong>
+                        <span style="font-size: var(--text-sm); color: var(--color-text-secondary);" data-i18n="checkout.mode.guest.desc">Brza kupovina bez registracije. Podaci se koriste samo za ovu porudžbinu.</span>
+                      </div>
+                    </label>
+                    <label class="checkout-mode__option" style="flex: 1; min-width: 200px; display: flex; align-items: center; gap: var(--space-3); padding: var(--space-4); border: 2px solid var(--color-border); border-radius: var(--radius-card); cursor: pointer; transition: border-color var(--duration-fast), box-shadow var(--duration-fast);">
+                      <input type="radio" name="checkoutMode" value="account" style="width: 20px; height: 20px; accent-color: var(--color-primary);">
+                      <div>
+                        <strong style="display: block; font-weight: var(--fw-semibold); color: var(--color-text);" data-i18n="checkout.mode.account">Kreiraj nalog</strong>
+                        <span style="font-size: var(--text-sm); color: var(--color-text-secondary);" data-i18n="checkout.mode.account.desc">Sačuvajte adrese, pratite porudžbine, ostvarite lojalnost i 10% popust na prvu porudžbinu.</span>
+                      </div>
+                    </label>
+                  </div>
+                  <p class="checkout-mode__note" style="margin-top: var(--space-3); font-size: var(--text-xs); color: var(--color-text-tertiary);" data-i18n="checkout.mode.note">Možete kreirati nalog i nakon kupovine na stranici potvrde.</p>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="firstName" data-i18n="checkout.form.firstName">Ime *</label>
+                    <input type="text" id="firstName" name="firstName" required autocomplete="given-name" inputmode="text">
+                  </div>
+                  <div class="form-group">
+                    <label for="lastName" data-i18n="checkout.form.lastName">Prezime *</label>
+                    <input type="text" id="lastName" name="lastName" required autocomplete="family-name" inputmode="text">
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="email" data-i18n="checkout.form.email">Email *</label>
+                  <input type="email" id="email" name="email" required autocomplete="email" inputmode="email" placeholder="vas@email.com">
+                </div>
+                
+                <div class="form-group">
+                  <label for="phone" data-i18n="checkout.form.phone">Telefon *</label>
+                  <input type="tel" id="phone" name="phone" required autocomplete="tel" inputmode="tel" placeholder="+381 6X XXX XXXX">
+                </div>
+                
+                <div class="form-group checkbox-group">
+                  <label class="checkbox-label">
+                    <input type="checkbox" id="marketingConsent" name="marketingConsent">
+                    <span class="checkbox-text" data-i18n="checkout.form.marketing">Želim da primim promocije i nove kolekcije</span>
+                  </label>
+                </div>
+
+                <!-- Password Fields (shown when Create Account is selected) -->
+                <div class="form-group" id="passwordFields" hidden>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="password" data-i18n="checkout.form.password">Lozinka *</label>
+                      <input type="password" id="password" name="password" autocomplete="new-password" placeholder="Min. 8 karaktera" minlength="8" aria-describedby="passwordHelp">
+                      <span id="passwordHelp" class="form-hint" data-i18n="checkout.form.password.hint">Minimalno 8 karaktera, jedno veliko slovo i broj.</span>
+                    </div>
+                    <div class="form-group">
+                      <label for="confirmPassword" data-i18n="checkout.form.confirmPassword">Potvrdi lozinku *</label>
+                      <input type="password" id="confirmPassword" name="confirmPassword" autocomplete="new-password" placeholder="Ponovite lozinku" aria-describedby="confirmPasswordHelp">
+                      <span id="confirmPasswordHelp" class="form-hint"></span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="checkout-step__actions">
+                  <button type="button" class="btn btn-secondary" data-action="prev-step" style="display:none;" data-i18n="common.back">Nazad</button>
+                  <button type="button" class="btn btn-primary" data-action="next-step" data-i18n="checkout.form.next">Nastavite na dostavu</button>
+                </div>
+              </fieldset>
+
+              <!-- Step 2: Shipping -->
+              <fieldset class="checkout-step" data-step="2" aria-labelledby="step2-title">
+                <legend id="step2-title" class="checkout-step__title" data-i18n="checkout.steps.shipping">Adresa isporuke</legend>
+                <p class="checkout-step__desc" data-i18n="checkout.form.shippingDesc">Gde da dostavimo vašu porudžbinu?</p>
+                
+                <div class="form-group">
+                  <label for="address" data-i18n="checkout.form.address">Ulica i broj *</label>
+                  <input type="text" id="address" name="address" required autocomplete="street-address" placeholder="Npr. Bulevar oslobođenja 45" data-address-autocomplete data-city-input="city" data-postal-input="postalCode" data-country-input="country">
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="city" data-i18n="checkout.form.city">Grad *</label>
+                    <input type="text" id="city" name="city" required autocomplete="address-level2" placeholder="Beograd">
+                  </div>
+                  <div class="form-group">
+                    <label for="postalCode">Poštanski kod *</label>
+                    <input type="text" id="postalCode" name="postalCode" required autocomplete="postal-code" placeholder="11000">
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="country">Država *</label>
+                  <select id="country" name="country" required autocomplete="country">
+                    <option value="RS" selected>Srbija</option>
+                    <option value="BA">Bosna i Hercegovina</option>
+                    <option value="ME">Crna Gora</option>
+                    <option value="HR">Hrvatska</option>
+                    <option value="SI">Slovenija</option>
+                    <option value="MK">Severna Makedonija</option>
+                  </select>
+                </div>
+                
+                <div class="form-group">
+                  <label for="deliveryInstructions">Napomena za dostavljaca</label>
+                  <textarea id="deliveryInstructions" name="deliveryInstructions" rows="2" placeholder="Npr. Pozivati na broj, vrata na levo..."></textarea>
+                </div>
+                
+                <!-- Promo Code Input -->
+                <div class="checkout-promo" style="margin-top: var(--space-6); padding: var(--space-4); background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-card);">
+                  <h4 style="font-size: var(--text-base); font-weight: var(--fw-semibold); margin-bottom: var(--space-3);" data-i18n="checkout.promo.title">Imate promo kod?</h4>
+                  <div class="checkout-promo__input" style="display: flex; gap: var(--space-3);">
+                    <input type="text" id="checkoutPromoCode" name="promoCode" class="input-field" placeholder="Unesite promo kod" autocomplete="off" aria-label="Promo kod" style="flex: 1;">
+                    <button type="button" class="btn btn-primary" id="applyPromoBtn" data-action="apply-promo" style="white-space: nowrap;" data-i18n="checkout.promo.apply">Primeni</button>
+                  </div>
+                  <p id="promoMessage" class="checkout-promo__message" style="margin-top: var(--space-2); font-size: var(--fs-sm); min-height: 1.5em;"></p>
+                </div>
+                
+                <!-- Shipping Method Selection -->
+                <fieldset class="shipping-methods" style="margin-top: var(--space-6);">
+                  <legend class="checkout-step__title" style="font-size: var(--text-lg); margin-bottom: var(--space-4);" data-i18n="checkout.shipping.method">Način dostave</legend>
+                  <div class="shipping-methods" role="radiogroup" aria-label="Način dostave" style="display: flex; flex-direction: column; gap: var(--space-3);">
+                    <label class="shipping-method" data-method="standard" style="display: flex; align-items: center; gap: var(--space-4); padding: var(--space-4); border: 2px solid var(--color-border); border-radius: var(--radius-card); cursor: pointer; transition: border-color var(--duration-fast), box-shadow var(--duration-fast);">
+                      <input type="radio" name="shippingMethod" value="standard" checked style="width: 20px; height: 20px; accent-color: var(--color-primary);">
+                      <div class="shipping-method__info" style="flex: 1;">
+                        <div class="shipping-method__header" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-1);">
+                          <strong class="shipping-method__name" style="font-size: var(--text-base); font-weight: var(--fw-semibold);">Standardna dostava</strong>
+                          <span class="shipping-method__price" style="font-size: var(--text-lg); font-weight: var(--fw-bold); color: var(--color-primary);" id="shippingPriceStandard">290 RSD</span>
+                        </div>
+                        <p class="shipping-method__desc" style="font-size: var(--text-sm); color: var(--color-text-secondary); margin: 0;">2-4 radna dana • Besplatno za porudžbine preko 5.000 RSD</p>
+                        <p class="shipping-method__note" style="font-size: var(--fs-xs); color: var(--color-text-tertiary); margin-top: var(--space-1);">Pošta Srbije</p>
+                      </div>
+                      <svg class="shipping-method__check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                    </label>
+                    
+                    <label class="shipping-method" data-method="express" style="display: flex; align-items: center; gap: var(--space-4); padding: var(--space-4); border: 2px solid var(--color-border); border-radius: var(--radius-card); cursor: pointer; transition: border-color var(--duration-fast), box-shadow var(--duration-fast);">
+                      <input type="radio" name="shippingMethod" value="express" style="width: 20px; height: 20px; accent-color: var(--color-primary);">
+                      <div class="shipping-method__info" style="flex: 1;">
+                        <div class="shipping-method__header" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-1);">
+                          <strong class="shipping-method__name" style="font-size: var(--text-base); font-weight: var(--fw-semibold);">Brza dostava</strong>
+                          <span class="shipping-method__price" style="font-size: var(--text-lg); font-weight: var(--fw-bold); color: var(--color-primary);" id="shippingPriceExpress">490 RSD</span>
+                        </div>
+                        <p class="shipping-method__desc" style="font-size: var(--text-sm); color: var(--color-text-secondary); margin: 0;">1-2 radna dana • Praćena pošiljka</p>
+                        <p class="shipping-method__note" style="font-size: var(--fs-xs); color: var(--color-text-tertiary); margin-top: var(--space-1);">Pošta Ekspres / Kurirska služba</p>
+                      </div>
+                      <svg class="shipping-method__check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                    </label>
+                    
+                    <label class="shipping-method" data-method="pickup" style="display: flex; align-items: center; gap: var(--space-4); padding: var(--space-4); border: 2px solid var(--color-border); border-radius: var(--radius-card); cursor: pointer; transition: border-color var(--duration-fast), box-shadow var(--duration-fast);">
+                      <input type="radio" name="shippingMethod" value="pickup" style="width: 20px; height: 20px; accent-color: var(--color-primary);">
+                      <div class="shipping-method__info" style="flex: 1;">
+                        <div class="shipping-method__header" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-1);">
+                          <strong class="shipping-method__name" style="font-size: var(--text-base); font-weight: var(--fw-semibold);">Preuzimanje u prodavnici</strong>
+                          <span class="shipping-method__price" style="font-size: var(--text-lg); font-weight: var(--fw-bold); color: var(--color-success);">Besplatno</span>
+                        </div>
+                        <p class="shipping-method__desc" style="font-size: var(--text-sm); color: var(--color-text-secondary); margin: 0;">Istog dana • Beograd, Bulevar kralja Aleksandra 123</p>
+                        <p class="shipping-method__note" style="font-size: var(--fs-xs); color: var(--color-text-tertiary); margin-top: var(--space-1);">Radno vreme: 09-18h, Subota 10-14h</p>
+                      </div>
+                      <svg class="shipping-method__check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                    </label>
+                  </div>
+                </fieldset>
+                
+                <div class="checkout-step__actions">
+                  <button type="button" class="btn btn-secondary" data-action="prev-step">Nazad</button>
+                  <button type="button" class="btn btn-primary" data-action="next-step">Nastavite na plaćanje</button>
+                </div>
+
+              <!-- Step 3: Payment -->
+              <fieldset class="checkout-step" data-step="3" aria-labelledby="step3-title">
+                <legend id="step3-title" class="checkout-step__title">Način plaćanja</legend>
+                <p class="checkout-step__desc">Izaberite željeni način plaćanja.</p>
+                
+                <div class="payment-options" role="radiogroup" aria-label="Način plaćanja">
+                  <label class="payment-option" data-method="cod">
+                    <input type="radio" name="paymentMethod" value="cod" checked>
+                    <div class="payment-option__content">
+                      <div class="payment-option__icon" aria-hidden="true">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/><path d="M12 2a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v2"/></svg>
+                      </div>
+                      <div class="payment-option__info">
+                        <strong class="payment-option__name">Plaćanje pri preuzimanju</strong>
+                        <span class="payment-option__desc">Platite gotovinom ili karticom kuriru prilikom dostave. Bez dodatnih naknada.</span>
+                      </div>
+                    </div>
+                    <span class="payment-option__check" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  </label>
+                  
+                  <label class="payment-option" data-method="bank-transfer">
+                    <input type="radio" name="paymentMethod" value="bank-transfer">
+                    <div class="payment-option__content">
+                      <div class="payment-option__icon" aria-hidden="true">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                      </div>
+                      <div class="payment-option__info">
+                        <strong class="payment-option__name">Bankovni prenos</strong>
+                        <span class="payment-option__desc">Plaćanje putem vaše banke. Porudžbina se obrađuje nakon potvrde uplate (1-2 radna dana).</span>
+                      </div>
+                    </div>
+                    <span class="payment-option__check" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  </label>
+                  
+                  <label class="payment-option" data-method="card">
+                    <input type="radio" name="paymentMethod" value="card">
+                    <div class="payment-option__content">
+                      <div class="payment-option__icon" aria-hidden="true">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                      </div>
+                      <div class="payment-option__info">
+                        <strong class="payment-option__name">Kreditna / Debitna kartica</strong>
+                        <span class="payment-option__desc">Visa, Mastercard, Maestro, Dina. Sigurna 3D Secure transakcija.</span>
+                      </div>
+                    </div>
+                    <span class="payment-option__check" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  </label>
+                  
+<!-- Crypto - Enabled -->
+                  <label class="payment-option payment-option--crypto" data-method="crypto">
+                    <input type="radio" name="paymentMethod" value="crypto">
+                    <div class="payment-option__content">
+                      <div class="payment-option__icon" aria-hidden="true">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+                      </div>
+                      <div class="payment-option__content">
+                        <div class="payment-option__info">
+                          <strong class="payment-option__name">Kripto plaćanje <span class="payment-option__badge">15% popust</span></strong>
+                          <span class="payment-option__desc">Bitcoin, Ethereum, USDT, USDC — 15% popust na porudžbinu.</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="payment-option__check" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  </label>
+                </div>
+                
+                <!-- Card fields (shown when card selected) -->
+                <div class="payment-fields hidden" id="cardFields" data-method="card">
+                  <div class="form-group">
+                    <label for="cardNumber">Broj kartice *</label>
+                    <input type="text" id="cardNumber" name="cardNumber" autocomplete="cc-number" inputmode="numeric" placeholder="XXXX XXXX XXXX XXXX" maxlength="19">
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="cardExpiry">Ističe *</label>
+                      <input type="text" id="cardExpiry" name="cardExpiry" autocomplete="cc-exp" inputmode="numeric" placeholder="MM/YY" maxlength="5">
+                    </div>
+                    <div class="form-group">
+                      <label for="cardCvc">CVC *</label>
+                      <input type="text" id="cardCvc" name="cardCvc" autocomplete="cc-csc" inputmode="numeric" placeholder="XXX" maxlength="4">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="cardName">Ime na kartici *</label>
+                    <input type="text" id="cardName" name="cardName" autocomplete="cc-name" placeholder="IME PREZIME">
+                  </div>
+                </div>
+                
+                <!-- Crypto fields (shown when crypto selected) -->
+                <div class="payment-fields hidden" id="cryptoFields" data-method="crypto">
+                  <div class="crypto-fields__header">
+                    <h4>Kripto plaćanje — 15% popust</h4>
+                    <p class="crypto-fields__desc">Izaberite valutu i platite Bitcoinom, Ethereumom, USDT ili USDC. Popust od 15% se automatski primenjuje.</p>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="cryptoCurrency">Kriptovaluta *</label>
+                    <select id="cryptoCurrency" name="cryptoCurrency" required>
+                      <option value="USDT">USDT (Tether) — Stabilna, 1 USDT ≈ 110 RSD</option>
+                      <option value="USDC">USDC (USD Coin) — Stabilna, 1 USDC ≈ 110 RSD</option>
+                      <option value="ETH">Ethereum (ETH) — ~350.000 RSD za 1 ETH</option>
+                      <option value="BTC">Bitcoin (BTC) — ~5.500.000 RSD za 1 BTC</option>
+                    </select>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="cryptoAmount">Iznos za plaćanje</label>
+                    <div class="crypto-amount-display">
+                      <span class="crypto-amount__rsd" id="cryptoAmountRSD">0 RSD</span>
+                      <span class="crypto-amount__separator">≈</span>
+                      <span class="crypto-amount__crypto" id="cryptoAmountCrypto">0.00</span>
+                      <span class="crypto-amount__currency" id="cryptoCurrencyLabel">USDT</span>
+                    </div>
+                    <input type="hidden" id="cryptoAmountRSDInput" name="cryptoAmountRSD">
+                    <input type="hidden" id="cryptoAmountCryptoInput" name="cryptoAmountCrypto">
+                    <input type="hidden" id="cryptoCurrencyInput" name="cryptoCurrency" value="USDT">
+                    <input type="hidden" id="cryptoExchangeRateInput" name="cryptoExchangeRate">
+                    <input type="hidden" id="cryptoWalletAddressInput" name="cryptoWalletAddress">
+                  </div>
+                  
+                  <div class="crypto-payment-details" id="cryptoPaymentDetails" hidden>
+                    <h5>Detalji za plaćanje</h5>
+                    <div class="crypto-detail">
+                      <label>Adresa za plaćanje:</label>
+                      <div class="crypto-address-row">
+                        <code id="cryptoWalletAddress" class="crypto-address"></code>
+                        <button type="button" class="btn btn-sm btn-secondary" id="copyAddressBtn" aria-label="Kopiraj adresu">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                          Kopiraj
+                        </button>
+                      </div>
+                    </div>
+                    <div class="crypto-detail">
+                      <label>QR kod za plaćanje:</label>
+                      <div class="crypto-qr-container">
+                        <img id="cryptoQRCode" alt="QR kod za plaćanje" loading="lazy">
+                        <button type="button" class="btn btn-sm btn-secondary" id="openQRBtn" aria-label="Otvori QR kod u novom prozoru">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/></svg>
+                          Uvećaj
+                        </button>
+                      </div>
+                    </div>
+                    <div class="crypto-detail">
+                      <label>Iznos za plaćanje:</label>
+                      <div class="crypto-amount-summary">
+                        <span class="crypto-amount__crypto" id="summaryAmountCrypto">0.00</span>
+                        <span class="crypto-amount__currency" id="summaryCurrency">USDT</span>
+                        <span class="crypto-amount__separator">(≈</span>
+                        <span class="crypto-amount__rsd" id="summaryAmountRSD">0 RSD</span>
+                        <span class="crypto-amount__separator">)</span>
+                      </div>
+                    </div>
+                    <div class="crypto-detail crypto-detail--warning">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                      <span>Važno: Plaćanje mora da se complete unutar <strong id="cryptoTimer" class="crypto-timer">30:00</strong>. Pošaljite tačan iznos na adresu iznad.</span>
+                    </div>
+                    
+                    <div class="crypto-amount-input">
+                      <label for="cryptoAmountManual">Unesite iznos u RSD (opciono - automatski se računa):</label>
+                      <input type="number" id="cryptoAmountManual" name="cryptoAmountManual" inputmode="numeric" placeholder="Iznos u RSD" min="1000" step="100">
+                    </div>
+                  </div>
+                  
+                  <div class="crypto-trust-badges">
+                    <div class="crypto-trust-item">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                      <span>Sigurno plaćanje</span>
+                    </div>
+                    <div class="crypto-trust-item">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                      <span>15% popust</span>
+                    </div>
+                    <div class="crypto-trust-item">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                      <span>Podrška 24/7</span>
+                    </div>
+                    <div class="crypto-trust-item">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                      <span>Enkripcija SSL</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="checkout-step__actions">
+                  <button type="button" class="btn btn-secondary" data-action="prev-step">Nazad</button>
+                  <button type="button" class="btn btn-primary" data-action="next-step">Nastavite na pregled</button>
+                </div>
+              </fieldset>
+
+              <!-- Promo Code in Payment Step (Alternative Location) -->
+              <div class="checkout-promo checkout-promo--payment" style="margin-top: var(--space-6); padding: var(--space-4); background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-card);">
+                <h4 style="font-size: var(--text-base); font-weight: var(--fw-semibold); margin-bottom: var(--space-3);" data-i18n="checkout.promo.title">Imate promo kod?</h4>
+                <div class="checkout-promo__input" style="display: flex; gap: var(--space-3);">
+                  <input type="text" id="checkoutPromoCodePayment" name="promoCode" class="input-field" placeholder="Unesite promo kod" autocomplete="off" aria-label="Promo kod" style="flex: 1;">
+                  <button type="button" class="btn btn-primary" id="applyPromoBtnPayment" data-action="apply-promo" style="white-space: nowrap;" data-i18n="checkout.promo.apply">Primeni</button>
+                </div>
+                <p id="promoMessagePayment" class="checkout-promo__message" style="margin-top: var(--space-2); font-size: var(--fs-sm); min-height: 1.5em;"></p>
+              </div>
+
+              <!-- Step 4: Review & Confirm -->
+              <fieldset class="checkout-step" data-step="4" aria-labelledby="step4-title">
+                <legend id="step4-title" class="checkout-step__title">Pregled i potvrda</legend>
+                <p class="checkout-step__desc">Proverite podatke i potvrdite porudžbinu.</p>
+                
+                <div class="review-section">
+                  <h4 class="review-section__title">Podaci kupca</h4>
+                  <div class="review-grid" id="reviewCustomer">
+                    <div class="review-item"><span class="review-label">Ime i prezime:</span> <span class="review-value" data-field="fullName">—</span></div>
+                    <div class="review-item"><span class="review-label">Email:</span> <span class="review-value" data-field="email">—</span></div>
+                    <div class="review-item"><span class="review-label">Telefon:</span> <span class="review-value" data-field="phone">—</span></div>
+                  </div>
+                </div>
+                
+                <div class="review-section">
+                  <h4 class="review-section__title">Adresa isporuke</h4>
+                  <div class="review-grid" id="reviewShipping">
+                    <div class="review-item review-item--full"><span class="review-label">Adresa:</span> <span class="review-value" data-field="fullAddress">—</span></div>
+                  </div>
+                </div>
+                
+                <div class="review-section">
+                  <h4 class="review-section__title">Način plaćanja</h4>
+                  <div class="review-grid" id="reviewPayment">
+                    <div class="review-item"><span class="review-label">Metod:</span> <span class="review-value" data-field="paymentMethod">—</span></div>
+                  </div>
+                </div>
+                
+                <div class="review-section">
+                  <h4 class="review-section__title">Popusti</h4>
+                  <div class="review-grid" id="reviewDiscounts">
+                    <div class="review-item"><span class="review-label">Lojalnost:</span> <span class="review-value text-success" data-field="loyaltyDiscount">0 RSD</span></div>
+                    <div class="review-item"><span class="review-label">Promo kod:</span> <span class="review-value text-success" data-field="promoDiscount">0 RSD</span></div>
+                    <div class="review-item"><span class="review-label">Kripto (15%):</span> <span class="review-value text-success" data-field="cryptoDiscount">0 RSD</span></div>
+                  </div>
+                </div>
+                
+                <div class="review-section">
+                  <h4 class="review-section__title">Stavke porudžbine</h4>
+                  <div class="review-items" id="reviewItems"></div>
+                </div>
+                
+                <div class="checkout-terms">
+                  <label class="checkbox-label checkbox-label--required">
+                    <input type="checkbox" id="termsAccepted" name="termsAccepted" required>
+                    <span class="checkbox-text">Prihvaćam <a href="/uslovi-koriscenja.html" target="_blank">Uslove korišćenja</a> i <a href="/privatnost.html" target="_blank">Politiku privatnosti</a> *</span>
+                  </label>
+                </div>
+                
+                <div class="checkout-step__actions">
+                  <button type="button" class="btn btn-secondary" data-action="prev-step">Nazad</button>
+                  <button type="submit" class="btn btn-primary btn-lg" id="placeOrderBtn">Potvrdite porudžbinu</button>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+
+          <!-- Order Summary Sidebar (Sticky on Desktop) -->
+          <aside class="checkout-summary" aria-labelledby="summary-title">
+            <h2 id="summary-title" class="checkout-summary__title">Sažetak porudžbine</h2>
+            
+            <div class="checkout-summary__items" id="summaryItems" role="list" aria-label="Stavke porudžbine"></div>
+            
+            <div class="checkout-summary__divider"></div>
+            
+            <div class="checkout-summary__totals">
+              <div class="checkout-summary__row">
+                <span>Artikli (<span id="summaryItemCount">0</span>)</span>
+                <span id="summarySubtotal">0 RSD</span>
+              </div>
+              <div class="checkout-summary__row">
+                <span>Dostava</span>
+                <span id="summaryShipping">0 RSD</span>
+              </div>
+              <div class="checkout-summary__row checkout-summary__row--discount hidden" id="summaryLoyaltyDiscountRow">
+                <span>Popust lojalnost</span>
+                <span class="text-success" id="summaryLoyaltyDiscount">0 RSD</span>
+              </div>
+              <div class="checkout-summary__row checkout-summary__row--discount hidden" id="summaryPromoDiscountRow">
+                <span>Promo kod</span>
+                <span class="text-success" id="summaryPromoDiscount">0 RSD</span>
+              </div>
+              <div class="checkout-summary__row checkout-summary__row--discount hidden" id="summaryCryptoDiscountRow">
+                <span>Popust kripto (15%)</span>
+                <span class="text-success" id="summaryCryptoDiscount">0 RSD</span>
+              </div>
+              <div class="checkout-summary__row checkout-summary__row--total">
+                <span>Ukupno za plaćanje</span>
+                <strong id="summaryTotal">0 RSD</strong>
+              </div>
+            </div>
+            
+            <div class="checkout-summary__trust">
+              <div class="checkout-trust" role="list" aria-label="Garancije">
+                <div class="checkout-trust__item" role="listitem">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  <span>100% Sigurna kupovina</span>
+                </div>
+                <div class="checkout-trust__item" role="listitem">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  <span>30 dana za vraćanje</span>
+                </div>
+                <div class="checkout-trust__item" role="listitem">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  <span>Podrška 09-17h</span>
+                </div>
+                <div class="checkout-trust__item" role="listitem">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                  <span>SSL šifriranje</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="checkout-summary__note">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+              <span>Nema skrivenih naknada. Plaćate samo ono što vidite.</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Toast Container -->
+  <div id="toastContainer" class="toast-container" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Cart Drawer -->
+  <div class="drawer hidden" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartDrawerTitle" data-drawer="cart">
+    <div class="drawer__backdrop" data-action="close-drawer"></div>
+    <div class="drawer__panel drawer__panel--right drawer__panel--cart">
+      <div class="drawer__header">
+        <h2 id="cartDrawerTitle">Vaša Korpa</h2>
+        <span class="cart-count-badge" id="cartDrawerCount" aria-live="polite">0</span>
+        <button class="drawer__close" aria-label="Zatvorite korpu" data-action="close-drawer">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="drawer__content" id="cartContent">
+        <div class="cart-empty" id="cartEmpty">
+          <div class="cart-empty__illustration" aria-hidden="true">
+            <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color: var(--color-border);"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </div>
+          <h3 class="cart-empty__title">Vaša korpa je prazna</h3>
+          <p class="cart-empty__desc">Odaberite komade koji će trajati godinama.</p>
+          <a href="/proizvodi.html" class="btn btn-primary btn-block" data-action="close-drawer">Počnite kupovinu</a>
+          <div class="cart-empty__categories" role="list" aria-label="Popularne kategorije">
+            <a href="/muska-garderoba.html" class="cart-empty__category" role="listitem" data-action="close-drawer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Muška Garderoba</span></a>
+            <a href="/zenska-garderoba.html" class="cart-empty__category" role="listitem" data-action="close-drawer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Ženska Garderoba</span></a>
+            <a href="/dukseri.html" class="cart-empty__category" role="listitem" data-action="close-drawer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Duksevi</span></a>
+          </div>
+        </div>
+        <div class="cart-items hidden" id="cartItems" role="list" aria-label="Stavke u korpi"></div>
+        <div class="cart-summary hidden" id="cartSummary">
+          <div class="cart-summary-row"><span>Ukupno (<span id="cartItemCount">0</span> stavki)</span><strong id="cartSubtotal">0 RSD</strong></div>
+          <div class="cart-summary-row"><span>Dostava</span><span id="cartShipping">0 RSD</span></div>
+          <div class="cart-summary-row cart-summary-row--crypto" id="cartCryptoDiscount" style="display:none;"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg> Popust kripto (15%)</span><strong class="text-success" id="cartCryptoAmount">0 RSD</strong></div>
+          <hr style="margin: var(--space-3) 0; border-color: var(--color-divider);">
+          <div class="cart-summary-row cart-summary-row--total"><span>Ukupno za plaćanje</span><strong id="cartTotal">0 RSD</strong></div>
+          <p class="cart-summary-note" id="cartFreeShippingNote">Dodajte još <strong id="cartFreeShippingRemaining">5.000 RSD</strong> za besplatnu dostavu</p>
+          <div class="cart-trust">
+            <div class="cart-trust__item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>SSL Sigurnost</span></div>
+            <div class="cart-trust__item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>30 dana vraćanja</span></div>
+            <div class="cart-trust__item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>Podrška</span></div>
+          </div>
+          <div class="cart-actions"><a href="/cart.html" class="btn btn-secondary btn-block" data-action="close-drawer">Pregledaj Korpu</a><button class="btn btn-primary btn-block" id="checkoutBtn" data-action="checkout">Nastavite na Čekaut</button><button class="btn btn-crypto btn-block" id="checkoutCryptoBtn" style="display:none;"><span class="btn-content"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg> Plaćajte Kripto - Štedite 15%</span></button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- React Islands loader (čita [data-island]; React runtime se učitava dinamički) -->
+  <script type="module" src="/js/islands/index.js"></script>
+  <script type="module" src="/js/app.jsx"></script>
+</body>
+</html>

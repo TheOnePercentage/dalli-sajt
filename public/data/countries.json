@@ -1,0 +1,844 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-10-09T00:00:00Z",
+  "countries": {
+    "enabled": true,
+    "defaultCountry": "RS",
+    "fallbackCountry": "RS",
+    "balkanPriority": [
+      "RS",
+      "BA",
+      "ME",
+      "HR",
+      "MK",
+      "SI"
+    ],
+    "countries": {
+      "RS": {
+        "code": "RS",
+        "name": "Serbia",
+        "nameLocal": "Србија",
+        "enabled": true,
+        "priority": "primary",
+        "region": "balkans",
+        "currency": "RSD",
+        "languages": ["sr", "sr-Latn", "en"],
+        "defaultLanguage": "sr",
+        "timezone": "Europe/Belgrade",
+        "shipping": {
+          "enabled": true,
+          "freeShippingThreshold": 5000,
+          "standardCost": 300,
+          "expressCost": 600,
+          "deliveryDaysStandard": "2-3",
+          "deliveryDaysExpress": "1-2",
+          "carriers": ["PostExpress", "DHL", "Gls"],
+          "luxuryDelivery": true,
+          "pickupPoints": ["Belgrade", "Novi Sad", "Niš", "Kragujevac"]
+        },
+        "payments": {
+          "cashOnDelivery": { "enabled": true, "fee": 150, "maxAmount": 100000 },
+          "cards": { "enabled": true, "providers": ["Visa", "Mastercard", "Maestro", "DinaCard"] },
+          "bankTransfer": { "enabled": true, "instructions": "local" },
+          "crypto": { "enabled": true, "discount": 15, "assets": ["BTC", "ETH", "USDT", "USDC"] },
+          "installments": { "enabled": true, "provider": "YUclick", "maxInstallments": 12 }
+        },
+        "tax": {
+          "vatRate": 20,
+          "vatIncluded": true,
+          "taxNumberRequired": false
+        },
+        "seo": {
+          "titleSuffix": "— DALLI Srbija",
+          "description": "Premium garderoba za Srbiju. 100% organski pamuk, besplatna dostava >5.000 RSD, 15% popust kripto, 30 dana za vraćanje.",
+          "hreflang": "sr-RS",
+          "canonicalBase": "https://dalli.rs",
+          "ogLocale": "sr_RS",
+          "ogLocaleAlternates": ["sr_Latn", "en_US"]
+        },
+        "collections": {
+          "casual": { "enabled": true },
+          "elegance": { "enabled": true }
+        },
+        "homepage": {
+          "heroVariant": "default",
+          "campaignsEnabled": true,
+          "featuredCollections": ["casual", "elegance"]
+        },
+        "legal": {
+          "companyName": "DALLI d.o.o.",
+          "address": "Beograd, Srbija",
+          "pib": "123456789",
+          "termsUrl": "/uslovi-koriscenja.html",
+          "privacyUrl": "/privatnost.html",
+          "returnPolicyDays": 30
+        }
+      },
+      "BA": {
+        "code": "BA",
+        "name": "Bosnia & Herzegovina",
+        "nameLocal": "Bosna i Hercegovina",
+        "enabled": true,
+        "priority": "balkan-high",
+        "region": "balkans",
+        "currency": "BAM",
+        "languages": ["bs", "sr", "hr", "en"],
+        "defaultLanguage": "bs",
+        "timezone": "Europe/Sarajevo",
+        "shipping": {
+          "enabled": true,
+          "freeShippingThreshold": 150,
+          "standardCost": 15,
+          "expressCost": 25,
+          "deliveryDaysStandard": "3-5",
+          "deliveryDaysExpress": "2-3",
+          "carriers": ["BH Pošta", "DHL", "Gls"],
+          "luxuryDelivery": true,
+          "pickupPoints": ["Sarajevo", "Banja Luka", "Tuzla", "Mostar"]
+        },
+        "payments": {
+          "cashOnDelivery": { "enabled": true, "fee": 5, "maxAmount": 3000 },
+          "cards": { "enabled": true, "providers": ["Visa", "Mastercard", "Maestro"] },
+          "bankTransfer": { "enabled": true, "instructions": "local" },
+          "crypto": { "enabled": true, "discount": 15, "assets": ["BTC", "ETH", "USDT", "USDC"] }
+        },
+        "tax": {
+          "vatRate": 17,
+          "vatIncluded": true,
+          "taxNumberRequired": false
+        },
+        "seo": {
+          "titleSuffix": "— DALLI Bosna i Hercegovina",
+          "description": "Premium garderoba za BiH. Organski pamuk, dostava 3-5 dana, 15% popust kripto, 30 dana za vraćanje.",
+          "hreflang": "bs-BA",
+          "canonicalBase": "https://ba.dalli.rs",
+          "ogLocale": "bs_BA",
+          "ogLocaleAlternates": ["sr_BA", "hr_BA", "en_US"]
+        },
+        "collections": {
+          "casual": { "enabled": true },
+          "elegance": { "enabled": true }
+        },
+        "homepage": {
+          "heroVariant": "balkan",
+          "campaignsEnabled": true,
+          "featuredCollections": ["casual", "elegance"]
+        },
+        "legal": {
+          "companyName": "DALLI d.o.o. Sarajevo",
+          "address": "Sarajevo, BiH",
+          "termsUrl": "/uslovi-koriscenja.html",
+          "privacyUrl": "/privatnost.html",
+          "returnPolicyDays": 30
+        }
+      },
+      "ME": {
+        "code": "ME",
+        "name": "Montenegro",
+        "nameLocal": "Crna Gora",
+        "enabled": true,
+        "priority": "balkan-high",
+        "region": "balkans",
+        "currency": "EUR",
+        "languages": ["sr", "sr-Latn", "en"],
+        "defaultLanguage": "sr",
+        "timezone": "Europe/Podgorica",
+        "shipping": {
+          "enabled": true,
+          "freeShippingThreshold": 100,
+          "standardCost": 8,
+          "expressCost": 15,
+          "deliveryDaysStandard": "2-4",
+          "deliveryDaysExpress": "1-2",
+          "carriers": ["Pošta Crne Gore", "DHL", "Gls"],
+          "luxuryDelivery": true,
+          "pickupPoints": ["Podgorica", "Nikšić", "Budva", "Bar"]
+        },
+        "payments": {
+          "cashOnDelivery": { "enabled": true, "fee": 3, "maxAmount": 2000 },
+          "cards": { "enabled": true, "providers": ["Visa", "Mastercard", "Maestro"] },
+          "bankTransfer": { "enabled": true, "instructions": "local" },
+          "crypto": { "enabled": true, "discount": 15, "assets": ["BTC", "ETH", "USDT", "USDC"] }
+        },
+        "tax": {
+          "vatRate": 21,
+          "vatIncluded": true,
+          "taxNumberRequired": false
+        },
+        "seo": {
+          "titleSuffix": "— DALLI Crna Gora",
+          "description": "Premium garderoba za Crnu Goru. Organski pamuk, dostava 2-4 dana, 15% popust kripto, 30 dana za vraćanje.",
+          "hreflang": "sr-ME",
+          "canonicalBase": "https://me.dalli.rs",
+          "ogLocale": "sr_ME",
+          "ogLocaleAlternates": ["en_US"]
+        },
+        "collections": {
+          "casual": { "enabled": true },
+          "elegance": { "enabled": true }
+        },
+        "homepage": {
+          "heroVariant": "balkan",
+          "campaignsEnabled": true,
+          "featuredCollections": ["casual", "elegance"]
+        },
+        "legal": {
+          "companyName": "DALLI d.o.o. Podgorica",
+          "address": "Podgorica, Crna Gora",
+          "termsUrl": "/uslovi-koriscenja.html",
+          "privacyUrl": "/privatnost.html",
+          "returnPolicyDays": 30
+        }
+      },
+      "HR": {
+        "code": "HR",
+        "name": "Croatia",
+        "nameLocal": "Hrvatska",
+        "enabled": true,
+        "priority": "balkan-high",
+        "region": "balkans",
+        "currency": "EUR",
+        "languages": ["hr", "en"],
+        "defaultLanguage": "hr",
+        "timezone": "Europe/Zagreb",
+        "shipping": {
+          "enabled": true,
+          "freeShippingThreshold": 75,
+          "standardCost": 6,
+          "expressCost": 12,
+          "deliveryDaysStandard": "2-3",
+          "deliveryDaysExpress": "1-2",
+          "carriers": ["Hrvatska pošta", "DHL", "GLS", "DPD"],
+          "luxuryDelivery": true,
+          "pickupPoints": ["Zagreb", "Split", "Rijeka", "Osijek"]
+        },
+        "payments": {
+          "cashOnDelivery": { "enabled": false, "fee": 0, "maxAmount": 0 },
+          "cards": { "enabled": true, "providers": ["Visa", "Mastercard", "Maestro", "Amex"] },
+          "bankTransfer": { "enabled": true, "instructions": "local" },
+          "crypto": { "enabled": true, "discount": 15, "assets": ["BTC", "ETH", "USDT", "USDC"] },
+          "installments": { "enabled": true, "provider": "WSPay", "maxInstallments": 12 }
+        },
+        "tax": {
+          "vatRate": 25,
+          "vatIncluded": true,
+          "taxNumberRequired": false
+        },
+        "seo": {
+          "titleSuffix": "— DALLI Hrvatska",
+          "description": "Premium garderoba za Hrvatsku. 100% organski pamuk, besplatna dostava >75 EUR, 15% popust kripto, 30 dana za vraćanje.",
+          "hreflang": "hr-HR",
+          "canonicalBase": "https://hr.dalli.rs",
+          "ogLocale": "hr_HR",
+          "ogLocaleAlternates": ["en_US"]
+        },
+        "collections": {
+          "casual": { "enabled": true },
+          "elegance": { "enabled": true }
+        },
+        "homepage": {
+          "heroVariant": "balkan",
+          "campaignsEnabled": true,
+          "featuredCollections": ["casual", "elegance"]
+        },
+        "legal": {
+          "companyName": "DALLI d.o.o. Zagreb",
+          "address": "Zagreb, Hrvatska",
+          "termsUrl": "/uvjeti-koristenja.html",
+          "privacyUrl": "/privatnost.html",
+          "returnPolicyDays": 30
+        }
+      },
+      "MK": {
+        "code": "MK",
+        "name": "North Macedonia",
+        "nameLocal": "Северна Македонија",
+        "enabled": true,
+        "priority": "balkan-high",
+        "region": "balkans",
+        "currency": "MKD",
+        "languages": ["mk", "sr", "en"],
+        "defaultLanguage": "mk",
+        "timezone": "Europe/Skopje",
+        "shipping": {
+          "enabled": true,
+          "freeShippingThreshold": 5000,
+          "standardCost": 250,
+          "expressCost": 450,
+          "deliveryDaysStandard": "3-5",
+          "deliveryDaysExpress": "2-3",
+          "carriers": ["Makedonija Posta", "DHL", "Gls"],
+          "luxuryDelivery": true,
+          "pickupPoints": ["Skopje", "Bitola", "Kumanovo", "Prilep"]
+        },
+        "payments": {
+          "cashOnDelivery": { "enabled": true, "fee": 100, "maxAmount": 150000 },
+          "cards": { "enabled": true, "providers": ["Visa", "Mastercard", "Maestro"] },
+          "bankTransfer": { "enabled": true, "instructions": "local" },
+          "crypto": { "enabled": true, "discount": 15, "assets": ["BTC", "ETH", "USDT", "USDC"] }
+        },
+        "tax": {
+          "vatRate": 18,
+          "vatIncluded": true,
+          "taxNumberRequired": false
+        },
+        "seo": {
+          "titleSuffix": "— DALLI Северна Македонија",
+          "description": "Премиум гардероба за Македонија. 100% органски памук, бесплатна достава >5.000 ден, 15% попуст крипто, 30 дена за враќање.",
+          "hreflang": "mk-MK",
+          "canonicalBase": "https://mk.dalli.rs",
+          "ogLocale": "mk_MK",
+          "ogLocaleAlternates": ["sr_MK", "en_US"]
+        },
+        "collections": {
+          "casual": { "enabled": true },
+          "elegance": { "enabled": true }
+        },
+        "homepage": {
+          "heroVariant": "balkan",
+          "campaignsEnabled": true,
+          "featuredCollections": ["casual", "elegance"]
+        },
+        "legal": {
+          "companyName": "DALLI д.о.о.ел Скопје",
+          "address": "Скопје, Северна Македонија",
+          "termsUrl": "/услови-за-कористење.html",
+          "privacyUrl": "/приватност.html",
+          "returnPolicyDays": 30
+        }
+      },
+      "SI": {
+        "code": "SI",
+        "name": "Slovenia",
+        "nameLocal": "Slovenija",
+        "enabled": true,
+        "priority": "balkan-high",
+        "region": "balkans",
+        "currency": "EUR",
+        "languages": ["sl", "en"],
+        "defaultLanguage": "sl",
+        "timezone": "Europe/Ljubljana",
+        "shipping": {
+          "enabled": true,
+          "freeShippingThreshold": 75,
+          "standardCost": 6,
+          "expressCost": 12,
+          "deliveryDaysStandard": "1-2",
+          "deliveryDaysExpress": "1",
+          "carriers": ["Pošta Slovenije", "DHL", "GLS", "DPD"],
+          "luxuryDelivery": true,
+          "pickupPoints": ["Ljubljana", "Maribor", "Celje", "Kranj"]
+        },
+        "payments": {
+          "cashOnDelivery": { "enabled": false, "fee": 0, "maxAmount": 0 },
+          "cards": { "enabled": true, "providers": ["Visa", "Mastercard", "Maestro", "Amex"] },
+          "bankTransfer": { "enabled": true, "instructions": "local" },
+          "crypto": { "enabled": true, "discount": 15, "assets": ["BTC", "ETH", "USDT", "USDC"] },
+          "installments": { "enabled": true, "provider": "Moneta", "maxInstallments": 12 }
+        },
+        "tax": {
+          "vatRate": 22,
+          "vatIncluded": true,
+          "taxNumberRequired": false
+        },
+        "seo": {
+          "titleSuffix": "— DALLI Slovenija",
+          "description": "Premium garderoba za Slovenijo. 100% organski pamuk, brezplačna dostava >75 EUR, 15% popust kripto, 30 dni za vrnitev.",
+          "hreflang": "sl-SI",
+          "canonicalBase": "https://si.dalli.rs",
+          "ogLocale": "sl_SI",
+          "ogLocaleAlternates": ["en_US"]
+        },
+        "collections": {
+          "casual": { "enabled": true },
+          "elegance": { "enabled": true }
+        },
+        "homepage": {
+          "heroVariant": "balkan",
+          "campaignsEnabled": true,
+          "featuredCollections": ["casual", "elegance"]
+        },
+        "legal": {
+          "companyName": "DALLI d.o.o. Ljubljana",
+          "address": "Ljubljana, Slovenija",
+          "termsUrl": "/pogoji-uporabe.html",
+          "privacyUrl": "/zasebnost.html",
+          "returnPolicyDays": 30
+        }
+      },
+      "DE": {
+        "code": "DE",
+        "name": "Germany",
+        "nameLocal": "Deutschland",
+        "enabled": false,
+        "priority": "eu-core",
+        "region": "dach",
+        "currency": "EUR",
+        "languages": ["de", "en"],
+        "defaultLanguage": "de",
+        "timezone": "Europe/Berlin",
+        "shipping": {
+          "enabled": true,
+          "freeShippingThreshold": 150,
+          "standardCost": 5.90,
+          "expressCost": 12.90,
+          "deliveryDaysStandard": "2-3",
+          "deliveryDaysExpress": "1-2",
+          "carriers": ["DHL", "DPD", "Hermes", "GLS"],
+          "luxuryDelivery": true,
+          "pickupPoints": ["Berlin", "Munich", "Hamburg", "Frankfurt", "Cologne"]
+        },
+        "payments": {
+          "cashOnDelivery": { "enabled": false, "fee": 0, "maxAmount": 0 },
+          "cards": { "enabled": true, "providers": ["Visa", "Mastercard", "Amex", "Maestro"] },
+          "bankTransfer": { "enabled": true, "instructions": "sepa" },
+          "crypto": { "enabled": true, "discount": 15, "assets": ["BTC", "ETH", "USDT", "USDC"] },
+          "installments": { "enabled": true, "provider": "Klarna", "maxInstallments": 24 }
+        },
+        "tax": {
+          "vatRate": 19,
+          "vatIncluded": true,
+          "taxNumberRequired": true
+        },
+        "seo": {
+          "titleSuffix": "— DALLI Deutschland",
+          "description": "Premium Garderobe für Deutschland. 100% Bio-Baumwolle, kostenloser Versand ab 150€, 15% Krypto-Rabatt, 30 Tage Rückgabe.",
+          "hreflang": "de-DE",
+          "canonicalBase": "https://de.dalli.rs",
+          "ogLocale": "de_DE",
+          "ogLocaleAlternates": ["en_US"]
+        },
+        "collections": {
+          "casual": { "enabled": true },
+          "elegance": { "enabled": true }
+        },
+        "homepage": {
+          "heroVariant": "eu-premium",
+          "campaignsEnabled": true,
+          "featuredCollections": ["elegance", "casual"]
+        },
+        "legal": {
+          "companyName": "DALLI GmbH",
+          "address": "Berlin, Deutschland",
+          "termsUrl": "/nutzungsbedingungen.html",
+          "privacyUrl": "/datenschutz.html",
+          "returnPolicyDays": 30
+        }
+      },
+      "AT": {
+        "code": "AT",
+        "name": "Austria",
+        "nameLocal": "Österreich",
+        "enabled": false,
+        "priority": "eu-core",
+        "region": "dach",
+        "currency": "EUR",
+        "languages": ["de", "en"],
+        "defaultLanguage": "de",
+        "timezone": "Europe/Vienna",
+        "shipping": {
+          "enabled": true,
+          "freeShippingThreshold": 100,
+          "standardCost": 4.90,
+          "expressCost": 9.90,
+          "deliveryDaysStandard": "2-3",
+          "deliveryDaysExpress": "1-2",
+          "carriers": ["Österreichische Post", "DHL", "DPD"],
+          "luxuryDelivery": true,
+          "pickupPoints": ["Vienna", "Graz", "Linz", "Salzburg", "Innsbruck"]
+        },
+        "payments": {
+          "cashOnDelivery": { "enabled": true, "fee": 4.50, "maxAmount": 5000 },
+          "cards": { "enabled": true, "providers": ["Visa", "Mastercard", "Amex", "Maestro"] },
+          "bankTransfer": { "enabled": true, "instructions": "sepa" },
+          "crypto": { "enabled": true, "discount": 15, "assets": ["BTC", "ETH", "USDT", "USDC"] },
+          "installments": { "enabled": true, "provider": "Klarna", "maxInstallments": 24 }
+        },
+        "tax": {
+          "vatRate": 20,
+          "vatIncluded": true,
+          "taxNumberRequired": true
+        },
+        "seo": {
+          "titleSuffix": "— DALLI Österreich",
+          "description": "Premium Garderobe für Österreich. 100% Bio-Baumwolle, gratis Versand ab 100€, 15% Krypto-Rabatt, 30 Tage Rückgabe.",
+          "hreflang": "de-AT",
+          "canonicalBase": "https://at.dalli.rs",
+          "ogLocale": "de_AT",
+          "ogLocaleAlternates": ["en_US"]
+        },
+        "collections": {
+          "casual": { "enabled": true },
+          "elegance": { "enabled": true }
+        },
+        "homepage": {
+          "heroVariant": "eu-premium",
+          "campaignsEnabled": true,
+          "featuredCollections": ["elegance", "casual"]
+        },
+        "legal": {
+          "companyName": "DALLI GmbH Wien",
+          "address": "Wien, Österreich",
+          "termsUrl": "/nutzungsbedingungen.html",
+          "privacyUrl": "/datenschutz.html",
+          "returnPolicyDays": 30
+        }
+      },
+      "CH": {
+        "code": "CH",
+        "name": "Switzerland",
+        "nameLocal": "Schweiz / Suisse / Svizzera",
+        "enabled": false,
+        "priority": "eu-core",
+        "region": "dach",
+        "currency": "CHF",
+        "languages": ["de", "fr", "it", "en"],
+        "defaultLanguage": "de",
+        "timezone": "Europe/Zurich",
+        "shipping": {
+          "enabled": true,
+          "freeShippingThreshold": 200,
+          "standardCost": 9,
+          "expressCost": 18,
+          "deliveryDaysStandard": "2-3",
+          "deliveryDaysExpress": "1-2",
+          "carriers": ["Swiss Post", "DHL", "Planzer"],
+          "luxuryDelivery": true,
+          "pickupPoints": ["Zürich", "Genève", "Basel", "Bern", "Lausanne"]
+        },
+        "payments": {
+          "cashOnDelivery": { "enabled": false, "fee": 0, "maxAmount": 0 },
+          "cards": { "enabled": true, "providers": ["Visa", "Mastercard", "Amex", "TWINT"] },
+          "bankTransfer": { "enabled": true, "instructions": "swiss" },
+          "crypto": { "enabled": true, "discount": 15, "assets": ["BTC", "ETH", "USDT", "USDC"] },
+          "installments": { "enabled": true, "provider": "Powerpay", "maxInstallments": 12 }
+        },
+        "tax": {
+          "vatRate": 8.1,
+          "vatIncluded": true,
+          "taxNumberRequired": true
+        },
+        "seo": {
+          "titleSuffix": "— DALLI Schweiz",
+          "description": "Premium Garderobe für die Schweiz. 100% Bio-Baumwolle, gratis Lieferung ab 200 CHF, 15% Krypto-Rabatt, 30 Tage Rückgabe.",
+          "hreflang": "de-CH",
+          "canonicalBase": "https://ch.dalli.rs",
+          "ogLocale": "de_CH",
+          "ogLocaleAlternates": ["fr_CH", "it_CH", "en_US"]
+        },
+        "collections": {
+          "casual": { "enabled": true },
+          "elegance": { "enabled": true }
+        },
+        "homepage": {
+          "heroVariant": "eu-premium",
+          "campaignsEnabled": true,
+          "featuredCollections": ["elegance", "casual"]
+        },
+        "legal": {
+          "companyName": "DALLI AG Zürich",
+          "address": "Zürich, Schweiz",
+          "termsUrl": "/nutzungsbedingungen.html",
+          "privacyUrl": "/datenschutz.html",
+          "returnPolicyDays": 30
+        }
+      },
+      "FR": {
+        "code": "FR",
+        "name": "France",
+        "nameLocal": "France",
+        "enabled": false,
+        "priority": "eu-core",
+        "region": "eu-west",
+        "currency": "EUR",
+        "languages": ["fr", "en"],
+        "defaultLanguage": "fr",
+        "timezone": "Europe/Paris",
+        "shipping": {
+          "enabled": true,
+          "freeShippingThreshold": 150,
+          "standardCost": 6.90,
+          "expressCost": 14.90,
+          "deliveryDaysStandard": "2-4",
+          "deliveryDaysExpress": "1-2",
+          "carriers": ["La Poste / Colissimo", "Chronopost", "DPD", "Mondial Relay"],
+          "luxuryDelivery": true,
+          "pickupPoints": ["Paris", "Lyon", "Marseille", "Toulouse", "Bordeaux"]
+        },
+        "payments": {
+          "cashOnDelivery": { "enabled": false, "fee": 0, "maxAmount": 0 },
+          "cards": { "enabled": true, "providers": ["Visa", "Mastercard", "Amex", "Carte Bleue"] },
+          "bankTransfer": { "enabled": true, "instructions": "sepa" },
+          "crypto": { "enabled": true, "discount": 15, "assets": ["BTC", "ETH", "USDT", "USDC"] },
+          "installments": { "enabled": true, "provider": "Alma", "maxInstallments": 4 }
+        },
+        "tax": {
+          "vatRate": 20,
+          "vatIncluded": true,
+          "taxNumberRequired": true
+        },
+        "seo": {
+          "titleSuffix": "— DALLI France",
+          "description": "Garderobe Premium France. 100% coton bio, livraison offerte dès 150€, 15% crypto, retours 30 jours.",
+          "hreflang": "fr-FR",
+          "canonicalBase": "https://fr.dalli.rs",
+          "ogLocale": "fr_FR",
+          "ogLocaleAlternates": ["en_US"]
+        },
+        "collections": {
+          "casual": { "enabled": true },
+          "elegance": { "enabled": true }
+        },
+        "homepage": {
+          "heroVariant": "eu-premium",
+          "campaignsEnabled": true,
+          "featuredCollections": ["elegance", "casual"]
+        },
+        "legal": {
+          "companyName": "DALLI SAS Paris",
+          "address": "Paris, France",
+          "termsUrl": "/conditions-utilisation.html",
+          "privacyUrl": "/confidentialite.html",
+          "returnPolicyDays": 30
+        }
+      },
+      "IT": {
+        "code": "IT",
+        "name": "Italy",
+        "nameLocal": "Italia",
+        "enabled": false,
+        "priority": "eu-core",
+        "region": "eu-west",
+        "currency": "EUR",
+        "languages": ["it", "en"],
+        "defaultLanguage": "it",
+        "timezone": "Europe/Rome",
+        "shipping": {
+          "enabled": true,
+          "freeShippingThreshold": 100,
+          "standardCost": 5.90,
+          "expressCost": 12.90,
+          "deliveryDaysStandard": "2-3",
+          "deliveryDaysExpress": "1-2",
+          "carriers": ["Poste Italiane", "BRT", "DHL", "GLS", "Nexive"],
+          "luxuryDelivery": true,
+          "pickupPoints": ["Milano", "Roma", "Torino", "Napoli", "Firenze"]
+        },
+        "payments": {
+          "cashOnDelivery": { "enabled": true, "fee": 5, "maxAmount": 3000 },
+          "cards": { "enabled": true, "providers": ["Visa", "Mastercard", "Amex", "Maestro"] },
+          "bankTransfer": { "enabled": true, "instructions": "sepa" },
+          "crypto": { "enabled": true, "discount": 15, "assets": ["BTC", "ETH", "USDT", "USDC"] },
+          "installments": { "enabled": true, "provider": "Scalapay", "maxInstallments": 3 }
+        },
+        "tax": {
+          "vatRate": 22,
+          "vatIncluded": true,
+          "taxNumberRequired": true
+        },
+        "seo": {
+          "titleSuffix": "— DALLI Italia",
+          "description": "Garderoba Premium Italia. 100% cotone bio, spedizione gratis da 100€, 15% crypto, resi 30 giorni.",
+          "hreflang": "it-IT",
+          "canonicalBase": "https://it.dalli.rs",
+          "ogLocale": "it_IT",
+          "ogLocaleAlternates": ["en_US"]
+        },
+        "collections": {
+          "casual": { "enabled": true },
+          "elegance": { "enabled": true }
+        },
+        "homepage": {
+          "heroVariant": "eu-premium",
+          "campaignsEnabled": true,
+          "featuredCollections": ["elegance", "casual"]
+        },
+        "legal": {
+          "companyName": "DALLI S.r.l. Milano",
+          "address": "Milano, Italia",
+          "termsUrl": "/termini-utilizzo.html",
+          "privacyUrl": "/privacy.html",
+          "returnPolicyDays": 30
+        }
+      },
+      "GB": {
+        "code": "GB",
+        "name": "United Kingdom",
+        "nameLocal": "United Kingdom",
+        "enabled": false,
+        "priority": "eu-core",
+        "region": "uk",
+        "currency": "GBP",
+        "languages": ["en"],
+        "defaultLanguage": "en",
+        "timezone": "Europe/London",
+        "shipping": {
+          "enabled": true,
+          "freeShippingThreshold": 125,
+          "standardCost": 4.99,
+          "expressCost": 9.99,
+          "deliveryDaysStandard": "3-5",
+          "deliveryDaysExpress": "1-2",
+          "carriers": ["Royal Mail", "DPD", "DHL", "Evri"],
+          "luxuryDelivery": true,
+          "pickupPoints": ["London", "Manchester", "Birmingham", "Glasgow", "Edinburgh"]
+        },
+        "payments": {
+          "cashOnDelivery": { "enabled": false, "fee": 0, "maxAmount": 0 },
+          "cards": { "enabled": true, "providers": ["Visa", "Mastercard", "Amex"] },
+          "bankTransfer": { "enabled": true, "instructions": "uk" },
+          "crypto": { "enabled": true, "discount": 15, "assets": ["BTC", "ETH", "USDT", "USDC"] },
+          "installments": { "enabled": true, "provider": "Klarna", "maxInstallments": 24 }
+        },
+        "tax": {
+          "vatRate": 20,
+          "vatIncluded": true,
+          "taxNumberRequired": true
+        },
+        "seo": {
+          "titleSuffix": "— DALLI United Kingdom",
+          "description": "Premium Wardrobe UK. 100% Organic Cotton, Free Delivery over £125, 15% Crypto Discount, 30-Day Returns.",
+          "hreflang": "en-GB",
+          "canonicalBase": "https://uk.dalli.rs",
+          "ogLocale": "en_GB",
+          "ogLocaleAlternates": ["en_US"]
+        },
+        "collections": {
+          "casual": { "enabled": true },
+          "elegance": { "enabled": true }
+        },
+        "homepage": {
+          "heroVariant": "eu-premium",
+          "campaignsEnabled": true,
+          "featuredCollections": ["elegance", "casual"]
+        },
+        "legal": {
+          "companyName": "DALLI Ltd London",
+          "address": "London, UK",
+          "termsUrl": "/terms.html",
+          "privacyUrl": "/privacy.html",
+          "returnPolicyDays": 30
+        }
+      },
+      "US": {
+        "code": "US",
+        "name": "United States",
+        "nameLocal": "United States",
+        "enabled": false,
+        "priority": "na-expansion",
+        "region": "north-america",
+        "currency": "USD",
+        "languages": ["en", "es"],
+        "defaultLanguage": "en",
+        "timezone": "America/New_York",
+        "shipping": {
+          "enabled": true,
+          "freeShippingThreshold": 200,
+          "standardCost": 12,
+          "expressCost": 25,
+          "deliveryDaysStandard": "5-7",
+          "deliveryDaysExpress": "2-3",
+          "carriers": ["UPS", "FedEx", "DHL", "USPS"],
+          "luxuryDelivery": true,
+          "pickupPoints": ["New York", "Los Angeles", "Miami", "Chicago", "San Francisco"]
+        },
+        "payments": {
+          "cashOnDelivery": { "enabled": false, "fee": 0, "maxAmount": 0 },
+          "cards": { "enabled": true, "providers": ["Visa", "Mastercard", "Amex", "Discover"] },
+          "bankTransfer": { "enabled": true, "instructions": "ach" },
+          "crypto": { "enabled": true, "discount": 15, "assets": ["BTC", "ETH", "USDT", "USDC"] },
+          "installments": { "enabled": true, "provider": "Affirm", "maxInstallments": 12 }
+        },
+        "tax": {
+          "vatRate": 0,
+          "vatIncluded": false,
+          "taxNumberRequired": false,
+          "salesTaxByState": true
+        },
+        "seo": {
+          "titleSuffix": "— DALLI USA",
+          "description": "Premium Wardrobe USA. 100% Organic Cotton, Free Shipping $200+, 15% Crypto, 30-Day Returns.",
+          "hreflang": "en-US",
+          "canonicalBase": "https://us.dalli.rs",
+          "ogLocale": "en_US",
+          "ogLocaleAlternates": ["en_GB"]
+        },
+        "collections": {
+          "casual": { "enabled": true },
+          "elegance": { "enabled": true }
+        },
+        "homepage": {
+          "heroVariant": "global-premium",
+          "campaignsEnabled": true,
+          "featuredCollections": ["elegance", "casual"]
+        },
+        "legal": {
+          "companyName": "DALLI Inc. New York",
+          "address": "New York, NY, USA",
+          "termsUrl": "/terms.html",
+          "privacyUrl": "/privacy.html",
+          "returnPolicyDays": 30
+        }
+      },
+      "AE": {
+        "code": "AE",
+        "name": "United Arab Emirates",
+        "nameLocal": "الإمارات العربية المتحدة",
+        "enabled": false,
+        "priority": "me-expansion",
+        "region": "middle-east",
+        "currency": "AED",
+        "languages": ["ar", "en"],
+        "defaultLanguage": "ar",
+        "timezone": "Asia/Dubai",
+        "shipping": {
+          "enabled": true,
+          "freeShippingThreshold": 500,
+          "standardCost": 30,
+          "expressCost": 60,
+          "deliveryDaysStandard": "2-3",
+          "deliveryDaysExpress": "1",
+          "carriers": ["Emirates Post", "Aramex", "DHL", "Fetchr"],
+          "luxuryDelivery": true,
+          "pickupPoints": ["Dubai", "Abu Dhabi", "Sharjah", "Al Ain"]
+        },
+        "payments": {
+          "cashOnDelivery": { "enabled": true, "fee": 20, "maxAmount": 10000 },
+          "cards": { "enabled": true, "providers": ["Visa", "Mastercard", "Amex"] },
+          "bankTransfer": { "enabled": true, "instructions": "uae" },
+          "crypto": { "enabled": true, "discount": 15, "assets": ["BTC", "ETH", "USDT", "USDC"] },
+          "installments": { "enabled": true, "provider": "Tabby", "maxInstallments": 4 }
+        },
+        "tax": {
+          "vatRate": 5,
+          "vatIncluded": true,
+          "taxNumberRequired": true
+        },
+        "seo": {
+          "titleSuffix": "— DALLI الإمارات",
+          "description": "خزانة ملابس فاخرة الإمارات. قطن عضوي 100%، شحن مجاني فوق 500 درهم، خصم 15% عملات مشفرة، إرجاع 30 يوم.",
+          "hreflang": "ar-AE",
+          "canonicalBase": "https://ae.dalli.rs",
+          "ogLocale": "ar_AE",
+          "ogLocaleAlternates": ["en_US"]
+        },
+        "collections": {
+          "casual": { "enabled": true },
+          "elegance": { "enabled": true }
+        },
+        "homepage": {
+          "heroVariant": "me-luxury",
+          "campaignsEnabled": true,
+          "featuredCollections": ["elegance", "casual"]
+        },
+        "legal": {
+          "companyName": "DALLI FZ-LLC Dubai",
+          "address": "Dubai, UAE",
+          "termsUrl": "/شروط-الاستخدام.html",
+          "privacyUrl": "/الخصوصية.html",
+          "returnPolicyDays": 30
+        }
+      }
+    }
+  }
+}

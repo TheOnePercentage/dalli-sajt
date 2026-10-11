@@ -1,0 +1,208 @@
+<main class="container" style="padding: var(--space-12) var(--section-padding-x); max-width: 800px;">
+        <header style="margin-bottom: var(--space-8);">
+            <h1 style="font-family: var(--font-display); font-size: var(--text-h2); font-weight: var(--fw-light); margin-bottom: var(--space-2);">Moj Profil</h1>
+            <p style="color: var(--color-text-secondary);">Upravljajte svojim nalogom, narudžbinama i podešavanjima</p>
+        </header>
+
+        <!-- Tab Navigation -->
+        <nav class="profile-tabs" role="tablist" aria-label="Sekcije profila" style="margin-bottom: var(--space-6); border-bottom: 1px solid var(--color-divider);">
+            <div class="tab-list" role="tablist" style="display: flex; gap: var(--space-1); overflow-x: auto; padding-bottom: var(--space-1);">
+                <button role="tab" aria-selected="true" aria-controls="panel-overview" data-tab="overview" class="tab-btn active" style="padding: var(--space-3) var(--space-4); background: none; border: none; border-bottom: 2px solid var(--color-primary); color: var(--color-primary); font-weight: var(--fw-medium); font-size: var(--text-sm); cursor: pointer; white-space: nowrap; transition: all var(--duration-fast);">Pregled</button>
+                <button role="tab" aria-selected="false" aria-controls="panel-orders" data-tab="orders" class="tab-btn" style="padding: var(--space-3) var(--space-4); background: none; border: none; border-bottom: 2px solid transparent; color: var(--color-text-secondary); font-weight: var(--fw-medium); font-size: var(--text-sm); cursor: pointer; white-space: nowrap; transition: all var(--duration-fast);">Narudžbine</button>
+                <button role="tab" aria-selected="false" aria-controls="panel-wishlist" data-tab="wishlist" class="tab-btn" style="padding: var(--space-3) var(--space-4); background: none; border: none; border-bottom: 2px solid transparent; color: var(--color-text-secondary); font-weight: var(--fw-medium); font-size: var(--text-sm); cursor: pointer; white-space: nowrap; transition: all var(--duration-fast);">Lista želja</button>
+                <button role="tab" aria-selected="false" aria-controls="panel-loyalty" data-tab="loyalty" class="tab-btn" style="padding: var(--space-3) var(--space-4); background: none; border: none; border-bottom: 2px solid transparent; color: var(--color-text-secondary); font-weight: var(--fw-medium); font-size: var(--text-sm); cursor: pointer; white-space: nowrap; transition: all var(--duration-fast);">Lojalnost</button>
+                <button role="tab" aria-selected="false" aria-controls="panel-membership" data-tab="membership" class="tab-btn" style="padding: var(--space-3) var(--space-4); background: none; border: none; border-bottom: 2px solid transparent; color: var(--color-text-secondary); font-weight: var(--fw-medium); font-size: var(--text-sm); cursor: pointer; white-space: nowrap; transition: all var(--duration-fast);">Članstvo</button>
+                <button role="tab" aria-selected="false" aria-controls="panel-profile" data-tab="profile" class="tab-btn" style="padding: var(--space-3) var(--space-4); background: none; border: none; border-bottom: 2px solid transparent; color: var(--color-text-secondary); font-weight: var(--fw-medium); font-size: var(--text-sm); cursor: pointer; white-space: nowrap; transition: all var(--duration-fast);">Profil</button>
+                <button role="tab" aria-selected="false" aria-controls="panel-security" data-tab="security" class="tab-btn" style="padding: var(--space-3) var(--space-4); background: none; border: none; border-bottom: 2px solid transparent; color: var(--color-text-secondary); font-weight: var(--fw-medium); font-size: var(--text-sm); cursor: pointer; white-space: nowrap; transition: all var(--duration-fast);">Bezbednost</button>
+                <button role="tab" aria-selected="false" aria-controls="panel-notifications" data-tab="notifications" class="tab-btn" style="padding: var(--space-3) var(--space-4); background: none; border: none; border-bottom: 2px solid transparent; color: var(--color-text-secondary); font-weight: var(--fw-medium); font-size: var(--text-sm); cursor: pointer; white-space: nowrap; transition: all var(--duration-fast);">Obaveštenja</button>
+            </div>
+        </nav>
+
+        <!-- Tab Panels -->
+        <div class="tab-panels" style="min-height: 400px;">
+
+            <!-- Pregled (Overview) -->
+            <section role="tabpanel" id="panel-overview" aria-labelledby="tab-overview" class="tab-panel active" style="display: block;">
+                <!-- React Island: profil dashboard (KPI) -->
+                <div data-island="overview" data-props="{}"></div>
+
+                <!-- Quick Actions -->
+                <div style="display: grid; gap: var(--space-4); margin-top: var(--space-8);">
+                    <a href="/orders.html" style="display: flex; align-items: center; gap: var(--space-4); padding: var(--space-4); background: var(--color-bg); border-radius: var(--radius-btn); text-decoration: none; color: var(--color-text); transition: background var(--duration-fast);" onmouseover="this.style.background='var(--color-bg-hover)'" onmouseout="this.style.background='var(--color-bg)'">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                        <span>Moje Narudžbine</span>
+                    </a>
+                    <a href="/wishlist.html" style="display: flex; align-items: center; gap: var(--space-4); padding: var(--space-4); background: var(--color-bg); border-radius: var(--radius-btn); text-decoration: none; color: var(--color-text); transition: background var(--duration-fast);" onmouseover="this.style.background='var(--color-bg-hover)'" onmouseout="this.style.background='var(--color-bg)'">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        <span>Lista Želja</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Narudžbine (Orders) -->
+            <section role="tabpanel" id="panel-orders" aria-labelledby="tab-orders" class="tab-panel" style="display: none;">
+                <div data-island="orders-tab" data-props="{}"></div>
+            </section>
+
+            <!-- Lista želja (Wishlist) -->
+            <section role="tabpanel" id="panel-wishlist" aria-labelledby="tab-wishlist" class="tab-panel" style="display: none;">
+                <div data-island="wishlist-tab" data-props="{}"></div>
+            </section>
+
+            <!-- Lojalnost (Loyalty) -->
+            <section role="tabpanel" id="panel-loyalty" aria-labelledby="tab-loyalty" class="tab-panel" style="display: none;">
+                <div data-island="loyalty" data-props="{}"></div>
+            </section>
+
+            <!-- Profil (Profile) -->
+            <section role="tabpanel" id="panel-profile" aria-labelledby="tab-profile" class="tab-panel" style="display: none;">
+                <!-- Profile Header -->
+                <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-card); padding: var(--space-8); margin-bottom: var(--space-8);">
+                    <div style="display: flex; align-items: center; gap: var(--space-6); margin-bottom: var(--space-8); padding-bottom: var(--space-8); border-bottom: 1px solid var(--color-divider);">
+                        <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark)); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white;">👤</div>
+                        <div>
+                            <h2 id="profileName" style="font-family: var(--font-display); font-size: var(--text-h3); font-weight: var(--fw-light); margin-bottom: var(--space-2);">Korisnik</h2>
+                            <p id="profileEmail" style="color: var(--color-text-secondary);">korisnik@email.com</p>
+                        </div>
+                    </div>
+
+                    <!-- Loyalty Tier Display -->
+                    <div id="loyaltyProfile" class="loyalty-profile hidden" style="margin-bottom: var(--space-8); padding: var(--space-6); background: var(--color-bg); border-radius: var(--radius-card); border: 1px solid var(--color-divider);">
+                        <div class="loyalty-profile__header" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-4); flex-wrap: wrap; gap: var(--space-2);">
+                            <div class="loyalty-profile__tier-info" style="display: flex; align-items: center; gap: var(--space-4);">
+                                <div class="loyalty-profile__tier-badge" id="loyaltyTierBadge" style="padding: var(--space-2) var(--space-4); border-radius: var(--radius-btn); font-weight: var(--fw-semibold); font-size: var(--fs-sm); text-transform: uppercase; letter-spacing: 0.05em; background: linear-gradient(135deg, #6B7280, #4B5563); color: white;">ČLAN</div>
+                                <div>
+                                    <div style="font-size: var(--fs-xs); color: var(--color-text-tertiary); text-transform: uppercase; letter-spacing: 0.05em;">Trenutni nivo</div>
+                                    <div id="loyaltyTierName" style="font-family: var(--font-display); font-size: var(--text-lg); font-weight: var(--fw-light);">Član</div>
+                                </div>
+                            </div>
+                            <div class="loyalty-profile__points" style="text-align: right;">
+                                <div style="font-size: var(--fs-xs); color: var(--color-text-tertiary); text-transform: uppercase; letter-spacing: 0.05em;">Poeni</div>
+                                <div id="loyaltyPoints" style="font-family: var(--font-display); font-size: var(--text-xl); font-weight: var(--fw-medium); color: var(--color-primary);">0</div>
+                            </div>
+                        </div>
+
+                        <!-- Progress Bar -->
+                        <div class="loyalty-profile__progress" style="margin-bottom: var(--space-4);">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--space-2); font-size: var(--fs-sm);">
+                                <span id="loyaltyProgressLabel">Napredak do Srebra</span>
+                                <span id="loyaltyProgressPercent" style="font-weight: var(--fw-semibold);">0%</span>
+                            </div>
+                            <div class="loyalty-progress__bar" style="height: 8px; background: var(--color-border); border-radius: var(--radius-full); overflow: hidden;">
+                                <div class="loyalty-progress__fill" id="loyaltyProgressFill" style="height: 100%; width: 0%; border-radius: var(--radius-full); background: linear-gradient(90deg, #6B7280, #4B5563); transition: width var(--duration-slow) var(--ease-out);"></div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-top: var(--space-2); font-size: var(--fs-xs); color: var(--color-text-tertiary);">
+                                <span>Potrošeno: <span id="loyaltySpent">0</span> RSD</span>
+                                <span id="loyaltyRemaining">Preostalo: 100.000 RSD do Srebra</span>
+                            </div>
+                        </div>
+
+                        <!-- Tier Benefits Preview -->
+                        <div class="loyalty-profile__benefits" style="border-top: 1px solid var(--color-divider); padding-top: var(--space-4);">
+                            <div style="font-size: var(--fs-sm); font-weight: var(--fw-semibold); margin-bottom: var(--space-3); color: var(--color-text);">Vaši beneficiji:</div>
+                            <ul id="loyaltyBenefits" style="list-style: none; padding: 0; margin: 0; display: grid; gap: var(--space-2); grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); font-size: var(--fs-sm); color: var(--color-text-secondary);">
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- React Island: Loyalty status roadmap -->
+                    <div data-island="loyalty" data-props="{}"></div>
+                </div>
+
+                <!-- Profile Forms -->
+                <div data-island="profile-tab" data-props="{}"></div>
+            </section>
+
+            <!-- Bezbednost (Security) -->
+            <section role="tabpanel" id="panel-security" aria-labelledby="tab-security" class="tab-panel" style="display: none;">
+                <div data-island="security-tab" data-props="{}"></div>
+            </section>
+
+            <!-- Obaveštenja (Notifications) -->
+            <section role="tabpanel" id="panel-membership" aria-labelledby="tab-membership" class="tab-panel" style="display: none;">
+                <div id="private-client-dashboard"></div>
+            </section>
+
+            <section role="tabpanel" id="panel-notifications" aria-labelledby="tab-notifications" class="tab-panel" style="display: none;">
+                <div data-island="notifications-tab" data-props="{}"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer style="margin-top: var(--space-16); padding: var(--space-8) 0; border-top: 1px solid var(--color-border); text-align: center; color: var(--color-text-tertiary); font-size: var(--text-sm);">
+        <p>&copy; 2025 DALLI. Sva prava zadržana.</p>
+    </footer>
+
+    <!-- React Island: Concierge (plutajući luksuz servis) -->
+    <div data-island="concierge"></div>
+
+    <!-- React Island: drawer korpa (ova stranica nema vanilla drawer) -->
+    <div data-island="cart-drawer"></div>
+
+    <!-- React Islands loader (čita [data-island]; React runtime se učitava dinamički) -->
+    <script type="module" src="/js/islands/index.js" defer></script>
+    <script type="module" src="/personalization.js" defer></script>
+    <script type="module">
+      import { renderPrivateClientDashboard } from '/js/components/PrivateClientDashboard.js';
+      import { initPersonalization, getProfile } from '/js/services/personalization-v2.js';
+
+      async function initMembershipDashboard() {
+        await initPersonalization();
+        const profile = getProfile();
+        const userTier = profile?.preferredStyle ? 'gold' : 'member'; // Simplified - would come from user data
+        const userProfile = {
+          membershipTier: userTier,
+          purchaseValue: 250000,
+          orderCount: 5,
+          loyaltyPoints: 12000,
+          memberSince: '2024-01-15',
+          recentProducts: []
+        };
+        await renderPrivateClientDashboard(userProfile, 'private-client-dashboard');
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initMembershipDashboard);
+      } else {
+        initMembershipDashboard();
+      }
+    </script>
+    <script type="module" src="/search-ui.js" defer></script>
+    <script type="module" src="/js/features/loyalty-integration.js" defer></script>
+    <script type="module" src="/js/app.jsx" defer></script>
+    <script type="module" src="/js/cookie-consent.js" defer></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabButtons = document.querySelectorAll('.tab-btn');
+      const tabPanels = document.querySelectorAll('.tab-panel');
+
+      tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const tab = btn.dataset.tab;
+          
+          tabButtons.forEach(b => {
+            b.classList.remove('active');
+            b.setAttribute('aria-selected', 'false');
+            b.style.borderBottomColor = 'transparent';
+            b.style.color = 'var(--color-text-secondary)';
+          });
+          btn.classList.add('active');
+          btn.setAttribute('aria-selected', 'true');
+          btn.style.borderBottomColor = 'var(--color-primary)';
+          btn.style.color = 'var(--color-primary)';
+
+          tabPanels.forEach(panel => {
+            if (panel.id === 'panel-' + btn.dataset.tab) {
+              panel.style.display = 'block';
+              panel.classList.add('active');
+            } else {
+              panel.style.display = 'none';
+              panel.classList.remove('active');
+            }
+          });
+        });
+      });
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,435 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-10-09T00:00:00Z",
+  "signatureMoments": {
+    "enabled": true,
+    "moments": {
+      "first-visit": {
+        "id": "first-visit",
+        "name": "First Visit Experience",
+        "label": "Prvo Posete",
+        "description": "Welcome moment for new visitors — elegant, unobtrusive, memorable",
+        "trigger": {
+          "type": "first-session",
+          "conditions": {
+            "hasVisitedBefore": false,
+            "notFromCampaign": true,
+            "notBot": true
+          }
+        },
+        "sequence": [
+          {
+            "step": 1,
+            "type": "ambient-entry",
+            "duration": 1200,
+            "config": {
+              "effect": "cinematic-fade-in",
+              "background": "world-atmosphere",
+              "sound": "welcome-chime",
+              "respectReducedMotion": true
+            }
+          },
+          {
+            "step": 2,
+            "type": "signature-message",
+            "duration": 3000,
+            "config": {
+              "message": "Welcome to DALLI. Where luxury becomes personal.",
+              "animation": "typewriter",
+              "pauseAfter": 2000,
+              "dismissible": true
+            }
+          },
+          {
+            "step": 3,
+            "type": "world-selection-hint",
+            "duration": 4000,
+            "config": {
+              "message": "Choose your world: Casual or Elegance",
+              "highlightElements": [".world-nav-casual", ".world-nav-elegance"],
+              "autoDismiss": 8000
+            }
+          },
+          {
+            "step": 4,
+            "type": "membership-invitation",
+            "duration": 0,
+            "config": {
+              "message": "Join as a Member — your journey begins here",
+              "cta": { "text": "Become a Member", "href": "/membership" },
+              "showOnce": true,
+              "delay": 10000
+            }
+          }
+        ],
+        "frequency": "once-per-device",
+        "cooldown": 0,
+        "priority": "high",
+        "enabled": true
+      },
+      "collection-entry": {
+        "id": "collection-entry",
+        "name": "Collection Entry Experience",
+        "label": "Ulazak u Kolekciju",
+        "description": "Transition moment when entering a collection world",
+        "trigger": {
+          "type": "route-change",
+          "conditions": {
+            "fromDifferentWorld": true,
+            "orDirectEntry": true
+          }
+        },
+        "sequence": [
+          {
+            "step": 1,
+            "type": "world-transition",
+            "duration": 800,
+            "config": {
+              "effect": "cinematic-crossfade",
+              "enteringWorld": "dynamic",
+              "sound": "world-shift",
+              "respectReducedMotion": true
+            }
+          },
+          {
+            "step": 2,
+            "type": "world-hero-reveal",
+            "duration": 1200,
+            "config": {
+              "stagger": ["headline", "subtitle", "signature-message", "journey-nav"],
+              "delay": 100,
+              "animation": "fade-up"
+            }
+          },
+          {
+            "step": 3,
+            "type": "journey-progress-hint",
+            "duration": 3000,
+            "config": {
+              "message": "Your journey: Discover → Story → Materials → Looks → Products → Membership",
+              "highlightCurrent": "discover"
+            }
+          }
+        ],
+        "frequency": "per-world-entry",
+        "cooldown": 300000,
+        "priority": "high",
+        "enabled": true
+      },
+      "welcome-back": {
+        "id": "welcome-back",
+        "name": "Welcome Back Experience",
+        "label": "Povratak",
+        "description": "Returning member recognition",
+        "trigger": {
+          "type": "returning-member",
+          "conditions": {
+            "memberSince": "lt:30days",
+            "hasActiveSession": true
+          }
+        },
+        "sequence": [
+          {
+            "step": 1,
+            "type": "personal-greeting",
+            "duration": 2500,
+            "config": {
+              "message": "Welcome back, {memberName}. Your {tier} journey continues.",
+              "animation": "fade-in",
+              "includeTierBadge": true
+            }
+          },
+          {
+            "step": 2,
+            "type": "progress-update",
+            "duration": 2000,
+            "config": {
+              "showTierProgress": true,
+              "showUpcomingReleases": true,
+              "cta": "Continue your journey"
+            }
+          }
+        ],
+        "frequency": "daily-max",
+        "cooldown": 86400000,
+        "priority": "medium",
+        "enabled": true
+      },
+      "tier-upgrade": {
+        "id": "tier-upgrade",
+        "name": "Tier Upgrade Celebration",
+        "label": "Nadogradnja Tier-a",
+        "description": "Celebration moment when member reaches new tier",
+        "trigger": {
+          "type": "tier-change",
+          "conditions": {
+            "newTierLevel": "gt:previousTierLevel"
+          }
+        },
+        "sequence": [
+          {
+            "step": 1,
+            "type": "celebration-burst",
+            "duration": 2000,
+            "config": {
+              "effect": "elegant-particles",
+              "color": "tier-color",
+              "sound": "tier-upgrade-chime",
+              "respectReducedMotion": true
+            }
+          },
+          {
+            "step": 2,
+            "type": "tier-reveal",
+            "duration": 3000,
+            "config": {
+              "newTier": "dynamic",
+              "message": "Congratulations. You are now {tierLabel}.",
+              "animation": "scale-reveal",
+              "showNewBenefits": true
+            }
+          },
+          {
+            "step": 3,
+            "type": "unlock-preview",
+            "duration": 4000,
+            "config": {
+              "showUnlockedContent": ["exclusive-collections", "early-access", "private-preview"],
+              "cta": "Explore your new world"
+            }
+          }
+        ],
+        "frequency": "once-per-upgrade",
+        "cooldown": 0,
+        "priority": "critical",
+        "enabled": true
+      },
+      "private-client-welcome": {
+        "id": "private-client-welcome",
+        "name": "Private Client Welcome",
+        "label": "Dobrodošli Private Client",
+        "description": "Exclusive welcome for Private Client tier members",
+        "trigger": {
+          "type": "tier-entry",
+          "conditions": {
+            "tierId": "in:private-client,elite-client"
+          }
+        },
+        "sequence": [
+          {
+            "step": 1,
+            "type": "immersive-entry",
+            "duration": 2500,
+            "config": {
+              "effect": "cinematic-door-open",
+              "background": "private-atelier",
+              "sound": "atelier-ambience",
+              "respectReducedMotion": true
+            }
+          },
+          {
+            "step": 2,
+            "type": "personal-message",
+            "duration": 4000,
+            "config": {
+              "message": "Welcome to the inner sanctum, {memberName}. Your personal shopper awaits.",
+              "animation": "line-by-line",
+              "from": "Creative Director"
+            }
+          },
+          {
+            "step": 3,
+            "type": "concierge-introduction",
+            "duration": 3000,
+            "config": {
+              "conciergeName": "dynamic",
+              "message": "Allow me to introduce your dedicated concierge, {conciergeName}.",
+              "cta": "Contact Concierge"
+            }
+          }
+        ],
+        "frequency": "once-per-tier-entry",
+        "cooldown": 0,
+        "priority": "critical",
+        "enabled": true
+      },
+      "seasonal-launch": {
+        "id": "seasonal-launch",
+        "name": "Seasonal Collection Launch",
+        "label": "Sezonski Lanč",
+        "description": "Major moment for new season collection releases",
+        "trigger": {
+          "type": "scheduled",
+          "conditions": {
+            "launchDate": "now",
+            "collection": "new-season"
+          }
+        },
+        "sequence": [
+          {
+            "step": 1,
+            "type": "countdown-finale",
+            "duration": 10000,
+            "config": {
+              "countdownTimer": true,
+              "background": "launch-film",
+              "sound": "launch-ambience"
+            }
+          },
+          {
+            "step": 2,
+            "type": "collection-reveal",
+            "duration": 5000,
+            "config": {
+              "effect": "cinematic-unveil",
+              "collectionFilm": "dynamic",
+              "signatureMessage": "dynamic",
+              "animation": "layered-reveal"
+            }
+          },
+          {
+            "step": 3,
+            "type": "early-access-notice",
+            "duration": 4000,
+            "config": {
+              "message": "Private Client & Elite Client: Your early access begins now.",
+              "tierSpecific": true,
+              "cta": "Shop the Collection"
+            }
+          }
+        ],
+        "frequency": "per-season",
+        "cooldown": 0,
+        "priority": "high",
+        "enabled": true
+      },
+      "vip-release": {
+        "id": "vip-release",
+        "name": "VIP Release Experience",
+        "label": "VIP Izdanje",
+        "description": "Exclusive moment for limited edition / VIP product drops",
+        "trigger": {
+          "type": "product-release",
+          "conditions": {
+            "accessLevel": "in:black,private-client,elite-client",
+            "limitedEdition": true
+          }
+        },
+        "sequence": [
+          {
+            "step": 1,
+            "type": "exclusive-alert",
+            "duration": 2000,
+            "config": {
+              "effect": "subtle-glow",
+              "sound": "vip-notification",
+              "message": "An exclusive release awaits you."
+            }
+          },
+          {
+            "step": 2,
+            "type": "product-reveal",
+            "duration": 4000,
+            "config": {
+              "effect": "spotlight-reveal",
+              "product": "dynamic",
+              "editionNumber": "dynamic",
+              "certificatePreview": true
+            }
+          },
+          {
+            "step": 3,
+            "type": "allocation-confirmation",
+            "duration": 3000,
+            "config": {
+              "message": "Your allocation is secured. Edition {number} of {total}.",
+              "cta": "View Certificate"
+            }
+          }
+        ],
+        "frequency": "per-release",
+        "cooldown": 0,
+        "priority": "high",
+        "enabled": true
+      },
+      "collection-complete": {
+        "id": "collection-complete",
+        "name": "Journey Complete",
+        "label": "Završena Putovanja",
+        "description": "Moment when member completes a collection journey",
+        "trigger": {
+          "type": "journey-completion",
+          "conditions": {
+            "allStepsVisited": true,
+            "minTimeSpent": 120000
+          }
+        },
+        "sequence": [
+          {
+            "step": 1,
+            "type": "completion-acknowledgment",
+            "duration": 2500,
+            "config": {
+              "message": "You've experienced the full {worldName} journey.",
+              "animation": "elegant-checkmark",
+              "sound": "completion-chime"
+            }
+          },
+          {
+            "step": 2,
+            "type": "journey-summary",
+            "duration": 3000,
+            "config": {
+              "showTimeSpent": true,
+              "showChaptersRead": true,
+              "showLooksViewed": true,
+              "showProductsExplored": true
+            }
+          },
+          {
+            "step": 3,
+            "type": "next-suggestion",
+            "duration": 4000,
+            "config": {
+              "suggestWorld": "other-world",
+              "suggestLooks": true,
+              "cta": "Begin your {otherWorld} journey"
+            }
+          }
+        ],
+        "frequency": "once-per-journey-per-season",
+        "cooldown": 0,
+        "priority": "medium",
+        "enabled": true
+      }
+    },
+    "momentEngine": {
+      "enabled": true,
+      "maxConcurrent": 1,
+      "queueStrategy": "priority",
+      "respectDoNotDisturb": true,
+      "doNotDisturbHours": "22:00-08:00",
+      "analytics": true,
+      "abTesting": false
+    },
+    "soundArchitecture": {
+      "enabled": false,
+      "architectureReady": true,
+      "sounds": {
+        "welcome-chime": { "url": "/sounds/welcome-chime.mp3", "volume": 0.3, "format": "mp3" },
+        "world-shift": { "url": "/sounds/world-shift.mp3", "volume": 0.25, "format": "mp3" },
+        "tier-upgrade-chime": { "url": "/sounds/tier-upgrade.mp3", "volume": 0.4, "format": "mp3" },
+        "atelier-ambience": { "url": "/sounds/atelier-ambience.mp3", "volume": 0.15, "format": "mp3", "loop": true },
+        "launch-ambience": { "url": "/sounds/launch-ambience.mp3", "volume": 0.3, "format": "mp3" },
+        "vip-notification": { "url": "/sounds/vip-notification.mp3", "volume": 0.35, "format": "mp3" },
+        "completion-chime": { "url": "/sounds/completion-chime.mp3", "volume": 0.3, "format": "mp3" }
+      },
+      "userControls": {
+        "globalMute": true,
+        "perMomentMute": true,
+        "volumeSlider": true,
+        "respectSystemMute": true
+      }
+    }
+  }
+}

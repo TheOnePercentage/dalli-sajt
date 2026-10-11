@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2c3e50">
+    
+    <!-- Dynamic SEO Tags -->
+    <title>{{metaTitle}}</title>
+    <meta name="description" content="{{metaDescription}}">
+    <meta name="keywords" content="{{keywords}}">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{canonicalUrl}}">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{canonicalUrl}}">
+    <meta property="og:title" content="{{metaTitle}}">
+    <meta property="og:description" content="{{metaDescription}}">
+    <meta property="og:image" content="https://dalli.rs{{ogImage}}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="DALLI">
+    <meta property="og:locale" content="sr_RS">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{canonicalUrl}}">
+    <meta name="twitter:title" content="{{metaTitle}}">
+    <meta name="twitter:description" content="{{metaDescription}}">
+    <meta name="twitter:image" content="https://dalli.rs{{ogImage}}">
+    
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="sr" href="{{canonicalUrl}}">
+    <link rel="alternate" hreflang="sr-Latn" href="{{canonicalUrl}}">
+    <link rel="alternate" hreflang="sr-Cyrl" href="{{canonicalUrl}}">
+    <link rel="alternate" hreflang="x-default" href="{{canonicalUrl}}">
+    
+    <!-- Schema.org CollectionPage + ItemList + FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "CollectionPage",
+                "name": "{{title}}",
+                "description": "{{metaDescription}}",
+                "url": "{{canonicalUrl}}",
+                "mainEntity": {
+                    "@type": "ItemList",
+                    "numberOfItems": {{productCount}},
+                    "itemListElement": {{productListSchema}}
+                },
+                "breadcrumb": {
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Početna",
+                            "item": "https://dalli.rs/"
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "{{title}}",
+                            "item": "{{canonicalUrl}}"
+                        }
+                    ]
+                }
+            },
+            {{faqSchema}}
+        ]
+    }
+    </script>
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/manifest.json?v=20241215">
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg?v=20241215">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.svg?v=20241215">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://dalli.rs{{ogImage}}" as="image">
+</head>
+<body>
+    <header class="header" role="banner">
+        <div class="container">
+            <div class="logo">
+                <a href="/admin-login.html" class="admin-logo-link" aria-label="Administrator panel - Prijava" title="Prijava za administratore">
+                    <svg class="logo-icon" viewBox="0 0 100 100" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#2c3e50;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#1a252f;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="50" cy="50" r="50" fill="url(#logoGrad)"/>
+                        <text x="50" y="68" font-family="Arial, sans-serif" font-size="44" font-weight="bold" fill="#e74c3c" text-anchor="middle">📦</text>
+                    </svg>
+                </a>
+                <a href="/" aria-label="DALLI - Početna">
+                    <h1>DALLI</h1>
+                </a>
+                <span class="tagline">Muška i Ženska Garderoba</span>
+            </div>
+            <nav class="nav" role="navigation" aria-label="Glavna navigacija" itemscope itemtype="https://schema.org/SiteNavigationElement">
+                <a href="/" class="nav-link" itemprop="url"><span itemprop="name">Početna</span></a>
+                <a href="/casual/" class="nav-link" itemprop="url"><span itemprop="name">Svi Proizvodi</span></a>
+                <a href="/muska-garderoba.html" class="nav-link" itemprop="url"><span itemprop="name">Muška Garderoba</span></a>
+                <a href="/zenska-garderoba.html" class="nav-link" itemprop="url"><span itemprop="name">Ženska Garderoba</span></a>
+                <a href="/dukseri.html" class="nav-link" itemprop="url"><span itemprop="name">Duksevi</span></a>
+                <a href="/collections/" class="nav-link" itemprop="url"><span itemprop="name">Kolekcije</span></a>
+                <button class="nav-link theme-toggle" id="themeToggle" aria-label="Preklopi tamnu/svetlu temu" title="Tamna/Svetla tema">
+                    <span class="theme-icon" aria-hidden="true">🌙</span>
+                </button>
+                <a href="/cart.html" class="nav-link cart-link" aria-label="Korpa za kupovinu">
+                    Korpa
+                    <span class="cart-count" id="cartCount" aria-live="polite">0</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main" role="main">
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumb" aria-label="Breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+            <div class="container">
+                <ol class="breadcrumb-list">
+                    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <a href="/" itemprop="item" class="breadcrumb-link">
+                            <span itemprop="name">Početna</span>
+                        </a>
+                        <meta itemprop="position" content="1">
+                    </li>
+                    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <span class="breadcrumb-current" itemprop="name">{{title}}</span>
+                        <meta itemprop="position" content="2">
+                    </li>
+                </ol>
+            </div>
+        </nav>
+
+        <section class="category-hero">
+            <div class="container">
+                <h1>{{h1}}</h1>
+                <p class="category-intro">{{intro}}</p>
+                <div class="category-stats">
+                    {{categoryStats}}
+                </div>
+            </div>
+        </section>
+
+        <section class="subcategory-nav" aria-labelledby="subcat-title">
+            <div class="container">
+                <h2 id="subcat-title" class="section-title" style="display:none;">Podkategorije</h2>
+                <div class="subcategory-links">
+                    {{subcategoryLinks}}
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO Content - Long Form -->
+        <section class="seo-content" aria-labelledby="seo-title">
+            <div class="container">
+                <h2 id="seo-title" class="section-title" style="display: none;">{{h1}} - Detalji</h2>
+                <div class="content-grid">
+                    {{longContent}}
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Categories -->
+        <section class="related-categories" aria-labelledby="related-title">
+            <div class="container">
+                <h2 id="related-title" class="section-title">Srodne Kategorije</h2>
+                <div class="related-grid">
+                    {{relatedCategories}}
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="featured" aria-labelledby="featured-title">
+            <div class="container">
+                <h2 id="featured-title" class="section-title">{{title}}</h2>
+                <div class="product-grid" id="featuredProducts" role="list" aria-label="{{title}}">
+                    {{productCards}}
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="category-faq" aria-labelledby="faq-title" itemtype="https://schema.org/FAQPage" itemscope>
+            <div class="container">
+                <h2 id="faq-title" class="section-title">Često postavljana pitanja</h2>
+                <div class="faq-grid" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                    {{faqItems}}
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>DALLI</h3>
+                    <p>Vaša omiljena garderoba jednom klikom. Muška i ženska odela kvalitetne tkanine.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Kategorije</h3>
+                    <p><a href="/casual/men/">Muška</a></p>
+                    <p><a href="/casual/women/">Ženska</a></p>
+                    <p><a href="/dukseri.html">Duksevi (Hoodie)</a></p>
+                </div>
+                <div class="footer-col">
+                    <h3>Kontakt</h3>
+                    <p>📞 <a href="tel:+381111234567">011 123 4567</a></p>
+                    <p>✉️ <a href="mailto:info@dalli.rs">info@dalli.rs</a></p>
+                </div>
+                <div class="footer-col">
+                    <h3>Podrška</h3>
+                    <p><a href="/collections/">Kolekcije</a></p>
+                    <p><a href="/locations/">Store Locator</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DALLI. Sva prava zadržana.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

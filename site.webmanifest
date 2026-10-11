@@ -1,0 +1,50 @@
+{
+  "name": "DALLI Administration",
+  "short_name": "DALLI Admin",
+  "description": "DALLI Luxury Fashion E-commerce Administration Panel",
+  "start_url": "/admin-new/admin.html",
+  "display": "standalone",
+  "background_color": "#f8f7f4",
+  "theme_color": "#c9a86c",
+  "orientation": "portrait-primary",
+  "scope": "/admin-new/",
+  "icons": [
+    {
+      "src": "images/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard",
+      "description": "View dashboard overview",
+      "url": "/admin-new/admin.html#dashboard",
+      "icons": [{ "src": "images/favicon.svg", "sizes": "48x48" }]
+    },
+    {
+      "name": "Orders",
+      "short_name": "Orders",
+      "description": "Manage orders",
+      "url": "/admin-new/admin.html#orders",
+      "icons": [{ "src": "images/favicon.svg", "sizes": "48x48" }]
+    },
+    {
+      "name": "Products",
+      "short_name": "Products",
+      "description": "Manage products",
+      "url": "/admin-new/admin.html#products",
+      "icons": [{ "src": "images/favicon.svg", "sizes": "48x48" }]
+    }
+  ]
+}

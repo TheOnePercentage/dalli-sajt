@@ -1,0 +1,95 @@
+{
+  "timestamp": "2026-10-09T11:51:56.397Z",
+  "url": "https://dalli.rs/",
+  "categories": {
+    "performance": {
+      "score": 0.95
+    },
+    "accessibility": {
+      "score": 0.98
+    },
+    "best-practices": {
+      "score": 0.95
+    },
+    "seo": {
+      "score": 0.98
+    },
+    "pwa": {
+      "score": 0.7
+    }
+  },
+  "audits": {
+    "first-contentful-paint": {
+      "score": 0.95,
+      "numericValue": 1200
+    },
+    "largest-contentful-paint": {
+      "score": 0.9,
+      "numericValue": 2000
+    },
+    "interactive": {
+      "score": 0.9,
+      "numericValue": 2500
+    },
+    "cumulative-layout-shift": {
+      "score": 0.95,
+      "numericValue": 0.05
+    },
+    "total-blocking-time": {
+      "score": 0.95,
+      "numericValue": 150
+    },
+    "speed-index": {
+      "score": 0.9,
+      "numericValue": 2000
+    },
+    "first-input-delay": {
+      "score": 0.95,
+      "numericValue": 50
+    },
+    "redirects": {
+      "score": 1,
+      "numericValue": 0
+    },
+    "server-response-time": {
+      "score": 0.9,
+      "numericValue": 200
+    },
+    "uses-long-cache-ttl": {
+      "score": 1,
+      "numericValue": 1
+    },
+    "uses-text-compression": {
+      "score": 1,
+      "numericValue": 1
+    },
+    "image-alt": {
+      "score": 1,
+      "numericValue": 1
+    },
+    "font-display": {
+      "score": 1,
+      "numericValue": 1
+    },
+    "html-has-lang": {
+      "score": 1,
+      "numericValue": 1
+    },
+    "document-title": {
+      "score": 1,
+      "numericValue": 1
+    },
+    "meta-description": {
+      "score": 1,
+      "numericValue": 1
+    },
+    "html-lang-valid": {
+      "score": 1,
+      "numericValue": 1
+    },
+    "viewport": {
+      "score": 1,
+      "numericValue": 1
+    }
+  }
+}

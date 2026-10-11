@@ -1,0 +1,263 @@
+{
+  "SUPPORTED_CRYPTO_CURRENCIES": [
+    {
+      "id": "BTC",
+      "name": "Bitcoin",
+      "symbol": "₿",
+      "decimals": 8,
+      "network": "bitcoin",
+      "icon": "/images/crypto/btc.svg",
+      "enabled": true,
+      "minConfirmations": 1,
+      "estimatedTimeMinutes": 10
+    },
+    {
+      "id": "ETH",
+      "name": "Ethereum",
+      "symbol": "Ξ",
+      "decimals": 18,
+      "network": "ethereum",
+      "icon": "/images/crypto/eth.svg",
+      "enabled": true,
+      "minConfirmations": 12,
+      "estimatedTimeMinutes": 5
+    },
+    {
+      "id": "USDT",
+      "name": "Tether (USDT)",
+      "symbol": "$",
+      "decimals": 6,
+      "network": "ethereum",
+      "icon": "/images/crypto/usdt.svg",
+      "enabled": true,
+      "minConfirmations": 12,
+      "estimatedTimeMinutes": 5
+    },
+    {
+      "id": "USDC",
+      "name": "USD Coin (USDC)",
+      "symbol": "$",
+      "decimals": 6,
+      "network": "ethereum",
+      "icon": "/images/crypto/usdc.svg",
+      "enabled": true,
+      "minConfirmations": 12,
+      "estimatedTimeMinutes": 5
+    },
+    {
+      "id": "PI",
+      "name": "Pi Network",
+      "symbol": "π",
+      "decimals": 4,
+      "network": "pi",
+      "icon": "/images/crypto/pi.svg",
+      "enabled": true,
+      "minConfirmations": 1,
+      "estimatedTimeMinutes": 2
+    }
+  ],
+  "PAYMENT_METHODS": [
+    {
+      "id": "cod",
+      "name": "Plaćanje pri preuzimanju",
+      "type": "traditional",
+      "enabled": true,
+      "description": "Platite gotovinom ili karticom kuriru prilikom dostave. Bez dodatnih naknada.",
+      "icon": "cod",
+      "sortOrder": 1,
+      "discount": 0
+    },
+    {
+      "id": "bank-transfer",
+      "name": "Bankovni prenos",
+      "type": "traditional",
+      "enabled": true,
+      "description": "Plaćanje putem vaše banke. Porudžbina se obrađuje nakon potvrde uplate (1-2 radna dana).",
+      "icon": "bank-transfer",
+      "sortOrder": 2,
+      "discount": 0
+    },
+    {
+      "id": "card",
+      "name": "Kreditna / Debitna kartica",
+      "type": "traditional",
+      "enabled": true,
+      "description": "Visa, Mastercard, Maestro, Dina. Sigurna 3D Secure transakcija.",
+      "icon": "card",
+      "sortOrder": 3,
+      "discount": 0
+    },
+    {
+      "id": "crypto",
+      "name": "Kripto plaćanje",
+      "type": "crypto",
+      "enabled": true,
+      "description": "Bitcoin, Ethereum, USDT, USDC, Pi Network — 15% popust.",
+      "icon": "crypto",
+      "sortOrder": 4,
+      "discount": 0.15,
+      "currencies": [
+        "BTC",
+        "ETH",
+        "USDT",
+        "USDC",
+        "PI"
+      ],
+      "badge": "Uskoro",
+      "comingSoon": true
+    }
+  ],
+  "CRYPTO_PAYMENT_CONFIG": {
+    "enabled": true,
+    "discountRate": 0.15,
+    "discountLabel": "15% popust",
+    "supportedCurrencies": [
+      "BTC",
+      "ETH",
+      "USDT",
+      "USDC",
+      "PI"
+    ],
+    "provider": "internal",
+    "confirmationTimeoutMinutes": 30,
+    "confirmationTimeoutBufferMinutes": 5,
+    "minConfirmations": {
+      "BTC": 1,
+      "ETH": 12,
+      "USDT": 12,
+      "USDC": 12,
+      "PI": 1
+    },
+    "minAmountRSD": 1000,
+    "maxAmountRSD": 5000000,
+    "exchangeRate": {
+      "provider": "coingecko",
+      "updateIntervalMinutes": 5
+    },
+    "paymentExpirationMinutes": 30,
+    "maxRetries": 3,
+    "retryDelaySeconds": 10,
+    "discount": {
+      "enabled": true,
+      "rate": 0.15,
+      "label": "15% popust za kripto plaćanje",
+      "appliesTo": [
+        "subtotal"
+      ]
+    }
+  },
+  "CRYPTO_ORDER_SCHEMA": {
+    "paymentMethod": "crypto",
+    "cryptoDetails": {
+      "currency": "USDT",
+      "amountCrypto": 0,
+      "amountRSD": 0,
+      "exchangeRate": 110,
+      "exchangeRateProvider": "coingecko",
+      "exchangeRateTimestamp": null,
+      "walletAddress": null,
+      "qrCodeData": null,
+      "qrCodeImage": null,
+      "transactionId": null,
+      "confirmations": 0,
+      "requiredConfirmations": 12,
+      "status": "pending_payment",
+      "paidAt": null,
+      "confirmedAt": null,
+      "expiredAt": null,
+      "discountApplied": false,
+      "discountRate": 0.15,
+      "discountAmountRSD": 0,
+      "exchangeRateRSD": 110,
+      "retryCount": 0,
+      "lastRetryAt": null,
+      "webhookEvents": []
+    },
+    "paymentStatuses": {
+      "PENDING_PAYMENT": "pending_payment",
+      "CONFIRMING": "confirming",
+      "CONFIRMED": "confirmed",
+      "FAILED": "failed",
+      "EXPIRED": "expired",
+      "REFUNDED": "refunded"
+    }
+  },
+  "PAYMENT_METHOD_TYPES": {
+    "TRADITIONAL": "traditional",
+    "CRYPTO": "crypto"
+  },
+  "CRYPTO_ORDER_STATUS": {
+    "PENDING_PAYMENT": "pending_payment",
+    "CONFIRMING": "confirming",
+    "CONFIRMED": "confirmed",
+    "FAILED": "failed",
+    "EXPIRED": "expired",
+    "REFUNDED": "refunded"
+  },
+  "CRYPTO_PAYMENT_ERRORS": {
+    "INVALID_CURRENCY": {
+      "code": "INVALID_CURRENCY",
+      "message": "Nepodržana valuta"
+    },
+    "INVALID_AMOUNT": {
+      "code": "INVALID_AMOUNT",
+      "message": "Neispravan iznos"
+    },
+    "EXCHANGE_RATE_UNAVAILABLE": {
+      "code": "EXCHANGE_RATE_UNAVAILABLE",
+      "message": "Kurs nije dostupan, pokušajte ponovo"
+    },
+    "PAYMENT_EXPIRED": {
+      "code": "PAYMENT_EXPIRED",
+      "message": "Vreme za plaćanje je isteklo"
+    },
+    "PAYMENT_FAILED": {
+      "code": "PAYMENT_FAILED",
+      "message": "Plaćanje nije uspelo, pokušajte ponovo"
+    },
+    "INSUFFICIENT_CONFIRMATIONS": {
+      "code": "INSUFFICIENT_CONFIRMATIONS",
+      "message": "Nedovoljan broj potvrda"
+    },
+    "DUPLICATE_PAYMENT": {
+      "code": "DUPLICATE_PAYMENT",
+      "message": "Ovo plaćanje je već obrađeno"
+    },
+    "INSUFFICIENT_AMOUNT": {
+      "code": "AMOUNT_TOO_SMALL",
+      "message": "Iznos je premali za plaćanje"
+    },
+    "AMOUNT_TOO_LARGE": {
+      "code": "AMOUNT_TOO_LARGE",
+      "message": "Iznos premasuje dozvoljeni limit"
+    },
+    "ADDRESS_INVALID": {
+      "code": "ADDRESS_INVALID",
+      "message": "Neispravna adresa za plaćanje"
+    },
+    "NETWORK_ERROR": {
+      "code": "NETWORK_ERROR",
+      "message": "Mrežna greška, pokušajte ponovo"
+    },
+    "PROVIDER_UNAVAILABLE": {
+      "code": "PROVIDER_UNAVAILABLE",
+      "message": "Usluga trenutno nije dostupna"
+    },
+    "AMOUNT_TOO_SMALL": {
+      "code": "AMOUNT_TOO_SMALL",
+      "message": "Iznos je premali za plaćanje"
+    }
+  },
+  "ADMIN_CRYPTO_ORDER_FIELDS": [
+    "currency",
+    "amountCrypto",
+    "amountRSD",
+    "exchangeRate",
+    "walletAddress",
+    "transactionId",
+    "confirmations",
+    "requiredConfirmations",
+    "status",
+    "paidAt"
+  ]
+}

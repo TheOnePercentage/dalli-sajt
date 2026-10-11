@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://dalli.rs/images/apple-touch-icon.png</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/apple-touch-icon.png</image:loc>
+      <image:title>apple touch icon</image:title>
+      <image:caption>DALLI apple touch icon</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/categories/bestseller.jpg</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/categories/bestseller.jpg</image:loc>
+      <image:title>bestseller</image:title>
+      <image:caption>DALLI bestseller</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/categories/bestseller.webp</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/categories/bestseller.webp</image:loc>
+      <image:title>bestseller</image:title>
+      <image:caption>DALLI bestseller</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/categories/dukseri.jpg</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/categories/dukseri.jpg</image:loc>
+      <image:title>dukseri</image:title>
+      <image:caption>DALLI dukseri</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/categories/dukseri.webp</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/categories/dukseri.webp</image:loc>
+      <image:title>dukseri</image:title>
+      <image:caption>DALLI dukseri</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/categories/muska-garderoba.jpg</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/categories/muska-garderoba.jpg</image:loc>
+      <image:title>muska garderoba</image:title>
+      <image:caption>DALLI muska garderoba</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/categories/muska-garderoba.webp</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/categories/muska-garderoba.webp</image:loc>
+      <image:title>muska garderoba</image:title>
+      <image:caption>DALLI muska garderoba</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/categories/zenska-garderoba.jpg</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/categories/zenska-garderoba.jpg</image:loc>
+      <image:title>zenska garderoba</image:title>
+      <image:caption>DALLI zenska garderoba</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/categories/zenska-garderoba.webp</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/categories/zenska-garderoba.webp</image:loc>
+      <image:title>zenska garderoba</image:title>
+      <image:caption>DALLI zenska garderoba</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/hero/hero-desktop.jpg</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/hero/hero-desktop.jpg</image:loc>
+      <image:title>hero desktop</image:title>
+      <image:caption>DALLI hero desktop</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/hero/hero-desktop.webp</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/hero/hero-desktop.webp</image:loc>
+      <image:title>hero desktop</image:title>
+      <image:caption>DALLI hero desktop</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/hero/hero-mobile.jpg</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/hero/hero-mobile.jpg</image:loc>
+      <image:title>hero mobile</image:title>
+      <image:caption>DALLI hero mobile</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/hero/hero-mobile.webp</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/hero/hero-mobile.webp</image:loc>
+      <image:title>hero mobile</image:title>
+      <image:caption>DALLI hero mobile</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/icons/apple-touch-icon.png</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/icons/apple-touch-icon.png</image:loc>
+      <image:title>apple touch icon</image:title>
+      <image:caption>DALLI apple touch icon</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/icons/cart-shortcut.png</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/icons/cart-shortcut.png</image:loc>
+      <image:title>cart shortcut</image:title>
+      <image:caption>DALLI cart shortcut</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/icons/favicon-16.png</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/icons/favicon-16.png</image:loc>
+      <image:title>favicon 16</image:title>
+      <image:caption>DALLI favicon 16</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/icons/favicon-192.png</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/icons/favicon-192.png</image:loc>
+      <image:title>favicon 192</image:title>
+      <image:caption>DALLI favicon 192</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/icons/favicon-32.png</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/icons/favicon-32.png</image:loc>
+      <image:title>favicon 32</image:title>
+      <image:caption>DALLI favicon 32</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/icons/favicon-512.png</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/icons/favicon-512.png</image:loc>
+      <image:title>favicon 512</image:title>
+      <image:caption>DALLI favicon 512</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/icons/muska-shortcut.png</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/icons/muska-shortcut.png</image:loc>
+      <image:title>muska shortcut</image:title>
+      <image:caption>DALLI muska shortcut</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/icons/zenska-shortcut.png</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/icons/zenska-shortcut.png</image:loc>
+      <image:title>zenska shortcut</image:title>
+      <image:caption>DALLI zenska shortcut</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/logo1.jpg</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/logo1.jpg</image:loc>
+      <image:title>logo1</image:title>
+      <image:caption>DALLI logo1</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/logo2.jpg</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/logo2.jpg</image:loc>
+      <image:title>logo2</image:title>
+      <image:caption>DALLI logo2</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/logo3.jpg</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/logo3.jpg</image:loc>
+      <image:title>logo3</image:title>
+      <image:caption>DALLI logo3</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/logos/apple-touch-icon.webp</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/logos/apple-touch-icon.webp</image:loc>
+      <image:title>apple touch icon</image:title>
+      <image:caption>DALLI apple touch icon</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/logos/favicon-16.webp</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/logos/favicon-16.webp</image:loc>
+      <image:title>favicon 16</image:title>
+      <image:caption>DALLI favicon 16</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/logos/favicon-192.webp</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/logos/favicon-192.webp</image:loc>
+      <image:title>favicon 192</image:title>
+      <image:caption>DALLI favicon 192</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/logos/favicon-32.webp</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/logos/favicon-32.webp</image:loc>
+      <image:title>favicon 32</image:title>
+      <image:caption>DALLI favicon 32</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/logos/favicon-48.webp</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/logos/favicon-48.webp</image:loc>
+      <image:title>favicon 48</image:title>
+      <image:caption>DALLI favicon 48</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/logos/favicon-512.webp</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/logos/favicon-512.webp</image:loc>
+      <image:title>favicon 512</image:title>
+      <image:caption>DALLI favicon 512</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/logos/logo1-footer.webp</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/logos/logo1-footer.webp</image:loc>
+      <image:title>logo1 footer</image:title>
+      <image:caption>DALLI logo1 footer</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/logos/logo1-master@1x.webp</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/logos/logo1-master@1x.webp</image:loc>
+      <image:title>logo1 master@1x</image:title>
+      <image:caption>DALLI logo1 master@1x</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/logos/logo1-master@2x.webp</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/logos/logo1-master@2x.webp</image:loc>
+      <image:title>logo1 master@2x</image:title>
+      <image:caption>DALLI logo1 master@2x</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/logos/logo1-mobile@1x.webp</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/logos/logo1-mobile@1x.webp</image:loc>
+      <image:title>logo1 mobile@1x</image:title>
+      <image:caption>DALLI logo1 mobile@1x</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/logos/logo1-mobile@2x.webp</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/logos/logo1-mobile@2x.webp</image:loc>
+      <image:title>logo1 mobile@2x</image:title>
+      <image:caption>DALLI logo1 mobile@2x</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/logos/logo2-dark@1x.webp</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/logos/logo2-dark@1x.webp</image:loc>
+      <image:title>logo2 dark@1x</image:title>
+      <image:caption>DALLI logo2 dark@1x</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/logos/logo2-dark@2x.webp</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/logos/logo2-dark@2x.webp</image:loc>
+      <image:title>logo2 dark@2x</image:title>
+      <image:caption>DALLI logo2 dark@2x</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/logos/logo3-wordmark-tablet.webp</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/logos/logo3-wordmark-tablet.webp</image:loc>
+      <image:title>logo3 wordmark tablet</image:title>
+      <image:caption>DALLI logo3 wordmark tablet</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/logos/logo3-wordmark@1x.webp</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/logos/logo3-wordmark@1x.webp</image:loc>
+      <image:title>logo3 wordmark@1x</image:title>
+      <image:caption>DALLI logo3 wordmark@1x</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/logos/logo3-wordmark@2x.webp</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/logos/logo3-wordmark@2x.webp</image:loc>
+      <image:title>logo3 wordmark@2x</image:title>
+      <image:caption>DALLI logo3 wordmark@2x</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/og/og-home-mobile.jpg</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/og/og-home-mobile.jpg</image:loc>
+      <image:title>og home mobile</image:title>
+      <image:caption>DALLI og home mobile</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dalli.rs/images/photo_2026-09-1111-27-32.jpg</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://dalli.rs/images/photo_2026-09-1111-27-32.jpg</image:loc>
+      <image:title>photo 2026 09 1111 27 32</image:title>
+      <image:caption>DALLI photo 2026 09 1111 27 32</image:caption>
+    </image:image>
+  </url>
+</urlset>

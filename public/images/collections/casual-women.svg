@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="CASUAL WOMEN">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F8EEF1"/>
+      <stop offset="100%" stop-color="#E9D3DA"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <circle cx="624" cy="168" r="204" fill="#9A5B6E" opacity="0.10"/>
+  <circle cx="128" cy="492" r="132" fill="#9A5B6E" opacity="0.08"/>
+  <line x1="64" y1="84" x2="160" y2="84" stroke="#9A5B6E" stroke-width="3"/>
+  <text x="64" y="300" font-family="Georgia, 'Times New Roman', serif" font-size="66" font-weight="700" fill="#3A1F29" letter-spacing="1">CASUAL WOMEN</text>
+  <text x="64" y="360" font-family="Helvetica, Arial, sans-serif" font-size="22" fill="#9A5B6E" letter-spacing="3">ŽENSKA CASUAL GARDEROBA</text>
+  <text x="64" y="540" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="800" fill="#3A1F29" letter-spacing="6">DALLI</text>
+</svg>

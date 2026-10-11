@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, follow">
+    <title>Podešavanja - DALLI</title>
+    <link rel="canonical" href="https://dalli.rs/settings.html">
+    <link rel="alternate" hreflang="sr" href="https://dalli.rs/settings.html">
+    <link rel="alternate" hreflang="sr-Latn" href="https://dalli.rs/settings.html">
+    <link rel="alternate" hreflang="sr-Cyrl" href="https://dalli.rs/settings.html">
+    <link rel="alternate" hreflang="en" href="https://dalli.rs/settings.html">
+    <link rel="alternate" hreflang="x-default" href="https://dalli.rs/settings.html">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/critical.css">
+  <script src="/js/i18n/i18n.js"></script>
+</head>
+<body>
+    <header class="header" role="banner">
+        <div class="container header__inner">
+            <div class="header__logo">
+                <a href="/" class="header__logo-link" aria-label="DALLI - Početna" data-i18n="common.home">
+                    <logo-component variant="master" size="md" aria-label="DALLI Home" class="logo"></logo-component>
+                </a>
+            </div>
+            <nav class="header__nav" role="navigation" aria-label="Glavna navigacija">
+                <a href="/" class="header__nav-link" data-i18n="common.home">Početna</a>
+                <a href="/proizvodi.html" class="header__nav-link" data-i18n="common.products">Svi Proizvodi</a>
+                <a href="/muska-garderoba.html" class="header__nav-link" data-i18n="categories.men.title">Muška Garderoba</a>
+                <a href="/zenska-garderoba.html" class="header__nav-link" data-i18n="categories.women.title">Ženska Garderoba</a>
+                <a href="/dukseri.html" class="header__nav-link" data-i18n="categories.hoodies.title">Duksevi</a>
+            </nav>
+            <div class="header__actions">
+                <button class="header__btn header__cart header__btn" aria-label="Korpa za kupovinu" data-i18n="common.cart">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                </button>
+                <button class="header__menu-btn header__btn" aria-label="Otvorite meni" data-i18n="common.menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container" style="padding: var(--space-12) var(--section-padding-x); max-width: 800px;">
+        <h1 style="font-family: var(--font-display); font-size: var(--text-h2); font-weight: var(--fw-light); margin-bottom: var(--space-8);">Podešavanja</h1>
+
+        <!-- Tab Navigation -->
+        <div class="section-header__tabs" role="tablist" style="display: flex; gap: var(--space-2); margin-bottom: var(--space-8); flex-wrap: wrap;">
+            <button class="tab-btn active" role="tab" aria-selected="true" data-tab="addresses" style="padding: var(--space-2) var(--space-4); font-size: var(--fs-sm); font-weight: var(--fw-medium); color: var(--color-primary); background: var(--color-primary-light); border: none; border-radius: var(--radius-btn); white-space: nowrap;">Adrese</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="sizes" style="padding: var(--space-2) var(--space-4); font-size: var(--fs-sm); font-weight: var(--fw-medium); color: var(--color-text-secondary); background: transparent; border: none; border-radius: var(--radius-btn); white-space: nowrap;">Veličine</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="preferences" style="padding: var(--space-2) var(--space-4); font-size: var(--fs-sm); font-weight: var(--fw-medium); color: var(--color-text-secondary); background: transparent; border: none; border-radius: var(--radius-btn); white-space: nowrap;">Preference</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="notifications" style="padding: var(--space-2) var(--space-4); font-size: var(--fs-sm); font-weight: var(--fw-medium); color: var(--color-text-secondary); background: transparent; border: none; border-radius: var(--radius-btn); white-space: nowrap;">Obaveštenja</button>
+        </div>
+
+        <!-- Tab Panels -->
+        <div class="tab-panels">
+
+            <!-- Addresses Tab -->
+            <div class="tab-panel active" id="tab-addresses" role="tabpanel" style="display: block;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-6); flex-wrap: wrap; gap: var(--space-4);">
+                    <h2 style="font-family: var(--font-display); font-size: var(--text-h3); font-weight: var(--fw-light);">Sačuvane adrese</h2>
+                    <button class="btn btn-primary" id="addAddressBtn" data-action="add-address" style="font-size: var(--fs-sm);">Dodaj adresu</button>
+                </div>
+
+                <div id="addressesList" style="display: flex; flex-direction: column; gap: var(--space-4);">
+                    <!-- Addresses rendered here -->
+                </div>
+
+                <div id="addressesEmpty" class="hidden" style="text-align: center; padding: var(--space-12); color: var(--color-text-secondary);">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin-bottom: var(--space-4); opacity: 0.5;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <h3 style="font-family: var(--font-display); font-size: var(--text-lg); font-weight: var(--fw-light); margin-bottom: var(--space-2);">Nema sačuvanih adresa</h3>
+                    <p style="margin-bottom: var(--space-6); max-width: 400px; margin-left: auto; margin-right: auto;">Dodajte adrese za bržu naručivanje.</p>
+                    <button class="btn btn-primary" data-action="add-address">Dodaj prvu adresu</button>
+                </div>
+            </div>
+
+            <!-- Sizes Tab -->
+            <div class="tab-panel hidden" id="tab-sizes" role="tabpanel" style="display: none;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-6); flex-wrap: wrap; gap: var(--space-4);">
+                    <h2 style="font-family: var(--font-display); font-size: var(--text-h3); font-weight: var(--fw-light);">Sačuvane veličine</h2>
+                    <button class="btn btn-primary" id="addSizeBtn" data-action="add-size" style="font-size: var(--fs-sm);">Dodaj veličinu</button>
+                </div>
+
+                <div id="sizesList" style="display: flex; flex-direction: column; gap: var(--space-4);">
+                    <!-- Sizes rendered here -->
+                </div>
+
+                <div id="sizesEmpty" class="hidden" style="text-align: center; padding: var(--space-12); color: var(--color-text-secondary);">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin-bottom: var(--space-4); opacity: 0.5;"><path d="M7 11V5a5 5 0 0 1 10 0v6"/><path d="M21 12H3"/></svg>
+                    <h3 style="font-family: var(--font-display); font-size: var(--text-lg); font-weight: var(--fw-light); margin-bottom: var(--space-2);">Nema sačuvanih veličina</h3>
+                    <p style="margin-bottom: var(--space-6); max-width: 400px; margin-left: auto; margin-right: auto;">Sačuvajte svoje veličine za brži izbor pri kupovini.</p>
+                    <button class="btn btn-primary" data-action="add-size">Dodaj veličinu</button>
+                </div>
+            </div>
+
+            <!-- Preferences Tab -->
+            <div class="tab-panel hidden" id="tab-preferences" role="tabpanel" style="display: none;">
+                <h2 style="font-family: var(--font-display); font-size: var(--text-h3); font-weight: var(--fw-light); margin-bottom: var(--space-6);">Preference</h2>
+
+                <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-card); padding: var(--space-6); margin-bottom: var(--space-6);">
+                    <h3 style="font-size: var(--fs-lg); font-weight: var(--fw-semibold); margin-bottom: var(--space-4);">Omiljene kategorije</h3>
+                    <div id="categoryPrefs" style="display: flex; flex-wrap: wrap; gap: var(--space-2);">
+                        <!-- Category checkboxes rendered here -->
+                    </div>
+                </div>
+
+                <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-card); padding: var(--space-6); margin-bottom: var(--space-6);">
+                    <h3 style="font-size: var(--fs-lg); font-weight: var(--fw-semibold); margin-bottom: var(--space-4);">Stilski preference</h3>
+                    <div id="stylePrefs" style="display: flex; flex-wrap: wrap; gap: var(--space-2);">
+                        <!-- Style checkboxes rendered here -->
+                    </div>
+                </div>
+
+                <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-card); padding: var(--space-6);">
+                    <h3 style="font-size: var(--fs-lg); font-weight: var(--fw-semibold); margin-bottom: var(--space-4);">Komunikacija</h3>
+                    <label style="display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3); background: var(--color-bg); border-radius: var(--radius-btn); cursor: pointer;">
+                        <input type="checkbox" id="prefNewsletter" checked style="width: 20px; height: 20px; accent-color: var(--color-primary);">
+                        <span>Newsletter - nove kolekcije i popusti</span>
+                    </label>
+                    <label style="display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3); background: var(--color-bg); border-radius: var(--radius-btn); cursor: pointer; margin-top: var(--space-2);">
+                        <input type="checkbox" id="prefSms" style="width: 20px; height: 20px; accent-color: var(--color-primary);">
+                        <span>SMS obaveštenja za porudžbine</span>
+                    </label>
+                </div>
+
+                <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-card); padding: var(--space-6); margin-top: var(--space-6);">
+                    <h3 style="font-size: var(--fs-lg); font-weight: var(--fw-semibold); margin-bottom: var(--space-4);">Personalizacija</h3>
+                    <div id="personalizationPrefs" style="display: flex; flex-direction: column; gap: var(--space-3);">
+                        <!-- Personalization settings rendered here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notifications Tab -->
+            <div class="tab-panel hidden" id="tab-notifications" role="tabpanel" style="display: none;">
+                <h2 style="font-family: var(--font-display); font-size: var(--text-h3); font-weight: var(--fw-light); margin-bottom: var(--space-6);">Obaveštenja</h2>
+
+                <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-card); padding: var(--space-6);">
+                    <div id="notificationPrefs" style="display: flex; flex-direction: column; gap: var(--space-4);">
+                        <!-- Notification toggles rendered here -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer style="margin-top: var(--space-16); padding: var(--space-8) 0; border-top: 1px solid var(--color-border); text-align: center; color: var(--color-text-tertiary); font-size: var(--text-sm);">
+        <p>&copy; 2024 DALLI. Sva prava zadržana.</p>
+    </footer>
+
+    <!-- Address Modal -->
+    <div class="modal hidden" id="addressModal" role="dialog" aria-modal="true" aria-labelledby="addressModalTitle" style="position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; padding: var(--space-4);">
+        <div class="modal__backdrop" data-action="close-modal" style="position: absolute; inset: 0; background: rgba(0,0,0,0.5);"></div>
+        <div class="modal__panel" style="background: var(--color-surface); border-radius: var(--radius-card); max-width: 500px; width: 100%; max-height: 90vh; overflow-y: auto; box-shadow: var(--shadow-xl);">
+            <header class="modal__header" style="display: flex; justify-content: space-between; align-items: center; padding: var(--space-5); border-bottom: 1px solid var(--color-divider);">
+                <h3 id="addressModalTitle" style="font-family: var(--font-display); font-size: var(--text-lg); font-weight: var(--fw-light);">Dodaj adresu</h3>
+                <button class="modal__close" data-action="close-modal" aria-label="Zatvori" style="background: none; border: none; font-size: var(--text-xl); color: var(--color-text-tertiary); cursor: pointer; padding: var(--space-1);">&times;</button>
+            </header>
+            <form id="addressForm" style="padding: var(--space-5);">
+                <input type="hidden" name="addressId" id="addressId">
+                <div style="display: grid; gap: var(--space-4);">
+                    <div>
+                        <label for="addressType" style="display: block; font-size: var(--fs-sm); font-weight: var(--fw-medium); margin-bottom: var(--space-1);">Tip adrese</label>
+                        <select name="addressType" id="addressType" required style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-btn); font: inherit; background: var(--color-bg);">
+                            <option value="shipping">Dostava</option>
+                            <option value="billing">Naplatna</option>
+                            <option value="both">Obe</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="addressName" style="display: block; font-size: var(--fs-sm); font-weight: var(--fw-medium); margin-bottom: var(--space-1);">Naziv (npr. "Kuća", "Posao")</label>
+                        <input type="text" name="addressName" id="addressName" required placeholder="Kuća" style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-btn); font: inherit;">
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
+                        <div>
+                            <label for="addressFirstName" style="display: block; font-size: var(--fs-sm); font-weight: var(--fw-medium); margin-bottom: var(--space-1);">Ime</label>
+                            <input type="text" name="addressFirstName" id="addressFirstName" required style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-btn); font: inherit;">
+                        </div>
+                        <div>
+                            <label for="addressLastName" style="display: block; font-size: var(--fs-sm); font-weight: var(--fw-medium); margin-bottom: var(--space-1);">Prezime</label>
+                            <input type="text" name="addressLastName" id="addressLastName" required style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-btn); font: inherit;">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="addressPhone" style="display: block; font-size: var(--fs-sm); font-weight: var(--fw-medium); margin-bottom: var(--space-1);">Telefon</label>
+                        <input type="tel" name="addressPhone" id="addressPhone" required style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-btn); font: inherit;">
+                    </div>
+                    <div>
+                        <label for="addressStreet" style="display: block; font-size: var(--fs-sm); font-weight: var(--fw-medium); margin-bottom: var(--space-1);">Ulica i broj</label>
+                        <input type="text" name="addressStreet" id="addressStreet" required style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-btn); font: inherit;">
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
+                        <div>
+                            <label for="addressCity" style="display: block; font-size: var(--fs-sm); font-weight: var(--fw-medium); margin-bottom: var(--space-1);">Grad</label>
+                            <input type="text" name="addressCity" id="addressCity" required style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-btn); font: inherit;">
+                        </div>
+                        <div>
+                            <label for="addressPostalCode" style="display: block; font-size: var(--fs-sm); font-weight: var(--fw-medium); margin-bottom: var(--space-1);">Poštanski broj</label>
+                            <input type="text" name="addressPostalCode" id="addressPostalCode" required style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-btn); font: inherit;">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="addressCountry" style="display: block; font-size: var(--fs-sm); font-weight: var(--fw-medium); margin-bottom: var(--space-1);">Država</label>
+                        <select name="addressCountry" id="addressCountry" required style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-btn); font: inherit; background: var(--color-bg);">
+                            <option value="RS">Srbija</option>
+                            <option value="BA">Bosna i Hercegovina</option>
+                            <option value="ME">Crna Gora</option>
+                            <option value="HR">Hrvatska</option>
+                            <option value="SI">Slovenija</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="addressInstructions" style="display: block; font-size: var(--fs-sm); font-weight: var(--fw-medium); margin-bottom: var(--space-1);">Napomene za dostavu (opciono)</label>
+                        <textarea name="addressInstructions" id="addressInstructions" rows="2" style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-btn); font: inherit; resize: vertical;"></textarea>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: var(--space-3);">
+                        <input type="checkbox" name="addressDefault" id="addressDefault" style="width: 20px; height: 20px; accent-color: var(--color-primary);">
+                        <label for="addressDefault" style="font-size: var(--fs-sm); color: var(--color-text-secondary);">Postavi kao podrazumevanu</label>
+                    </div>
+                </div>
+                <div class="modal__footer" style="display: flex; justify-content: flex-end; gap: var(--space-3); padding: var(--space-5); border-top: 1px solid var(--color-divider);">
+                    <button type="button" class="btn btn-secondary" data-action="close-modal">Otkaži</button>
+                    <button type="submit" class="btn btn-primary">Sačuvaj</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Size Modal -->
+    <div class="modal hidden" id="sizeModal" role="dialog" aria-modal="true" aria-labelledby="sizeModalTitle" style="position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; padding: var(--space-4);">
+        <div class="modal__backdrop" data-action="close-modal" style="position: absolute; inset: 0; background: rgba(0,0,0,0.5);"></div>
+        <div class="modal__panel" style="background: var(--color-surface); border-radius: var(--radius-card); max-width: 400px; width: 100%; box-shadow: var(--shadow-xl);">
+            <header class="modal__header" style="display: flex; justify-content: space-between; align-items: center; padding: var(--space-5); border-bottom: 1px solid var(--color-divider);">
+                <h3 id="sizeModalTitle" style="font-family: var(--font-display); font-size: var(--text-lg); font-weight: var(--fw-light);">Dodaj veličinu</h3>
+                <button class="modal__close" data-action="close-modal" aria-label="Zatvori" style="background: none; border: none; font-size: var(--text-xl); color: var(--color-text-tertiary); cursor: pointer; padding: var(--space-1);">&times;</button>
+            </header>
+            <form id="sizeForm" style="padding: var(--space-5);">
+                <input type="hidden" name="sizeCategory" id="sizeCategory">
+                <div style="display: grid; gap: var(--space-4);">
+                    <div>
+                        <label for="sizeCategorySelect" style="display: block; font-size: var(--fs-sm); font-weight: var(--fw-medium); margin-bottom: var(--space-1);">Kategorija</label>
+                        <select name="sizeCategorySelect" id="sizeCategorySelect" required style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-btn); font: inherit; background: var(--color-bg);">
+                            <option value="tops">Majice / Košulje / Trenerke (gornji deo)</option>
+                            <option value="bottoms">Pantalone / Šorts (donji deo)</option>
+                            <option value="outerwear">Jakne / Duks (spoljašnji deo)</option>
+                            <option value="shoes">Obuća</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="sizeValue" style="display: block; font-size: var(--fs-sm); font-weight: var(--fw-medium); margin-bottom: var(--space-1);">Veličina</label>
+                        <input type="text" name="sizeValue" id="sizeValue" required placeholder="npr. M, 32, 42, L/XL" style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-btn); font: inherit;">
+                    </div>
+                    <div>
+                        <label for="sizeFit" style="display: block; font-size: var(--fs-sm); font-weight: var(--fw-medium); margin-bottom: var(--space-1);">Preferencija fita</label>
+                        <select name="sizeFit" id="sizeFit" style="width: 100%; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-btn); font: inherit; background: var(--color-bg);">
+                            <option value="regular">Regular (standardan)</option>
+                            <option value="slim">Slim (uži)</option>
+                            <option value="oversized">Oversized (opušten)</option>
+                        </select>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: var(--space-3);">
+                        <input type="checkbox" name="sizeDefault" id="sizeDefault" style="width: 20px; height: 20px; accent-color: var(--color-primary);">
+                        <label for="sizeDefault" style="font-size: var(--fs-sm); color: var(--color-text-secondary);">Podrazumevana za ovu kategoriju</label>
+                    </div>
+                </div>
+                <div class="modal__footer" style="display: flex; justify-content: flex-end; gap: var(--space-3); padding: var(--space-5); border-top: 1px solid var(--color-divider);">
+                    <button type="button" class="btn btn-secondary" data-action="close-modal">Otkaži</button>
+                    <button type="submit" class="btn btn-primary">Sačuvaj</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="/js/app.jsx" defer></script>
+</body>
+</html>

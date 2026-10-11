@@ -1,0 +1,40 @@
+{
+  "version": "1.0",
+  "updatedAt": "2026-10-10T00:00:00Z",
+  "manualRevenueEnabled": true,
+  "manualExpensesEnabled": true,
+  "budgetPlannerEnabled": true,
+  "monthlyClosingEnabled": true,
+  "exportEnabled": true,
+  "revenueChannels": [
+    "website",
+    "instagram",
+    "facebook",
+    "whatsapp",
+    "physical_store",
+    "wholesale",
+    "b2b",
+    "event",
+    "marketplace",
+    "other"
+  ],
+  "expenseCategories": [
+    "inventory_purchase",
+    "supplier_invoice",
+    "packaging",
+    "marketing",
+    "advertising",
+    "photography",
+    "video_production",
+    "warehouse",
+    "store_rent",
+    "utilities",
+    "accounting",
+    "legal",
+    "staff",
+    "travel",
+    "equipment",
+    "software",
+    "other"
+  ]
+}

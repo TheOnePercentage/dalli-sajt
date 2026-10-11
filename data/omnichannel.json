@@ -1,0 +1,9 @@
+{
+  "version": "1.0",
+  "updatedAt": "2026-10-10T00:00:00Z",
+  "omnichannelEngine": true,
+  "storeIntegration": true,
+  "socialCommerce": true,
+  "warehouseNetwork": true,
+  "customer360": true
+}

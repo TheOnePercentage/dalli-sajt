@@ -1,0 +1,7 @@
+<script type="module" src="widgets/index.js"></script>
+<script type="module">
+  import "./js/admin/compat.js";
+  import "./js/admin/index.js";
+</script>
+</body>
+</html>

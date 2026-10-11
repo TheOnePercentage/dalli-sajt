@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <rect width="100%" height="100%" fill="#f0f0f0"/>
+  <path d="M80,100 Q80,60 130,60 L270,60 Q320,60 320,100 L320,300 Q320,340 270,340 L130,340 Q80,340 80,300 Z" fill="#222" stroke="#111" stroke-width="2"/>
+  <path d="M100,100 Q100,70 130,70 Q160,70 160,100" fill="#333" stroke="#444"/>
+  <path d="M240,100 Q270,70 270,100 Q270,70 300,70" fill="#333" stroke="#444"/>
+  <rect x="130" y="140" width="140" height="40" rx="5" fill="#333" stroke="#444"/>
+  <path d="M150,220 Q150,250 180,250 L220,250 Q250,250 250,220" fill="#333" stroke="#444"/>
+  <text x="50%" y="360" font-family="system-ui, sans-serif" font-size="14" fill="#555" text-anchor="middle">Muški Duks</text>
+</svg>

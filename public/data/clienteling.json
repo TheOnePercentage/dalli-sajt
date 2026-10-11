@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "enabled": true,
+  "features": {
+    "personalRecommendations": true,
+    "handpickedCollections": true,
+    "privateReleases": true,
+    "specialAccess": true,
+    "vipCommunication": true
+  }
+}

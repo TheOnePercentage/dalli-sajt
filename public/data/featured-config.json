@@ -1,0 +1,59 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2025-01-15T10:00:00Z",
+  "tabs": [
+    {
+      "id": "favorites",
+      "label": "Naši Favoriti",
+      "description": "Izabrali smo najbolje za vas — kvalitet koja se oseti",
+      "products": [
+        { "id": 5, "variant": 0, "position": 1 },
+        { "id": 6, "variant": 0, "position": 2 },
+        { "id": 3, "variant": 0, "position": 3 },
+        { "id": 4, "variant": 0, "position": 4 },
+        { "id": 1, "variant": 0, "position": 5 },
+        { "id": 2, "variant": 0, "position": 6 },
+        { "id": 7, "variant": 0, "position": 7 },
+        { "id": 8, "variant": 0, "position": 8 }
+      ]
+    },
+    {
+      "id": "bestsellers",
+      "label": "Bestsellery",
+      "description": "Najprodavaniji proizvodi koje kupci vole",
+      "products": [
+        { "id": 5, "variant": 0, "position": 1 },
+        { "id": 6, "variant": 0, "position": 2 },
+        { "id": 3, "variant": 0, "position": 3 },
+        { "id": 4, "variant": 0, "position": 4 },
+        { "id": 1, "variant": 0, "position": 5 },
+        { "id": 2, "variant": 0, "position": 6 },
+        { "id": 7, "variant": 0, "position": 7 },
+        { "id": 8, "variant": 0, "position": 8 }
+      ]
+    },
+    {
+      "id": "new",
+      "label": "Novo u Ponudi",
+      "description": "Najnoviji dodaci u našoj kolekciji",
+      "products": [
+        { "id": 8, "variant": 0, "position": 1 },
+        { "id": 7, "variant": 0, "position": 2 },
+        { "id": 6, "variant": 0, "position": 3 },
+        { "id": 5, "variant": 0, "position": 4 },
+        { "id": 4, "variant": 0, "position": 5 },
+        { "id": 3, "variant": 0, "position": 6 },
+        { "id": 2, "variant": 0, "position": 7 },
+        { "id": 1, "variant": 0, "position": 8 }
+      ]
+    }
+  ],
+  "settings": {
+    "cardsPerPage": 8,
+    "staggerDelay": 50,
+    "parallaxSpeed": 0.15,
+    "viewThreshold": 0.5,
+    "hoverDwellTime": 300,
+    "priceAnimationDuration": 800
+  }
+}

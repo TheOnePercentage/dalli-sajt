@@ -1,0 +1,265 @@
+name: CD Pipeline
+
+on:
+  workflow_run:
+    workflows: ['CI Pipeline']
+    types: [completed]
+    branches: [main, develop, 'release/**']
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Deployment environment'
+        type: choice
+        options: [staging, production]
+        required: true
+      version:
+        description: 'Version tag (optional)'
+        type: string
+        required: false
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+  NODE_VERSION: '20.x'
+
+jobs:
+  prepare-release:
+    name: Prepare Release
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    if: github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch'
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      tag: ${{ steps.version.outputs.tag }}
+      changelog: ${{ steps.changelog.outputs.changelog }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Determine version
+        id: version
+        run: |
+          if [ "${{ github.event.inputs.version }}" != "" ]; then
+            VERSION="${{ github.event.inputs.version }}"
+          elif [ "${{ github.ref_name }}" = "main" ]; then
+            VERSION=$(npm version patch --no-git-tag-version)
+          elif [ "${{ github.ref_name }}" = "develop" ]; then
+            VERSION=$(npm version prerelease --preid=beta --no-git-tag-version)
+          else
+            VERSION=$(npm version prerelease --preid=alpha --no-git-tag-version)
+          fi
+          echo "version=${VERSION}" >> $GITHUB_OUTPUT
+          echo "tag=v${VERSION}" >> $GITHUB_OUTPUT
+
+      - name: Generate changelog
+        id: changelog
+        run: |
+          npx conventional-changelog-cli -p angular -i CHANGELOG.md -s -r 0
+          CHANGELOG=$(cat CHANGELOG.md | head -n 50)
+          echo "changelog<<EOF" >> $GITHUB_OUTPUT
+          echo "${CHANGELOG}" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Create git tag
+        if: github.event_name != 'workflow_dispatch'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git tag -a "${{ steps.version.outputs.tag }}" -m "Release ${{ steps.version.outputs.tag }}"
+          git push origin "${{ steps.version.outputs.tag }}"
+
+      - name: Create GitHub Release
+        if: github.event_name != 'workflow_dispatch'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: Release ${{ steps.version.outputs.tag }}
+          body: ${{ steps.changelog.outputs.changelog }}
+          draft: false
+          prerelease: ${{ contains(steps.version.outputs.version, 'beta') || contains(steps.version.outputs.version, 'alpha') }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  build-and-push:
+    name: Build & Push Docker Image
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    needs: prepare-release
+    if: github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: dist-${{ github.sha }}
+          path: dist/
+        if: github.event_name != 'workflow_dispatch'
+
+      - name: Build application (if needed)
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          npm ci --prefer-offline --no-audit --no-fund
+          npm run build
+        env:
+          VITE_API_URL: ${{ secrets.VITE_API_URL }}
+          VITE_WS_URL: ${{ secrets.VITE_WS_URL }}
+          VITE_SENTRY_DSN: ${{ secrets.VITE_SENTRY_DSN }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata for Docker
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=sha,prefix=
+            type=raw,value=latest,enable={{is_default_branch}}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          build-args: |
+            NODE_VERSION=${{ env.NODE_VERSION }}
+            VITE_API_URL=${{ secrets.VITE_API_URL }}
+            VITE_WS_URL=${{ secrets.VITE_WS_URL }}
+            VITE_SENTRY_DSN=${{ secrets.VITE_SENTRY_DSN }}
+            VITE_GA_MEASUREMENT_ID=${{ secrets.VITE_GA_MEASUREMENT_ID }}
+
+      - name: Sign image (cosign)
+        if: secrets.COSIGN_PRIVATE_KEY != ''
+        run: |
+          echo "${{ secrets.COSIGN_PRIVATE_KEY }}" | cosign sign --key env://COSIGN_PRIVATE_KEY ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ needs.prepare-release.outputs.tag }}
+
+  deploy-staging:
+    name: Deploy to Staging
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: [prepare-release, build-and-push]
+    if: github.event.workflow_run.conclusion == 'success' && github.ref_name == 'develop' || github.event.inputs.environment == 'staging'
+    environment: staging
+    steps:
+      - name: Deploy to Kubernetes (Staging)
+        run: |
+          echo "Deploying to staging..."
+          # kubectl set image deployment/imperium-admin imperium-admin=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ needs.prepare-release.outputs.tag }} -n staging
+          # kubectl rollout status deployment/imperium-admin -n staging --timeout=300s
+
+      - name: Run smoke tests
+        run: |
+          echo "Running smoke tests against staging..."
+          # curl -f https://staging-admin.dalli.rs/health || exit 1
+
+      - name: Notify deployment
+        if: always()
+        run: |
+          if [ "${{ job.status }}" = "success" ]; then
+            echo "Staging deployment successful"
+          else
+            echo "Staging deployment failed"
+          fi
+
+  deploy-production:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    needs: [prepare-release, build-and-push]
+    if: github.event.workflow_run.conclusion == 'success' && github.ref_name == 'main' || github.event.inputs.environment == 'production'
+    environment: production
+    steps:
+      - name: Wait for approval
+        uses: trstringer/manual-approval@v1
+        with:
+          secret: ${{ github.token }}
+          approvers: release-managers
+          minimum-approvals: 1
+          issue-title: "Production Deployment Approval - ${{ needs.prepare-release.outputs.tag }}"
+          issue-body: |
+            Deploying version **${{ needs.prepare-release.outputs.tag }}** to production.
+            Changelog:
+            ${{ needs.prepare-release.outputs.changelog }}
+
+      - name: Deploy to Kubernetes (Production)
+        run: |
+          echo "Deploying to production..."
+          # kubectl set image deployment/imperium-admin imperium-admin=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ needs.prepare-release.outputs.tag }} -n production
+          # kubectl rollout status deployment/imperium-admin -n production --timeout=600s
+
+      - name: Run production smoke tests
+        run: |
+          echo "Running production smoke tests..."
+          # curl -f https://admin.dalli.rs/health || exit 1
+
+      - name: Update deployment status
+        if: always()
+        run: |
+          if [ "${{ job.status }}" = "success" ]; then
+            echo "Production deployment successful"
+          else
+            echo "Production deployment failed - initiating rollback"
+            # kubectl rollout undo deployment/imperium-admin -n production
+          fi
+
+  notify-release:
+    name: Notify Release
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: [deploy-staging, deploy-production]
+    if: always()
+    steps:
+      - name: Determine overall status
+        run: |
+          STAGING_STATUS="${{ needs.deploy-staging.result }}"
+          PROD_STATUS="${{ needs.deploy-production.result }}"
+          if [ "$STAGING_STATUS" = "success" ] || [ "$PROD_STATUS" = "success" ]; then
+            echo "OVERALL=success" >> $GITHUB_ENV
+          else
+            echo "OVERALL=failure" >> $GITHUB_ENV
+          fi
+
+      - name: Send release notification
+        if: secrets.SLACK_WEBHOOK_URL != ''
+        uses: slackapi/slack-github-action@v1.25.0
+        with:
+          payload: |
+            {
+              "text": "Release ${{ needs.prepare-release.outputs.tag }} ${{ env.OVERALL }}",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "*Release ${{ needs.prepare-release.outputs.tag }} ${{ env.OVERALL }}*\nStaging: ${{ needs.deploy-staging.result }}\nProduction: ${{ needs.deploy-production.result }}\nChangelog: ${{ needs.prepare-release.outputs.changelog }}"
+                  }
+                }
+              ]
+            }
+          webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
+          webhook-type: incoming-webhook

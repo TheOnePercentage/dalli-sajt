@@ -1,0 +1,349 @@
+{
+  "common": {
+    "home": "Inicio",
+    "shop": "Tienda",
+    "products": "Productos",
+    "categories": "Categorías",
+    "men": "Hombres",
+    "women": "Mujeres",
+    "hoodies": "Sudaderas",
+    "about": "Nosotros",
+    "contact": "Contacto",
+    "cart": "Carrito",
+    "checkout": "Pagar",
+    "account": "Mi cuenta",
+    "login": "Iniciar sesión",
+    "register": "Registrarse",
+    "logout": "Cerrar sesión",
+    "search": "Buscar",
+    "searchPlaceholder": "Buscar productos...",
+    "filter": "Filtrar",
+    "sort": "Ordenar",
+    "price": "Precio",
+    "sale": "Rebajas",
+    "new": "Nuevo",
+    "bestseller": "Más vendido",
+    "size": "Talla",
+    "color": "Color",
+    "quantity": "Cantidad",
+    "addToCart": "Añadir al carrito",
+    "buyNow": "Comprar ahora",
+    "outOfStock": "Agotado",
+    "inStock": "En stock",
+    "freeShipping": "Envío gratis",
+    "cryptoDiscount": "Descuento crypto",
+    "returnPolicy": "Política de devolución",
+    "warranty": "Garantía",
+    "newsletter": "Newsletter",
+    "subscribe": "Suscribirse",
+    "email": "Correo",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar contraseña",
+    "firstName": "Nombre",
+    "lastName": "Apellidos",
+    "phone": "Teléfono",
+    "address": "Dirección",
+    "city": "Ciudad",
+    "postalCode": "Código postal",
+    "country": "País",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "confirm": "Confirmar",
+    "yes": "Sí",
+    "no": "No",
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "warning": "Advertencia",
+    "info": "Info",
+    "close": "Cerrar",
+    "back": "Volver",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "page": "Página",
+    "of": "de",
+    "results": "resultados",
+    "noResults": "Sin resultados",
+    "viewAll": "Ver todo",
+    "viewDetails": "Ver detalles",
+    "quickView": "Vista rápida",
+    "compare": "Comparar",
+    "wishlist": "Lista de deseos",
+    "share": "Compartir",
+    "reviews": "Reseñas",
+    "writeReview": "Escribir reseña",
+    "rating": "Valoración",
+    "name": "Nombre",
+    "message": "Mensaje",
+    "send": "Enviar",
+    "submit": "Enviar",
+    "reset": "Restablecer",
+    "apply": "Aplicar",
+    "clear": "Limpiar",
+    "all": "Todos",
+    "none": "Ninguno",
+    "select": "Seleccionar",
+    "choose": "Elegir",
+    "options": "Opciones",
+    "settings": "Ajustes",
+    "privacy": "Privacidad",
+    "terms": "Términos de uso",
+    "cookies": "Cookies",
+    "accept": "Aceptar",
+    "reject": "Rechazar",
+    "preferences": "Preferencias",
+    "language": "Idioma",
+    "currency": "Moneda",
+    "orders": "Pedidos",
+    "theme": "Tema",
+    "notifications": "Notificaciones",
+    "menu": "Menú",
+    "admin": "Admin",
+    "profile": "Perfil",
+    "cryptoWallet": "Cartera Crypto"
+  },
+  "header": {
+    "logo": "DALLI",
+    "tagline": "Armario Online Premium",
+    "searchPlaceholder": "Buscar productos...",
+    "menu": "Menú",
+    "account": "Mi cuenta",
+    "orders": "Mis pedidos",
+    "wishlist": "Lista de deseos",
+    "settings": "Ajustes",
+    "logout": "Cerrar sesión",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "theme": "Tema",
+    "cart": "Carrito",
+    "notifications": "Notificaciones",
+    "profile": "Perfil",
+    "admin": "Panel de admin",
+    "login": "Iniciar sesión",
+    "cryptoWallet": "Cartera Crypto"
+  },
+  "hero": {
+    "title": "Calidad que Sientes. Por Años.",
+    "subtitle": "Cada pieza. Cada costura. Cada día.",
+    "supporting": "100% Algodón Orgánico. Hecho en Serbia. Dura Años.",
+    "badge": "Nueva Colección 2025",
+    "cta": "Descubre la Calidad",
+    "scrollDown": "Desplázate Hacia Abajo",
+    "trust": {
+      "delivery": "Entrega Rápida 1–3 Días",
+      "cod": "Pago contra Reembolso",
+      "returns": "30 Días para Devolución"
+    },
+    "features": {
+      "organic": "100% Algodón Orgánico",
+      "delivery": "Envío Gratis >50€",
+      "crypto": "15% Descuento Crypto",
+      "returns": "30 Días Devolución"
+    }
+  },
+  "features": {
+    "organic": {
+      "title": "100% Algodón Orgánico",
+      "desc": "Agricultura ecológica certificada, sin químicos"
+    },
+    "quality": {
+      "title": "Calidad Premium",
+      "desc": "Gramaje 180–320 g/m² para durabilidad"
+    },
+    "delivery": {
+      "title": "Envío rápido",
+      "desc": "Gratis en pedidos superiores a 50€"
+    },
+    "returns": {
+      "title": "Devolución fácil",
+      "desc": "30 días para cambio o reembolso"
+    },
+    "cod": {
+      "title": "Contra Reembolso",
+      "desc": "Compra sin riesgo - paga cuando llegue el paquete. Efectivo o tarjeta al mensajero."
+    }
+  },
+  "categories": {
+    "men": {
+      "title": "Armario Hombre",
+      "subtitle": "Camisetas, sudaderas, hoodies y más",
+      "cta": "Ver colección"
+    },
+    "women": {
+      "title": "Armario Mujer",
+      "subtitle": "Camisetas, sudaderas, hoodies y más",
+      "cta": "Ver colección"
+    },
+    "hoodies": {
+      "title": "Sudaderas y Hoodies",
+      "subtitle": "Cálidos y cómodos para cada día",
+      "cta": "Ver sudaderas",
+      "men": "Sudaderas Hombre",
+      "women": "Sudaderas Mujer"
+    }
+  },
+  "product": {
+    "selectSize": "Seleccionar talla",
+    "selectColor": "Seleccionar color",
+    "available": "Disponible",
+    "lowStock": "Pocas unidades",
+    "description": "Descripción",
+    "details": "Detalles",
+    "material": "Material",
+    "care": "Cuidado",
+    "shipping": "Envío",
+    "returns": "Devoluciones",
+    "reviews": "Reseñas",
+    "related": "Productos relacionados",
+    "addToCart": "Añadir al carrito",
+    "buyNow": "Comprar ahora",
+    "addedToCart": "Añadido al carrito",
+    "addedToWishlist": "Añadido a favoritos"
+  },
+  "cart": {
+    "title": "Carrito",
+    "empty": "Tu carrito está vacío",
+    "continueShopping": "Seguir comprando",
+    "summary": "Resumen del pedido",
+    "promoCode": "Código promo",
+    "promoPlaceholder": "Código promo",
+    "applyPromo": "Aplicar",
+    "checkoutBtn": "Finalizar compra",
+    "promoApplied": "Código promo aplicado",
+    "promoInvalid": "Código promo inválido"
+  },
+  "checkout": {
+    "title": "Finalizar Compra",
+    "steps": {
+      "data": "Información",
+      "shipping": "Envío",
+      "payment": "Pago",
+      "review": "Revisar"
+    },
+    "form": {
+      "firstName": "Nombre *",
+      "lastName": "Apellidos *",
+      "email": "Correo *",
+      "phone": "Teléfono *",
+      "address": "Dirección *",
+      "city": "Ciudad *",
+      "postalCode": "Código Postal *",
+      "paymentMethod": "Método de Pago *",
+      "cod": "Contra Reembolso",
+      "card": "Tarjeta",
+      "bankTransfer": "Transferencia Bancaria",
+      "notes": "Notas (Opcional)",
+      "placeOrder": "Realizar Pedido"
+    },
+    "summary": {
+      "title": "Resumen del Pedido",
+      "subtotal": "Artículos",
+      "shipping": "Envío",
+      "total": "Total",
+      "freeShipping": "Envío Gratis",
+      "placeOrder": "Realizar Pedido"
+    }
+  },
+  "account": {
+    "title": "Mi cuenta",
+    "profile": "Perfil",
+    "orders": "Pedidos",
+    "addresses": "Direcciones",
+    "wishlist": "Lista de deseos",
+    "settings": "Ajustes",
+    "security": "Seguridad",
+    "notifications": "Notificaciones",
+    "darkMode": "Modo oscuro",
+    "language": "Idioma",
+    "currency": "Moneda"
+  },
+  "footer": {
+    "company": "DALLI",
+    "description": "Armario online premium de algodón 100% orgánico.",
+    "navigation": "Navegación",
+    "shop": "Tienda",
+    "about": "Nosotros",
+    "contact": "Contacto",
+    "careers": "Empleo",
+    "press": "Prensa",
+    "help": "Ayuda",
+    "faq": "Preguntas frecuentes",
+    "shipping": "Envío",
+    "returns": "Devoluciones",
+    "warranty": "Garantía",
+    "sizeGuide": "Guía de tallas",
+    "legal": "Legal",
+    "privacy": "Privacidad",
+    "terms": "Términos de uso",
+    "cookies": "Cookies",
+    "gdpr": "RGPD",
+    "newsletter": "Suscríbete al newsletter",
+    "emailPlaceholder": "Tu email",
+    "subscribe": "Suscribirse",
+    "followUs": "Síguenos",
+    "copyright": "© 2024 DALLI. Todos los derechos reservados.",
+    "madeInSerbia": "Hecho en Serbia ❤️"
+  },
+  "cookieConsent": {
+    "title": "Tu privacidad importa",
+    "description": "Usamos cookies para mejorar tu experiencia, analítica y anuncios personalizados. Al aceptar, aceptas nuestra Política de privacidad y Política de cookies.",
+    "acceptAll": "Aceptar todo",
+    "rejectAll": "Rechazar todo",
+    "settings": "Configuración"
+  },
+  "meta": {
+    "homeTitle": "DALLI — Armario Online | Ropa Hombre y Mujer, Camisetas, Hoodies, Sudaderas",
+    "homeDescription": "DALLI: Armario online premium. 100% algodón orgánico, gramaje 180–320 g/m². Envío gratis >50€. Pago contra reembolso. 15% descuento crypto. 30 días devolución.",
+    "categoryTitle": "{name} | DALLI",
+    "categoryDescription": "Compra {name} al mejor precio. Envío rápido y calidad. 100% algodón orgánico.",
+    "productTitle": "{name} | DALLI",
+    "productDescription": "Compra {name} al mejor precio. Envío rápido y calidad. 100% algodón orgánico.",
+    "cartTitle": "Carrito | DALLI",
+    "checkoutTitle": "Pagar | DALLI",
+    "accountTitle": "Mi cuenta | DALLI",
+    "loginTitle": "Iniciar sesión | DALLI",
+    "registerTitle": "Registrarse | DALLI"
+  },
+  "seo": {
+    "title": "Por Qué DALLI para Sudaderas"
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes Sobre Sudaderas"
+  },
+  "about": {
+    "title": "Sobre DALLI",
+    "subtitle": "Tu Aliado Digital en Moda",
+    "mission": {
+      "title": "Nuestra Misión",
+      "text": "DALLI existe para hacer que encontrar las piezas perfectas para tu armario sea fácil y divertido. Combinamos telas de calidad, precios asequibles y compras seguras desde casa."
+    },
+    "values": {
+      "title": "Nuestros Valores",
+      "quality": {
+        "title": "Calidad",
+        "desc": "Algodón orgánico, 180g/m², atención al detalle"
+      },
+      "comfort": {
+        "title": "Comodidad",
+        "desc": "Para uso diario, todos los tipos de cuerpo"
+      },
+      "accessibility": {
+        "title": "Accesibilidad",
+        "desc": "Precios desde 11€, envío gratis"
+      }
+    },
+    "team": {
+      "title": "Equipo",
+      "admin": "Equipo Admin",
+      "contributors": "Colaboradores"
+    },
+    "contact": {
+      "title": "Contacto",
+      "phone": "+381 11 123 4567",
+      "email": "info@dalli.rs",
+      "address": "Belgrado, Serbia"
+    }
+  }
+}

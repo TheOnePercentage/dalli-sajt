@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DALLI - Vratio nam</title>
+    <style>
+        /* Client-specific CSS normalization */
+        @ohms-reset .ReadMsgBody { width: 100%; background-color: #f1f1f1; }
+        @ohms-reset body { margin: 0 !important; padding: 0 !important; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; background-color: #f1f1f1; font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif; }
+        @ohms-reset .ExternalClass { width: 100%; }
+        @ohms-reset .ExternalClass * { line-height: 100%; }
+        @ohms-reset img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; }
+        @ohms-reset table { border-collapse: collapse !important; }
+        @ohms-reset tbody tr { display: block; }
+        @ohms-reset * { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        @ohms-reset a { color: #333; text-decoration: none; }
+        @ohms-reset a:hover { text-decoration: underline; }
+
+        /* Dark mode media query */
+        @media (prefers-color-scheme: dark) {
+            .dark-bg { background-color: #1a1a1a !important; }
+            .dark-text { color: #ffffff !important; }
+            .dark-bg-header { background-color: #2c3e50 !important; }
+            .dark-bg-subtle { background-color: #2c3e50 !important; }
+            .dark-text-muted { color: #b0b0b0 !important; }
+            .dark-border { border-color: #4a4a4a !important; }
+        }
+
+        /* Fallback for clients that don't support media queries */
+        .light-bg { background-color: #ffffff; }
+        .light-text { color: #333333; }
+        .light-bg-header { background-color: #f8f9fa; }
+        .light-text-muted { color: #666666; }
+        .light-border { border-color: #e0e0e0; }
+
+        /* Email specific styles */
+        .email-container { max-width: 600px; margin: 0 auto; background-color: #ffffff; }
+        .email-header { background-color: #f8f9fa; padding: 40px 20px; text-align: center; }
+        .email-header img { height: 40px; max-width: 180px; width: 100%; }
+        .email-content { padding: 0 20px 20px; }
+        .email-message { font-size: 14px; color: #333333; line-height: 1.6; margin-bottom: 24px; }
+        .email-social-proof { background-color: #f8f9fa; border: 1px solid #e0e0e0; border-radius: 8px; padding: 24px; margin: 20px 0; }
+        .email-social-proof-icon { width: 40px; height: 40px; background-color: #2c3e50; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: #ffffff; font-size: 20px; margin-right: 12px; }
+        .email-social-prof-text { display: inline-block; }
+        .email-items { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .email-item { padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
+        .email-item-image { width: 80px; vertical-align: top; }
+        .email-item-details { padding-left: 15px; vertical-align: top; color: #333333; }
+        .email-item-name { display: block; margin-bottom: 4px; font-weight: 500; }
+        .email-item-quantity { font-size: 12px; color: #666666; }
+        .email-total { width: 100%; padding: 20px; background-color: #f8f9fa; margin: 20px 0; }
+        .email-total-text { font-size: 14px; color: #666666; }
+        .email-total-amount { font-weight: 600; color: #2c3e50; }
+        .email-button { display: inline-block; background-color: #2c3e50; color: #ffffff; padding: 12px 24px; border-radius: 4px; font-size: 14px; font-weight: 500; text-decoration: none; width: 100%; text-align: center; margin: 20px 0; }
+        .email-urgency { font-size: 12px; color: #e74c3c; margin-top: 10px; }
+        .email-footer { font-size: 12px; color: #666666; line-height: 1.6; text-align: center; padding: 30px 20px; }
+        .email-disclaimer { margin-top: 20px; font-size: 11px; color: #999999; }
+    </style>
+</head>
+<body class="light-bg" style="margin: 0 !important; padding: 0 !important; background-color: #f1f1f1; font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;">
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+                <o:AllowPNG/>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+
+    <!-- Header section -->
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #f8f9fa; margin: 0;">
+        <tr>
+            <td align="center" style="padding: 40px 20px 20px;">
+                <a href="https://dalli.rs" style="display: inline-block;">
+                    <img src="https://dalli.rs/images/logo-dark.svg" alt="DALLI" style="height: 40px; max-width: 180px; width: 100%; display: block;">
+                </a>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Main content container -->
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width: 600px; margin: 0 auto; background-color: #ffffff;">
+        <tr>
+            <td style="padding: 20px;">
+                <!-- Email content -->
+                <div class="email-container">
+                    <div class="email-header">
+                        <a href="https://dalli.rs">
+                            <img src="https://dalli.rs/images/logo-dark.svg" alt="DALLI" style="height: 40px; display: block;">
+                        </a>
+                    </div>
+
+                    <div class="email-content">
+                        <p class="email-message">Zaboravili ste da završite narudžbinu</p>
+
+                        <p class="email-message">Narudžbine u našem shopu bila je više od 1.000+s posetioca. Ne dopustite da vaša favorite izdjele!</p>
+
+                        <div class="email-social-proof">
+                            <span class="email-social-proof-icon">✓</span>
+                            <span class="email-social-prof-text">Većina kupaca završi kupovinu nakon drugog pregleda</span>
+                        </div>
+
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0" class="email-items">
+                            {{#items}}
+                            <tr>
+                                <td class="email-item">
+                                    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                        <tr>
+                                            <td class="email-item-image">
+                                                <img src="{#image}" alt="{#name}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 4px;">
+                                            </td>
+                                            <td class="email-item-details">
+                                                <strong style="display: block; margin-bottom: 4px;">{#name}</strong>
+                                                <span class="email-item-quantity">Količina: {#quantity}x</span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            {{/items}}
+                        </table>
+
+                        <div class="email-total">
+                            <span class="email-total-text">Ukupno:</span>
+                            <span class="email-total-amount">{#totalamount} RSD</span>
+                        </div>
+
+                        <p class="email-urgency">Ovaj artikli još uvek čekaju u vašoj korpi</p>
+
+                        <a href="https://dalli.rs/cart/" class="email-button">Završi kupovinu</a>
+                    </div>
+
+                    <div class="email-footer">
+                        <p>DALLI d.o.o. | Beograd, Srbija</p>
+                        <p>Ul. Zikice Stankovića 14</p>
+                        <p>📞 +381 11 123 456</p>
+                        <p>📧 info@dalli.rs</p>
+                        <p class="email-disclaimer">Ovo je automatski email sa DALLI sistema. Molimo, ne odgovarajte na ovaj email.</p>
+                        <p class="email-disclaimer">&copy; 2026 DALLI. Sva prava zadržana.</p>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Dark mode fallback overlay (hidden by default, shown in dark mode) -->
+    <div style="display: none; background-color: #1a1a1a; padding: 20px; text-align: center;">
+        <p style="color: #ffffff; margin: 0;">DALLI - Vaša porudžbina</p>
+    </div>
+
+    <!--[if IE]>
+    <script>window.location.href='https://dalli.rs';</script>
+    <![endif]-->
+</body>
+</html>

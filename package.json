@@ -1,0 +1,265 @@
+{
+  "name": "dalli-ecommerce",
+  "version": "1.0.0",
+  "description": "DALLI - Online Prodaja Garderobe | Muška i Ženska Garderoba",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "node scripts/validate-html.cjs && vite build --mode production",
+    "build:prod": "node scripts/build.cjs",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .js,.mjs --max-warnings 0",
+    "lint:fix": "eslint . --ext .js,.mjs --fix",
+    "stylelint": "stylelint \"**/*.css\"",
+    "stylelint:fix": "stylelint \"**/*.css\" --fix",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --reporter=verbose",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:headed": "playwright test --headed",
+    "test:a11y": "vitest run --reporter=verbose src/tests/a11y",
+    "test:visual": "playwright test --project=chromium --grep=visual",
+    "test:perf": "playwright test --project=chromium --grep=performance",
+    "test:all": "npm run lint && npm run stylelint && npm run typecheck && npm run test && npm run test:e2e",
+    "prepare": "husky install",
+    "deploy": "netlify deploy --prod",
+    "deploy:preview": "netlify deploy",
+    "validate:html": "npx html-validate *.html",
+    "validate:corruption": "node scripts/validate-html.cjs",
+    "generate:sitemap": "node scripts/generate-sitemap.cjs",
+    "generate:products": "node scripts/generate-products.cjs",
+    "generate:icons": "node scripts/generate-icons.mjs",
+    "generate:sri": "node scripts/generate-sri.mjs",
+    "analyze": "vite build --mode analyze",
+    "bundle:analyze": "npx vite-bundle-analyzer dist",
+    "check-size": "node scripts/check-size.js",
+    "postinstall": "prisma skills sync || exit 0",
+    "build:ui": "npx vite build --mode production"
+  },
+  "dependencies": {
+    "@netlify/functions": "^2.8.2",
+    "@prisma/client": "^5.22.0",
+    "@types/bcryptjs": "^2.4.6",
+    "bcryptjs": "^3.0.3",
+    "chart.js": "^4.4.1",
+    "croner": "^10.0.1",
+    "date-fns": "^3.3.1",
+    "idb": "^8.0.0",
+    "ioredis": "^6.0.0",
+    "marked": "^11.0.0",
+    "pino": "^10.4.0",
+    "pino-pretty": "^13.2.0",
+    "prisma": "^5.22.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "workbox-window": "^7.1.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.8.4",
+    "@babel/generator": "^8.0.6",
+    "@babel/parser": "^7.29.9",
+    "@babel/traverse": "^8.0.6",
+    "@babel/types": "^8.0.6",
+    "@playwright/test": "^1.42.1",
+    "@size-limit/file": "^14.1.0",
+    "@size-limit/preset-small-lib": "^14.1.0",
+    "@size-limit/time": "^14.1.0",
+    "@storybook/addon-essentials": "^7.6.17",
+    "@storybook/addon-interactions": "^7.6.17",
+    "@storybook/addon-links": "^7.6.17",
+    "@storybook/blocks": "^7.6.17",
+    "@storybook/html": "^7.6.17",
+    "@storybook/testing-library": "^0.2.2",
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/jsdom": "^21.1.6",
+    "@types/node": "^20.19.43",
+    "@typescript-eslint/eslint-plugin": "^7.1.1",
+    "@typescript-eslint/parser": "^7.1.1",
+    "@vitejs/plugin-react": "^4.7.0",
+    "@vitest/coverage-v8": "^1.3.1",
+    "@vitest/ui": "^1.3.1",
+    "acorn": "^8.18.0",
+    "axe-core": "^4.8.4",
+    "embedded-postgres": "^18.4.0-beta.17",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-storybook": "^0.8.0",
+    "eslint-plugin-testing-library": "^6.2.0",
+    "html-validate": "^8.0.0",
+    "husky": "^9.0.11",
+    "jsdom": "^30.1.1",
+    "lint-staged": "^15.2.2",
+    "netlify-cli": "^17.0.0",
+    "playwright": "^1.42.1",
+    "prettier": "^3.2.5",
+    "prettier-plugin-organize-imports": "^4.3.0",
+    "rollup-plugin-visualizer": "^7.1.1",
+    "sharp": "^0.33.5",
+    "size-limit": "^14.1.0",
+    "storybook": "^7.6.17",
+    "stylelint": "^16.2.1",
+    "stylelint-config-recess-order": "^5.0.0",
+    "stylelint-config-standard": "^36.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "vite": "^5.1.6",
+    "vite-plugin-pwa": "^0.19.2",
+    "vitest": "^1.3.1",
+    "workbox-build": "^7.1.0",
+    "workbox-cacheable-response": "^7.1.0",
+    "workbox-expiration": "^7.1.0",
+    "workbox-precaching": "^7.1.0",
+    "workbox-routing": "^7.1.0",
+    "workbox-strategies": "^7.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "overrides": {
+    "rollup": "4.64.3"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "netlify": {
+    "build": {
+      "command": "npm run build",
+      "publish": "dist"
+    },
+    "headers": "public/_headers",
+    "redirects": "public/_redirects"
+  },
+  "pwa": {
+    "name": "DALLI - Premium Online Garderoba",
+    "short_name": "DALLI",
+    "description": "Muška i ženska odela od 100% organskog pamuka. Besplatna dostava nad 5.000 RSD. 15% popust sa kripto plaćanjem.",
+    "theme_color": "#1a1a2e",
+    "background_color": "#0a0a0f",
+    "display": "standalone",
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "start_url": "/",
+    "icons": [
+      {
+        "src": "/images/icons/icon-72x72.png",
+        "sizes": "72x72",
+        "type": "image/png",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "/images/icons/icon-96x96.png",
+        "sizes": "96x96",
+        "type": "image/png",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "/images/icons/icon-128x128.png",
+        "sizes": "128x128",
+        "type": "image/png",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "/images/icons/icon-144x144.png",
+        "sizes": "144x144",
+        "type": "image/png",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "/images/icons/icon-152x152.png",
+        "sizes": "152x152",
+        "type": "image/png",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "/images/icons/icon-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "/images/icons/icon-384x384.png",
+        "sizes": "384x384",
+        "type": "image/png",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "/images/icons/icon-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any maskable"
+      }
+    ],
+    "shortcuts": [
+      {
+        "name": "Muška Garderoba",
+        "short_name": "Muška",
+        "description": "Pregledaj mušku garderobu",
+        "url": "/muska-garderoba.html",
+        "icons": [
+          {
+            "src": "/images/icons/muska-shortcut.png",
+            "sizes": "192x192"
+          }
+        ]
+      },
+      {
+        "name": "Ženska Garderoba",
+        "short_name": "Ženska",
+        "description": "Pregledaj žensku garderobu",
+        "url": "/zenska-garderoba.html",
+        "icons": [
+          {
+            "src": "/images/icons/zenska-shortcut.png",
+            "sizes": "192x192"
+          }
+        ]
+      },
+      {
+        "name": "Korpa",
+        "short_name": "Korpa",
+        "description": "Otvorite svoju korpu",
+        "url": "/cart.html",
+        "icons": [
+          {
+            "src": "/images/icons/cart-shortcut.png",
+            "sizes": "192x192"
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "shopping",
+      "lifestyle"
+    ],
+    "screenshots": [
+      {
+        "src": "/images/screenshots/home-mobile.png",
+        "sizes": "390x844",
+        "type": "image/png",
+        "form_factor": "narrow",
+        "label": "DALLI Homepage - Mobile"
+      },
+      {
+        "src": "/images/screenshots/home-desktop.png",
+        "sizes": "1920x1080",
+        "type": "image/png",
+        "form_factor": "wide",
+        "label": "DALLI Homepage - Desktop"
+      }
+    ],
+    "prefer_related_applications": false
+  },
+  "allowScripts": {
+    "sharp@0.33.5": true,
+    "sharp@0.32.6": true
+  }
+}

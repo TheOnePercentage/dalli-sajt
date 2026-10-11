@@ -1,0 +1,257 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-10-09T00:00:00Z",
+  "collectionJourneys": {
+    "enabled": true,
+    "journeyTemplates": {
+      "discover": {
+        "id": "discover",
+        "name": "Discover",
+        "label": "Otkrij",
+        "description": "Entry point — atmospheric introduction to the collection world",
+        "components": [
+          "atmosphere-hero",
+          "signature-message",
+          "collection-film-teaser",
+          "key-pieces-preview",
+          "journey-navigation"
+        ],
+        "layout": "immersive-hero",
+        "duration": "30s",
+        "required": true
+      },
+      "story": {
+        "id": "story",
+        "name": "Story",
+        "label": "Priča",
+        "description": "The narrative — heritage, philosophy, design intent",
+        "components": [
+          "chapter-navigation",
+          "heritage-chapter",
+          "craftsmanship-chapter",
+          "design-chapter",
+          "philosophy-chapter",
+          "reading-progress"
+        ],
+        "layout": "storytelling",
+        "duration": "3min",
+        "required": true
+      },
+      "materials": {
+        "id": "materials",
+        "name": "Materials",
+        "label": "Materijali",
+        "description": "The substance — fabrics, sourcing, sustainability, innovation",
+        "components": [
+          "material-grid",
+          "material-detail-modal",
+          "sourcing-map",
+          "sustainability-metrics",
+          "care-guide"
+        ],
+        "layout": "magazine",
+        "duration": "2min",
+        "required": false
+      },
+      "looks": {
+        "id": "looks",
+        "name": "Looks",
+        "label": "Izgledi",
+        "description": "The vision — curated ensembles, styling guidance, outfit intelligence",
+        "components": [
+          "look-carousel",
+          "look-detail",
+          "complete-the-look",
+          "styling-notes",
+          "occasion-filter"
+        ],
+        "layout": "editorial-spread",
+        "duration": "2min",
+        "required": true
+      },
+      "products": {
+        "id": "products",
+        "name": "Products",
+        "label": "Proizvodi",
+        "description": "The offering — refined product discovery with luxury presentation",
+        "components": [
+          "product-grid",
+          "product-quick-view",
+          "filter-drawer",
+          "sort-options",
+          "membership-badges"
+        ],
+        "layout": "refined-grid",
+        "duration": "variable",
+        "required": true
+      },
+      "membership": {
+        "id": "membership",
+        "name": "Membership Access",
+        "label": "Članstvo",
+        "description": "The privilege — tier-based access, early releases, exclusive content",
+        "components": [
+          "tier-benefits",
+          "early-access-calendar",
+          "exclusive-collections",
+          "upgrade-path",
+          "concierge-contact"
+        ],
+        "layout": "membership-dashboard",
+        "duration": "1min",
+        "required": true
+      }
+    },
+    "worldJourneys": {
+      "casual": {
+        "worldId": "casual",
+        "steps": [
+          {
+            "stepId": "discover",
+            "order": 1,
+            "enabled": true,
+            "config": {
+              "atmosphereVideo": "/videos/worlds/casual-discover.mp4",
+              "keyPiecesCount": 4,
+              "signatureMessage": "Dressed for life, not for show."
+            }
+          },
+          {
+            "stepId": "story",
+            "order": 2,
+            "enabled": true,
+            "config": {
+              "chapters": [
+                { "id": "heritage", "title": "Everyday Heritage", "content": "From workwear roots to modern essentials..." },
+                { "id": "craftsmanship", "title": "Quiet Craftsmanship", "content": "Details that matter, seen only by you..." },
+                { "id": "design", "title": "Design for Living", "content": "Versatility as the ultimate luxury..." },
+                { "id": "philosophy", "title": "The Casual Philosophy", "content": "Effortless is the hardest thing to achieve..." }
+              ]
+            }
+          },
+          {
+            "stepId": "materials",
+            "order": 3,
+            "enabled": true,
+            "config": {
+              "featuredMaterials": ["organic-cotton", "french-terry", "brushed-fleece", "linen-blend"],
+              "sourcingRegions": ["Portugal", "Turkey", "Italy"],
+              "sustainabilityHighlight": "100% organic cotton, GOTS certified"
+            }
+          },
+          {
+            "stepId": "looks",
+            "order": 4,
+            "enabled": true,
+            "config": {
+              "featuredLooks": ["weekend-casual", "travel-essentials", "smart-casual-refined", "luxury-essentials-look"],
+              "occasionFilters": ["everyday", "travel", "sport", "smart-casual"]
+            }
+          },
+          {
+            "stepId": "products",
+            "order": 5,
+            "enabled": true,
+            "config": {
+              "defaultSort": "newest",
+              "filters": ["category", "color", "material", "fit"],
+              "showMembershipBadges": true
+            }
+          },
+          {
+            "stepId": "membership",
+            "order": 6,
+            "enabled": true,
+            "config": {
+              "highlightTiers": ["member", "silver", "gold"],
+              "showUpgradePath": true,
+              "earlyAccessPreview": true
+            }
+          }
+        ]
+      },
+      "elegance": {
+        "worldId": "elegance",
+        "steps": [
+          {
+            "stepId": "discover",
+            "order": 1,
+            "enabled": true,
+            "config": {
+              "atmosphereVideo": "/videos/worlds/elegance-discover.mp4",
+              "keyPiecesCount": 3,
+              "signatureMessage": "Excellence is not an act, but a habit."
+            }
+          },
+          {
+            "stepId": "story",
+            "order": 2,
+            "enabled": true,
+            "config": {
+              "chapters": [
+                { "id": "heritage", "title": "Sartorial Heritage", "content": "A lineage of master tailors..." },
+                { "id": "craftsmanship", "title": "The Art of the Hand", "content": "Hours in a single stitch..." },
+                { "id": "design", "title": "Design as Discipline", "content": "Restraint is the ultimate sophistication..." },
+                { "id": "philosophy", "title": "The Elegance Philosophy", "content": "True luxury whispers..." }
+              ]
+            }
+          },
+          {
+            "stepId": "materials",
+            "order": 3,
+            "enabled": true,
+            "config": {
+              "featuredMaterials": ["merino-wool", "premium-cotton", "future-materials"],
+              "sourcingRegions": ["Italy", "United Kingdom", "Japan"],
+              "sustainabilityHighlight": "Traceable merino, RWS certified"
+            }
+          },
+          {
+            "stepId": "looks",
+            "order": 4,
+            "enabled": true,
+            "config": {
+              "featuredLooks": ["business-pro", "formal-evening", "evening-glam", "special-occasion-look"],
+              "occasionFilters": ["business", "formal", "evening", "special-occasion"]
+            }
+          },
+          {
+            "stepId": "products",
+            "order": 5,
+            "enabled": true,
+            "config": {
+              "defaultSort": "curated",
+              "filters": ["category", "fabric", "construction", "fit"],
+              "showMembershipBadges": true
+            }
+          },
+          {
+            "stepId": "membership",
+            "order": 6,
+            "enabled": true,
+            "config": {
+              "highlightTiers": ["gold", "black", "private-client", "elite-client"],
+              "showUpgradePath": true,
+              "privateClientCTA": true,
+              "conciergeAccess": true
+            }
+          }
+        ]
+      }
+    },
+    "journeyNavigation": {
+      "style": "progress-indicator",
+      "position": "fixed-right",
+      "showProgress": true,
+      "allowSkip": true,
+      "autoAdvance": false,
+      "keyboardNavigation": true
+    },
+    "personalization": {
+      "adaptToTier": true,
+      "rememberPosition": true,
+      "suggestNextStep": true,
+      "trackEngagement": true
+    }
+  }
+}

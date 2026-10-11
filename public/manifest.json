@@ -1,0 +1,107 @@
+{
+  "name": "DALLI - Premium Online Garderoba",
+  "short_name": "DALLI",
+  "description": "Muška i ženska odela od 100% organskog pamuka. Besplatna dostava nad 5.000 RSD. 15% popust sa kripto plaćanjem.",
+  "theme_color": "#1a1a2e",
+  "background_color": "#0a0a0f",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/images/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Muška Garderoba",
+      "short_name": "Muška",
+      "description": "Pregledaj mušku garderobu",
+      "url": "/muska-garderoba.html",
+      "icons": [{ "src": "/images/icons/muska-shortcut.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Ženska Garderoba",
+      "short_name": "Ženska",
+      "description": "Pregledaj žensku garderobu",
+      "url": "/zenska-garderoba.html",
+      "icons": [{ "src": "/images/icons/zenska-shortcut.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Korpa",
+      "short_name": "Korpa",
+      "description": "Otvorite svoju korpu",
+      "url": "/cart.html",
+      "icons": [{ "src": "/images/icons/cart-shortcut.png", "sizes": "192x192" }]
+    }
+  ],
+  "categories": ["shopping", "lifestyle"],
+  "screenshots": [
+    {
+      "src": "/images/screenshots/home-mobile.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "DALLI Homepage - Mobile"
+    },
+    {
+      "src": "/images/screenshots/home-desktop.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "DALLI Homepage - Desktop"
+    }
+  ],
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "display_override": ["window-controls-overlay", "standalone"],
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  }
+}

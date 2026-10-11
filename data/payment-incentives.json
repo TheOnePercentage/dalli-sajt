@@ -1,0 +1,128 @@
+{
+  "version": "1.0",
+  "updatedAt": "2026-10-10T00:00:00Z",
+  "global": {
+    "cryptoEnabled": true,
+    "cryptoDiscountEnabled": true,
+    "discountType": "percentage",
+    "discountValue": 15,
+    "customMessage": "15% popust kripto",
+    "customMessageEn": "15% crypto discount",
+    "appliesTo": "subtotal"
+  },
+  "countryOverrides": {
+    "RS": {
+      "cryptoEnabled": true,
+      "cryptoDiscountEnabled": true,
+      "discountValue": 15,
+      "customMessage": "15% popust kripto",
+      "appliesTo": "subtotal"
+    },
+    "BA": {
+      "cryptoEnabled": true,
+      "cryptoDiscountEnabled": true,
+      "discountValue": 15,
+      "customMessage": "15% popust kripto",
+      "appliesTo": "subtotal"
+    },
+    "HR": {
+      "cryptoEnabled": true,
+      "cryptoDiscountEnabled": true,
+      "discountValue": 15,
+      "customMessage": "15% popust kripto",
+      "appliesTo": "subtotal"
+    },
+    "ME": {
+      "cryptoEnabled": true,
+      "cryptoDiscountEnabled": true,
+      "discountValue": 15,
+      "customMessage": "15% popust kripto",
+      "appliesTo": "subtotal"
+    },
+    "MK": {
+      "cryptoEnabled": true,
+      "cryptoDiscountEnabled": true,
+      "discountValue": 15,
+      "customMessage": "15% popust kripto",
+      "appliesTo": "subtotal"
+    },
+    "SI": {
+      "cryptoEnabled": true,
+      "cryptoDiscountEnabled": true,
+      "discountValue": 15,
+      "customMessage": "15% popust kripto",
+      "appliesTo": "subtotal"
+    },
+    "DE": {
+      "cryptoEnabled": true,
+      "cryptoDiscountEnabled": true,
+      "discountValue": 10,
+      "customMessage": "10% crypto discount",
+      "appliesTo": "subtotal"
+    },
+    "AT": {
+      "cryptoEnabled": true,
+      "cryptoDiscountEnabled": true,
+      "discountValue": 10,
+      "customMessage": "10% crypto discount",
+      "appliesTo": "subtotal"
+    },
+    "CH": {
+      "cryptoEnabled": true,
+      "cryptoDiscountEnabled": true,
+      "discountValue": 10,
+      "customMessage": "10% crypto discount",
+      "appliesTo": "subtotal"
+    },
+    "FR": {
+      "cryptoEnabled": true,
+      "cryptoDiscountEnabled": true,
+      "discountValue": 10,
+      "customMessage": "10% crypto discount",
+      "appliesTo": "subtotal"
+    },
+    "IT": {
+      "cryptoEnabled": true,
+      "cryptoDiscountEnabled": true,
+      "discountValue": 10,
+      "customMessage": "10% crypto discount",
+      "appliesTo": "subtotal"
+    },
+    "GB": {
+      "cryptoEnabled": true,
+      "cryptoDiscountEnabled": true,
+      "discountValue": 10,
+      "customMessage": "10% crypto discount",
+      "appliesTo": "subtotal"
+    },
+    "US": {
+      "cryptoEnabled": true,
+      "cryptoDiscountEnabled": true,
+      "discountValue": 10,
+      "customMessage": "10% crypto discount",
+      "appliesTo": "subtotal"
+    },
+    "AE": {
+      "cryptoEnabled": true,
+      "cryptoDiscountEnabled": true,
+      "discountValue": 15,
+      "customMessage": "15% crypto discount",
+      "appliesTo": "subtotal"
+    }
+  },
+  "collectionOverrides": {
+    "casual": {
+      "cryptoDiscountEnabled": true,
+      "discountValue": 15,
+      "customMessage": "15% popust kripto - Casual",
+      "appliesTo": "subtotal"
+    },
+    "elegance": {
+      "cryptoDiscountEnabled": true,
+      "discountValue": 12,
+      "customMessage": "12% popust kripto - Elegance",
+      "appliesTo": "subtotal"
+    }
+  },
+  "productOverrides": {}
+}

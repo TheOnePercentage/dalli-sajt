@@ -1,0 +1,265 @@
+# Netlify CMS Configuration for DALLI
+# Admin panel: https://dalli.rs/admin/cms
+
+backend:
+  name: git-gateway
+  branch: main
+  repo: YOUR_GITHUB_USERNAME/YOUR_REPO_NAME  # TODO: Replace with your GitHub repo (username/repo)
+  commit_messages:
+    create: "Create: {{collection}} - {{slug}}"
+    update: "Update: {{collection}} - {{slug}}"
+    delete: "Delete: {{collection}} - {{slug}}"
+    uploadMedia: "Upload: {{path}}"
+    deleteMedia: "Delete media: {{path}}"
+
+media_folder: images
+public_folder: /images
+
+site_url: https://dalli.rs
+logo_url: /images/logo.svg
+
+# Locale settings
+locale: sr
+default_locale: sr
+
+# Editorial workflow - enables draft/published workflow
+publish_mode: editorial_workflow
+
+# Collections
+collections:
+  # Products collection
+  - name: "products"
+    label: "Proizvodi"
+    folder: ""
+    create: true
+    slug: "proizvod-{{fields.naziv | slugify}}"
+    preview_path: "proizvod-{{slug}}.html"
+    identifier_field: naziv
+    sortable_fields: ['naziv', 'cena', 'kategorija', 'status', 'kolekcija']
+    filter_fields: ['kategorija', 'pol', 'status', 'kolekcija']
+    summary: "{{naziv}} | {{cena}} RSD | {{status}} | {{kategorija}} | {{kolekcija}} | SEO: {{seo.seo_score}}"
+    filter_fields: ['kategorija', 'pol', 'status', 'kolekcija', 'seo.seo_score']
+    fields:
+      # Basic info
+      - {label: "Naziv", name: "naziv", widget: "string", required: true, pattern: ['.{3,}', 'Minimalno 3 karaktera']}
+      - {label: "SKU (Šifra)", name: "sku", widget: "string", required: false, hint: "Auto-generiše se ako ostavite prazno (npr. ML-001)"}
+      
+      # Collection & Category
+      - label: "Kolekcija i Kategorija"
+        name: "kolekcija_kategorija"
+        widget: "object"
+        fields:
+          - {label: "Kolekcija", name: "kolekcija", widget: "select", required: true, options: ["casual", "elegance"], default: "casual", label_suffix: " (CASUAL / ELEGANCE)"}
+          - {label: "Kategorija", name: "kategorija", widget: "select", required: true, options: ["t-shirts", "hoodies", "tracksuits", "shorts", "jackets", "essentials", "leggings", "matching-sets", "shirts", "blazers", "suits", "trousers", "coats", "dresses", "accessories"], default: "t-shirts"}
+          - {label: "Pol", name: "pol", widget: "select", required: true, options: ["men", "women", "unisex"], default: "unisex"}
+          - {label: "Stil/Prilika", name: "stil_prilika", widget: "select", required: false, options: ["everyday", "business", "formal", "evening", "travel", "sport", "smart-casual", "luxury-essentials", "special-occasion"], hint: "Držite Ctrl/Cmd za višestruki izbor (više vrednosti)", multiple: true}
+      
+      # Pricing
+      - {label: "Cena (RSD)", name: "cena", widget: "number", required: true, min: 0, value_type: "int", hint: "U RSD, bez tačke/zareza (npr. 1490)"}
+      - {label: "Akcijska cena (RSD)", name: "akcijska_cena", widget: "number", required: false, min: 0, value_type: "int", hint: "Opciono - za akcije/promocije"}
+      
+      # Description
+      - {label: "Kratak opis (za kartice)", name: "kratak_opis", widget: "text", required: true, max_length: 300, hint: "Maks 300 karaktera - prikazuje se na karticama proizvoda"}
+      - {label: "Detaljan opis", name: "opis", widget: "markdown", required: true, buttons: ['bold', 'italic', 'link', 'bulletedList', 'numberedList'], hint: "Puni opis za stranicu proizvoda - podržava markdown"}
+      
+      # Variants - Colors
+      - label: "Boje"
+        name: "boje"
+        widget: "list"
+        required: true
+        min: 1
+        fields:
+          - {label: "Naziv boje", name: "naziv", widget: "string", required: true, hint: "Npr. Bela, Crna, Navy Blue"}
+          - {label: "HEX kod", name: "hex", widget: "string", required: true, pattern: ['^#[0-9A-Fa-f]{6}$', 'Mora biti validan HEX kod (npr. #FFFFFF)'], hint: "Kliknite za color picker"}
+          - {label: "Dostupna", name: "dostupna", widget: "boolean", default: true, required: false}
+          - {label: "Slika za boju (opciono)", name: "slika_boje", widget: "image", required: false, media_library: {config: {multiple: false}}}
+      
+      # Variants - Sizes
+      - label: "Veličine"
+        name: "velicine"
+        widget: "list"
+        required: true
+        min: 1
+        fields:
+          - {label: "Veličina", name: "velicina", widget: "select", required: true, options: ["XS", "S", "M", "L", "XL", "XXL", "3XL", "36-40", "41-45", "Standard 330ml", "One Size"]}
+          - {label: "Dostupna", name: "dostupna", widget: "boolean", default: true, required: false}
+          - {label: "SKU za ovu veličinu (opciono)", name: "sku_velicine", widget: "string", required: false, hint: "Auto-generiše se: SKU-VELICINA-BOJA"}
+      
+      # Product specs
+      - label: "Specifikacije"
+        name: "specifikacije"
+        widget: "object"
+        fields:
+          - {label: "Materijal", name: "materijal", widget: "string", required: true, hint: "Npr. 100% organski pamuk, 180g/m²"}
+          - {label: "Gramsa/Težina", name: "gramsa", widget: "string", required: false, hint: "Npr. 180g/m² ili ~350g"}
+          - {label: "Održavanje", name: "odrzavanje", widget: "text", required: false, hint: "Npr. Pranje 30°C, ne beljenje"}
+          - {label: "Garancija (meseci)", name: "garancija", widget: "number", required: false, min: 0, value_type: "int"}
+      
+      # Bulk SEO Actions (shows in list view)
+      - label: "Masovne SEO akcije"
+        name: "bulk_seo_actions"
+        widget: "bulk-seo-actions"
+        collapsed: true
+        hint: "Označite proizvode u listi (checkbox), zatim otvorite ovo i kliknite 'Generiši SEO'."
+
+      # Media - Custom Image Upload Widget
+      - label: "Glavna slika"
+        name: "glavna_slika"
+        widget: "image-upload"
+        required: true
+        media_library: {config: {multiple: false}}
+        hint: "Preporučeno: 2400px+ širine. Original se čuva bez kompresije. Focal point za thumbnail crop."
+      
+      - label: "Galerija slika (do 8)"
+        name: "galerija"
+        widget: "image-upload"
+        required: false
+        media_library: {config: {multiple: true}}
+        max_gallery: 8
+        hint: "Prva slika = hover efekt na kartici. Drag & drop za reorder. Po slika: alt tekst + focal point."
+
+      # Alt Text Generator
+      - label: "Alt tekstovi (auto-generišu se)"
+        name: "alt_generator"
+        widget: "alt-generator"
+        collapsed: false
+        hint: "Generiše se iz naziva, opisa i boje. Format: 'Naziv - Opis u [boja] boji, kategorija'. Max 125 karaktera."
+      
+      # SEO - Auto Generator Widget
+      - label: "SEO (auto-generiše se)"
+        name: "seo"
+        widget: "seo-generator"
+        collapsed: false
+        hint: "Unesi fokus ključnu reč za proveru optimizacije. Klikni 'Generiši SEO' za auto-popunjavanje."
+      
+      # Status & Publishing
+      - {label: "Status", name: "status", widget: "select", required: true, options: ["aktivan", "skriven", "rasprodato"], default: "aktivan"}
+      - {label: "Prioritet prikaza", name: "prioritet", widget: "number", required: false, min: 0, max: 100, default: 0, hint: "Viši broj = viši na listi"}
+
+  # Employees collection (for admin management)
+  - name: "employees"
+    label: "Zaposleni"
+    folder: ""
+    create: true
+    slug: "{{fields.ime | slugify}}-{{fields.prezime | slugify}}"
+    identifier_field: "ime"
+    summary: "{{ime}} {{prezime}} | {{uloga}} | {{status}}"
+    fields:
+      - {label: "Ime", name: "ime", widget: "string", required: true}
+      - {label: "Prezime", name: "prezime", widget: "string", required: true}
+      - {label: "Email", name: "email", widget: "string", required: true, pattern: ['^[^@]+@[^@]+\\.[^@]+$', 'Neispravan email']}
+      - {label: "Lozinka (samo pri kreiranju)", name: "lozinka", widget: "string", required: false, hint: "Min 6 karaktera. Ostavite prazno za promenu."}
+      - {label: "Uloga", name: "uloga", widget: "select", required: true, options: ["absolute_admin", "admin", "editor", "accountant", "employee", "read_only"], default: "employee"}
+      - {label: "Status", name: "status", widget: "select", required: true, options: ["aktivan", "suspendovan"], default: "aktivan"}
+      - {label: "Dozvole", name: "dozvole", widget: "object", fields:
+        - {label: "Može da objavljuje proizvode", name: "moze_objavljivati", widget: "boolean", default: false, label_suffix: " (Editor dozvola)"}
+        - {label: "Može da briše proizvode", name: "moze_brisati", widget: "boolean", default: false}
+        - {label: "Može da menja cene", name: "moze_menjati_cene", widget: "boolean", default: true}
+        - {label: "Može da vidi analitiku", name: "moze_videti_analitiku", widget: "boolean", default: false}
+        - {label: "Može da upravlja zaposlenima", name: "moze_upravljati_zaposlenima", widget: "boolean", default: false}
+      }
+
+  # Pages collection (for static pages)
+  - name: "pages"
+    label: "Stranice"
+    folder: ""
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string", required: true}
+      - {label: "Slug", name: "slug", widget: "string", required: true, hint: "URL deo (npr. o-nama, kontakt)"}
+      - {label: "Content", name: "body", widget: "markdown", required: true}
+
+  # Link Auditor (custom widget - read only dashboard)
+  - name: "link-auditor"
+    label: "🔗 Link Auditor"
+    folder: ""
+    create: false
+    identifier_field: "dummy"
+    summary: "Link Audit Dashboard"
+    fields:
+      - {label: " ", name: "dummy", widget: "link-auditor", required: false}
+
+  # Redirect Manager (custom widget)
+  - name: "redirect-manager"
+    label: "🔀 Redirect Manager"
+    folder: ""
+    create: false
+    identifier_field: "dummy"
+    summary: "301/302 Redirect Management"
+    fields:
+      - {label: " ", name: "dummy", widget: "redirect-manager", required: false}
+
+  # Currency Manager (custom widget)
+  - name: "currency-manager"
+    label: "💱 Currency Manager"
+    folder: ""
+    create: false
+    identifier_field: "dummy"
+    summary: "Exchange Rates & Currency Management"
+    fields:
+      - {label: " ", name: "dummy", widget: "currency-manager", required: false}
+
+  # Language Manager (custom widget)
+  - name: "language-manager"
+    label: "🌐 Language Manager"
+    folder: ""
+    create: false
+    identifier_field: "dummy"
+    summary: "Multi-language & Translations"
+    fields:
+      - {label: " ", name: "dummy", widget: "language-manager", required: false}
+
+  # Promotions Manager (custom widget)
+  - name: "promotions-manager"
+    label: "🎁 Promotions Manager"
+    folder: ""
+    create: false
+    identifier_field: "dummy"
+    summary: "Coupons, Discounts, Seasonal Campaigns & Loyalty"
+    fields:
+      - {label: " ", name: "dummy", widget: "promotions-manager", required: false}
+
+  # Markets & Regions (custom widget)
+  - name: "markets-regions"
+    label: "🌐 Markets & Regions"
+    folder: ""
+    create: false
+    identifier_field: "dummy"
+    summary: "Countries, Regions, Markets & Expansion Control"
+    fields:
+      - {label: " ", name: "dummy", widget: "markets-regions", required: false}
+
+# Media library configuration
+media_library:
+  config:
+    multiple: true
+    allowed_extensions: ["jpg", "jpeg", "png", "webp", "svg", "avif"]
+    max_file_size: 5242880  # 5MB
+
+# Custom slugify function for Serbian
+slugify:
+  transformer: "netlify-cms-slugify-transformer"
+  options:
+    locale: "sr"
+
+# Custom widgets
+widgets:
+  - name: "link-auditor"
+    widget: "link-auditor"
+    description: "Link Auditor Dashboard"
+  - name: "redirect-manager"
+    widget: "redirect-manager"
+    description: "Redirect Manager (301/302 redirects)"
+  - name: "currency-manager"
+    widget: "currency-manager"
+    description: "Currency Manager (Exchange Rates)"
+  - name: "language-manager"
+    widget: "language-manager"
+    description: "Language Manager (Multi-language)"
+  - name: "promotions-manager"
+    widget: "promotions-manager"
+    description: "Promotions Manager (Coupons, Discounts, Campaigns)"
+  - name: "markets-regions"
+    widget: "markets-regions"
+    description: "Markets & Regions Control Panel"

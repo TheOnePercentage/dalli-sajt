@@ -1,0 +1,4483 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "slug": "osnovna-majica",
+      "sku": "ML-001",
+      "name": "Osnovna Majica",
+      "shortDescription": "Udobna pamukna majica za svaki dan. 100% organski pamuk, 180g/m².",
+      "description": "Ova osnovna majica je savršena za svakodnevnu nošu. Napravljena od 100% organskog pamuka sa gramazom od 180g/m², pruža udobnost i dugotrajnost. Unisex krošnja odgovara i muškarcima i ženama.",
+      "category": "t-shirts",
+      "gender": [
+        "men",
+        "women"
+      ],
+      "price": 1290,
+      "salePrice": null,
+      "currency": "RSD",
+      "images": {
+        "main": "/images/majica.svg",
+        "gallery": [],
+        "ogImage": "/images/og-majica.svg"
+      },
+      "altText": "Osnovna Majica - udobna pamukna majica za svaki dan u beloj boji, unisex model",
+      "colors": [
+        {
+          "name": "Bela",
+          "hex": "#FFFFFF"
+        },
+        {
+          "name": "Crna",
+          "hex": "#000000"
+        },
+        {
+          "name": "Siva",
+          "hex": "#808080"
+        },
+        {
+          "name": "Plava",
+          "hex": "#0000FF"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "XS",
+          "available": true,
+          "stock": 15
+        },
+        {
+          "size": "S",
+          "available": true,
+          "stock": 25
+        },
+        {
+          "size": "M",
+          "available": true,
+          "stock": 30
+        },
+        {
+          "size": "L",
+          "available": true,
+          "stock": 28
+        },
+        {
+          "size": "XL",
+          "available": true,
+          "stock": 20
+        },
+        {
+          "size": "XXL",
+          "available": true,
+          "stock": 10
+        }
+      ],
+      "specifications": {
+        "material": "100% organski pamuk",
+        "weight": "180g/m²",
+        "care": "Pranje 30°C, ne beljenje",
+        "warrantyMonths": 24
+      },
+      "inventory": {
+        "totalStock": 128,
+        "status": "in_stock",
+        "lowStockThreshold": 10,
+        "trackInventory": true,
+        "allowBackorder": false
+      },
+      "seo": {
+        "metaTitle": "Osnovna Majica - DALLI | 100% Organski Pamuk, 1.290 RSD",
+        "metaDescription": "Kupite Osnovnu Majicu DALLI - 100% organski pamuk, 180g/m², unisex. Cene od 1.290 RSD. Besplatna dostava nad 5.000 RSD. Plaćanje pri preuzimanju.",
+        "keywords": "osnovna majica, pamukna majica, unisex majica, DALLI, organski pamuk",
+        "canonicalUrl": "https://dalli.rs/casual/men/t-shirts/osnovna-majica.html"
+      },
+      "breadcrumbs": [
+        {
+          "name": "Početna",
+          "url": "/"
+        },
+        {
+          "name": "Casual",
+          "url": "/casual/"
+        },
+        {
+          "name": "Muška Casual",
+          "url": "/casual/men/"
+        },
+        {
+          "name": "Osnovna Majica",
+          "url": "/proizvod-osnovna-majica.html"
+        }
+      ],
+      "structuredData": {
+        "brand": "DALLI",
+        "category": "T-Shirts",
+        "gtin": null,
+        "mpn": "ML-001"
+      },
+      "faq": [
+        {
+          "question": "Od kog materijala je napravljena Osnovna majica?",
+          "answer": "Osnovna majica DALLI je napravljena od 100% organskog pamuka sa gramazom od 180g/m². Ovaj materijal je hipoalergenski, dahljiv i pogodan za senzitivnu kožu."
+        },
+        {
+          "question": "Kako izabrati pravu veličinu majice?",
+          "answer": "Preporučujemo da merite obim grudi i uporedite sa našom tabelom veličina. Majica ima unisex krošnju - ako želite opušteniji look, uzmite jednu veličinu veću. Za tačnije merenje pogledajte vodič za veličine na stranici proizvoda."
+        },
+        {
+          "question": "Da li se majica krči prilikom pranja?",
+          "answer": "Organski pamuk minimalno krči (do 3-5%) pri prvom pranju. Za najbolje rezultate pranje na 30°C i sušenje na vazduhu. Ne koristite beljenje niti sušicu na visokoj temperaturi."
+        },
+        {
+          "question": "Da li su boje postojane i da li otvaraju?",
+          "answer": "Koristimo ekološki sertifikovane bojila bez otrovnih supstanci. Boje su postojane na pranje i svetlost. Prvo pranje obavezno odvajeno od drugog bela. Obrnite majicu naopako prilikom pranja."
+        },
+        {
+          "question": "Da li je majica pogodna za sve sezone?",
+          "answer": "Da, gramaza od 180g/m² čini ovu majicu idealnom za proljeće, leto i ranu jeseni. Može se nositi samostalno ili kao bazni sloj pod trenerkom ili duksom za zimu."
+        }
+      ],
+      "cms": {
+        "featured": true,
+        "bestseller": true,
+        "newArrival": false,
+        "publishedAt": "2024-01-15T10:00:00Z",
+        "updatedAt": "2024-01-15T10:00:00Z",
+        "status": "published",
+        "salesCount": 142,
+        "viewCount": 1250,
+        "cartAddCount": 89,
+        "lookIds": [
+          "urban-casual",
+          "smart-layering"
+        ],
+        "searchKeywords": [
+          "majica",
+          "pamuk",
+          "unisex",
+          "osnovna",
+          "svakodnevna",
+          "organski",
+          "casual",
+          "men",
+          "t-shirts"
+        ],
+        "priority": 10,
+        "virtualTryOn": {
+          "eligible": true,
+          "modelType": "upper-body",
+          "primaryImage": "/images/virtual-tryon/majica-front.svg",
+          "secondaryImages": [
+            "/images/virtual-tryon/majica-back.svg",
+            "/images/virtual-tryon/majica-detail.svg"
+          ],
+          "fitGuide": "standard"
+        },
+        "product360": {
+          "enabled": true,
+          "images": [
+            "/images/360/majica-01.avif",
+            "/images/360/majica-02.avif",
+            "/images/360/majica-03.avif",
+            "/images/360/majica-04.avif",
+            "/images/360/majica-05.avif",
+            "/images/360/majica-06.avif",
+            "/images/360/majica-07.avif",
+            "/images/360/majica-08.avif",
+            "/images/360/majica-09.avif",
+            "/images/360/majica-10.avif",
+            "/images/360/majica-11.avif",
+            "/images/360/majica-12.avif",
+            "/images/360/majica-13.avif",
+            "/images/360/majica-14.avif",
+            "/images/360/majica-15.avif",
+            "/images/360/majica-16.avif",
+            "/images/360/majica-17.avif",
+            "/images/360/majica-18.avif",
+            "/images/360/majica-19.avif",
+            "/images/360/majica-20.avif",
+            "/images/360/majica-21.avif",
+            "/images/360/majica-22.avif",
+            "/images/360/majica-23.avif",
+            "/images/360/majica-24.avif"
+          ],
+          "placeholder": "/images/360/placeholder.avif"
+        }
+      },
+      "loyalty": {
+        "memberOnly": true,
+        "earlyAccess": false,
+        "earlyAccessDate": null,
+        "limitedRelease": false,
+        "maxPerCustomer": null,
+        "tierRequired": "member",
+        "pointsMultiplier": 1
+      },
+      "collection": "casual",
+      "styleOccasion": [
+        "everyday",
+        "luxury-essentials",
+        "travel",
+        "smart-casual"
+      ],
+      "categoryLabel": "T-Shirts",
+      "hierarchyPaths": [
+        {
+          "collection": "casual",
+          "gender": "men",
+          "category": "t-shirts"
+        },
+        {
+          "collection": "casual",
+          "gender": "women",
+          "category": "t-shirts"
+        }
+      ],
+      "primaryHierarchy": {
+        "collection": "casual",
+        "gender": "men",
+        "category": "t-shirts"
+      },
+      "rating": 5,
+      "reviewCount": 1
+    },
+    {
+      "id": 2,
+      "slug": "dugorukava-majica",
+      "sku": "ML-002",
+      "name": "Dugorukava Majica",
+      "shortDescription": "Topla majica dugarukav za hladnije dane. 100% pamuk sa mekim unutrašnjim slojem.",
+      "description": "Idealna za prelije i zimsku sezonu. Unutrašnji fleece sloj pruža dodatnu toplotu, a vanjski sloj od 100% pamuka osigurava dahljivost. Unisex model.",
+      "category": "t-shirts",
+      "gender": [
+        "men",
+        "women"
+      ],
+      "price": 1590,
+      "salePrice": null,
+      "currency": "RSD",
+      "images": {
+        "main": "/images/majica-duga.svg",
+        "gallery": [],
+        "ogImage": "/images/og-majica-duga.svg"
+      },
+      "altText": "Dugorukava Majica - topla pamukna majica sa dugačkim rukavima u plavoj boji, unisex",
+      "colors": [
+        {
+          "name": "Crna",
+          "hex": "#000000"
+        },
+        {
+          "name": "Siva",
+          "hex": "#808080"
+        },
+        {
+          "name": "Granatna",
+          "hex": "#800000"
+        },
+        {
+          "name": "Olivna",
+          "hex": "#808000"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "S",
+          "available": true,
+          "stock": 12
+        },
+        {
+          "size": "M",
+          "available": true,
+          "stock": 22
+        },
+        {
+          "size": "L",
+          "available": true,
+          "stock": 25
+        },
+        {
+          "size": "XL",
+          "available": true,
+          "stock": 18
+        },
+        {
+          "size": "XXL",
+          "available": true,
+          "stock": 8
+        }
+      ],
+      "specifications": {
+        "material": "100% pamuk, fleece unutrašnjost",
+        "weight": "240g/m²",
+        "care": "Pranje 30°C, ne beljenje",
+        "warrantyMonths": 24
+      },
+      "inventory": {
+        "totalStock": 85,
+        "status": "in_stock",
+        "lowStockThreshold": 10,
+        "trackInventory": true,
+        "allowBackorder": false
+      },
+      "seo": {
+        "metaTitle": "Dugorukava Majica - DALLI | Topla Pamukna Majica, 1.590 RSD",
+        "metaDescription": "Topla dugarukava majica DALLI za hladnije dane. 100% pamuk sa fleece unutrašnjosti. Unisex. 1.590 RSD. Besplatna dostava nad 5.000 RSD.",
+        "keywords": "dugarukava majica, topla majica, zimska majica, DALLI, fleece majica",
+        "canonicalUrl": "https://dalli.rs/casual/men/t-shirts/dugorukava-majica.html"
+      },
+      "breadcrumbs": [
+        {
+          "name": "Početna",
+          "url": "/"
+        },
+        {
+          "name": "Casual",
+          "url": "/casual/"
+        },
+        {
+          "name": "Muška Casual",
+          "url": "/casual/men/"
+        },
+        {
+          "name": "Dugorukava Majica",
+          "url": "/proizvod-dugorukava-majica.html"
+        }
+      ],
+      "structuredData": {
+        "brand": "DALLI",
+        "category": "T-Shirts",
+        "gtin": null,
+        "mpn": "ML-002"
+      },
+      "faq": [
+        {
+          "question": "Šta je fleece unutrašnjost i da li greje?",
+          "answer": "Fleece unutrašnjost je meki, prepleteni sloj pamuka koji zadržava toplinu tela. Dugorukava majica sa fleece je idealna za temperature od 5-15°C - topla je ali dahljiva, ne zadržava vlagu na koži."
+        },
+        {
+          "question": "Da li je majica pre debela za nošenje pod jaknom?",
+          "answer": "Sa 240g/m² ova majica je srednje debljine - tanja od duksera, deblja od osnovne majice. Odlično se nosi pod laganom jaknom ili kabanicom. Ne prepreka kretanje rukama."
+        },
+        {
+          "question": "Kako prati dugarukavu majicu sa fleece?",
+          "answer": "Pranje na 30°C, obrnuto naopako. Ne koristite mekoć za pranje (uništava fleece strukturu). Sušenje ležeći na suvim, daleko od direktnog grejača. Ne peglajte direktno na fleece stranu."
+        },
+        {
+          "question": "Da li su rukavi dovoljno dugački za veće osobe?",
+          "answer": "Rukavi su proporcionalni veličini tela. Ako imate duže ruke u odnosu na visinu, preporučujemo jednu veličinu veću. Model na slici (185cm) nosi veličinu L."
+        },
+        {
+          "question": "Za koje aktivnosti je ova majica najpogodnija?",
+          "answer": "Idealna za svakodnevnu nošu, šetnje, putovanja, rad iz kuće, sportske aktivnosti niskog intenziteta (joga, šetnja). Nije namenjena intenzivnom treningu gde znoite jako - za to imamo sportsku trenerku."
+        }
+      ],
+      "cms": {
+        "featured": false,
+        "bestseller": true,
+        "newArrival": false,
+        "publishedAt": "2024-01-20T10:00:00Z",
+        "updatedAt": "2024-01-20T10:00:00Z",
+        "status": "published",
+        "salesCount": 98,
+        "viewCount": 890,
+        "cartAddCount": 67,
+        "lookIds": [
+          "smart-layering",
+          "weekend-comfort"
+        ],
+        "searchKeywords": [
+          "dugarukava",
+          "majica",
+          "topla",
+          "fleece",
+          "zimska",
+          "unisex",
+          "casual",
+          "men",
+          "t-shirts"
+        ],
+        "priority": 8,
+        "virtualTryOn": {
+          "eligible": true,
+          "modelType": "upper-body",
+          "primaryImage": "/images/virtual-tryon/dugarukava-majica-front.svg",
+          "secondaryImages": [
+            "/images/virtual-tryon/dugarukava-majica-back.svg",
+            "/images/virtual-tryon/dugarukava-majica-detail.svg"
+          ],
+          "fitGuide": "standard"
+        },
+        "product360": {
+          "enabled": true,
+          "images": [
+            "/images/360/majica-01.avif",
+            "/images/360/majica-02.avif",
+            "/images/360/majica-03.avif",
+            "/images/360/majica-04.avif",
+            "/images/360/majica-05.avif",
+            "/images/360/majica-06.avif",
+            "/images/360/majica-07.avif",
+            "/images/360/majica-08.avif",
+            "/images/360/majica-09.avif",
+            "/images/360/majica-10.avif",
+            "/images/360/majica-11.avif",
+            "/images/360/majica-12.avif",
+            "/images/360/majica-13.avif",
+            "/images/360/majica-14.avif",
+            "/images/360/majica-15.avif",
+            "/images/360/majica-16.avif",
+            "/images/360/majica-17.avif",
+            "/images/360/majica-18.avif",
+            "/images/360/majica-19.avif",
+            "/images/360/majica-20.avif",
+            "/images/360/majica-21.avif",
+            "/images/360/majica-22.avif",
+            "/images/360/majica-23.avif",
+            "/images/360/majica-24.avif"
+          ],
+          "placeholder": "/images/360/placeholder.avif"
+        }
+      },
+      "loyalty": {
+        "memberOnly": false,
+        "earlyAccess": true,
+        "earlyAccessDate": "2026-10-03",
+        "limitedRelease": false,
+        "maxPerCustomer": null,
+        "tierRequired": "silver",
+        "pointsMultiplier": 1.5
+      },
+      "collection": "casual",
+      "styleOccasion": [
+        "everyday",
+        "travel",
+        "luxury-essentials"
+      ],
+      "categoryLabel": "T-Shirts",
+      "hierarchyPaths": [
+        {
+          "collection": "casual",
+          "gender": "men",
+          "category": "t-shirts"
+        },
+        {
+          "collection": "casual",
+          "gender": "women",
+          "category": "t-shirts"
+        }
+      ],
+      "primaryHierarchy": {
+        "collection": "casual",
+        "gender": "men",
+        "category": "t-shirts"
+      },
+      "rating": null,
+      "reviewCount": 0
+    },
+    {
+      "id": 3,
+      "slug": "muska-sportska-trenerka",
+      "sku": "ML-003",
+      "name": "Muška Sportska Trenerka",
+      "shortDescription": "Muška sportska trenerka za trening i odmor. Tehnološka tkanina koja vadi vlagu.",
+      "description": "Profesionalna sportska trenerka namenjena treningu i rekreaciji. Vaprotek tehnologija efikasno odvlači vlažnost sa kože, održavajući telo suvim i udobnim. Ergonomski kroš omoguća potpunu slobodu kretanja. Reširan zip i duboki džepovi.",
+      "category": "tracksuits",
+      "gender": "men",
+      "price": 3490,
+      "salePrice": null,
+      "currency": "RSD",
+      "images": {
+        "main": "/images/trenerka.svg",
+        "gallery": [],
+        "ogImage": "/images/og-trenerka.svg"
+      },
+      "altText": "Muška Sportska Trenerka - kvalitetna trenerka za trening u crnoj boji sa belim detaljima",
+      "colors": [
+        {
+          "name": "Crna",
+          "hex": "#000000"
+        },
+        {
+          "name": "Tamno plava",
+          "hex": "#00008B"
+        },
+        {
+          "name": "Antracit",
+          "hex": "#383838"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "S",
+          "available": true,
+          "stock": 10
+        },
+        {
+          "size": "M",
+          "available": true,
+          "stock": 20
+        },
+        {
+          "size": "L",
+          "available": true,
+          "stock": 22
+        },
+        {
+          "size": "XL",
+          "available": true,
+          "stock": 15
+        },
+        {
+          "size": "XXL",
+          "available": true,
+          "stock": 8
+        }
+      ],
+      "specifications": {
+        "material": "Poliester/elastan, vaprotek tehnologija",
+        "weight": "280g/m²",
+        "care": "Pranje 30°C, ne beljenje, ne sušiti u sušici",
+        "warrantyMonths": 24
+      },
+      "inventory": {
+        "totalStock": 75,
+        "status": "in_stock",
+        "lowStockThreshold": 5,
+        "trackInventory": true,
+        "allowBackorder": false
+      },
+      "seo": {
+        "metaTitle": "Muška Sportska Trenerka - DALLI | Vaprotek Tehnologija, 3.490 RSD",
+        "metaDescription": "Muška sportska trenerka DALLI sa vaprotek tehnologijom za trening. Odvlači vlagu, ergonomski kroš. 3.490 RSD. Besplatna dostava nad 5.000 RSD.",
+        "keywords": "muška trenerka, sportska trenerka, vaprotek, DALLI, trenerka za trening",
+        "canonicalUrl": "https://dalli.rs/casual/men/tracksuits/muska-sportska-trenerka.html"
+      },
+      "breadcrumbs": [
+        {
+          "name": "Početna",
+          "url": "/"
+        },
+        {
+          "name": "Svi Proizvodi",
+          "url": "/products.html"
+        },
+        {
+          "name": "Casual",
+          "url": "/casual/"
+        },
+        {
+          "name": "Muška Casual",
+          "url": "/casual/men/"
+        },
+        {
+          "name": "Muška Sportska Trenerka",
+          "url": "/proizvod-muska-sportska-trenerka.html"
+        }
+      ],
+      "structuredData": {
+        "brand": "DALLI",
+        "category": "Tracksuits",
+        "gtin": null,
+        "mpn": "ML-003"
+      },
+      "faq": [
+        {
+          "question": "Šta je Vaprotek tehnologija i kako radi?",
+          "answer": "Vaprotek je naša ekskluzivna tehnologija tkanine koja aktivno odvlači vlagu sa kože na spoljašnju površinu materijala gde brzo isparava. Vaše telo ostaje suvo i hladno tokom intenzivnog treninga, a tkanina ne lepne za kožu."
+        },
+        {
+          "question": "Da li je trenerka pogodna za zimski trening na otvorenom?",
+          "answer": "Da, sa 280g/m² i vaprotek tehnologijom, ova trenerka je dizajnirana za trening u hladnijim uslovima (0-10°C). Zip do vrata i visok ogrlica štite vrata od vetra. Za veoma nizke temperature preporučujemo slojevi odela."
+        },
+        {
+          "question": "Kako održavati vaprotek svojstva tkanine?",
+          "answer": "Pranje na 30°C bez mekoće za pranje (onemogućuje porove tkanine). Ne beljenje, ne hemijsko čišćenje, ne sušenje u sušici. Peglanje nije potrebno - tkanina je bez šavova i ne krči se."
+        },
+        {
+          "question": "Da li trenerska jakna ima džepove sa zipom?",
+          "answer": "Da, jakna ima dva bočna džepa sa nevidljivim zipovima - bezbedno čuvaju telefon, ključeve ili karticu prilikom trčanja. Rukavi imaju pršljen za palac za bolju zaštitu ruku od hladnoće."
+        },
+        {
+          "question": "Kako izabrati veličinu za slojevi odela ispod trenerke?",
+          "answer": "Trenerka ima ergonomski, athletic fit. Ako planirate da nosite gustu majicu ili fleece ispod, uzmite jednu veličinu veću. Za nošenje samo tankog sloja (majica) - vaša standardna veličina."
+        }
+      ],
+      "cms": {
+        "featured": true,
+        "bestseller": true,
+        "newArrival": false,
+        "publishedAt": "2024-02-01T10:00:00Z",
+        "updatedAt": "2024-02-01T10:00:00Z",
+        "status": "published",
+        "salesCount": 156,
+        "viewCount": 2100,
+        "cartAddCount": 134,
+        "lookIds": [
+          "urban-casual"
+        ],
+        "searchKeywords": [
+          "sportska",
+          "trenerka",
+          "vaprotek",
+          "trening",
+          "muška",
+          "odvlačenje vlažnosti",
+          "casual",
+          "men",
+          "tracksuits"
+        ],
+        "priority": 9,
+        "virtualTryOn": {
+          "eligible": true,
+          "modelType": "upper-body",
+          "primaryImage": "/images/virtual-tryon/trenerka-musk-front.svg",
+          "secondaryImages": [
+            "/images/virtual-tryon/trenerka-musk-back.svg",
+            "/images/virtual-tryon/trenerka-musk-detail.svg"
+          ],
+          "fitGuide": "athletic"
+        },
+        "product360": {
+          "enabled": true,
+          "images": [
+            "/images/360/trenerke-musk-01.avif",
+            "/images/360/trenerke-musk-02.avif",
+            "/images/360/trenerke-musk-03.avif",
+            "/images/360/trenerke-musk-04.avif",
+            "/images/360/trenerke-musk-05.avif",
+            "/images/360/trenerke-musk-06.avif",
+            "/images/360/trenerke-musk-07.avif",
+            "/images/360/trenerke-musk-08.avif",
+            "/images/360/trenerke-musk-09.avif",
+            "/images/360/trenerke-musk-10.avif",
+            "/images/360/trenerke-musk-11.avif",
+            "/images/360/trenerke-musk-12.avif",
+            "/images/360/trenerke-musk-13.avif",
+            "/images/360/trenerke-musk-14.avif",
+            "/images/360/trenerke-musk-15.avif",
+            "/images/360/trenerke-musk-16.avif",
+            "/images/360/trenerke-musk-17.avif",
+            "/images/360/trenerke-musk-18.avif",
+            "/images/360/trenerke-musk-19.avif",
+            "/images/360/trenerke-musk-20.avif",
+            "/images/360/trenerke-musk-21.avif",
+            "/images/360/trenerke-musk-22.avif",
+            "/images/360/trenerke-musk-23.avif",
+            "/images/360/trenerke-musk-24.avif"
+          ],
+          "placeholder": "/images/360/placeholder.avif"
+        }
+      },
+      "loyalty": {
+        "memberOnly": false,
+        "earlyAccess": false,
+        "earlyAccessDate": null,
+        "limitedRelease": true,
+        "maxPerCustomer": 1,
+        "tierRequired": "gold",
+        "pointsMultiplier": 2
+      },
+      "collection": "casual",
+      "styleOccasion": [
+        "sport",
+        "everyday",
+        "travel"
+      ],
+      "categoryLabel": "Tracksuits",
+      "hierarchyPaths": [
+        {
+          "collection": "casual",
+          "gender": "men",
+          "category": "tracksuits"
+        }
+      ],
+      "primaryHierarchy": {
+        "collection": "casual",
+        "gender": "men",
+        "category": "tracksuits"
+      },
+      "rating": 3,
+      "reviewCount": 1
+    },
+    {
+      "id": 4,
+      "slug": "zenska-kapuljaca-trenerka",
+      "sku": "ML-004",
+      "name": "Ženska Kapuljača Trenerka",
+      "shortDescription": "Ženska trenerka sa kapuljačom i prednjim džepovima. Mehka tkanina za udobnost.",
+      "description": "Stilšna i udobna trenerka sa kapuljačom, dizajnirana po meri ženske anatomije. Prednji kenguru džepovi, elastični ručavi i donji rub. Mehka fleece unutrašnjost za maksimalnu udobnost. Idealna za trening, šetnju ili kućnu nošu.",
+      "category": "tracksuits",
+      "gender": "women",
+      "price": 3890,
+      "salePrice": null,
+      "currency": "RSD",
+      "images": {
+        "main": "/images/trenerka-kapuljaca.svg",
+        "gallery": [],
+        "ogImage": "/images/og-trenerka-kapuljaca.svg"
+      },
+      "altText": "Ženska Kapuljača Trenerka - trenerka sa kapuljačom i džepovima u rozozi/sivoj boji",
+      "colors": [
+        {
+          "name": "Siva melirana",
+          "hex": "#B0B0B0"
+        },
+        {
+          "name": "Roza",
+          "hex": "#FFC0CB"
+        },
+        {
+          "name": "Bež",
+          "hex": "#F5F5DC"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "XS",
+          "available": true,
+          "stock": 8
+        },
+        {
+          "size": "S",
+          "available": true,
+          "stock": 18
+        },
+        {
+          "size": "M",
+          "available": true,
+          "stock": 22
+        },
+        {
+          "size": "L",
+          "available": true,
+          "stock": 15
+        },
+        {
+          "size": "XL",
+          "available": true,
+          "stock": 7
+        }
+      ],
+      "specifications": {
+        "material": "Bawełna/poliester, meka fleece",
+        "weight": "300g/m²",
+        "care": "Pranje 30°C, ne beljenje",
+        "warrantyMonths": 24
+      },
+      "inventory": {
+        "totalStock": 70,
+        "status": "in_stock",
+        "lowStockThreshold": 5,
+        "trackInventory": true,
+        "allowBackorder": false
+      },
+      "seo": {
+        "metaTitle": "Ženska Kapuljača Trenerka - DALLI | Mehka Fleece, 3.890 RSD",
+        "metaDescription": "Ženska trenerka sa kapuljačom DALLI - prilagođena ženskoj anatomiji, meka fleece. 3.890 RSD. Besplatna dostava nad 5.000 RSD. Plaćanje pri preuzimanju.",
+        "keywords": "ženska trenerka, trenerka sa kapuljačom, fleece trenerka, DALLI, ženska sportska odela",
+        "canonicalUrl": "https://dalli.rs/casual/women/tracksuits/zenska-kapuljaca-trenerka.html"
+      },
+      "breadcrumbs": [
+        {
+          "name": "Početna",
+          "url": "/"
+        },
+        {
+          "name": "Svi Proizvodi",
+          "url": "/products.html"
+        },
+        {
+          "name": "Casual",
+          "url": "/casual/"
+        },
+        {
+          "name": "Ženska Casual",
+          "url": "/casual/women/"
+        },
+        {
+          "name": "Ženska Kapuljača Trenerka",
+          "url": "/proizvod-zenska-kapuljaca-trenerka.html"
+        }
+      ],
+      "structuredData": {
+        "brand": "DALLI",
+        "category": "Tracksuits",
+        "gtin": null,
+        "mpn": "ML-004"
+      },
+      "faq": [
+        {
+          "question": "Kako je trenerka prilagođena ženskoj anatomiji?",
+          "answer": "Krošnja je šira u grlude, suža u struku, sa produženim prednjim delom za bolji pokrivanje. Rukavi su sužiji na ramenu, širi na zapljuštu. Kapuljača je proporcionalno manja da ne vuče za vreme pokreta."
+        },
+        {
+          "question": "Da li je fleece unutrašnjost dovoljno topla za zimu?",
+          "answer": "Sa 300g/m² i mekom fleece unutrašnjosti, ova trenerka je topla za temperature do 5°C. Kapuljača i kenguru džepovi dodaju ekstra zaštitu ruke i glave. Idealna za prelazne sezone i blage zimske dane."
+        },
+        {
+          "question": "Da li boje (roza, bež, siva) otvaraju prilikom pranja?",
+          "answer": "Koristimo reaktivna bojila visoke postojanosti. Boje su stabilne na pranje 30°C. Prvo pranje odvojite od belog. Obrnite naopako. Ne ekspozicija direktnom suncu prilikom sušenja za maksimalnu trajnost boje."
+        },
+        {
+          "question": "Kako izgledaju kenguru džepovi - su li dosta veliki za telefon?",
+          "answer": "Prednja kenguru torba ima dva unutrašnja odeljka (leva/desna) - svaki podnosi standardan smartphone (do 6.7\"). Unutrašnji džep sa zipom na levoj strani za ključeve/karticu. Džepovi su ojačani da ne izobličavaju krošnju."
+        },
+        {
+          "question": "Da li je trenerka pogodna za trening ili samo za odmor?",
+          "answer": "Dizajnirana je za obe namene: elastična tkanina (bawełna/poliester) omoguća punu slobodu kretanja za jogu, pilates, lagani cardio. Istovremeno, meka fleece i stilšni kroš čine je savršenom za kućnu nošu i gradske šetnje."
+        }
+      ],
+      "cms": {
+        "featured": true,
+        "bestseller": false,
+        "newArrival": true,
+        "publishedAt": "2024-02-15T10:00:00Z",
+        "updatedAt": "2024-02-15T10:00:00Z",
+        "status": "published",
+        "salesCount": 87,
+        "viewCount": 1200,
+        "cartAddCount": 78,
+        "lookIds": [
+          "weekend-comfort"
+        ],
+        "searchKeywords": [
+          "ženska",
+          "trenerka",
+          "kapuljača",
+          "fleece",
+          "kenguru džepovi",
+          "pastelne",
+          "casual",
+          "women",
+          "tracksuits"
+        ],
+        "priority": 7,
+        "virtualTryOn": {
+          "eligible": true,
+          "modelType": "upper-body",
+          "primaryImage": "/images/virtual-tryon/trenerka-zensk-front.svg",
+          "secondaryImages": [
+            "/images/virtual-tryon/trenerka-zensk-back.svg",
+            "/images/virtual-tryon/trenerka-zensk-detail.svg"
+          ],
+          "fitGuide": "standard"
+        },
+        "product360": {
+          "enabled": true,
+          "images": [
+            "/images/360/trenerke-musk-01.avif",
+            "/images/360/trenerke-musk-02.avif",
+            "/images/360/trenerke-musk-03.avif",
+            "/images/360/trenerke-musk-04.avif",
+            "/images/360/trenerke-musk-05.avif",
+            "/images/360/trenerke-musk-06.avif",
+            "/images/360/trenerke-musk-07.avif",
+            "/images/360/trenerke-musk-08.avif",
+            "/images/360/trenerke-musk-09.avif",
+            "/images/360/trenerke-musk-10.avif",
+            "/images/360/trenerke-musk-11.avif",
+            "/images/360/trenerke-musk-12.avif",
+            "/images/360/trenerke-musk-13.avif",
+            "/images/360/trenerke-musk-14.avif",
+            "/images/360/trenerke-musk-15.avif",
+            "/images/360/trenerke-musk-16.avif",
+            "/images/360/trenerke-musk-17.avif",
+            "/images/360/trenerke-musk-18.avif",
+            "/images/360/trenerke-musk-19.avif",
+            "/images/360/trenerke-musk-20.avif",
+            "/images/360/trenerke-musk-21.avif",
+            "/images/360/trenerke-musk-22.avif",
+            "/images/360/trenerke-musk-23.avif",
+            "/images/360/trenerke-musk-24.avif"
+          ],
+          "placeholder": "/images/360/placeholder.avif"
+        }
+      },
+      "loyalty": {
+        "memberOnly": false,
+        "earlyAccess": false,
+        "earlyAccessDate": null,
+        "limitedRelease": false,
+        "maxPerCustomer": null,
+        "tierRequired": "member",
+        "pointsMultiplier": 1
+      },
+      "collection": "casual",
+      "styleOccasion": [
+        "sport",
+        "everyday",
+        "travel",
+        "smart-casual"
+      ],
+      "categoryLabel": "Tracksuits",
+      "hierarchyPaths": [
+        {
+          "collection": "casual",
+          "gender": "women",
+          "category": "tracksuits"
+        }
+      ],
+      "primaryHierarchy": {
+        "collection": "casual",
+        "gender": "women",
+        "category": "tracksuits"
+      },
+      "rating": null,
+      "reviewCount": 0
+    },
+    {
+      "id": 5,
+      "slug": "muska-duks-hoodie",
+      "sku": "ML-007",
+      "name": "Muški Duks (Hoodie)",
+      "shortDescription": "Muški duks sa kapuljačom i kenguru džepom. Gruba pamuk 320g/m².",
+      "description": "Klasičan muški hoodie za urbanski stil i hladnije dane. Gruba pamuk od 320g/m² sa dvostruko prešivenim ševovima za maksimalnu dugotrajnost. Kapuljača sa povlačicama, veliki kenguru džep, rebrasti ručavi i donji rub. Savršen za nošenje sam ili pod jaknom.",
+      "category": "hoodies",
+      "gender": "men",
+      "price": 4290,
+      "salePrice": null,
+      "currency": "RSD",
+      "images": {
+        "main": "/images/duks-musk.svg",
+        "gallery": [],
+        "ogImage": "/images/og-duks-musk.svg"
+      },
+      "altText": "Muški Duks - hoodie sa kapuljačom i kenguru džepom u crnoj boji, gruba pamuk",
+      "colors": [
+        {
+          "name": "Crna",
+          "hex": "#000000"
+        },
+        {
+          "name": "Antracit",
+          "hex": "#383838"
+        },
+        {
+          "name": "Crvena",
+          "hex": "#FF0000"
+        },
+        {
+          "name": "Zelena",
+          "hex": "#008000"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "S",
+          "available": true,
+          "stock": 12
+        },
+        {
+          "size": "M",
+          "available": true,
+          "stock": 20
+        },
+        {
+          "size": "L",
+          "available": true,
+          "stock": 25
+        },
+        {
+          "size": "XL",
+          "available": true,
+          "stock": 18
+        },
+        {
+          "size": "XXL",
+          "available": true,
+          "stock": 10
+        },
+        {
+          "size": "XXXL",
+          "available": true,
+          "stock": 5
+        }
+      ],
+      "specifications": {
+        "material": "100% pamuk, gruba tkanina",
+        "weight": "320g/m²",
+        "care": "Pranje 30°C, ne beljenje",
+        "warrantyMonths": 24
+      },
+      "inventory": {
+        "totalStock": 90,
+        "status": "in_stock",
+        "lowStockThreshold": 5,
+        "trackInventory": true,
+        "allowBackorder": false
+      },
+      "seo": {
+        "metaTitle": "Muški Duks (Hoodie) - DALLI | Gruba Pamuk 320g/m², 4.290 RSD",
+        "metaDescription": "Muški hoodie DALLI - gruba pamuk 320g/m², kapuljača, kenguru džep. 4.290 RSD. Besplatna dostava nad 5.000 RSD. 30 dana za vraćanje.",
+        "keywords": "muški duks, hoodie, muška jakna, gruba pamuk, DALLI, urbanski stil",
+        "canonicalUrl": "https://dalli.rs/casual/men/hoodies/muska-duks-hoodie.html"
+      },
+      "breadcrumbs": [
+        {
+          "name": "Početna",
+          "url": "/"
+        },
+        {
+          "name": "Svi Proizvodi",
+          "url": "/products.html"
+        },
+        {
+          "name": "Casual",
+          "url": "/casual/"
+        },
+        {
+          "name": "Muška Casual",
+          "url": "/casual/men/"
+        },
+        {
+          "name": "Muški Duks (Hoodie)",
+          "url": "/proizvod-muska-duks-hoodie.html"
+        }
+      ],
+      "structuredData": {
+        "brand": "DALLI",
+        "category": "Hoodies",
+        "gtin": null,
+        "mpn": "ML-007"
+      },
+      "faq": [
+        {
+          "question": "Koja je debljina tkanine i da li je pre teška za leto?",
+          "answer": "Gruba pamuk od 320g/m² je značajno deblja od standardnih hoodie-a (obično 240-280g/m²). Ovo je zimska verzija - preteška za leto. Za leto preporučujemo Ženski duks (260g/m²) ili osnovne majice. Ovaj duks je za temperature ispod 15°C."
+        },
+        {
+          "question": "Da li kapuljača ima povlačice za podešavanje?",
+          "answer": "Da, kapuljača ima dve parne povlačice (plafonska i horizontalna) za preciznu prilagodbu glavi. Unutrašnjost kapuljače je obložena istom tkaninom (ne kontravest) za dodatnu toplotu i udobnost."
+        },
+        {
+          "question": "Kako se nosi muški duks - sam ili pod jaknom?",
+          "answer": "Oba варијанта rade. Kao spoljašnji sloj - urban stil, kenguru džep za ruke. Pod jaknom (kožušnu, pufer, kabanicu) - debljina 320g/m² ne pravi 'mici' na ramenu. Rebrasti ručavi i donji rub drže toplinu."
+        },
+        {
+          "question": "Da li su ručavi i donji rub zaista rebrasti i drže li oblik?",
+          "answer": "Da, 2x2 rebrasti đevrd (elastan+pamuk) sa dvostrukim šivenjem. Testirani na 50+ pranja - zadržavaju elastičnost i ne izobličavaju. Ne 'visе' nakon dugotrajnog nošenja."
+        },
+        {
+          "question": "Da li se crna boja beli (pilling) nakon pranja?",
+          "answer": "Gruba pamuk 320g/m² je prirodno otpornija na pilling od tanjih tkanina. Preporučujemo: pranje na 30°C, obrnuto naopako, bez mekoće, sušenje ležeći. Ne peglajte direktno na tkaninu. Sa pravilnim održavanjem - nema pilling godinama."
+        }
+      ],
+      "cms": {
+        "featured": true,
+        "bestseller": true,
+        "newArrival": false,
+        "publishedAt": "2024-01-25T10:00:00Z",
+        "updatedAt": "2024-01-25T10:00:00Z",
+        "status": "published",
+        "salesCount": 203,
+        "viewCount": 2800,
+        "cartAddCount": 189,
+        "lookIds": [
+          "urban-casual",
+          "evening-elegant"
+        ],
+        "searchKeywords": [
+          "muški",
+          "duks",
+          "hoodie",
+          "kapuljača",
+          "kenguru džep",
+          "gruba pamuk",
+          "320g",
+          "casual",
+          "men",
+          "hoodies"
+        ],
+        "priority": 10,
+        "virtualTryOn": {
+          "eligible": true,
+          "modelType": "upper-body",
+          "primaryImage": "/images/virtual-tryon/duks-musk-front.svg",
+          "secondaryImages": [
+            "/images/virtual-tryon/duks-musk-back.svg",
+            "/images/virtual-tryon/duks-musk-detail.svg"
+          ],
+          "fitGuide": "relaxed"
+        },
+        "product360": {
+          "enabled": true,
+          "images": [
+            "/images/360/duks-musk-01.avif",
+            "/images/360/duks-musk-02.avif",
+            "/images/360/duks-musk-03.avif",
+            "/images/360/duks-musk-04.avif",
+            "/images/360/duks-musk-05.avif",
+            "/images/360/duks-musk-06.avif",
+            "/images/360/duks-musk-07.avif",
+            "/images/360/duks-musk-08.avif",
+            "/images/360/duks-musk-09.avif",
+            "/images/360/duks-musk-10.avif",
+            "/images/360/duks-musk-10.avif",
+            "/images/360/duks-musk-12.avif",
+            "/images/360/duks-musk-13.avif",
+            "/images/360/duks-musk-14.avif",
+            "/images/360/duks-musk-15.avif",
+            "/images/360/duks-musk-16.avif",
+            "/images/360/duks-musk-17.avif",
+            "/images/360/duks-musk-18.avif",
+            "/images/360/duks-musk-19.avif",
+            "/images/360/duks-musk-20.avif",
+            "/images/360/duks-musk-21.avif",
+            "/images/360/duks-musk-22.avif",
+            "/images/360/duks-musk-23.avif",
+            "/images/360/duks-musk-24.avif"
+          ],
+          "placeholder": "/images/360/placeholder.avif"
+        }
+      },
+      "loyalty": {
+        "memberOnly": true,
+        "earlyAccess": false,
+        "earlyAccessDate": null,
+        "limitedRelease": false,
+        "maxPerCustomer": null,
+        "tierRequired": "member",
+        "pointsMultiplier": 1
+      },
+      "collection": "casual",
+      "styleOccasion": [
+        "everyday",
+        "travel",
+        "smart-casual"
+      ],
+      "categoryLabel": "Hoodies",
+      "hierarchyPaths": [
+        {
+          "collection": "casual",
+          "gender": "men",
+          "category": "hoodies"
+        }
+      ],
+      "primaryHierarchy": {
+        "collection": "casual",
+        "gender": "men",
+        "category": "hoodies"
+      },
+      "rating": 4.5,
+      "reviewCount": 2
+    },
+    {
+      "id": 6,
+      "slug": "zenska-duks-hoodie",
+      "sku": "ML-008",
+      "name": "Ženski Duks (Hoodie)",
+      "shortDescription": "Ženski duks sa kapuljačom i stilšnim rukavima. Lakša tkanina za žensku anatomiju.",
+      "description": "Elegantan ženski hoodie prilagođen ženskoj anatomiji. Lakša tkanina (260g/m²) sa tifon detaljima na rukavima. Kapuljača sa dekorativnim povlačicama, prednji džep, prilagođena krošnja. Pastelne boje za sofisticiran izgled.",
+      "category": "hoodies",
+      "gender": "women",
+      "price": 3990,
+      "salePrice": null,
+      "currency": "RSD",
+      "images": {
+        "main": "/images/duks-zensk.svg",
+        "gallery": [],
+        "ogImage": "/images/og-duks-zensk.svg"
+      },
+      "altText": "Ženski Duks - hoodie sa kapuljačom u pastelnoj boji, prilagođena ženskoj krošnji",
+      "colors": [
+        {
+          "name": "Bež",
+          "hex": "#F5F5DC"
+        },
+        {
+          "name": "Svetlo plava",
+          "hex": "#ADD8E6"
+        },
+        {
+          "name": "Lila",
+          "hex": "#C8A2C8"
+        },
+        {
+          "name": "Siva",
+          "hex": "#D3D3D3"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "XS",
+          "available": true,
+          "stock": 10
+        },
+        {
+          "size": "S",
+          "available": true,
+          "stock": 18
+        },
+        {
+          "size": "M",
+          "available": true,
+          "stock": 22
+        },
+        {
+          "size": "L",
+          "available": true,
+          "stock": 15
+        },
+        {
+          "size": "XL",
+          "available": true,
+          "stock": 8
+        }
+      ],
+      "specifications": {
+        "material": "Bawełna/poliester, meka tkanina",
+        "weight": "260g/m²",
+        "care": "Pranje 30°C, ne beljenje",
+        "warrantyMonths": 24
+      },
+      "inventory": {
+        "totalStock": 73,
+        "status": "in_stock",
+        "lowStockThreshold": 5,
+        "trackInventory": true,
+        "allowBackorder": false
+      },
+      "seo": {
+        "metaTitle": "Ženski Duks (Hoodie) - DALLI | Pastelne Boje, 3.990 RSD",
+        "metaDescription": "Ženski hoodie DALLI - lagana tkanina 260g/m², tifon detalji, pastelne boje. 3.990 RSD. Besplatna dostava nad 5.000 RSD. Plaćanje pri preuzimanju.",
+        "keywords": "ženski duks, hoodie, ženska jakna, pastelne boje, DALLI, ženska garderoba",
+        "canonicalUrl": "https://dalli.rs/casual/women/hoodies/zenska-duks-hoodie.html"
+      },
+      "breadcrumbs": [
+        {
+          "name": "Početna",
+          "url": "/"
+        },
+        {
+          "name": "Svi Proizvodi",
+          "url": "/products.html"
+        },
+        {
+          "name": "Casual",
+          "url": "/casual/"
+        },
+        {
+          "name": "Ženska Casual",
+          "url": "/casual/women/"
+        },
+        {
+          "name": "Ženski Duks (Hoodie)",
+          "url": "/proizvod-zenski-duks-hoodie.html"
+        }
+      ],
+      "structuredData": {
+        "brand": "DALLI",
+        "category": "Hoodies",
+        "gtin": null,
+        "mpn": "ML-008"
+      },
+      "faq": [
+        {
+          "question": "Koja je razlika u tkanini u odnosu na muški duks?",
+          "answer": "Ženski duks koristi laganu tkaninu od 260g/m² (vs 320g/m² kod muškog) sa mešavinom bawełna/poliester. To ga čini lakšim, mekim, bolje prate žensku anatomiju. Tifon detalji na rukavima dodaju stil i elastičnost."
+        },
+        {
+          "question": "Da li su pastelne boje (bež, svetlo plava, lila) teške za održavanje?",
+          "answer": "Pastelne boje su bojenje u masi tkanine (ne štampa), što znači da ne otvaraju niti iscrpljuju. Prvo pranje odvojite od belog i tamnih boja. Pranje 30°C, obruto, bez mekoće. Boje ostaju sveže godinama."
+        },
+        {
+          "question": "Šta su tifon detalji na rukavima?",
+          "answer": "Tifon je fino prepleteni elastični traka na završetku rukava (zamena za klasičan rebras). Omogućava lagano uvlačenje rukava do zgloba, bolje prileganje, moderni look. Ne pritiska, ne ostavlja tragove na koži."
+        },
+        {
+          "question": "Da li kapuljača ima povlačice?",
+          "answer": "Da, kapuljača sa dekorativnim povlačicama (estetska funkcija) - ne funkcionalne za otežano podešavanje kao kod muškog modela. Unutrašnjost kapuljače obložena mekom tkaninom. Kapuljača je manja, prilagođena ženskoj glavi."
+        },
+        {
+          "question": "Kako izabrati veličinu - da li je krošnja manja?",
+          "answer": "Krošnja je 'true to size' za žensku anatomiju. Ako nosite veličinu M u drugim brendovima - uzmite M. Ako želite oversized look (nosite duks razvučen) - uzmite jednu veličinu veću. Model na slici (170cm) nosi veličinu S."
+        }
+      ],
+      "cms": {
+        "featured": false,
+        "bestseller": false,
+        "newArrival": true,
+        "publishedAt": "2024-03-01T10:00:00Z",
+        "updatedAt": "2024-03-01T10:00:00Z",
+        "status": "published",
+        "salesCount": 67,
+        "viewCount": 950,
+        "cartAddCount": 56,
+        "lookIds": [
+          "evening-elegant"
+        ],
+        "searchKeywords": [
+          "ženski",
+          "duks",
+          "hoodie",
+          "pastelne",
+          "tifon",
+          "lagana tkanina",
+          "260g",
+          "casual",
+          "women",
+          "hoodies"
+        ],
+        "priority": 6,
+        "virtualTryOn": {
+          "eligible": true,
+          "modelType": "upper-body",
+          "primaryImage": "/images/virtual-tryon/duks-zensk-front.svg",
+          "secondaryImages": [
+            "/images/virtual-tryon/duks-zensk-back.svg",
+            "/images/virtual-tryon/duks-zensk-detail.svg"
+          ],
+          "fitGuide": "standard"
+        },
+        "product360": {
+          "enabled": true,
+          "images": [
+            "/images/360/duks-musk-01.avif",
+            "/images/360/duks-musk-02.avif",
+            "/images/360/duks-musk-03.avif",
+            "/images/360/duks-musk-04.avif",
+            "/images/360/duks-musk-05.avif",
+            "/images/360/duks-musk-06.avif",
+            "/images/360/duks-musk-07.avif",
+            "/images/360/duks-musk-08.avif",
+            "/images/360/duks-musk-09.avif",
+            "/images/360/duks-musk-10.avif",
+            "/images/360/duks-musk-10.avif",
+            "/images/360/duks-musk-12.avif",
+            "/images/360/duks-musk-13.avif",
+            "/images/360/duks-musk-14.avif",
+            "/images/360/duks-musk-15.avif",
+            "/images/360/duks-musk-16.avif",
+            "/images/360/duks-musk-17.avif",
+            "/images/360/duks-musk-18.avif",
+            "/images/360/duks-musk-19.avif",
+            "/images/360/duks-musk-20.avif",
+            "/images/360/duks-musk-21.avif",
+            "/images/360/duks-musk-22.avif",
+            "/images/360/duks-musk-23.avif",
+            "/images/360/duks-musk-24.avif"
+          ],
+          "placeholder": "/images/360/placeholder.avif"
+        }
+      },
+      "loyalty": {
+        "memberOnly": false,
+        "earlyAccess": true,
+        "earlyAccessDate": "2026-10-03",
+        "limitedRelease": false,
+        "maxPerCustomer": null,
+        "tierRequired": "silver",
+        "pointsMultiplier": 1.5
+      },
+      "collection": "casual",
+      "styleOccasion": [
+        "everyday",
+        "travel",
+        "smart-casual",
+        "evening"
+      ],
+      "categoryLabel": "Hoodies",
+      "hierarchyPaths": [
+        {
+          "collection": "casual",
+          "gender": "women",
+          "category": "hoodies"
+        }
+      ],
+      "primaryHierarchy": {
+        "collection": "casual",
+        "gender": "women",
+        "category": "hoodies"
+      },
+      "rating": 5,
+      "reviewCount": 1
+    },
+    {
+      "id": 7,
+      "slug": "carape",
+      "sku": "ML-005",
+      "name": "Čarape Unisex (set 3 para)",
+      "shortDescription": "Udobne pamukne čarape u setu od 3 para. Pojačana petna i šljivak.",
+      "description": "Premium kvalitet čarape u setu od 3 para. Bez šavova na prstima za maksimalnu udobnost. Pojačana petna i šljivak za dugu životnost. Elastičan deo za sigurno držanje bez pritiska. Pogodne za muškarce i žene.",
+      "category": "essentials",
+      "gender": [
+        "men",
+        "women"
+      ],
+      "price": 490,
+      "salePrice": null,
+      "currency": "RSD",
+      "images": {
+        "main": "/images/carape.svg",
+        "gallery": [],
+        "ogImage": "/images/og-carape.svg"
+      },
+      "altText": "Čarape - set od 3 para udobnih pamuknih čarapa u crnoj, sivoj i beloj boji, unisex",
+      "colors": [
+        {
+          "name": "Crna/Siva/Bela",
+          "hex": "#000000"
+        },
+        {
+          "name": "Plava/Crna/Siva",
+          "hex": "#0000FF"
+        },
+        {
+          "name": "Multicolor",
+          "hex": "#FF00FF"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "36-40",
+          "available": true,
+          "stock": 50
+        },
+        {
+          "size": "41-45",
+          "available": true,
+          "stock": 45
+        }
+      ],
+      "specifications": {
+        "material": "80% pamuk, 17% poliamid, 3% elastan",
+        "weight": "standard",
+        "care": "Pranje 40°C, ne beljenje",
+        "warrantyMonths": 12
+      },
+      "inventory": {
+        "totalStock": 95,
+        "status": "in_stock",
+        "lowStockThreshold": 20,
+        "trackInventory": true,
+        "allowBackorder": false
+      },
+      "seo": {
+        "metaTitle": "Čarape Unisex Set 3 Para - DALLI | Pojačana Petna, 490 RSD",
+        "metaDescription": "Set 3 para pamuknih čarapa DALLI - pojačana petna, bez šavova na prstima. 490 RSD. Besplatna dostava nad 5.000 RSD. Unisex veličine 36-45.",
+        "keywords": "čarape, set čarapa, pamukne čarape, unisex čarape, DALLI",
+        "canonicalUrl": "https://dalli.rs/casual/men/essentials/carape.html"
+      },
+      "breadcrumbs": [
+        {
+          "name": "Početna",
+          "url": "/"
+        },
+        {
+          "name": "Casual",
+          "url": "/casual/"
+        },
+        {
+          "name": "Muška Casual",
+          "url": "/casual/men/"
+        },
+        {
+          "name": "Čarape Unisex (set 3 para)",
+          "url": "/proizvod-carape.html"
+        }
+      ],
+      "structuredData": {
+        "brand": "DALLI",
+        "category": "Essentials",
+        "gtin": null,
+        "mpn": "ML-005"
+      },
+      "faq": [
+        {
+          "question": "Šta sve uključuje set od 3 para čarapa?",
+          "answer": "Set sadrži 3 para čarapa u kombinaciji boja: Crna/Siva/Bela, Plava/Crna/Siva ili Multicolor. Sva 3 para su iste veličine (36-40 ili 41-45). Svaki par je identičan kvalitetu - pojačana petna, šljivak i bezšavna konstrukcija na prstima."
+        },
+        {
+          "question": "Da li su čarape pogodne za sport i trčanje?",
+          "answer": "Da, sa 80% pamuka, 17% poliamida i 3% elastana - ova mešavina je dizajnirana za aktivnu nošu. Poliamid dodaje otpornost na teranje i brzu sušljivost, elastan osigurava prilagodljivost. Pojačana petna i šljivak štite od nastajanja rupa prilikom trčanja."
+        },
+        {
+          "question": "Da li čarape spuštaju se prilikom hoda?",
+          "answer": "Ne, elastičan deo na gležnju (ribbed cuff) sa dvostrukom preplitkom drži čarape na mestu. Ne spuštaju se, ne šire se, ne napinju. Testirani na dugačke šetnje (20km+) i trčanje - ostaju na mestu celu dan."
+        },
+        {
+          "question": "Kako prati čarape da bi zadržale oblik i boju?",
+          "answer": "Pranje na 40°C (maksimalno za pamuk). Ne beljenje - uništava elastan i boje. Sušenje na vazduhu, ne u sušici (visoka temperatura skrči elastan). Ne peglajte. Obrnute naopako za zaštitu boja."
+        },
+        {
+          "question": "Zašto su unisex i kako izabrati veličinu?",
+          "answer": "Unisex znači da su identične za muškarce i žene - razlika je samo u veličini obuća. Veličina 36-40 = EU 36-40 (muški 39-42, ženski 37-40). Veličina 41-45 = EU 41-45 (muški 43-46, ženski 41-44). Izaberite po svojoj EU veličini cipele."
+        }
+      ],
+      "cms": {
+        "featured": false,
+        "bestseller": true,
+        "newArrival": false,
+        "publishedAt": "2024-01-10T10:00:00Z",
+        "updatedAt": "2024-01-10T10:00:00Z",
+        "status": "published",
+        "salesCount": 245,
+        "viewCount": 1800,
+        "cartAddCount": 167,
+        "lookIds": [
+          "urban-casual",
+          "weekend-comfort",
+          "smart-layering"
+        ],
+        "searchKeywords": [
+          "čarape",
+          "set",
+          "pamuk",
+          "unisex",
+          "pojačana petna",
+          "bez šavova",
+          "sport",
+          "casual",
+          "men",
+          "essentials"
+        ],
+        "priority": 9,
+        "virtualTryOn": {
+          "eligible": false,
+          "reason": "accessory"
+        }
+      },
+      "loyalty": {
+        "memberOnly": false,
+        "earlyAccess": false,
+        "earlyAccessDate": null,
+        "limitedRelease": true,
+        "maxPerCustomer": 1,
+        "tierRequired": "gold",
+        "pointsMultiplier": 2
+      },
+      "collection": "casual",
+      "styleOccasion": [
+        "everyday",
+        "sport",
+        "travel",
+        "luxury-essentials"
+      ],
+      "categoryLabel": "Essentials",
+      "hierarchyPaths": [
+        {
+          "collection": "casual",
+          "gender": "men",
+          "category": "essentials"
+        },
+        {
+          "collection": "casual",
+          "gender": "women",
+          "category": "essentials"
+        }
+      ],
+      "primaryHierarchy": {
+        "collection": "casual",
+        "gender": "men",
+        "category": "essentials"
+      },
+      "rating": null,
+      "reviewCount": 0
+    },
+    {
+      "id": 8,
+      "slug": "salica-za-kafu",
+      "sku": "ML-006",
+      "name": "Šoljica za Kafu DALLI",
+      "shortDescription": "Keramička šalica sa DALLI logom. Kapacitet 330ml.",
+      "description": "Kvalitetna keramička šalica sa DALLI brandiranjem. Kapacitet 330ml, pogodna za mikrovalnu pećnicu i veš mašinu za suđe. Glazirana površina za lako pranje. Hedondar dizajn.",
+      "category": "accessories",
+      "gender": "unisex",
+      "price": 890,
+      "salePrice": null,
+      "currency": "RSD",
+      "images": {
+        "main": "/images/salica.svg",
+        "gallery": [],
+        "ogImage": "/images/og-salica.svg"
+      },
+      "altText": "Šalica za Kafu - keramička šalica sa DALLI logom u beloj boji, 330ml",
+      "colors": [
+        {
+          "name": "Bela sa crnim logom",
+          "hex": "#FFFFFF"
+        },
+        {
+          "name": "Crna sa belim logom",
+          "hex": "#000000"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "Standard 330ml",
+          "available": true,
+          "stock": 30
+        }
+      ],
+      "specifications": {
+        "material": "Keramika, glazirana",
+        "weight": "~350g",
+        "care": "Mikrovalna i veš mašina za suđe",
+        "warrantyMonths": 12
+      },
+      "inventory": {
+        "totalStock": 30,
+        "status": "in_stock",
+        "lowStockThreshold": 10,
+        "trackInventory": true,
+        "allowBackorder": false
+      },
+      "seo": {
+        "metaTitle": "Šalica za Kafu DALLI - Keramička 330ml | 890 RSD",
+        "metaDescription": "Keramička šalica sa DALLI logom, 330ml. Mikrovalna i veš mašina za suđe. 890 RSD. Besplatna dostava nad 5.000 RSD. Hedondar dizajn.",
+        "keywords": "šalica za kafu, keramička šalica, DALLI merč, 330ml šalica",
+        "canonicalUrl": "https://dalli.rs/casual/unisex/accessories/salica-za-kafU.html"
+      },
+      "breadcrumbs": [
+        {
+          "name": "Početna",
+          "url": "/"
+        },
+        {
+          "name": "Casual",
+          "url": "/casual/"
+        },
+        {
+          "name": "Unisex Casual",
+          "url": "/casual/unisex/"
+        },
+        {
+          "name": "Šalica za Kafu DALLI",
+          "url": "/proizvod-salica-za-kafU.html"
+        }
+      ],
+      "structuredData": {
+        "brand": "DALLI",
+        "category": "Accessories",
+        "gtin": null,
+        "mpn": "ML-006"
+      },
+      "faq": [
+        {
+          "question": "Da li šalica izdržava mikrovalnu pećnicu?",
+          "answer": "Da, keramička šalica DALLI je 100% mikrovalna bezbedna. Glazirana površina nema metalnih čestica. Možete zagrevati kafu, čaj ili mleko direktno u šalici. Ne stavljajte praznu šalicu u mikrovalnu."
+        },
+        {
+          "question": "Da li šalica može u veš mašinu za suđe?",
+          "answer": "Da, potpuno je veš mašina za suđe bezbedna. Glazura je vitrifikovana (pećena na 1200°C) i ne apsorbiše sredstva za pranje niti ostavlja tragove. Preporučujemo gornji krevet za dugu životnost logos."
+        },
+        {
+          "question": "Koji je tačan kapacitet šalice?",
+          "answer": "Precizno 330ml do ivice (pun kapacitet ~350ml). Ovo je standardna veličina za espresso duplo, cappuccino, latte macchiato ili veliku čašu čaja. Idealna za dnevnu dozu kofeina."
+        },
+        {
+          "question": "Da li boja loga (crn na belom / bel na crnom) otvara prilikom pranja?",
+          "answer": "Logo je primenjen podglazurnom tehnikom (underglaze) - upekovan u glazuru na 1200°C. Ne može da otvari, ne može da se iskrije, ne može da se obrise. Traje vekovima uz normalnu upotrebu."
+        },
+        {
+          "question": "Da li je šalica pogodna za hedondar (ruku) - ne peče li?",
+          "answer": "Oblik šalice (šira baza, suža vrh) i debljina keramike (~6mm) prirodno izoluju toplinu. Ruke ne peku - donji deo šalice ostaje hladniji. Ugodan grip bez ručke. Testirano na 90°C tečnosti - udobno držanje 10+ minuta."
+        }
+      ],
+      "cms": {
+        "featured": false,
+        "bestseller": false,
+        "newArrival": false,
+        "publishedAt": "2024-01-05T10:00:00Z",
+        "updatedAt": "2024-01-05T10:00:00Z",
+        "status": "published",
+        "salesCount": 34,
+        "viewCount": 420,
+        "cartAddCount": 28,
+        "lookIds": [],
+        "searchKeywords": [
+          "šalica",
+          "keramika",
+          "kafa",
+          "merch",
+          "logo",
+          "330ml",
+          "mikrovalna",
+          "casual",
+          "unisex",
+          "accessories"
+        ],
+        "priority": 3,
+        "virtualTryOn": {
+          "eligible": false,
+          "reason": "accessory"
+        }
+      },
+      "loyalty": {
+        "memberOnly": false,
+        "earlyAccess": false,
+        "earlyAccessDate": null,
+        "limitedRelease": false,
+        "maxPerCustomer": null,
+        "tierRequired": "member",
+        "pointsMultiplier": 1
+      },
+      "collection": "casual",
+      "styleOccasion": [
+        "everyday",
+        "luxury-essentials"
+      ],
+      "categoryLabel": "Accessories",
+      "hierarchyPaths": [
+        {
+          "collection": "casual",
+          "gender": "unisex",
+          "category": "accessories"
+        }
+      ],
+      "primaryHierarchy": {
+        "collection": "casual",
+        "gender": "unisex",
+        "category": "accessories"
+      },
+      "rating": null,
+      "reviewCount": 0
+    },
+    {
+      "id": 9,
+      "slug": "bela-kozulja",
+      "sku": "ML-009",
+      "name": "Bela Kožulja",
+      "shortDescription": "Klasik bela kožulja od 100% Organskog pamuka. Savršena za poslovne i formalne prilike.",
+      "description": "Bela kožulja je temelj svake elegantne garderobe. Napravljena od premium organskog pamuka sa gramazom od 140g/m², ova kožulja nudi odličnu dahljivost i udobnost. Tanki, ali neprovidni materijal lepo padne na telo. Klasičan kroš sa razrezanim zagrljem i majstorskim šivenjem. Pogodna za nošenje samostalno ili pod sakom.",
+      "category": "shirts",
+      "gender": "men",
+      "price": 8900,
+      "salePrice": null,
+      "currency": "RSD",
+      "images": {
+        "main": "/images/elegance/bela-kozula.svg",
+        "gallery": [],
+        "ogImage": "/images/og-bela-kozula.svg"
+      },
+      "altText": "Bela kožulja - premium organski pamuk, klasičan kroš, muška eleganca",
+      "colors": [
+        {
+          "name": "Bela",
+          "hex": "#FFFFFF"
+        },
+        {
+          "name": "Svijetlo plava",
+          "hex": "#E8F0FE"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "S",
+          "available": true,
+          "stock": 15
+        },
+        {
+          "size": "M",
+          "available": true,
+          "stock": 20
+        },
+        {
+          "size": "L",
+          "available": true,
+          "stock": 18
+        },
+        {
+          "size": "XL",
+          "available": true,
+          "stock": 12
+        },
+        {
+          "size": "XXL",
+          "available": true,
+          "stock": 8
+        }
+      ],
+      "specifications": {
+        "material": "100% organski pamuk",
+        "weight": "140g/m²",
+        "care": "Pranje 30°C, peglanje srednjom temperaturom",
+        "warrantyMonths": 24
+      },
+      "inventory": {
+        "totalStock": 73,
+        "status": "in_stock",
+        "lowStockThreshold": 5,
+        "trackInventory": true,
+        "allowBackorder": false
+      },
+      "seo": {
+        "metaTitle": "Bela Kožulja - DALLI ELEGANCE | 100% Organski Pamuk, 8.900 RSD",
+        "metaDescription": "Premium bela kožulja DALLI Elegance kolekcije. 100% organski pamuk, 140g/m², klasičan kroš. 8.900 RSD. Besplatna dostava nad 5.000 RSD.",
+        "keywords": "bela kožulja, organski pamuk, muška kožulja, eleganca, DALLI, poslovna odela",
+        "canonicalUrl": "https://dalli.rs/elegance/men/shirts/bela-kozula.html"
+      },
+      "breadcrumbs": [
+        {
+          "name": "Početna",
+          "url": "/"
+        },
+        {
+          "name": "ELEGANCE",
+          "url": "/elegance/"
+        },
+        {
+          "name": "Muška",
+          "url": "/elegance/men/"
+        },
+        {
+          "name": "Kožulje",
+          "url": "/elegance/men/shirts/"
+        },
+        {
+          "name": "Bela Kožulja",
+          "url": "/elegance/men/shirts/bela-kozula.html"
+        }
+      ],
+      "structuredData": {
+        "brand": "DALLI",
+        "category": "Kožulje",
+        "gtin": null,
+        "mpn": "ML-009"
+      },
+      "faq": [
+        {
+          "question": "Da li je kožulja prozorna?",
+          "answer": "Ne, gramaza od 140g/m² i gusto tkanje osiguravaju da materijal nije prozoran, čak ni u beloj boji."
+        },
+        {
+          "question": "Kako izabrati veličinu?",
+          "answer": "Kožulja ima klasičan, tačan fit. Preporučujemo vašu standardnu veličinu. Ako želite opušteniji look za nošenje van hlača, uzmite jednu veličinu veću."
+        },
+        {
+          "question": "Da li se kožulja lako pegla?",
+          "answer": "Da, organski pamuk se lako pegla. Peglajte na srednjoj temperaturi dok je još blato. Izbegavajte direktno peglanje na dugmad."
+        },
+        {
+          "question": "Da li je pogodna za formalne prilike?",
+          "answer": "Apsolutno. Ova je kožulja dizajnirana za poslovne sastanke, svadbe, rođendane i sve formalne prilike gde je zahtevan dress code."
+        }
+      ],
+      "cms": {
+        "featured": true,
+        "bestseller": false,
+        "newArrival": true,
+        "publishedAt": "2024-03-15T10:00:00Z",
+        "updatedAt": "2024-03-15T10:00:00Z",
+        "status": "published",
+        "salesCount": 0,
+        "viewCount": 0,
+        "cartAddCount": 0,
+        "lookIds": [
+          "business-formal",
+          "evening-elegant"
+        ],
+        "searchKeywords": [
+          "kožulja",
+          "bela",
+          "organski pamuk",
+          "eleganca",
+          "poslovna",
+          "formalna"
+        ],
+        "priority": 10,
+        "virtualTryOn": {
+          "eligible": true,
+          "modelType": "upper-body",
+          "primaryImage": "/images/virtual-tryon/bela-kozula-front.svg",
+          "secondaryImages": [
+            "/images/virtual-tryon/bela-kozula-back.svg",
+            "/images/virtual-tryon/bela-kozula-detail.svg"
+          ],
+          "fitGuide": "classic"
+        },
+        "product360": {
+          "enabled": true,
+          "images": [],
+          "placeholder": "/images/360/placeholder.avif"
+        }
+      },
+      "loyalty": {
+        "memberOnly": false,
+        "earlyAccess": true,
+        "earlyAccessDate": "2026-10-03",
+        "limitedRelease": false,
+        "maxPerCustomer": null,
+        "tierRequired": "silver",
+        "pointsMultiplier": 1.5
+      },
+      "collection": "elegance",
+      "styleOccasion": [
+        "business",
+        "formal",
+        "evening"
+      ],
+      "categoryLabel": "Kožulje",
+      "hierarchyPaths": [
+        {
+          "collection": "elegance",
+          "gender": "men",
+          "category": "shirts"
+        }
+      ],
+      "primaryHierarchy": {
+        "collection": "elegance",
+        "gender": "men",
+        "category": "shirts"
+      },
+      "rating": null,
+      "reviewCount": 0
+    },
+    {
+      "id": 10,
+      "slug": "crna-sako",
+      "sku": "ML-010",
+      "name": "Crni Sako",
+      "shortDescription": "Prilagođen crni sako od vlne sa jednim dugmetom. Savršen za poslovne sastanke i svečane prilike.",
+      "description": "Ovaj crni sako je vrhunac muške elegancije. Napravljen od premium merino vlne (Super 120s) sa gramazom od 260g/m², nudi izuzetan drape i oblik. Unutrašnja konstrukcija sa polukanvasom osigurava da sako zadržava oblik godinama. Dva bocna rasa, prsni džep, četiri dugmeta na rukavu. Klasičan notch rever.",
+      "category": "blazers",
+      "gender": "men",
+      "price": 18900,
+      "salePrice": null,
+      "currency": "RSD",
+      "images": {
+        "main": "/images/elegance/crni-sako.svg",
+        "gallery": [],
+        "ogImage": "/images/og-crni-sako.svg"
+      },
+      "altText": "Crni sako - merino vlna Super 120s, prilagođen kroš, muška eleganca",
+      "colors": [
+        {
+          "name": "Crna",
+          "hex": "#000000"
+        },
+        {
+          "name": "Tamno siva",
+          "hex": "#2D2D2D"
+        },
+        {
+          "name": "Mornarska plava",
+          "hex": "#1B2A4A"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "46",
+          "available": true,
+          "stock": 5
+        },
+        {
+          "size": "48",
+          "available": true,
+          "stock": 8
+        },
+        {
+          "size": "50",
+          "available": true,
+          "stock": 10
+        },
+        {
+          "size": "52",
+          "available": true,
+          "stock": 7
+        },
+        {
+          "size": "54",
+          "available": true,
+          "stock": 4
+        },
+        {
+          "size": "56",
+          "available": true,
+          "stock": 2
+        }
+      ],
+      "specifications": {
+        "material": "100% merino vlna (Super 120s)",
+        "weight": "260g/m²",
+        "care": "Samo hemijsko čišćenje",
+        "warrantyMonths": 36
+      },
+      "inventory": {
+        "totalStock": 36,
+        "status": "in_stock",
+        "lowStockThreshold": 3,
+        "trackInventory": true,
+        "allowBackorder": true
+      },
+      "seo": {
+        "metaTitle": "Crni Sako - DALLI ELEGANCE | Merino Vlna Super 120s, 18.900 RSD",
+        "metaDescription": "Prilagođen crni sako DALLI Elegance. Merino vlna Super 120s, 260g/m², dva rasa. 18.900 RSD. Besplatna dostava nad 5.000 RSD.",
+        "keywords": "crni sako, merino vlna, muški sako, blazer, eleganca, DALLI, poslovna odela",
+        "canonicalUrl": "https://dalli.rs/elegance/men/blazers/crni-sako.html"
+      },
+      "breadcrumbs": [
+        {
+          "name": "Početna",
+          "url": "/"
+        },
+        {
+          "name": "ELEGANCE",
+          "url": "/elegance/"
+        },
+        {
+          "name": "Muška",
+          "url": "/elegance/men/"
+        },
+        {
+          "name": "Sakovi",
+          "url": "/elegance/men/blazers/"
+        },
+        {
+          "name": "Crni Sako",
+          "url": "/elegance/men/blazers/crni-sako.html"
+        }
+      ],
+      "structuredData": {
+        "brand": "DALLI",
+        "category": "Sakovi",
+        "gtin": null,
+        "mpn": "ML-010"
+      },
+      "faq": [
+        {
+          "question": "Šta je Super 120s vlna?",
+          "answer": "Super 120s označava finezu vlake - što je broj veći, vlna je tankija, meka i luksuznija. Ovo je premium kvalitet za sakove visokog ranga."
+        },
+        {
+          "question": "Da li sako ima ventilaciju (vents)?",
+          "answer": "Da, sako ima dva bočna rasa (side vents) za bolju pokretljivost i savršen drape prilikom hoda i sedenja."
+        },
+        {
+          "question": "Kako održavati vlneni sako?",
+          "answer": "Isključivo hemijsko čišćenje. Izbežavajte sušenje u sušici. Čuvajte na širokom vesu u vrecici od prirodnog materijala. Redovno češljajte mekim četkićem za vlaku."
+        }
+      ],
+      "cms": {
+        "featured": true,
+        "bestseller": false,
+        "newArrival": true,
+        "publishedAt": "2024-03-20T10:00:00Z",
+        "updatedAt": "2024-03-20T10:00:00Z",
+        "status": "published",
+        "salesCount": 0,
+        "viewCount": 0,
+        "cartAddCount": 0,
+        "lookIds": [
+          "business-formal",
+          "evening-elegant"
+        ],
+        "searchKeywords": [
+          "sako",
+          "blazer",
+          "vlna",
+          "merino",
+          "crni",
+          "eleganca",
+          "poslovni"
+        ],
+        "priority": 10,
+        "virtualTryOn": {
+          "eligible": true,
+          "modelType": "upper-body",
+          "primaryImage": "/images/virtual-tryon/crni-sako-front.svg",
+          "secondaryImages": [
+            "/images/virtual-tryon/crni-sako-back.svg",
+            "/images/virtual-tryon/crni-sako-detail.svg"
+          ],
+          "fitGuide": "tailored"
+        },
+        "product360": {
+          "enabled": true,
+          "images": [],
+          "placeholder": "/images/360/placeholder.avif"
+        }
+      },
+      "loyalty": {
+        "memberOnly": true,
+        "earlyAccess": true,
+        "earlyAccessDate": "2026-10-01",
+        "limitedRelease": true,
+        "maxPerCustomer": 1,
+        "tierRequired": "gold",
+        "pointsMultiplier": 2
+      },
+      "collection": "elegance",
+      "styleOccasion": [
+        "business",
+        "formal",
+        "evening"
+      ],
+      "categoryLabel": "Sakovi",
+      "hierarchyPaths": [
+        {
+          "collection": "elegance",
+          "gender": "men",
+          "category": "blazers"
+        }
+      ],
+      "primaryHierarchy": {
+        "collection": "elegance",
+        "gender": "men",
+        "category": "blazers"
+      },
+      "rating": null,
+      "reviewCount": 0
+    },
+    {
+      "id": 11,
+      "slug": "muske-sorceve",
+      "sku": "CS-011",
+      "name": "Muške Letnje Šorceve",
+      "shortDescription": "Lagane pamučne šorceve za tople dane. 100% organski pamuk, 220g/m².",
+      "description": "Muške šorceve savršene za leto i slobodno vreme. Napravljene od 100% organskog pamuka, sa elastičnim pojasom i praktičnim džepovima. Prirodno dišu i ostaju udobne tokom celog dana. Klasičan ravni kroj koji se lako kombinuje sa majicama i polo majicama Casual kolekcije.",
+      "category": "shorts",
+      "gender": "men",
+      "price": 3490,
+      "salePrice": null,
+      "currency": "RSD",
+      "images": {
+        "main": "/images/products/muske-sorceve.svg",
+        "gallery": [],
+        "ogImage": "/images/og-muske-sorceve.svg"
+      },
+      "altText": "Muške Letnje Šorceve - 100% organski pamuk, Casual kolekcija, DALLI",
+      "colors": [
+        {
+          "name": "Bela",
+          "hex": "#FFFFFF"
+        },
+        {
+          "name": "Crna",
+          "hex": "#000000"
+        },
+        {
+          "name": "Bež",
+          "hex": "#D8C3A5"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "S",
+          "available": true,
+          "stock": 16
+        },
+        {
+          "size": "M",
+          "available": true,
+          "stock": 22
+        },
+        {
+          "size": "L",
+          "available": true,
+          "stock": 20
+        },
+        {
+          "size": "XL",
+          "available": true,
+          "stock": 14
+        },
+        {
+          "size": "XXL",
+          "available": true,
+          "stock": 8
+        }
+      ],
+      "specifications": {
+        "material": "100% organski pamuk",
+        "weight": "220g/m²",
+        "care": "Mašinsko pranje 30°C",
+        "warrantyMonths": 24
+      },
+      "inventory": {
+        "totalStock": 80,
+        "status": "in_stock",
+        "lowStockThreshold": 5,
+        "trackInventory": true,
+        "allowBackorder": false
+      },
+      "seo": {
+        "metaTitle": "Muške Letnje Šorceve - DALLI CASUAL | 100% organski pamuk. 3.490 RSD",
+        "metaDescription": "Lagane pamučne šorceve za tople dane. 100% organski pamuk. 220g/m². CASUAL kolekcija. Cena 3.490 RSD. Besplatna dostava nad 5.000 RSD.",
+        "keywords": "muške šorceve, pamučne šorceve, letnji šorc, casual, DALLI",
+        "canonicalUrl": "https://dalli.rs/casual/men/shorts/muske-sorceve.html"
+      },
+      "breadcrumbs": [
+        {
+          "name": "Početna",
+          "url": "/"
+        },
+        {
+          "name": "CASUAL",
+          "url": "/casual/"
+        },
+        {
+          "name": "Muška",
+          "url": "/casual/men/"
+        },
+        {
+          "name": "Shorts",
+          "url": "/casual/men/shorts/"
+        },
+        {
+          "name": "Muške Letnje Šorceve",
+          "url": "/casual/men/shorts/muske-sorceve.html"
+        }
+      ],
+      "structuredData": {
+        "brand": "DALLI",
+        "category": "Shorts",
+        "gtin": null,
+        "mpn": "CS-011"
+      },
+      "faq": [
+        {
+          "question": "Da li šorceve imaju džepove?",
+          "answer": "Da, model ima dva bočna i jedan zadnji džep."
+        },
+        {
+          "question": "Koja je dužina šorceva?",
+          "answer": "Dužina je do sredine butine, klasičan ravni kroj."
+        }
+      ],
+      "cms": {
+        "featured": false,
+        "bestseller": false,
+        "newArrival": true,
+        "publishedAt": "2026-01-15T10:00:00Z",
+        "updatedAt": "2026-01-15T10:00:00Z",
+        "status": "published",
+        "salesCount": 0,
+        "viewCount": 0,
+        "cartAddCount": 0,
+        "lookIds": [],
+        "searchKeywords": [
+          "muške šorceve",
+          "pamučne šorceve",
+          "letnji šorc",
+          "casual",
+          "DALLI"
+        ],
+        "priority": 11,
+        "virtualTryOn": {
+          "eligible": false
+        },
+        "product360": {
+          "enabled": false
+        }
+      },
+      "loyalty": {
+        "memberOnly": false,
+        "earlyAccess": false,
+        "limitedRelease": false,
+        "pointsMultiplier": 1
+      },
+      "collection": "casual",
+      "styleOccasion": [
+        "everyday",
+        "travel",
+        "summer"
+      ],
+      "categoryLabel": "Shorts",
+      "hierarchyPaths": [
+        {
+          "collection": "casual",
+          "gender": "men",
+          "category": "shorts"
+        }
+      ],
+      "primaryHierarchy": {
+        "collection": "casual",
+        "gender": "men",
+        "category": "shorts"
+      },
+      "rating": null,
+      "reviewCount": 0
+    },
+    {
+      "id": 12,
+      "slug": "muska-jakna",
+      "sku": "CS-012",
+      "name": "Muška Prelazna Jakna",
+      "shortDescription": "Vodootporna prelazna jakna sa podstavom. Za hladne prolećne i jesenje dane.",
+      "description": "Muška prelazna jakna dizajnirana za promenljivo vreme. Spoljni sloj od recikliranog poliestera odbija vlagu i vetar, dok mekani podstav od flisa zadržava toplotu. Dva bočna džepa i unutrašnji džep, skriveni patent zatvarač. Elegantna, a funkcionalna.",
+      "category": "jackets",
+      "gender": "men",
+      "price": 12900,
+      "salePrice": null,
+      "currency": "RSD",
+      "images": {
+        "main": "/images/products/muska-jakna.svg",
+        "gallery": [],
+        "ogImage": "/images/og-muska-jakna.svg"
+      },
+      "altText": "Muška Prelazna Jakna - Spolja 100% reciklirani poliester, podstava flis, Casual kolekcija, DALLI",
+      "colors": [
+        {
+          "name": "Crna",
+          "hex": "#000000"
+        },
+        {
+          "name": "Tamno zelena",
+          "hex": "#2E4034"
+        },
+        {
+          "name": "Navy",
+          "hex": "#1B2A4A"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "S",
+          "available": true,
+          "stock": 16
+        },
+        {
+          "size": "M",
+          "available": true,
+          "stock": 22
+        },
+        {
+          "size": "L",
+          "available": true,
+          "stock": 20
+        },
+        {
+          "size": "XL",
+          "available": true,
+          "stock": 14
+        },
+        {
+          "size": "XXL",
+          "available": true,
+          "stock": 8
+        }
+      ],
+      "specifications": {
+        "material": "Spolja 100% reciklirani poliester, podstava flis",
+        "weight": "320g/m²",
+        "care": "Pranje 30°C, bez omekšivača",
+        "warrantyMonths": 24
+      },
+      "inventory": {
+        "totalStock": 80,
+        "status": "in_stock",
+        "lowStockThreshold": 5,
+        "trackInventory": true,
+        "allowBackorder": false
+      },
+      "seo": {
+        "metaTitle": "Muška Prelazna Jakna - DALLI CASUAL | Spolja 100% reciklirani poliester. podstava flis. 12.900 RSD",
+        "metaDescription": "Vodootporna prelazna jakna sa podstavom. Za hladne prolećne i jesenje dane. CASUAL kolekcija. Cena 12.900 RSD. Besplatna dostava nad 5.000 RSD.",
+        "keywords": "muška jakna, prelazna jakna, vodootporna jakna, casual, DALLI",
+        "canonicalUrl": "https://dalli.rs/casual/men/jackets/muska-jakna.html"
+      },
+      "breadcrumbs": [
+        {
+          "name": "Početna",
+          "url": "/"
+        },
+        {
+          "name": "CASUAL",
+          "url": "/casual/"
+        },
+        {
+          "name": "Muška",
+          "url": "/casual/men/"
+        },
+        {
+          "name": "Jaket",
+          "url": "/casual/men/jackets/"
+        },
+        {
+          "name": "Muška Prelazna Jakna",
+          "url": "/casual/men/jackets/muska-jakna.html"
+        }
+      ],
+      "structuredData": {
+        "brand": "DALLI",
+        "category": "Jaket",
+        "gtin": null,
+        "mpn": "CS-012"
+      },
+      "faq": [
+        {
+          "question": "Da li je jakna vodootporna?",
+          "answer": "Da, spoljni sloj je vodoodbojan i štiti od vetra i kiše."
+        },
+        {
+          "question": "Da li ima kapuljaču?",
+          "answer": "Da, skrivena kapuljača u kragni."
+        }
+      ],
+      "cms": {
+        "featured": false,
+        "bestseller": false,
+        "newArrival": true,
+        "publishedAt": "2026-01-15T10:00:00Z",
+        "updatedAt": "2026-01-15T10:00:00Z",
+        "status": "published",
+        "salesCount": 0,
+        "viewCount": 0,
+        "cartAddCount": 0,
+        "lookIds": [],
+        "searchKeywords": [
+          "muška jakna",
+          "prelazna jakna",
+          "vodootporna jakna",
+          "casual",
+          "DALLI"
+        ],
+        "priority": 12,
+        "virtualTryOn": {
+          "eligible": true,
+          "modelType": "upper-body",
+          "primaryImage": "/images/virtual-tryon/muska-jakna-front.svg",
+          "secondaryImages": [
+            "/images/virtual-tryon/muska-jakna-back.svg",
+            "/images/virtual-tryon/muska-jakna-detail.svg"
+          ],
+          "fitGuide": "regular"
+        },
+        "product360": {
+          "enabled": true,
+          "images": [],
+          "placeholder": "/images/360/placeholder.avif"
+        }
+      },
+      "loyalty": {
+        "memberOnly": false,
+        "earlyAccess": false,
+        "limitedRelease": false,
+        "pointsMultiplier": 1
+      },
+      "collection": "casual",
+      "styleOccasion": [
+        "everyday",
+        "travel",
+        "outerwear"
+      ],
+      "categoryLabel": "Jaket",
+      "hierarchyPaths": [
+        {
+          "collection": "casual",
+          "gender": "men",
+          "category": "jackets"
+        }
+      ],
+      "primaryHierarchy": {
+        "collection": "casual",
+        "gender": "men",
+        "category": "jackets"
+      },
+      "rating": null,
+      "reviewCount": 0
+    },
+    {
+      "id": 13,
+      "slug": "zenske-leggings",
+      "sku": "CS-013",
+      "name": "Ženske Leggings Hlače",
+      "shortDescription": "Visokoelastične leggings hlače sa second-skin efektom. Savršene za trening i svakodnevnu nošu.",
+      "description": "Ženske leggings hlače napravljene od mešavine organske pamučne i elastanske pređe koja se savršeno prilagođava telu. Visok struk pruža podršku i zadržava se na mestu tokom pokreta. Neprozirna tkanina sa four-way stretch tehnologijom. Idealne za jogu, trening ili kao osnova svakodnevnog stajlinga.",
+      "category": "leggings",
+      "gender": "women",
+      "price": 2990,
+      "salePrice": null,
+      "currency": "RSD",
+      "images": {
+        "main": "/images/products/zenske-leggings.svg",
+        "gallery": [],
+        "ogImage": "/images/og-zenske-leggings.svg"
+      },
+      "altText": "Ženske Leggings Hlače - 90% org. pamuk / 10% elastan, Casual kolekcija, DALLI",
+      "colors": [
+        {
+          "name": "Crna",
+          "hex": "#000000"
+        },
+        {
+          "name": "Bordo",
+          "hex": "#5C1A2B"
+        },
+        {
+          "name": "Siva",
+          "hex": "#808080"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "34",
+          "available": true,
+          "stock": 14
+        },
+        {
+          "size": "36",
+          "available": true,
+          "stock": 18
+        },
+        {
+          "size": "38",
+          "available": true,
+          "stock": 22
+        },
+        {
+          "size": "40",
+          "available": true,
+          "stock": 16
+        },
+        {
+          "size": "42",
+          "available": true,
+          "stock": 10
+        },
+        {
+          "size": "44",
+          "available": true,
+          "stock": 6
+        }
+      ],
+      "specifications": {
+        "material": "90% org. pamuk / 10% elastan",
+        "weight": "240g/m²",
+        "care": "Mašinsko pranje 30°C",
+        "warrantyMonths": 24
+      },
+      "inventory": {
+        "totalStock": 86,
+        "status": "in_stock",
+        "lowStockThreshold": 5,
+        "trackInventory": true,
+        "allowBackorder": false
+      },
+      "seo": {
+        "metaTitle": "Ženske Leggings Hlače - DALLI CASUAL | 90% org. pamuk / 10% elastan. 2.990 RSD",
+        "metaDescription": "Visokoelastične leggings hlače sa second-skin efektom. Savršene za trening i svakodnevnu nošu. CASUAL kolekcija. Cena 2.990 RSD. Besplatna dostava nad 5.000 RSD.",
+        "keywords": "ženske leggings, trening hlače, visok struk, casual, DALLI",
+        "canonicalUrl": "https://dalli.rs/casual/women/leggings/zenske-leggings.html"
+      },
+      "breadcrumbs": [
+        {
+          "name": "Početna",
+          "url": "/"
+        },
+        {
+          "name": "CASUAL",
+          "url": "/casual/"
+        },
+        {
+          "name": "Ženska",
+          "url": "/casual/women/"
+        },
+        {
+          "name": "Leggings",
+          "url": "/casual/women/leggings/"
+        },
+        {
+          "name": "Ženske Leggings Hlače",
+          "url": "/casual/women/leggings/zenske-leggings.html"
+        }
+      ],
+      "structuredData": {
+        "brand": "DALLI",
+        "category": "Leggings",
+        "gtin": null,
+        "mpn": "CS-013"
+      },
+      "faq": [
+        {
+          "question": "Da li su leggings neprozirne?",
+          "answer": "Da, gusta tkanina sa four-way stretch tehnologijom je potpuno neprozirna."
+        },
+        {
+          "question": "Da li imaju visok struk?",
+          "answer": "Da, model ima visok struk koji pruža podršku."
+        }
+      ],
+      "cms": {
+        "featured": false,
+        "bestseller": false,
+        "newArrival": true,
+        "publishedAt": "2026-01-15T10:00:00Z",
+        "updatedAt": "2026-01-15T10:00:00Z",
+        "status": "published",
+        "salesCount": 0,
+        "viewCount": 0,
+        "cartAddCount": 0,
+        "lookIds": [],
+        "searchKeywords": [
+          "ženske leggings",
+          "trening hlače",
+          "visok struk",
+          "casual",
+          "DALLI"
+        ],
+        "priority": 13,
+        "virtualTryOn": {
+          "eligible": false
+        },
+        "product360": {
+          "enabled": false
+        }
+      },
+      "loyalty": {
+        "memberOnly": false,
+        "earlyAccess": false,
+        "limitedRelease": false,
+        "pointsMultiplier": 1
+      },
+      "collection": "casual",
+      "styleOccasion": [
+        "everyday",
+        "sport",
+        "travel"
+      ],
+      "categoryLabel": "Leggings",
+      "hierarchyPaths": [
+        {
+          "collection": "casual",
+          "gender": "women",
+          "category": "leggings"
+        }
+      ],
+      "primaryHierarchy": {
+        "collection": "casual",
+        "gender": "women",
+        "category": "leggings"
+      },
+      "rating": null,
+      "reviewCount": 0
+    },
+    {
+      "id": 14,
+      "slug": "zenski-set",
+      "sku": "CS-014",
+      "name": "Ženski Matching Set",
+      "shortDescription": "Usklađeni dvodelni set: crop top i wide-leg pantalone. Besprekoran sklad.",
+      "description": "Ženski matching set čini savršeno usklađen dvodelni komplet od istog premium materijala. Crop top sa mekim gumicama i wide-leg pantalone sa elastičnim pojasom stvaraju svestan, monohroman stajling. Savršen za putovanja, jutarnje kafe i opuštene gradske obaveze.",
+      "category": "matching-sets",
+      "gender": "women",
+      "price": 8990,
+      "salePrice": null,
+      "currency": "RSD",
+      "images": {
+        "main": "/images/products/zenski-set.svg",
+        "gallery": [],
+        "ogImage": "/images/og-zenski-set.svg"
+      },
+      "altText": "Ženski Matching Set - 95% org. pamuk / 5% elastan, Casual kolekcija, DALLI",
+      "colors": [
+        {
+          "name": "Bež",
+          "hex": "#D8C3A5"
+        },
+        {
+          "name": "Bela",
+          "hex": "#FFFFFF"
+        },
+        {
+          "name": "Terakota",
+          "hex": "#C06B4E"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "34",
+          "available": true,
+          "stock": 14
+        },
+        {
+          "size": "36",
+          "available": true,
+          "stock": 18
+        },
+        {
+          "size": "38",
+          "available": true,
+          "stock": 22
+        },
+        {
+          "size": "40",
+          "available": true,
+          "stock": 16
+        },
+        {
+          "size": "42",
+          "available": true,
+          "stock": 10
+        },
+        {
+          "size": "44",
+          "available": true,
+          "stock": 6
+        }
+      ],
+      "specifications": {
+        "material": "95% org. pamuk / 5% elastan",
+        "weight": "280g/m²",
+        "care": "Mašinsko pranje 30°C",
+        "warrantyMonths": 24
+      },
+      "inventory": {
+        "totalStock": 86,
+        "status": "in_stock",
+        "lowStockThreshold": 5,
+        "trackInventory": true,
+        "allowBackorder": false
+      },
+      "seo": {
+        "metaTitle": "Ženski Matching Set - DALLI CASUAL | 95% org. pamuk / 5% elastan. 8.990 RSD",
+        "metaDescription": "Usklađeni dvodelni set: crop top i wide-leg pantalone. Besprekoran sklad. CASUAL kolekcija. Cena 8.990 RSD. Besplatna dostava nad 5.000 RSD.",
+        "keywords": "ženski set, matching set, dvodelni set, casual, DALLI",
+        "canonicalUrl": "https://dalli.rs/casual/women/matching-sets/zenski-set.html"
+      },
+      "breadcrumbs": [
+        {
+          "name": "Početna",
+          "url": "/"
+        },
+        {
+          "name": "CASUAL",
+          "url": "/casual/"
+        },
+        {
+          "name": "Ženska",
+          "url": "/casual/women/"
+        },
+        {
+          "name": "Matching Sets",
+          "url": "/casual/women/matching-sets/"
+        },
+        {
+          "name": "Ženski Matching Set",
+          "url": "/casual/women/matching-sets/zenski-set.html"
+        }
+      ],
+      "structuredData": {
+        "brand": "DALLI",
+        "category": "Matching Sets",
+        "gtin": null,
+        "mpn": "CS-014"
+      },
+      "faq": [
+        {
+          "question": "Šta čini set?",
+          "answer": "Set sadrži crop top i wide-leg pantalone od istog materijala."
+        },
+        {
+          "question": "Može li se nositi odvojeno?",
+          "answer": "Svakako, oba komada su dizajnirana da funkcionišu i samostalno."
+        }
+      ],
+      "cms": {
+        "featured": false,
+        "bestseller": false,
+        "newArrival": true,
+        "publishedAt": "2026-01-15T10:00:00Z",
+        "updatedAt": "2026-01-15T10:00:00Z",
+        "status": "published",
+        "salesCount": 0,
+        "viewCount": 0,
+        "cartAddCount": 0,
+        "lookIds": [],
+        "searchKeywords": [
+          "ženski set",
+          "matching set",
+          "dvodelni set",
+          "casual",
+          "DALLI"
+        ],
+        "priority": 14,
+        "virtualTryOn": {
+          "eligible": false
+        },
+        "product360": {
+          "enabled": false
+        }
+      },
+      "loyalty": {
+        "memberOnly": false,
+        "earlyAccess": false,
+        "limitedRelease": false,
+        "pointsMultiplier": 1
+      },
+      "collection": "casual",
+      "styleOccasion": [
+        "everyday",
+        "travel",
+        "smart-casual"
+      ],
+      "categoryLabel": "Matching Sets",
+      "hierarchyPaths": [
+        {
+          "collection": "casual",
+          "gender": "women",
+          "category": "matching-sets"
+        }
+      ],
+      "primaryHierarchy": {
+        "collection": "casual",
+        "gender": "women",
+        "category": "matching-sets"
+      },
+      "rating": null,
+      "reviewCount": 0
+    },
+    {
+      "id": 15,
+      "slug": "zenska-jakna",
+      "sku": "CS-015",
+      "name": "Ženska Elegantna Jakna",
+      "shortDescription": "Struktuirana prelazna jakna sa diskretnim sjajem. Za dan i veče.",
+      "description": "Ženska prelazna jakna sa struktuiranim krojem i diskretnim sjajem koji podiže svaki stajling. Spoljni sloj od premium tkanine otporne na vetar, mekan podstav za toplotu. Dva bočna džepa sa skrivenim zatvaračem i elegantna kragna. Savršena za prelazne sezone.",
+      "category": "jackets",
+      "gender": "women",
+      "price": 11900,
+      "salePrice": null,
+      "currency": "RSD",
+      "images": {
+        "main": "/images/products/zenska-jakna.svg",
+        "gallery": [],
+        "ogImage": "/images/og-zenska-jakna.svg"
+      },
+      "altText": "Ženska Elegantna Jakna - Spolja premium poliester, podstava saten, Casual kolekcija, DALLI",
+      "colors": [
+        {
+          "name": "Bež",
+          "hex": "#D8C3A5"
+        },
+        {
+          "name": "Crna",
+          "hex": "#000000"
+        },
+        {
+          "name": "Tamno zelena",
+          "hex": "#2E4034"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "34",
+          "available": true,
+          "stock": 14
+        },
+        {
+          "size": "36",
+          "available": true,
+          "stock": 18
+        },
+        {
+          "size": "38",
+          "available": true,
+          "stock": 22
+        },
+        {
+          "size": "40",
+          "available": true,
+          "stock": 16
+        },
+        {
+          "size": "42",
+          "available": true,
+          "stock": 10
+        },
+        {
+          "size": "44",
+          "available": true,
+          "stock": 6
+        }
+      ],
+      "specifications": {
+        "material": "Spolja premium poliester, podstava saten",
+        "weight": "300g/m²",
+        "care": "Hemijsko čišćenje",
+        "warrantyMonths": 24
+      },
+      "inventory": {
+        "totalStock": 86,
+        "status": "in_stock",
+        "lowStockThreshold": 5,
+        "trackInventory": true,
+        "allowBackorder": false
+      },
+      "seo": {
+        "metaTitle": "Ženska Elegantna Jakna - DALLI CASUAL | Spolja premium poliester. podstava saten. 11.900 RSD",
+        "metaDescription": "Struktuirana prelazna jakna sa diskretnim sjajem. Za dan i veče. CASUAL kolekcija. Cena 11.900 RSD. Besplatna dostava nad 5.000 RSD.",
+        "keywords": "ženska jakna, elegantna jakna, prelazna jakna, casual, DALLI",
+        "canonicalUrl": "https://dalli.rs/casual/women/jackets/zenska-jakna.html"
+      },
+      "breadcrumbs": [
+        {
+          "name": "Početna",
+          "url": "/"
+        },
+        {
+          "name": "CASUAL",
+          "url": "/casual/"
+        },
+        {
+          "name": "Ženska",
+          "url": "/casual/women/"
+        },
+        {
+          "name": "Jaket",
+          "url": "/casual/women/jackets/"
+        },
+        {
+          "name": "Ženska Elegantna Jakna",
+          "url": "/casual/women/jackets/zenska-jakna.html"
+        }
+      ],
+      "structuredData": {
+        "brand": "DALLI",
+        "category": "Jaket",
+        "gtin": null,
+        "mpn": "CS-015"
+      },
+      "faq": [
+        {
+          "question": "Da li je jakna topla?",
+          "answer": "Da, ima mekani podstav koji pruža toplotu u prelaznim sezonama."
+        },
+        {
+          "question": "Da li ima kapuljaču?",
+          "answer": "Ne, model ima elegantnu struktuiranu kragnu."
+        }
+      ],
+      "cms": {
+        "featured": false,
+        "bestseller": false,
+        "newArrival": true,
+        "publishedAt": "2026-01-15T10:00:00Z",
+        "updatedAt": "2026-01-15T10:00:00Z",
+        "status": "published",
+        "salesCount": 0,
+        "viewCount": 0,
+        "cartAddCount": 0,
+        "lookIds": [],
+        "searchKeywords": [
+          "ženska jakna",
+          "elegantna jakna",
+          "prelazna jakna",
+          "casual",
+          "DALLI"
+        ],
+        "priority": 15,
+        "virtualTryOn": {
+          "eligible": true,
+          "modelType": "upper-body",
+          "primaryImage": "/images/virtual-tryon/zenska-jakna-front.svg",
+          "secondaryImages": [
+            "/images/virtual-tryon/zenska-jakna-back.svg",
+            "/images/virtual-tryon/zenska-jakna-detail.svg"
+          ],
+          "fitGuide": "regular"
+        },
+        "product360": {
+          "enabled": true,
+          "images": [],
+          "placeholder": "/images/360/placeholder.avif"
+        }
+      },
+      "loyalty": {
+        "memberOnly": false,
+        "earlyAccess": false,
+        "limitedRelease": false,
+        "pointsMultiplier": 1
+      },
+      "collection": "casual",
+      "styleOccasion": [
+        "everyday",
+        "smart-casual",
+        "outerwear"
+      ],
+      "categoryLabel": "Jaket",
+      "hierarchyPaths": [
+        {
+          "collection": "casual",
+          "gender": "women",
+          "category": "jackets"
+        }
+      ],
+      "primaryHierarchy": {
+        "collection": "casual",
+        "gender": "women",
+        "category": "jackets"
+      },
+      "rating": null,
+      "reviewCount": 0
+    },
+    {
+      "id": 16,
+      "slug": "musko-odelo",
+      "sku": "ML-016",
+      "name": "Muško Odelo Dvodelno",
+      "shortDescription": "Dvodelno odelo od merino vlne Super 120s. Besprekoran kroj za poslovne prilike.",
+      "description": "Dvodelno muško odelo sačinjeno od premium merino vlne Super 120s. Sako sa dva dugmeta i pantalone sa ravnim krojom čine savršen sklad. Polukanvas i unutrašnja konstrukcija osiguravaju da odelo zadržava formu. Diskretna, sofisticirana eleganca za poslovne sastanke, svadbe i svečane prilike.",
+      "category": "suits",
+      "gender": "men",
+      "price": 42900,
+      "salePrice": null,
+      "currency": "RSD",
+      "images": {
+        "main": "/images/products/musko-odelo.svg",
+        "gallery": [],
+        "ogImage": "/images/og-musko-odelo.svg"
+      },
+      "altText": "Muško Odelo Dvodelno - 100% merino vlna (Super 120s), Elegance kolekcija, DALLI",
+      "colors": [
+        {
+          "name": "Tamno plava",
+          "hex": "#1B2A4A"
+        },
+        {
+          "name": "Antracit",
+          "hex": "#2D2D2D"
+        },
+        {
+          "name": "Crna",
+          "hex": "#000000"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "46",
+          "available": true,
+          "stock": 6
+        },
+        {
+          "size": "48",
+          "available": true,
+          "stock": 9
+        },
+        {
+          "size": "50",
+          "available": true,
+          "stock": 11
+        },
+        {
+          "size": "52",
+          "available": true,
+          "stock": 8
+        },
+        {
+          "size": "54",
+          "available": true,
+          "stock": 5
+        },
+        {
+          "size": "56",
+          "available": true,
+          "stock": 3
+        }
+      ],
+      "specifications": {
+        "material": "100% merino vlna (Super 120s)",
+        "weight": "270g/m²",
+        "care": "Samo hemijsko čišćenje",
+        "warrantyMonths": 36
+      },
+      "inventory": {
+        "totalStock": 42,
+        "status": "in_stock",
+        "lowStockThreshold": 5,
+        "trackInventory": true,
+        "allowBackorder": false
+      },
+      "seo": {
+        "metaTitle": "Muško Odelo Dvodelno - DALLI ELEGANCE | 100% merino vlna (Super 120s). 42.900 RSD",
+        "metaDescription": "Dvodelno odelo od merino vlne Super 120s. Besprekoran kroj za poslovne prilike. ELEGANCE kolekcija. Cena 42.900 RSD. Besplatna dostava nad 5.000 RSD.",
+        "keywords": "muško odelo, dvodelno odelo, merino vlna, eleganca, DALLI",
+        "canonicalUrl": "https://dalli.rs/elegance/men/suits/musko-odelo.html"
+      },
+      "breadcrumbs": [
+        {
+          "name": "Početna",
+          "url": "/"
+        },
+        {
+          "name": "ELEGANCE",
+          "url": "/elegance/"
+        },
+        {
+          "name": "Muška",
+          "url": "/elegance/men/"
+        },
+        {
+          "name": "Odela",
+          "url": "/elegance/men/suits/"
+        },
+        {
+          "name": "Muško Odelo Dvodelno",
+          "url": "/elegance/men/suits/musko-odelo.html"
+        }
+      ],
+      "structuredData": {
+        "brand": "DALLI",
+        "category": "Odela",
+        "gtin": null,
+        "mpn": "ML-016"
+      },
+      "faq": [
+        {
+          "question": "Da li je odelo dvodelno?",
+          "answer": "Da, uključuje sako i pantalone od istog materijala."
+        },
+        {
+          "question": "Da li su pantalone sa porubom?",
+          "answer": "Pantalone dolaze nesporubljene radi savršenog prilagođavanja."
+        }
+      ],
+      "cms": {
+        "featured": false,
+        "bestseller": false,
+        "newArrival": true,
+        "publishedAt": "2026-01-15T10:00:00Z",
+        "updatedAt": "2026-01-15T10:00:00Z",
+        "status": "published",
+        "salesCount": 0,
+        "viewCount": 0,
+        "cartAddCount": 0,
+        "lookIds": [],
+        "searchKeywords": [
+          "muško odelo",
+          "dvodelno odelo",
+          "merino vlna",
+          "eleganca",
+          "DALLI"
+        ],
+        "priority": 16,
+        "virtualTryOn": {
+          "eligible": true,
+          "modelType": "upper-body",
+          "primaryImage": "/images/virtual-tryon/musko-odelo-front.svg",
+          "secondaryImages": [
+            "/images/virtual-tryon/musko-odelo-back.svg",
+            "/images/virtual-tryon/musko-odelo-detail.svg"
+          ],
+          "fitGuide": "regular"
+        },
+        "product360": {
+          "enabled": true,
+          "images": [],
+          "placeholder": "/images/360/placeholder.avif"
+        }
+      },
+      "loyalty": {
+        "memberOnly": true,
+        "earlyAccess": true,
+        "earlyAccessDate": "2026-10-01",
+        "limitedRelease": false,
+        "pointsMultiplier": 2
+      },
+      "collection": "elegance",
+      "styleOccasion": [
+        "business",
+        "formal",
+        "evening"
+      ],
+      "categoryLabel": "Odela",
+      "hierarchyPaths": [
+        {
+          "collection": "elegance",
+          "gender": "men",
+          "category": "suits"
+        }
+      ],
+      "primaryHierarchy": {
+        "collection": "elegance",
+        "gender": "men",
+        "category": "suits"
+      },
+      "rating": null,
+      "reviewCount": 0
+    },
+    {
+      "id": 17,
+      "slug": "muske-pantalone",
+      "sku": "ML-017",
+      "name": "Muške Elegantne Pantalone",
+      "shortDescription": "Pantalone od merino vlne sa savršenim padom. Za poslovni i svečani izgled.",
+      "description": "Muške elegantne pantalone od merino vlne sa savršenim padom i ravnim krojom. Prednje falte i uredan struk sa kaišem čine ih idealnim za poslovni dress code. Prirodna rastegljivost tkanine pruža udobnost tokom celog dana, a diskretna boja se lako kombinuje sa kožuljama i sakolima.",
+      "category": "trousers",
+      "gender": "men",
+      "price": 9900,
+      "salePrice": null,
+      "currency": "RSD",
+      "images": {
+        "main": "/images/products/muske-pantalone.svg",
+        "gallery": [],
+        "ogImage": "/images/og-muske-pantalone.svg"
+      },
+      "altText": "Muške Elegantne Pantalone - 100% merino vlna, Elegance kolekcija, DALLI",
+      "colors": [
+        {
+          "name": "Antracit",
+          "hex": "#2D2D2D"
+        },
+        {
+          "name": "Navy",
+          "hex": "#1B2A4A"
+        },
+        {
+          "name": "Bež",
+          "hex": "#C8B79E"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "46",
+          "available": true,
+          "stock": 6
+        },
+        {
+          "size": "48",
+          "available": true,
+          "stock": 9
+        },
+        {
+          "size": "50",
+          "available": true,
+          "stock": 11
+        },
+        {
+          "size": "52",
+          "available": true,
+          "stock": 8
+        },
+        {
+          "size": "54",
+          "available": true,
+          "stock": 5
+        },
+        {
+          "size": "56",
+          "available": true,
+          "stock": 3
+        }
+      ],
+      "specifications": {
+        "material": "100% merino vlna",
+        "weight": "250g/m²",
+        "care": "Samo hemijsko čišćenje",
+        "warrantyMonths": 36
+      },
+      "inventory": {
+        "totalStock": 42,
+        "status": "in_stock",
+        "lowStockThreshold": 5,
+        "trackInventory": true,
+        "allowBackorder": false
+      },
+      "seo": {
+        "metaTitle": "Muške Elegantne Pantalone - DALLI ELEGANCE | 100% merino vlna. 9.900 RSD",
+        "metaDescription": "Pantalone od merino vlne sa savršenim padom. Za poslovni i svečani izgled. ELEGANCE kolekcija. Cena 9.900 RSD. Besplatna dostava nad 5.000 RSD.",
+        "keywords": "muške pantalone, elegantne pantalone, merino vlna, eleganca, DALLI",
+        "canonicalUrl": "https://dalli.rs/elegance/men/trousers/muske-pantalone.html"
+      },
+      "breadcrumbs": [
+        {
+          "name": "Početna",
+          "url": "/"
+        },
+        {
+          "name": "ELEGANCE",
+          "url": "/elegance/"
+        },
+        {
+          "name": "Muška",
+          "url": "/elegance/men/"
+        },
+        {
+          "name": "Pantalone",
+          "url": "/elegance/men/trousers/"
+        },
+        {
+          "name": "Muške Elegantne Pantalone",
+          "url": "/elegance/men/trousers/muske-pantalone.html"
+        }
+      ],
+      "structuredData": {
+        "brand": "DALLI",
+        "category": "Pantalone",
+        "gtin": null,
+        "mpn": "ML-017"
+      },
+      "faq": [
+        {
+          "question": "Da li pantalone imaju falte?",
+          "answer": "Da, model ima prednje falte za uredan poslovni izgled."
+        },
+        {
+          "question": "Da li idu uz sako?",
+          "answer": "Da, pantalone se savršeno slažu sa sakolima ELEGANCE kolekcije."
+        }
+      ],
+      "cms": {
+        "featured": false,
+        "bestseller": false,
+        "newArrival": true,
+        "publishedAt": "2026-01-15T10:00:00Z",
+        "updatedAt": "2026-01-15T10:00:00Z",
+        "status": "published",
+        "salesCount": 0,
+        "viewCount": 0,
+        "cartAddCount": 0,
+        "lookIds": [],
+        "searchKeywords": [
+          "muške pantalone",
+          "elegantne pantalone",
+          "merino vlna",
+          "eleganca",
+          "DALLI"
+        ],
+        "priority": 17,
+        "virtualTryOn": {
+          "eligible": true,
+          "modelType": "upper-body",
+          "primaryImage": "/images/virtual-tryon/muske-pantalone-front.svg",
+          "secondaryImages": [
+            "/images/virtual-tryon/muske-pantalone-back.svg",
+            "/images/virtual-tryon/muske-pantalone-detail.svg"
+          ],
+          "fitGuide": "regular"
+        },
+        "product360": {
+          "enabled": true,
+          "images": [],
+          "placeholder": "/images/360/placeholder.avif"
+        }
+      },
+      "loyalty": {
+        "memberOnly": true,
+        "earlyAccess": true,
+        "earlyAccessDate": "2026-10-05",
+        "limitedRelease": false,
+        "pointsMultiplier": 2
+      },
+      "collection": "elegance",
+      "styleOccasion": [
+        "business",
+        "formal"
+      ],
+      "categoryLabel": "Pantalone",
+      "hierarchyPaths": [
+        {
+          "collection": "elegance",
+          "gender": "men",
+          "category": "trousers"
+        }
+      ],
+      "primaryHierarchy": {
+        "collection": "elegance",
+        "gender": "men",
+        "category": "trousers"
+      },
+      "rating": null,
+      "reviewCount": 0
+    },
+    {
+      "id": 18,
+      "slug": "muski-kaput",
+      "sku": "ML-018",
+      "name": "Muški Vuneni Kaput",
+      "shortDescription": "Dugačak kaput od mešavine vune i kašmira. Vrhunac zimske elegancije.",
+      "description": "Muški dugi kaput od mešavine vune i kašmira sa klasičnim notched reverom i dvorednim kopčanjem. Bogata tkanina pruža toplotu bez težine, dok savršen pad daje sofisticiran silu. Idealno rešenje za hladne dane kada želite da ostavite besprekoran utisak.",
+      "category": "coats",
+      "gender": "men",
+      "price": 34900,
+      "salePrice": null,
+      "currency": "RSD",
+      "images": {
+        "main": "/images/products/muski-kaput.svg",
+        "gallery": [],
+        "ogImage": "/images/og-muski-kaput.svg"
+      },
+      "altText": "Muški Vuneni Kaput - 80% vuna / 20% kašmir, Elegance kolekcija, DALLI",
+      "colors": [
+        {
+          "name": "Kamela",
+          "hex": "#B08968"
+        },
+        {
+          "name": "Tamno siva",
+          "hex": "#2D2D2D"
+        },
+        {
+          "name": "Crna",
+          "hex": "#000000"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "46",
+          "available": true,
+          "stock": 6
+        },
+        {
+          "size": "48",
+          "available": true,
+          "stock": 9
+        },
+        {
+          "size": "50",
+          "available": true,
+          "stock": 11
+        },
+        {
+          "size": "52",
+          "available": true,
+          "stock": 8
+        },
+        {
+          "size": "54",
+          "available": true,
+          "stock": 5
+        },
+        {
+          "size": "56",
+          "available": true,
+          "stock": 3
+        }
+      ],
+      "specifications": {
+        "material": "80% vuna / 20% kašmir",
+        "weight": "480g/m²",
+        "care": "Samo hemijsko čišćenje",
+        "warrantyMonths": 36
+      },
+      "inventory": {
+        "totalStock": 42,
+        "status": "in_stock",
+        "lowStockThreshold": 5,
+        "trackInventory": true,
+        "allowBackorder": false
+      },
+      "seo": {
+        "metaTitle": "Muški Vuneni Kaput - DALLI ELEGANCE | 80% vuna / 20% kašmir. 34.900 RSD",
+        "metaDescription": "Dugačak kaput od mešavine vune i kašmira. Vrhunac zimske elegancije. ELEGANCE kolekcija. Cena 34.900 RSD. Besplatna dostava nad 5.000 RSD.",
+        "keywords": "muški kaput, vuneni kaput, cashmere, eleganca, DALLI",
+        "canonicalUrl": "https://dalli.rs/elegance/men/coats/muski-kaput.html"
+      },
+      "breadcrumbs": [
+        {
+          "name": "Početna",
+          "url": "/"
+        },
+        {
+          "name": "ELEGANCE",
+          "url": "/elegance/"
+        },
+        {
+          "name": "Muška",
+          "url": "/elegance/men/"
+        },
+        {
+          "name": "Kaputi",
+          "url": "/elegance/men/coats/"
+        },
+        {
+          "name": "Muški Vuneni Kaput",
+          "url": "/elegance/men/coats/muski-kaput.html"
+        }
+      ],
+      "structuredData": {
+        "brand": "DALLI",
+        "category": "Kaputi",
+        "gtin": null,
+        "mpn": "ML-018"
+      },
+      "faq": [
+        {
+          "question": "Da li kaput sadrži kašmir?",
+          "answer": "Da, tkanina je mešavina 80% vune i 20% kašmira."
+        },
+        {
+          "question": "Da li je kaput dovoljno topao za zimu?",
+          "answer": "Da, gramaza od 480g/m² pruža toplotu i za najhladnije dane."
+        }
+      ],
+      "cms": {
+        "featured": false,
+        "bestseller": false,
+        "newArrival": true,
+        "publishedAt": "2026-01-15T10:00:00Z",
+        "updatedAt": "2026-01-15T10:00:00Z",
+        "status": "published",
+        "salesCount": 0,
+        "viewCount": 0,
+        "cartAddCount": 0,
+        "lookIds": [],
+        "searchKeywords": [
+          "muški kaput",
+          "vuneni kaput",
+          "cashmere",
+          "eleganca",
+          "DALLI"
+        ],
+        "priority": 18,
+        "virtualTryOn": {
+          "eligible": true,
+          "modelType": "upper-body",
+          "primaryImage": "/images/virtual-tryon/muski-kaput-front.svg",
+          "secondaryImages": [
+            "/images/virtual-tryon/muski-kaput-back.svg",
+            "/images/virtual-tryon/muski-kaput-detail.svg"
+          ],
+          "fitGuide": "regular"
+        },
+        "product360": {
+          "enabled": true,
+          "images": [],
+          "placeholder": "/images/360/placeholder.avif"
+        }
+      },
+      "loyalty": {
+        "memberOnly": true,
+        "earlyAccess": true,
+        "earlyAccessDate": "2026-10-10",
+        "limitedRelease": true,
+        "pointsMultiplier": 3
+      },
+      "collection": "elegance",
+      "styleOccasion": [
+        "formal",
+        "evening",
+        "outerwear"
+      ],
+      "categoryLabel": "Kaputi",
+      "hierarchyPaths": [
+        {
+          "collection": "elegance",
+          "gender": "men",
+          "category": "coats"
+        }
+      ],
+      "primaryHierarchy": {
+        "collection": "elegance",
+        "gender": "men",
+        "category": "coats"
+      },
+      "rating": null,
+      "reviewCount": 0
+    },
+    {
+      "id": 19,
+      "slug": "zenska-haljina",
+      "sku": "ML-019",
+      "name": "Ženska Elegantna Haljina",
+      "shortDescription": "Svilenkasta midi haljina sa mekim padom. Bezvremenska eleganca.",
+      "description": "Ženska elegantna midi haljina od svilenkaste tkanine sa mekim padom koji prati liniju tela. Diskretan izrez i uredan struk stvaraju sofisticiranu siluetu. Savršena za večernje prilike, svečanosti i poslovne događaje. Dostupna u pažljivo odabranim plemenitim tonovima.",
+      "category": "dresses",
+      "gender": "women",
+      "price": 14900,
+      "salePrice": 12900,
+      "currency": "RSD",
+      "images": {
+        "main": "/images/products/zenska-haljina.svg",
+        "gallery": [],
+        "ogImage": "/images/og-zenska-haljina.svg"
+      },
+      "altText": "Ženska Elegantna Haljina - Svilenkasti viskoza blend, Elegance kolekcija, DALLI",
+      "colors": [
+        {
+          "name": "Crna",
+          "hex": "#000000"
+        },
+        {
+          "name": "Bordo",
+          "hex": "#5C1A2B"
+        },
+        {
+          "name": "Smaragdna",
+          "hex": "#1F4A3D"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "34",
+          "available": true,
+          "stock": 14
+        },
+        {
+          "size": "36",
+          "available": true,
+          "stock": 18
+        },
+        {
+          "size": "38",
+          "available": true,
+          "stock": 22
+        },
+        {
+          "size": "40",
+          "available": true,
+          "stock": 16
+        },
+        {
+          "size": "42",
+          "available": true,
+          "stock": 10
+        },
+        {
+          "size": "44",
+          "available": true,
+          "stock": 6
+        }
+      ],
+      "specifications": {
+        "material": "Svilenkasti viskoza blend",
+        "weight": "180g/m²",
+        "care": "Hemijsko čišćenje",
+        "warrantyMonths": 24
+      },
+      "inventory": {
+        "totalStock": 86,
+        "status": "in_stock",
+        "lowStockThreshold": 5,
+        "trackInventory": true,
+        "allowBackorder": false
+      },
+      "seo": {
+        "metaTitle": "Ženska Elegantna Haljina - DALLI ELEGANCE | Svilenkasti viskoza blend. 14.900 RSD",
+        "metaDescription": "Svilenkasta midi haljina sa mekim padom. Bezvremenska eleganca. ELEGANCE kolekcija. Cena 14.900 RSD. Besplatna dostava nad 5.000 RSD.",
+        "keywords": "ženska haljina, elegantna haljina, midi haljina, eleganca, DALLI",
+        "canonicalUrl": "https://dalli.rs/elegance/women/dresses/zenska-haljina.html"
+      },
+      "breadcrumbs": [
+        {
+          "name": "Početna",
+          "url": "/"
+        },
+        {
+          "name": "ELEGANCE",
+          "url": "/elegance/"
+        },
+        {
+          "name": "Ženska",
+          "url": "/elegance/women/"
+        },
+        {
+          "name": "Haljine",
+          "url": "/elegance/women/dresses/"
+        },
+        {
+          "name": "Ženska Elegantna Haljina",
+          "url": "/elegance/women/dresses/zenska-haljina.html"
+        }
+      ],
+      "structuredData": {
+        "brand": "DALLI",
+        "category": "Haljine",
+        "gtin": null,
+        "mpn": "ML-019"
+      },
+      "faq": [
+        {
+          "question": "Koja je dužina haljine?",
+          "answer": "Haljina je midi dužine, do sredine lista."
+        },
+        {
+          "question": "Da li je haljina podstavljena?",
+          "answer": "Da, haljina ima mekanu podstavu za savršen pad."
+        }
+      ],
+      "cms": {
+        "featured": false,
+        "bestseller": false,
+        "newArrival": true,
+        "publishedAt": "2026-01-15T10:00:00Z",
+        "updatedAt": "2026-01-15T10:00:00Z",
+        "status": "published",
+        "salesCount": 0,
+        "viewCount": 0,
+        "cartAddCount": 0,
+        "lookIds": [],
+        "searchKeywords": [
+          "ženska haljina",
+          "elegantna haljina",
+          "midi haljina",
+          "eleganca",
+          "DALLI"
+        ],
+        "priority": 19,
+        "virtualTryOn": {
+          "eligible": true,
+          "modelType": "upper-body",
+          "primaryImage": "/images/virtual-tryon/zenska-haljina-front.svg",
+          "secondaryImages": [
+            "/images/virtual-tryon/zenska-haljina-back.svg",
+            "/images/virtual-tryon/zenska-haljina-detail.svg"
+          ],
+          "fitGuide": "regular"
+        },
+        "product360": {
+          "enabled": true,
+          "images": [],
+          "placeholder": "/images/360/placeholder.avif"
+        }
+      },
+      "loyalty": {
+        "memberOnly": true,
+        "earlyAccess": true,
+        "earlyAccessDate": "2026-10-01",
+        "limitedRelease": false,
+        "pointsMultiplier": 2
+      },
+      "collection": "elegance",
+      "styleOccasion": [
+        "evening",
+        "formal",
+        "business"
+      ],
+      "categoryLabel": "Haljine",
+      "hierarchyPaths": [
+        {
+          "collection": "elegance",
+          "gender": "women",
+          "category": "dresses"
+        }
+      ],
+      "primaryHierarchy": {
+        "collection": "elegance",
+        "gender": "women",
+        "category": "dresses"
+      },
+      "rating": null,
+      "reviewCount": 0
+    },
+    {
+      "id": 20,
+      "slug": "zenska-kozulja",
+      "sku": "ML-020",
+      "name": "Ženska Svilkasta Kožulja",
+      "shortDescription": "Elegantna ženska kožulja od organskog pamuka. Za posao i svečane prilike.",
+      "description": "Ženska kožulja od premium organskog pamuka sa diskretnim sjajem i mekim padom. Klasičan kroj sa dugmadima i urednom kragnom čini je univerzalnim komadom za poslovni i svečani dress code. Može se nositi uz sakoe i elegantne pantalone ELEGANCE kolekcije.",
+      "category": "shirts",
+      "gender": "women",
+      "price": 7900,
+      "salePrice": null,
+      "currency": "RSD",
+      "images": {
+        "main": "/images/products/zenska-kozulja.svg",
+        "gallery": [],
+        "ogImage": "/images/og-zenska-kozulja.svg"
+      },
+      "altText": "Ženska Svilkasta Kožulja - 100% organski pamuk, Elegance kolekcija, DALLI",
+      "colors": [
+        {
+          "name": "Bela",
+          "hex": "#FFFFFF"
+        },
+        {
+          "name": "Svijetlo plava",
+          "hex": "#E8F0FE"
+        },
+        {
+          "name": "Slonovača",
+          "hex": "#F1E9DA"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "34",
+          "available": true,
+          "stock": 14
+        },
+        {
+          "size": "36",
+          "available": true,
+          "stock": 18
+        },
+        {
+          "size": "38",
+          "available": true,
+          "stock": 22
+        },
+        {
+          "size": "40",
+          "available": true,
+          "stock": 16
+        },
+        {
+          "size": "42",
+          "available": true,
+          "stock": 10
+        },
+        {
+          "size": "44",
+          "available": true,
+          "stock": 6
+        }
+      ],
+      "specifications": {
+        "material": "100% organski pamuk",
+        "weight": "150g/m²",
+        "care": "Mašinsko pranje 30°C",
+        "warrantyMonths": 24
+      },
+      "inventory": {
+        "totalStock": 86,
+        "status": "in_stock",
+        "lowStockThreshold": 5,
+        "trackInventory": true,
+        "allowBackorder": false
+      },
+      "seo": {
+        "metaTitle": "Ženska Svilkasta Kožulja - DALLI ELEGANCE | 100% organski pamuk. 7.900 RSD",
+        "metaDescription": "Elegantna ženska kožulja od organskog pamuka. Za posao i svečane prilike. ELEGANCE kolekcija. Cena 7.900 RSD. Besplatna dostava nad 5.000 RSD.",
+        "keywords": "ženska kožulja, svilkasta kožulja, pamučna kožulja, eleganca, DALLI",
+        "canonicalUrl": "https://dalli.rs/elegance/women/shirts/zenska-kozulja.html"
+      },
+      "breadcrumbs": [
+        {
+          "name": "Početna",
+          "url": "/"
+        },
+        {
+          "name": "ELEGANCE",
+          "url": "/elegance/"
+        },
+        {
+          "name": "Ženska",
+          "url": "/elegance/women/"
+        },
+        {
+          "name": "Kožulje",
+          "url": "/elegance/women/shirts/"
+        },
+        {
+          "name": "Ženska Svilkasta Kožulja",
+          "url": "/elegance/women/shirts/zenska-kozulja.html"
+        }
+      ],
+      "structuredData": {
+        "brand": "DALLI",
+        "category": "Kožulje",
+        "gtin": null,
+        "mpn": "ML-020"
+      },
+      "faq": [
+        {
+          "question": "Da li je kožulja prozirna?",
+          "answer": "Ne, gusta tkanina od 150g/m² osigurava da nije prozirna ni u svetlim tonovima."
+        },
+        {
+          "question": "Kako izabrati veličinu?",
+          "answer": "Preporučujemo vašu standardnu veličinu — kroj je klasičan."
+        }
+      ],
+      "cms": {
+        "featured": false,
+        "bestseller": false,
+        "newArrival": true,
+        "publishedAt": "2026-01-15T10:00:00Z",
+        "updatedAt": "2026-01-15T10:00:00Z",
+        "status": "published",
+        "salesCount": 0,
+        "viewCount": 0,
+        "cartAddCount": 0,
+        "lookIds": [],
+        "searchKeywords": [
+          "ženska kožulja",
+          "svilkasta kožulja",
+          "pamučna kožulja",
+          "eleganca",
+          "DALLI"
+        ],
+        "priority": 20,
+        "virtualTryOn": {
+          "eligible": true,
+          "modelType": "upper-body",
+          "primaryImage": "/images/virtual-tryon/zenska-kozulja-front.svg",
+          "secondaryImages": [
+            "/images/virtual-tryon/zenska-kozulja-back.svg",
+            "/images/virtual-tryon/zenska-kozulja-detail.svg"
+          ],
+          "fitGuide": "regular"
+        },
+        "product360": {
+          "enabled": true,
+          "images": [],
+          "placeholder": "/images/360/placeholder.avif"
+        }
+      },
+      "loyalty": {
+        "memberOnly": false,
+        "earlyAccess": false,
+        "limitedRelease": false,
+        "pointsMultiplier": 1
+      },
+      "collection": "elegance",
+      "styleOccasion": [
+        "business",
+        "formal",
+        "smart-casual"
+      ],
+      "categoryLabel": "Kožulje",
+      "hierarchyPaths": [
+        {
+          "collection": "elegance",
+          "gender": "women",
+          "category": "shirts"
+        }
+      ],
+      "primaryHierarchy": {
+        "collection": "elegance",
+        "gender": "women",
+        "category": "shirts"
+      },
+      "rating": null,
+      "reviewCount": 0
+    },
+    {
+      "id": 21,
+      "slug": "zenski-sako",
+      "sku": "ML-021",
+      "name": "Ženski Struktuirani Sako",
+      "shortDescription": "Sako od merino vlne sa jednim dugmetom. Za poslovni i večernji look.",
+      "description": "Ženski struktuirani sako od premium merino vlne sa jednim dugmetom i urednim reverom. Prijubljen kroj naglašava struk i stvara profinjenu siluetu. Postava od satena i kvalitetna konstrukcija čine ga savršenim izborom za poslovne sastanke i svečane večeri.",
+      "category": "blazers",
+      "gender": "women",
+      "price": 16900,
+      "salePrice": null,
+      "currency": "RSD",
+      "images": {
+        "main": "/images/products/zenski-sako.svg",
+        "gallery": [],
+        "ogImage": "/images/og-zenski-sako.svg"
+      },
+      "altText": "Ženski Struktuirani Sako - 100% merino vlna (Super 100s), Elegance kolekcija, DALLI",
+      "colors": [
+        {
+          "name": "Crna",
+          "hex": "#000000"
+        },
+        {
+          "name": "Navy",
+          "hex": "#1B2A4A"
+        },
+        {
+          "name": "Kamela",
+          "hex": "#B08968"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "34",
+          "available": true,
+          "stock": 14
+        },
+        {
+          "size": "36",
+          "available": true,
+          "stock": 18
+        },
+        {
+          "size": "38",
+          "available": true,
+          "stock": 22
+        },
+        {
+          "size": "40",
+          "available": true,
+          "stock": 16
+        },
+        {
+          "size": "42",
+          "available": true,
+          "stock": 10
+        },
+        {
+          "size": "44",
+          "available": true,
+          "stock": 6
+        }
+      ],
+      "specifications": {
+        "material": "100% merino vlna (Super 100s)",
+        "weight": "240g/m²",
+        "care": "Hemijsko čišćenje",
+        "warrantyMonths": 36
+      },
+      "inventory": {
+        "totalStock": 86,
+        "status": "in_stock",
+        "lowStockThreshold": 5,
+        "trackInventory": true,
+        "allowBackorder": false
+      },
+      "seo": {
+        "metaTitle": "Ženski Struktuirani Sako - DALLI ELEGANCE | 100% merino vlna (Super 100s). 16.900 RSD",
+        "metaDescription": "Sako od merino vlne sa jednim dugmetom. Za poslovni i večernji look. ELEGANCE kolekcija. Cena 16.900 RSD. Besplatna dostava nad 5.000 RSD.",
+        "keywords": "ženski sako, struktuirani sako, merino vlna, eleganca, DALLI",
+        "canonicalUrl": "https://dalli.rs/elegance/women/blazers/zenski-sako.html"
+      },
+      "breadcrumbs": [
+        {
+          "name": "Početna",
+          "url": "/"
+        },
+        {
+          "name": "ELEGANCE",
+          "url": "/elegance/"
+        },
+        {
+          "name": "Ženska",
+          "url": "/elegance/women/"
+        },
+        {
+          "name": "Sakovi",
+          "url": "/elegance/women/blazers/"
+        },
+        {
+          "name": "Ženski Struktuirani Sako",
+          "url": "/elegance/women/blazers/zenski-sako.html"
+        }
+      ],
+      "structuredData": {
+        "brand": "DALLI",
+        "category": "Sakovi",
+        "gtin": null,
+        "mpn": "ML-021"
+      },
+      "faq": [
+        {
+          "question": "Koliko dugmadi ima sako?",
+          "answer": "Sako ima jedno dugme i uredan rever."
+        },
+        {
+          "question": "Da li je sako podstavljen?",
+          "answer": "Da, ima satensku postavu."
+        }
+      ],
+      "cms": {
+        "featured": false,
+        "bestseller": false,
+        "newArrival": true,
+        "publishedAt": "2026-01-15T10:00:00Z",
+        "updatedAt": "2026-01-15T10:00:00Z",
+        "status": "published",
+        "salesCount": 0,
+        "viewCount": 0,
+        "cartAddCount": 0,
+        "lookIds": [],
+        "searchKeywords": [
+          "ženski sako",
+          "struktuirani sako",
+          "merino vlna",
+          "eleganca",
+          "DALLI"
+        ],
+        "priority": 21,
+        "virtualTryOn": {
+          "eligible": true,
+          "modelType": "upper-body",
+          "primaryImage": "/images/virtual-tryon/zenski-sako-front.svg",
+          "secondaryImages": [
+            "/images/virtual-tryon/zenski-sako-back.svg",
+            "/images/virtual-tryon/zenski-sako-detail.svg"
+          ],
+          "fitGuide": "regular"
+        },
+        "product360": {
+          "enabled": true,
+          "images": [],
+          "placeholder": "/images/360/placeholder.avif"
+        }
+      },
+      "loyalty": {
+        "memberOnly": true,
+        "earlyAccess": true,
+        "earlyAccessDate": "2026-10-03",
+        "limitedRelease": false,
+        "pointsMultiplier": 2
+      },
+      "collection": "elegance",
+      "styleOccasion": [
+        "business",
+        "formal",
+        "evening"
+      ],
+      "categoryLabel": "Sakovi",
+      "hierarchyPaths": [
+        {
+          "collection": "elegance",
+          "gender": "women",
+          "category": "blazers"
+        }
+      ],
+      "primaryHierarchy": {
+        "collection": "elegance",
+        "gender": "women",
+        "category": "blazers"
+      },
+      "rating": null,
+      "reviewCount": 0
+    },
+    {
+      "id": 22,
+      "slug": "zenske-pantalone",
+      "sku": "ML-022",
+      "name": "Ženske Elegantne Pantalone",
+      "shortDescription": "Pantalone visokog struka od merino vlne. Za poslovni i svečani izgled.",
+      "description": "Ženske elegantne pantalone visokog struka od merino vlne sa ravnim, dugim krojom koji vizuelno izdužuje liniju. Uredan struk i savršen pad čine ih idealnim za poslovni dress code ili elegantnu večernju kombinaciju. Dostupne u plemenitim, neutralnim tonovima.",
+      "category": "trousers",
+      "gender": "women",
+      "price": 8900,
+      "salePrice": null,
+      "currency": "RSD",
+      "images": {
+        "main": "/images/products/zenske-pantalone.svg",
+        "gallery": [],
+        "ogImage": "/images/og-zenske-pantalone.svg"
+      },
+      "altText": "Ženske Elegantne Pantalone - 100% merino vlna, Elegance kolekcija, DALLI",
+      "colors": [
+        {
+          "name": "Antracit",
+          "hex": "#2D2D2D"
+        },
+        {
+          "name": "Bež",
+          "hex": "#C8B79E"
+        },
+        {
+          "name": "Navy",
+          "hex": "#1B2A4A"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "34",
+          "available": true,
+          "stock": 14
+        },
+        {
+          "size": "36",
+          "available": true,
+          "stock": 18
+        },
+        {
+          "size": "38",
+          "available": true,
+          "stock": 22
+        },
+        {
+          "size": "40",
+          "available": true,
+          "stock": 16
+        },
+        {
+          "size": "42",
+          "available": true,
+          "stock": 10
+        },
+        {
+          "size": "44",
+          "available": true,
+          "stock": 6
+        }
+      ],
+      "specifications": {
+        "material": "100% merino vlna",
+        "weight": "240g/m²",
+        "care": "Hemijsko čišćenje",
+        "warrantyMonths": 36
+      },
+      "inventory": {
+        "totalStock": 86,
+        "status": "in_stock",
+        "lowStockThreshold": 5,
+        "trackInventory": true,
+        "allowBackorder": false
+      },
+      "seo": {
+        "metaTitle": "Ženske Elegantne Pantalone - DALLI ELEGANCE | 100% merino vlna. 8.900 RSD",
+        "metaDescription": "Pantalone visokog struka od merino vlne. Za poslovni i svečani izgled. ELEGANCE kolekcija. Cena 8.900 RSD. Besplatna dostava nad 5.000 RSD.",
+        "keywords": "ženske pantalone, elegantne pantalone, visok struk, eleganca, DALLI",
+        "canonicalUrl": "https://dalli.rs/elegance/women/trousers/zenske-pantalone.html"
+      },
+      "breadcrumbs": [
+        {
+          "name": "Početna",
+          "url": "/"
+        },
+        {
+          "name": "ELEGANCE",
+          "url": "/elegance/"
+        },
+        {
+          "name": "Ženska",
+          "url": "/elegance/women/"
+        },
+        {
+          "name": "Pantalone",
+          "url": "/elegance/women/trousers/"
+        },
+        {
+          "name": "Ženske Elegantne Pantalone",
+          "url": "/elegance/women/trousers/zenske-pantalone.html"
+        }
+      ],
+      "structuredData": {
+        "brand": "DALLI",
+        "category": "Pantalone",
+        "gtin": null,
+        "mpn": "ML-022"
+      },
+      "faq": [
+        {
+          "question": "Da li pantalone imaju visok struk?",
+          "answer": "Da, model je visokog struka sa ravnim dugim krojom."
+        },
+        {
+          "question": "Da li se mogu nositi uz sako?",
+          "answer": "Da, odlično se slažu sa ženskim sakoima kolekcije."
+        }
+      ],
+      "cms": {
+        "featured": false,
+        "bestseller": false,
+        "newArrival": true,
+        "publishedAt": "2026-01-15T10:00:00Z",
+        "updatedAt": "2026-01-15T10:00:00Z",
+        "status": "published",
+        "salesCount": 0,
+        "viewCount": 0,
+        "cartAddCount": 0,
+        "lookIds": [],
+        "searchKeywords": [
+          "ženske pantalone",
+          "elegantne pantalone",
+          "visok struk",
+          "eleganca",
+          "DALLI"
+        ],
+        "priority": 22,
+        "virtualTryOn": {
+          "eligible": true,
+          "modelType": "upper-body",
+          "primaryImage": "/images/virtual-tryon/zenske-pantalone-front.svg",
+          "secondaryImages": [
+            "/images/virtual-tryon/zenske-pantalone-back.svg",
+            "/images/virtual-tryon/zenske-pantalone-detail.svg"
+          ],
+          "fitGuide": "regular"
+        },
+        "product360": {
+          "enabled": true,
+          "images": [],
+          "placeholder": "/images/360/placeholder.avif"
+        }
+      },
+      "loyalty": {
+        "memberOnly": true,
+        "earlyAccess": true,
+        "earlyAccessDate": "2026-10-07",
+        "limitedRelease": false,
+        "pointsMultiplier": 2
+      },
+      "collection": "elegance",
+      "styleOccasion": [
+        "business",
+        "formal"
+      ],
+      "categoryLabel": "Pantalone",
+      "hierarchyPaths": [
+        {
+          "collection": "elegance",
+          "gender": "women",
+          "category": "trousers"
+        }
+      ],
+      "primaryHierarchy": {
+        "collection": "elegance",
+        "gender": "women",
+        "category": "trousers"
+      },
+      "rating": null,
+      "reviewCount": 0
+    },
+    {
+      "id": 23,
+      "slug": "zenski-kaput",
+      "sku": "ML-023",
+      "name": "Ženski Vuneni Kaput",
+      "shortDescription": "Dugačak kaput od vojne mešavine sa pojasom. Sofisticiran i topao.",
+      "description": "Ženski dugi kaput od mešavine vune i kašmira sa pojasom u struku i urednim, dugim krojom. Bogata tkanina pruža toplotu i savršen pad, dok pojas naglašava struk i stvara sofisticiranu siluetu. Idealno rešenje za hladne dane uz elegantan, bezvremenski izgled.",
+      "category": "coats",
+      "gender": "women",
+      "price": 29900,
+      "salePrice": null,
+      "currency": "RSD",
+      "images": {
+        "main": "/images/products/zenski-kaput.svg",
+        "gallery": [],
+        "ogImage": "/images/og-zenski-kaput.svg"
+      },
+      "altText": "Ženski Vuneni Kaput - 75% vuna / 25% kašmir, Elegance kolekcija, DALLI",
+      "colors": [
+        {
+          "name": "Kamela",
+          "hex": "#B08968"
+        },
+        {
+          "name": "Siva",
+          "hex": "#808080"
+        },
+        {
+          "name": "Bordo",
+          "hex": "#5C1A2B"
+        }
+      ],
+      "sizes": [
+        {
+          "size": "34",
+          "available": true,
+          "stock": 14
+        },
+        {
+          "size": "36",
+          "available": true,
+          "stock": 18
+        },
+        {
+          "size": "38",
+          "available": true,
+          "stock": 22
+        },
+        {
+          "size": "40",
+          "available": true,
+          "stock": 16
+        },
+        {
+          "size": "42",
+          "available": true,
+          "stock": 10
+        },
+        {
+          "size": "44",
+          "available": true,
+          "stock": 6
+        }
+      ],
+      "specifications": {
+        "material": "75% vuna / 25% kašmir",
+        "weight": "470g/m²",
+        "care": "Hemijsko čišćenje",
+        "warrantyMonths": 36
+      },
+      "inventory": {
+        "totalStock": 86,
+        "status": "in_stock",
+        "lowStockThreshold": 5,
+        "trackInventory": true,
+        "allowBackorder": false
+      },
+      "seo": {
+        "metaTitle": "Ženski Vuneni Kaput - DALLI ELEGANCE | 75% vuna / 25% kašmir. 29.900 RSD",
+        "metaDescription": "Dugačak kaput od vojne mešavine sa pojasom. Sofisticiran i topao. ELEGANCE kolekcija. Cena 29.900 RSD. Besplatna dostava nad 5.000 RSD.",
+        "keywords": "ženski kaput, vuneni kaput, cashmere, eleganca, DALLI",
+        "canonicalUrl": "https://dalli.rs/elegance/women/coats/zenski-kaput.html"
+      },
+      "breadcrumbs": [
+        {
+          "name": "Početna",
+          "url": "/"
+        },
+        {
+          "name": "ELEGANCE",
+          "url": "/elegance/"
+        },
+        {
+          "name": "Ženska",
+          "url": "/elegance/women/"
+        },
+        {
+          "name": "Kaputi",
+          "url": "/elegance/women/coats/"
+        },
+        {
+          "name": "Ženski Vuneni Kaput",
+          "url": "/elegance/women/coats/zenski-kaput.html"
+        }
+      ],
+      "structuredData": {
+        "brand": "DALLI",
+        "category": "Kaputi",
+        "gtin": null,
+        "mpn": "ML-023"
+      },
+      "faq": [
+        {
+          "question": "Da li kaput ima pojas?",
+          "answer": "Da, kaput dolazi sa pojasom u struku."
+        },
+        {
+          "question": "Da li je dovoljno topao za zimu?",
+          "answer": "Da, mešavina vune i kašmira od 470g/m² pruža izuzetnu toplotu."
+        }
+      ],
+      "cms": {
+        "featured": false,
+        "bestseller": false,
+        "newArrival": true,
+        "publishedAt": "2026-01-15T10:00:00Z",
+        "updatedAt": "2026-01-15T10:00:00Z",
+        "status": "published",
+        "salesCount": 0,
+        "viewCount": 0,
+        "cartAddCount": 0,
+        "lookIds": [],
+        "searchKeywords": [
+          "ženski kaput",
+          "vuneni kaput",
+          "cashmere",
+          "eleganca",
+          "DALLI"
+        ],
+        "priority": 23,
+        "virtualTryOn": {
+          "eligible": true,
+          "modelType": "upper-body",
+          "primaryImage": "/images/virtual-tryon/zenski-kaput-front.svg",
+          "secondaryImages": [
+            "/images/virtual-tryon/zenski-kaput-back.svg",
+            "/images/virtual-tryon/zenski-kaput-detail.svg"
+          ],
+          "fitGuide": "regular"
+        },
+        "product360": {
+          "enabled": true,
+          "images": [],
+          "placeholder": "/images/360/placeholder.avif"
+        }
+      },
+      "loyalty": {
+        "memberOnly": true,
+        "earlyAccess": true,
+        "earlyAccessDate": "2026-10-12",
+        "limitedRelease": true,
+        "pointsMultiplier": 3
+      },
+      "collection": "elegance",
+      "styleOccasion": [
+        "formal",
+        "evening",
+        "outerwear"
+      ],
+      "categoryLabel": "Kaputi",
+      "hierarchyPaths": [
+        {
+          "collection": "elegance",
+          "gender": "women",
+          "category": "coats"
+        }
+      ],
+      "primaryHierarchy": {
+        "collection": "elegance",
+        "gender": "women",
+        "category": "coats"
+      },
+      "rating": null,
+      "reviewCount": 0
+    }
+  ]
+}

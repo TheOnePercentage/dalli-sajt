@@ -1,0 +1,231 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-10-09T00:00:00Z",
+  "shipping": {
+    "enabled": true,
+    "globalSettings": {
+      "warehouseCountry": "RS",
+      "defaultCarrier": "PostExpress",
+      "trackingEnabled": true,
+      "insuranceEnabled": true,
+      "insuranceThreshold": 50000,
+      "customsHandling": "DDP"
+    },
+    "carriers": {
+      "PostExpress": {
+        "name": "PostExpress",
+        "countries": ["RS", "BA", "ME", "MK"],
+        "services": ["standard", "express", "pickup"],
+        "trackingUrl": "https://postexpress.rs/track/{trackingNumber}",
+        "apiEnabled": true
+      },
+      "BH_Pošta": {
+        "name": "BH Pošta",
+        "countries": ["BA"],
+        "services": ["standard", "express"],
+        "trackingUrl": "https://bhposta.ba/track/{trackingNumber}",
+        "apiEnabled": false
+      },
+      "Pošta_Crne_Gore": {
+        "name": "Pošta Crne Gore",
+        "countries": ["ME"],
+        "services": ["standard", "express"],
+        "trackingUrl": "https://postacg.me/track/{trackingNumber}",
+        "apiEnabled": false
+      },
+      "Hrvatska_pošta": {
+        "name": "Hrvatska pošta",
+        "countries": ["HR"],
+        "services": ["standard", "express", "pickup"],
+        "trackingUrl": "https://posta.hr/track/{trackingNumber}",
+        "apiEnabled": true
+      },
+      "Makedonija_Posta": {
+        "name": "Makedonija Posta",
+        "countries": ["MK"],
+        "services": ["standard", "express"],
+        "trackingUrl": "https://posta.com.mk/track/{trackingNumber}",
+        "apiEnabled": false
+      },
+      "Pošta_Slovenije": {
+        "name": "Pošta Slovenije",
+        "countries": ["SI"],
+        "services": ["standard", "express", "pickup"],
+        "trackingUrl": "https://posta.si/track/{trackingNumber}",
+        "apiEnabled": true
+      },
+      "DHL": {
+        "name": "DHL Express",
+        "countries": ["RS", "BA", "ME", "HR", "MK", "SI", "DE", "AT", "CH", "FR", "IT", "GB", "US", "AE"],
+        "services": ["express", "luxury"],
+        "trackingUrl": "https://www.dhl.com/track/{trackingNumber}",
+        "apiEnabled": true
+      },
+      "GLS": {
+        "name": "GLS",
+        "countries": ["RS", "BA", "ME", "HR", "MK", "SI", "DE", "AT", "IT"],
+        "services": ["standard", "express"],
+        "trackingUrl": "https://gls-group.eu/track/{trackingNumber}",
+        "apiEnabled": true
+      },
+      "DPD": {
+        "name": "DPD",
+        "countries": ["HR", "SI", "DE", "AT", "FR", "GB", "IT"],
+        "services": ["standard", "express", "pickup"],
+        "trackingUrl": "https://tracking.dpd.de/{trackingNumber}",
+        "apiEnabled": true
+      },
+      "Österreichische_Post": {
+        "name": "Österreichische Post",
+        "countries": ["AT"],
+        "services": ["standard", "express", "pickup"],
+        "trackingUrl": "https://www.post.at/track/{trackingNumber}",
+        "apiEnabled": true
+      },
+      "Swiss_Post": {
+        "name": "Swiss Post",
+        "countries": ["CH"],
+        "services": ["standard", "express", "pickup"],
+        "trackingUrl": "https://www.post.ch/track/{trackingNumber}",
+        "apiEnabled": true
+      },
+      "La_Poste": {
+        "name": "La Poste / Colissimo",
+        "countries": ["FR"],
+        "services": ["standard", "express", "pickup"],
+        "trackingUrl": "https://www.laposte.fr/track/{trackingNumber}",
+        "apiEnabled": true
+      },
+      "Poste_Italiane": {
+        "name": "Poste Italiane",
+        "countries": ["IT"],
+        "services": ["standard", "express", "pickup"],
+        "trackingUrl": "https://www.poste.it/track/{trackingNumber}",
+        "apiEnabled": true
+      },
+      "Royal_Mail": {
+        "name": "Royal Mail",
+        "countries": ["GB"],
+        "services": ["standard", "express", "pickup"],
+        "trackingUrl": "https://www.royalmail.com/track/{trackingNumber}",
+        "apiEnabled": true
+      },
+      "UPS": {
+        "name": "UPS",
+        "countries": ["US"],
+        "services": ["standard", "express", "luxury"],
+        "trackingUrl": "https://www.ups.com/track/{trackingNumber}",
+        "apiEnabled": true
+      },
+      "FedEx": {
+        "name": "FedEx",
+        "countries": ["US", "AE"],
+        "services": ["standard", "express", "luxury"],
+        "trackingUrl": "https://www.fedex.com/track/{trackingNumber}",
+        "apiEnabled": true
+      },
+      "Emirates_Post": {
+        "name": "Emirates Post",
+        "countries": ["AE"],
+        "services": ["standard", "express"],
+        "trackingUrl": "https://www.epg.gov.ae/track/{trackingNumber}",
+        "apiEnabled": false
+      }
+    },
+    "zones": {
+      "balkans": {
+        "countries": ["RS", "BA", "ME", "HR", "MK", "SI"],
+        "intraZoneShipping": true,
+        "freeShippingThreshold": 5000,
+        "baseCost": 300
+      },
+      "dach": {
+        "countries": ["DE", "AT", "CH"],
+        "intraZoneShipping": true,
+        "freeShippingThreshold": 150,
+        "baseCost": 5.90
+      },
+      "eu_west": {
+        "countries": ["FR", "IT"],
+        "intraZoneShipping": true,
+        "freeShippingThreshold": 150,
+        "baseCost": 6.90
+      },
+      "uk": {
+        "countries": ["GB"],
+        "intraZoneShipping": false,
+        "freeShippingThreshold": 125,
+        "baseCost": 4.99
+      },
+      "north_america": {
+        "countries": ["US"],
+        "intraZoneShipping": false,
+        "freeShippingThreshold": 200,
+        "baseCost": 12
+      },
+      "middle_east": {
+        "countries": ["AE"],
+        "intraZoneShipping": false,
+        "freeShippingThreshold": 500,
+        "baseCost": 30
+      }
+    },
+    "deliveryTypes": {
+      "standard": {
+        "name": "Standard Delivery",
+        "description": "Delivery within standard timeframe",
+        "availableIn": ["RS", "BA", "ME", "HR", "MK", "SI", "DE", "AT", "CH", "FR", "IT", "GB", "US", "AE"]
+      },
+      "express": {
+        "name": "Express Delivery",
+        "description": "Priority delivery with tracking",
+        "availableIn": ["RS", "BA", "ME", "HR", "MK", "SI", "DE", "AT", "CH", "FR", "IT", "GB", "US", "AE"]
+      },
+      "luxury": {
+        "name": "White-Glove Delivery",
+        "description": "Premium delivery with unpacking and placement",
+        "availableIn": ["RS", "BA", "ME", "HR", "MK", "SI", "DE", "AT", "CH", "FR", "IT", "GB", "US", "AE"],
+        "requiresTier": "gold"
+      },
+      "pickup": {
+        "name": "Pickup Point",
+        "description": "Collect from designated location",
+        "availableIn": ["RS", "BA", "ME", "HR", "MK", "SI", "DE", "AT", "CH", "FR", "IT", "GB", "US", "AE"]
+      }
+    },
+    "luxuryDelivery": {
+      "enabled": true,
+      "tierRequired": "gold",
+      "features": ["scheduled", "unpacking", "placement", "packagingRemoval", "personalNote"],
+      "leadTimeDays": 2,
+      "availableCountries": ["RS", "BA", "ME", "HR", "MK", "SI", "DE", "AT", "CH", "FR", "IT", "GB", "US", "AE"]
+    },
+    "returns": {
+      "enabled": true,
+      "returnWindowDays": 30,
+      "freeReturns": {
+        "enabled": true,
+        "tierRequired": "silver",
+        "countries": ["RS", "BA", "ME", "HR", "MK", "SI", "DE", "AT", "CH", "FR", "IT", "GB"]
+      },
+      "returnCarrier": "original",
+      "restockingFee": 0,
+      "returnAddressByCountry": {
+        "RS": "DALLI Returns, Beograd, Srbija",
+        "BA": "DALLI Returns, Sarajevo, BiH",
+        "ME": "DALLI Returns, Podgorica, Crna Gora",
+        "HR": "DALLI Returns, Zagreb, Hrvatska",
+        "MK": "DALLI Returns, Skopje, Македонија",
+        "SI": "DALLI Returns, Ljubljana, Slovenija",
+        "DE": "DALLI Returns, Berlin, Deutschland",
+        "AT": "DALLI Returns, Wien, Österreich",
+        "CH": "DALLI Returns, Zürich, Schweiz",
+        "FR": "DALLI Returns, Paris, France",
+        "IT": "DALLI Returns, Milano, Italia",
+        "GB": "DALLI Returns, London, UK",
+        "US": "DALLI Returns, New York, USA",
+        "AE": "DALLI Returns, Dubai, UAE"
+      }
+    }
+  }
+}

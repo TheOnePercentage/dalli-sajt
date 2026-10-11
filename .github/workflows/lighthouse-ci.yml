@@ -1,0 +1,140 @@
+name: Lighthouse CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+  schedule:
+    - cron: '0 3 * * 1'  # Weekly on Monday 3 AM
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    env:
+      LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: ./admin-new
+
+      - name: Build project
+        run: npm run build
+        working-directory: ./admin-new
+
+      - name: Start preview server
+        run: npm run preview -- --port 4173 --host 0.0.0.0 &
+        working-directory: ./admin-new
+        env:
+          PORT: 4173
+
+      - name: Wait for server
+        run: |
+          for i in {1..30}; do
+            if curl -s http://localhost:4173 > /dev/null; then
+              echo "Server ready"
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "Server failed to start"
+          exit 1
+
+      - name: Run Lighthouse CI
+        run: npx lhci autorun --config=lighthouserc.json
+        working-directory: ./admin-new
+        env:
+          LHCI_SERVER_BASE_URL: ${{ secrets.LHCI_SERVER_BASE_URL }}
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
+      - name: Upload Lighthouse Reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lighthouse-reports
+          path: .lighthouseci/
+          retention-days: 30
+
+      - name: Upload Lighthouse HTML Reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lighthouse-html-reports
+          path: .lighthouseci/*.html
+          retention-days: 30
+
+      - name: Comment PR with Results
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            
+            const reportDir = '.lighthouseci';
+            if (!fs.existsSync(reportDir)) {
+              console.log('No Lighthouse reports found');
+              return;
+            }
+            
+            const files = fs.readdirSync(reportDir).filter(f => f.endsWith('.json'));
+            if (files.length === 0) {
+              console.log('No JSON reports found');
+              return;
+            }
+            
+            let comment = '## 🏮 Lighthouse CI Results\n\n';
+            comment += '| URL | Performance | Accessibility | Best Practices | SEO | PWA |\n';
+            comment += '|-----|-------------|---------------|----------------|-----|-----|\n';
+            
+            for (const file of files) {
+              const report = JSON.parse(fs.readFileSync(path.join('.lighthouseci', file), 'utf8'));
+              const url = report.finalUrl || 'Unknown';
+              const scores = report.categories;
+              
+              const perf = Math.round((scores.performance?.score || 0) * 100);
+              const a11y = Math.round((scores.accessibility?.score || 0) * 100);
+              const bp = Math.round((scores['best-practices']?.score || 0) * 100);
+              const seo = Math.round((scores.seo?.score || 0) * 100);
+              const pwa = Math.round((scores.pwa?.score || 0) * 100);
+              
+              const getEmoji = (score) => score >= 90 ? '🟢' : score >= 70 ? '🟡' : '🔴';
+              
+              comment += `| ${url} | ${getEmoji(perf)} ${perf} | ${getEmoji(a11y)} ${a11y} | ${getEmoji(bp)} ${bp} | ${getEmoji(seo)} ${seo} | ${getEmoji(pwa)} ${pwa} |\n`;
+            }
+            
+            comment += '\n> **Thresholds**: Performance ≥90, Accessibility ≥90, Best Practices ≥90, SEO ≥90\n';
+            comment += '> Failed assertions will fail the build.\n';
+            
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number
+            });
+            
+            const botComment = comments.find(c => c.user.type === 'Bot' && c.body.includes('Lighthouse CI Results'));
+            
+            if (botComment) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id,
+                body: comment
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.pull_request.number,
+                body: comment
+              });
+            }

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500" role="img" aria-label="Duks - DALLI Premium Product">
+  <defs>
+    <linearGradient id="prodHoodie" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5f3f0"/>
+      <stop offset="50%" stop-color="#ebe7e2"/>
+      <stop offset="100%" stop-color="#dfdad3"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="500" fill="url(#prodHoodie)"/>
+  <g opacity="0.08" transform="translate(200, 230)">
+    <path d="M-100,-40 L-120,140 L120,140 L100,-40 Z" fill="none" stroke="#9a9388" stroke-width="0.8"/>
+    <path d="M-100,-40 L-140,-40 L-110,30" fill="none" stroke="#9a9388" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M100,-40 L140,-40 L110,30" fill="none" stroke="#9a9388" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <ellipse cx="0" cy="-50" rx="45" ry="35" fill="none" stroke="#9a9388" stroke-width="0.6"/>
+    <path d="M-35,-65 Q0,-85 35,-65" fill="none" stroke="#9a9388" stroke-width="0.5"/>
+    <ellipse cx="0" cy="140" rx="100" ry="14" fill="none" stroke="#9a9388" stroke-width="0.4"/>
+  </g>
+</svg>

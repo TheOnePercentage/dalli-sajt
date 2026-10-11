@@ -1,0 +1,26 @@
+[
+  {
+    "question": "Koja je razlika između 180g, 220g brushed, 320g i Vaprotek?",
+    "answer": "180g (Osnovna majica): lagana, dišuća, leto 20-35°C. 220g brushed (Dugorukava): deblja pamuk sa mekhom unutrašnjom (brushed cotton), proleće/jesen 10-20°C. 320g (Duks): gruba pamuk blokira vetar, zima 0-15°C. Vaprotek (Trenerka): 95% pamuk + 5% elastan sa kanaličnim strukturama za aktivno vlažnost menadžment, sport 5-25°C."
+  },
+  {
+    "question": "Šta je brushed cotton i zašto greje?",
+    "answer": "Brushed cotton = mehaničko diženje vlakana na unutrašnjoj strani tkanine. Mašine sa tanjim četkama dižu krajeve vlakana, kreirajući mikrovazdušni sloj (flok) debljine 0.3-0.5mm. Vazduh u flok sloju je izolator — zadržava toplinu tela. Ne deblja tkanina, ne dodaje težinu — samo meksa unutrašnjost. Posle pranja flok se blago spusti ali vazdušni këpovi ostaju."
+  },
+  {
+    "question": "Kako Vaprotek radi i da li zaista radi?",
+    "answer": "Vaprotek = 95% org. pamuk + 5% elastan sa mikroskopskim kanaličnim strukturama. Kapilarna sila vuče vlagu sa kože ka spoljnoj površini tkanine, gde momentalno isparava (30-60 min vs 2-4h obične pamuke). Koža ostaje suva, telo termoregulisano. Testirano: 100 ciklusa pranja — 0% gubitka elastičnosti, boje 98%. Da, radi — ne marketing, inženjering."
+  },
+  {
+    "question": "Kako da pram da ne dobijem kuglice (pilling)?",
+    "answer": "Uvek 30°C, naopako, slične boje. Nema sušice (ležeći sušenje za duks, visite za ostalo). Nema mekšiva (blokira dišljivost i Vaprotek kanale). Rotirajte garderobu — ne nosite istu majicu 2 dana zaredom. Ne nosite pod grubim jaknima/remešima bez srednjeg sloja. DALLI tkanine (duga vlakna 32-35mm, gusto tkano) testirane 50+ pranja — 0% pilling."
+  },
+  {
+    "question": "Da li mogu da gladim i koristim mekšivo?",
+    "answer": "Glačenje: DA, ali nisko (110°C), naopako, NE na ševovima/štampama. Mekšivo: NE — blokira prirodnu dišljivost pamuka, zatvara Vaprotek kanale, ostavlja film na vlaknima koji smanjuje upijanje vlage. Ako morate omekšati — beli ocat u pranju (1 šoljica), ali redovno ne preporučujemo."
+  },
+  {
+    "question": "Koju tkaninu za koju sezonu/aktivnost?",
+    "answer": "Leto 25-35°C: 180g (Osnovna majica). Proleće/Jesen 10-20°C: 220g brushed (Dugorukava) ili Trenerka Vaprotek. Zima 0-15°C: 320g (Duks) + 220g brushed + 180g = layering sistem. Sport/trening 5-25°C: Trenerka Vaprotek. Ekstremna zima <0°C: Termičko + Trenerka + Duks + Jakna. Kombinujte namerno — to je layering sistem koji radi."
+  }
+]

@@ -1,0 +1,238 @@
+/* ==========================================================================
+   LUXURY STAT CARDS — Shared Component
+   Reusable KPI/Stat cards with gold accents, trends, sparklines
+   ========================================================================== */
+
+.stat-card {
+  background: var(--color-bg-card);
+  border: var(--stat-card-border);
+  border-radius: var(--stat-card-radius);
+  padding: var(--stat-card-padding);
+  box-shadow: var(--stat-card-shadow);
+  transition: var(--transition-hover);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--stat-card-accent-height);
+  background: var(--stat-color, var(--color-accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-base);
+}
+
+.stat-card:hover {
+  transform: translateY(var(--stat-card-hover-lift));
+  box-shadow: var(--stat-card-shadow-hover);
+  border-color: var(--stat-color, var(--color-accent));
+}
+
+.stat-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Color Variants */
+.stat-card.primary { --stat-color: var(--color-primary); }
+.stat-card.accent { --stat-color: var(--color-accent); }
+.stat-card.success { --stat-color: var(--color-success); }
+.stat-card.warning { --stat-color: var(--color-warning); }
+.stat-card.error { --stat-color: var(--color-error); }
+.stat-card.info { --stat-color: var(--color-info); }
+
+/* Icon */
+.stat-card-icon {
+  width: var(--stat-card-icon-size);
+  height: var(--stat-card-icon-size);
+  border-radius: var(--stat-card-icon-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-xl);
+  color: var(--color-text-inverse);
+  box-shadow: var(--shadow-md);
+  flex-shrink: 0;
+}
+
+.stat-card.primary .stat-card-icon { background: linear-gradient(135deg, var(--color-primary), var(--color-primary-700)); }
+.stat-card.accent .stat-card-icon { background: linear-gradient(135deg, var(--color-accent), var(--color-accent-700)); }
+.stat-card.success .stat-card-icon { background: linear-gradient(135deg, var(--color-success), var(--color-success-600)); }
+.stat-card.warning .stat-card-icon { background: linear-gradient(135deg, var(--color-warning), var(--color-warning-600)); }
+.stat-card.error .stat-card-icon { background: linear-gradient(135deg, var(--color-error), var(--color-error-600)); }
+.stat-card.info .stat-card-icon { background: linear-gradient(135deg, var(--color-info), var(--color-info-600)); }
+
+/* Header */
+.stat-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+/* Trend Badge */
+.stat-card-trend {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--stat-card-trend-size);
+  font-weight: var(--stat-card-trend-weight);
+  border-radius: var(--stat-card-trend-radius);
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-tertiary);
+  white-space: nowrap;
+}
+
+.stat-card-trend.positive {
+  background: rgba(var(--color-success), 0.15);
+  color: var(--color-success);
+}
+
+.stat-card-trend.negative {
+  background: rgba(var(--color-error), 0.15);
+  color: var(--color-error);
+}
+
+.stat-card-trend.neutral {
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-tertiary);
+}
+
+/* Value */
+.stat-card-value {
+  font-size: var(--stat-card-value-size);
+  font-weight: var(--stat-card-value-weight);
+  color: var(--color-text-primary);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-1);
+  font-variant-numeric: tabular-nums;
+  font-family: var(--font-numbers);
+}
+
+/* Label */
+.stat-card-label {
+  font-size: var(--stat-card-label-size);
+  font-weight: var(--stat-card-label-weight);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-tertiary);
+}
+
+/* Sub-label */
+.stat-card-sublabel {
+  font-size: var(--text-2xs);
+  color: var(--color-text-quaternary);
+  margin-top: var(--space-1);
+}
+
+/* Sparkline */
+.stat-card-sparkline {
+  width: 100%;
+  height: 32px;
+  margin-top: var(--space-3);
+}
+
+/* Comparison */
+.stat-card-comparison {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border-primary);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.stat-card-comparison-value {
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+}
+
+/* Grid Layout */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-5);
+  margin-bottom: var(--space-8);
+}
+
+/* Compact Variant */
+.stat-card-compact {
+  padding: var(--space-4);
+}
+
+.stat-card-compact .stat-card-icon {
+  width: 40px;
+  height: 40px;
+  font-size: var(--text-lg);
+}
+
+.stat-card-compact .stat-card-value {
+  font-size: var(--text-3xl);
+}
+
+/* Large Variant */
+.stat-card-large {
+  padding: var(--space-8);
+}
+
+.stat-card-large .stat-card-icon {
+  width: 64px;
+  height: 64px;
+  font-size: var(--text-2xl);
+}
+
+.stat-card-large .stat-card-value {
+  font-size: var(--text-5xl);
+}
+
+/* With Progress */
+.stat-card-progress {
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border-primary);
+}
+
+.stat-card-progress-bar {
+  height: 6px;
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-top: var(--space-2);
+}
+
+.stat-card-progress-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  background: var(--gold-gradient);
+  transition: width var(--duration-smooth) var(--ease-out-expo);
+}
+
+/* Stagger Animation */
+.stat-card.stagger-1 { animation: fadeInUp var(--duration-smooth) var(--ease-out-expo) calc(var(--stagger-tight) * 1) both; }
+.stat-card.stagger-2 { animation: fadeInUp var(--duration-smooth) var(--ease-out-expo) calc(var(--stagger-tight) * 2) both; }
+.stat-card.stagger-3 { animation: fadeInUp var(--duration-smooth) var(--ease-out-expo) calc(var(--stagger-tight) * 3) both; }
+.stat-card.stagger-4 { animation: fadeInUp var(--duration-smooth) var(--ease-out-expo) calc(var(--stagger-tight) * 4) both; }
+.stat-card.stagger-5 { animation: fadeInUp var(--duration-smooth) var(--ease-out-expo) calc(var(--stagger-tight) * 5) both; }
+.stat-card.stagger-6 { animation: fadeInUp var(--duration-smooth) var(--ease-out-expo) calc(var(--stagger-tight) * 6) both; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .stat-card,
+  .stat-card::before,
+  .stat-card-progress-fill {
+    transition: none;
+    animation: none;
+  }
+}

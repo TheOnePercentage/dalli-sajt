@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="sr" data-theme="auto">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#ffffff">
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <title>DALLI — Administracija</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
+  <script type="importmap" nonce="">
+  {
+    "imports": {
+      "react": "https://cdn.jsdelivr.net/npm/react@18.2.0/+esm",
+      "react/": "https://cdn.jsdelivr.net/npm/react@18.2.0/",
+      "zod": "https://cdn.jsdelivr.net/npm/zod@3.23.8/+esm"
+    }
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="stylesheet" href="css/admin.css">
+  <script type="module">
+    import { securityService } from './js/services/security.js';
+    // Generate and apply CSP nonce
+    const nonce = securityService.generateNonce();
+    document.documentElement.setAttribute('data-csp-nonce', nonce);
+    // Apply CSP with nonce
+    securityService.applyCSP();
+  </script>
+  <script type="module" src="js/admin.js" nonce=""></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Preskoči na glavni sadržaj</a>
+
+  <!-- Control Line - thin line at very top -->
+  <div class="control-line" aria-hidden="true"></div>
+
+  <!-- Alert Banner - fixed at top, right below control line -->
+  <div id="alertBanner" class="alert-banner" aria-live="polite"></div>
+
+  <!-- Alert Banner Container (for JS mounting, but now empty/fixed at top) -->
+  <div id="alertBannerContainer" class="alert-banner-container" aria-live="polite" style="display: none;"></div>
+
+  <div class="app" id="app">
+    <aside class="sidebar" id="sidebar" role="navigation" aria-label="Glavna navigacija">
+      <!-- Sidebar Brand -->
+      <div class="sidebar-brand">
+        <a href="#dashboard" class="brand-link" aria-label="DALLI Admin Dashboard">
+          <div class="brand-icon">
+            <img src="../images/logo1.jpg" alt="DALLI" class="brand-logo" loading="lazy" />
+          </div>
+          <span class="brand-text">DALLI</span>
+        </a>
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Admin sekcije">
+        <ul class="sidebar-nav-list">
+          <li>
+            <a href="#dashboard" class="nav-item" data-section="dashboard">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <rect x="3" y="3" width="7" height="7" rx="1"/>
+                <rect x="14" y="3" width="7" height="7" rx="1"/>
+                <rect x="3" y="14" width="7" height="7" rx="1"/>
+                <rect x="14" y="14" width="7" height="7" rx="1"/>
+              </svg>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="#executive" class="nav-item" data-section="executive">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20V16"/>
+              </svg>
+              <span>Executive Overview</span>
+            </a>
+          </li>
+          <li class="nav-section-divider"></li>
+          <li class="nav-section-title">Trgovina</li>
+          <li>
+            <a href="#orders" class="nav-item" data-section="orders">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M21 12V7H5v5M16 19h6M8 19H2M21 19V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v5"/>
+                <circle cx="9" cy="19" r="1"/><circle cx="19" cy="19" r="1"/>
+              </svg>
+              <span>Porudžbine</span>
+            </a>
+          </li>
+          <li>
+            <a href="#products" class="nav-item" data-section="products">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M20.5 17A5 5 0 0 0 18 7h-1.58a5 5 0 0 0-7.16 1.5"/><path d="M4 15.5s2 2 4 2 4-2 4-2-2-2-4-2"/><path d="M14 13h10"/><path d="M14 17h6"/>
+              </svg>
+              <span>Proizvodi</span>
+            </a>
+          </li>
+          <li>
+            <a href="#products-elite" class="nav-item" data-section="products-elite">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+              </svg>
+              <span>Elite Editor</span>
+            </a>
+          </li>
+          <li>
+            <a href="#inventory" class="nav-item" data-section="inventory">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="M10 4v16"/><path d="M2 12h20"/>
+              </svg>
+              <span>Inventar</span>
+            </a>
+          </li>
+          <li>
+            <a href="#categories" class="nav-item" data-section="categories">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M12 2v20M17 7H8.5a2.5 2.5 0 0 1 0-5H17"/><path d="M7 17h10"/>
+              </svg>
+              <span>Kategorije</span>
+            </a>
+          </li>
+          <li class="nav-section-divider"></li>
+          <li class="nav-section-title">Kupci</li>
+          <li>
+            <a href="#customers" class="nav-item" data-section="customers">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+              <span>Kupci</span>
+            </a>
+          </li>
+          <li>
+            <a href="#reviews" class="nav-item" data-section="reviews">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+              <span>Recenzije</span>
+            </a>
+          </li>
+          <li>
+            <a href="#community-gallery" class="nav-item" data-section="community-gallery">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5 5-5"/>
+              </svg>
+              <span>Zajednica / Galerija</span>
+            </a>
+          </li>
+          <li class="nav-section-divider"></li>
+          <li class="nav-section-title">Marketing</li>
+          <li>
+            <a href="#promotions" class="nav-item" data-section="promotions">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M12 2v20M17 7H8.5a2.5 2.5 0 0 1 0-5H17"/><path d="M7 17h10"/>
+              </svg>
+              <span>Promocije</span>
+            </a>
+          </li>
+          <li>
+            <a href="#campaigns" class="nav-item" data-section="campaigns">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+              <span>Kampanje</span>
+            </a>
+          </li>
+          <li>
+            <a href="#seo" class="nav-item" data-section="seo">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M8 8l2 2 4-4"/>
+              </svg>
+              <span>SEO Centar</span>
+            </a>
+          </li>
+          <li>
+            <a href="#social" class="nav-item" data-section="social">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M12 2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm3 7V5a2 2 0 0 0-4 0v6a2 2 0 0 0 4 0zm3-2v2m0 12v2m-6-8h2"/>
+              </svg>
+              <span>Social Media</span>
+            </a>
+          </li>
+          <li class="nav-section-divider"></li>
+          <li class="nav-section-title">Analitika</li>
+          <li>
+            <a href="#analytics" class="nav-item" data-section="analytics">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M3 3v18h18"/><path d="M7 16l4-4 4 4 6-6"/>
+              </svg>
+              <span>Analitika</span>
+            </a>
+          </li>
+          <li>
+            <a href="#profit" class="nav-item" data-section="profit">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/>
+              </svg>
+              <span>Profit Centar</span>
+            </a>
+          </li>
+          <li>
+            <a href="#search-analytics" class="nav-item" data-section="search-analytics">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M8 8l2 2 4-4"/>
+              </svg>
+              <span>Pretraga Analitika</span>
+            </a>
+          </li>
+          <li>
+            <a href="#growth" class="nav-item" data-section="growth">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/><path d="M23 21V11a7 7 0 00-14 0v10"/>
+              </svg>
+              <span>Rast i Trendi</span>
+            </a>
+          </li>
+          <li class="nav-section-divider"></li>
+          <li class="nav-section-title">Sistem</li>
+          <li>
+            <a href="#diagnostics" class="nav-item" data-section="diagnostics">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/>
+              </svg>
+              <span>Dijagnostika</span>
+            </a>
+          </li>
+          <li>
+            <a href="#settings" class="nav-item" data-section="settings">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82-.33l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82-.33l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2-2h.09a1.65 1.65 0 0 0-1.51 1z"/>
+              </svg>
+              <span>Postavke</span>
+            </a>
+          </li>
+          <li>
+            <a href="#roles" class="nav-item" data-section="roles">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+              <span>Uloge i Dozvole</span>
+            </a>
+          </li>
+          <li class="nav-section-divider"></li>
+          <li class="nav-section-title">CMS i Tržišta</li>
+          <li>
+            <a href="#products-cms" class="nav-item" data-section="products-cms">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M20.5 17A5 5 0 0 0 18 7h-1.58a5 5 0 0 0-7.16 1.5"/><path d="M4 15.5s2 2 4 2 4-2 4-2-2-2-4-2"/><path d="M14 13h10"/><path d="M14 17h6"/>
+              </svg>
+              <span>Proizvodi CMS</span>
+            </a>
+          </li>
+          <li>
+            <a href="#markets" class="nav-item" data-section="markets">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M12 2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm3 7V5a2 2 0 0 0-4 0v6a2 2 0 0 0 4 0zm3-2v2m0 12v2m-6-8h2"/>
+              </svg>
+              <span>Tržišta</span>
+            </a>
+          </li>
+          <li>
+            <a href="#accounting" class="nav-item" data-section="accounting">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/>
+              </svg>
+              <span>Računovodstvo</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Sidebar Footer -->
+      <div class="sidebar-footer">
+        <div class="user-info">
+          <div class="user-avatar" id="sidebarUserAvatar">
+            <span class="user-initial">A</span>
+          </div>
+          <div class="user-details">
+            <span class="user-name" id="sidebarUserName">Admin</span>
+            <span class="user-role" id="sidebarUserRole">Administrator</span>
+          </div>
+        </div>
+        <button class="sidebar-toggle" aria-label="Sažmi meni" aria-expanded="false">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
+      </div>
+    </aside>
+    <div class="sidebar-overlay" id="sidebarOverlay" aria-hidden="true"></div>
+
+    <header class="topbar" id="topbar" role="banner">
+      <div class="topbar-left">
+        <button class="btn btn-ghost mobile-menu-btn" data-action="menu-toggle" aria-label="Otvaranje menija">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+        <a href="#dashboard" class="topbar-brand" aria-label="DALLI Admin">
+          <div class="logo-icon">
+            <img src="../images/logo1.jpg" alt="DALLI" class="brand-logo" loading="lazy" />
+          </div>
+          <span class="brand-text">DALLI</span>
+        </a>
+        
+        <!-- Search -->
+        <div class="topbar-search" data-ref="search">
+          <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="M21 21l-4.35-4.35"/>
+          </svg>
+          <input type="search" class="search-input" placeholder="Pretraži..." aria-label="Globalna pretraga" autocomplete="off" data-ref="searchInput">
+          <kbd class="search-shortcut">⌘K</kbd>
+          <!-- Search Results Dropdown -->
+          <div class="search-results" data-ref="searchResults" aria-label="Rezultati pretrage"></div>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <!-- Notifications -->
+        <div class="dropdown notifications-dropdown-wrapper">
+          <button class="dropdown-trigger icon-btn" aria-label="Obaveštenja" aria-expanded="false" data-action="notifications-toggle">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+            </svg>
+            <span class="notification-dot" id="notificationDot"></span>
+          </button>
+          <div class="dropdown-menu notifications-dropdown" data-ref="notificationsDropdown" aria-label="Obaveštenja">
+            <div class="dropdown-header">
+              <h3>Obaveštenja</h3>
+              <button class="mark-all-read" data-action="mark-all-read">Označi sve pročitano</button>
+            </div>
+            <div class="dropdown-list" data-ref="notificationsList"></div>
+            <div class="dropdown-footer">
+              <a href="#" data-action="view-all-notifications">Prikaži sva obaveštenja</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- User Dropdown -->
+        <div class="dropdown user-dropdown-wrapper">
+          <button class="dropdown-trigger topbar-user" id="topbarUser" aria-label="Korisnički meni" aria-expanded="false">
+            <div class="user-avatar" id="userAvatar">
+              <span class="user-initial">A</span>
+            </div>
+            <span class="user-name"></span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="18 15 12 9 6 15"/>
+            </svg>
+          </button>
+          <div class="dropdown-menu user-dropdown" aria-label="Korisnički meni">
+            <div class="dropdown-header">
+              <div class="user-info">
+                <div class="user-avatar" id="dropdownUserAvatar">
+                  <span class="user-initial">A</span>
+                </div>
+                <div class="user-details">
+                  <span class="user-name" id="dropdownUserName"></span>
+                  <span class="user-role" id="dropdownUserRole"></span>
+                </div>
+              </div>
+            </div>
+            <div class="dropdown-list">
+              <a href="#profile" class="dropdown-item" data-action="profile">
+                <svg class="dropdown-item-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+                <span>Profil</span>
+              </a>
+              <a href="#settings" class="dropdown-item" data-action="settings">
+                <svg class="dropdown-item-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <circle cx="12" cy="12" r="3"/>
+                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                </svg>
+                <span>Podešavanja</span>
+              </a>
+<!-- hr class="dropdown-divider" -->
+              <button class="dropdown-item danger" data-action="logout">
+                <svg class="dropdown-item-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                  <polyline points="16 17 21 12 16 7"/>
+                  <line x1="21" y1="12" x2="9" y2="12"/>
+                </svg>
+                <span>Odjavi se</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Theme Toggle -->
+        <button class="btn btn-ghost theme-toggle" data-action="theme-toggle" aria-label="Preklopi tamnu/svetlu temu" title="Tamna/Svetla tema">
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="display: none;">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <!-- Language Switcher -->
+        <div class="dropdown language-dropdown-wrapper">
+          <button class="dropdown-trigger btn btn-ghost" aria-label="Jezik" aria-expanded="false" id="languageDropdownTrigger" data-action="language-toggle">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M21 12a9 9 0 0 1-9 9M9 21a9 9 0 0 1-9-9M21 3a9 9 0 0 0-9 9M3 12a9 9 0 0 1 9-9"/>
+              <path d="M2 12h5a2 2 0 0 1 2 2v5M22 12h-5a2 2 0 0 0-2 2v5"/>
+            </svg>
+            <span id="currentLanguageLabel">SR</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="18 15 12 9 6 15"/>
+            </svg>
+          </button>
+          <div class="dropdown-menu language-dropdown" aria-label="Izbor jezika" id="languageDropdownMenu">
+            <div class="dropdown-header">
+              <h3>Jezik / Language</h3>
+            </div>
+            <div class="dropdown-list">
+              <button class="dropdown-item language-option" data-action="set-locale" data-locale="sr" data-current="true">
+                <span class="language-flag">🇷🇸</span>
+                <span class="language-name">Srpski</span>
+                <svg class="language-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              </button>
+              <button class="dropdown-item language-option" data-action="set-locale" data-locale="en" data-current="false">
+                <span class="language-flag">🇬🇧</span>
+                <span class="language-name">English</span>
+                <svg class="language-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <button class="icon-btn" aria-label="Tastaturske prečice" data-action="show-shortcuts" title="Prečice (?)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main class="main-content" id="main" role="main">
+      <!-- Page Header with Breadcrumbs -->
+      <header class="page-header" id="pageHeader">
+        <div class="page-header-inner">
+          <!-- Breadcrumbs -->
+          <nav class="breadcrumbs" aria-label="Breadcrumb" id="breadcrumbs">
+            <ol class="breadcrumbs-list">
+              <li class="breadcrumb-item">
+                <a href="#dashboard" class="breadcrumb-link breadcrumb-home" data-section="dashboard">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                    <polyline points="9 22 9 12 15 12 15 22"/>
+                  </svg>
+                  <span>Početna</span>
+                </a>
+              </li>
+              <li class="breadcrumb-separator" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"/>
+                </svg>
+              </li>
+              <li class="breadcrumb-item">
+                <span class="breadcrumb-current" id="breadcrumbCurrent">Dashboard</span>
+              </li>
+            </ol>
+          </nav>
+
+          <!-- Page Title & Actions -->
+          <div class="page-header-content">
+            <div class="page-title-group">
+              <h1 class="page-title" id="pageTitle">Dashboard</h1>
+              <p class="page-subtitle" id="pageSubtitle">Pregled ključnih metrika i aktivnosti</p>
+            </div>
+            <div class="page-actions" id="pageActions">
+              <!-- View Toggle -->
+              <div class="view-toggle" id="viewToggle" role="group" aria-label="Prikaz">
+                <button class="view-toggle-btn active" data-view="grid" aria-label="Mreža" aria-pressed="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <rect x="3" y="3" width="7" height="7" rx="1"/>
+                    <rect x="14" y="3" width="7" height="7" rx="1"/>
+                    <rect x="3" y="14" width="7" height="7" rx="1"/>
+                    <rect x="14" y="14" width="7" height="7" rx="1"/>
+                  </svg>
+                </button>
+                <button class="view-toggle-btn" data-view="table" aria-label="Tabela" aria-pressed="false">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <line x1="3" y1="3" x2="21" y2="3"/>
+                    <line x1="3" y1="9" x2="21" y2="9"/>
+                    <line x1="3" y1="15" x2="21" y2="15"/>
+                    <line x1="3" y1="21" x2="21" y2="21"/>
+                    <line x1="3" y1="3" x2="3" y2="21"/>
+                    <line x1="10" y1="3" x2="10" y2="21"/>
+                    <line x1="17" y1="3" x2="17" y2="21"/>
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Column Visibility -->
+              <div class="dropdown column-visibility-dropdown">
+                <button class="dropdown-trigger btn btn-ghost" aria-label="Vidljivost kolona" aria-expanded="false">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                    <line x1="10" y1="4" x2="10" y2="20"/>
+                    <line x1="2" y1="12" x2="22" y2="12"/>
+                  </svg>
+                  <span>Kolone</span>
+                </button>
+                <div class="dropdown-menu column-visibility-menu" aria-label="Izbor kolona">
+                  <div class="dropdown-header">
+                    <h3>Vidljivost kolona</h3>
+                  </div>
+                  <div class="dropdown-list" id="columnVisibilityList"></div>
+                </div>
+              </div>
+
+              <!-- Export Dropdown -->
+              <div class="dropdown export-dropdown">
+                <button class="dropdown-trigger btn btn-ghost" aria-label="Izvoz" aria-expanded="false">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                  </svg>
+                  <span>Izvoz</span>
+                </button>
+                <div class="dropdown-menu export-menu" aria-label="Opcije izvoza">
+                  <div class="dropdown-header">
+                    <h3>Izvezi podatke</h3>
+                  </div>
+                  <div class="dropdown-list">
+                    <button class="dropdown-item" data-export="csv">
+                      <svg class="dropdown-item-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                      </svg>
+                      <span>CSV</span>
+                    </button>
+                    <button class="dropdown-item" data-export="excel">
+                      <svg class="dropdown-item-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                        <polyline points="10 9 9 9 8 9"/>
+                      </svg>
+                      <span>Excel</span>
+                    </button>
+                    <button class="dropdown-item" data-export="pdf">
+                      <svg class="dropdown-item-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="12" y1="18" x2="12" y2="12"/>
+                        <line x1="8" y1="12" x2="16" y2="12"/>
+                      </svg>
+                      <span>PDF</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Date Range Picker -->
+              <div class="date-range-picker" id="dateRangePicker">
+                <button class="date-range-trigger btn btn-ghost" aria-label="Vremenski period" aria-expanded="false">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                    <line x1="16" y1="2" x2="16" y2="6"/>
+                    <line x1="8" y1="2" x2="8" y2="6"/>
+                    <line x1="3" y1="10" x2="21" y2="10"/>
+                  </svg>
+                  <span class="date-range-label" id="dateRangeLabel">Poslednjih 30 dana</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <polyline points="6 9 12 15 18 9"/>
+                  </svg>
+                </button>
+                <div class="dropdown-menu date-range-menu" aria-label="Izbor perioda">
+                  <div class="dropdown-header">
+                    <h3>Vremenski period</h3>
+                  </div>
+                  <div class="dropdown-list">
+                    <button class="dropdown-item" data-range="today">
+                      <svg class="dropdown-item-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10"/>
+                      </svg>
+                      <span>Danas</span>
+                    </button>
+                    <button class="dropdown-item" data-range="yesterday">
+                      <svg class="dropdown-item-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="8" x2="12" y2="16"/>
+                      </svg>
+                      <span>Juče</span>
+                    </button>
+                    <button class="dropdown-item" data-range="7d">
+                      <span>Poslednjih 7 dana</span>
+                    </button>
+                    <button class="dropdown-item active" data-range="30d">
+                      <span>Poslednjih 30 dana</span>
+                    </button>
+                    <button class="dropdown-item" data-range="90d">
+                      <span>Poslednjih 90 dana</span>
+                    </button>
+                    <button class="dropdown-item" data-range="12m">
+                      <span>Poslednjih 12 meseci</span>
+                    </button>
+                    <hr class="dropdown-divider">
+                    <button class="dropdown-item" data-range="custom">
+                      <svg class="dropdown-item-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="16" y1="2" x2="16" y2="6"/>
+                        <line x1="8" y1="2" x2="8" y2="6"/>
+                        <line x1="3" y1="10" x2="21" y2="10"/>
+                      </svg>
+                      <span>Prilagođeni period...</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Section-specific actions injected by JS -->
+            </div>
+        </div>
+      </header>
+      <div class="content" id="content">
+        <!-- Luxury Tabs Navigation -->
+        <nav class="tabs luxury" role="tablist" aria-label="Admin paneli">
+          <button class="tab active" role="tab" id="dashboard-tab" aria-selected="true" aria-controls="tab-dashboard" data-tab="dashboard">
+            <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="7" rx="1"/>
+              <rect x="14" y="3" width="7" height="7" rx="1"/>
+              <rect x="3" y="14" width="7" height="7" rx="1"/>
+              <rect x="14" y="14" width="7" height="7" rx="1"/>
+            </svg>
+            <span>Dashboard</span>
+          </button>
+          <button class="tab" role="tab" id="executive-tab" aria-selected="false" aria-controls="tab-executive" data-tab="executive">
+            <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20V16"/>
+            </svg>
+            <span>Executive Overview</span>
+          </button>
+          <button class="tab" role="tab" id="orders-tab" aria-selected="false" aria-controls="tab-orders" data-tab="orders">
+            <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M21 12V7H5v5M16 19h6M8 19H2M21 19V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v5"/>
+              <circle cx="9" cy="19" r="1"/><circle cx="19" cy="19" r="1"/>
+            </svg>
+            <span>Porudžbine</span>
+          </button>
+          <button class="tab" role="tab" id="products-tab" aria-selected="false" aria-controls="tab-products" data-tab="products">
+            <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M20.5 17A5 5 0 0 0 18 7h-1.58a5 5 0 0 0-7.16 1.5"/><path d="M4 15.5s2 2 4 2 4-2 4-2-2-2-4-2"/><path d="M14 13h10"/><path d="M14 17h6"/>
+            </svg>
+            <span>Proizvodi</span>
+          </button>
+          <button class="tab" role="tab" id="products-elite-tab" aria-selected="false" aria-controls="tab-products-elite" data-tab="products-elite">
+            <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+            </svg>
+            <span>Elite Editor</span>
+          </button>
+          <button class="tab" role="tab" id="inventory-tab" aria-selected="false" aria-controls="tab-inventory" data-tab="inventory">
+            <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="M10 4v16"/><path d="M2 12h20"/>
+            </svg>
+            <span>Inventar</span>
+          </button>
+          <button class="tab" role="tab" id="categories-tab" aria-selected="false" aria-controls="tab-categories" data-tab="categories">
+            <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M12 2v20M17 7H8.5a2.5 2.5 0 0 1 0-5H17"/><path d="M7 17h10"/>
+            </svg>
+            <span>Kategorije</span>
+          </button>
+          <button class="tab" role="tab" id="customers-tab" aria-selected="false" aria-controls="tab-customers" data-tab="customers">
+            <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+            <span>Kupci</span>
+          </button>
+          <button class="tab" role="tab" id="reviews-tab" aria-selected="false" aria-controls="tab-reviews" data-tab="reviews">
+            <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+            <span>Recenzije</span>
+          </button>
+          <button class="tab" role="tab" id="community-gallery-tab" aria-selected="false" aria-controls="tab-community-gallery" data-tab="community-gallery">
+            <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5 5-5"/>
+            </svg>
+            <span>Zajednica / Galerija</span>
+          </button>
+          <button class="tab" role="tab" id="promotions-tab" aria-selected="false" aria-controls="tab-promotions" data-tab="promotions">
+            <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M12 2v20M17 7H8.5a2.5 2.5 0 0 1 0-5H17"/><path d="M7 17h10"/>
+            </svg>
+            <span>Promocije</span>
+          </button>
+          <button class="tab" role="tab" id="campaigns-tab" aria-selected="false" aria-controls="tab-campaigns" data-tab="campaigns">
+            <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+            <span>Kampanje</span>
+          </button>
+          <button class="tab" role="tab" id="seo-tab" aria-selected="false" aria-controls="tab-seo" data-tab="seo">
+            <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M8 8l2 2 4-4"/>
+            </svg>
+            <span>SEO Centar</span>
+          </button>
+          <button class="tab" role="tab" id="social-tab" aria-selected="false" aria-controls="tab-social" data-tab="social">
+            <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M12 2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm3 7V5a2 2 0 0 0-4 0v6a2 2 0 0 0 4 0zm3-2v2m0 12v2m-6-8h2"/>
+            </svg>
+            <span>Social Media</span>
+          </button>
+          <button class="tab" role="tab" id="analytics-tab" aria-selected="false" aria-controls="tab-analytics" data-tab="analytics">
+            <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M3 3v18h18"/><path d="M7 16l4-4 4 4 6-6"/>
+            </svg>
+            <span>Analitika</span>
+          </button>
+          <button class="tab" role="tab" id="profit-tab" aria-selected="false" aria-controls="tab-profit" data-tab="profit">
+            <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/>
+            </svg>
+            <span>Profit Centar</span>
+          </button>
+          <button class="tab" role="tab" id="growth-tab" aria-selected="false" aria-controls="tab-growth" data-tab="growth">
+            <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/><path d="M23 21V11a7 7 0 00-14 0v10"/>
+            </svg>
+            <span>Rast i Trendi</span>
+          </button>
+          
+          <button class="tab" role="tab" id="diagnostics-tab" aria-selected="false" aria-controls="tab-diagnostics" data-tab="diagnostics">
+            <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/>
+            </svg>
+            <span>Dijagnostika</span>
+          </button>
+          <button class="tab" role="tab" id="settings-tab" aria-selected="false" aria-controls="tab-settings" data-tab="settings">
+            <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+            </svg>
+            <span>Postavke</span>
+          </button>
+          <button class="tab" role="tab" id="roles-tab" aria-selected="false" aria-controls="tab-roles" data-tab="roles">
+            <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+            <span>Uloge i Dozvole</span>
+          </button>
+          <button class="tab" role="tab" id="products-cms-tab" aria-selected="false" aria-controls="tab-products-cms" data-tab="products-cms">
+            <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M20.5 17A5 5 0 0 0 18 7h-1.58a5 5 0 0 0-7.16 1.5"/><path d="M4 15.5s2 2 4 2 4-2 4-2-2-2-4-2"/><path d="M14 13h10"/><path d="M14 17h6"/>
+            </svg>
+            <span>Proizvodi CMS</span>
+          </button>
+          <button class="tab" role="tab" id="markets-tab" aria-selected="false" aria-controls="tab-markets" data-tab="markets">
+            <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M12 2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm3 7V5a2 2 0 0 0-4 0v6a2 2 0 0 0 4 0zm3-2v2m0 12v2m-6-8h2"/>
+            </svg>
+            <span>Tržišta</span>
+          </button>
+          <button class="tab" role="tab" id="accounting-tab" aria-selected="false" aria-controls="tab-accounting" data-tab="accounting">
+            <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/>
+            </svg>
+            <span>Računovodstvo</span>
+          </button>
+          <button class="tab" role="tab" id="search-analytics-tab" aria-selected="false" aria-controls="tab-search-analytics" data-tab="search-analytics">
+            <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M8 8l2 2 4-4"/>
+            </svg>
+            <span>Pretraga Analitika</span>
+          </button>
+        </nav>
+
+        <!-- Tab Panels -->
+        <!-- Dashboard -->
+        <div class="admin-tab-panel active" id="tab-dashboard" role="tabpanel" aria-labelledby="dashboard-tab" data-panel="dashboard">
+          <section class="dashboard-section" data-panel="dashboard">
+            <div class="dashboard-skeleton" aria-hidden="true">
+              <div class="stat-grid skeleton-stat"></div>
+              <div class="chart-grid skeleton-chart"></div>
+            </div>
+            <div class="dashboard-empty empty-state hidden" aria-live="polite">
+              <svg class="empty-state-icon" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
+              </svg>
+              <h3 class="empty-state-title">Nema podataka</h3>
+              <p class="empty-state-message">Dashboard će biti dostupan kada se učitaju podaci.</p>
+            </div>
+          </section>
+        </div>
+
+        <!-- Executive Overview -->
+        <div class="admin-tab-panel" id="tab-executive" role="tabpanel" aria-labelledby="executive-tab" data-panel="executive">
+          <section class="executive-section" data-panel="executive">
+            <div class="executive-skeleton" aria-hidden="true">
+              <div class="stat-grid skeleton-stat"></div>
+              <div class="chart-grid skeleton-chart"></div>
+            </div>
+            <div class="executive-empty empty-state hidden" aria-live="polite">
+              <svg class="empty-state-icon" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20V16"/>
+              </svg>
+              <h3 class="empty-state-title">Nema podataka</h3>
+              <p class="empty-state-message">Executive overview će biti dostupan kada se učitaju podaci.</p>
+            </div>
+          </section>
+        </div>
+
+        <!-- Orders -->
+        <div class="admin-tab-panel" id="tab-orders" role="tabpanel" aria-labelledby="orders-tab" data-panel="orders">
+          <section class="orders-section" data-panel="orders">
+            <div class="orders-skeleton" aria-hidden="true">
+              <div class="stat-grid skeleton-stat"></div>
+              <div class="table-skeleton"></div>
+            </div>
+            <div class="orders-empty empty-state hidden" aria-live="polite">
+              <svg class="empty-state-icon" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M21 12V7H5v5M16 19h6M8 19H2M21 19V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v5"/>
+                <circle cx="9" cy="19" r="1"/><circle cx="19" cy="19" r="1"/>
+              </svg>
+              <h3 class="empty-state-title">Nema porudžbina</h3>
+              <p class="empty-state-message">Porudžbine će se pojaviti ovde kada se kreiraju.</p>
+            </div>
+          </section>
+        </div>
+
+        <!-- Products -->
+        <div class="admin-tab-panel" id="tab-products" role="tabpanel" aria-labelledby="products-tab" data-panel="products">
+          <section class="products-section" data-panel="products">
+            <div class="products-skeleton" aria-hidden="true">
+              <div class="products-grid-skeleton"></div>
+            </div>
+            <div class="products-empty empty-state hidden" aria-live="polite">
+              <svg class="empty-state-icon" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M20.5 17A5 5 0 0 0 18 7h-1.58a5 5 0 0 0-7.16 1.5"/><path d="M4 15.5s2 2 4 2 4-2 4-2-2-2-4-2"/><path d="M14 13h10"/><path d="M14 17h6"/>
+              </svg>
+              <h3 class="empty-state-title">Nema proizvoda</h3>
+              <p class="empty-state-message">Dodajte prvi proizvod da biste započeli.</p>
+            </div>
+          </section>
+        </div>
+
+        <!-- Elite Product Editor -->
+        <div class="admin-tab-panel" id="tab-products-elite" role="tabpanel" aria-labelledby="products-elite-tab" data-panel="products-elite"></div>
+
+        <!-- Inventory -->
+        <div class="admin-tab-panel" id="tab-inventory" role="tabpanel" aria-labelledby="inventory-tab" data-panel="inventory">
+          <section class="inventory-section" data-panel="inventory">
+            <div class="inventory-skeleton" aria-hidden="true">
+              <div class="stat-grid skeleton-stat"></div>
+              <div class="table-skeleton"></div>
+            </div>
+            <div class="inventory-empty empty-state hidden" aria-live="polite">
+              <svg class="empty-state-icon" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M10 4v16"/><path d="M2 12h20"/>
+              </svg>
+              <h3 class="empty-state-title">Inventar je prazan</h3>
+              <p class="empty-state-message">Dodajte zalihe da biste pratili stanje.</p>
+            </div>
+          </section>
+        </div>
+
+        <!-- Categories -->
+        <div class="admin-tab-panel" id="tab-categories" role="tabpanel" aria-labelledby="categories-tab" data-panel="categories">
+          <section class="categories-section" data-panel="categories">
+            <div class="categories-skeleton" aria-hidden="true">
+              <div class="tree-skeleton"></div>
+            </div>
+            <div class="categories-empty empty-state hidden" aria-live="polite">
+              <svg class="empty-state-icon" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M12 2v20M17 7H8.5a2.5 2.5 0 0 1 0-5H17"/><path d="M7 17h10"/>
+              </svg>
+              <h3 class="empty-state-title">Nema kategorija</h3>
+              <p class="empty-state-message">Kreirajte prvu kategoriju da biste organizovali proizvode.</p>
+            </div>
+          </section>
+        </div>
+
+        <!-- Customers -->
+        <div class="admin-tab-panel" id="tab-customers" role="tabpanel" aria-labelledby="customers-tab" data-panel="customers">
+          <section class="customers-section" data-panel="customers">
+            <div class="customers-skeleton" aria-hidden="true">
+              <div class="stat-grid skeleton-stat"></div>
+              <div class="customers-grid-skeleton"></div>
+            </div>
+            <div class="customers-empty empty-state hidden" aria-live="polite">
+              <svg class="empty-state-icon" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+              <h3 class="empty-state-title">Nema kupaca</h3>
+              <p class="empty-state-message">Kupci će se pojaviti ovde nakon prve kupovine.</p>
+            </div>
+          </section>
+        </div>
+
+        <!-- Reviews -->
+        <div class="admin-tab-panel" id="tab-reviews" role="tabpanel" aria-labelledby="reviews-tab" data-panel="reviews">
+          <section class="reviews-section" data-panel="reviews">
+            <div class="reviews-skeleton" aria-hidden="true">
+              <div class="rating-skeleton"></div>
+              <div class="reviews-grid-skeleton"></div>
+            </div>
+            <div class="reviews-empty empty-state hidden" aria-live="polite">
+              <svg class="empty-state-icon" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+              <h3 class="empty-state-title">Nema recenzija</h3>
+              <p class="empty-state-message">Recenzije će se pojaviti ovde kada kupci ostave utiske.</p>
+            </div>
+          </section>
+        </div>
+
+        <!-- Promotions -->
+        <div class="admin-tab-panel" id="tab-promotions" role="tabpanel" aria-labelledby="promotions-tab" data-panel="promotions">
+          <section class="promotions-section" data-panel="promotions">
+            <div class="promotions-skeleton" aria-hidden="true">
+              <div class="stat-grid skeleton-stat"></div>
+              <div class="table-skeleton"></div>
+            </div>
+            <div class="promotions-empty empty-state hidden" aria-live="polite">
+              <svg class="empty-state-icon" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M12 2v20M17 7H8.5a2.5 2.5 0 0 1 0-5H17"/><path d="M7 17h10"/>
+              </svg>
+              <h3 class="empty-state-title">Nema promocija</h3>
+              <p class="empty-state-message">Kreirajte prvu promociju da biste podstakli prodaju.</p>
+            </div>
+          </section>
+        </div>
+
+        <!-- Campaigns -->
+        <div class="admin-tab-panel" id="tab-campaigns" role="tabpanel" aria-labelledby="campaigns-tab" data-panel="campaigns">
+          <section class="campaigns-section" data-panel="campaigns">
+            <div class="campaigns-skeleton" aria-hidden="true">
+              <div class="stat-grid skeleton-stat"></div>
+              <div class="table-skeleton"></div>
+            </div>
+            <div class="campaigns-empty empty-state hidden" aria-live="polite">
+              <svg class="empty-state-icon" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+              <h3 class="empty-state-title">Nema kampanja</h3>
+              <p class="empty-state-message">Kreirajte prvu kampanju za marketing aktivnosti.</p>
+            </div>
+          </section>
+        </div>
+
+        <!-- SEO -->
+        <div class="admin-tab-panel" id="tab-seo" role="tabpanel" aria-labelledby="seo-tab" data-panel="seo">
+          <section class="seo-section" data-panel="seo">
+            <div class="seo-skeleton" aria-hidden="true">
+              <div class="stat-grid skeleton-stat"></div>
+              <div class="table-skeleton"></div>
+            </div>
+            <div class="seo-empty empty-state hidden" aria-live="polite">
+              <svg class="empty-state-icon" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M8 8l2 2 4-4"/>
+              </svg>
+              <h3 class="empty-state-title">SEO Centar</h3>
+              <p class="empty-state-message">Analiza SEO performansi će biti dostavna ovde.</p>
+            </div>
+          </section>
+        </div>
+
+        <!-- Social Media -->
+        <div class="admin-tab-panel" id="tab-social" role="tabpanel" aria-labelledby="social-tab" data-panel="social">
+          <section class="social-section" data-panel="social">
+            <div class="social-skeleton" aria-hidden="true">
+              <div class="stat-grid skeleton-stat"></div>
+              <div class="table-skeleton"></div>
+            </div>
+            <div class="social-empty empty-state hidden" aria-live="polite">
+              <svg class="empty-state-icon" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M12 2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm3 7V5a2 2 0 0 0-4 0v6a2 2 0 0 0 4 0zm3-2v2m0 12v2m-6-8h2"/>
+              </svg>
+              <h3 class="empty-state-title">Social Media Centar</h3>
+              <p class="empty-state-message">Povežite naloge za upravljanje objavama.</p>
+            </div>
+          </section>
+        </div>
+
+        <!-- Analytics -->
+        <div class="admin-tab-panel" id="tab-analytics" role="tabpanel" aria-labelledby="analytics-tab" data-panel="analytics">
+          <section class="analytics-section" data-panel="analytics">
+            <div class="analytics-skeleton" aria-hidden="true">
+              <div class="stat-grid skeleton-stat"></div>
+              <div class="chart-grid skeleton-chart"></div>
+            </div>
+            <div class="analytics-empty empty-state hidden" aria-live="polite">
+              <svg class="empty-state-icon" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M3 3v18h18"/><path d="M7 16l4-4 4 4 6-6"/>
+              </svg>
+              <h3 class="empty-state-title">Nema analitike</h3>
+              <p class="empty-state-message">Podaci će biti dostupni nakon prikupljanja.</p>
+            </div>
+          </section>
+        </div>
+
+        <!-- Profit -->
+        <div class="admin-tab-panel" id="tab-profit" role="tabpanel" aria-labelledby="profit-tab" data-panel="profit">
+          <section class="profit-section" data-panel="profit">
+            <div class="profit-skeleton" aria-hidden="true">
+              <div class="stat-grid skeleton-stat"></div>
+              <div class="chart-grid skeleton-chart"></div>
+            </div>
+            <div class="profit-empty empty-state hidden" aria-live="polite">
+              <svg class="empty-state-icon" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/>
+              </svg>
+              <h3 class="empty-state-title">Profit Centar</h3>
+              <p class="empty-state-message">Finansijski podaci će biti dostupni ovde.</p>
+            </div>
+          </section>
+        </div>
+
+        <!-- Growth -->
+        <div class="admin-tab-panel" id="tab-growth" role="tabpanel" aria-labelledby="growth-tab" data-panel="growth">
+          <section class="growth-section" data-panel="growth">
+            <div class="growth-skeleton" aria-hidden="true">
+              <div class="stat-grid skeleton-stat"></div>
+              <div class="chart-grid skeleton-chart"></div>
+            </div>
+            <div class="growth-empty empty-state hidden" aria-live="polite">
+              <svg class="empty-state-icon" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/><path d="M23 21V11a7 7 0 00-14 0v10"/>
+              </svg>
+              <h3 class="empty-state-title">Rast i Trendi</h3>
+              <p class="empty-state-message">Trendovi će biti dostupni nakon analize podataka.</p>
+            </div>
+          </section>
+        </div>
+
+        <!-- Diagnostics -->
+        <div class="admin-tab-panel" id="tab-diagnostics" role="tabpanel" aria-labelledby="diagnostics-tab" data-panel="diagnostics">
+          <section class="diagnostics-section" data-panel="diagnostics">
+            <div class="diagnostics-skeleton" aria-hidden="true">
+              <div class="health-grid-skeleton"></div>
+            </div>
+            <div class="diagnostics-empty empty-state hidden" aria-live="polite">
+              <svg class="empty-state-icon" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/>
+              </svg>
+              <h3 class="empty-state-title">Dijagnostika</h3>
+              <p class="empty-state-message">Sistemski pregledi će biti dostupni ovde.</p>
+            </div>
+          </section>
+        </div>
+
+        <!-- Settings -->
+        <div class="admin-tab-panel" id="tab-settings" role="tabpanel" aria-labelledby="settings-tab" data-panel="settings">
+          <section class="settings-section" data-panel="settings">
+            <div class="settings-skeleton" aria-hidden="true">
+              <div class="form-skeleton"></div>
+            </div>
+            <div class="settings-empty empty-state hidden" aria-live="polite">
+              <svg class="empty-state-icon" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+              </svg>
+              <h3 class="empty-state-title">Postavke</h3>
+              <p class="empty-state-message">Konfiguracija sistema će biti dostavna ovde.</p>
+            </div>
+          </section>
+        </div>
+
+        <!-- Roles -->
+        <div class="admin-tab-panel" id="tab-roles" role="tabpanel" aria-labelledby="roles-tab" data-panel="roles">
+          <section class="roles-section" data-panel="roles">
+            <div class="roles-skeleton" aria-hidden="true">
+              <div class="table-skeleton"></div>
+            </div>
+            <div class="roles-empty empty-state hidden" aria-live="polite">
+              <svg class="empty-state-icon" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+              <h3 class="empty-state-title">Uloge i Dozvole</h3>
+              <p class="empty-state-message">Upravljanje ulogama će biti dostupno ovde.</p>
+            </div>
+          </section>
+        </div>
+
+        <!-- Products CMS -->
+        <div class="admin-tab-panel" id="tab-products-cms" role="tabpanel" aria-labelledby="products-cms-tab" data-panel="products-cms">
+          <section class="products-cms-section" data-panel="products-cms">
+            <div class="products-cms-skeleton" aria-hidden="true">
+              <div class="products-grid-skeleton"></div>
+            </div>
+            <div class="products-cms-empty empty-state hidden" aria-live="polite">
+              <svg class="empty-state-icon" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M20.5 17A5 5 0 0 0 18 7h-1.58a5 5 0 0 0-7.16 1.5"/><path d="M4 15.5s2 2 4 2 4-2 4-2-2-2-4-2"/><path d="M14 13h10"/><path d="M14 17h6"/>
+              </svg>
+              <h3 class="empty-state-title">Proizvodi CMS</h3>
+              <p class="empty-state-message">Upravljanje CMS proizvodima će biti dostupno ovde.</p>
+            </div>
+          </section>
+        </div>
+
+        <!-- Markets -->
+        <div class="admin-tab-panel" id="tab-markets" role="tabpanel" aria-labelledby="markets-tab" data-panel="markets">
+          <section class="markets-section" data-panel="markets">
+            <div class="markets-skeleton" aria-hidden="true">
+              <div class="table-skeleton"></div>
+            </div>
+            <div class="markets-empty empty-state hidden" aria-live="polite">
+              <svg class="empty-state-icon" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M12 2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm3 7V5a2 2 0 0 0-4 0v6a2 2 0 0 0 4 0zm3-2v2m0 12v2m-6-8h2"/>
+              </svg>
+              <h3 class="empty-state-title">Tržišta</h3>
+              <p class="empty-state-message">Upravljanje tržtištima će biti dostupno ovde.</p>
+            </div>
+          </section>
+        </div>
+
+        <!-- Accounting -->
+        <div class="admin-tab-panel" id="tab-accounting" role="tabpanel" aria-labelledby="accounting-tab" data-panel="accounting">
+          <section class="accounting-section" data-panel="accounting">
+            <div class="accounting-skeleton" aria-hidden="true">
+              <div class="stat-grid skeleton-stat"></div>
+              <div class="table-skeleton"></div>
+            </div>
+            <div class="accounting-empty empty-state hidden" aria-live="polite">
+              <svg class="empty-state-icon" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/>
+              </svg>
+              <h3 class="empty-state-title">Računovodstvo</h3>
+              <p class="empty-state-message">Finansijski evidencije će biti dostupne ovde.</p>
+            </div>
+          </section>
+        </div>
+
+        <!-- Search Analytics -->
+        <div class="admin-tab-panel" id="tab-search-analytics" role="tabpanel" aria-labelledby="search-analytics-tab" data-panel="search-analytics">
+          <section class="search-analytics-section" data-panel="search-analytics">
+            <div class="search-analytics-skeleton" aria-hidden="true">
+              <div class="stat-grid skeleton-stat"></div>
+              <div class="table-skeleton"></div>
+            </div>
+            <div class="search-analytics-empty empty-state hidden" aria-live="polite">
+              <svg class="empty-state-icon" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M8 8l2 2 4-4"/>
+              </svg>
+              <h3 class="empty-state-title">Pretraga Analitika</h3>
+              <p class="empty-state-message">Analitika pretrage će biti dostupna ovde.</p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+
+<div class="toast-container" id="toastContainer" aria-live="polite" aria-label="Obaveštenja"></div>
+  <div id="modalOverlay"></div>
+
+  <!-- Toast Template (cloned by JS) -->
+  <template id="toastTemplate">
+    <div class="toast" role="alert" aria-live="polite">
+      <svg class="toast-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"></svg>
+      <div class="toast-content">
+        <div class="toast-title"></div>
+        <div class="toast-message"></div>
+      </div>
+      <button class="toast-close" aria-label="Zatvori">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <div class="toast-progress"></div>
+    </div>
+  </template>
+
+  <!-- Modal Template (cloned by JS) -->
+  <template id="modalTemplate">
+    <div class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal modal-md">
+        <header class="modal-header">
+          <h2 class="modal-title" id="modalTitle">
+            <svg class="modal-title-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"></svg>
+            <span></span>
+          </h2>
+          <button class="modal-close" aria-label="Zatvori">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18"/>
+              <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+        </header>
+        <div class="modal-body" id="modalBody"></div>
+        <footer class="modal-footer" id="modalFooter"></footer>
+      </div>
+    </div>
+  </template>
+
+  <!-- Command Palette Template -->
+  <template id="commandPaletteTemplate">
+    <div class="command-palette-overlay" role="dialog" aria-modal="true" aria-label="Command Palette">
+      <div class="command-palette-window">
+        <header class="command-palette-header">
+          <svg class="command-palette-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="M21 21l-4.35-4.35"/>
+          </svg>
+          <div class="command-palette-search-wrapper">
+            <svg class="command-palette-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="M21 21l-4.35-4.35"/>
+            </svg>
+            <input type="search" class="command-palette-search" placeholder="Traži komande, stranice, akcije..." aria-label="Command Palette Search" autocomplete="off">
+            <kbd class="command-palette-shortcut">⌘K</kbd>
+          </div>
+          <div class="command-palette-hint">↑↓ Navigiraj · Enter Izvrši · Esc Zatvori</div>
+        </header>
+        <div class="command-palette-content">
+          <div class="command-palette-results" id="commandPaletteResults"></div>
+          <div class="command-palette-empty hidden" id="commandPaletteEmpty">
+            <svg class="command-palette-empty-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="M21 21l-4.35-4.35"/>
+            </svg>
+            <p class="command-palette-empty-title">Nema rezultata</p>
+            <p class="command-palette-empty-message">Pokušajte sa drugačijim pretragom.</p>
+          </div>
+        </div>
+        <footer class="command-palette-footer">
+          <div class="command-palette-footer-hint">
+            <kbd>⌘</kbd><kbd>K</kbd> Otvori · <kbd>Esc</kbd> Zatvori
+          </div>
+        </footer>
+      </div>
+    </div>
+  </template>
+
+  <!-- Shortcuts Modal Template -->
+  <template id="shortcutsModalTemplate">
+    <div class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="shortcutsTitle">
+      <div class="modal modal-lg">
+        <header class="modal-header">
+          <h2 class="modal-title" id="shortcutsTitle">
+            <svg class="modal-title-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+            <span>Tastaturske Prečice</span>
+          </h2>
+          <button class="modal-close" aria-label="Zatvori">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18"/>
+              <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+        </header>
+        <div class="modal-body">
+          <div class="shortcuts-list" id="shortcutsList">
+            <div class="shortcuts-category">
+              <h3 class="shortcuts-category-title">Globalno</h3>
+              <ul class="shortcuts-items">
+                <li class="shortcut-item"><kbd class="shortcut-key">⌘K</kbd><span class="shortcut-desc">Otvorite Command Palette</span></li>
+                <li class="shortcut-item"><kbd class="shortcut-key">⌘/</kbd><span class="shortcut-desc">Prikaži/skrji prečice</span></li>
+                <li class="shortcut-item"><kbd class="shortcut-key">⌘D</kbd><span class="shortcut-desc">Preklopi tamnu/svetlu temu</span></li>
+                <li class="shortcut-item"><kbd class="shortcut-key">⌘B</kbd><span class="shortcut-desc">Sažmi/otvori sidebar</span></li>
+                <li class="shortcut-item"><kbd class="shortcut-key">Esc</kbd><span class="shortcut-desc">Zatvori modal/dropdown</span></li>
+              </ul>
+            </div>
+            <div class="shortcuts-category">
+              <h3 class="shortcuts-category-title">Navigacija</h3>
+              <ul class="shortcuts-items">
+                <li class="shortcut-item"><kbd class="shortcut-key">G</kbd><kbd class="shortcut-key">D</kbd><span class="shortcut-desc">Idi na Dashboard</span></li>
+                <li class="shortcut-item"><kbd class="shortcut-key">G</kbd><kbd class="shortcut-key">O</kbd><span class="shortcut-desc">Idi na Porudžbine</span></li>
+                <li class="shortcut-item"><kbd class="shortcut-key">G</kbd><kbd class="shortcut-key">P</kbd><span class="shortcut-desc">Idi na Proizvode</span></li>
+                <li class="shortcut-item"><kbd class="shortcut-key">G</kbd><kbd class="shortcut-key">C</kbd><span class="shortcut-desc">Idi na Kupce</span></li>
+                <li class="shortcut-item"><kbd class="shortcut-key">G</kbd><kbd class="shortcut-key">A</kbd><span class="shortcut-desc">Idi na Analitiku</span></li>
+                <li class="shortcut-item"><kbd class="shortcut-key">G</kbd><kbd class="shortcut-key">S</kbd><span class="shortcut-desc">Idi na Podešavanja</span></li>
+              </ul>
+            </div>
+            <div class="shortcuts-category">
+              <h3 class="shortcuts-category-title">Tabela / Lista</h3>
+              <ul class="shortcuts-items">
+                <li class="shortcut-item"><kbd class="shortcut-key">↑/↓</kbd><span class="shortcut-desc">Navigacija redova</span></li>
+                <li class="shortcut-item"><kbd class="shortcut-key">Enter</kbd><span class="shortcut-desc">Otvori detalje</span></li>
+                <li class="shortcut-item"><kbd class="shortcut-key">Space</kbd><span class="shortcut-desc">Selektuj/odselektuj red</span></li>
+                <li class="shortcut-item"><kbd class="shortcut-key">⌘A</kbd><span class="shortcut-desc">Selektuj sve</span></li>
+                <li class="shortcut-item"><kbd class="shortcut-key">/</kbd><span class="shortcut-desc">Fokusiraj pretragu</span></li>
+                <li class="shortcut-item"><kbd class="shortcut-key">→</kbd><span class="shortcut-desc">Sledeća stranica</span></li>
+                <li class="shortcut-item"><kbd class="shortcut-key">←</kbd><span class="shortcut-desc">Prethodna stranica</span></li>
+              </ul>
+            </div>
+            <div class="shortcuts-category">
+              <h3 class="shortcuts-category-title">Akcije</h3>
+              <ul class="shortcuts-items">
+                <li class="shortcut-item"><kbd class="shortcut-key">N</kbd><span class="shortcut-desc">Novi (proizvod/porudžbina/kupac...)</span></li>
+                <li class="shortcut-item"><kbd class="shortcut-key">E</kbd><span class="shortcut-desc">Uredi selektovano</span></li>
+                <li class="shortcut-item"><kbd class="shortcut-key">Del</kbd><span class="shortcut-desc">Obriši selektovano</span></li>
+                <li class="shortcut-item"><kbd class="shortcut-key">⌘E</kbd><span class="shortcut-desc">Izvezi selektovano</span></li>
+                <li class="shortcut-item"><kbd class="shortcut-key">R</kbd><span class="shortcut-desc">Osveži podatke</span></li>
+              </ul>
+            </div>
+            <div class="shortcuts-category">
+              <h3 class="shortcuts-category-title">Modal / Forma</h3>
+              <ul class="shortcuts-items">
+                <li class="shortcut-item"><kbd class="shortcut-key">⌘S</kbd><span class="shortcut-desc">Sačuvaj</span></li>
+                <li class="shortcut-item"><kbd class="shortcut-key">Esc</kbd><span class="shortcut-desc">Otkaži/Zatvori</span></li>
+                <li class="shortcut-item"><kbd class="shortcut-key">Tab</kbd><span class="shortcut-desc">Sledeće polje</span></li>
+                <li class="shortcut-item"><kbd class="shortcut-key">⇧Tab</kbd><span class="shortcut-desc">Prethodno polje</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <!-- Bulk Actions Bar (shown when items selected) -->
+  <div class="bulk-actions-bar" id="bulkActionsBar" aria-live="polite" hidden>
+    <div class="bulk-actions-info">
+      <span class="bulk-actions-count" id="bulkActionsCount">0</span> stavki odabrano
+    </div>
+    <div class="bulk-actions-buttons">
+      <button class="btn btn-sm btn-ghost" data-bulk-action="delete" disabled>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M3 6h18"/>
+          <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/>
+          <line x1="10" y1="11" x2="10" y2="17"/>
+          <line x1="14" y1="11" x2="14" y2="17"/>
+        </svg>
+        <span>Obriši</span>
+      </button>
+      <button class="btn btn-sm btn-ghost" data-bulk-action="export" disabled>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        <span>Izvezi</span>
+      </button>
+      <button class="btn btn-sm btn-ghost" data-bulk-action="status" disabled>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M9 11l3 3L22 4"/>
+          <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/>
+        </svg>
+        <span>Status</span>
+      </button>
+      <button class="btn btn-sm btn-ghost" data-action="clear-selection" aria-label="Očisti selekciju">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+        <span>Očisti</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Pagination (global, shown when table has pagination) -->
+  <nav class="pagination" id="pagination" aria-label="Stranica" hidden>
+    <div class="pagination-info" id="paginationInfo"></div>
+    <div class="pagination-controls">
+      <button class="pagination-btn pagination-prev" aria-label="Prethodna stranica" disabled>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </button>
+      <div class="pagination-pages" id="paginationPages"></div>
+      <button class="pagination-btn pagination-next" aria-label="Sledeća stranica" disabled>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </button>
+    </div>
+    <div class="pagination-size">
+      <label for="pageSizeSelect">Po stranici:</label>
+      <select id="pageSizeSelect" class="form-select form-select-sm">
+        <option value="10">10</option>
+        <option value="25" selected>25</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+      </select>
+    </div>
+  </nav>
+
+<script type="module" src="widgets/index.js" nonce=""></script>
+<script type="module" nonce="">
+  import ImperiumAdmin from './js/admin.js';
+
+  const boot = () => {
+    const admin = new ImperiumAdmin();
+    window.admin = admin;
+    admin.init().catch((err) => {
+      console.error('[DALLI] Admin init failed:', err);
+    });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot, { once: true });
+  } else {
+    boot();
+  }
+</script>
+</body>
+</html>

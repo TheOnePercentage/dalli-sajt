@@ -1,0 +1,350 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-10-09T00:00:00Z",
+  "membership": {
+    "enabled": true,
+    "hierarchy": [
+      {
+        "id": "member",
+        "name": "Member",
+        "label": "Član",
+        "level": 1,
+        "color": "#8b95a1",
+        "colorDark": "#a0aab8",
+        "icon": "🤍",
+        "description": "Entry into the DALLI world",
+        "benefits": [
+          "Access to Member Collections",
+          "Early access to sales (24h before public)",
+          "Birthday gift",
+          "Free shipping on orders >5,000 RSD",
+          "Loyalty points earning (1x)",
+          "Member-only newsletter"
+        ],
+        "requirements": {
+          "autoAssign": true,
+          "minPurchaseValue": 0,
+          "minOrders": 0,
+          "minLoyaltyPoints": 0
+        },
+        "earlyAccessHours": 24,
+        "exclusiveAccess": false,
+        "privateClientAccess": false,
+        "conciergeAccess": false
+      },
+      {
+        "id": "silver",
+        "name": "Silver",
+        "label": "Silver",
+        "level": 2,
+        "color": "#c0c0c0",
+        "colorDark": "#d4d4d4",
+        "icon": "🥈",
+        "description": "Elevated DALLI experience",
+        "benefits": [
+          "All Member benefits",
+          "Access to Silver Collections",
+          "Early access to new collections (48h before public)",
+          "Exclusive Silver product drops",
+          "Birthday gift (premium)",
+          "Free express shipping",
+          "Loyalty points earning (1.25x)",
+          "Dedicated support line",
+          "Invitation to seasonal events"
+        ],
+        "requirements": {
+          "autoAssign": true,
+          "minPurchaseValue": 150000,
+          "minOrders": 3,
+          "minLoyaltyPoints": 5000
+        },
+        "earlyAccessHours": 48,
+        "exclusiveAccess": true,
+        "privateClientAccess": false,
+        "conciergeAccess": false
+      },
+      {
+        "id": "gold",
+        "name": "Gold",
+        "label": "Gold",
+        "level": 3,
+        "color": "#d4a843",
+        "colorDark": "#e8c56d",
+        "icon": "🥇",
+        "description": "Prestige within the DALLI house",
+        "benefits": [
+          "All Silver benefits",
+          "Access to Gold Collections",
+          "Early access to new collections (72h before public)",
+          "Private Client previews (invitation only)",
+          "Exclusive Gold product drops",
+          "Birthday gift (luxury)",
+          "Free express shipping worldwide",
+          "Loyalty points earning (1.5x)",
+          "Priority customer service",
+          "Invitation to fashion shows",
+          "Collection preview access",
+          "Personal styling session (annual)"
+        ],
+        "requirements": {
+          "autoAssign": true,
+          "minPurchaseValue": 500000,
+          "minOrders": 8,
+          "minLoyaltyPoints": 20000
+        },
+        "earlyAccessHours": 72,
+        "exclusiveAccess": true,
+        "privateClientAccess": true,
+        "conciergeAccess": false
+      },
+      {
+        "id": "black",
+        "name": "Black",
+        "label": "Black",
+        "level": 4,
+        "color": "#1a1a2e",
+        "colorDark": "#2d2d44",
+        "icon": "🖤",
+        "description": "Inner circle of the DALLI house",
+        "benefits": [
+          "All Gold benefits",
+          "Access to Black Collections",
+          "Early access to all releases (7 days before public)",
+          "Private Client access (guaranteed)",
+          "Exclusive Black product drops (numbered)",
+          "Birthday gift (bespoke)",
+          "Free white-glove delivery",
+          "Loyalty points earning (2x)",
+          "24/7 dedicated concierge",
+          "Private appointment booking",
+          "Runway show front row",
+          "Design input sessions",
+          "Archive access",
+          "Complimentary alterations"
+        ],
+        "requirements": {
+          "autoAssign": true,
+          "minPurchaseValue": 1500000,
+          "minOrders": 20,
+          "minLoyaltyPoints": 60000
+        },
+        "earlyAccessHours": 168,
+        "exclusiveAccess": true,
+        "privateClientAccess": true,
+        "conciergeAccess": true
+      },
+      {
+        "id": "private-client",
+        "name": "Private Client",
+        "label": "Private Client",
+        "level": 5,
+        "color": "#8b0000",
+        "colorDark": "#a52a2a",
+        "icon": "💎",
+        "description": "By invitation only — the DALLI inner sanctum",
+        "benefits": [
+          "All Black benefits",
+          "Access to Private Client Collections",
+          "Early access to all releases (14 days before public)",
+          "Private Client exclusive collections",
+          "Numbered limited editions (guaranteed allocation)",
+          "Birthday gift (one-of-a-kind)",
+          "Personal shopper assigned",
+          "Private viewing appointments",
+          "Bespoke commission eligibility",
+          "VIP event hosting",
+          "Travel concierge",
+          "Archive private access",
+          "Complimentary made-to-measure",
+          "Legacy gifting program"
+        ],
+        "requirements": {
+          "autoAssign": false,
+          "inviteOnly": true,
+          "minPurchaseValue": 5000000,
+          "minOrders": 50,
+          "minLoyaltyPoints": 200000
+        },
+        "earlyAccessHours": 336,
+        "exclusiveAccess": true,
+        "privateClientAccess": true,
+        "conciergeAccess": true
+      },
+      {
+        "id": "elite-client",
+        "name": "Elite Client",
+        "label": "Elite Client",
+        "level": 6,
+        "color": "#000000",
+        "colorDark": "#1a1a1a",
+        "icon": "👑",
+        "description": "The pinnacle of DALLI patronage — by personal invitation of the Creative Director",
+        "benefits": [
+          "All Private Client benefits",
+          "Access to Elite Client Collections",
+          "Early access to all releases (30 days before public)",
+          "Elite Client exclusive collections (ultra-limited)",
+          "First refusal on all numbered editions",
+          "Creative Director direct line",
+          "Co-design opportunities",
+          "Private atelier access",
+          "Global VIP experiences",
+          "Heritage piece acquisition",
+          "Family membership extension",
+          "Philanthropic partnership",
+          "Lifetime warranty on all pieces",
+          "Succession planning"
+        ],
+        "requirements": {
+          "autoAssign": false,
+          "inviteOnly": true,
+          "ownerAssignmentOnly": true,
+          "minPurchaseValue": 20000000,
+          "minOrders": 100,
+          "minLoyaltyPoints": 1000000
+        },
+        "earlyAccessHours": 720,
+        "exclusiveAccess": true,
+        "privateClientAccess": true,
+        "conciergeAccess": true
+      }
+    ],
+    "progression": {
+      "evaluationPeriodDays": 30,
+      "gracePeriodDays": 90,
+      "downgradeProtection": true,
+      "manualOverride": {
+        "ownerOnly": true,
+        "adminAllowed": false
+      }
+    },
+    "statusCalculation": {
+      "weights": {
+        "purchaseValue": 0.5,
+        "purchaseFrequency": 0.2,
+        "collectionEngagement": 0.15,
+        "loyaltyEngagement": 0.15
+      },
+      "collectionWeights": {
+        "elegance": 1.5,
+        "casual": 1.0
+      },
+      "loyaltyMultipliers": {
+        "member": 1.0,
+        "silver": 1.25,
+        "gold": 1.5,
+        "black": 2.0,
+        "private-client": 3.0,
+        "elite-client": 5.0
+      }
+    }
+  },
+  "earlyAccess": {
+    "enabled": true,
+    "tiers": [
+      { "tier": "public", "label": "Public Release", "delayHours": 0, "description": "Available to everyone" },
+      { "tier": "member", "label": "Member Release", "delayHours": 24, "description": "24 hours before public" },
+      { "tier": "silver", "label": "Silver Release", "delayHours": 48, "description": "48 hours before public" },
+      { "tier": "gold", "label": "Gold Release", "delayHours": 72, "description": "72 hours before public" },
+      { "tier": "black", "label": "Black Release", "delayHours": 168, "description": "7 days before public" },
+      { "tier": "private-client", "label": "Private Client Release", "delayHours": 336, "description": "14 days before public" },
+      { "tier": "elite-client", "label": "Elite Client Release", "delayHours": 720, "description": "30 days before public" }
+    ],
+    "releaseTypes": {
+      "collection": "Full collection launch",
+      "product": "Individual product drop",
+      "limited-edition": "Limited edition release",
+      "archive": "Archive re-release"
+    }
+  },
+  "exclusiveCollections": {
+    "enabled": true,
+    "accessLevels": [
+      { "id": "public", "label": "Public", "tierRequired": "member", "description": "Visible to all" },
+      { "id": "member", "label": "Member", "tierRequired": "member", "description": "Member tier and above" },
+      { "id": "silver", "label": "Silver", "tierRequired": "silver", "description": "Silver tier and above" },
+      { "id": "gold", "label": "Gold", "tierRequired": "gold", "description": "Gold tier and above" },
+      { "id": "black", "label": "Black", "tierRequired": "black", "description": "Black tier and above" },
+      { "id": "private-client", "label": "Private Client", "tierRequired": "private-client", "description": "Private Client only" },
+      { "id": "elite-client", "label": "Elite Client", "tierRequired": "elite-client", "description": "Elite Client only" }
+    ]
+  },
+  "invitations": {
+    "enabled": true,
+    "architectureOnly": true,
+    "types": [
+      "private-viewing",
+      "collection-preview",
+      "product-launch",
+      "vip-event",
+      "atelier-appointment",
+      "runway-show",
+      "private-sale"
+    ],
+    "deliveryMethods": ["email", "sms", "app-notification", "physical-mail"],
+    "rsvpTracking": true,
+    "waitlistSupport": true
+  },
+  "limitedEditions": {
+    "enabled": true,
+    "types": [
+      {
+        "id": "numbered",
+        "label": "Numbered Edition",
+        "description": "Individually numbered pieces (e.g., 1/50)",
+        "allocation": "tier-based"
+      },
+      {
+        "id": "seasonal",
+        "label": "Seasonal Release",
+        "description": "Limited to specific season",
+        "allocation": "tier-based"
+      },
+      {
+        "id": "collector",
+        "label": "Collector Edition",
+        "description": "Special packaging, certificates, extras",
+        "allocation": "invite-only"
+      },
+      {
+        "id": "exclusive-drop",
+        "label": "Exclusive Drop",
+        "description": "Surprise release for specific tiers",
+        "allocation": "tier-based"
+      },
+      {
+        "id": "archive",
+        "label": "Archive Re-release",
+        "description": "Historical pieces reissued",
+        "allocation": "tier-based"
+      }
+    ],
+    "certificateOfAuthenticity": true,
+    "numberingFormat": "{tier}-{year}-{sequence}",
+    "maxPerCustomer": {
+      "member": 1,
+      "silver": 2,
+      "gold": 3,
+      "black": 5,
+      "private-client": 10,
+      "elite-client": 999
+    }
+  },
+  "futureReadiness": {
+    "concierge": {
+      "enabled": false,
+      "architectureReady": true,
+      "services": ["personal-shopper", "private-appointments", "travel-concierge", "wardrobe-management", "gift-curation"]
+    },
+    "vipExperiences": {
+      "enabled": false,
+      "architectureReady": true,
+      "types": ["fashion-week", "atelier-visit", "designer-dinner", "archive-tour", "private-preview"]
+    },
+    "eliteServices": {
+      "enabled": false,
+      "architectureReady": true,
+      "services": ["bespoke-commission", "heritage-acquisition", "succession-planning", "family-extension", "philanthropic-partnership"]
+    }
+  }
+}

@@ -1,0 +1,43 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DALLI Hero - Premium Garderoba Desktop">
+  <defs>
+    <linearGradient id="heroBgDesk" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0f"/>
+      <stop offset="30%" style="stop-color:#1a1a2e"/>
+      <stop offset="70%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#0f0f1a"/>
+    </linearGradient>
+    <linearGradient id="accentGradDesk" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e74c3c"/>
+      <stop offset="50%" style="stop-color:#f7931a"/>
+      <stop offset="100%" style="stop-color:#e74c3c"/>
+    </linearGradient>
+    <radialGradient id="glowDesk" cx="30%" cy="50%" r="60%">
+      <stop offset="0%" style="stop-color:#e74c3c;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#e74c3c;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#heroBgDesk)"/>
+  <!-- Subtle grid pattern -->
+  <g opacity="0.02">
+    <pattern id="gridDesk" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M 80 0 L 0 0 0 80" fill="none" stroke="white" stroke-width="0.5"/>
+    </pattern>
+    <rect width="1920" height="1080" fill="url(#gridDesk)"/>
+  </g>
+  <!-- Radial glow -->
+  <ellipse cx="576" cy="540" rx="600" ry="400" fill="url(#glowDesk)"/>
+  <!-- Hero content -->
+  <g transform="translate(960, 480)" text-anchor="middle">
+    <text font-family="system-ui, sans-serif" font-size="64" font-weight="700" fill="white" letter-spacing="-0.03em">Garderoba koja <tspan fill="url(#accentGradDesk)">traje</tspan></text>
+    <text x="0" y="80" font-family="system-ui, sans-serif" font-size="24" fill="rgba(255,255,255,0.7)" font-weight="400">100% organski pamuk • Precizni šavovi • Savršen fit</text>
+    <text x="0" y="128" font-family="system-ui, sans-serif" font-size="18" fill="url(#accentGradDesk)" font-weight="600">15% popust sa Bitcoin/ETH/USDT/USDC</text>
+  </g>
+  <!-- Decorative accent -->
+  <circle cx="960" cy="800" r="120" fill="none" stroke="url(#accentGradDesk)" stroke-width="3" opacity="0.2"/>
+  <text x="960" y="808" font-family="system-ui, sans-serif" font-size="48" fill="url(#accentGradDesk)" text-anchor="middle" opacity="0.4">📦</text>
+  <!-- Side accents -->
+  <g opacity="0.15">
+    <rect x="100" y="200" width="4" height="400" fill="url(#accentGradDesk)"/>
+    <rect x="1816" y="480" width="4" height="400" fill="url(#accentGradDesk)"/>
+  </g>
+</svg>

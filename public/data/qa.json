@@ -1,0 +1,93 @@
+{
+  "version": "1.0",
+  "questions": [
+    {
+      "id": "qa_001",
+      "productId": 5,
+      "userId": "usr_001",
+      "userName": "Marko P.",
+      "userInitials": "MP",
+      "verifiedPurchase": true,
+      "question": "Da li je duks prenosljiv za vežbanje?",
+      "answer": "Da, duks je napravljen od laganog materijala i savršen je za vežbanje. Materijal je dahljiv i brzo se suši.",
+      "status": "approved",
+      "helpfulVotes": 5,
+      "notHelpfulVotes": 0,
+      "createdAt": "2025-01-15T10:30:00Z",
+      "answeredAt": "2025-01-15T11:00:00Z",
+      "answeredBy": "admin_001"
+    },
+    {
+      "id": "qa_002",
+      "productId": 5,
+      "userId": "usr_002",
+      "userName": "Ana S.",
+      "userInitials": "AS",
+      "verifiedPurchase": true,
+      "question": "Kako izabrati pravu veličinu?",
+      "answer": "Preporučujemo da merite obim prsa i uporedite sa našom tabelom veličina. Duks ima standardnu krošnju - ako želite opušteniji look, uzmite jednu veličinu veću.",
+      "status": "approved",
+      "helpfulVotes": 8,
+      "notHelpfulVotes": 0,
+      "createdAt": "2025-01-18T14:22:00Z",
+      "answeredAt": "2025-01-18T15:00:00Z",
+      "answeredBy": "admin_001"
+    },
+    {
+      "id": "qa_003",
+      "productId": 1,
+      "userId": "usr_003",
+      "userName": "Djordje J.",
+      "userInitials": "DJ",
+      "verifiedPurchase": true,
+      "question": "Da li se majica krči prilikom pranja?",
+      "answer": "Organski pamuk minimalno krči (do 3-5%) pri prvom pranju. Za najbolje rezultate pranje na 30°C i sušenje na vazduhu. Ne koristite beljenje niti sušicu na visokoj temperaturi.",
+      "status": "approved",
+      "helpfulVotes": 12,
+      "notHelpfulVotes": 0,
+      "createdAt": "2025-01-20T09:15:00Z",
+      "answeredAt": "2025-01-20T10:00:00Z",
+      "answeredBy": "admin_001"
+    },
+    {
+      "id": "qa_004",
+      "productId": 3,
+      "userId": "usr_004",
+      "userName": "Petar N.",
+      "userInitials": "PN",
+      "verifiedPurchase": false,
+      "question": "Da li je trenerka pogodna za zimu?",
+      "answer": "",
+      "status": "pending",
+      "helpfulVotes": 0,
+      "notHelpfulVotes": 0,
+      "createdAt": "2025-01-22T11:45:00Z"
+    },
+    {
+      "id": "qa_005",
+      "productId": 6,
+      "userId": "usr_005",
+      "userName": "Milica K.",
+      "userInitials": "MK",
+      "verifiedPurchase": true,
+      "question": "Da li se boja gubi posle pranja?",
+      "answer": "Koristimo ekološki sertifikovane bojila. Boja ostaje stabilna posle višestrukih pranja. Preporučujemo pranje na 30°C naopako.",
+      "status": "approved",
+      "helpfulVotes": 9,
+      "notHelpfulVotes": 0,
+      "createdAt": "2025-01-25T16:30:00Z",
+      "answeredAt": "2025-01-25T17:00:00Z",
+      "answeredBy": "admin_001"
+    }
+  ],
+  "settings": {
+    "requireVerifiedPurchaseToAsk": true,
+    "requireLoginToAsk": true,
+    "requireAdminApproval": true,
+    "allowCommunityAnswers": false,
+    "notifyOnAnswer": true,
+    "minQuestionLength": 10,
+    "maxQuestionLength": 500,
+    "answerMaxLength": 2000
+  }
+}

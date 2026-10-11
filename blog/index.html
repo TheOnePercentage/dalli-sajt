@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2c3e50">
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>DALLI - Blog</title>
+    <meta name="description" content="DALLI Blog - Articles about fashion, lifestyle, business, and technology. Expert insights and trends.">
+    <meta name="keywords" content="blog, fashion, lifestyle, business, technology, articles, insights">
+    <meta name="author" content="DALLI">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://dalli.rs/blog">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dalli.rs/blog">
+    <meta property="og:title" content="DALLI - Blog | Fashion, Lifestyle & Business Insights">
+    <meta property="og:description" content="DALLI Blog - Articles about fashion, lifestyle, business, and technology. Expert insights and trends.">
+    <meta property="og:image" content="https://dalli.rs/images/og-blog.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/svg+xml">
+    <meta property="og:site_name" content="DALLI">
+    <meta property="og:locale" content="sr_RS">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://dalli.rs/blog">
+    <meta name="twitter:title" content="DALLI - Blog | Fashion, Lifestyle & Business Insights">
+    
+    <!-- Schema.org Blog -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "DALLI Blog",
+        "description": "Articles about fashion, lifestyle, business, and technology",
+        "url": "https://dalli.rs/blog",
+        "author": {
+            "@type": "Person",
+            "name": "DALLI Team"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "DALLI",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://dalli.rs/images/logo.svg",
+                "width": 600,
+                "height": 600
+            }
+        },
+        "image": "https://dalli.rs/images/og-blog.svg",
+        "keywords": "blog, fashion, lifestyle, business, technology"
+    }
+    </script>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/css/style.css?v=20241215" as="style">
+    <link rel="preload" href="/js/app.js?v=20241217" as="script">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/style.css?v=20241215">
+</head>
+<body>
+    <header class="header" role="banner">
+        <div class="container">
+            <div class="logo">
+                <a href="/" aria-label="DALLI - Početna">
+                    <svg class="logo-icon" viewBox="0 0 100 100" aria-hidden="true">
+                        <circle cx="50" cy="50" r="50" fill="#2c3e50"/>
+                        <text x="50" y="68" font-family="Arial, sans-serif" font-size="44" font-weight="bold" fill="#e74c3c" text-anchor="middle">📦</text>
+                    </svg>
+                    <h1>DALLI</h1>
+                </a>
+            </div>
+            <nav class="nav" role="navigation" aria-label="Glavna navigacija">
+                <a href="/" class="nav-link" itemprop="url"><span itemprop="name">Početna</span></a>
+                <a href="/blog.html" class="nav-link active" itemprop="url"><span itemprop="name">Blog</span></a>
+                <a href="/muska-garderoba.html" class="nav-link" itemprop="url"><span itemprop="name">Muška Garderoba</span></a>
+                <a href="/zenska-garderoba.html" class="nav-link" itemprop="url"><span itemprop="name">Ženska Garderoba</span></a>
+                <a href="/dukseri.html" class="nav-link" itemprop="url"><span itemprop="name">Duksevi (Hoodie)</span></a>
+                <a href="/cart.html" class="nav-link cart-link" aria-label="Korpa za kupovinu">
+                    Korpa
+                    <span class="cart-count" id="cartCount" aria-live="polite">0</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main" role="main">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+            <div class="container">
+                <ol class="breadcrumb-list">
+                    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <a href="/" itemprop="item" class="breadcrumb-link">
+                            <span itemprop="name">Početna</span>
+                        </a>
+                        <meta itemprop="position" content="1">
+                    </li>
+                    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <span class="breadcrumb-current" itemprop="name">Blog</span>
+                        <meta itemprop="position" content="2">
+                    </li>
+                </ol>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <section class="blog-section">
+            <div class="container">
+                <div class="section-header" style="margin-bottom: var(--space-5); flex-wrap: wrap; gap: var(--space-3);">
+                    <h2 class="section-title" style="font-size: var(--text-2xl); font-weight: var(--font-bold); color: var(--color-text-primary);">Blog DALLI</h2>
+                    <p class="section-subtitle" style="color: var(--color-text-tertiary); font-size: var(--text-sm);">Ekspertni udžbenici o modi, livingu i biznisu</p>
+                </div>
+                
+                <div class="blog-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--space-4); margin-top: var(--space-4);">
+
+                        <article class="blog-card" itemscope itemtype="https://schema.org/Article" style="background: var(--color-bg-card); border-radius: var(--radius-md); overflow: hidden; transition: transform var(--transition-base);">
+                            <a href="/blog/osnovna-majica-za-svakodnevno-wear" class="blog-link" style="text-decoration: none; color: inherit; width: 100%;">
+                                <div class="blog-image" style="height: 200px; background: var(--color-bg-secondary); overflow: hidden;">
+                                    <img src="https://dalli.rs/images/blog/majica.jpg" alt="Osnovna majica za svakodnevno wear - Kako izabrati idealnu majicu - blog" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                            </a>
+                            <div class="blog-content" style="padding: var(--space-3);">
+                                <div class="blog-meta" style="font-size: var(--text-xs); color: var(--color-text-tertiary); margin-bottom: var(--space-2);">
+                                    <span>2024-01-15</span>
+                                    <span class="mx-2">|</span>
+                                    <span>Admin</span>
+                                </div>
+                                <h3 class="blog-title" itemprop="name" style="font-size: var(--text-base); font-weight: var(--font-bold); color: var(--color-text-primary); margin-bottom: var(--space-2);"><a href="/blog/osnovna-majica-za-svakodnevno-wear" style="color: inherit; text-decoration: none;">Osnovna majica za svakodnevno wear - Kako izabrati idealnu majicu</a></h3>
+                                <p class="blog-excerpt" itemprop="description" style="font-size: var(--text-sm); color: var(--color-text-tertiary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; webkit-box-orient: vertical; overflow: hidden;">Uvod u world of osnovnih majica i kako ih pravilno izabrati za svoj tip tela....</p>
+                        </article>
+                        <article class="blog-card" itemscope itemtype="https://schema.org/Article" style="background: var(--color-bg-card); border-radius: var(--radius-md); overflow: hidden; transition: transform var(--transition-base);">
+                            <a href="/blog/sustainability-u-fashion-industry" class="blog-link" style="text-decoration: none; color: inherit; width: 100%;">
+                                <div class="blog-image" style="height: 200px; background: var(--color-bg-secondary); overflow: hidden;">
+                                    <img src="https://dalli.rs/images/blog/sustainability.jpg" alt="Sustainability u fashion industry - Budućnost mode - blog" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                            </a>
+                            <div class="blog-content" style="padding: var(--space-3);">
+                                <div class="blog-meta" style="font-size: var(--text-xs); color: var(--color-text-tertiary); margin-bottom: var(--space-2);">
+                                    <span>2024-01-10</span>
+                                    <span class="mx-2">|</span>
+                                    <span>Admin</span>
+                                </div>
+                                <h3 class="blog-title" itemprop="name" style="font-size: var(--text-base); font-weight: var(--font-bold); color: var(--color-text-primary); margin-bottom: var(--space-2);"><a href="/blog/sustainability-u-fashion-industry" style="color: inherit; text-decoration: none;">Sustainability u fashion industry - Budućnost mode</a></h3>
+                                <p class="blog-excerpt" itemprop="description" style="font-size: var(--text-sm); color: var(--color-text-tertiary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; webkit-box-orient: vertical; overflow: hidden;">How sustainable practices are transforming the fashion industry and what consumers should know....</p>
+                        </article>
+                        <article class="blog-card" itemscope itemtype="https://schema.org/Article" style="background: var(--color-bg-card); border-radius: var(--radius-md); overflow: hidden; transition: transform var(--transition-base);">
+                            <a href="/blog/business-tips-za-novi-fashion-entrepreneurship" class="blog-link" style="text-decoration: none; color: inherit; width: 100%;">
+                                <div class="blog-image" style="height: 200px; background: var(--color-bg-secondary); overflow: hidden;">
+                                    <img src="https://dalli.rs/images/blog/business.jpg" alt="Business tips za novi fashion entrepreneurship - blog" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                            </a>
+                            <div class="blog-content" style="padding: var(--space-3);">
+                                <div class="blog-meta" style="font-size: var(--text-xs); color: var(--color-text-tertiary); margin-bottom: var(--space-2);">
+                                    <span>2024-01-05</span>
+                                    <span class="mx-2">|</span>
+                                    <span>Admin</span>
+                                </div>
+                                <h3 class="blog-title" itemprop="name" style="font-size: var(--text-base); font-weight: var(--font-bold); color: var(--color-text-primary); margin-bottom: var(--space-2);"><a href="/blog/business-tips-za-novi-fashion-entrepreneurship" style="color: inherit; text-decoration: none;">Business tips za novi fashion entrepreneurship</a></h3>
+                                <p class="blog-excerpt" itemprop="description" style="font-size: var(--text-sm); color: var(--color-text-tertiary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; webkit-box-orient: vertical; overflow: hidden;">Essential business advice for anyone starting a fashion brand in today's market....</p>
+                        </article>
+                        <article class="blog-card" itemscope itemtype="https://schema.org/Article" style="background: var(--color-bg-card); border-radius: var(--radius-md); overflow: hidden; transition: transform var(--transition-base);">
+                            <a href="/blog/how-to-style-trainerke-za-svakuiju-andu" class="blog-link" style="text-decoration: none; color: inherit; width: 100%;">
+                                <div class="blog-image" style="height: 200px; background: var(--color-bg-secondary); overflow: hidden;">
+                                    <img src="https://dalli.rs/images/blog/trainerke.jpg" alt="How to style trainerke za svakuiju Anđu - blog" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                            </a>
+                            <div class="blog-content" style="padding: var(--space-3);">
+                                <div class="blog-meta" style="font-size: var(--text-xs); color: var(--color-text-tertiary); margin-bottom: var(--space-2);">
+                                    <span>2024-01-01</span>
+                                    <span class="mx-2">|</span>
+                                    <span>Admin</span>
+                                </div>
+                                <h3 class="blog-title" itemprop="name" style="font-size: var(--text-base); font-weight: var(--font-bold); color: var(--color-text-primary); margin-bottom: var(--space-2);"><a href="/blog/how-to-style-trainerke-za-svakuiju-andu" style="color: inherit; text-decoration: none;">How to style trainerke za svakuiju Anđu</a></h3>
+                                <p class="blog-excerpt" itemprop="description" style="font-size: var(--text-sm); color: var(--color-text-tertiary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; webkit-box-orient: vertical; overflow: hidden;">Complete guide to styling sneakers for every occasion and personal style....</p>
+                        </article>
+                        <article class="blog-card" itemscope itemtype="https://schema.org/Article" style="background: var(--color-bg-card); border-radius: var(--radius-md); overflow: hidden; transition: transform var(--transition-base);">
+                            <a href="/blog/digital-transformation-u-fashion-retail" class="blog-link" style="text-decoration: none; color: inherit; width: 100%;">
+                                <div class="blog-image" style="height: 200px; background: var(--color-bg-secondary); overflow: hidden;">
+                                    <img src="https://dalli.rs/images/blog/digital.jpg" alt="Digital transformation u fashion retail - blog" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                            </a>
+                            <div class="blog-content" style="padding: var(--space-3);">
+                                <div class="blog-meta" style="font-size: var(--text-xs); color: var(--color-text-tertiary); margin-bottom: var(--space-2);">
+                                    <span>2023-12-20</span>
+                                    <span class="mx-2">|</span>
+                                    <span>Admin</span>
+                                </div>
+                                <h3 class="blog-title" itemprop="name" style="font-size: var(--text-base); font-weight: var(--font-bold); color: var(--color-text-primary); margin-bottom: var(--space-2);"><a href="/blog/digital-transformation-u-fashion-retail" style="color: inherit; text-decoration: none;">Digital transformation u fashion retail</a></h3>
+                                <p class="blog-excerpt" itemprop="description" style="font-size: var(--text-sm); color: var(--color-text-tertiary); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; webkit-box-orient: vertical; overflow: hidden;">How technology is reshaping the fashion retail landscape....</p>
+                        </article>
+                </div>
+                
+                {{#if totalPages > 1}}
+                <div class="blog-pagination" style="margin-top: var(--space-5); padding-top: var(--space-4); border-top: 1px solid var(--color-border-primary);">
+                    <div class="pagination-info" style="color: var(--color-text-tertiary); font-size: var(--text-sm);">Stranica {{currentPage}} od {{totalPages}}</div>
+                    <div style="display: flex; gap: var(--space-2); justify-content: center;">
+                        {{#each [1,2,3]}}
+                        <button class="pagination-btn {{#if (eq this currentPage)}}active{{/if}}" aria-label="Stranica {{this}}">{{this}}</button>
+                        {{/each}}
+                        {{#if (gt totalPages 3)}}
+                        {{#if (gt totalPages 5)}}
+                        {{#if (gt totalPages 4)}}
+                        <span class="pagination-ellipsis">…</span>
+                        {{/if}}
+                        {{/if}}
+                        <button class="pagination-btn {{#if (eq totalPages currentPage)}}active{{/if}}" aria-label="Stranica {{totalPages}}">{{totalPages}}</button>
+                        {{/if}}
+                    </div>
+                </div>
+                {{/if}}
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>DALLI</h3>
+                    <p>Vaša omiljena garderoba jednom klikom.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Kategorije</h3>
+                    <p><a href="/blog.html?category=fashion">Fashion</a></p>
+                    <p><a href="/blog.html?category=lifestyle">Lifestyle</a></p>
+                    <p><a href="/blog.html?category=business">Business</a></p>
+                    <p><a href="/blog.html?category=technology">Technology</a></p>
+                    <p><a href="/faq.html">FAQ</a></p>
+                    <p><a href="/size-guide.html">Veličine</a></p>
+                </div>
+                <div class="footer-col">
+                    <h3>Social</h3>
+                    <p>Sledujte nas na social mrežama</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{currentYear}} DALLI. Sva prava zadržana.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/app.js?v=20241217" defer></script>
+</body>
+</html>

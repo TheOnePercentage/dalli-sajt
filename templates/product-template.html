@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2c3e50">
+    
+    <!-- Dynamic SEO Tags -->
+    <title>{{seo.metaTitle}}</title>
+    <meta name="description" content="{{seo.metaDescription}}">
+    <meta name="keywords" content="{{seo.keywords}}">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{seo.canonicalUrl}}">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="{{seo.canonicalUrl}}">
+    <meta property="og:title" content="{{seo.metaTitle}}">
+    <meta property="og:description" content="{{seo.metaDescription}}">
+    <meta property="og:image" content="https://dalli.rs{{ogImage}}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/svg+xml">
+    <meta property="og:site_name" content="DALLI">
+    <meta property="og:locale" content="sr_RS">
+    <meta property="product:price:amount" content="{{price}}">
+    <meta property="product:price:currency" content="{{currency}}">
+    <meta property="product:availability" content="{{#if (eq inventory.status 'in_stock')}}in_stock{{else if (eq inventory.status 'low_stock')}}in_stock{{else if (eq inventory.status 'preorder')}}preorder{{else}}out_of_stock{{/if}}">
+    {{#if salePrice}}
+    <meta property="product:sale_price:amount" content="{{salePrice}}">
+    <meta property="product:sale_price:currency" content="{{currency}}">
+    {{/if}}
+    <meta property="product:brand" content="{{structuredData.brand}}">
+    <meta name="language" content="{{locale}}">
+    <meta property="product:category" content="{{structuredData.category}}">
+    <meta property="product:retailer_item_id" content="{{sku}}">
+    
+    <meta name="page-type" content="product">
+    <meta name="page-slug" content="{{sku}}">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{seo.canonicalUrl}}">
+    <meta name="twitter:title" content="{{seo.metaTitle}}">
+    <meta name="twitter:description" content="{{seo.metaDescription}}">
+    <meta name="twitter:image" content="https://dalli.rs{{ogImage}}">
+    <meta name="twitter:label1" content="Cena">
+    <meta name="twitter:data1" content="{{price}} {{currency}}">
+    {{#if salePrice}}
+    <meta name="twitter:label2" content="Akcijska cena">
+    <meta name="twitter:data2" content="{{salePrice}} {{currency}}">
+    {{/if}}
+    
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="sr" href="{{seo.canonicalUrl}}">
+    <link rel="alternate" hreflang="sr-Latn" href="{{seo.canonicalUrl}}">
+    <link rel="alternate" hreflang="sr-Cyrl" href="{{seo.canonicalUrl}}">
+    <link rel="alternate" hreflang="x-default" href="{{seo.canonicalUrl}}">
+    
+    <!-- Schema.org Product + BreadcrumbList + FAQPage -->
+    <script type="application/ld+json">
+{{{productJsonLd}}}
+    </script>
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/manifest.json?v=20241215">
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg?v=20241215">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.svg?v=20241215">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="{{ogImage}}" as="image">
+
+    <!-- DNS Prefetch for external resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+</head>
+<body>
+    <header class="header" role="banner">
+        <div class="container">
+            <div class="logo">
+                <a href="/admin-login.html" class="admin-logo-link" aria-label="Administrator panel - Prijava" title="Prijava za administratore">
+                    <svg class="logo-icon" viewBox="0 0 100 100" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#2c3e50;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#1a252f;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="50" cy="50" r="50" fill="url(#logoGrad)"/>
+                        <text x="50" y="68" font-family="Arial, sans-serif" font-size="44" font-weight="bold" fill="#e74c3c" text-anchor="middle">📦</text>
+                    </svg>
+                </a>
+                <a href="/" aria-label="DALLI - Početna">
+                    <h1>DALLI</h1>
+                </a>
+                <span class="tagline">Muška i Ženska Garderoba</span>
+            </div>
+            <nav class="nav" role="navigation" aria-label="Glavna navigacija" itemscope itemtype="https://schema.org/SiteNavigationElement">
+                <a href="/" class="nav-link" itemprop="url"><span itemprop="name">Početna</span></a>
+                <a href="/casual/" class="nav-link" itemprop="url"><span itemprop="name">Svi Proizvodi</span></a>
+                <a href="/muska-garderoba.html" class="nav-link" itemprop="url"><span itemprop="name">Muška Garderoba</span></a>
+                <a href="/zenska-garderoba.html" class="nav-link" itemprop="url"><span itemprop="name">Ženska Garderoba</span></a>
+                <a href="/dukseri.html" class="nav-link" itemprop="url"><span itemprop="name">Duksevi</span></a>
+                <a href="/collections/" class="nav-link" itemprop="url"><span itemprop="name">Kolekcije</span></a>
+                <button class="nav-link theme-toggle" id="themeToggle" aria-label="Preklopi tamnu/svetlu temu" title="Tamna/Svetla tema">
+                    <span class="theme-icon" aria-hidden="true">🌙</span>
+                </button>
+                <a href="/cart.html" class="nav-link cart-link" aria-label="Korpa za kupovinu">
+                    Korpa
+                    <span class="cart-count" id="cartCount" aria-live="polite">0</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main" role="main">
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumb" aria-label="Breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+            <div class="container">
+                <ol class="breadcrumb-list">
+                    {{#each breadcrumbs}}
+                    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        {{#if url}}
+                        <a href="{{url}}" itemprop="item" class="breadcrumb-link">
+                            <span itemprop="name">{{name}}</span>
+                        </a>
+                        <meta itemprop="position" content="{{plusOne @index}}">
+                        {{else}}
+                        <span class="breadcrumb-current" itemprop="name">{{name}}</span>
+                        <meta itemprop="position" content="{{plusOne @index}}">
+                        {{/if}}
+                    </li>
+                    {{/each}}
+                </ol>
+            </div>
+        </nav>
+
+        <section class="product-detail">
+            <div class="container">
+                <div class="product-gallery" data-product-gallery>
+                  <div class="product-image-wrapper" data-gallery-main>
+                    <picture>
+                        <source srcset="{{images.mainWebp320}} 320w, {{images.mainWebp640}} 640w, {{images.mainWebp960}} 960w, {{images.mainWebp1280}} 1280w" type="image/webp" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
+                        <source srcset="{{images.main320}} 320w, {{images.main640}} 640w, {{images.main960}} 960w, {{images.main1280}} 1280w" type="image/avif" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
+                        <img src="{{images.main1280}}" srcset="{{images.main320}} 320w, {{images.main640}} 640w, {{images.main960}} 960w, {{images.main1280}} 1280w" alt="{{altText}}" loading="lazy" itemprop="contentUrl" width="600" height="800" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" data-gallery-main data-full="{{images.main1280}}">
+                    </picture>
+                    <meta itemprop="url" content="https://dalli.rs{{images.main}}">
+                  </div>
+
+                  {{#if images.gallery.length}}
+                  <div class="product-thumbnails" role="list" aria-label="Slike proizvoda">
+                    {{#each images.gallery}}
+                    <button class="product-thumb" role="listitem" data-gallery-thumb data-index="{{@index}}" data-src="{{this}}" data-full="{{this}}" aria-label="Slika {{add @index 1}}">
+                      <img src="{{this}}" alt="Slika {{add @index 1}} - {{../name}}" loading="lazy" width="80" height="100">
+                    </button>
+                    {{/each}}
+                  </div>
+                  {{/if}}
+                </div>
+                <div class="product-info">
+                    <span class="product-category">{{getCategoryName category}}</span>
+                    <h1 class="product-name" itemprop="name">{{name}}</h1>
+                    <p class="product-description" itemprop="description">{{shortDescription}}</p>
+
+                    {{#if loyalty.memberOnly}}
+                    <p class="product-loyalty-note" data-member-only="{{loyalty.tierRequired}}" data-collection-exclusive="{{collection}}" data-release-date="{{loyalty.earlyAccessDate}}" style="margin-bottom: var(--space-4); padding: var(--space-2) var(--space-3); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: var(--text-sm); color: var(--color-text-secondary);">
+                        {{#if loyalty.earlyAccess}}Rani pristup za članove{{else}}Dostupno članovima{{/if}} — {{collection}} kolekcija.
+                    </p>
+                    {{/if}}
+                    
+                    <!-- React Island: live pretraga prodavnice -->
+                    <div data-island="search" data-props="{}"></div>
+                    
+                    <!-- Inventory Status Badge -->
+                    <div class="inventory-status" data-status="{{inventory.status}}">
+                        {{#if (eq inventory.status 'in_stock')}}
+                        <span class="status-badge in-stock" aria-label="Na stanju">✅ Na stanju ({{inventory.totalStock}} kom.)</span>
+                        {{else if (eq inventory.status 'low_stock')}}
+                        <span class="status-badge low-stock" aria-label="Malo na stanju">⚠️ Preostalo {{inventory.totalStock}} komada</span>
+                        {{else if (eq inventory.status 'preorder')}}
+                        <span class="status-badge preorder" aria-label="Prednarudžbina">📦 Dostupno za prednarudžbinu</span>
+                        {{else}}
+                        <span class="status-badge out-of-stock" aria-label="Nije na stanju">❌ Trenutno nije na stanju</span>
+                        {{/if}}
+                        {{#if inventory.trackInventory}}
+                        <span class="stock-detail">SKU: {{sku}} | {{#if inventory.allowBackorder}}Dozvoljena prednarudžbina{{else}}Bez prednarudžbine{{/if}}</span>
+                        {{/if}}
+                    </div>
+                    
+                    <div class="product-specs">
+                        <h3>Specifikacije</h3>
+                        <ul>
+                            <li><strong>Materijal:</strong> {{specifications.material}}</li>
+                            {{#if specifications.weight}}<li><strong>Gramsa/Težina:</strong> {{specifications.weight}}</li>{{/if}}
+                            {{#if specifications.care}}<li><strong>Održavanje:</strong> {{specifications.care}}</li>{{/if}}
+                            {{#if specifications.warrantyMonths}}<li><strong>Garancija:</strong> {{specifications.warrantyMonths}} meseci</li>{{/if}}
+                        </ul>
+                    </div>
+                    
+                    <div class="product-variants" data-variant-picker>
+                        <div class="colors">
+                            <h4>Boje:</h4>
+                            <div class="color-swatches">
+                                {{#each colors}}
+                                <span class="color-swatch" style="background: {{hex}}" title="{{name}}" data-color="{{name}}" data-image="{{image}}" data-stock="{{stock}}" role="button" tabindex="0" aria-label="Boja {{name}}" aria-pressed="false"></span>
+                                {{/each}}
+                            </div>
+                        </div>
+                        <div class="sizes">
+                            <h4>Veličine:</h4>
+                            <div class="size-options">
+                                {{#each sizes}}
+                                {{#if available}}
+                                <button class="size-btn" data-size="{{size}}" data-stock="{{stock}}" data-color="" aria-label="Veličina {{size}}, {{stock}} komada na stanju">{{size}}</button>
+                                {{else}}
+                                <button class="size-btn unavailable" data-size="{{size}}" disabled aria-label="Veličina {{size}} nije dostupna">{{size}}</button>
+                                {{/if}}
+                                {{/each}}
+                            </div>
+                        </div>
+                        <!-- Variant stock lookup (hidden, populated by JS) -->
+                        <div class="variant-stock-data hidden" data-variants='{{variantStocks}}'></div>
+                        <div class="color-images hidden" data-images='{{colorImages}}'></div>
+                        <!-- Selected variant display -->
+                        <div class="selected-variant-info" style="margin-top: var(--space-3); padding: var(--space-3); background: var(--color-bg); border-radius: var(--radius-md); font-size: var(--text-sm); color: var(--color-text-secondary);">
+                            <span class="selected-color" style="font-weight: var(--fw-medium);">Boja: <span id="selectedColorDisplay">—</span></span>
+                            <span class="selected-size" style="margin-left: var(--space-4); font-weight: var(--fw-medium);">Veličina: <span id="selectedSizeDisplay">—</span></span>
+                            <span class="selected-stock" style="margin-left: var(--space-4);" id="selectedStockDisplay"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="product-footer">
+                        <div itemprop="offers" itemscope itemtype="https://schema.org/Offer" id="productOffer">
+                            <meta itemprop="priceCurrency" content="{{currency}}">
+                            <meta itemprop="price" content="{{price}}">
+                            <meta itemprop="availability" content="https://schema.org/{{#if (eq inventory.status 'in_stock')}}InStock{{else if (eq inventory.status 'low_stock')}}InStock{{else if (eq inventory.status 'preorder')}}PreOrder{{else}}OutOfStock{{/if}}">
+                            <meta itemprop="itemCondition" content="https://schema.org/NewCondition">
+                            <meta itemprop="sku" content="{{sku}}">
+                            <meta itemprop="mpn" content="{{structuredData.mpn}}">
+                            {{#if salePrice}}
+                            <span class="product-old-price">{{formatPrice price}} {{currency}}</span>
+                            <span class="product-sale-price" itemprop="price" content="{{salePrice}}">{{formatPrice salePrice}} {{currency}}</span>
+                            <span class="discount-badge">-{{calculateDiscount price salePrice}}%</span>
+                            {{else}}
+                            <span class="product-price" itemprop="price" content="{{price}}">{{formatPrice price}} {{currency}}</span>
+                            {{/if}}
+                        </div>
+                        
+                        <div class="product-actions">
+                            {{#if (or (eq inventory.status 'in_stock') (eq inventory.status 'low_stock') (eq inventory.status 'preorder'))}}
+                            <button class="btn-add btn-primary" data-product-id="{{id}}" data-sku="{{sku}}" aria-label="Dodaj {{name}} u korpu" {{#if (eq inventory.status 'preorder')}}data-preorder="true"{{/if}}>
+                                {{#if (eq inventory.status 'preorder')}}Prednaruči{{else}}Dodaj u korpu{{/if}}
+                            </button>
+                            {{else}}
+                            <button class="btn-add btn-secondary" disabled aria-label="{{name}} trenutno nije dostupan">
+                                Obavesti me kada bude dostupno
+                            </button>
+                            {{/if}}
+                            
+                            <!-- Virtual Try-On & 360° View Buttons -->
+                            <div class="product-actions-secondary" style="display: flex; gap: var(--space-3); margin-top: var(--space-3); flex-wrap: wrap;">
+                                {{#if cms.virtualTryOn.eligible}}
+                                <button class="btn-add btn-secondary" data-action="virtual-tryon" data-product-id="{{id}}" aria-label="Virtualno probanje {{name}}" style="flex: 1; min-width: 160px;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: var(--space-2);"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><path d="M12 7v14"/></svg>
+                                    Probaj na sebi
+                                </button>
+                                {{/if}}
+                                {{#if cms.product360.enabled}}
+                                <button class="btn-add btn-secondary" data-action="view-360" data-product-id="{{id}}" aria-label="360° pregled {{name}}" style="flex: 1; min-width: 160px;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: var(--space-2);"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20M12 2a10 10 0 0 0 0 20"/></svg>
+                                    360° Pregled
+                                </button>
+                            {{/if}}
+                        </div>
+
+                        <!-- React Island: Virtualna proba (controls; aditivno, bez app.jsx zavisnosti) -->
+                        <div data-island="vto" data-props="{&quot;id&quot;:&quot;{{id}}&quot;,&quot;name&quot;:&quot;{{name}}&quot;,&quot;image&quot;:&quot;{{images.main}}&quot;,&quot;inStock&quot;:{{#if (or (eq inventory.status 'in_stock') (eq inventory.status 'low_stock'))}}true{{else}}false{{/if}} }"></div>
+
+                        <!-- React Island: konfigurator (veličine/boje/količina + dodaj u korpu + size finder) -->
+                        <div data-island="configurator" data-props="{&quot;id&quot;:&quot;{{id}}&quot;,&quot;name&quot;:&quot;{{name}}&quot;,&quot;price&quot;:{{#if salePrice}}{{salePrice}}{{else}}{{price}}{{/if}},&quot;basePrice&quot;:{{price}},&quot;currency&quot;:&quot;{{currency}}&quot;,&quot;image&quot;:&quot;{{images.main}}&quot;,&quot;inStock&quot;:{{#if (or (eq inventory.status 'in_stock') (eq inventory.status 'low_stock') (eq inventory.status 'preorder'))}}true{{else}}false{{/if}},&quot;preorder&quot;:{{#if (eq inventory.status 'preorder')}}true{{else}}false{{/if}} }"></div>
+
+    <!-- Sticky Add to Cart (Mobile) -->
+    <div class="sticky-atc hidden" id="stickyAtc" role="complementary" aria-label="Brzo dodavanje u korpu">
+      <div class="sticky-atc__inner">
+        <div class="sticky-atc__image">
+          <img src="{{images.main}}" alt="{{name}}" width="48" height="64" loading="lazy">
+        </div>
+        <div class="sticky-atc__info">
+          <span class="sticky-atc__name">{{name}}</span>
+          <span class="sticky-atc__price">{{formatPrice price}} {{currency}}</span>
+        </div>
+        {{#if (or (eq inventory.status 'in_stock') (eq inventory.status 'low_stock') (eq inventory.status 'preorder'))}}
+        <button class="btn btn-primary btn-lg sticky-atc__btn" data-product-id="{{id}}" data-sku="{{sku}}" aria-label="Dodaj {{name}} u korpu" {{#if (eq inventory.status 'preorder')}}data-preorder="true"{{/if}}>
+          {{#if (eq inventory.status 'preorder')}}Prednaruči{{else}}Dodaj u korpu{{/if}}
+        </button>
+        {{else}}
+        <button class="btn btn-secondary btn-lg sticky-atc__btn" disabled>Obavesti me</button>
+        {{/if}}
+      </div>
+    </div>
+
+    
+    <!-- Social Share Buttons -->
+    <div class="product-share" style="margin-top: var(--space-4); padding: var(--space-4); border-top: 1px solid var(--color-border-secondary);">
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{canonicalUrl}}" target="_blank" style="display: inline-block; background: #1877f2; color: white; padding: 8px 14px; border-radius: 4px; font-size: 12px; font-weight: bold; text-decoration: none; margin-right: 8px;">Facebook</a>
+        <a href="https://www.instagram.com/?url={{canonicalUrl}}" target="_blank" style="display: inline-block; background: #e4405f; color: white; padding: 8px 14px; border-radius: 4px; font-size: 12px; font-weight: bold; text-decoration: none; margin-left: 8px;">IG</a>
+        <a href="https://x.com/intent/tweet?url={{canonicalUrl}}&text=Pogledaj proizvod DALLI" target="_blank" style="display: inline-block; background: #1da1f2; color: white; padding: 8px 14px; border-radius: 4px; font-size: 12px; font-weight: bold; text-decoration: none;">Twitter</a>
+    <a href="https://www.tiktok.com/@dalliofficial" target="_blank" style="display: inline-block; background: #black; color: white; padding: 8px 14px; border-radius: 4px; font-size: 12px; font-weight: bold; text-decoration: none; margin-left: 8px;">TikTok</a>
+    </div><!-- Reviews Section -->
+<!-- Reviews Section -->
+<section class="product-reviews" itemprop="reviews" itemscope itemtype="https://schema.org/Review" data-product-id="{{id}}">
+    <div class="container">
+        {{#if reviews.length}}
+        <div class="section-header" style="margin-bottom: var(--space-5); flex-wrap: wrap; gap: var(--space-3);">
+            <h2 class="section-title" style="font-size: var(--text-2xl); font-weight: var(--font-bold); color: var(--color-text-primary);">Recenzije kupaca</h2>
+            <div class="reviews-summary" style="display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4);">
+                <!-- Overall Rating -->
+                <div class="rating-overview" style="display: flex; align-items: center; gap: var(--space-4); flex: 1; min-width: 280px;">
+                    <div class="rating-score" style="text-align: center; padding: var(--space-3); background: var(--color-bg); border-radius: var(--radius-card); border: 1px solid var(--color-border); min-width: 80px;">
+                        <div style="font-size: var(--text-3xl); font-weight: var(--fw-bold); color: var(--color-accent);" id="avg-rating">{{reviewStats.averageRating}}</div>
+                        <div style="font-size: var(--text-sm); color: var(--color-text-tertiary);">/ 5.0</div>
+                        <div class="star-rating-summary" style="display: flex; gap: 2px; justify-content: center; margin-top: var(--space-2);">
+                            {{{reviewStarSummary}}}
+                        </div>
+                        <div style="font-size: var(--text-xs); color: var(--color-text-tertiary); margin-top: var(--space-1);" id="reviews-count">{{reviewStats.totalReviews}} recenzija</div>
+                    </div>
+                    <div class="rating-breakdown" style="flex: 1; min-width: 200px;">
+                        {{{reviewDistributionHtml}}}
+                    </div>
+                </div>
+                
+                <!-- Trust Signals -->
+                <div class="trust-signals" style="display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-3); padding: var(--space-3); background: var(--color-bg); border-radius: var(--radius-card); border: 1px solid var(--color-border);">
+                    <div class="trust-item" style="display: flex; align-items: center; gap: var(--space-2); padding: var(--space-2); background: var(--color-surface); border-radius: var(--radius-btn);">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--color-success);"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <div>
+                            <div style="font-weight: var(--fw-semibold); font-size: var(--text-lg); color: var(--color-success);" id="verified-percent">{{reviewStats.verifiedPercent}}%</div>
+                            <div style="font-size: var(--fs-xs); color: var(--color-text-tertiary);">Verifikovani kupci</div>
+                        </div>
+                    </div>
+                    <div class="trust-item" style="display: flex; align-items: center; gap: var(--space-2); padding: var(--space-2); background: var(--color-surface); border-radius: var(--radius-btn);">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--color-accent);"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <div>
+                            <div style="font-weight: var(--fw-semibold); font-size: var(--text-lg); color: var(--color-accent);" id="avg-rating-trust">{{reviewStats.averageRating}}</div>
+                            <div style="font-size: var(--fs-xs); color: var(--color-text-tertiary);">Prosečna ocena</div>
+                        </div>
+                    </div>
+                    <div class="trust-item" style="display: flex; align-items: center; gap: var(--space-2); padding: var(--space-2); background: var(--color-surface); border-radius: var(--radius-btn);">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--color-primary);"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        <div>
+                            <div style="font-weight: var(--fw-semibold); font-size: var(--text-lg); color: var(--color-primary);" id="verified-count">{{reviewStats.verifiedCount}}</div>
+                            <div style="font-size: var(--fs-xs); color: var(--color-text-tertiary);">Verifikovani kupci</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="reviews-list" style="max-height: 400px; overflow-y: auto; margin-top: var(--space-4);">
+            {{#each reviews}}
+            {{#if (eq status 'approved')}}
+            <div class="review-item" itemscope itemtype="https://schema.org/Review" style="margin-bottom: var(--space-3); padding-bottom: var(--space-3); border-bottom: 1px solid var(--color-border-primary);">
+                <div class="review-header" style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-2);">
+                    <div class="review-author" style="color: var(--color-text-tertiary); font-size: var(--text-sm);">
+                        <span itemprop="author" style="color: var(--color-text-primary); font-weight: var(--font-medium);">{{customerName}}</span>
+                        {{#if verified}}<span class="verified-badge" style="color: var(--color-success); font-size: var(--text-xs); font-weight: var(--font-bold);">✓ Verifikovano</span>{{/if}}
+                    </div>
+                    <div class="review-date" style="color: var(--color-text-tertiary); font-size: var(--text-xs);">
+                        <time itemprop="datePublished" datetime="{{date}}">{{formatRelativeDate date}}</time>
+                    </div>
+                </div>
+                <div class="review-rating" style="font-size: var(--text-lg); font-weight: var(--font-bold); color: var(--color-warning);">
+                    {{{stars rating}}}
+                    <span class="rating-value" style="margin-left: var(--space-1); color: var(--color-text-tertiary);">({{rating}}/5)</span>
+                </div>
+                <h3 class="review-title" itemprop="name" style="font-size: var(--text-base); font-weight: var(--font-medium); color: var(--color-text-primary); margin-bottom: var(--space-1);">{{title}}</h3>
+                <p class="review-text" itemprop="description" style="color: var(--color-text-tertiary); font-size: var(--text-sm); line-height: 1.5;">{{text}}</p>
+                {{#if adminNote}}<p class="review-admin-note" style="font-size: var(--text-xs); color: var(--color-text-tertiary); margin-top: var(--space-1);">Admin: {{adminNote}}</p>{{/if}}
+            </div>
+            {{/if}}
+            {{#if (eq status 'pending')}}
+            <div class="review-item pending-review" style="margin-bottom: var(--space-3); padding-bottom: var(--space-3); border-bottom: 1px dashed var(--color-border-primary); background-color: var(--color-bg-subtle);">
+                <div class="review-header" style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-2);">
+                    <div class="review-author" style="color: var(--color-text-tertiary); font-size: var(--text-sm);">
+                        <span itemprop="author" style="color: var(--color-text-primary); font-weight: var(--font-medium);">{{customerName}}</span>
+                        <span class="pending-badge" style="color: var(--color-warning); font-size: var(--text-xs); font-weight: var(--font-bold);">⏳ Na čekanju</span>
+                    </div>
+                    <div class="review-date" style="color: var(--color-text-tertiary); font-size: var(--text-xs);">
+                        <time itemprop="datePublished" datetime="{{date}}">{{formatRelativeDate date}}</time>
+                    </div>
+                </div>
+                <p class="review-text" style="color: var(--color-text-tertiary); font-size: var(--text-sm); line-height: 1.5;">Recenzija awaiting moderation...</p>
+                {{#if adminNote}}<p class="review-admin-note" style="font-size: var(--text-xs); color: var(--color-text-tertiary); margin-top: var(--space-1);">Admin: {{adminNote}}</p>{{/if}}
+            </div>
+            {{/if}}
+            {{#if (eq status 'rejected')}}
+            <div class="review-item rejected-review" style="margin-bottom: var(--space-3); padding-bottom: var(--space-3); border-bottom: 1px dotted var(--color-border-primary); color: var(--color-text-tertiary);">
+                <div class="review-header" style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-2);">
+                    <div class="review-author" style="color: var(--color-text-tertiary); font-size: var(--text-sm);">
+                        <span itemprop="author" style="color: var(--color-text-primary); font-weight: var(--font-medium);">{{customerName}}</span>
+                        <span class="rejected-badge" style="color: var(--color-danger); font-size: var(--text-xs); font-weight: var(--font-bold);">✗ Odbijena</span>
+                    </div>
+                    <div class="review-date" style="color: var(--color-text-tertiary); font-size: var(--text-xs);">
+                        <time itemprop="datePublished" datetime="{{date}}">{{formatRelativeDate date}}</time>
+                    </div>
+                </div>
+                <p class="review-text" style="color: var(--color-text-tertiary); font-size: var(--text-sm); line-height: 1.5;">Ova recenzija nije prihvaćena.</p>
+                {{#if adminNote}}<p class="review-admin-note" style="font-size: var(--text-xs); color: var(--color-text-tertiary); margin-top: var(--space-1);">Admin: {{adminNote}}</p>{{/if}}
+            </div>
+            {{/if}}
+{{/each}}
+        </div>
+        {{else}}
+        <div class="no-reviews" style="text-align: center; padding: var(--space-8); color: var(--color-text-tertiary);">
+            <p>Prve recenzije još uvek nisu objavljene. Biti prvi koji će oceneati ovaj proizvod!</p>
+        </div>
+        {{/if}}
+        
+        <div class="add-review-form" style="margin-top: var(--space-4); padding-top: var(--space-4); border-top: 1px solid var(--color-border-primary);">
+            <!-- React Island: živa forma za pisanje recenzije (statistika i lista ostaju SSR za SEO) -->
+            <div data-island="reviews" data-props="{&quot;productId&quot;:&quot;{{id}}&quot;,&quot;productName&quot;:&quot;{{name}}&quot;}"></div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         Q&A SECTION - Product Questions & Answers
+         ============================================================ -->
+    <section class="product-qa" aria-labelledby="qa-title" style="margin-top: var(--space-12);">
+        <div class="container">
+            <header class="section-header animate-fade-in">
+                <h2 id="qa-title" class="section-title">Pitanja i Odgovori</h2>
+                <p class="section-subtitle">Imate pitanje o ovom proizvodu? Postavite ga, a mi ili naša zajednica ćemo odgovoriti.</p>
+            </header>
+
+            <div class="qa-list" id="qaList" role="list" aria-label="Pitanja i odgovori">
+                {{#if qa.length}}
+                    {{#each qa}}
+                    <article class="qa-item" itemscope itemtype="https://schema.org/Question" style="margin-bottom: var(--space-6); padding-bottom: var(--space-6); border-bottom: 1px solid var(--color-divider);">
+                        <h3 class="qa-question" itemprop="name" style="font-size: var(--text-lg); font-weight: var(--fw-semibold); color: var(--color-text); margin-bottom: var(--space-3);">{{question}}</h3>
+                        <div class="qa-meta" style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-3); font-size: var(--fs-sm); color: var(--color-text-tertiary);">
+                            <span itemprop="author" style="font-weight: var(--fw-medium);">{{author}}</div>
+                            <time itemprop="dateCreated" datetime="{{date}}" style="color: var(--color-text-tertiary);">{{formatRelativeDate date}}</time>
+                        </div>
+                        {{#if answer}}
+                        <div class="qa-answer" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer" style="padding: var(--space-4); background: var(--color-bg); border-radius: var(--radius-card); border: 1px solid var(--color-divider);">
+                            <p class="qa-answer-label" style="font-size: var(--fs-xs); font-weight: var(--fw-semibold); color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: var(--space-2);">Odgovor:</p>
+                            <div itemprop="text" style="color: var(--color-text); line-height: 1.7;">{{answer}}</div>
+                            <div class="qa-answer-meta" style="margin-top: var(--space-3); padding-top: var(--space-3); border-top: 1px solid var(--color-divider); display: flex; align-items: center; gap: var(--space-3); font-size: var(--fs-xs); color: var(--color-text-tertiary);">
+                                <span itemprop="author" style="font-weight: var(--fw-medium);">{{answerAuthor}}</span>
+                                <time itemprop="dateCreated" datetime="{{answerDate}}" style="color: var(--color-text-tertiary);">{{formatRelativeDate answerDate}}</time>
+                            </div>
+                        </div>
+                        {{else}}
+                        <div class="qa-no-answer" style="padding: var(--space-4); background: var(--color-bg); border-radius: var(--radius-card); border: 1px dashed var(--color-border); text-align: center; color: var(--color-text-tertiary);">
+                            <p>Još nema odgovora. Budite prvi koji će pomoći!</p>
+                        </div>
+                        {{/if}}
+                    </article>
+                    {{/each}}
+                {{else}}
+                    <div class="qa-empty" style="text-align: center; padding: var(--space-12); color: var(--color-text-tertiary);">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin: 0 auto var(--space-4); color: var(--color-border);"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                        <h3 style="font-family: var(--font-display); font-size: var(--text-xl); font-weight: var(--fw-light); margin-bottom: var(--space-2);">Još nema postavljenih pitanja</h3>
+                        <p style="margin-bottom: var(--space-6);">Budite prvi koji postavlja pitanje o ovom proizvodu.</p>
+                        <button class="btn btn-primary" id="askQuestionBtn" style="padding: var(--space-3) var(--space-6);" data-action="ask-question">Postavi pitanje</button>
+                    </div>
+                {{/if}}
+            </div>
+
+            <!-- Ask Question Form (Modal/Inline) -->
+            <div class="qa-form hidden" id="qaForm" style="margin-top: var(--space-8); padding: var(--space-6); background: var(--color-surface); border: 1px solid var(--color-divider); border-radius: var(--radius-card);">
+                <h3 style="font-size: var(--text-xl); font-weight: var(--fw-semibold); margin-bottom: var(--space-4);">Postavi pitanje</h3>
+                <form class="qa-form" data-action="submit-question">
+                    <div class="form-group" style="margin-bottom: var(--space-4);">
+                        <label class="input-label" style="display: block; font-size: var(--text-sm); color: var(--color-text-tertiary); margin-bottom: var(--space-1);">Vaše pitanje</label>
+                        <textarea class="input-field" name="question" placeholder="Napišite vaše pitanje ovde..." rows="4" required style="min-height: 100px;"></textarea>
+                    </div>
+                    <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); margin-bottom: var(--space-3);">
+                        <div class="form-group">
+                            <label class="input-label" style="display: block; font-size: var(--text-sm); color: var(--color-text-tertiary); margin-bottom: var(--space-1);">Ime</label>
+                            <input type="text" class="input-field" name="authorName" placeholder="Vaše ime" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="input-label" style="display: block; font-size: var(--text-sm); color: var(--color-text-tertiary); margin-bottom: var(--space-1);">Email</label>
+                            <input type="email" class="input-field" name="authorEmail" placeholder="vaš@email.com" required>
+                        </div>
+                    </div>
+                    <div class="form-actions" style="display: flex; gap: var(--space-3); margin-top: var(--space-4);">
+                        <button type="submit" class="btn btn-primary" style="padding: var(--space-3) var(--space-6);">Pošaljite pitanje</button>
+                        <button type="button" class="btn btn-secondary" data-action="cancel-question" style="padding: var(--space-2) var(--space-4);">Otkaži</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FAQ SECTION - Product FAQs
+         ============================================================ -->
+    <section class="product-faq" aria-labelledby="faq-title" style="margin-top: var(--space-12);">
+        <div class="container">
+            <header class="section-header animate-fade-in">
+                <h2 id="faq-title" class="section-title">Često postavljana pitanja</h2>
+                <p class="section-subtitle">Brzi odgovori na najčešća pitanja o ovom proizvodu</p>
+            </header>
+            <faq-accordion page-type="product" page-slug="{{sku}}" max-items="5"></faq-accordion>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         COMPLETE THE LOOK - DALLI Styling Engine
+         ============================================================ -->
+    <section class="complete-the-look" aria-labelledby="completeLookTitle" style="margin-top: var(--space-16);">
+        <div class="container">
+            <header class="section-header animate-fade-in">
+                <h2 id="completeLookTitle" class="section-title">Complete The Look</h2>
+                <p class="section-subtitle">Curated pieces to complete your ensemble</p>
+            </header>
+            <div id="complete-the-look" data-product-id="{{id}}" role="list" aria-label="Complete the look recommendations"></div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         STYLE MATCHES & COLLECTION MATCHES
+         ============================================================ -->
+    <section class="style-matches-section" aria-labelledby="styleMatchesTitle" style="margin-top: var(--space-16);">
+        <div class="container">
+            <header class="section-header animate-fade-in">
+                <h2 id="styleMatchesTitle" class="section-title">Style Matches</h2>
+                <p class="section-subtitle">Products that share your style</p>
+            </header>
+            <div id="style-matches" data-product-id="{{id}}" role="list" aria-label="Style and collection matches"></div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         RECENTLY VIEWED PRODUCTS
+         ============================================================ -->
+    <section class="recently-viewed" aria-labelledby="recentlyViewedTitle" style="margin-top: var(--space-16);">
+        <div class="container">
+            <header class="section-header animate-fade-in">
+                <h2 id="recentlyViewedTitle" class="section-title">Nedavno Pregledano</h2>
+                <p class="section-subtitle">Proizvodi koje ste nedavno pregledali</p>
+            </header>
+
+            <div class="recently-viewed__carousel" id="recentlyViewedCarousel" role="region" aria-label="Nedavno pregledani proizvodi" data-recently-viewed-carousel>
+                <div class="recently-viewed__track" id="recentlyViewedTrack" role="list" aria-label="Nedavno pregledani proizvodi" style="display: flex; gap: var(--space-4); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: var(--space-4); scroll-padding: 0 var(--space-6);">
+                    {{#if recentlyViewed.length}}
+                        {{#each recentlyViewed}}
+                        <article class="recently-viewed__card" role="listitem" style="flex: 0 0 auto; width: 240px; scroll-snap-align: start;">
+                            <a href="{{getProductUrl this}}" class="recently-viewed__link" aria-label="{{name}}">
+<div class="recently-viewed__media" style="position: relative; aspect-ratio: 4/5; border-radius: var(--radius-card); overflow: hidden; background: var(--color-bg-subtle);">
+                                    <picture>
+                                        <source srcset="{{images.mainWebp320}} 320w, {{images.mainWebp640}} 640w" type="image/webp">
+                                        <img class="recently-viewed__image" src="{{images.main640}}" srcset="{{images.main320}} 320w, {{images.main640}} 640w" alt="{{name}}" loading="lazy" width="240" height="300" decoding="async" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--duration-normal) var(--ease-out);">
+                                    </picture>
+                                    <div class="recently-viewed__overlay" style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.6)); opacity: 0; transition: opacity var(--duration-fast);"></div>
+                                </div>
+                                <div class="recently-viewed__content" style="padding: var(--space-3) 0;">
+                                    <span class="recently-viewed__category" style="font-size: var(--fs-xs); color: var(--color-text-tertiary); text-transform: uppercase; letter-spacing: 0.05em;">{{getCategoryName category}}</span>
+                                    <h3 class="recently-viewed__name" style="font-family: var(--font-display); font-size: var(--text-base); font-weight: var(--fw-medium); color: var(--color-text); margin: var(--space-2) 0; line-height: 1.3;">{{name}}</h3>
+                                    <div class="recently-viewed__price" style="font-family: var(--font-display); font-size: var(--text-lg); font-weight: var(--fw-medium); color: var(--color-text);">{{formatPrice price}} {{currency}}</div>
+                                </div>
+                            </a>
+                        </article>
+                        {{/each}}
+                    {{else}}
+                        <div class="recently-viewed__empty" style="text-align: center; padding: var(--space-12); color: var(--color-text-tertiary);">
+                            <p>Još nemate nedavno pregledanih proizvoda.</p>
+                        </div>
+                    {{/if}}
+                </div>
+
+                <!-- Carousel Navigation (Mobile) -->
+                <div class="recently-viewed__nav" style="display: flex; justify-content: center; gap: var(--space-2); margin-top: var(--space-4);">
+                    <button type="button" class="recently-viewed__btn recently-viewed__btn--prev" aria-label="Prethodni" disabled style="width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--color-surface); border: 1px solid var(--color-border); cursor: pointer;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+                    </button>
+                    <div class="recently-viewed__dots" role="tablist" aria-label="Stranice"></div>
+                    <button type="button" class="recently-viewed__btn recently-viewed__btn--next" aria-label="Sledeći" disabled style="width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--color-surface); border: 1px solid var(--color-border); cursor: pointer;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- React Island: drawer korpa (SSG strandice nemaju vanilla drawer) -->
+    <div data-island="cart-drawer"></div>
+    <!-- React Islands loader (build ga zamenjuje hashed chunk-om u dist) -->
+    <script type="module" src="/js/islands/index.js" defer></script>
+    <script type="module" src="/personalization.js" defer></script>
+    <script type="module" src="/js/features/loyalty-integration.js" defer></script>

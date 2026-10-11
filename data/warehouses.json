@@ -1,0 +1,9 @@
+{
+  "version": "1.0",
+  "warehouses": [],
+  "routingRules": {
+    "default": "main_warehouse",
+    "regionalAllocation": true,
+    "preferNearest": true
+  }
+}

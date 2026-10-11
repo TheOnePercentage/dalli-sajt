@@ -1,0 +1,365 @@
+/* ==========================================================================
+   PROFIT SECTION STYLES
+   ========================================================================== */
+
+.profit-section {
+  /* Uses shared styles from dashboard.css */
+}
+
+/* Profit Summary Cards */
+.profit-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-5);
+  margin-bottom: var(--space-6);
+}
+
+.profit-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  position: relative;
+  transition: all var(--transition-smooth);
+}
+
+.profit-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--profit-color);
+}
+
+.profit-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--profit-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-smooth);
+}
+
+.profit-card:hover::before {
+  transform: scaleX(1);
+}
+
+.profit-card.revenue { --profit-color: var(--color-primary); }
+.profit-card.expenses { --profit-color: var(--color-error); }
+.profit-card.cogs { --profit-color: var(--color-warning); }
+.profit-card.gross { --profit-color: var(--color-info); }
+.profit-card.net { --profit-color: var(--color-accent); }
+.profit-card.margin { --profit-color: var(--color-success); }
+
+.profit-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.profit-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: var(--shadow-md);
+  flex-shrink: 0;
+}
+
+.profit-trend {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--text-2xs);
+  font-weight: var(--font-semibold);
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.profit-trend.positive {
+  background: var(--color-success-100);
+  color: var(--color-success-700);
+}
+
+[data-theme="dark"] .profit-trend.positive {
+  background: var(--color-success-900);
+  color: var(--color-success-300);
+}
+
+.profit-trend.negative {
+  background: var(--color-error-100);
+  color: var(--color-error-700);
+}
+
+[data-theme="dark"] .profit-trend.negative {
+  background: var(--color-error-900);
+  color: var(--color-error-300);
+}
+
+.profit-value {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-1);
+  font-variant-numeric: tabular-nums;
+  font-family: var(--font-numbers);
+}
+
+.profit-label {
+  font-size: var(--text-2xs);
+  font-weight: var(--font-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-tertiary);
+}
+
+.profit-sublabel {
+  font-size: var(--text-2xs);
+  color: var(--color-text-quaternary);
+  margin-top: var(--space-1);
+}
+
+/* Profit Chart */
+.profit-chart-container {
+  height: 350px;
+  position: relative;
+}
+
+/* Profit Table */
+.profit-table-container {
+  margin-top: var(--space-6);
+}
+
+.profit-table th,
+.profit-table td {
+  padding: var(--space-3) var(--space-4);
+}
+
+.profit-table .positive {
+  color: var(--color-success-600);
+}
+
+[data-theme="dark"] .profit-table .positive {
+  color: var(--color-success-400);
+}
+
+.profit-table .negative {
+  color: var(--color-error-600);
+}
+
+[data-theme="dark"] .profit-table .negative {
+  color: var(--color-error-400);
+}
+
+/* Monthly breakdown */
+.monthly-breakdown {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+
+.month-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  transition: all var(--transition-smooth);
+}
+
+.month-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-border-secondary);
+}
+
+.month-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-border-primary);
+}
+
+.month-name {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+}
+
+.month-net {
+  font-weight: var(--font-bold);
+  font-size: var(--text-lg);
+  font-family: var(--font-numbers);
+}
+
+.month-net.positive { color: var(--color-success-600); }
+.month-net.negative { color: var(--color-error-600); }
+
+[data-theme="dark"] .month-net.positive { color: var(--color-success-400); }
+[data-theme="dark"] .month-net.negative { color: var(--color-error-400); }
+
+.month-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+.month-detail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.month-detail-label {
+  font-size: var(--text-2xs);
+  font-weight: var(--font-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-tertiary);
+}
+
+.month-detail-value {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-primary);
+  font-family: var(--font-numbers);
+}
+
+/* Expense Categories */
+.expense-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.expense-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.expense-item:hover {
+  border-color: var(--color-border-secondary);
+}
+
+.expense-category {
+  flex: 1;
+  min-width: 0;
+}
+
+.expense-name {
+  font-weight: var(--font-medium);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.expense-bar {
+  height: 8px;
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.expense-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width var(--transition-smooth);
+}
+
+.expense-value {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 140px;
+}
+
+.expense-amount {
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  font-family: var(--font-numbers);
+}
+
+.expense-percent {
+  font-size: var(--text-2xs);
+  color: var(--color-text-tertiary);
+}
+
+/* COGS Breakdown */
+.cogs-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-md);
+}
+
+.cogs-product {
+  flex: 1;
+  min-width: 0;
+}
+
+.cogs-name {
+  font-weight: var(--font-medium);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.cogs-sku {
+  font-size: var(--text-2xs);
+  color: var(--color-text-tertiary);
+  font-family: var(--font-mono);
+}
+
+.cogs-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 160px;
+}
+
+.cogs-cost {
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  font-family: var(--font-numbers);
+}
+
+.cogs-margin {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+}
+
+.cogs-margin.positive { color: var(--color-success-600); }
+.cogs-margin.negative { color: var(--color-error-600); }
+
+[data-theme="dark"] .cogs-margin.positive { color: var(--color-success-400); }
+[data-theme="dark"] .cogs-margin.negative { color: var(--color-error-400); }
+
+/* Date Range Picker */
+.date-range-picker {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.date-range-picker input {
+  flex: 1;
+  max-width: 180px;
+}

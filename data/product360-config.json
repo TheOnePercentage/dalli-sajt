@@ -1,0 +1,12 @@
+{
+  "enabled": true,
+  "minImagesRequired": 24,
+  "supportedCategories": ["t-shirts", "hoodies", "tracksuits", "shirts", "blazers", "suits", "trousers", "coats", "dresses", "accessories"],
+  "placeholderImage": "/images/360/placeholder.avif",
+  "imageFormat": "avif",
+  "rotationSpeed": 1.0,
+  "autoRotate": false,
+  "zoomEnabled": true,
+  "fullscreenEnabled": true,
+  "hotspotsEnabled": true
+}

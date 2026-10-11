@@ -1,0 +1,71 @@
+{{!---- Email: Order Delivered ----}}
+{{template "email-base-template"}}
+
+{{#body_content}}
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="width: 100%; background-color: #ffffff; margin: 20px 0;">
+    <tr>
+        <td style="padding: 0;">
+
+            <!-- Order Delivered Header -->
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #f8f9fa; padding: 24px; border-radius: 12px 12px 0 0; margin-bottom: 24px;">
+                <tr>
+                    <td style="color: #2c3e50; font-size: 28px; font-weight: 600; line-height: 1.3;">
+                        ✅ Porudžbina isporučena!
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Delivery Confirmation -->
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="padding: 0 24px 24px;">
+                <tr>
+                    <td style="font-size: 14px; line-height: 1.6; color: #555555;">
+                        <p>Hvala vam na uči u DALLI! Naš tim je proverio da li ste zadovoljni vašom porudžbinom.</p>
+                        <p><strong>Broj porudžbine:</strong> <span style="color: #2c3e50; font-weight: 600;">{#ordernumber}</span></p>
+                        <p><strong>Datum isporuke:</strong> {#deliverydate}</p>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Feedback Request -->
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff; border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden; margin: 24px 0;">
+                <tr>
+                    <td style="background-color: #f8f9fa; padding: 20px; font-size: 14px; color: #555555;">
+                        <p>Bismo imali veliku sreću da li ste zadovoljni svojom porudžbinom?</p>
+                        <p style="margin: 20px 0;"><a href="{#feedbackurl}" style="display: inline-block; background-color: #2c3e50; color: #ffffff; padding: 12px 20px; border-radius: 8px; font-size: 14px; font-weight: 500; text-decoration: none;">Da, bilo je ok</a> 
+                        <a href="{#feedbackurl2}" style="display: inline-block; background-color: #e74c3c; color: #ffffff; padding: 12px 20px; border-radius: 8px; font-size: 14px; font-weight: 500; text-decoration: none; margin-left: 10px;">Ne, imam issue</a></p>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Order Summary -->
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="padding: 0 24px 24px;">
+                <tr>
+                    <td style="font-size: 14px; line-height: 1.6; color: #555555;">
+                        <strong>Porudžbina sadržavala:</strong> {#itemsummary}
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Special Offer -->
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="padding: 0 24px 24px; margin-top: 24px;">
+                <tr>
+                    <td style="font-size: 14px; line-height: 1.6; color: #555555;">
+                        <p>Hvala što ste izabrali DALLI. Na vašu sljedeću porudžbinu imamo poseban obradovni kod: <strong style="color: #2c3e50;">WELCOME10</strong> za 10% popust!</p>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Contact Info -->
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="padding: 0 24px 24px; border-top: 1px solid #e0e0e0; margin-top: 24px;">
+                <tr>
+                    <td style="font-size: 12px; line-height: 1.6; color: #777777;">
+                        <p>Ako imate pitanja concerning vašim porudžinom, kontaktirajte nas na <a href="mailto:info@dalli.rs" style="color: #777777;">info@dalli.rs</a></p>
+                        <p>DALLI d.o.o. | Beograd, Srbija</p>
+                    </td>
+                </tr>
+            </table>
+
+        </td>
+    </tr>
+</table>
+{{/body_content}}

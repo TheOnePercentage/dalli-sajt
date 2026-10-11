@@ -1,0 +1,179 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "dalli-belgrade-center",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.46,
+          44.815
+        ]
+      },
+      "properties": {
+        "name": "DALLI Beograd Centar",
+        "slug": "beograd-centar",
+        "type": "flagship",
+        "address": "Knez Mihailova 15, 11000 Beograd",
+        "phone": "+381 11 2630 123",
+        "email": "beograd-centar@dalli.rs",
+        "openingHours": "Monday: 10:00-21:00; Tuesday: 10:00-21:00; Wednesday: 10:00-21:00; Thursday: 10:00-21:00; Friday: 10:00-21:00; Saturday: 10:00-20:00; Sunday: 11:00-19:00",
+        "features": [
+          "wheelchair_accessible",
+          "wifi",
+          "fitting_rooms",
+          "personal_shopper",
+          "gift_wrapping",
+          "click_collect",
+          "in_store_returns"
+        ],
+        "services": [
+          "personal_styling",
+          "alterations",
+          "gift_cards",
+          "loyalty_program"
+        ],
+        "url": "/locations/beograd-centar.html",
+        "googleMapsUrl": "https://maps.google.com/?cid=12345678901234567890",
+        "googlePlaceId": "ChIJX8Y9Z1234567890"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "dalli-belgrade-usce",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.422,
+          44.819
+        ]
+      },
+      "properties": {
+        "name": "DALLI Ušće Shopping Center",
+        "slug": "usce-shopping-center",
+        "type": "mall",
+        "address": "Bulevar Mihajla Pupina 5, Ušće Shopping Center, 1. sprat, 11070 Beograd",
+        "phone": "+381 11 3110 456",
+        "email": "usce@dalli.rs",
+        "openingHours": "Monday: 10:00-22:00; Tuesday: 10:00-22:00; Wednesday: 10:00-22:00; Thursday: 10:00-22:00; Friday: 10:00-22:00; Saturday: 10:00-22:00; Sunday: 10:00-21:00",
+        "features": [
+          "wheelchair_accessible",
+          "fitting_rooms",
+          "gift_wrapping",
+          "click_collect",
+          "in_store_returns"
+        ],
+        "services": [
+          "gift_cards",
+          "loyalty_program"
+        ],
+        "url": "/locations/usce-shopping-center.html",
+        "googleMapsUrl": "https://maps.google.com/?cid=12345678901234567891",
+        "googlePlaceId": "ChIJX8Y9Z1234567891"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "dalli-novi-sad",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.8369,
+          45.2517
+        ]
+      },
+      "properties": {
+        "name": "DALLI Novi Sad - Promenada Mall",
+        "slug": "novi-sad-promenada",
+        "type": "mall",
+        "address": "Bulevar Oslobođenja 30, Promenada Mall, 2. sprat, 21000 Novi Sad",
+        "phone": "+381 21 425 789",
+        "email": "novi-sad@dalli.rs",
+        "openingHours": "Monday: 10:00-21:00; Tuesday: 10:00-21:00; Wednesday: 10:00-21:00; Thursday: 10:00-21:00; Friday: 10:00-21:00; Saturday: 10:00-21:00; Sunday: 10:00-20:00",
+        "features": [
+          "wheelchair_accessible",
+          "fitting_rooms",
+          "gift_wrapping",
+          "click_collect",
+          "in_store_returns"
+        ],
+        "services": [
+          "gift_cards",
+          "loyalty_program"
+        ],
+        "url": "/locations/novi-sad-promenada.html",
+        "googleMapsUrl": "https://maps.google.com/?cid=12345678901234567892",
+        "googlePlaceId": "ChIJX8Y9Z1234567892"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "dalli-nis",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.895,
+          43.321
+        ]
+      },
+      "properties": {
+        "name": "DALLI Niš - Forum Mall",
+        "slug": "nis-forum-mall",
+        "type": "mall",
+        "address": "Bulevar Nemanjića 45, Forum Mall, 1. sprat, 18000 Niš",
+        "phone": "+381 18 555 123",
+        "email": "nis@dalli.rs",
+        "openingHours": "Monday: 10:00-21:00; Tuesday: 10:00-21:00; Wednesday: 10:00-21:00; Thursday: 10:00-21:00; Friday: 10:00-21:00; Saturday: 10:00-21:00; Sunday: 10:00-20:00",
+        "features": [
+          "wheelchair_accessible",
+          "fitting_rooms",
+          "gift_wrapping",
+          "click_collect",
+          "in_store_returns"
+        ],
+        "services": [
+          "gift_cards",
+          "loyalty_program"
+        ],
+        "url": "/locations/nis-forum-mall.html",
+        "googleMapsUrl": "https://maps.google.com/?cid=12345678901234567893",
+        "googlePlaceId": "ChIJX8Y9Z1234567893"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "dalli-kragujevac",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.9167,
+          44.0167
+        ]
+      },
+      "properties": {
+        "name": "DALLI Kragujevac - Delta City",
+        "slug": "kragujevac-delta-city",
+        "type": "mall",
+        "address": "Kralja Aleksandra Karađorđevića 78, Delta City, 34000 Kragujevac",
+        "phone": "+381 34 333 456",
+        "email": "kragujevac@dalli.rs",
+        "openingHours": "Monday: 10:00-21:00; Tuesday: 10:00-21:00; Wednesday: 10:00-21:00; Thursday: 10:00-21:00; Friday: 10:00-21:00; Saturday: 10:00-21:00; Sunday: 10:00-20:00",
+        "features": [
+          "wheelchair_accessible",
+          "fitting_rooms",
+          "gift_wrapping",
+          "click_collect",
+          "in_store_returns"
+        ],
+        "services": [
+          "gift_cards",
+          "loyalty_program"
+        ],
+        "url": "/locations/kragujevac-delta-city.html",
+        "googleMapsUrl": "https://maps.google.com/?cid=12345678901234567894",
+        "googlePlaceId": "ChIJX8Y9Z1234567894"
+      }
+    }
+  ]
+}

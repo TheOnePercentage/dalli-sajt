@@ -1,0 +1,475 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "Osnovna majica za svakodnevno wear - Kako izabrati idealnu majicu",
+      "slug": "osnovna-majica-za-svakodnevno-wear",
+      "date": "2024-01-15",
+      "excerpt": "Uvod u world of osnovnih majica i kako ih pravilno izabrati za svoj tip tela.",
+      "content": "Osnovna majica je fondopoljak svake garde Robe. U ovom članku objašnjavamo razlike između različitih tipova tkanina, tapanja i priva. Kako izabrati idealnu majicu za svoj tip tela i anđeo forma. 100% organski pamuk, gramaza i sve što treba da znate pre kupovine.",
+      "authorId": "1",
+      "categoryId": "fashion",
+      "tags": [
+        "fashion",
+        "style",
+        "clothing",
+        "basics"
+      ],
+      "featuredImage": "/images/blog/majica.jpg",
+      "readingTime": "6 min read",
+      "seo": {
+        "metaTitle": "Osnovna majica za svakodnevno wear - Kako izabrati idealnu majicu",
+        "metaDescription": "Kako izabrati idealnu osnovnu majicu. Uvod u tkanine, tapanje i prsuit za perfectnu majicu za svaki tip tela.",
+        "keywords": [
+          "osnovna majica",
+          "moda",
+          "stil",
+          "odelo",
+          "basics"
+        ]
+      },
+      "jsonLd": {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Osnovna majica za svakodnevno wear - Kako izabrati idealnu majicu",
+        "image": "/images/blog/majica.jpg",
+        "author": {
+          "@type": "Person",
+          "name": "Admin User"
+        },
+        "datePublished": "2024-01-15",
+        "dateModified": "2024-01-15",
+        "description": "Kako izabrati idealnu osnovnu majicu. Uvod u tkanine, tapanje i prsuit za perfectnu majicu za svaki tip tela.",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://dalli.rs/blog/osnovna-majica-za-svakodnevno-wear"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "DALLI",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://dalli.rs/images/logo.svg",
+            "width": 600,
+            "height": 600
+          }
+        }
+      },
+      "locale": "sr-RS",
+      "title_en": "Osnovna majica za svakodnevno wear - Kako izabrati idealnu majicu",
+      "title_sr": "Osnovna majica za svakodnevno wear - Kako izabrati idealnu majicu",
+      "excerpt_en": "Uvod u world of osnovnih majica i kako ih pravilno izabrati za svoj tip tela.",
+      "excerpt_sr": "Uvod u world of osnovnih majica i kako ih pravilno izabrati za svoj tip tela.",
+      "metaTitle_en": "Osnovna majica za svakodnevno wear - Kako izabrati idealnu majicu",
+      "metaTitle_sr": "Osnovna majica za svakodnevno wear - Kako izabrati idealnu majicu",
+      "metaDescription_en": "Kako izabrati idealnu osnovnu majicu. Uvod u tkanine, tapanje i prsuit za perfectnu majicu za svaki tip tela.",
+      "metaDescription_sr": "Kako izabrati idealnu osnovnu majicu. Uvod u tkanine, tapanje i prsuit za perfectnu majicu za svaki tip tela.",
+      "keywords_en": [
+        "osnovna majica",
+        "moda",
+        "stil",
+        "odelo",
+        "basics"
+      ],
+      "keywords_sr": [
+        "osnovna majica",
+        "moda",
+        "stil",
+        "odelo",
+        "basics"
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Sustainability u fashion industry - Budućnost mode",
+      "slug": "sustainability-u-fashion-industry",
+      "date": "2024-01-10",
+      "excerpt": "How sustainable practices are transforming the fashion industry and what consumers should know.",
+      "content": "Sustainability u fashion industry postaje sve važniji topic. Od organskog pamuka do reciklovanih materijala, objašnjavamo kako brendovi.transformiraju svoje prakse. Kako kao kupac podrazumevati sustainable opcije i da li vredi dodatnih troškovima. | Ekološka modi i green washing. | Budućnost mode je zelena.",
+      "authorId": "1",
+      "categoryId": "lifestyle",
+      "tags": [
+        "sustainability",
+        "ecology",
+        "fashion",
+        "environment"
+      ],
+      "featuredImage": "/images/blog/sustainability.jpg",
+      "readingTime": "8 min read",
+      "seo": {
+        "metaTitle": "Sustainability u fashion industry - Budućnost mode",
+        "metaDescription": "Sustainability u fashion industry - kako su zelene prakse transforming mode. Šta kupci moraju znati o organskom pamuklu i reciklovanim materijalam.",
+        "keywords": [
+          "sustainability",
+          "fashion",
+          "ekologija",
+          "moda",
+          "environment"
+        ]
+      },
+      "jsonLd": {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Sustainability u fashion industry - Budućnost mode",
+        "image": "/images/blog/sustainability.jpg",
+        "author": {
+          "@type": "Person",
+          "name": "Admin User"
+        },
+        "datePublished": "2024-01-10",
+        "dateModified": "2024-01-10",
+        "description": "Sustainability u fashion industry - kako su zelene prakse transforming mode. Šta kupci moraju znati o organskom pamuklu i reciklovanim materijalam.",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://dalli.rs/blog/sustainability-u-fashion-industry"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "DALLI",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://dalli.rs/images/logo.svg",
+            "width": 600,
+            "height": 600
+          }
+        }
+      },
+      "locale": "sr-RS",
+      "title_en": "Sustainability u fashion industry - Budućnost mode",
+      "title_sr": "Sustainability u fashion industry - Budućnost mode",
+      "excerpt_en": "How sustainable practices are transforming the fashion industry and what consumers should know.",
+      "excerpt_sr": "How sustainable practices are transforming the fashion industry and what consumers should know.",
+      "metaTitle_en": "Sustainability u fashion industry - Budućnost mode",
+      "metaTitle_sr": "Sustainability u fashion industry - Budućnost mode",
+      "metaDescription_en": "Sustainability u fashion industry - kako su zelene prakse transforming mode. Šta kupci moraju znati o organskom pamuklu i reciklovanim materijalam.",
+      "metaDescription_sr": "Sustainability u fashion industry - kako su zelene prakse transforming mode. Šta kupci moraju znati o organskom pamuklu i reciklovanim materijalam.",
+      "keywords_en": [
+        "sustainability",
+        "fashion",
+        "ekologija",
+        "moda",
+        "environment"
+      ],
+      "keywords_sr": [
+        "sustainability",
+        "fashion",
+        "ekologija",
+        "moda",
+        "environment"
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Business tips za novi fashion entrepreneurship",
+      "slug": "business-tips-za-novi-fashion-entrepreneurship",
+      "date": "2024-01-05",
+      "excerpt": "Essential business advice for anyone starting a fashion brand in today's market.",
+      "content": "Pokretanje fashion brenda nikada nije bio lako, ali digitalni kanalzi su nova pravila igre. Od koncepcije do prvog prodaje, objašnjavamo korake koje morate preuzeti. | Finansijsko planiranje, marketing strategije i kako izbegavati čest greške. | Uspeh u fashion biznisu zahteva kombinaciju kreativnosti i business savest.",
+      "authorId": "1",
+      "categoryId": "business",
+      "tags": [
+        "business",
+        "entrepreneurship",
+        "fashion",
+        "startup"
+      ],
+      "featuredImage": "/images/blog/business.jpg",
+      "readingTime": "10 min read",
+      "seo": {
+        "metaTitle": "Business tips za novi fashion entrepreneurship",
+        "metaDescription": "Business tips za novi fashion entrepreneurship. Koraci za uspelog usvajanja moda brenda od koncepcije do prvog prodaje.",
+        "keywords": [
+          "business",
+          "entrepreneurship",
+          "fashion brand",
+          "startup"
+        ]
+      },
+      "jsonLd": {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Business tips za novi fashion entrepreneurship",
+        "image": "/images/blog/business.jpg",
+        "author": {
+          "@type": "Person",
+          "name": "Admin User"
+        },
+        "datePublished": "2024-01-05",
+        "dateModified": "2024-01-05",
+        "description": "Business tips za novi fashion entrepreneurship. Koraci za uspelog usvajanja moda brenda od koncepcije do prvog prodaje.",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://dalli.rs/blog/business-tips-za-novi-fashion-entrepreneurship"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "DALLI",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://dalli.rs/images/logo.svg",
+            "width": 600,
+            "height": 600
+          }
+        }
+      },
+      "locale": "sr-RS",
+      "title_en": "Business tips za novi fashion entrepreneurship",
+      "title_sr": "Business tips za novi fashion entrepreneurship",
+      "excerpt_en": "Essential business advice for anyone starting a fashion brand in today's market.",
+      "excerpt_sr": "Essential business advice for anyone starting a fashion brand in today's market.",
+      "metaTitle_en": "Business tips za novi fashion entrepreneurship",
+      "metaTitle_sr": "Business tips za novi fashion entrepreneurship",
+      "metaDescription_en": "Business tips za novi fashion entrepreneurship. Koraci za uspelog usvajanja moda brenda od koncepcije do prvog prodaje.",
+      "metaDescription_sr": "Business tips za novi fashion entrepreneurship. Koraci za uspelog usvajanja moda brenda od koncepcije do prvog prodaje.",
+      "keywords_en": [
+        "business",
+        "entrepreneurship",
+        "fashion brand",
+        "startup"
+      ],
+      "keywords_sr": [
+        "business",
+        "entrepreneurship",
+        "fashion brand",
+        "startup"
+      ]
+    },
+    {
+      "id": "4",
+      "title": "How to style trainerke za svakuiju Anđu",
+      "slug": "how-to-style-trainerke-za-svakuiju-andu",
+      "date": "2024-01-01",
+      "excerpt": "Complete guide to styling sneakers for every occasion and personal style.",
+      "content": "Trainerke su više od samo cal footwear - they're a fashion statement. U ovom comprehensivnom vodiču objašnjavamo kako kombinovati trenerke sa različitim outfits, kada izabrati visoku ili nizku suvent, i kako održavati ih u perfectnom stanju godinama. | Trendovi za leto, herceg intelektualni fashion saveti.",
+      "authorId": "1",
+      "categoryId": "fashion",
+      "tags": [
+        "fashion",
+        "style",
+        "sneakers",
+        "footwear"
+      ],
+      "featuredImage": "/images/blog/trainerke.jpg",
+      "readingTime": "7 min read",
+      "seo": {
+        "metaTitle": "How to style trainerke za svakuiju Anđu",
+        "metaDescription": "Complete guide to styling sneakers for every occasion. Kako kombinovati trenerke sa outfits i kada izabrati odgovarajući model za svakuiju gelegenost.",
+        "keywords": [
+          "trainerke",
+          "sneakers",
+          "moda",
+          "stil",
+          "footwear"
+        ]
+      },
+      "jsonLd": {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "How to style trainerke za svakuiju Anđu",
+        "image": "/images/blog/trainerke.jpg",
+        "author": {
+          "@type": "Person",
+          "name": "Admin User"
+        },
+        "datePublished": "2024-01-01",
+        "dateModified": "2024-01-01",
+        "description": "Complete guide to styling sneakers for every occasion and personal style.",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://dalli.rs/blog/how-to-style-trainerke-za-svakuiju-andu"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "DALLI",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://dalli.rs/images/logo.svg",
+            "width": 600,
+            "height": 600
+          }
+        }
+      },
+      "locale": "sr-RS",
+      "title_en": "How to style trainerke za svakuiju Anđu",
+      "title_sr": "How to style trainerke za svakuiju Anđu",
+      "excerpt_en": "Complete guide to styling sneakers for every occasion and personal style.",
+      "excerpt_sr": "Complete guide to styling sneakers for every occasion and personal style.",
+      "metaTitle_en": "How to style trainerke za svakuiju Anđu",
+      "metaTitle_sr": "How to style trainerke za svakuiju Anđu",
+      "metaDescription_en": "Complete guide to styling sneakers for every occasion. Kako kombinovati trenerke sa outfits i kada izabrati odgovarajući model za svakuiju gelegenost.",
+      "metaDescription_sr": "Complete guide to styling sneakers for every occasion. Kako kombinovati trenerke sa outfits i kada izabrati odgovarajući model za svakuiju gelegenost.",
+      "keywords_en": [
+        "trainerke",
+        "sneakers",
+        "moda",
+        "stil",
+        "footwear"
+      ],
+      "keywords_sr": [
+        "trainerke",
+        "sneakers",
+        "moda",
+        "stil",
+        "footwear"
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Digital transformation u fashion retail",
+      "slug": "digital-transformation-u-fashion-retail",
+      "date": "2023-12-20",
+      "excerpt": "How technology is reshaping the fashion retail landscape.",
+      "content": "E-commerce platforms, AI-powered recommendations, virtual try-on technologies - objašnjavamo kako tehnologija menja cara kupujemo odeću. | Digitalni marketing strategije za brendove, omnichannel experience, i šta će budućnost doneti fashion industriji.",
+      "authorId": "1",
+      "categoryId": "technology",
+      "tags": [
+        "technology",
+        "fashion",
+        "e-commerce",
+        "digital"
+      ],
+      "featuredImage": "/images/blog/digital.jpg",
+      "readingTime": "9 min read",
+      "seo": {
+        "metaTitle": "Digital transformation u fashion retail",
+        "metaDescription": "How technology is reshaping the fashion retail landscape. E-commerce, AI, and the future of fashion shopping.",
+        "keywords": [
+          "technology",
+          "fashion",
+          "e-commerce",
+          "digital transformation"
+        ]
+      },
+      "jsonLd": {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Digital transformation u fashion retail",
+        "image": "/images/blog/digital.jpg",
+        "author": {
+          "@type": "Person",
+          "name": "Admin User"
+        },
+        "datePublished": "2023-12-20",
+        "dateModified": "2023-12-20",
+        "description": "How technology is reshaping the fashion retail landscape.",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://dalli.rs/blog/digital-transformation-u-fashion-retail"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "DALLI",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://dalli.rs/images/logo.svg",
+            "width": 600,
+            "height": 600
+          }
+        }
+      },
+      "locale": "sr-RS",
+      "title_en": "Digital transformation u fashion retail",
+      "title_sr": "Digital transformation u fashion retail",
+      "excerpt_en": "How technology is reshaping the fashion retail landscape.",
+      "excerpt_sr": "How technology is reshaping the fashion retail landscape.",
+      "metaTitle_en": "Digital transformation u fashion retail",
+      "metaTitle_sr": "Digital transformation u fashion retail",
+      "metaDescription_en": "How technology is reshaping the fashion retail landscape. E-commerce, AI, and the future of fashion shopping.",
+      "metaDescription_sr": "How technology is reshaping the fashion retail landscape. E-commerce, AI, and the future of fashion shopping.",
+      "keywords_en": [
+        "technology",
+        "fashion",
+        "e-commerce",
+        "digital transformation"
+      ],
+      "keywords_sr": [
+        "technology",
+        "fashion",
+        "e-commerce",
+        "digital transformation"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "id": "fashion",
+      "name": "Fashion",
+      "slug": "fashion",
+      "description": "Articles about fashion, style, trends, and clothing",
+      "locale": "sr-RS"
+    },
+    {
+      "id": "lifestyle",
+      "name": "Lifestyle",
+      "slug": "lifestyle",
+      "description": "Lifestyle tips, sustainability, and daily inspiration",
+      "locale": "sr-RS"
+    },
+    {
+      "id": "business",
+      "name": "Business",
+      "slug": "business",
+      "description": "Business and entrepreneurship in fashion",
+      "locale": "sr-RS"
+    },
+    {
+      "id": "technology",
+      "slug": "technology",
+      "name": "Technology",
+      "description": "Tech news and reviews for fashion industry",
+      "locale": "sr-RS"
+    }
+  ],
+  "tags": [
+    {
+      "id": "style",
+      "name": "Style",
+      "slug": "style",
+      "locale": "sr-RS"
+    },
+    {
+      "id": "trends",
+      "name": "Trends",
+      "slug": "trends",
+      "locale": "sr-RS"
+    },
+    {
+      "id": "sustainability",
+      "name": "Sustainability",
+      "slug": "sustainability",
+      "locale": "sr-RS"
+    },
+    {
+      "id": "entrepreneurship",
+      "name": "Entrepreneurship",
+      "slug": "entrepreneurship",
+      "locale": "sr-RS"
+    },
+    {
+      "id": "ecology",
+      "name": "Ecology",
+      "slug": "ecology",
+      "locale": "sr-RS"
+    },
+    {
+      "id": "footwear",
+      "name": "Footwear",
+      "slug": "footwear",
+      "locale": "sr-RS"
+    }
+  ],
+  "authors": [
+    {
+      "id": "1",
+      "name": "Admin User",
+      "slug": "admin",
+      "avatar": "/images/avatar.jpg",
+      "bio": "Site administrator and content creator with passion for fashion, lifestyle, and business.",
+      "social": {
+        "twitter": "@dalli_fashion",
+        "instagram": "@dalli_ecommerce",
+        "linkedin": "dalli-ecommerce"
+      }
+    }
+  ]
+}

@@ -1,0 +1,288 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-10-09T00:00:00Z",
+  "dalliWorlds": {
+    "enabled": true,
+    "worlds": [
+      {
+        "id": "casual",
+        "name": "Casual World",
+        "label": "Casual",
+        "description": "Effortless luxury for everyday moments. Where comfort meets character.",
+        "hero": {
+          "title": "Casual World",
+          "subtitle": "Effortless luxury for everyday moments",
+          "signatureMessage": "Dressed for life, not for show.",
+          "atmosphereImage": "/images/worlds/casual-hero.jpg",
+          "atmosphereVideo": "/videos/worlds/casual-atmosphere.mp4",
+          "collectionFilm": "/videos/films/casual-world-film.mp4"
+        },
+        "brandVoice": {
+          "tone": "relaxed, confident, intimate",
+          "keywords": ["effortless", "versatile", "timeless", "comfort", "character"],
+          "avoid": ["formal", "rigid", "ostentatious", "trendy"]
+        },
+        "colorPalette": {
+          "primary": "#2d2d2d",
+          "secondary": "#8b7d6b",
+          "accent": "#c9b896",
+          "background": "#faf9f7",
+          "text": "#1a1a1a",
+          "muted": "#999999"
+        },
+        "typography": {
+          "display": "Cormorant Garamond",
+          "body": "Inter",
+          "accent": "Playfair Display"
+        },
+        "layout": {
+          "gridDensity": "comfortable",
+          "whiteSpace": "generous",
+          "imageRatio": "4:5",
+          "hoverBehavior": "subtle-reveal"
+        },
+        "navigation": {
+          "style": "editorial-sidebar",
+          "showJourney": true,
+          "showMaterials": true,
+          "showLooks": true,
+          "showStories": true
+        },
+        "journeySteps": [
+          "discover",
+          "story",
+          "materials",
+          "looks",
+          "products",
+          "membership"
+        ],
+        "collections": ["t-shirts", "hoodies", "tracksuits", "shirts", "trousers", "jackets", "accessories"],
+        "membershipIntegration": {
+          "earlyAccess": true,
+          "exclusiveContent": ["member", "silver", "gold"],
+          "privateClientPreview": ["black", "private-client", "elite-client"]
+        },
+        "signatureMoments": ["welcome", "seasonal-launch", "collection-entry"]
+      },
+      {
+        "id": "elegance",
+        "name": "Elegance World",
+        "label": "Elegance",
+        "description": "Refined sophistication for life's defining moments. Where craftsmanship becomes legacy.",
+        "hero": {
+          "title": "Elegance World",
+          "subtitle": "Refined sophistication for life's defining moments",
+          "signatureMessage": "Excellence is not an act, but a habit.",
+          "atmosphereImage": "/images/worlds/elegance-hero.jpg",
+          "atmosphereVideo": "/videos/worlds/elegance-atmosphere.mp4",
+          "collectionFilm": "/videos/films/elegance-world-film.mp4"
+        },
+        "brandVoice": {
+          "tone": "authoritative, poetic, aspirational",
+          "keywords": ["refined", "sophisticated", "legacy", "craftsmanship", "timeless"],
+          "avoid": ["casual", "playful", "discount", "fast"]
+        },
+        "colorPalette": {
+          "primary": "#1a1a2e",
+          "secondary": "#d4a843",
+          "accent": "#f0e6d2",
+          "background": "#0f0f1a",
+          "text": "#ffffff",
+          "muted": "#8b7d6b"
+        },
+        "typography": {
+          "display": "Cormorant Garamond",
+          "body": "Inter",
+          "accent": "Playfair Display"
+        },
+        "layout": {
+          "gridDensity": "spacious",
+          "whiteSpace": "luxurious",
+          "imageRatio": "3:4",
+          "hoverBehavior": "cinematic-reveal"
+        },
+        "navigation": {
+          "style": "immersive-fullscreen",
+          "showJourney": true,
+          "showMaterials": true,
+          "showLooks": true,
+          "showStories": true
+        },
+        "journeySteps": [
+          "discover",
+          "story",
+          "materials",
+          "looks",
+          "products",
+          "membership"
+        ],
+        "collections": ["shirts", "blazers", "suits", "trousers", "coats", "dresses"],
+        "membershipIntegration": {
+          "earlyAccess": true,
+          "exclusiveContent": ["silver", "gold", "black"],
+          "privateClientPreview": ["private-client", "elite-client"]
+        },
+        "signatureMoments": ["welcome", "collection-launch", "private-client-welcome", "vip-release"]
+      }
+    ],
+    "worldTransition": {
+      "enabled": true,
+      "transitionType": "cinematic-crossfade",
+      "duration": 800,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+    },
+    "defaultWorld": "casual"
+  },
+  "editorialExperience": {
+    "enabled": true,
+    "layouts": {
+      "magazine": {
+        "name": "Magazine Layout",
+        "description": "Editorial spreads with asymmetric grids, pull quotes, and storytelling flow",
+        "columns": 12,
+        "gutter": "fluid",
+        "breakoutEnabled": true
+      },
+      "storytelling": {
+        "name": "Storytelling Layout",
+        "description": "Long-form narrative with chapter navigation, inline media, and reading progress",
+        "chapters": true,
+        "readingTime": true,
+        "progressIndicator": true
+      },
+      "collectionFeature": {
+        "name": "Collection Feature Layout",
+        "description": "Hero-driven collection story with integrated products, looks, and materials",
+        "heroFirst": true,
+        "integratedCommerce": true,
+        "stickyNavigation": true
+      },
+      "luxuryReading": {
+        "name": "Luxury Reading Experience",
+        "description": "Distraction-free reading with typography focus, dark mode, and custom fonts",
+        "fontSizeControl": true,
+        "lineHeightControl": true,
+        "darkMode": true,
+        "textOnlyMode": true
+      }
+    },
+    "typography": {
+      "scale": {
+        "xs": "0.75rem",
+        "sm": "0.875rem",
+        "base": "1rem",
+        "lg": "1.125rem",
+        "xl": "1.25rem",
+        "2xl": "1.5rem",
+        "3xl": "2rem",
+        "4xl": "3rem",
+        "5xl": "4rem"
+      },
+      "lineHeights": {
+        "tight": "1.1",
+        "normal": "1.6",
+        "relaxed": "1.8",
+        "loose": "2.0"
+      },
+      "letterSpacing": {
+        "tight": "-0.02em",
+        "normal": "0",
+        "wide": "0.02em",
+        "wider": "0.05em",
+        "tracking-widest": "0.1em"
+      }
+    },
+    "colorModes": {
+      "light": {
+        "background": "#faf9f7",
+        "text": "#1a1a1a",
+        "muted": "#6b6b6b",
+        "accent": "#d4a843"
+      },
+      "dark": {
+        "background": "#0f0f1a",
+        "text": "#faf9f7",
+        "muted": "#8b7d6b",
+        "accent": "#f0e6d2"
+      },
+      "sepia": {
+        "background": "#f5f0e8",
+        "text": "#2d2520",
+        "muted": "#8b7d6b",
+        "accent": "#b8860b"
+      }
+    }
+  },
+  "cinematicCollection": {
+    "enabled": true,
+    "components": {
+      "collectionFilm": {
+        "enabled": true,
+        "autoplay": false,
+        "muted": true,
+        "loop": true,
+        "poster": "/images/films/collection-poster.jpg",
+        "skipButton": true,
+        "fullscreen": true
+      },
+      "editorialHero": {
+        "enabled": true,
+        "parallax": true,
+        "revealAnimation": "fade-up",
+        "staggerDelay": 100,
+        "textAnimation": "line-by-line"
+      },
+      "collectionStory": {
+        "enabled": true,
+        "chapters": ["heritage", "craftsmanship", "design", "materials", "philosophy"],
+        "chapterNavigation": true,
+        "estimatedReadTime": true
+      },
+      "atmosphereContent": {
+        "enabled": true,
+        "ambientVideo": true,
+        "kenBurnsEffect": true,
+        "layeredReveal": true
+      },
+      "signatureMessaging": {
+        "enabled": true,
+        "typewriterEffect": true,
+        "pauseDuration": 2000,
+        "loop": false
+      }
+    },
+    "performance": {
+      "lazyLoadThreshold": "200px",
+      "videoPreload": "metadata",
+      "imageFormat": "webp",
+      "progressiveEnhancement": true
+    }
+  },
+  "luxuryPresentationRules": {
+    "motion": {
+      "respectReducedMotion": true,
+      "defaultDuration": 600,
+      "defaultEasing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "springConfig": { "stiffness": 200, "damping": 20 },
+      "maxConcurrentAnimations": 3
+    },
+    "interactions": {
+      "hoverDelay": 50,
+      "tapHighlight": false,
+      "focusVisible": true,
+      "cursorStyle": "custom"
+    },
+    "loading": {
+      "skeletonStyle": "shimmer",
+      "progressiveImages": true,
+      "placeholderColor": "#e8e4dd",
+      "blurUp": true
+    },
+    "scroll": {
+      "smoothScroll": true,
+      "scrollSnap": false,
+      "parallaxStrength": 0.15,
+      "revealThreshold": 0.1
+    }
+  }
+}

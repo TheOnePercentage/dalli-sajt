@@ -1,0 +1,127 @@
+{
+  "version": "1.0",
+  "images": [
+    {
+      "id": "cg_001",
+      "productId": 5,
+      "userId": "usr_001",
+      "userName": "Marko P.",
+      "userInitials": "MP",
+      "verifiedPurchase": true,
+      "imageUrl": "/images/community/cg_001.jpg",
+      "caption": "Moj novi omiljeni duks za treniranje. Super udoban! 💪",
+      "taggedProducts": [
+        { "productId": 5, "x": 0.5, "y": 0.5 }
+      ],
+      "tags": ["trening", "duks", "crna"],
+      "helpfulVotes": 15,
+      "notHelpfulVotes": 0,
+      "status": "approved",
+      "featured": true,
+      "adminNote": "",
+      "createdAt": "2025-01-20T10:30:00Z",
+      "moderatedAt": "2025-01-20T11:00:00Z",
+      "moderatedBy": "admin_001"
+    },
+    {
+      "id": "cg_002",
+      "productId": 1,
+      "userId": "usr_003",
+      "userName": "Djordje J.",
+      "userInitials": "DJ",
+      "verifiedPurchase": true,
+      "imageUrl": "/images/community/cg_002.jpg",
+      "caption": "Osnovna majica za svaki dan. Kupio sam u 3 boje.",
+      "taggedProducts": [
+        { "productId": 1, "x": 0.4, "y": 0.3 }
+      ],
+      "tags": ["casual", "majica", "bela"],
+      "helpfulVotes": 22,
+      "notHelpfulVotes": 1,
+      "status": "approved",
+      "featured": true,
+      "adminNote": "",
+      "createdAt": "2025-01-22T14:15:00Z",
+      "moderatedAt": "2025-01-22T15:00:00Z",
+      "moderatedBy": "admin_001"
+    },
+    {
+      "id": "cg_003",
+      "productId": 6,
+      "userId": "usr_005",
+      "userName": "Milica K.",
+      "userInitials": "MK",
+      "verifiedPurchase": true,
+      "imageUrl": "/images/community/cg_003.jpg",
+      "caption": "Roza trenerka - boja je evo prava! 🌸",
+      "taggedProducts": [
+        { "productId": 6, "x": 0.6, "y": 0.4 }
+      ],
+      "tags": ["trenerka", "roza", "zenska"],
+      "helpfulVotes": 18,
+      "notHelpfulVotes": 0,
+      "status": "approved",
+      "featured": false,
+      "adminNote": "",
+      "createdAt": "2025-01-25T16:45:00Z",
+      "moderatedAt": "2025-01-25T17:00:00Z",
+      "moderatedBy": "admin_001"
+    },
+    {
+      "id": "cg_004",
+      "productId": 5,
+      "userId": "usr_002",
+      "userName": "Ana S.",
+      "userInitials": "AS",
+      "verifiedPurchase": true,
+      "imageUrl": "/images/community/cg_004.jpg",
+      "caption": "Duks je malo duži rukavi, ali inače super.",
+      "taggedProducts": [
+        { "productId": 5, "x": 0.5, "y": 0.6 }
+      ],
+      "tags": ["duks", "crna", "recenzija"],
+      "helpfulVotes": 8,
+      "notHelpfulVotes": 0,
+      "status": "approved",
+      "featured": false,
+      "adminNote": "",
+      "createdAt": "2025-01-28T09:20:00Z",
+      "moderatedAt": "2025-01-28T10:00:00Z",
+      "moderatedBy": "admin_001"
+    },
+    {
+      "id": "cg_005",
+      "productId": 3,
+      "userId": "usr_006",
+      "userName": "Stefan M.",
+      "userInitials": "SM",
+      "verifiedPurchase": true,
+      "imageUrl": "/images/community/cg_005.jpg",
+      "caption": "Trenerka za hladnije dane. Topla i udobna.",
+      "taggedProducts": [
+        { "productId": 3, "x": 0.45, "y": 0.35 }
+      ],
+      "tags": ["trenerka", "zima", "crna"],
+      "helpfulVotes": 12,
+      "notHelpfulVotes": 0,
+      "status": "approved",
+      "featured": true,
+      "adminNote": "",
+      "createdAt": "2025-02-01T11:00:00Z",
+      "moderatedAt": "2025-02-01T11:30:00Z",
+      "moderatedBy": "admin_001"
+    }
+  ],
+  "settings": {
+    "requireVerifiedPurchase": true,
+    "requireLoginToSubmit": true,
+    "autoApproveVerifiedPurchases": false,
+    "moderationRequired": true,
+    "maxCaptionLength": 300,
+    "allowedImageTypes": ["image/jpeg", "image/png", "image/webp"],
+    "maxImageSizeMB": 5,
+    "maxTagsPerImage": 5,
+    "allowProductTagging": true
+  },
+  "moderationQueue": []
+}

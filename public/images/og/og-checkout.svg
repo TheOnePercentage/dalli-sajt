@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="DALLI Premium Garderoba - Čekaut">
+  <defs>
+    <linearGradient id="ogCheckoutBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#0f0f1a"/>
+    </linearGradient>
+    <linearGradient id="ogCheckoutAccent" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#c4a87d" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#d4b888" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#c4a87d" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#ogCheckoutBg)"/>
+  <rect width="1200" height="630" fill="url(#ogCheckoutAccent)"/>
+  
+  <g opacity="0.04" transform="translate(600, 315)">
+    <ellipse cx="-200" cy="0" rx="180" ry="220" fill="none" stroke="#c4a87d" stroke-width="0.6"/>
+    <ellipse cx="200" cy="0" rx="180" ry="220" fill="none" stroke="#c4a87d" stroke-width="0.6"/>
+    <path d="M-150,60 Q0,20 150,60" fill="none" stroke="#c4a87d" stroke-width="0.5" stroke-linecap="round"/>
+    <ellipse cx="0" cy="120" rx="100" ry="25" fill="none" stroke="#c4a87d" stroke-width="0.4"/>
+  </g>
+  
+  <text x="600" y="240" text-anchor="middle" font-family="Georgia, serif" font-size="64" font-weight="200" fill="#ffffff" letter-spacing="-0.02em">DALLI</text>
+  <text x="600" y="300" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#c4a87d" letter-spacing="0.2em" text-transform="uppercase">Čekaut</text>
+  
+  <g transform="translate(600, 340)" opacity="0.3">
+    <line x1="-80" y1="0" x2="80" y2="0" stroke="#c4a87d" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="-60" y1="12" x2="60" y2="12" stroke="#c4a87d" stroke-width="1" stroke-linecap="round"/>
+    <line x1="-40" y1="24" x2="40" y2="24" stroke="#c4a87d" stroke-width="0.7" stroke-linecap="round"/>
+  </g>
+  
+  <text x="600" y="410" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="500" fill="#c4a87d" letter-spacing="0.1em" text-transform="uppercase">Sigurna Kupovina</text>
+  <text x="600" y="445" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" fill="#9a8a72">Plaćanje pri preuzimanju • 30 dana za vraćanje • SSL</text>
+  
+  <text x="600" y="560" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#6b5d4a" letter-spacing="0.05em">dalli.rs</text>
+</svg>

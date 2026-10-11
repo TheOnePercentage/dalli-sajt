@@ -1,0 +1,108 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: dalli-postgres
+    environment:
+      POSTGRES_DB: dalli
+      POSTGRES_USER: dalli
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-dalli_secure_password_change_in_production}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-scripts:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dalli -d dalli"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - dalli-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: dalli-redis
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - dalli-network
+
+  meilisearch:
+    image: getmeili/meilisearch:v1.9
+    container_name: dalli-meilisearch
+    environment:
+      MEILI_MASTER_KEY: ${MEILI_API_KEY:-dalli_master_key}
+      MEILI_ENV: production
+    volumes:
+      - meilisearch_data:/meili_data
+    ports:
+      - "7700:7700"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7700/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - dalli-network
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dalli-app
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: postgresql://dalli:${POSTGRES_PASSWORD:-dalli_secure_password_change_in_production}@postgres:5432/dalli?schema=public
+      REDIS_URL: redis://redis:6379
+      MEILI_HOST: http://meilisearch:7700
+      MEILI_API_KEY: ${MEILI_API_KEY:-dalli_master_key}
+      JWT_SECRET: ${JWT_SECRET}
+      JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET}
+      PORT: 3001
+    ports:
+      - "3001:3001"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      meilisearch:
+        condition: service_healthy
+    networks:
+      - dalli-network
+    restart: unless-stopped
+
+  nginx:
+    image: nginx:alpine
+    container_name: dalli-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+      - ./dist:/usr/share/nginx/html:ro
+    depends_on:
+      - app
+    networks:
+      - dalli-network
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  redis_data:
+  meilisearch_data:
+
+networks:
+  dalli-network:
+    driver: bridge

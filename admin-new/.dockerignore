@@ -1,0 +1,106 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Build outputs
+dist
+build
+*.local
+
+# Testing
+coverage
+.nyc_output
+test-results
+playwright-report
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local
+
+# Docker
+docker-compose.override.yml
+.docker
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Documentation
+README.md
+CHANGELOG.md
+docs/
+*.md
+
+# Configuration (copied explicitly)
+vite.config.ts
+vitest.config.ts
+tsconfig*.json
+*.config.*
+
+# Scripts
+scripts/
+*.sh
+
+# Cache
+.cache
+.turbo
+.esbuild
+*.tsbuildinfo
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Certificates
+certs/
+*.pem
+*.key
+*.crt
+
+# Database
+*.sql
+*.db
+*.sqlite
+
+# Monitoring
+docker/grafana/dashboards/*.json
+docker/prometheus/
+docker/loki/
+docker/alertmanager/
+
+# Kubernetes
+k8s/
+*.yaml
+*.yml
+
+# Misc
+*.bak
+*.backup
+.vercel
+.netlify

@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "profiles": [
+    "business_professional",
+    "formal_luxury",
+    "smart_casual",
+    "everyday_premium",
+    "travel_luxury",
+    "elegance_focused",
+    "casual_focused",
+    "mixed_style"
+  ],
+  "default": "mixed_style"
+}

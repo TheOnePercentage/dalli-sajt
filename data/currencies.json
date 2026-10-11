@@ -1,0 +1,188 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-10-09T00:00:00Z",
+  "currencies": {
+    "enabled": true,
+    "defaultCurrency": "RSD",
+    "baseCurrency": "EUR",
+    "autoConvert": true,
+    "roundingRules": {
+      "RSD": 0,
+      "BAM": 2,
+      "EUR": 2,
+      "MKD": 0,
+      "CHF": 2,
+      "GBP": 2,
+      "USD": 2,
+      "AED": 2
+    },
+    "currencies": {
+      "RSD": {
+        "code": "RSD",
+        "name": "Serbian Dinar",
+        "symbol": "RSD",
+        "symbolNative": "дин.",
+        "enabled": true,
+        "primaryFor": ["RS"],
+        "decimals": 0,
+        "thousandsSeparator": ".",
+        "decimalSeparator": ",",
+        "format": "{amount} {symbol}",
+        "formatNative": "{amount} {symbolNative}",
+        "exchangeRate": {
+          "base": "EUR",
+          "rate": 117.3,
+          "lastUpdated": "2026-10-09T00:00:00Z",
+          "source": "NBS"
+        }
+      },
+      "BAM": {
+        "code": "BAM",
+        "name": "Convertible Mark",
+        "symbol": "KM",
+        "symbolNative": "KM",
+        "enabled": true,
+        "primaryFor": ["BA"],
+        "decimals": 2,
+        "thousandsSeparator": ".",
+        "decimalSeparator": ",",
+        "format": "{symbol} {amount}",
+        "formatNative": "{symbolNative} {amount}",
+        "exchangeRate": {
+          "base": "EUR",
+          "rate": 1.95583,
+          "lastUpdated": "2026-10-09T00:00:00Z",
+          "source": "CBBH",
+          "fixed": true
+        }
+      },
+      "EUR": {
+        "code": "EUR",
+        "name": "Euro",
+        "symbol": "€",
+        "symbolNative": "€",
+        "enabled": true,
+        "primaryFor": ["ME", "HR", "SI", "DE", "AT", "FR", "IT"],
+        "decimals": 2,
+        "thousandsSeparator": ".",
+        "decimalSeparator": ",",
+        "format": "{amount} {symbol}",
+        "formatNative": "{amount} {symbol}",
+        "exchangeRate": {
+          "base": "EUR",
+          "rate": 1,
+          "lastUpdated": "2026-10-09T00:00:00Z",
+          "source": "ECB",
+          "fixed": true
+        }
+      },
+      "MKD": {
+        "code": "MKD",
+        "name": "Macedonian Denar",
+        "symbol": "ден",
+        "symbolNative": "ден",
+        "enabled": true,
+        "primaryFor": ["MK"],
+        "decimals": 0,
+        "thousandsSeparator": ".",
+        "decimalSeparator": ",",
+        "format": "{amount} {symbol}",
+        "formatNative": "{amount} {symbolNative}",
+        "exchangeRate": {
+          "base": "EUR",
+          "rate": 61.5,
+          "lastUpdated": "2026-10-09T00:00:00Z",
+          "source": "NBRM"
+        }
+      },
+      "CHF": {
+        "code": "CHF",
+        "name": "Swiss Franc",
+        "symbol": "CHF",
+        "symbolNative": "CHF",
+        "enabled": true,
+        "primaryFor": ["CH"],
+        "decimals": 2,
+        "thousandsSeparator": "'",
+        "decimalSeparator": ".",
+        "format": "{symbol} {amount}",
+        "formatNative": "{symbolNative} {amount}",
+        "exchangeRate": {
+          "base": "EUR",
+          "rate": 0.96,
+          "lastUpdated": "2026-10-09T00:00:00Z",
+          "source": "SNB"
+        }
+      },
+      "GBP": {
+        "code": "GBP",
+        "name": "British Pound",
+        "symbol": "£",
+        "symbolNative": "£",
+        "enabled": true,
+        "primaryFor": ["GB"],
+        "decimals": 2,
+        "thousandsSeparator": ",",
+        "decimalSeparator": ".",
+        "format": "{symbol}{amount}",
+        "formatNative": "{symbol}{amount}",
+        "exchangeRate": {
+          "base": "EUR",
+          "rate": 0.85,
+          "lastUpdated": "2026-10-09T00:00:00Z",
+          "source": "BoE"
+        }
+      },
+      "USD": {
+        "code": "USD",
+        "name": "US Dollar",
+        "symbol": "$",
+        "symbolNative": "$",
+        "enabled": true,
+        "primaryFor": ["US"],
+        "decimals": 2,
+        "thousandsSeparator": ",",
+        "decimalSeparator": ".",
+        "format": "{symbol}{amount}",
+        "formatNative": "{symbol}{amount}",
+        "exchangeRate": {
+          "base": "EUR",
+          "rate": 1.08,
+          "lastUpdated": "2026-10-09T00:00:00Z",
+          "source": "FED"
+        }
+      },
+      "AED": {
+        "code": "AED",
+        "name": "UAE Dirham",
+        "symbol": "AED",
+        "symbolNative": "د.إ",
+        "enabled": true,
+        "primaryFor": ["AE"],
+        "decimals": 2,
+        "thousandsSeparator": ",",
+        "decimalSeparator": ".",
+        "format": "{symbol} {amount}",
+        "formatNative": "{symbolNative} {amount}",
+        "exchangeRate": {
+          "base": "EUR",
+          "rate": 3.97,
+          "lastUpdated": "2026-10-09T00:00:00Z",
+          "source": "CBUAE"
+        }
+      }
+    },
+    "exchangeRateProvider": {
+      "primary": "fixer.io",
+      "fallback": "exchangerate-api.com",
+      "updateIntervalHours": 6,
+      "cacheTTLHours": 12
+    },
+    "displayRules": {
+      "showCurrencySelector": true,
+      "autoDetectFromCountry": true,
+      "allowManualOverride": true,
+      "showConversionNotice": true
+    }
+  }
+}

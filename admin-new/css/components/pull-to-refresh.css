@@ -1,0 +1,283 @@
+/* ==========================================================================
+   PULL TO REFRESH — Mobile List Refresh
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Pull to Refresh Container
+   -------------------------------------------------------------------------- */
+
+.pull-to-refresh {
+  position: relative;
+  overflow: hidden;
+  touch-action: pan-y;
+}
+
+.pull-to-refresh__trigger {
+  position: absolute;
+  top: calc(var(--pull-distance, 0px) * -1);
+  left: 0;
+  right: 0;
+  height: var(--pull-threshold, 80px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: var(--space-4);
+  pointer-events: none;
+  z-index: 10;
+  transition: transform var(--duration-smooth) var(--ease-out);
+}
+
+.pull-to-refresh.pulling .pull-to-refresh__trigger {
+  transform: translateY(var(--pull-distance, 0px));
+}
+
+.pull-to-refresh.refreshing .pull-to-refresh__trigger {
+  transform: translateY(var(--pull-threshold, 80px));
+  transition: transform var(--duration-smooth) var(--ease-out);
+}
+
+/* --------------------------------------------------------------------------
+   Indicator
+   -------------------------------------------------------------------------- */
+
+.pull-to-refresh__indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  white-space: nowrap;
+  transform-origin: center bottom;
+}
+
+.pull-to-refresh__icon {
+  width: 32px;
+  height: 32px;
+  stroke: currentColor;
+  transition:
+    transform var(--duration-base) var(--ease-out),
+    opacity var(--duration-fast);
+}
+
+.pull-to-refresh.pulling .pull-to-refresh__icon {
+  animation: ptrRotate var(--duration-slow) linear infinite;
+}
+
+.pull-to-refresh.refreshing .pull-to-refresh__icon {
+  animation: ptrRotate var(--duration-fast) linear infinite;
+}
+
+.pull-to-refresh.complete .pull-to-refresh__icon {
+  animation: none;
+  opacity: 0;
+}
+
+@keyframes ptrRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* --------------------------------------------------------------------------
+   Label & Progress
+   -------------------------------------------------------------------------- */
+
+.pull-to-refresh__label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-secondary);
+  transition:
+    opacity var(--duration-fast),
+    transform var(--duration-fast);
+}
+
+.pull-to-refresh.pulling .pull-to-refresh__label {
+  opacity: 1;
+}
+
+.pull-to-refresh.refreshing .pull-to-refresh__label {
+  opacity: 1;
+}
+
+.pull-to-refresh:not(.pulling):not(.refreshing) .pull-to-refresh__label {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+.pull-to-refresh__progress {
+  width: 100%;
+  max-width: 200px;
+  height: 3px;
+  background: var(--color-border-secondary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity var(--duration-fast);
+}
+
+.pull-to-refresh.refreshing .pull-to-refresh__progress {
+  opacity: 1;
+}
+
+.pull-to-refresh__progress-bar {
+  height: 100%;
+  background: var(--color-accent-500);
+  border-radius: var(--radius-full);
+  transform-origin: left center;
+  animation: ptrProgress var(--duration-smooth) ease-out infinite;
+}
+
+@keyframes ptrProgress {
+  0% { transform: scaleX(0); }
+  50% { transform: scaleX(0.7); }
+  100% { transform: scaleX(1); }
+}
+
+/* --------------------------------------------------------------------------
+   Complete State
+   -------------------------------------------------------------------------- */
+
+.pull-to-refresh__complete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  opacity: 0;
+  transform: translateY(-8px);
+  transition:
+    opacity var(--duration-fast),
+    transform var(--duration-fast);
+}
+
+.pull-to-refresh.complete .pull-to-refresh__complete {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pull-to-refresh__complete-icon {
+  width: 20px;
+  height: 20px;
+  stroke: var(--color-success-500);
+  animation: ptrCheckmark var(--duration-base) var(--ease-spring) forwards;
+}
+
+@keyframes ptrCheckmark {
+  from { 
+    stroke-dashoffset: 50;
+    opacity: 0;
+  }
+  to { 
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Scroll Container Integration
+   -------------------------------------------------------------------------- */
+
+.ptr-scroll-container {
+  position: relative;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+  contain: layout paint;
+}
+
+.ptr-scroll-container > * {
+  min-height: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   List Integration
+   -------------------------------------------------------------------------- */
+
+.ptr-list {
+  contain: layout paint;
+}
+
+.ptr-list__item {
+  /* Ensure items don't interfere with pull gesture */
+  touch-action: pan-x pan-y;
+}
+
+/* --------------------------------------------------------------------------
+   Skeleton During Refresh
+   -------------------------------------------------------------------------- */
+
+.ptr-refreshing .ptr-list__skeleton {
+  display: block;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+.ptr-refreshing .ptr-list__content {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Empty State During Refresh
+   -------------------------------------------------------------------------- */
+
+.ptr-empty-refreshing .ptr-empty-state {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.ptr-empty-refreshing .ptr-empty-state__icon {
+  animation: ptrRotate var(--duration-slow) linear infinite;
+}
+
+/* --------------------------------------------------------------------------
+   Touch Feedback
+   -------------------------------------------------------------------------- */
+
+.ptr-touch-feedback {
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.ptr-touch-feedback:active {
+  transform: scale(0.98);
+}
+
+/* --------------------------------------------------------------------------
+   Accessibility
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .pull-to-refresh__indicator,
+  .pull-to-refresh__icon,
+  .pull-to-refresh__trigger,
+  .pull-to-refresh__progress-bar {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Screen Reader
+   -------------------------------------------------------------------------- */
+
+.pull-to-refresh__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Print
+   -------------------------------------------------------------------------- */
+
+@media print {
+  .pull-to-refresh__trigger {
+    display: none !important;
+  }
+}

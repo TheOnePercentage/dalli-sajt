@@ -1,0 +1,349 @@
+{
+  "common": {
+    "home": "Accueil",
+    "shop": "Boutique",
+    "products": "Produits",
+    "categories": "Catégories",
+    "men": "Hommes",
+    "women": "Femmes",
+    "hoodies": "Sweats",
+    "about": "À propos",
+    "contact": "Contact",
+    "cart": "Panier",
+    "checkout": "Commande",
+    "account": "Mon compte",
+    "login": "Connexion",
+    "register": "Inscription",
+    "logout": "Déconnexion",
+    "search": "Recherche",
+    "searchPlaceholder": "Rechercher des produits...",
+    "filter": "Filtrer",
+    "sort": "Trier",
+    "price": "Prix",
+    "sale": "Soldes",
+    "new": "Nouveau",
+    "bestseller": "Meilleure vente",
+    "size": "Taille",
+    "color": "Couleur",
+    "quantity": "Quantité",
+    "addToCart": "Ajouter au panier",
+    "buyNow": "Acheter maintenant",
+    "outOfStock": "Rupture de stock",
+    "inStock": "En stock",
+    "freeShipping": "Livraison gratuite",
+    "cryptoDiscount": "Réduction crypto",
+    "returnPolicy": "Politique de retour",
+    "warranty": "Garantie",
+    "newsletter": "Newsletter",
+    "subscribe": "S'abonner",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "phone": "Téléphone",
+    "address": "Adresse",
+    "city": "Ville",
+    "postalCode": "Code postal",
+    "country": "Pays",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "confirm": "Confirmer",
+    "yes": "Oui",
+    "no": "Non",
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "warning": "Avertissement",
+    "info": "Info",
+    "close": "Fermer",
+    "back": "Retour",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "page": "Page",
+    "of": "sur",
+    "results": "résultats",
+    "noResults": "Aucun résultat",
+    "viewAll": "Voir tout",
+    "viewDetails": "Voir détails",
+    "quickView": "Vue rapide",
+    "compare": "Comparer",
+    "wishlist": "Liste de souhaits",
+    "share": "Partager",
+    "reviews": "Avis",
+    "writeReview": "Écrire un avis",
+    "rating": "Note",
+    "name": "Nom",
+    "message": "Message",
+    "send": "Envoyer",
+    "submit": "Envoyer",
+    "reset": "Réinitialiser",
+    "apply": "Appliquer",
+    "clear": "Effacer",
+    "all": "Tous",
+    "none": "Aucun",
+    "select": "Sélectionner",
+    "choose": "Choisir",
+    "options": "Options",
+    "settings": "Paramètres",
+    "privacy": "Confidentialité",
+    "terms": "Conditions d'utilisation",
+    "cookies": "Cookies",
+    "accept": "Accepter",
+    "reject": "Refuser",
+    "preferences": "Préférences",
+    "language": "Langue",
+    "currency": "Devise",
+    "orders": "Commandes",
+    "theme": "Thème",
+    "notifications": "Notifications",
+    "menu": "Menu",
+    "admin": "Admin",
+    "profile": "Profil",
+    "cryptoWallet": "Portefeuille Crypto"
+  },
+  "header": {
+    "logo": "DALLI",
+    "tagline": "Garde-Robe En Ligne Premium",
+    "searchPlaceholder": "Rechercher des produits...",
+    "menu": "Menu",
+    "account": "Mon compte",
+    "orders": "Mes commandes",
+    "wishlist": "Liste d'envies",
+    "settings": "Paramètres",
+    "logout": "Déconnexion",
+    "search": "Recherche",
+    "filter": "Filtrer",
+    "theme": "Thème",
+    "cart": "Panier",
+    "notifications": "Notifications",
+    "profile": "Profil",
+    "admin": "Panneau admin",
+    "login": "Connexion",
+    "cryptoWallet": "Portefeuille Crypto"
+  },
+  "hero": {
+    "title": "Qualité que Vous Sentez. Pour des Années.",
+    "subtitle": "Chaque pièce. Chaque couture. Chaque jour.",
+    "supporting": "100% Coton Bio. Fabriqué en Serbie. Dure des Années.",
+    "badge": "Nouvelle Collection 2025",
+    "cta": "Découvrir la Qualité",
+    "scrollDown": "Défilez vers le Bas",
+    "trust": {
+      "delivery": "Livraison Rapide 1–3 Jours",
+      "cod": "Paiement à la Livraison",
+      "returns": "30 Jours pour Retour"
+    },
+    "features": {
+      "organic": "100% Coton Bio",
+      "delivery": "Livraison Gratuite >50€",
+      "crypto": "15% Réduction Crypto",
+      "returns": "30 Jours Retour"
+    }
+  },
+  "features": {
+    "organic": {
+      "title": "100% Coton Bio",
+      "desc": "Agriculture biologique certifiée, sans produits chimiques"
+    },
+    "quality": {
+      "title": "Qualité Premium",
+      "desc": "Grammage 180–320 g/m² pour la durabilité"
+    },
+    "delivery": {
+      "title": "Livraison rapide",
+      "desc": "Gratuite pour les commandes de plus de 50€"
+    },
+    "returns": {
+      "title": "Retour facile",
+      "desc": "30 jours pour échange ou remboursement"
+    },
+    "cod": {
+      "title": "Paiement à la Livraison",
+      "desc": "Achetez sans risque - payez à la livraison. Espèces ou carte au livreur."
+    }
+  },
+  "categories": {
+    "men": {
+      "title": "Garde-Robe Homme",
+      "subtitle": "T-shirts, sweats, hoodies et plus",
+      "cta": "Voir la collection"
+    },
+    "women": {
+      "title": "Garde-Robe Femme",
+      "subtitle": "T-shirts, sweats, hoodies et plus",
+      "cta": "Voir la collection"
+    },
+    "hoodies": {
+      "title": "Sweats & Hoodies",
+      "subtitle": "Chauds et confortables au quotidien",
+      "cta": "Voir les sweats",
+      "men": "Sweats Homme",
+      "women": "Sweats Femme"
+    }
+  },
+  "product": {
+    "selectSize": "Choisir la taille",
+    "selectColor": "Choisir la couleur",
+    "available": "Disponible",
+    "lowStock": "Stock faible",
+    "description": "Description",
+    "details": "Détails",
+    "material": "Matériau",
+    "care": "Entretien",
+    "shipping": "Livraison",
+    "returns": "Retours",
+    "reviews": "Avis",
+    "related": "Produits similaires",
+    "addToCart": "Ajouter au panier",
+    "buyNow": "Acheter maintenant",
+    "addedToCart": "Ajouté au panier",
+    "addedToWishlist": "Ajouté aux favoris"
+  },
+  "cart": {
+    "title": "Panier",
+    "empty": "Votre panier est vide",
+    "continueShopping": "Continuer les achats",
+    "summary": "Récapitulatif de la commande",
+    "promoCode": "Code promo",
+    "promoPlaceholder": "Code promo",
+    "applyPromo": "Appliquer",
+    "checkoutBtn": "Passer la commande",
+    "promoApplied": "Code promo appliqué",
+    "promoInvalid": "Code promo invalide"
+  },
+  "checkout": {
+    "title": "Commande",
+    "steps": {
+      "data": "Informations",
+      "shipping": "Livraison",
+      "payment": "Paiement",
+      "review": "Révision"
+    },
+    "form": {
+      "firstName": "Prénom *",
+      "lastName": "Nom *",
+      "email": "E-mail *",
+      "phone": "Téléphone *",
+      "address": "Adresse *",
+      "city": "Ville *",
+      "postalCode": "Code Postal *",
+      "paymentMethod": "Mode de Paiement *",
+      "cod": "Paiement à la Livraison",
+      "card": "Carte",
+      "bankTransfer": "Virement Bancaire",
+      "notes": "Notes (Optionnel)",
+      "placeOrder": "Valider la Commande"
+    },
+    "summary": {
+      "title": "Récapitulatif de la Commande",
+      "subtotal": "Articles",
+      "shipping": "Livraison",
+      "total": "Total",
+      "freeShipping": "Livraison Gratuite",
+      "placeOrder": "Valider la Commande"
+    }
+  },
+  "account": {
+    "title": "Mon compte",
+    "profile": "Profil",
+    "orders": "Commandes",
+    "addresses": "Adresses",
+    "wishlist": "Liste d'envies",
+    "settings": "Paramètres",
+    "security": "Sécurité",
+    "notifications": "Notifications",
+    "darkMode": "Mode sombre",
+    "language": "Langue",
+    "currency": "Devise"
+  },
+  "footer": {
+    "company": "DALLI",
+    "description": "Garde-robe en ligne premium en 100% coton bio.",
+    "navigation": "Navigation",
+    "shop": "Boutique",
+    "about": "À propos",
+    "contact": "Contact",
+    "careers": "Carrières",
+    "press": "Presse",
+    "help": "Aide",
+    "faq": "FAQ",
+    "shipping": "Livraison",
+    "returns": "Retours",
+    "warranty": "Garantie",
+    "sizeGuide": "Guide des tailles",
+    "legal": "Mentions légales",
+    "privacy": "Confidentialité",
+    "terms": "Conditions d'utilisation",
+    "cookies": "Cookies",
+    "gdpr": "RGPD",
+    "newsletter": "S'abonner à la newsletter",
+    "emailPlaceholder": "Votre e-mail",
+    "subscribe": "S'abonner",
+    "followUs": "Suivez-nous",
+    "copyright": "© 2024 DALLI. Tous droits réservés.",
+    "madeInSerbia": "Fabriqué en Serbie ❤️"
+  },
+  "cookieConsent": {
+    "title": "Votre vie privée est importante",
+    "description": "Nous utilisons des cookies pour améliorer votre expérience, l'analytique et les publicités personnalisées. En acceptant, vous acceptez notre Politique de confidentialité et Politique des cookies.",
+    "acceptAll": "Tout accepter",
+    "rejectAll": "Tout refuser",
+    "settings": "Paramètres"
+  },
+  "meta": {
+    "homeTitle": "DALLI — Garde-Robe En Ligne | Vêtements Homme et Femme, T-Shirts, Hoodies, Sweats",
+    "homeDescription": "DALLI: Garde-robe en ligne premium. 100% coton bio, grammage 180–320 g/m². Livraison gratuite >50€. Paiement à la livraison. 15% réduction crypto. 30 jours retour.",
+    "categoryTitle": "{name} | DALLI",
+    "categoryDescription": "Achetez {name} au meilleur prix. Livraison rapide et qualité. 100% coton bio.",
+    "productTitle": "{name} | DALLI",
+    "productDescription": "Achetez {name} au meilleur prix. Livraison rapide et qualité. 100% coton bio.",
+    "cartTitle": "Panier | DALLI",
+    "checkoutTitle": "Commande | DALLI",
+    "accountTitle": "Mon compte | DALLI",
+    "loginTitle": "Connexion | DALLI",
+    "registerTitle": "Inscription | DALLI"
+  },
+  "seo": {
+    "title": "Pourquoi DALLI pour Sweats"
+  },
+  "faq": {
+    "title": "Questions Fréquentes sur les Sweats"
+  },
+  "about": {
+    "title": "À Propos de DALLI",
+    "subtitle": "Votre Allié Mode Digital",
+    "mission": {
+      "title": "Notre Mission",
+      "text": "DALLI existe pour rendre la recherche des pièces parfaites pour votre garde-robe facile et agréable. Nous combinons tissus de qualité, prix abordables et achat sécurisé depuis chez vous."
+    },
+    "values": {
+      "title": "Nos Valeurs",
+      "quality": {
+        "title": "Qualité",
+        "desc": "Coton bio, 180g/m², attention aux détails"
+      },
+      "comfort": {
+        "title": "Confort",
+        "desc": "Pour un usage quotidien, toutes les morphologies"
+      },
+      "accessibility": {
+        "title": "Accessibilité",
+        "desc": "Prix à partir de 11€, livraison gratuite"
+      }
+    },
+    "team": {
+      "title": "Équipe",
+      "admin": "Équipe Admin",
+      "contributors": "Contributeurs"
+    },
+    "contact": {
+      "title": "Contact",
+      "phone": "+381 11 123 4567",
+      "email": "info@dalli.rs",
+      "address": "Belgrade, Serbie"
+    }
+  }
+}

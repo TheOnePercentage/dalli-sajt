@@ -1,0 +1,11 @@
+{
+  "enabled": true,
+  "supportedCategories": ["t-shirts", "hoodies", "tracksuits", "shirts", "blazers", "suits", "dresses", "coats", "trousers"],
+  "unsupportedCategories": ["accessories"],
+  "maxFileSizeMB": 10,
+  "allowedFormats": ["image/jpeg", "image/png", "image/webp"],
+  "cameraRequired": true,
+  "maxSessionDurationMinutes": 10,
+  "aiModel": "vto-v2.1",
+  "processingRegion": "eu-central-1"
+}

@@ -1,0 +1,23 @@
+import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
+import { Ionicons } from '@expo/vector-icons';
+import { useAuthStore } from '../store/authStore';
+import { HomeScreen } from '../screens/HomeScreen';
+import { ProductsScreen } from '../screens/ProductsScreen';
+import { CartScreen } from '../screens/CartScreen';
+import { ProfileScreen } from '../screens/ProfileScreen';
+import { CategoryScreen } from '../screens/CategoryScreen';
+import { ProductDetailScreen } from '../screens/ProductDetailScreen';
+import { CheckoutScreen } from '../screens/CheckoutScreen';
+import { OrdersScreen } from '../screens/OrdersScreen';
+import { OrderDetailScreen } from '../screens/OrderDetailScreen';
+import { WishlistScreen } from '../screens/WishlistScreen';
+import { NotificationsScreen } from '../screens/NotificationsScreen';
+import { SettingsScreen } from '../screens/SettingsScreen';
+import { AuthStack } from './AuthStack';
+import { MainTabs } from './MainTabs';
+import { RootNavigator } from './RootNavigator';
+
+export { RootNavigator };

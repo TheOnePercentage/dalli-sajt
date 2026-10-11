@@ -1,0 +1,157 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-10-09T00:00:00Z",
+  "personalization": {
+    "userProfile": {
+      "mostViewedStyles": {
+        "business": 0,
+        "formal": 0,
+        "evening": 0,
+        "smart-casual": 0,
+        "everyday": 0,
+        "travel": 0,
+        "sport": 0,
+        "special-occasion": 0,
+        "luxury-essentials": 0
+      },
+      "mostViewedLooks": {},
+      "mostPurchasedStyles": {
+        "business": 0,
+        "formal": 0,
+        "evening": 0,
+        "smart-casual": 0,
+        "everyday": 0,
+        "travel": 0,
+        "sport": 0,
+        "special-occasion": 0,
+        "luxury-essentials": 0
+      },
+      "mostPurchasedLooks": {},
+      "preferredCollection": null,
+      "preferredStyle": null,
+      "preferredOccasion": null,
+      "lastUpdated": null
+    },
+    "inferenceRules": {
+      "styleFromView": {
+        "threshold": 3,
+        "weight": 1
+      },
+      "styleFromPurchase": {
+        "threshold": 1,
+        "weight": 3
+      },
+      "lookFromView": {
+        "threshold": 2,
+        "weight": 1
+      },
+      "lookFromPurchase": {
+        "threshold": 1,
+        "weight": 2
+      },
+      "collectionAffinity": {
+        "casual": ["everyday", "travel", "sport", "smart-casual", "luxury-essentials"],
+        "elegance": ["business", "formal", "evening", "special-occasion", "luxury-essentials"]
+      }
+    },
+    "recommendationBoosts": {
+      "elegance": {
+        "styles": ["business", "formal", "evening", "special-occasion"],
+        "looks": ["business-pro", "formal-evening", "evening-glam", "special-occasion-look"],
+        "collection": "elegance"
+      },
+      "casual": {
+        "styles": ["everyday", "travel", "sport", "smart-casual"],
+        "looks": ["smart-casual-refined", "weekend-casual", "travel-essentials", "luxury-essentials-look"],
+        "collection": "casual"
+      }
+    }
+  },
+  "analytics": {
+    "events": {
+      "look_view": {
+        "description": "User viewed a curated look",
+        "properties": ["look_id", "look_name", "look_style", "look_collection", "products_count"]
+      },
+      "look_open": {
+        "description": "User opened/expanded a look detail",
+        "properties": ["look_id", "look_name", "source"]
+      },
+      "look_add_to_cart": {
+        "description": "User added products from a look to cart",
+        "properties": ["look_id", "product_ids", "total_value", "products_count"]
+      },
+      "look_purchase": {
+        "description": "User completed purchase from a look",
+        "properties": ["look_id", "order_id", "total_value", "products_count"]
+      },
+      "complete_look_view": {
+        "description": "User viewed Complete The Look section",
+        "properties": ["product_id", "product_name", "recommendations_count", "style"]
+      },
+      "complete_look_add": {
+        "description": "User added a Complete The Look recommendation to cart",
+        "properties": ["source_product_id", "added_product_id", "added_product_price", "position"]
+      },
+      "style_match_click": {
+        "description": "User clicked a style match recommendation",
+        "properties": ["source_product_id", "matched_product_id", "shared_style"]
+      },
+      "collection_match_click": {
+        "description": "User clicked a collection match recommendation",
+        "properties": ["source_product_id", "matched_product_id", "collection"]
+      },
+      "outfit_builder_start": {
+        "description": "User started building an outfit",
+        "properties": ["seed_product_id", "seed_product_category"]
+      },
+      "outfit_builder_complete": {
+        "description": "User completed an outfit",
+        "properties": ["products_count", "total_value", "styles", "collection"]
+      },
+      "try_on_look": {
+        "description": "User tried on an entire look (AI Try-On)",
+        "properties": ["look_id", "products_count"]
+      },
+      "try_on_outfit": {
+        "description": "User tried on a recommended outfit (AI Try-On)",
+        "properties": ["outfit_id", "products_count"]
+      }
+    },
+    "metrics": {
+      "most_viewed_looks": {
+        "description": "Top 10 most viewed looks",
+        "aggregation": "count",
+        "dimension": "look_id"
+      },
+      "most_opened_looks": {
+        "description": "Top 10 most opened looks",
+        "aggregation": "count",
+        "dimension": "look_id"
+      },
+      "look_conversion_rate": {
+        "description": "Conversion rate from look view to purchase",
+        "formula": "look_purchase / look_view"
+      },
+      "style_conversion_rate": {
+        "description": "Conversion rate by style",
+        "formula": "purchases_by_style / views_by_style"
+      },
+      "avg_products_per_outfit": {
+        "description": "Average number of products in completed outfits",
+        "aggregation": "avg",
+        "dimension": "products_count"
+      },
+      "avg_outfit_value": {
+        "description": "Average value of completed outfits",
+        "aggregation": "avg",
+        "dimension": "total_value"
+      },
+      "collection_affinity": {
+        "description": "User affinity for collections",
+        "aggregation": "count",
+        "dimension": "collection"
+      }
+    }
+  }
+}

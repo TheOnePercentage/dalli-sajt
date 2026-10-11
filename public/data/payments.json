@@ -1,0 +1,228 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-10-09T00:00:00Z",
+  "payments": {
+    "enabled": true,
+    "globalSettings": {
+      "defaultCurrency": "RSD",
+      "cryptoDiscount": 15,
+      "installmentsGlobalMax": 24,
+      "fraudProtection": "stripe-radar",
+      "3dsRequired": true
+    },
+    "methods": {
+      "cashOnDelivery": {
+        "id": "cashOnDelivery",
+        "name": "Cash on Delivery",
+        "nameLocal": {
+          "sr": "Плаћање при преузимању",
+          "bs": "Plaćanje prilikom preuzimanja",
+          "hr": "Plaćanje prilikom preuzimanja",
+          "mk": "Плаќање при преземање",
+          "sl": "Plačilo ob prevzemu",
+          "de": "Nachnahme",
+          "fr": "Paiement à la livraison",
+          "it": "Contrassegno",
+          "en": "Cash on Delivery",
+          "ar": "الدفع عند الاستلام"
+        },
+        "enabled": true,
+        "globalEnabled": false,
+        "countries": {
+          "RS": { "enabled": true, "fee": 150, "maxAmount": 100000, "currency": "RSD" },
+          "BA": { "enabled": true, "fee": 5, "maxAmount": 3000, "currency": "BAM" },
+          "ME": { "enabled": true, "fee": 3, "maxAmount": 2000, "currency": "EUR" },
+          "HR": { "enabled": false },
+          "MK": { "enabled": true, "fee": 100, "maxAmount": 150000, "currency": "MKD" },
+          "SI": { "enabled": false },
+          "DE": { "enabled": false },
+          "AT": { "enabled": true, "fee": 4.50, "maxAmount": 5000, "currency": "EUR" },
+          "CH": { "enabled": false },
+          "FR": { "enabled": false },
+          "IT": { "enabled": true, "fee": 5, "maxAmount": 3000, "currency": "EUR" },
+          "GB": { "enabled": false },
+          "US": { "enabled": false },
+          "AE": { "enabled": true, "fee": 20, "maxAmount": 10000, "currency": "AED" }
+        }
+      },
+      "cards": {
+        "id": "cards",
+        "name": "Credit / Debit Cards",
+        "nameLocal": {
+          "sr": "Кредитне / дебитне картице",
+          "bs": "Kreditne / debitne kartice",
+          "hr": "Kreditne / debitne kartice",
+          "mk": "Кредитни / дебит карти",
+          "sl": "Kreditne / debitne kartice",
+          "de": "Kredit- / Debitkarten",
+          "fr": "Cartes de crédit / débit",
+          "it": "Carte di credito / debito",
+          "en": "Credit / Debit Cards",
+          "ar": "بطاقات الائتمان / الخصم"
+        },
+        "enabled": true,
+        "globalEnabled": true,
+        "providers": {
+          "stripe": {
+            "name": "Stripe",
+            "countries": ["RS", "BA", "ME", "HR", "MK", "SI", "DE", "AT", "CH", "FR", "IT", "GB", "US", "AE"],
+            "cards": ["Visa", "Mastercard", "Amex", "Maestro", "DinaCard", "Carte Bleue", "Discover", "TWINT"],
+            "3ds": true,
+            "applePay": true,
+            "googlePay": true
+          },
+          "yucclik": {
+            "name": "YUclick",
+            "countries": ["RS"],
+            "cards": ["Visa", "Mastercard", "Maestro", "DinaCard"],
+            "3ds": true,
+            "installments": { "enabled": true, "max": 12 }
+          },
+          "wspay": {
+            "name": "WSPay",
+            "countries": ["HR"],
+            "cards": ["Visa", "Mastercard", "Maestro", "Amex"],
+            "3ds": true,
+            "installments": { "enabled": true, "max": 12 }
+          },
+          "moneta": {
+            "name": "Moneta",
+            "countries": ["SI"],
+            "cards": ["Visa", "Mastercard", "Maestro", "Amex"],
+            "3ds": true,
+            "installments": { "enabled": true, "max": 12 }
+          }
+        },
+        "countries": {
+          "RS": { "enabled": true, "provider": "stripe", "installments": { "enabled": true, "provider": "yucclik", "max": 12 } },
+          "BA": { "enabled": true, "provider": "stripe" },
+          "ME": { "enabled": true, "provider": "stripe" },
+          "HR": { "enabled": true, "provider": "stripe", "installments": { "enabled": true, "provider": "wspay", "max": 12 } },
+          "MK": { "enabled": true, "provider": "stripe" },
+          "SI": { "enabled": true, "provider": "stripe", "installments": { "enabled": true, "provider": "moneta", "max": 12 } },
+          "DE": { "enabled": true, "provider": "stripe", "installments": { "enabled": true, "provider": "klarna", "max": 24 } },
+          "AT": { "enabled": true, "provider": "stripe", "installments": { "enabled": true, "provider": "klarna", "max": 24 } },
+          "CH": { "enabled": true, "provider": "stripe", "installments": { "enabled": true, "provider": "powerpay", "max": 12 } },
+          "FR": { "enabled": true, "provider": "stripe", "installments": { "enabled": true, "provider": "alma", "max": 4 } },
+          "IT": { "enabled": true, "provider": "stripe", "installments": { "enabled": true, "provider": "scalapay", "max": 3 } },
+          "GB": { "enabled": true, "provider": "stripe", "installments": { "enabled": true, "provider": "klarna", "max": 24 } },
+          "US": { "enabled": true, "provider": "stripe", "installments": { "enabled": true, "provider": "affirm", "max": 12 } },
+          "AE": { "enabled": true, "provider": "stripe", "installments": { "enabled": true, "provider": "tabby", "max": 4 } }
+        }
+      },
+      "bankTransfer": {
+        "id": "bankTransfer",
+        "name": "Bank Transfer",
+        "nameLocal": {
+          "sr": "Банковни превод",
+          "bs": "Bankovni prijevodi",
+          "hr": "Bankovni prijevodi",
+          "mk": "Банкарен превод",
+          "sl": "Bančni nakazilo",
+          "de": "Banküberweisung",
+          "fr": "Virement bancaire",
+          "it": "Bonifico bancario",
+          "en": "Bank Transfer",
+          "ar": "تحويل بنكي"
+        },
+        "enabled": true,
+        "globalEnabled": true,
+        "instructions": {
+          "local": "Local bank transfer details displayed at checkout",
+          "sepa": "SEPA transfer (IBAN + BIC)",
+          "swiss": "Swiss payment slip (ESR/QR-bill)",
+          "uk": "UK bank transfer (Sort code + Account)",
+          "ach": "ACH transfer (Routing + Account)",
+          "uae": "UAE local transfer (IBAN)"
+        },
+        "countries": {
+          "RS": { "enabled": true, "type": "local" },
+          "BA": { "enabled": true, "type": "local" },
+          "ME": { "enabled": true, "type": "local" },
+          "HR": { "enabled": true, "type": "sepa" },
+          "MK": { "enabled": true, "type": "local" },
+          "SI": { "enabled": true, "type": "sepa" },
+          "DE": { "enabled": true, "type": "sepa" },
+          "AT": { "enabled": true, "type": "sepa" },
+          "CH": { "enabled": true, "type": "swiss" },
+          "FR": { "enabled": true, "type": "sepa" },
+          "IT": { "enabled": true, "type": "sepa" },
+          "GB": { "enabled": true, "type": "uk" },
+          "US": { "enabled": true, "type": "ach" },
+          "AE": { "enabled": true, "type": "uae" }
+        }
+      },
+      "crypto": {
+        "id": "crypto",
+        "name": "Cryptocurrency",
+        "nameLocal": {
+          "sr": "Криптовалута",
+          "bs": "Kriptovaluta",
+          "hr": "Kriptovaluta",
+          "mk": "Криптовалута",
+          "sl": "Kriptovaluta",
+          "de": "Kryptowährung",
+          "fr": "Cryptomonnaie",
+          "it": "Criptovaluta",
+          "en": "Cryptocurrency",
+          "ar": "العملات المشفرة"
+        },
+        "enabled": true,
+        "globalEnabled": true,
+        "discount": 15,
+        "assets": ["BTC", "ETH", "USDT", "USDC"],
+        "provider": "coinbase-commerce",
+        "settlementCurrency": "EUR",
+        "countries": {
+          "RS": { "enabled": true },
+          "BA": { "enabled": true },
+          "ME": { "enabled": true },
+          "HR": { "enabled": true },
+          "MK": { "enabled": true },
+          "SI": { "enabled": true },
+          "DE": { "enabled": true },
+          "AT": { "enabled": true },
+          "CH": { "enabled": true },
+          "FR": { "enabled": true },
+          "IT": { "enabled": true },
+          "GB": { "enabled": true },
+          "US": { "enabled": true },
+          "AE": { "enabled": true }
+        }
+      },
+      "installments": {
+        "id": "installments",
+        "name": "Installments",
+        "nameLocal": {
+          "sr": "Ратна плаћања",
+          "bs": "Ratna plaćanja",
+          "hr": "Razdoblja plaćanja",
+          "mk": "Ратни плаќања",
+          "sl": "Obročno plačilo",
+          "de": "Ratenzahlung",
+          "fr": "Paiement en plusieurs fois",
+          "it": "Pagamento a rate",
+          "en": "Installments",
+          "ar": "التقسيط"
+        },
+        "enabled": true,
+        "globalEnabled": false,
+        "countries": {
+          "RS": { "enabled": true, "provider": "yucclik", "max": 12 },
+          "HR": { "enabled": true, "provider": "wspay", "max": 12 },
+          "SI": { "enabled": true, "provider": "moneta", "max": 12 },
+          "DE": { "enabled": true, "provider": "klarna", "max": 24 },
+          "AT": { "enabled": true, "provider": "klarna", "max": 24 },
+          "CH": { "enabled": true, "provider": "powerpay", "max": 12 },
+          "FR": { "enabled": true, "provider": "alma", "max": 4 },
+          "IT": { "enabled": true, "provider": "scalapay", "max": 3 },
+          "GB": { "enabled": true, "provider": "klarna", "max": 24 },
+          "US": { "enabled": true, "provider": "affirm", "max": 12 },
+          "AE": { "enabled": true, "provider": "tabby", "max": 4 }
+        }
+      }
+    },
+    "countryOverrides": {},
+    "productOverrides": {}
+  }
+}

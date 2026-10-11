@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <rect width="100%" height="100%" fill="#f0f0f5"/>
+  <path d="M80,100 Q80,60 130,60 L270,60 Q320,60 320,100 L320,320 Q320,360 270,360 L130,360 Q80,360 80,320 Z" fill="#e8e8f0" stroke="#bbb" stroke-width="2"/>
+  <path d="M130,60 L130,40 Q150,30 170,40 L170,60" fill="none" stroke="#aaa" stroke-width="2"/>
+  <path d="M270,60 L270,40 Q250,30 230,40 L230,60" fill="none" stroke="#aaa" stroke-width="2"/>
+  <rect x="100" y="140" width="200" height="40" rx="5" fill="#ddd" stroke="#ccc"/>
+  <text x="50%" y="360" font-family="system-ui, sans-serif" font-size="14" fill="#777" text-anchor="middle">Trenerka</text>
+</svg>

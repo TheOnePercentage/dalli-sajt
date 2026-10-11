@@ -1,0 +1,152 @@
+/* ==========================================================================
+   PROMOTIONS SECTION STYLES
+   ========================================================================== */
+
+.promotions-section {
+  /* Uses shared styles from dashboard.css */
+}
+
+/* Promotion types */
+.promo-type-coupon { background: var(--color-primary-100); color: var(--color-primary-700); }
+.promo-type-flash { background: var(--color-error-100); color: var(--color-error-700); }
+.promo-type-bundle { background: var(--color-accent-100); color: var(--color-accent-700); }
+.promo-type-free_shipping { background: var(--color-info-100); color: var(--color-info-700); }
+
+[data-theme="dark"] .promo-type-coupon { background: var(--color-primary-900); color: var(--color-primary-300); }
+[data-theme="dark"] .promo-type-flash { background: var(--color-error-900); color: var(--color-error-300); }
+[data-theme="dark"] .promo-type-bundle { background: var(--color-accent-900); color: var(--color-accent-300); }
+[data-theme="dark"] .promo-type-free_shipping { background: var(--color-info-900); color: var(--color-info-300); }
+
+/* Status badges */
+.badge-active { background: var(--color-success-100); color: var(--color-success-700); }
+.badge-scheduled { background: var(--color-info-100); color: var(--color-info-700); }
+.badge-expired { background: var(--color-error-100); color: var(--color-error-700); }
+.badge-draft { background: var(--color-warning-100); color: var(--color-warning-700); }
+
+[data-theme="dark"] .badge-active { background: var(--color-success-900); color: var(--color-success-300); }
+[data-theme="dark"] .badge-scheduled { background: var(--color-info-900); color: var(--color-info-300); }
+[data-theme="dark"] .badge-expired { background: var(--color-error-900); color: var(--color-error-300); }
+[data-theme="dark"] .badge-draft { background: var(--color-warning-900); color: var(--color-warning-300); }
+
+/* Promotion card */
+.promo-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  transition: all var(--transition-smooth);
+}
+
+.promo-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-border-secondary);
+}
+
+.promo-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.promo-code {
+  font-family: var(--font-mono);
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+}
+
+.promo-type {
+  font-size: var(--text-2xs);
+  font-weight: var(--font-semibold);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+}
+
+.promo-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+  padding: var(--space-4);
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-md);
+}
+
+.promo-detail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.promo-detail-label {
+  font-size: var(--text-2xs);
+  font-weight: var(--font-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-tertiary);
+}
+
+.promo-detail-value {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-primary);
+}
+
+.promo-actions {
+  display: flex;
+  gap: var(--space-2);
+  justify-content: flex-end;
+}
+
+/* Coupon usage bar */
+.usage-bar {
+  height: 8px;
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-top: var(--space-2);
+}
+
+.usage-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+  border-radius: var(--radius-full);
+  transition: width var(--transition-smooth);
+}
+
+/* Modal forms */
+.promo-form .form-section {
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--color-border-primary);
+}
+
+.promo-form .form-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.promo-form .form-section-title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* Date range picker */
+.date-range-picker {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.date-range-picker input {
+  flex: 1;
+}

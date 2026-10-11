@@ -1,0 +1,414 @@
+# Netlify Configuration for DALLI E-commerce
+# Production-ready deployment configuration
+
+[build]
+  command = "npm run build:prod"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NODE_OPTIONS = "--max-old-space-size=4096"
+  NPM_FLAGS = "--legacy-peer-deps"
+  VITE_APP_VERSION = "${GITHUB_SHA::7}"
+  VITE_APP_BUILD_DATE = "${DEPLOY_DATE}"
+  VITE_APP_ENV = "production"
+
+[functions]
+  node_bundler = "esbuild"
+  included_files = ["netlify/functions/**/*.js"]
+  external_node_modules = ["sharp", "chart.js", "date-fns", "idb", "workbox-window"]
+
+[functions.environment]
+  NODE_VERSION = "20"
+  NODE_OPTIONS = "--max-old-space-size=4096"
+
+[[edge_functions]]
+  directory = "netlify/edge-functions"
+
+# --- Scheduled Functions (link audit runbook) ---
+[[schedules]]
+  cron = "0 3 * * *"
+  path = "/.netlify/functions/scheduled-audit"
+  method = "POST"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), accelerometer=(), gyroscope=(), magnetometer=(), usb=(), bluetooth=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    Cross-Origin-Opener-Policy = "same-origin"
+    Cross-Origin-Embedder-Policy = "require-corp"
+    Cross-Origin-Resource-Policy = "same-origin"
+
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+    Service-Worker-Allowed = "/"
+
+[[headers]]
+  for = "/manifest.json"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/icons/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/icons/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/icons/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, must-revalidate"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, must-revalidate"
+
+[[headers]]
+  for = "/admin/cms/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+    X-Frame-Options = "SAMEORIGIN"
+
+# --- API: orders (storefront + admin) ---
+[[redirects]]
+  from = "/api/orders/*"
+  to = "/.netlify/functions/orders"
+  status = 200
+
+[[redirects]]
+  from = "/api/orders"
+  to = "/.netlify/functions/orders"
+  status = 200
+
+[[redirects]]
+  from = "/api/v1/admin/orders/*"
+  to = "/.netlify/functions/orders"
+  status = 200
+
+[[redirects]]
+  from = "/api/v1/admin/orders"
+  to = "/.netlify/functions/orders"
+  status = 200
+
+# --- API: product visibility (public overlay + admin hide/archive) ---
+[[redirects]]
+  from = "/api/products-visibility"
+  to = "/.netlify/functions/products-visibility"
+  status = 200
+
+[[redirects]]
+  from = "/api/v1/admin/products-visibility/*"
+  to = "/.netlify/functions/products-visibility"
+  status = 200
+
+[[redirects]]
+  from = "/api/v1/admin/products-visibility"
+  to = "/.netlify/functions/products-visibility"
+  status = 200
+
+# --- API: analytics (storefront tracking + admin reporting) ---
+[[redirects]]
+  from = "/api/analytics/*"
+  to = "/.netlify/functions/analytics"
+  status = 200
+
+[[redirects]]
+  from = "/api/analytics"
+  to = "/.netlify/functions/analytics"
+  status = 200
+
+[[redirects]]
+  from = "/api/v1/admin/analytics/*"
+  to = "/.netlify/functions/analytics"
+  status = 200
+
+[[redirects]]
+  from = "/api/v1/admin/analytics"
+  to = "/.netlify/functions/analytics"
+  status = 200
+
+# --- API: social metrics (admin) ---
+[[redirects]]
+  from = "/api/v1/admin/social-metrics/*"
+  to = "/.netlify/functions/social-metrics"
+  status = 200
+
+[[redirects]]
+  from = "/api/v1/admin/social-metrics"
+  to = "/.netlify/functions/social-metrics"
+  status = 200
+
+[[redirects]]
+  from = "/admin/cms/*"
+  to = "/admin/cms/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/admin/cms"
+  to = "/admin/cms/"
+  status = 301
+
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin-login.html"
+  status = 302
+
+[[redirects]]
+  from = "/admin"
+  to = "/admin-login.html"
+  status = 302
+
+[[redirects]]
+  from = "/cms/*"
+  to = "/admin/cms/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/cms"
+  to = "/admin/cms/"
+  status = 301
+
+[[redirects]]
+  from = "/products/*"
+  to = "/proizvod-:splat.html"
+  status = 301
+
+[[redirects]]
+  from = "/products"
+  to = "/products.html"
+  status = 301
+
+# Luxury Collection Migration Redirects
+[[redirects]]
+  from = "/proizvod-osnovna-majica.html"
+  to = "/casual/unisex/t-shirts/osnovna-majica.html"
+  status = 301
+
+[[redirects]]
+  from = "/proizvod-dugorukava-majica.html"
+  to = "/casual/unisex/t-shirts/dugorukava-majica.html"
+  status = 301
+
+[[redirects]]
+  from = "/proizvod-muska-sportska-trenerka.html"
+  to = "/casual/men/tracksuits/muska-sportska-trenerka.html"
+  status = 301
+
+[[redirects]]
+  from = "/proizvod-zenska-kapuljaca-trenerka.html"
+  to = "/casual/women/tracksuits/zenska-kapuljaca-trenerka.html"
+  status = 301
+
+[[redirects]]
+  from = "/proizvod-muska-duks-hoodie.html"
+  to = "/casual/men/hoodies/muska-duks-hoodie.html"
+  status = 301
+
+[[redirects]]
+  from = "/proizvod-zenska-duks-hoodie.html"
+  to = "/casual/women/hoodies/zenska-duks-hoodie.html"
+  status = 301
+
+[[redirects]]
+  from = "/proizvod-carape.html"
+  to = "/casual/unisex/accessories/carape.html"
+  status = 301
+
+[[redirects]]
+  from = "/proizvod-salica-za-kafU.html"
+  to = "/casual/unisex/accessories/salica-za-kafU.html"
+  status = 301
+
+[[redirects]]
+  from = "/muska-garderoba.html"
+  to = "/casual/men/"
+  status = 301
+
+[[redirects]]
+  from = "/zenska-garderoba.html"
+  to = "/casual/women/"
+  status = 301
+
+[[redirects]]
+  from = "/dukseri.html"
+  to = "/casual/unisex/hoodies/"
+  status = 301
+
+[[redirects]]
+  from = "/trenerke.html"
+  to = "/casual/unisex/tracksuits/"
+  status = 301
+
+[[redirects]]
+  from = "/majice.html"
+  to = "/casual/unisex/t-shirts/"
+  status = 301
+
+[[redirects]]
+  from = "/proizvodi"
+  to = "/casual/unisex/"
+  status = 301
+
+[[redirects]]
+  from = "/products.html"
+  to = "/casual/unisex/"
+  status = 301
+
+[[redirects]]
+  from = "/casual"
+  to = "/casual/"
+  status = 301
+
+[[redirects]]
+  from = "/elegance"
+  to = "/elegance/"
+  status = 301
+
+[[redirects]]
+  from = "/casual/men"
+  to = "/casual/men/"
+  status = 301
+
+[[redirects]]
+  from = "/casual/women"
+  to = "/casual/women/"
+  status = 301
+
+[[redirects]]
+  from = "/elegance/men"
+  to = "/elegance/men/"
+  status = 301
+
+[[redirects]]
+  from = "/elegance/women"
+  to = "/elegance/women/"
+  status = 301
+
+[[redirects]]
+  from = "/category/:category"
+  to = "/kategorija-:category.html"
+  status = 301
+
+[[redirects]]
+  from = "/category/:category/:subcategory"
+  to = "/kategorija-:category/:subcategory.html"
+  status = 301
+
+[[redirects]]
+  from = "/product/:id"
+  to = "/proizvod-:id.html"
+  status = 301
+
+[[redirects]]
+  from = "/product/:id/:slug"
+  to = "/proizvod-:id-:slug.html"
+  status = 301
+
+[[redirects]]
+  from = "/cart"
+  to = "/cart.html"
+  status = 301
+
+[[redirects]]
+  from = "/checkout"
+  to = "/checkout.html"
+  status = 301
+
+[[redirects]]
+  from = "/account/*"
+  to = "/profile.html"
+  status = 302
+
+[[redirects]]
+  from = "/account"
+  to = "/profile.html"
+  status = 302
+
+[[redirects]]
+  from = "/login"
+  to = "/admin-login.html"
+  status = 302
+
+[[redirects]]
+  from = "/register"
+  to = "/admin-login.html?mode=register"
+  status = 302
+
+[[redirects]]
+  from = "/search/*"
+  to = "/proizvodi.html?q=:splat"
+  status = 301
+
+[[redirects]]
+  from = "/search"
+  to = "/proizvodi.html"
+  status = 301
+
+[[redirects]]
+  from = "/blog/*"
+  to = "/blog-:splat.html"
+  status = 301
+
+[[redirects]]
+  from = "/blog"
+  to = "/blog-index.html"
+  status = 301
+
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap.xml"
+  status = 200
+
+[[redirects]]
+  from = "/robots.txt"
+  to = "/robots.txt"
+  status = 200
+
+[[redirects]]
+  from = "/sw.js"
+  to = "/sw.js"
+  status = 200
+
+[[redirects]]
+  from = "/manifest.json"
+  to = "/manifest.json"
+  status = 200

@@ -1,0 +1,10 @@
+<svg width="40" height="24" viewBox="0 0 40 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bitcoin">
+  <defs>
+    <linearGradient id="btcGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F7931A"/>
+      <stop offset="100%" style="stop-color:#F2A900"/>
+    </linearGradient>
+  </defs>
+  <circle cx="20" cy="12" r="12" fill="url(#btcGrad)"/>
+  <text x="20" y="15.5" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">₿</text>
+</svg>

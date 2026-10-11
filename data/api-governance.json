@@ -1,0 +1,13 @@
+{
+  "governanceEnabled": true,
+  "apiCenterExpanded": true,
+  "tabs": [
+    "overview",
+    "keys",
+    "apps",
+    "policies",
+    "analytics",
+    "logs"
+  ],
+  "policies": []
+}

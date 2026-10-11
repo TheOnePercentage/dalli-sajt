@@ -1,0 +1,349 @@
+{
+  "common": {
+    "home": "Startseite",
+    "shop": "Shop",
+    "products": "Produkte",
+    "categories": "Kategorien",
+    "men": "Herren",
+    "women": "Damen",
+    "hoodies": "Hoodies",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "cart": "Warenkorb",
+    "checkout": "Kasse",
+    "account": "Konto",
+    "login": "Anmelden",
+    "register": "Registrieren",
+    "logout": "Abmelden",
+    "search": "Suche",
+    "searchPlaceholder": "Produkte suchen...",
+    "filter": "Filter",
+    "sort": "Sortieren",
+    "price": "Preis",
+    "sale": "Sale",
+    "new": "Neu",
+    "bestseller": "Bestseller",
+    "size": "Größe",
+    "color": "Farbe",
+    "quantity": "Menge",
+    "addToCart": "In den Warenkorb",
+    "buyNow": "Jetzt kaufen",
+    "outOfStock": "Nicht verfügbar",
+    "inStock": "Auf Lager",
+    "freeShipping": "Kostenloser Versand",
+    "cryptoDiscount": "Krypto-Rabatt",
+    "returnPolicy": "Rückgaberecht",
+    "warranty": "Garantie",
+    "newsletter": "Newsletter",
+    "subscribe": "Abonnieren",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "confirmPassword": "Passwort bestätigen",
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "phone": "Telefon",
+    "address": "Adresse",
+    "city": "Stadt",
+    "postalCode": "PLZ",
+    "country": "Land",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "confirm": "Bestätigen",
+    "yes": "Ja",
+    "no": "Nein",
+    "loading": "Laden...",
+    "error": "Fehler",
+    "success": "Erfolg",
+    "warning": "Warnung",
+    "info": "Info",
+    "close": "Schließen",
+    "back": "Zurück",
+    "next": "Weiter",
+    "previous": "Zurück",
+    "page": "Seite",
+    "of": "von",
+    "results": "Ergebnisse",
+    "noResults": "Keine Ergebnisse",
+    "viewAll": "Alle anzeigen",
+    "viewDetails": "Details",
+    "quickView": "Schnellansicht",
+    "compare": "Vergleichen",
+    "wishlist": "Wunschliste",
+    "share": "Teilen",
+    "reviews": "Bewertungen",
+    "writeReview": "Bewertung schreiben",
+    "rating": "Bewertung",
+    "name": "Name",
+    "message": "Nachricht",
+    "send": "Senden",
+    "submit": "Absenden",
+    "reset": "Zurücksetzen",
+    "apply": "Anwenden",
+    "clear": "Löschen",
+    "all": "Alle",
+    "none": "Keine",
+    "select": "Auswählen",
+    "choose": "Wählen",
+    "options": "Optionen",
+    "settings": "Einstellungen",
+    "privacy": "Datenschutz",
+    "terms": "Nutzungsbedingungen",
+    "cookies": "Cookies",
+    "accept": "Akzeptieren",
+    "reject": "Ablehnen",
+    "preferences": "Einstellungen",
+    "language": "Sprache",
+    "currency": "Währung",
+    "orders": "Bestellungen",
+    "theme": "Thema",
+    "notifications": "Benachrichtigungen",
+    "menu": "Menü",
+    "admin": "Admin",
+    "profile": "Profil",
+    "cryptoWallet": "Krypto-Wallet"
+  },
+  "header": {
+    "logo": "DALLI",
+    "tagline": "Premium Online-Garderobe",
+    "searchPlaceholder": "Produkte suchen...",
+    "menu": "Menü",
+    "account": "Mein Konto",
+    "orders": "Meine Bestellungen",
+    "wishlist": "Wunschliste",
+    "settings": "Einstellungen",
+    "logout": "Abmelden",
+    "search": "Suche",
+    "filter": "Filter",
+    "theme": "Thema",
+    "cart": "Warenkorb",
+    "notifications": "Benachrichtigungen",
+    "profile": "Profil",
+    "admin": "Admin-Panel",
+    "login": "Anmelden",
+    "cryptoWallet": "Krypto-Wallet"
+  },
+  "hero": {
+    "title": "Qualität, die Sie fühlen. Für Jahre.",
+    "subtitle": "Jedes Stück. Jede Naht. Jeden Tag.",
+    "supporting": "100% Bio-Baumwolle. Hergestellt in Serbien. Hält jahrelang.",
+    "badge": "Neue Kollektion 2025",
+    "cta": "Qualität entdecken",
+    "scrollDown": "Nach unten scrollen",
+    "trust": {
+      "delivery": "Schnelle Lieferung 1–3 Tage",
+      "cod": "Nachnahme",
+      "returns": "30 Tage Rückgabe"
+    },
+    "features": {
+      "organic": "100% Bio-Baumwolle",
+      "delivery": "Kostenloser Versand >50€",
+      "crypto": "15% Krypto-Rabatt",
+      "returns": "30 Tage Rückgabe"
+    }
+  },
+  "features": {
+    "organic": {
+      "title": "100% Bio-Baumwolle",
+      "desc": "Zertifizierter Bio-Anbau, keine Chemikalien"
+    },
+    "quality": {
+      "title": "Premium-Qualität",
+      "desc": "Grammatur 180–320 g/m² für Langlebigkeit"
+    },
+    "delivery": {
+      "title": "Schneller Versand",
+      "desc": "Kostenlos ab 50€ Bestellwert"
+    },
+    "returns": {
+      "title": "Einfache Retoure",
+      "desc": "30 Tage für Umtausch oder Rückerstattung"
+    },
+    "cod": {
+      "title": "Nachnahme",
+      "desc": "Kaufen Sie risikofrei - bezahlen Sie, wenn das Paket ankommt. Bar oder Karte beim Kurier."
+    }
+  },
+  "categories": {
+    "men": {
+      "title": "Herren-Garderobe",
+      "subtitle": "T-Shirts, Hoodies, Sweatshirts und mehr",
+      "cta": "Kollektion ansehen"
+    },
+    "women": {
+      "title": "Damen-Garderobe",
+      "subtitle": "T-Shirts, Hoodies, Sweatshirts und mehr",
+      "cta": "Kollektion ansehen"
+    },
+    "hoodies": {
+      "title": "Hoodies & Sweatshirts",
+      "subtitle": "Warm und bequem für jeden Tag",
+      "cta": "Hoodies ansehen",
+      "men": "Herren-Hoodies",
+      "women": "Damen-Hoodies"
+    }
+  },
+  "product": {
+    "selectSize": "Größe wählen",
+    "selectColor": "Farbe wählen",
+    "available": "Verfügbar",
+    "lowStock": "Wenig Lagerbestand",
+    "description": "Beschreibung",
+    "details": "Details",
+    "material": "Material",
+    "care": "Pflege",
+    "shipping": "Versand",
+    "returns": "Retoure",
+    "reviews": "Bewertungen",
+    "related": "Ähnliche Produkte",
+    "addToCart": "In den Warenkorb",
+    "buyNow": "Jetzt kaufen",
+    "addedToCart": "In den Warenkorb gelegt",
+    "addedToWishlist": "Zur Wunschliste hinzugefügt"
+  },
+  "cart": {
+    "title": "Warenkorb",
+    "empty": "Ihr Warenkorb ist leer",
+    "continueShopping": "Weiter einkaufen",
+    "summary": "Bestellübersicht",
+    "promoCode": "Gutscheincode",
+    "promoPlaceholder": "Gutscheincode",
+    "applyPromo": "Anwenden",
+    "checkoutBtn": "Zur Kasse",
+    "promoApplied": "Gutscheincode angewendet",
+    "promoInvalid": "Ungültiger Gutscheincode"
+  },
+  "checkout": {
+    "title": "Kasse",
+    "steps": {
+      "data": "Daten",
+      "shipping": "Versand",
+      "payment": "Zahlung",
+      "review": "Prüfen"
+    },
+    "form": {
+      "firstName": "Vorname *",
+      "lastName": "Nachname *",
+      "email": "E-Mail *",
+      "phone": "Telefon *",
+      "address": "Adresse *",
+      "city": "Stadt *",
+      "postalCode": "PLZ *",
+      "paymentMethod": "Zahlungsart *",
+      "cod": "Nachnahme",
+      "card": "Karte",
+      "bankTransfer": "Banküberweisung",
+      "notes": "Notizen (Optional)",
+      "placeOrder": "Bestellung aufgeben"
+    },
+    "summary": {
+      "title": "Bestellübersicht",
+      "subtotal": "Artikel",
+      "shipping": "Versand",
+      "total": "Gesamt",
+      "freeShipping": "Kostenloser Versand",
+      "placeOrder": "Bestellen"
+    }
+  },
+  "account": {
+    "title": "Mein Konto",
+    "profile": "Profil",
+    "orders": "Bestellungen",
+    "addresses": "Adressen",
+    "wishlist": "Wunschliste",
+    "settings": "Einstellungen",
+    "security": "Sicherheit",
+    "notifications": "Benachrichtigungen",
+    "darkMode": "Dunkler Modus",
+    "language": "Sprache",
+    "currency": "Währung"
+  },
+  "footer": {
+    "company": "DALLI",
+    "description": "Premium Online-Garderobe aus 100% Bio-Baumwolle.",
+    "navigation": "Navigation",
+    "shop": "Shop",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "careers": "Karriere",
+    "press": "Presse",
+    "help": "Hilfe",
+    "faq": "FAQ",
+    "shipping": "Versand",
+    "returns": "Retoure",
+    "warranty": "Garantie",
+    "sizeGuide": "Größentabelle",
+    "legal": "Rechtliches",
+    "privacy": "Datenschutz",
+    "terms": "AGB",
+    "cookies": "Cookies",
+    "gdpr": "DSGVO",
+    "newsletter": "Newsletter abonnieren",
+    "emailPlaceholder": "Ihre E-Mail",
+    "subscribe": "Abonnieren",
+    "followUs": "Folgen Sie uns",
+    "copyright": "© 2024 DALLI. Alle Rechte vorbehalten.",
+    "madeInSerbia": "Hergestellt in Serbien ❤️"
+  },
+  "cookieConsent": {
+    "title": "Ihre Privatsphäre ist uns wichtig",
+    "description": "Wir verwenden Cookies zur Verbesserung der Nutzererfahrung, für Analysen und personalisierte Werbung. Durch Akzeptieren stimmen Sie unserer Datenschutzerklärung und Cookie-Richtlinie zu.",
+    "acceptAll": "Alle akzeptieren",
+    "rejectAll": "Alle ablehnen",
+    "settings": "Einstellungen"
+  },
+  "meta": {
+    "homeTitle": "DALLI — Online-Garderobe | Herren- & Damenmode, T-Shirts, Hoodies, Sweatshirts",
+    "homeDescription": "DALLI: Premium Online-Garderobe. 100% Bio-Baumwolle, Grammatur 180–320 g/m². Kostenloser Versand ab 50€. Nachnahme. 15% Krypto-Rabatt. 30 Tage Rückgabe.",
+    "categoryTitle": "{name} | DALLI",
+    "categoryDescription": "Kaufen Sie {name} zum besten Preis. Schneller Versand und Qualität. 100% Bio-Baumwolle.",
+    "productTitle": "{name} | DALLI",
+    "productDescription": "Kaufen Sie {name} zum besten Preis. Schneller Versand und Qualität. 100% Bio-Baumwolle.",
+    "cartTitle": "Warenkorb | DALLI",
+    "checkoutTitle": "Kasse | DALLI",
+    "accountTitle": "Mein Konto | DALLI",
+    "loginTitle": "Anmelden | DALLI",
+    "registerTitle": "Registrieren | DALLI"
+  },
+  "seo": {
+    "title": "Warum DALLI für Hoodies"
+  },
+  "faq": {
+    "title": "Häufige Fragen zu Hoodies"
+  },
+  "about": {
+    "title": "Über DALLI",
+    "subtitle": "Ihr Digitaler Mode-Partner",
+    "mission": {
+      "title": "Unsere Mission",
+      "text": "DALLI existiert, um es Ihnen leicht und angenehm zu machen, die perfekten Stücke für Ihre Garderobe zu finden. Wir kombinieren Qualitätsstoffe, erschwingliche Preise und sicheres Einkaufen von zu Hause."
+    },
+    "values": {
+      "title": "Unsere Werte",
+      "quality": {
+        "title": "Qualität",
+        "desc": "Bio-Baumwolle, 180 g/m², Liebe zum Detail"
+      },
+      "comfort": {
+        "title": "Komfort",
+        "desc": "Für den täglichen Gebrauch, alle Körpertypen"
+      },
+      "accessibility": {
+        "title": "Zugänglichkeit",
+        "desc": "Preise ab 11€, kostenloser Versand"
+      }
+    },
+    "team": {
+      "title": "Team",
+      "admin": "Admin Team",
+      "contributors": "Beitragende"
+    },
+    "contact": {
+      "title": "Kontakt",
+      "phone": "+381 11 123 4567",
+      "email": "info@dalli.rs",
+      "address": "Belgrad, Serbien"
+    }
+  }
+}

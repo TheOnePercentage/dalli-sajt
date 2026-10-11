@@ -1,0 +1,322 @@
+{
+  "version": "2.0",
+  "lastUpdated": "2025-01-15T10:00:00Z",
+  "collections": [
+    {
+      "id": "casual",
+      "slug": "casual",
+      "title": "CASUAL",
+      "description": "Premium everyday wear. Relaxed luxury for daily life.",
+      "order": 1,
+      "enabled": true,
+      "genders": ["men", "women"],
+      "categories": ["t-shirts", "hoodies", "tracksuits", "shorts", "jackets", "essentials", "leggings", "matching-sets"]
+    },
+    {
+      "id": "elegance",
+      "slug": "elegance",
+      "title": "ELEGANCE",
+      "description": "Refined, elevated and luxurious fashion. For moments that matter.",
+      "order": 2,
+      "enabled": true,
+      "genders": ["men", "women"],
+      "categories": ["shirts", "blazers", "suits", "trousers", "coats", "dresses"]
+    }
+  ],
+  "genders": [
+    {
+      "id": "men",
+      "slug": "men",
+      "title": "MEN",
+      "description": "Menswear collections.",
+      "order": 1,
+      "enabled": true
+    },
+    {
+      "id": "women",
+      "slug": "women",
+      "title": "WOMEN",
+      "description": "Womenswear collections.",
+      "order": 2,
+      "enabled": true
+    },
+    {
+      "id": "unisex",
+      "slug": "unisex",
+      "title": "UNISEX",
+      "description": "Gender-neutral essentials.",
+      "order": 3,
+      "enabled": true
+    }
+  ],
+  "categories": [
+    {
+      "id": "t-shirts",
+      "slug": "t-shirts",
+      "title": "T-Shirts",
+      "description": "Premium cotton t-shirts for everyday wear.",
+      "collections": ["casual"],
+      "genders": ["men", "women", "unisex"],
+      "order": 1,
+      "enabled": true
+    },
+    {
+      "id": "hoodies",
+      "slug": "hoodies",
+      "title": "Hoodies",
+      "description": "Premium hoodies and dukseri for relaxed luxury.",
+      "collections": ["casual"],
+      "genders": ["men", "women", "unisex"],
+      "order": 2,
+      "enabled": true
+    },
+    {
+      "id": "tracksuits",
+      "slug": "tracksuits",
+      "title": "Tracksuits",
+      "description": "Sport and leisure tracksuits with technical fabrics.",
+      "collections": ["casual"],
+      "genders": ["men", "women", "unisex"],
+      "order": 3,
+      "enabled": true
+    },
+    {
+      "id": "shorts",
+      "slug": "shorts",
+      "title": "Shorts",
+      "description": "Premium shorts for warm weather.",
+      "collections": ["casual"],
+      "genders": ["men", "women", "unisex"],
+      "order": 4,
+      "enabled": true
+    },
+    {
+      "id": "jackets",
+      "slug": "jackets",
+      "title": "Jackets",
+      "description": "Casual jackets for layering.",
+      "collections": ["casual"],
+      "genders": ["men", "women", "unisex"],
+      "order": 5,
+      "enabled": true
+    },
+    {
+      "id": "essentials",
+      "slug": "essentials",
+      "title": "Essentials",
+      "description": "Core wardrobe basics.",
+      "collections": ["casual"],
+      "genders": ["men", "women", "unisex"],
+      "order": 6,
+      "enabled": true
+    },
+    {
+      "id": "leggings",
+      "slug": "leggings",
+      "title": "Leggings",
+      "description": "Premium leggings for sport and leisure.",
+      "collections": ["casual"],
+      "genders": ["women"],
+      "order": 7,
+      "enabled": true
+    },
+    {
+      "id": "matching-sets",
+      "slug": "matching-sets",
+      "title": "Matching Sets",
+      "description": "Coordinated casual sets.",
+      "collections": ["casual"],
+      "genders": ["women"],
+      "order": 8,
+      "enabled": true
+    },
+    {
+      "id": "shirts",
+      "slug": "shirts",
+      "title": "Shirts",
+      "description": "Refined shirts for elevated everyday.",
+      "collections": ["elegance"],
+      "genders": ["men", "women"],
+      "order": 1,
+      "enabled": true
+    },
+    {
+      "id": "blazers",
+      "slug": "blazers",
+      "title": "Blazers",
+      "description": "Tailored blazers for business and formal.",
+      "collections": ["elegance"],
+      "genders": ["men", "women"],
+      "order": 2,
+      "enabled": true
+    },
+    {
+      "id": "suits",
+      "slug": "suits",
+      "title": "Suits",
+      "description": "Complete suits for formal occasions.",
+      "collections": ["elegance"],
+      "genders": ["men", "women"],
+      "order": 3,
+      "enabled": true
+    },
+    {
+      "id": "trousers",
+      "slug": "trousers",
+      "title": "Trousers",
+      "description": "Elegant trousers for refined looks.",
+      "collections": ["elegance"],
+      "genders": ["men", "women"],
+      "order": 4,
+      "enabled": true
+    },
+    {
+      "id": "coats",
+      "slug": "coats",
+      "title": "Coats",
+      "description": "Luxury coats for cold weather elegance.",
+      "collections": ["elegance"],
+      "genders": ["men", "women"],
+      "order": 5,
+      "enabled": true
+    },
+    {
+      "id": "dresses",
+      "slug": "dresses",
+      "title": "Dresses",
+      "description": "Elegant dresses for special occasions.",
+      "collections": ["elegance"],
+      "genders": ["women"],
+      "order": 6,
+      "enabled": true
+    },
+    {
+      "id": "accessories",
+      "slug": "accessories",
+      "title": "Accessories",
+      "description": "Premium accessories and lifestyle items.",
+      "collections": ["casual", "elegance"],
+      "genders": ["unisex"],
+      "order": 99,
+      "enabled": true
+    }
+  ],
+  "styleOccasions": [
+    {
+      "id": "everyday",
+      "slug": "everyday",
+      "title": "Everyday",
+      "description": "Daily wear, relaxed and comfortable.",
+      "collections": ["casual"],
+      "order": 1,
+      "enabled": true
+    },
+    {
+      "id": "business",
+      "slug": "business",
+      "title": "Business",
+      "description": "Professional attire for work and meetings.",
+      "collections": ["elegance"],
+      "order": 2,
+      "enabled": true
+    },
+    {
+      "id": "formal",
+      "slug": "formal",
+      "title": "Formal",
+      "description": "Black tie, ceremonies, official events.",
+      "collections": ["elegance"],
+      "order": 3,
+      "enabled": true
+    },
+    {
+      "id": "evening",
+      "slug": "evening",
+      "title": "Evening",
+      "description": "Dinner, events, night out.",
+      "collections": ["elegance"],
+      "order": 4,
+      "enabled": true
+    },
+    {
+      "id": "travel",
+      "slug": "travel",
+      "title": "Travel",
+      "description": "Comfortable luxury for journeys.",
+      "collections": ["casual", "elegance"],
+      "order": 5,
+      "enabled": true
+    },
+    {
+      "id": "sport",
+      "slug": "sport",
+      "title": "Sport",
+      "description": "Active wear for training and fitness.",
+      "collections": ["casual"],
+      "order": 6,
+      "enabled": true
+    },
+    {
+      "id": "smart-casual",
+      "slug": "smart-casual",
+      "title": "Smart Casual",
+      "description": "Elevated everyday, polished but relaxed.",
+      "collections": ["casual", "elegance"],
+      "order": 7,
+      "enabled": true
+    },
+    {
+      "id": "luxury-essentials",
+      "slug": "luxury-essentials",
+      "title": "Luxury Essentials",
+      "description": "Core investment pieces for every wardrobe.",
+      "collections": ["casual", "elegance"],
+      "order": 8,
+      "enabled": true
+    },
+    {
+      "id": "special-occasion",
+      "slug": "special-occasion",
+      "title": "Special Occasion",
+      "description": "Weddings, celebrations, milestone moments.",
+      "collections": ["elegance"],
+      "order": 9,
+      "enabled": true
+    }
+  ],
+  "legacy": {
+    "categories": [
+      {
+        "id": "muski",
+        "slug": "muska-garderoba",
+        "title": "Muška Garderoba",
+        "redirectTo": "/casual/men"
+      },
+      {
+        "id": "zenski",
+        "slug": "zenska-garderoba",
+        "title": "Ženska Garderoba",
+        "redirectTo": "/casual/women"
+      },
+      {
+        "id": "dukseri",
+        "slug": "dukseri",
+        "title": "Duksevi (Hoodie)",
+        "redirectTo": "/casual/unisex/hoodies"
+      },
+      {
+        "id": "bestseller",
+        "slug": "proizvodi?sort=bestselling",
+        "title": "Bestsellery",
+        "redirectTo": "/proizvodi?sort=bestselling"
+      }
+    ]
+  },
+  "settings": {
+    "parallaxSpeed": 0.25,
+    "counterDuration": 1200,
+    "viewThreshold": 0.5,
+    "staggerDelay": 100,
+    "hoverDwellTime": 300
+  }
+}

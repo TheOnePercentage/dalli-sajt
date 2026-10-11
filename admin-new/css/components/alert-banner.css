@@ -1,0 +1,335 @@
+/* ==========================================================================
+   CONTROL LINE - Thin line at very top of page
+   ========================================================================== */
+
+.control-line {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent), var(--color-info));
+  z-index: 1001;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================================
+   ALERT BANNER COMPONENT
+   ========================================================================== */
+
+.alert-banner {
+  position: fixed;
+  top: 2px;
+  left: 0;
+  right: 0;
+  z-index: 2147483647;
+  background: #ff0000;
+  border: 5px solid #00ff00;
+  box-shadow: 0 0 50px rgba(255,0,0,1), 0 0 100px rgba(0,255,0,0.5);
+  animation: slideDown 0.3s ease;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px #000;
+  font-family: monospace;
+}
+
+@media (max-width: 768px) {
+  .alert-banner {
+    top: 2px;
+  }
+}
+
+.dalli-happy-state {
+  position: fixed;
+  top: 2px;
+  left: 0;
+  right: 0;
+  z-index: 999999;
+  background: #ffff00;
+  border: 5px solid #ff00ff;
+  box-shadow: 0 0 50px rgba(255,0,255,1), 0 0 100px rgba(0,255,255,0.5);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-1) var(--space-3);
+  min-height: 80px;
+  background: #ffff00;
+  border: 5px solid #ff00ff;
+  box-shadow: 0 0 50px rgba(255,0,255,1), 0 0 100px rgba(0,255,255,0.5);
+  overflow: hidden;
+  flex-shrink: 0;
+  width: 100%;
+  will-change: transform;
+}
+
+@media (max-width: 768px) {
+  .dalli-happy-state {
+    top: 2px;
+  }
+}
+
+.alert-banner.hidden {
+  display: none;
+}
+
+.alert-banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-5);
+  max-width: 1400px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.alert-banner-message {
+  flex: 1;
+  min-width: 200px;
+  font-size: var(--text-sm);
+  color: var(--color-warning-text, #856404);
+  line-height: 1.5;
+}
+
+.alert-banner-message strong {
+  color: var(--color-warning-dark, #664d03);
+}
+
+.alert-banner-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.alert-banner-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-1);
+  color: var(--color-warning-text, #856404);
+  opacity: 0.7;
+  transition: opacity var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alert-banner-close:hover {
+  opacity: 1;
+}
+
+.alert-banner-close svg {
+  width: 20px;
+  height: 20px;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .alert-banner-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+  
+  .alert-banner-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  
+  .alert-center {
+    left: var(--space-3);
+    right: var(--space-3);
+    max-width: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .alert-center {
+    left: var(--space-3);
+    right: var(--space-3);
+    max-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dalli-main,
+  .dalli-shadow,
+  .dalli-foot-left,
+  .dalli-foot-right,
+  .dalli-arm-left,
+  .dalli-arm-right,
+  .dalli-eye-white,
+  .dalli-pupil,
+  .dalli-eye-shine,
+  .dalli-mouth,
+  .dalli-blush,
+  .dalli-belly,
+  .dalli-hat,
+  .dalli-hat-pompon,
+  .dalli-heart,
+  .dalli-text-main,
+  .dalli-text-sub,
+  .dalli-stat {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .dalli-main {
+    transform: none;
+  }
+  
+  .dalli-hat { opacity: 0; }
+  .dalli-heart { opacity: 0; }
+}
+
+@media (max-width: 768px) {
+  .dalli-happy-state {
+    top: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dalli-main,
+  .dalli-shadow,
+  .dalli-foot-left,
+  .dalli-foot_right,
+  .dalli-arm-left,
+  .dalli-arm-right,
+  .dalli-eye-white,
+  .dalli-pupil,
+  .dalli-eye-shine,
+  .dalli-mouth,
+  .dalli-blush,
+  .dalli-belly,
+  .dalli-hat,
+  .dalli-hat-pompon,
+  .dalli-heart,
+  .dalli-text-main,
+  .dalli-text-sub,
+  .dalli-stat {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .dalli-main {
+    transform: none;
+  }
+  
+  .dalli-hat { opacity: 0; }
+  .dalli-heart { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dalli-main,
+  .dalli-shadow,
+  .dalli-foot-left,
+  .dalli-foot-right,
+  .dalli-arm-left,
+  .dalli-arm-right,
+  .dalli-eye-white,
+  .dalli-pupil,
+  .dalli-eye-shine,
+  .dalli-mouth,
+  .dalli-blush,
+  .dalli-belly,
+  .dalli-hat,
+  .dalli-hat-pompon,
+  .dalli-heart,
+  .dalli-text-main,
+  .dalli-text-sub,
+  .dalli-stat {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .dalli-main {
+    transform: none;
+  }
+  
+  .dalli-hat { opacity: 0; }
+  .dalli-heart { opacity: 0; }
+}
+
+@media (max-width: 768px) {
+  .dalli-happy-state {
+    top: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dalli-main,
+  .dalli-shadow,
+  .dalli-foot-left,
+  .dalli-foot-right,
+  .dalli-arm-left,
+  .dalli-arm-right,
+  .dalli-eye-white,
+  .dalli-pupil,
+  .dalli-eye-shine,
+  .dalli-mouth,
+  .dalli-blush,
+  .dalli-belly,
+  .dalli-hat,
+  .dalli-hat-pompon,
+  .dalli-heart,
+  .dalli-text-main,
+  .dalli-text-sub,
+  .dalli-stat {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .dalli-main {
+    transform: none;
+  }
+  
+  .dalli-hat { opacity: 0; }
+  .dalli-heart { opacity: 0; }
+}
+
+@media print {
+  .alert-banner,
+  .dalli-happy-state,
+  .alert-center {
+    display: none !important;
+  }
+}

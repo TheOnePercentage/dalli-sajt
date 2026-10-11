@@ -1,0 +1,425 @@
+/* ==========================================================================
+   LUXURY BADGES — Shared Component
+   Comprehensive badge system with gold variants, gradients, animations
+   ========================================================================== */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--badge-gap);
+  padding: var(--space-1) var(--badge-padding-x);
+  font-size: var(--badge-font-size);
+  font-weight: var(--badge-font-weight);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: var(--badge-radius);
+  white-space: nowrap;
+  transition: var(--transition-micro);
+}
+
+/* Dot Indicator */
+.badge::before {
+  content: '';
+  width: var(--badge-dot-size);
+  height: var(--badge-dot-size);
+  border-radius: var(--radius-full);
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+/* Status Icons for Colorblind Accessibility */
+.badge-success::after,
+.badge-warning::after,
+.badge-error::after,
+.badge-danger::after,
+.badge-info::after,
+.badge-primary::after,
+.badge-active::after,
+.badge-inactive::after,
+.badge-pending::after,
+.badge-approved::after,
+.badge-rejected::after,
+.badge-flagged::after,
+.badge-new_order::after,
+.badge-confirmed::after,
+.badge-processing::after,
+.badge-shipped::after,
+.badge-delivered::after,
+.badge-cancelled::after,
+.badge-refunded::after {
+  content: '';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
+  margin-left: var(--space-1);
+  flex-shrink: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.badge-success::after,
+.badge-approved::after,
+.badge-delivered::after,
+.badge-active::after,
+.badge-confirmed::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+.badge-warning::after,
+.badge-pending::after,
+.badge-processing::after,
+.badge-inactive::after,
+.badge-shipped::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z'%3E%3C/path%3E%3Cline x1='12' y1='9' x2='12' y2='13'%3E%3C/line%3E%3Cline x1='12' y1='17' x2='12.01' y2='17'%3E%3C/line%3E%3C/svg%3E");
+}
+
+.badge-error::after,
+.badge-danger::after,
+.badge-rejected::after,
+.badge-flagged::after,
+.badge-cancelled::after,
+.badge-refunded::after,
+.badge-lost::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'%3E%3C/line%3E%3Cline x1='6' y1='6' x2='18' y2='18'%3E%3C/line%3E%3C/svg%3E");
+}
+
+.badge-info::after,
+.badge-new_order::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='16' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='8' x2='12.01' y2='8'%3E%3C/line%3E%3C/svg%3E");
+}
+
+.badge-primary::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
+}
+
+/* Size Variants */
+.badge-sm {
+  padding: var(--space-1) var(--badge-padding-x-sm);
+  font-size: var(--text-2xs);
+}
+
+.badge-sm::before {
+  width: 5px;
+  height: 5px;
+}
+
+.badge-lg {
+  padding: var(--space-2) var(--badge-padding-x-lg);
+  font-size: var(--text-sm);
+}
+
+.badge-lg::before {
+  width: var(--badge-dot-size-lg);
+  height: var(--badge-dot-size-lg);
+}
+
+/* Dot Position Variant */
+.badge-dot {
+  padding-left: var(--space-3);
+}
+
+.badge-dot::before {
+  width: var(--badge-dot-size);
+  height: var(--badge-dot-size);
+  margin-left: calc(var(--space-3) * -1);
+  margin-right: var(--space-2);
+}
+
+.badge-dot.badge-lg::before {
+  width: var(--badge-dot-size-lg);
+  height: var(--badge-dot-size-lg);
+}
+
+/* Outline Variant */
+.badge-outline {
+  background: transparent;
+  border: var(--badge-outline-border);
+}
+
+.badge-outline::before {
+  display: none;
+}
+
+/* Semantic Color Variants */
+
+.badge-primary {
+  background: rgba(var(--color-primary), 0.15);
+  color: var(--color-primary-700);
+}
+
+.badge-primary:hover {
+  background: rgba(var(--color-primary), 0.25);
+}
+
+[data-theme="dark"] .badge-primary {
+  color: var(--color-primary-300);
+}
+
+[data-theme="dark"] .badge-primary:hover {
+  background: rgba(var(--color-primary), 0.3);
+}
+
+.badge-accent {
+  background: var(--gold-subtle);
+  color: var(--gold-primary);
+  border: 1px solid var(--gold-subtle-hover);
+}
+
+.badge-accent:hover {
+  background: var(--gold-subtle-hover);
+}
+
+.badge-success {
+  background: rgba(var(--color-success), 0.15);
+  color: var(--color-success);
+}
+
+.badge-success:hover {
+  background: rgba(var(--color-success), 0.25);
+}
+
+[data-theme="dark"] .badge-success {
+  color: var(--color-success-300);
+}
+
+.badge-warning {
+  background: rgba(var(--color-warning), 0.15);
+  color: var(--color-warning);
+}
+
+.badge-warning:hover {
+  background: rgba(var(--color-warning), 0.25);
+}
+
+[data-theme="dark"] .badge-warning {
+  color: var(--color-warning-300);
+}
+
+.badge-error,
+.badge-danger {
+  background: rgba(var(--color-error), 0.15);
+  color: var(--color-error);
+}
+
+.badge-error:hover,
+.badge-danger:hover {
+  background: rgba(var(--color-error), 0.25);
+}
+
+[data-theme="dark"] .badge-error,
+[data-theme="dark"] .badge-danger {
+  color: var(--color-error-300);
+}
+
+.badge-info {
+  background: rgba(var(--color-info), 0.15);
+  color: var(--color-info);
+}
+
+.badge-info:hover {
+  background: rgba(var(--color-info), 0.25);
+}
+
+[data-theme="dark"] .badge-info {
+  color: var(--color-info-300);
+}
+
+.badge-neutral {
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-tertiary);
+}
+
+.badge-neutral:hover {
+  background: var(--color-bg-hover);
+}
+
+/* Gradient Variants */
+.badge-gradient-primary {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-700));
+  color: var(--color-text-inverse);
+}
+
+.badge-gradient-accent {
+  background: var(--gold-gradient);
+  color: var(--color-text-inverse);
+}
+
+.badge-gradient-success {
+  background: linear-gradient(135deg, var(--color-success), var(--color-success-700));
+  color: var(--color-text-inverse);
+}
+
+.badge-gradient-warning {
+  background: linear-gradient(135deg, var(--color-warning), var(--color-warning-700));
+  color: var(--color-text-inverse);
+}
+
+.badge-gradient-error {
+  background: linear-gradient(135deg, var(--color-error), var(--color-error-700));
+  color: var(--color-text-inverse);
+}
+
+.badge-gradient-info {
+  background: linear-gradient(135deg, var(--color-info), var(--color-info-700));
+  color: var(--color-text-inverse);
+}
+
+/* Status-Specific Badges */
+.badge-vip {
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-700));
+  color: var(--color-text-inverse);
+}
+
+.badge-loyal {
+  background: linear-gradient(135deg, var(--color-success), var(--color-success-600));
+  color: var(--color-text-inverse);
+}
+
+.badge-regular {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-700));
+  color: var(--color-text-inverse);
+}
+
+.badge-new {
+  background: linear-gradient(135deg, var(--color-info), var(--color-info-600));
+  color: var(--color-text-inverse);
+}
+
+.badge-at_risk {
+  background: linear-gradient(135deg, var(--color-warning), var(--color-warning-600));
+  color: var(--color-text-inverse);
+}
+
+.badge-lost {
+  background: linear-gradient(135deg, var(--color-error), var(--color-error-600));
+  color: var(--color-text-inverse);
+}
+
+.badge-active {
+  background: rgba(var(--color-success), 0.15);
+  color: var(--color-success);
+}
+
+.badge-inactive {
+  background: rgba(var(--color-warning), 0.15);
+  color: var(--color-warning);
+}
+
+.badge-pending {
+  background: rgba(var(--color-warning), 0.15);
+  color: var(--color-warning);
+}
+
+.badge-approved {
+  background: rgba(var(--color-success), 0.15);
+  color: var(--color-success);
+}
+
+.badge-rejected {
+  background: rgba(var(--color-error), 0.15);
+  color: var(--color-error);
+}
+
+.badge-flagged {
+  background: rgba(var(--color-error), 0.15);
+  color: var(--color-error);
+}
+
+/* Sentiment Badges */
+.badge-sentiment-positive {
+  background: rgba(var(--color-success), 0.15);
+  color: var(--color-success);
+}
+
+.badge-sentiment-neutral {
+  background: rgba(var(--color-warning), 0.15);
+  color: var(--color-warning);
+}
+
+.badge-sentiment-negative {
+  background: rgba(var(--color-error), 0.15);
+  color: var(--color-error);
+}
+
+.badge-sentiment-mixed {
+  background: rgba(var(--color-info), 0.15);
+  color: var(--color-info);
+}
+
+/* Order Status Badges */
+.badge-new_order {
+  background: rgba(var(--color-info), 0.15);
+  color: var(--color-info);
+}
+
+.badge-confirmed {
+  background: rgba(var(--color-primary), 0.15);
+  color: var(--color-primary);
+}
+
+.badge-processing {
+  background: rgba(var(--color-warning), 0.15);
+  color: var(--color-warning);
+}
+
+.badge-shipped {
+  background: rgba(var(--color-accent), 0.15);
+  color: var(--color-accent);
+}
+
+.badge-delivered {
+  background: rgba(var(--color-success), 0.15);
+  color: var(--color-success);
+}
+
+.badge-cancelled {
+  background: rgba(var(--color-error), 0.15);
+  color: var(--color-error);
+}
+
+.badge-refunded {
+  background: rgba(var(--color-error), 0.15);
+  color: var(--color-error);
+}
+
+/* Animation */
+.badge.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.badge.bounce-in {
+  animation: bounceIn var(--duration-smooth) var(--ease-spring-gentle);
+}
+
+@keyframes bounceIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Stagger Animation */
+.badge.stagger-1 { animation: fadeInUp var(--duration-smooth) var(--ease-out-expo) calc(var(--stagger-tight) * 1) both; }
+.badge.stagger-2 { animation: fadeInUp var(--duration-smooth) var(--ease-out-expo) calc(var(--stagger-tight) * 2) both; }
+.badge.stagger-3 { animation: fadeInUp var(--duration-smooth) var(--ease-out-expo) calc(var(--stagger-tight) * 3) both; }
+.badge.stagger-4 { animation: fadeInUp var(--duration-smooth) var(--ease-out-expo) calc(var(--stagger-tight) * 4) both; }
+.badge.stagger-5 { animation: fadeInUp var(--duration-smooth) var(--ease-out-expo) calc(var(--stagger-tight) * 5) both; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .badge {
+    animation: none;
+    transition: none;
+  }
+}

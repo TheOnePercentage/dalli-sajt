@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "tiers": [
+    "member",
+    "silver",
+    "gold",
+    "black",
+    "private_client",
+    "elite_client"
+  ],
+  "segments": [
+    "high_value_client",
+    "collector",
+    "frequent_buyer",
+    "collection_loyalist",
+    "vip_candidate"
+  ]
+}
