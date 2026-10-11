@@ -40,6 +40,7 @@
     "build:ui": "npx vite build --mode production"
   },
   "dependencies": {
+    "@netlify/blobs": "^11.1.4",
     "@netlify/functions": "^2.8.2",
     "@prisma/client": "^5.22.0",
     "@types/bcryptjs": "^2.4.6",

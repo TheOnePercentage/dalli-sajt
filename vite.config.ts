@@ -268,6 +268,9 @@ export default defineConfig({
     assetsDir: 'assets',
     sourcemap: true,
     minify: 'terser',
+    rollupOptions: {
+      external: ["@netlify/blobs"]
+    },
     terserOptions: {
       compress: {
         drop_console: true,
