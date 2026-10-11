@@ -24,7 +24,7 @@ const SKIP_EXTENSIONS =
 const BYPASS_COOKIE = 'dalli_exp_bypass';
 
 const DEFAULT_CSP =
-  "default-src 'self'; script-src 'self' 'nonce-{NONCE}' 'unsafe-inline' https://cdn.dalli.rs https://fonts.googleapis.com https://connect.facebook.net https://connect.instagram.com https://connect.tiktok.com https://tag.twitter.com https://www.google-analytics.com https://www.googletagmanager.com; style-src 'self' 'nonce-{NONCE}' 'unsafe-inline' https://fonts.googleapis.com https://cdn.dalli.rs; font-src 'self' data: https://fonts.gstatic.com https://cdn.dalli.rs; img-src 'self' data: https://cdn.dalli.rs https://www.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://api.dalli.rs https://api.stripe.com https://www.google-analytics.com https://www.googletagmanager.com wss://api.dalli.rs; frame-src 'self' https://www.facebook.com https://www.instagram.com https://www.youtube.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self' https://dalli.rs; manifest-src 'self'; worker-src 'self' blob:; report-uri /api/security/csp-report;";
+  "default-src 'self'; script-src 'self' 'nonce-{NONCE}' https://cdn.dalli.rs https://fonts.googleapis.com https://connect.facebook.net https://connect.instagram.com https://connect.tiktok.com https://tag.twitter.com https://www.google-analytics.com https://www.googletagmanager.com; style-src 'self' 'nonce-{NONCE}' https://fonts.googleapis.com https://cdn.dalli.rs; font-src 'self' data: https://fonts.gstatic.com https://cdn.dalli.rs; img-src 'self' data: https://cdn.dalli.rs https://www.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://api.dalli.rs https://api.stripe.com https://www.google-analytics.com https://www.googletagmanager.com wss://api.dalli.rs; frame-src 'self' https://www.facebook.com https://www.instagram.com https://www.youtube.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self' https://dalli.rs; manifest-src 'self'; worker-src 'self' blob:; report-uri /api/security/csp-report;";
 
 function shouldProcess(url, request, response) {
   if (request.method !== 'GET') return false;
@@ -72,6 +72,18 @@ function applyNonceToHtml(html, nonce) {
   // Add nonce to inline styles (without nonce)
   out = out.replace(/<style(?![^>]*\bnonce=)([^>]*)>/gi, (match) => {
     return match.replace(/>$/, ` nonce="${nonce}">`);
+  });
+
+  // For style="..." attributes, we need to compute hashes and add to CSP
+  // But simpler: just add nonce to elements with style attribute
+  // This is a workaround - proper fix is to move inline styles to CSS
+  out = out.replace(/<([a-zA-Z][a-zA-Z0-9]*)(\s[^>]*?)\bstyle=(["'])(.*?)\3([^>]*)>/gi, (match, tag, before, quote, styleValue, after) => {
+    // Check if already has nonce
+    if (before.includes('nonce=') || after.includes('nonce=')) {
+      return match;
+    }
+    // Add nonce attribute to element with style
+    return `<${tag}${before} nonce="${nonce}" style=${quote}${styleValue}${quote}${after}>`;
   });
 
   return out;
