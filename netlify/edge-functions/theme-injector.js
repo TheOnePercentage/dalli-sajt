@@ -392,7 +392,7 @@ export default async function injector(request, context) {
 
   const headers = new Headers(response.headers);
   headers.delete('content-length');
-  headers.set('Cache-Control', 'public, max-age=60, must-revalidate');
+  headers.set('Cache-Control', 'no-store, no-cache, must-revalidate');
   headers.set('Content-Security-Policy', applyNonceToCsp(DEFAULT_CSP, nonce));
 
   return new Response(nonced, {
