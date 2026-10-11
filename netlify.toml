@@ -9,6 +9,10 @@
 [functions]
   node_bundler = "esbuild"
 
+[[edge_functions]]
+  path = "/*"
+  function = "theme-injector"
+
 [[redirects]]
   from = "/admin/*"
   to = "/admin-login.html"
