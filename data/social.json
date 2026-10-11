@@ -1,0 +1,28 @@
+{
+  "accounts": [
+    {
+      "platform": "instagram",
+      "handle": "dalli.rs",
+      "url": "https://instagram.com/dalli.rs",
+      "scope": "casual",
+      "primary": true
+    }
+  ],
+  "platforms": [
+    "instagram",
+    "facebook",
+    "tiktok",
+    "pinterest",
+    "youtube",
+    "linkedin",
+    "x",
+    "threads"
+  ],
+  "scopes": [
+    "global",
+    "casual",
+    "elegance",
+    "country",
+    "collection"
+  ]
+}

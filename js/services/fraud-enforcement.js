@@ -56,31 +56,4 @@ function enforceFraud(config) {
   return { enforced: true };
 }
 
-export function enforceFraudRisk(config) {
-  const f = config?.fraud || {};
-  window.DALLI_FRAUD_RISK = {
-    enabled: f.fraudDetectionEngine === true,
-    velocityDetection: true,
-    identityMatching: true,
-    orderAbuseDetection: true,
-    riskScoring: true,
-  };
-  return { enforced: true };
-}
-
-export function enforceIPIntelligence(config) {
-  const ip = config?.ipIntelligence || config?.ipIntelligence?.records || {};
-  window.DALLI_IP_INTELLIGENCE = {
-    enabled: true,
-    records: ip.records || [],
-    retentionDays: ip.retentionDays || 90,
-    allowedPurposes: ip.allowedPurposes || ['fraud_detection', 'abuse_prevention', 'security_analysis', 'risk_detection'],
-  };
-  return { enforced: true };
-}
-
-export default {
-  enforceFraud,
-  enforceFraudRisk,
-  enforceIPIntelligence,
-};
+export default { enforceFraud };

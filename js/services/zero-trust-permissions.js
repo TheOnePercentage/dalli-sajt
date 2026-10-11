@@ -28,9 +28,4 @@ function enforceZeroTrust(config) {
   return { enforced: true };
 }
 
-export function enforceZeroTrust(config) {
-  window.DALLI_ZERO_TRUST = { enabled: true, defaultDeny: true };
-  return { enforced: true };
-}
-
 export default { enforceZeroTrust };

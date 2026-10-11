@@ -1,0 +1,21 @@
+{
+  "holiday": {
+    "enabled": false,
+    "startAt": "",
+    "endAt": "",
+    "message": "",
+    "suspendShipping": false,
+    "suspendOrders": false,
+    "customerNotice": "",
+    "countdown": false
+  },
+  "notices": [],
+  "orderPause": {
+    "enabled": false,
+    "message": ""
+  },
+  "shippingPause": {
+    "enabled": false,
+    "message": ""
+  }
+}

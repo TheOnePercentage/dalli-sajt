@@ -1,0 +1,68 @@
+{
+  "enabled": true,
+  "countryActivation": true,
+  "regionalPricing": true,
+  "regionalSEO": true,
+  "regionalCollections": true,
+  "multiCurrency": true,
+  "regionalPersonalization": true,
+  "countries": {
+    "balkanPriority": [
+      "RS",
+      "BA",
+      "ME",
+      "HR",
+      "MK",
+      "SI"
+    ],
+    "dachExpansion": [
+      "DE",
+      "AT",
+      "CH"
+    ],
+    "euWestExpansion": [
+      "FR",
+      "IT"
+    ],
+    "ukExpansion": [
+      "GB"
+    ],
+    "northAmericaExpansion": [
+      "US"
+    ],
+    "middleEastExpansion": [
+      "AE"
+    ]
+  },
+  "currencies": {
+    "enabled": [
+      "RSD",
+      "BAM",
+      "EUR",
+      "MKD",
+      "CHF",
+      "GBP",
+      "USD",
+      "AED"
+    ],
+    "autoConvert": true,
+    "baseCurrency": "EUR"
+  },
+  "languages": {
+    "enabled": [
+      "sr",
+      "sr-Latn",
+      "bs",
+      "hr",
+      "mk",
+      "sl",
+      "de",
+      "fr",
+      "it",
+      "en",
+      "ar"
+    ],
+    "autoDetect": true,
+    "fallback": "en"
+  }
+}

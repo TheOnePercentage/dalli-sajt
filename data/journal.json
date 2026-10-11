@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "categories": {
+    "style-guides": true,
+    "fashion-intelligence": true,
+    "collections": true,
+    "lifestyle": true,
+    "product-care": true,
+    "materials": true,
+    "editorial": true
+  },
+  "showEditorialNote": true
+}

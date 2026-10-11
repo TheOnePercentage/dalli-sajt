@@ -68,14 +68,4 @@ function enforceBackup(config) {
   return { enforced: true };
 }
 
-export function enforceBackupCenter(config) {
-  window.DALLI_BACKUP_CENTER = { enabled: true };
-  return { enforced: true };
-}
-
-export function enforceDisasterRecovery(config) {
-  window.DALLI_DISASTER_RECOVERY = { enabled: true };
-  return { enforced: true };
-}
-
 export default { enforceBackup };

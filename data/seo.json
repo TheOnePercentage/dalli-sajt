@@ -1,0 +1,7 @@
+{
+  "enabled": true,
+  "regionalEngine": true,
+  "hreflangManagement": true,
+  "canonicalManagement": true,
+  "structuredDataPerCountry": true
+}

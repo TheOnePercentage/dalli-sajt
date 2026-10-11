@@ -1,0 +1,28 @@
+{
+  "brandName": "DALLI",
+  "companyName": "DALLI d.o.o.",
+  "businessInfo": "",
+  "primaryDomain": "dalli.rs",
+  "secondaryDomains": [],
+  "phones": [
+    {
+      "label": "Glavni",
+      "number": "+381 11 2630 123",
+      "primary": true
+    }
+  ],
+  "emails": [
+    {
+      "label": "Opšti kontakt",
+      "address": "hello@dalli.rs",
+      "primary": true
+    }
+  ],
+  "address": {
+    "streetAddress": "",
+    "addressLocality": "",
+    "postalCode": "",
+    "addressCountry": "RS"
+  },
+  "contactInfo": ""
+}

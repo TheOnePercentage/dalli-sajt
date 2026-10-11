@@ -1,0 +1,10 @@
+{
+  "enabled": true,
+  "sections": {
+    "manufacturing": true,
+    "designProcess": true,
+    "qualityStandards": true,
+    "garmentConstruction": true,
+    "materialSelection": true
+  }
+}

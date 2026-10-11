@@ -32,9 +32,4 @@ function enforceSecurityDashboard(config) {
   return { enforced: true };
 }
 
-export function enforceSecurityDashboard(config) {
-  window.DALLI_SECURITY_DASHBOARD = { threatStatus: 'ok', systemHealth: 'ok', apiHealth: 'ok' };
-  return { enforced: true };
-}
-
 export default { enforceSecurityDashboard };

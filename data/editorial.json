@@ -1,0 +1,9 @@
+{
+  "enabled": true,
+  "reducePromotions": true,
+  "largerStorySections": true,
+  "moreBrandContent": true,
+  "moreCollectionPresentation": true,
+  "hideSaleBadges": true,
+  "showEditorialNote": true
+}

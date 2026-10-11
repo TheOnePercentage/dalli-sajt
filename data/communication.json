@@ -1,0 +1,20 @@
+{
+  "emails": [
+    {
+      "address": "support@dalli.rs",
+      "roles": [
+        "support",
+        "returns"
+      ],
+      "primary": true
+    }
+  ],
+  "phones": [
+    {
+      "label": "Glavni telefon",
+      "number": "+381 11 2630 123",
+      "kind": "primary",
+      "primary": true
+    }
+  ]
+}

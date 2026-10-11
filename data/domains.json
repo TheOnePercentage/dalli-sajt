@@ -1,0 +1,16 @@
+{
+  "primary": {
+    "domain": "dalli.rs",
+    "language": "sr",
+    "currency": "RSD"
+  },
+  "list": [
+    {
+      "domain": "dalli.rs",
+      "enabled": true,
+      "primary": true,
+      "language": "sr",
+      "currency": "RSD"
+    }
+  ]
+}

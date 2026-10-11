@@ -1,0 +1,15 @@
+{
+  "bankAccounts": [],
+  "cryptoWallets": [],
+  "cardDepositAccounts": [],
+  "taxProfiles": {
+    "vatRules": ""
+  },
+  "invoices": {
+    "template": "default",
+    "numberingPrefix": "INV",
+    "showVat": true
+  },
+  "paymentInstructions": "",
+  "refundRules": ""
+}

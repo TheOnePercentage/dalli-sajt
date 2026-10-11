@@ -241,17 +241,12 @@ export function isAdmin() {
   return getUserRole() === 'admin';
 }
 
-export function isOwner() {
-  return getUserRole() === 'owner';
-}
-
 export default {
   checkPermission,
   checkAccess,
   getUserRole,
   getUserLevel,
   hasRoleLevel,
-  isOwner,
   canManagePayroll,
   canViewPayroll,
   canEditPayroll,

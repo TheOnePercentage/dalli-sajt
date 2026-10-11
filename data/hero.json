@@ -1,0 +1,46 @@
+{
+  "image": "",
+  "title": "DALLI — Kolekcija koja priča vašu priču",
+  "subtitle": "Casual i Elegance linije, pažljivo dizajnirane za svaki dan.",
+  "ctas": [
+    {
+      "id": "cta-primary",
+      "label": "Istraži kolekcije",
+      "href": "/casual/",
+      "variant": "primary"
+    },
+    {
+      "id": "cta-secondary",
+      "label": "Elegance kolekcija",
+      "href": "/elegance/",
+      "variant": "outline"
+    }
+  ],
+  "collectionFocus": "all",
+  "banners": [
+    {
+      "id": "announcement",
+      "location": "announcement",
+      "text": "",
+      "link": "",
+      "active": true
+    }
+  ],
+  "promotionalText": {
+    "announcement": "",
+    "homepage": "",
+    "collection": ""
+  },
+  "collectionSpotlight": "all",
+  "featuredProducts": [],
+  "featuredCategories": [],
+  "homepageCampaign": {
+    "enabled": false,
+    "title": "",
+    "body": "",
+    "image": "",
+    "ctaLabel": "",
+    "ctaHref": ""
+  },
+  "editorial": false
+}

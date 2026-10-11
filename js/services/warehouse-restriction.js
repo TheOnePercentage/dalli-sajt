@@ -48,9 +48,4 @@ function enforceWarehouseRestriction(config) {
   return { enforced: true };
 }
 
-export function enforceWarehouseRestriction(config) {
-  window.DALLI_WAREHOUSE_RESTRICTION = { enabled: true };
-  return { enforced: true };
-}
-
 export default { enforceWarehouseRestriction };

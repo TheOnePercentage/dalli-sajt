@@ -1,0 +1,7 @@
+{
+  "enabled": false,
+  "lazyLoad": true,
+  "preload": "none",
+  "maxConcurrent": 1,
+  "videos": {}
+}

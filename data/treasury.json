@@ -1,0 +1,16 @@
+{
+  "ledger": [],
+  "reconciliation": {
+    "lastRunAt": null,
+    "matched": 0,
+    "unmatched": 0,
+    "autoMatch": true
+  },
+  "reports": {
+    "dailyScale": 0,
+    "weeklyScale": 0,
+    "monthlyScale": 0,
+    "quarterlyScale": 0,
+    "yearlyScale": 0
+  }
+}

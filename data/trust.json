@@ -1,0 +1,11 @@
+{
+  "enabled": true,
+  "blocks": {
+    "premium-materials": true,
+    "hand-finished": true,
+    "limited-production": true,
+    "sustainability": true,
+    "ethical-manufacturing": true,
+    "lifetime-quality": true
+  }
+}
