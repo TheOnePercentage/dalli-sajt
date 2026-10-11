@@ -74,10 +74,9 @@ function applyNonceToHtml(html, nonce) {
     return match.replace(/>$/, ` nonce="${nonce}">`);
   });
 
-  // For style="..." attributes, we need to compute hashes and add to CSP
-  // But simpler: just add nonce to elements with style attribute
-  // This is a workaround - proper fix is to move inline styles to CSS
-  out = out.replace(/<([a-zA-Z][a-zA-Z0-9]*)(\s[^>]*?)\bstyle=(["'])(.*?)\3([^>]*)>/gi, (match, tag, before, quote, styleValue, after) => {
+  // Add nonce to elements with style="" attribute - more robust regex
+  // Matches: <tag ... style="..." ...> or <tag style="..." ...>
+  out = out.replace(/<([a-zA-Z][a-zA-Z0-9]*)([^>]*?)\bstyle=(["'])([^"']*?)\3([^>]*)>/gi, (match, tag, before, quote, styleValue, after) => {
     // Check if already has nonce
     if (before.includes('nonce=') || after.includes('nonce=')) {
       return match;
