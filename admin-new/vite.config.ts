@@ -1,21 +1,71 @@
 import { defineConfig, loadEnv } from 'vite';
+import type { UserConfig, PluginOption } from 'vite';
+
+type ViteRollupPlugins = NonNullable<
+  NonNullable<UserConfig['build']>['rollupOptions']
+>['plugins'];
 import { resolve } from 'path';
 import { builtinModules } from 'module';
 import { visualizer } from 'rollup-plugin-visualizer';
 import { compression } from 'vite-plugin-compression2';
-import { VitePWA } from 'vite-plugin-pwa';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import { terser } from 'rollup-plugin-terser';
 
-export default defineConfig(async ({ mode, command }) => {
+
+// CSP Injection Plugin for dev server
+function cspPlugin() {
+  return {
+    name: "csp-injection",
+    transformIndexHtml(html, { path }) {
+      if (path.endsWith("index.html") || path === "/admin/") {
+        // Generate nonce
+        const nonceBytes = new Uint8Array(18);
+        crypto.getRandomValues(nonceBytes);
+        const nonce = Array.from(nonceBytes)
+          .map(b => String.fromCharCode(b))
+          .join("")
+          .replace(/\+/g, "-")
+          .replace(/\//g, "_")
+          .replace(/=+$/, "");
+        
+        const csp = "default-src 'self'; script-src 'self' 'nonce-" + nonce + "'; style-src 'self' 'nonce-" + nonce + "' 'unsafe-hashes'; style-src-attr 'self' 'nonce-" + nonce + "' 'unsafe-hashes'; img-src 'self' data: blob: https:; font-src 'self' data: https:; connect-src 'self' wss: https: http://localhost:8080 ws://localhost:8001 http://localhost:8001; media-src 'self' blob:; object-src 'none'; frame-src 'self'; worker-src 'self' blob:; manifest-src 'self'; form-action 'self'; base-uri 'self'; upgrade-insecure-requests; block-all-mixed-content;";
+        
+        const cspScript = \`<script type="module">
+  const nonceBytes = new Uint8Array(18);
+  crypto.getRandomValues(nonceBytes);
+  const nonce = Array.from(nonceBytes)
+    .map(b => String.fromCharCode(b))
+    .join("")
+    .replace(/\+/g, "-")
+    .replace(/\//g, "_")
+    .replace(/=+$/, "");
+
+  document.documentElement.setAttribute("data-csp-nonce", nonce);
+
+  const csp = "default-src 'self'; script-src 'self' 'nonce-" + nonce + "'; style-src 'self' 'nonce-" + nonce + "' 'unsafe-hashes'; style-src-attr 'self' 'nonce-" + nonce + "' 'unsafe-hashes'; img-src 'self' data: blob: https:; font-src 'self' data: https:; connect-src 'self' wss: https: http://localhost:8080 ws://localhost:8001 http://localhost:8001; media-src 'self' blob:; object-src 'none'; frame-src 'self'; worker-src 'self' blob:; manifest-src 'self'; form-action 'self'; base-uri 'self'; upgrade-insecure-requests; block-all-mixed-content;";
+
+  const meta = document.createElement("meta");
+  meta.httpEquiv = "Content-Security-Policy";
+  meta.content = csp;
+  document.head.appendChild(meta);
+</script>\`;
+        
+        return html.replace("<head>", "<head>" + cspScript);
+      }
+      return html;
+    }
+  };
+}
+
+export default defineConfig(async ({ mode }): Promise<UserConfig> => {
   const env = loadEnv(mode, process.cwd(), '');
   const isProduction = mode === 'production';
-  const isAnalyze = env.ANALYZE === 'true';
+  const isAnalyze = env['ANALYZE'] === 'true';
 
   return {
     root: '.',
     publicDir: 'public',
-    base: env.VITE_BASE_URL || '/admin/',
+    base: env['VITE_BASE_URL'] || '/admin/',
 
     resolve: {
       alias: {
@@ -41,6 +91,7 @@ export default defineConfig(async ({ mode, command }) => {
       },
       postcss: {
         plugins: [
+    cspPlugin(),
           (await import('postcss-preset-env')).default({
             stage: 3,
             features: {
@@ -90,7 +141,7 @@ export default defineConfig(async ({ mode, command }) => {
         },
         format: {
           comments: false,
-          ecma: 2022,
+          ecma: 2020,
         },
       },
 
@@ -102,7 +153,7 @@ export default defineConfig(async ({ mode, command }) => {
           tryCatchDeoptimization: false,
         },
         output: {
-          manualChunks: (id) => {
+          manualChunks: (id: string): string | undefined => {
             if (id.includes('node_modules')) {
               if (id.includes('chart.js') || id.includes('chartjs')) return 'vendor-charts';
               if (id.includes('date-fns') || id.includes('dayjs')) return 'vendor-date';
@@ -115,18 +166,21 @@ export default defineConfig(async ({ mode, command }) => {
             if (id.includes('/services/')) return 'services';
             if (id.includes('/utils/')) return 'utils';
             if (id.includes('/core/')) return 'core';
+            return undefined;
           },
           chunkFileNames: 'assets/js/[name]-[hash].js',
           entryFileNames: 'assets/js/[name]-[hash].js',
-          assetFileNames: (info) => {
-            const ext = info.name.split('.').pop();
-            if (/\.(png|jpe?g|gif|svg|webp|avif|ico)$/.test(info.name)) return `assets/img/[name]-[hash].${ext}`;
-            if (/\.(woff2?|eot|ttf|otf)$/.test(info.name)) return `assets/fonts/[name]-[hash].${ext}`;
-            if (/\.css$/.test(info.name)) return `assets/css/[name]-[hash].${ext}`;
+          assetFileNames: (info: { name: string | undefined }) => {
+            const name = info.name ?? '';
+            const ext = name.split('.').pop();
+            if (/\.(png|jpe?g|gif|svg|webp|avif|ico)$/.test(name)) return `assets/img/[name]-[hash].${ext}`;
+            if (/\.(woff2?|eot|ttf|otf)$/.test(name)) return `assets/fonts/[name]-[hash].${ext}`;
+            if (/\.css$/.test(name)) return `assets/css/[name]-[hash].${ext}`;
             return `assets/[name]-[hash].${ext}`;
           },
         },
         plugins: [
+    cspPlugin(),
           isAnalyze && visualizer({
             filename: 'dist/stats.html',
             open: true,
@@ -135,12 +189,18 @@ export default defineConfig(async ({ mode, command }) => {
             template: 'treemap',
           }),
           compression({
-            algorithms: ['gzip', 'brotli'],
+            algorithm: 'gzip',
             exclude: [/\.(br)$/, /\.(gz)$/, /\.(map)$/],
             threshold: 1024,
             deleteOriginalAssets: false,
           }),
-        ].filter(Boolean),
+          compression({
+            algorithm: 'brotliCompress',
+            exclude: [/\.(br)$/, /\.(gz)$/, /\.(map)$/],
+            threshold: 1024,
+            deleteOriginalAssets: false,
+          }),
+        ].filter(Boolean) as unknown as ViteRollupPlugins,
       },
     },
 
@@ -148,19 +208,23 @@ export default defineConfig(async ({ mode, command }) => {
       host: "0.0.0.0",
       port: 0,
       strictPort: false,
-      https: env.VITE_SSL === 'true' ? {
-        key: resolve(__dirname, 'certs/localhost-key.pem'),
-        cert: resolve(__dirname, 'certs/localhost.pem'),
-      } : false,
+      ...(env['VITE_SSL'] === 'true'
+        ? {
+            https: {
+              key: resolve(__dirname, 'certs/localhost-key.pem'),
+              cert: resolve(__dirname, 'certs/localhost.pem'),
+            },
+          }
+        : {}),
       proxy: {
         '/api': {
-          target: env.VITE_API_URL || 'http://localhost:8000',
+          target: env['VITE_API_URL'] || 'https://dalli.rs/api',
           changeOrigin: true,
           secure: false,
           ws: true,
         },
         '/ws': {
-          target: env.VITE_WS_URL || 'ws://localhost:8001',
+          target: env['VITE_WS_URL'] || 'wss://dalli.rs/ws',
           ws: true,
         },
       },
@@ -197,12 +261,13 @@ export default defineConfig(async ({ mode, command }) => {
     },
 
     plugins: [
+    cspPlugin(),
       {
         name: 'dalli-inject-asset-prefix',
-        transformIndexHtml(html) {
-          const prefix = env.VITE_BASE_URL || '/admin/';
+        transformIndexHtml(html: string) {
+          const prefix = env['VITE_BASE_URL'] || '/admin/';
           const tag = `<script>window.__ASSET_PREFIX__=${JSON.stringify(prefix)};</script>`;
-          return html.replace(/<head(\s[^>]*)?>/i, (match) => `${match}\n    ${tag}`);
+          return html.replace(/<head(\s[^>]*)?>/i, (match: string) => `${match}\n    ${tag}`);
         },
       },
 
@@ -225,7 +290,7 @@ export default defineConfig(async ({ mode, command }) => {
             ogImage: '/admin/assets/img/og-image.png',
             env: mode,
             buildTime: new Date().toISOString(),
-            version: env.npm_package_version || '1.0.0',
+            version: env['npm_package_version'] || '1.0.0',
           },
         },
       }),
@@ -240,19 +305,19 @@ export default defineConfig(async ({ mode, command }) => {
           unsafe_proto: true,
         },
       }),
-    ].filter(Boolean),
+    ].filter(Boolean) as PluginOption[],
 
     define: {
-      __APP_VERSION__: JSON.stringify(env.npm_package_version || '1.0.0'),
+      __APP_VERSION__: JSON.stringify(env['npm_package_version'] || '1.0.0'),
       __BUILD_TIME__: JSON.stringify(new Date().toISOString()),
       __ENV__: JSON.stringify(mode),
-      __API_URL__: JSON.stringify(env.VITE_API_URL || '/api'),
-      __WS_URL__: JSON.stringify(env.VITE_WS_URL || 'ws://localhost:8001'),
+      __API_URL__: JSON.stringify(env['VITE_API_URL'] || '/api'),
+      __WS_URL__: JSON.stringify(env['VITE_WS_URL'] || 'ws://localhost:8001'),
       'process.env.NODE_ENV': JSON.stringify(mode),
     },
 
     experimental: {
-      renderBuiltUrl(filename, { hostType }) {
+      renderBuiltUrl(filename: string, { hostType }: { hostType: string }) {
         if (hostType === 'js') return { runtime: `window.__ASSET_PREFIX__ + ${JSON.stringify(filename)}` };
         return { relative: true };
       },
