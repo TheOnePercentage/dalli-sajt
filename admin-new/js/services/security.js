@@ -55,6 +55,7 @@ class SecurityService {
       'default-src': defaultSrc.join(' '),
       'script-src': scriptSrc.join(' '),
       'style-src': styleSrc.join(' '),
+      'style-src-attr': styleSrc.join(' '),  // Explicit for inline style attributes
       'img-src': imgSrc.join(' '),
       'font-src': fontSrc.join(' '),
       'connect-src': connectSrc.join(' '),
