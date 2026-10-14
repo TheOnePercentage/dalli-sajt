@@ -31,16 +31,19 @@ class SecurityService {
       styleSrc = ["'self'", `'nonce-${nonce}'`],
       imgSrc = ["'self'", 'data:', 'blob:', 'https:'],
       fontSrc = ["'self'", 'data:', 'https:'],
-      connectSrc = ["'self'", 'wss:', 'https:', 'http://localhost:8080'],
+      connectSrc = ["'self'", 'wss:', 'https:', 'http://localhost:8080', 'ws://localhost:8001', 'http://localhost:8001'],
+      // Allow localhost HTTP/WS for dev
       // Allow localhost HTTP for dev
       mediaSrc = ["'self'", 'blob:'],
       objectSrc = ["'none'"],
       frameSrc = ["'self'"],
       workerSrc = ["'self'", 'blob:'],
       manifestSrc = ["'self'"],
-      prefetchSrc = ["'self'"],
+      prefetchSrc = ["'self'"],  // Non-standard, commented out
+      // prefetchSrc = ["'self'"],
       formAction = ["'self'"],
-      frameAncestors = ["'none'"],
+      frameAncestors = ["'none'"],  // Doesn't work in meta tag
+      // frameAncestors = ["'none'"],
       baseUri = ["'self'"],
       reportUri = '',
       upgradeInsecureRequests = true,
@@ -59,9 +62,9 @@ class SecurityService {
       'frame-src': frameSrc.join(' '),
       'worker-src': workerSrc.join(' '),
       'manifest-src': manifestSrc.join(' '),
-      'prefetch-src': prefetchSrc.join(' '),
+      // 'prefetch-src': prefetchSrc.join(' '),  // Non-standard, skipped
       'form-action': formAction.join(' '),
-      'frame-ancestors': frameAncestors.join(' '),
+      // 'frame-ancestors': frameAncestors.join(' '),  // Doesn't work in meta tag
       'base-uri': baseUri.join(' '),
     };
 
