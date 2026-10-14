@@ -28,7 +28,8 @@ class SecurityService {
     const {
       defaultSrc = ["'self'"],
       scriptSrc = ["'self'", `'nonce-${nonce}'`],
-      styleSrc = ["'self'", `'nonce-${nonce}'`],
+      styleSrc = ["'self'", ` 'nonce-${nonce}'`, 'unsafe-hashes'],
+      // Allow inline style attributes via hashes
       imgSrc = ["'self'", 'data:', 'blob:', 'https:'],
       fontSrc = ["'self'", 'data:', 'https:'],
       connectSrc = ["'self'", 'wss:', 'https:', 'http://localhost:8080', 'ws://localhost:8001', 'http://localhost:8001'],
