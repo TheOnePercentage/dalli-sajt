@@ -31,6 +31,10 @@
     document.documentElement.setAttribute('data-csp-nonce', nonce);
     // Apply CSP with nonce
     securityService.applyCSP();
+    // Fallback CSP meta tag with style-src-attr
+    const cspMeta = document.createElement("meta");
+    cspMeta.httpEquiv = "Content-Security-Policy";
+    cspMeta.content = "default-src 'self'; script-src 'self' 'nonce-
   </script>
   <script type="module" src="js/admin.js" nonce=""></script>
 </head>
