@@ -31,7 +31,8 @@ class SecurityService {
       styleSrc = ["'self'", `'nonce-${nonce}'`],
       imgSrc = ["'self'", 'data:', 'blob:', 'https:'],
       fontSrc = ["'self'", 'data:', 'https:'],
-      connectSrc = ["'self'", 'wss:', 'https:'],
+      connectSrc = ["'self'", 'wss:', 'https:', 'http://localhost:8080'],
+      // Allow localhost HTTP for dev
       mediaSrc = ["'self'", 'blob:'],
       objectSrc = ["'none'"],
       frameSrc = ["'self'"],
