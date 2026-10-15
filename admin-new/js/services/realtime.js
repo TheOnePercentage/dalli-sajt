@@ -6,13 +6,14 @@
 import { envConfig } from '../utils/env-config.js';
 import { errorBoundary } from './error-boundary.js';
 import { performanceMonitor } from './performance.js';
+import { io } from 'socket.io-client';
 
 class RealtimeService {
   constructor(options = {}) {
     this.sessionId = `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
     this.options = {
-      url: options.url || envConfig.get('VITE_WS_URL') || 'ws://localhost:8001',
+      url: options.url || envConfig.get('VITE_WS_URL') || 'ws://localhost:3001',
       autoConnect: options.autoConnect !== false,
       reconnect: options.reconnect !== false,
       reconnectInterval: options.reconnectInterval || 2000,
@@ -55,36 +56,44 @@ class RealtimeService {
 
       this.setConnectionState('connecting');
 
-      const tryWebSocket = () => {
-        if (this.options.transport === 'sse') {
-          this.connectSSE().then(resolve).catch(reject);
-          return;
-        }
+      // Use Socket.io for realtime backend
+      try {
+        this.socket = io(this.options.url, {
+          transports: ['websocket', 'polling'],
+          autoConnect: true,
+          withCredentials: true,
+          reconnection: this.options.reconnect,
+          reconnectionAttempts: this.options.maxReconnectAttempts,
+          reconnectionDelay: this.options.reconnectInterval,
+        });
 
-        try {
-          this.ws = new WebSocket(this.options.url);
-          this.setupWebSocket();
-          this.ws.onopen = () => {
-            this.onOpen();
-            resolve();
-          };
-          this.ws.onerror = (err) => {
-            if (this.options.transport === 'auto') {
-              this.connectSSE().then(resolve).catch(reject);
-            } else {
-              reject(err);
-            }
-          };
-        } catch (err) {
-          if (this.options.transport === 'auto') {
-            this.connectSSE().then(resolve).catch(reject);
-          } else {
-            reject(err);
-          }
-        }
-      };
+        this.socket.on('connect', () => {
+          this.onOpen();
+          resolve();
+        });
 
-      tryWebSocket();
+        this.socket.on('disconnect', (reason) => {
+          this.setConnectionState('disconnected');
+          this.emit('disconnect', { reason });
+        });
+
+        this.socket.on('connect_error', (err) => {
+          this.handleError(err);
+          reject(err);
+        });
+
+        this.socket.on('message', (data) => {
+          this.handleMessage(data);
+        });
+
+        // Listen for all custom events
+        this.socket.onAny((event, ...args) => {
+          this.emit(event, ...args);
+        });
+
+      } catch (err) {
+        reject(err);
+      }
     });
   }
 

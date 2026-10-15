@@ -16,21 +16,9 @@ import { terser } from 'rollup-plugin-terser';
 function cspPlugin() {
   return {
     name: "csp-injection",
-    transformIndexHtml(html, { path }) {
+    transformIndexHtml(html: string, { path }: { path: string }) {
       if (path.endsWith("index.html") || path === "/admin/") {
-        // Generate nonce
-        const nonceBytes = new Uint8Array(18);
-        crypto.getRandomValues(nonceBytes);
-        const nonce = Array.from(nonceBytes)
-          .map(b => String.fromCharCode(b))
-          .join("")
-          .replace(/\+/g, "-")
-          .replace(/\//g, "_")
-          .replace(/=+$/, "");
-        
-        const csp = "default-src 'self'; script-src 'self' 'nonce-" + nonce + "'; style-src 'self' 'nonce-" + nonce + "' 'unsafe-hashes'; style-src-attr 'self' 'nonce-" + nonce + "' 'unsafe-hashes'; img-src 'self' data: blob: https:; font-src 'self' data: https:; connect-src 'self' wss: https: http://localhost:8080 ws://localhost:8001 http://localhost:8001; media-src 'self' blob:; object-src 'none'; frame-src 'self'; worker-src 'self' blob:; manifest-src 'self'; form-action 'self'; base-uri 'self'; upgrade-insecure-requests; block-all-mixed-content;";
-        
-        const cspScript = \`<script type="module">
+        const cspScript = `<script type="module">
   const nonceBytes = new Uint8Array(18);
   crypto.getRandomValues(nonceBytes);
   const nonce = Array.from(nonceBytes)
@@ -42,13 +30,13 @@ function cspPlugin() {
 
   document.documentElement.setAttribute("data-csp-nonce", nonce);
 
-  const csp = "default-src 'self'; script-src 'self' 'nonce-" + nonce + "'; style-src 'self' 'nonce-" + nonce + "' 'unsafe-hashes'; style-src-attr 'self' 'nonce-" + nonce + "' 'unsafe-hashes'; img-src 'self' data: blob: https:; font-src 'self' data: https:; connect-src 'self' wss: https: http://localhost:8080 ws://localhost:8001 http://localhost:8001; media-src 'self' blob:; object-src 'none'; frame-src 'self'; worker-src 'self' blob:; manifest-src 'self'; form-action 'self'; base-uri 'self'; upgrade-insecure-requests; block-all-mixed-content;";
+  const csp = "default-src 'self'; script-src 'self' 'nonce-" + nonce + "'; style-src 'self' 'nonce-" + nonce + "' 'unsafe-hashes'; style-src-attr 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data: https:; connect-src 'self' wss: https: http://localhost:3001 ws://localhost:3001; media-src 'self' blob:; object-src 'none'; frame-src 'self'; worker-src 'self' blob:; manifest-src 'self'; form-action 'self'; base-uri 'self'; upgrade-insecure-requests; block-all-mixed-content;";
 
   const meta = document.createElement("meta");
   meta.httpEquiv = "Content-Security-Policy";
   meta.content = csp;
   document.head.appendChild(meta);
-</script>\`;
+</script>`;
         
         return html.replace("<head>", "<head>" + cspScript);
       }
@@ -91,7 +79,6 @@ export default defineConfig(async ({ mode }): Promise<UserConfig> => {
       },
       postcss: {
         plugins: [
-    cspPlugin(),
           (await import('postcss-preset-env')).default({
             stage: 3,
             features: {
@@ -312,7 +299,7 @@ export default defineConfig(async ({ mode }): Promise<UserConfig> => {
       __BUILD_TIME__: JSON.stringify(new Date().toISOString()),
       __ENV__: JSON.stringify(mode),
       __API_URL__: JSON.stringify(env['VITE_API_URL'] || '/api'),
-      __WS_URL__: JSON.stringify(env['VITE_WS_URL'] || 'ws://localhost:8001'),
+      __WS_URL__: JSON.stringify(env['VITE_WS_URL'] || 'ws://localhost:3001'),
       'process.env.NODE_ENV': JSON.stringify(mode),
     },
 

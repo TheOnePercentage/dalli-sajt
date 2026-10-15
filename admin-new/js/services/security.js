@@ -32,7 +32,7 @@ class SecurityService {
       // Allow inline style attributes via hashes
       imgSrc = ["'self'", 'data:', 'blob:', 'https:'],
       fontSrc = ["'self'", 'data:', 'https:'],
-      connectSrc = ["'self'", 'wss:', 'https:', 'http://localhost:8080', 'ws://localhost:8001', 'http://localhost:8001'],
+      connectSrc = ["'self'", 'wss:', 'https:', 'http://localhost:3001', 'ws://localhost:3001', 'http://localhost:3001'],
       // Allow localhost HTTP/WS for dev
       // Allow localhost HTTP for dev
       mediaSrc = ["'self'", 'blob:'],
